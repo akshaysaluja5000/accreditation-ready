@@ -2578,6 +2578,97 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
     res.json({ score, totalQuestions, resultId: result.id, detailedResults, chapterScores });
   });
 
+  function requireDnv(req: any, res: any, next: any) {
+    if (req.user?.organizationType !== "dnv") {
+      return res.status(403).json({ message: "DNV NIAHO module access required" });
+    }
+    next();
+  }
+
+  app.get("/api/dnv-pretest/questions", requireAuth, requireDnv, async (req, res) => {
+    const pretestPool = await storage.getDnvPretestQuestions();
+    const { items, shuffleMaps } = buildAscTestPayload(pretestPool as any);
+    await storage.upsertAscTestSession(req.user!.id, "dnv_pretest", shuffleMaps);
+    res.json(items);
+  });
+
+  app.get("/api/dnv-pretest/results", requireAuth, requireDnv, async (req, res) => {
+    const results = await storage.getDnvPretestResults(req.user!.id);
+    res.json(results);
+  });
+
+  app.post("/api/dnv-pretest/submit", requireAuth, requireDnv, async (req, res) => {
+    const { answers } = req.body;
+    const peek = await storage.getAscTestSession(req.user!.id, "dnv_pretest");
+    if (!peek) {
+      return res.status(400).json({ message: "No active pretest session. Please start the test from the beginning." });
+    }
+    const serverShuffleMaps = peek.shuffleMaps as Record<string, number[]>;
+    const issuedIds = Object.keys(serverShuffleMaps);
+    const pretestPool = await storage.getDnvPretestQuestions();
+    const validation = validateAscAnswerSet(answers, issuedIds, pretestPool as any);
+    if (!validation.ok) {
+      return res.status(400).json({ message: validation.message });
+    }
+    const claimed = await storage.claimAscTestSession(req.user!.id, "dnv_pretest");
+    if (!claimed) {
+      return res.status(409).json({ message: "Pretest already submitted." });
+    }
+    const { score, detailedResults, chapterScores } = gradeAscTest(
+      pretestPool as any, validation.cleaned, serverShuffleMaps,
+    );
+    const totalQuestions = issuedIds.length;
+    const graded = detailedResults.map(d => ({
+      questionId: d.questionId, selectedIndex: d.selectedIndex, correct: d.correct,
+    }));
+    const result = await storage.createDnvPretestResult(
+      req.user!.id, score, totalQuestions, graded, chapterScores,
+    );
+    res.json({ score, totalQuestions, resultId: result.id, detailedResults, chapterScores });
+  });
+
+  app.get("/api/dnv-posttest/questions", requireAuth, requireDnv, async (req, res) => {
+    const posttestPool = await storage.getDnvPosttestQuestions();
+    const { items, shuffleMaps } = buildAscTestPayload(posttestPool as any);
+    await storage.upsertAscTestSession(req.user!.id, "dnv_posttest", shuffleMaps);
+    res.json(items);
+  });
+
+  app.get("/api/dnv-posttest/results", requireAuth, requireDnv, async (req, res) => {
+    const results = await storage.getDnvPosttestResults(req.user!.id);
+    res.json(results);
+  });
+
+  app.post("/api/dnv-posttest/submit", requireAuth, requireDnv, async (req, res) => {
+    const { answers } = req.body;
+    const peek = await storage.getAscTestSession(req.user!.id, "dnv_posttest");
+    if (!peek) {
+      return res.status(400).json({ message: "No active posttest session. Please start the test from the beginning." });
+    }
+    const serverShuffleMaps = peek.shuffleMaps as Record<string, number[]>;
+    const issuedIds = Object.keys(serverShuffleMaps);
+    const posttestPool = await storage.getDnvPosttestQuestions();
+    const validation = validateAscAnswerSet(answers, issuedIds, posttestPool as any);
+    if (!validation.ok) {
+      return res.status(400).json({ message: validation.message });
+    }
+    const claimed = await storage.claimAscTestSession(req.user!.id, "dnv_posttest");
+    if (!claimed) {
+      return res.status(409).json({ message: "Posttest already submitted." });
+    }
+    const { score, detailedResults, chapterScores } = gradeAscTest(
+      posttestPool as any, validation.cleaned, serverShuffleMaps,
+    );
+    const totalQuestions = issuedIds.length;
+    const graded = detailedResults.map(d => ({
+      questionId: d.questionId, selectedIndex: d.selectedIndex, correct: d.correct,
+    }));
+    const result = await storage.createDnvPosttestResult(
+      req.user!.id, score, totalQuestions, graded, chapterScores,
+    );
+    res.json({ score, totalQuestions, resultId: result.id, detailedResults, chapterScores });
+  });
+
   app.get("/api/mastery/questions", requireAuth, async (req, res) => {
     const isSuperAdmin = (req.user! as User).leadershipRole === "super_admin";
     const assignedChaptersForCheck = await storage.getUserAssignedChapters(req.user!.id);

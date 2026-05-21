@@ -5,6 +5,7 @@ import {
   users, userProgress, userStreaks, dailyActivity, quizSessions, facilities,
   diagnosticResults, masteryResults, diagnosticSessions, masterySessions,
   ascPretestResults, ascPosttestResults,
+  dnvPretestResults, dnvPosttestResults,
   roles, roleChapterMappings, flashcardReviews, auditLogs, riskAssessments, feedback, leadershipRoleCodes,
   complianceItems, complianceLogs, complianceDocuments, complianceTrainingModules,
   complianceTasks, staffTrainingAlerts, regulatoryWatchFindings, executiveBriefs,
@@ -16,6 +17,7 @@ import {
   type Facility, type InsertFacility, type DiagnosticResult, type MasteryResult,
   type DiagnosticSession, type MasterySession, type Role, type RoleChapterMapping,
   type AscPretestResult, type AscPosttestResult, type FlashcardReview, type AuditLog, type RiskAssessment, type Feedback,
+  type DnvPretestResult, type DnvPosttestResult,
   type ComplianceItem, type ComplianceLog, type ComplianceDocument, type ComplianceTrainingModule,
   type ComplianceTask, type StaffTrainingAlert, type RegulatoryWatchFinding, type ExecutiveBrief,
   type ContentChangelog, type InsertContentChangelog,
@@ -25,6 +27,7 @@ import {
 import type { DiagnosticQuestion } from "@shared/diagnostic-questions";
 import type { MasteryQuestion } from "@shared/mastery-questions";
 import type { AscPretestQuestion } from "@shared/asc-pretest";
+import type { DnvTestQuestion } from "@shared/dnv-pretest";
 
 const pool = new pg.Pool({
   connectionString: process.env.DATABASE_URL,
@@ -406,6 +409,26 @@ export async function ensureTablesExist() {
       CREATE INDEX IF NOT EXISTS idx_mastery_results_user_id ON mastery_results(user_id);
       CREATE INDEX IF NOT EXISTS idx_asc_pretest_results_user_id ON asc_pretest_results(user_id);
       CREATE INDEX IF NOT EXISTS idx_asc_posttest_results_user_id ON asc_posttest_results(user_id);
+      CREATE TABLE IF NOT EXISTS dnv_pretest_results (
+        id SERIAL PRIMARY KEY,
+        user_id INTEGER NOT NULL REFERENCES users(id),
+        score INTEGER NOT NULL,
+        total_questions INTEGER NOT NULL,
+        answers JSONB NOT NULL DEFAULT '[]'::jsonb,
+        chapter_scores JSONB NOT NULL DEFAULT '{}'::jsonb,
+        completed_at TIMESTAMP NOT NULL DEFAULT NOW()
+      );
+      CREATE TABLE IF NOT EXISTS dnv_posttest_results (
+        id SERIAL PRIMARY KEY,
+        user_id INTEGER NOT NULL REFERENCES users(id),
+        score INTEGER NOT NULL,
+        total_questions INTEGER NOT NULL,
+        answers JSONB NOT NULL DEFAULT '[]'::jsonb,
+        chapter_scores JSONB NOT NULL DEFAULT '{}'::jsonb,
+        completed_at TIMESTAMP NOT NULL DEFAULT NOW()
+      );
+      CREATE INDEX IF NOT EXISTS idx_dnv_pretest_results_user_id ON dnv_pretest_results(user_id);
+      CREATE INDEX IF NOT EXISTS idx_dnv_posttest_results_user_id ON dnv_posttest_results(user_id);
       CREATE INDEX IF NOT EXISTS idx_flashcard_reviews_user_level ON flashcard_reviews(user_id, level_id);
       CREATE INDEX IF NOT EXISTS idx_flashcard_reviews_next_review ON flashcard_reviews(user_id, next_review_at);
       CREATE INDEX IF NOT EXISTS idx_audit_logs_user_id ON audit_logs(user_id);
@@ -768,6 +791,11 @@ export interface IStorage {
   getAscPosttestResults(userId: number): Promise<AscPosttestResult[]>;
   createAscPosttestResult(userId: number, score: number, totalQuestions: number, answers: unknown, chapterScores: unknown): Promise<AscPosttestResult>;
 
+  getDnvPretestResults(userId: number): Promise<DnvPretestResult[]>;
+  createDnvPretestResult(userId: number, score: number, totalQuestions: number, answers: unknown, chapterScores: unknown): Promise<DnvPretestResult>;
+  getDnvPosttestResults(userId: number): Promise<DnvPosttestResult[]>;
+  createDnvPosttestResult(userId: number, score: number, totalQuestions: number, answers: unknown, chapterScores: unknown): Promise<DnvPosttestResult>;
+
   getAllRoles(): Promise<Role[]>;
   getRoleById(id: number): Promise<Role | undefined>;
   getRoleBySlug(slug: string): Promise<Role | undefined>;
@@ -868,6 +896,8 @@ export interface IStorage {
   getMasteryQuestions(): Promise<MasteryQuestion[]>;
   getAscPretestQuestions(): Promise<AscPretestQuestion[]>;
   getAscPosttestQuestions(): Promise<AscPretestQuestion[]>;
+  getDnvPretestQuestions(): Promise<DnvTestQuestion[]>;
+  getDnvPosttestQuestions(): Promise<DnvTestQuestion[]>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -1186,6 +1216,24 @@ export class DatabaseStorage implements IStorage {
 
   async createAscPosttestResult(userId: number, score: number, totalQuestions: number, answers: unknown, chapterScores: unknown): Promise<AscPosttestResult> {
     const [result] = await db.insert(ascPosttestResults).values({ userId, score, totalQuestions, answers, chapterScores }).returning();
+    return result;
+  }
+
+  async getDnvPretestResults(userId: number): Promise<DnvPretestResult[]> {
+    return db.select().from(dnvPretestResults).where(eq(dnvPretestResults.userId, userId)).orderBy(desc(dnvPretestResults.completedAt));
+  }
+
+  async createDnvPretestResult(userId: number, score: number, totalQuestions: number, answers: unknown, chapterScores: unknown): Promise<DnvPretestResult> {
+    const [result] = await db.insert(dnvPretestResults).values({ userId, score, totalQuestions, answers, chapterScores }).returning();
+    return result;
+  }
+
+  async getDnvPosttestResults(userId: number): Promise<DnvPosttestResult[]> {
+    return db.select().from(dnvPosttestResults).where(eq(dnvPosttestResults.userId, userId)).orderBy(desc(dnvPosttestResults.completedAt));
+  }
+
+  async createDnvPosttestResult(userId: number, score: number, totalQuestions: number, answers: unknown, chapterScores: unknown): Promise<DnvPosttestResult> {
+    const [result] = await db.insert(dnvPosttestResults).values({ userId, score, totalQuestions, answers, chapterScores }).returning();
     return result;
   }
 
@@ -2027,6 +2075,16 @@ export class DatabaseStorage implements IStorage {
       cmsTag: r.cmsTag ?? undefined,
       tutor: (r.tutor as any) ?? undefined,
     } as AscPretestQuestion));
+  }
+
+  async getDnvPretestQuestions(): Promise<DnvTestQuestion[]> {
+    const { dnvPretestQuestions } = await import("@shared/dnv-pretest");
+    return dnvPretestQuestions;
+  }
+
+  async getDnvPosttestQuestions(): Promise<DnvTestQuestion[]> {
+    const { dnvPosttestQuestions } = await import("@shared/dnv-posttest");
+    return dnvPosttestQuestions as DnvTestQuestion[];
   }
 }
 

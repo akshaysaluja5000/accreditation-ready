@@ -275,6 +275,30 @@ export const ascPosttestResults = pgTable("asc_posttest_results", {
   index("idx_asc_posttest_results_user_id").on(t.userId),
 ]);
 
+export const dnvPretestResults = pgTable("dnv_pretest_results", {
+  id: serial("id").primaryKey(),
+  userId: integer("user_id").notNull().references(() => users.id),
+  score: integer("score").notNull(),
+  totalQuestions: integer("total_questions").notNull(),
+  answers: jsonb("answers").notNull().default(sql`'[]'::jsonb`),
+  chapterScores: jsonb("chapter_scores").notNull().default(sql`'{}'::jsonb`),
+  completedAt: timestamp("completed_at").notNull().defaultNow(),
+}, (t) => [
+  index("idx_dnv_pretest_results_user_id").on(t.userId),
+]);
+
+export const dnvPosttestResults = pgTable("dnv_posttest_results", {
+  id: serial("id").primaryKey(),
+  userId: integer("user_id").notNull().references(() => users.id),
+  score: integer("score").notNull(),
+  totalQuestions: integer("total_questions").notNull(),
+  answers: jsonb("answers").notNull().default(sql`'[]'::jsonb`),
+  chapterScores: jsonb("chapter_scores").notNull().default(sql`'{}'::jsonb`),
+  completedAt: timestamp("completed_at").notNull().defaultNow(),
+}, (t) => [
+  index("idx_dnv_posttest_results_user_id").on(t.userId),
+]);
+
 export type DiagnosticSession = typeof diagnosticSessions.$inferSelect;
 export type MasterySession = typeof masterySessions.$inferSelect;
 
@@ -282,6 +306,8 @@ export type DiagnosticResult = typeof diagnosticResults.$inferSelect;
 export type MasteryResult = typeof masteryResults.$inferSelect;
 export type AscPretestResult = typeof ascPretestResults.$inferSelect;
 export type AscPosttestResult = typeof ascPosttestResults.$inferSelect;
+export type DnvPretestResult = typeof dnvPretestResults.$inferSelect;
+export type DnvPosttestResult = typeof dnvPosttestResults.$inferSelect;
 
 export type InsertFacility = z.infer<typeof insertFacilitySchema>;
 export type Facility = typeof facilities.$inferSelect;

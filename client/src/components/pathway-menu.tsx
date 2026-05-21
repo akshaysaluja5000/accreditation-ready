@@ -76,6 +76,8 @@ export function PathwayMenu({
       queryClient.invalidateQueries({ queryKey: ["/api/levels"] });
       queryClient.invalidateQueries({ queryKey: ["/api/asc-pretest/results"] });
       queryClient.invalidateQueries({ queryKey: ["/api/asc-posttest/results"] });
+      queryClient.invalidateQueries({ queryKey: ["/api/dnv-pretest/results"] });
+      queryClient.invalidateQueries({ queryKey: ["/api/dnv-posttest/results"] });
       setLocation("/");
       const label = PATHWAYS.find(p => p.module === updatedUser?.organizationType)?.title ?? "your facility";
       toast({ title: "Switched facility", description: `Now viewing ${label}.` });

@@ -820,6 +820,36 @@ export default function DashboardPage() {
               </motion.div>
             )}
 
+            {/* DNV Diagnostic */}
+            {isDnv && (
+              <motion.div
+                className="w-full rounded-2xl border-2 p-5 text-left bg-teal-500/5 border-teal-500/20"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                data-testid="card-dnv-pretest-main"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-teal-500 to-cyan-600 shadow-md">
+                    <Stethoscope size={22} className="text-white" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h3 className="font-bold text-base leading-tight">Diagnostic Quiz</h3>
+                      <span className="px-1.5 py-0.5 rounded text-[10px] font-black bg-teal-500/15 text-teal-500 uppercase tracking-wider">Benchmark</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground mt-0.5">25 questions across all 11 NIAHO chapters — establish your baseline</p>
+                  </div>
+                  <button
+                    onClick={() => setLocation("/dnv-pretest")}
+                    data-testid="button-dnv-pretest-main"
+                    className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-xl font-bold text-sm bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white shadow-md transition-all active:scale-95"
+                  >
+                    Start <ChevronRight size={15} />
+                  </button>
+                </div>
+              </motion.div>
+            )}
+
             {/* ASC Diagnostic — main column, mirrors hospital diagnostic placement */}
             {userModule === "asc" && (
               <motion.div
@@ -1063,6 +1093,37 @@ export default function DashboardPage() {
                   <button
                     onClick={() => setLocation("/asc-posttest")}
                     data-testid="button-asc-posttest-cta"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm bg-gradient-to-r from-primary to-indigo-600 hover:from-primary/90 hover:to-indigo-700 text-white shadow-md transition-all active:scale-95"
+                  >
+                    Take Assessment <ChevronRight size={16} />
+                  </button>
+                </div>
+              </motion.div>
+            )}
+
+            {/* DNV Final Assessment */}
+            {isDnv && (
+              <motion.div
+                className="w-full rounded-2xl border-2 p-4 bg-primary/5 border-primary/20"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+              >
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-primary to-indigo-600 shadow-md">
+                    <Trophy size={24} className="text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-bold text-lg leading-tight">Final Assessment</h3>
+                      <span className="px-1.5 py-0.5 rounded text-[10px] font-black bg-primary/10 text-primary uppercase tracking-wider">Check growth</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground mt-1 leading-snug">25 fresh NIAHO questions to compare against your Diagnostic score</p>
+                  </div>
+                </div>
+                <div className="flex justify-end">
+                  <button
+                    onClick={() => setLocation("/dnv-posttest")}
+                    data-testid="button-dnv-posttest-cta"
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm bg-gradient-to-r from-primary to-indigo-600 hover:from-primary/90 hover:to-indigo-700 text-white shadow-md transition-all active:scale-95"
                   >
                     Take Assessment <ChevronRight size={16} />

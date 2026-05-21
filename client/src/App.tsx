@@ -21,6 +21,8 @@ import DiagnosticQuizPage from "@/pages/diagnostic-quiz-page";
 import MasteryExamPage from "@/pages/mastery-exam-page";
 import AscPretestPage from "@/pages/asc-pretest-page";
 import AscPosttestPage from "@/pages/asc-posttest-page";
+import DnvPretestPage from "@/pages/dnv-pretest-page";
+import DnvPosttestPage from "@/pages/dnv-posttest-page";
 import RoleSelectPage from "@/pages/role-select-page";
 import CorrectiveActionPage from "@/pages/corrective-action-page";
 import ExecutiveReportPage from "@/pages/executive-report-page";
@@ -356,6 +358,12 @@ function Router() {
       </Route>
       <Route path="/asc-posttest">
         {() => <ProtectedRoute component={AscPosttestPage} />}
+      </Route>
+      <Route path="/dnv-pretest">
+        {() => <ProtectedRoute component={DnvPretestPage} />}
+      </Route>
+      <Route path="/dnv-posttest">
+        {() => <ProtectedRoute component={DnvPosttestPage} />}
       </Route>
       <Route path="/leaderboard">
         {() => <ProtectedRoute component={LeaderboardPage} />}
