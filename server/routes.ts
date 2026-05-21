@@ -758,6 +758,16 @@ export async function registerRoutes(
     }
   });
 
+  app.get("/api/admin/content-changelog", requireAuth, requireLeadershipRole("director"), async (req, res) => {
+    try {
+      const limit = Math.min(parseInt(String(req.query.limit ?? "50"), 10) || 50, 200);
+      const entries = await storage.getContentChangelog(limit);
+      res.json(entries);
+    } catch (err: any) {
+      console.error(err); res.status(500).json({ message: "Failed to fetch content changelog" });
+    }
+  });
+
   app.get("/api/audit-log", requireLeadershipRole("admin"), requireMfa, async (req, res) => {
     try {
       const limit = Math.min(parseInt(String(req.query.limit ?? "200"), 10) || 200, 1000);

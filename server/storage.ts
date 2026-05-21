@@ -11,12 +11,14 @@ import {
   teams, teamMembers, rateLimitEvents,
   contentLevels, contentQuestions, contentDeepDiveLevels, contentDeepDiveQuestions,
   contentHandbookChapters, contentAssessmentQuestions,
+  contentChangelog,
   type User, type InsertUser, type UserProgress, type UserStreak, type DailyActivity, type QuizSession,
   type Facility, type InsertFacility, type DiagnosticResult, type MasteryResult,
   type DiagnosticSession, type MasterySession, type Role, type RoleChapterMapping,
   type AscPretestResult, type AscPosttestResult, type FlashcardReview, type AuditLog, type RiskAssessment, type Feedback,
   type ComplianceItem, type ComplianceLog, type ComplianceDocument, type ComplianceTrainingModule,
   type ComplianceTask, type StaffTrainingAlert, type RegulatoryWatchFinding, type ExecutiveBrief,
+  type ContentChangelog, type InsertContentChangelog,
   type Team,
   type Level, type Question, type DeepDiveLevel, type HandbookChapter, type ModuleId,
 } from "@shared/schema";
@@ -79,6 +81,17 @@ export async function ensureTablesExist() {
       ALTER TABLE users ADD COLUMN IF NOT EXISTS mfa_secret TEXT;
       ALTER TABLE users ADD COLUMN IF NOT EXISTS mfa_enabled BOOLEAN NOT NULL DEFAULT false;
       ALTER TABLE facilities ADD COLUMN IF NOT EXISTS compliance_mode TEXT NOT NULL DEFAULT 'education_only';
+      CREATE TABLE IF NOT EXISTS content_changelog (
+        id SERIAL PRIMARY KEY,
+        content_type TEXT NOT NULL,
+        scope TEXT,
+        action TEXT NOT NULL,
+        item_count INTEGER,
+        version TEXT,
+        description TEXT,
+        changed_by TEXT NOT NULL DEFAULT 'system',
+        changed_at TIMESTAMP NOT NULL DEFAULT NOW()
+      );
       CREATE TABLE IF NOT EXISTS audit_logs (
         id SERIAL PRIMARY KEY,
         user_id INTEGER REFERENCES users(id),
@@ -624,6 +637,11 @@ async function seedComplianceItems(client: pg.PoolClient) {
         ["asc", "ASC", item.volume, item.standardCode, item.itemName, item.frequency, item.tier, item.category, item.surveyorPriority, true]
       );
     }
+    await client.query(
+      `INSERT INTO content_changelog (content_type, scope, action, item_count, version, description, changed_by)
+       VALUES ('compliance_items', 'ASC', 'initial_seed', $1, 'v44', 'Initial AAAHC v44 ASC compliance items seeded from wall chart', 'system')`,
+      [ASC_COMPLIANCE_ITEMS.length]
+    );
     console.log(`Seeded ${ASC_COMPLIANCE_ITEMS.length} ASC compliance items`);
   }
 
@@ -636,6 +654,11 @@ async function seedComplianceItems(client: pg.PoolClient) {
         ["hospital", "Hospital", item.volume, item.standardCode, item.itemName, item.frequency, item.tier, item.category, item.surveyorPriority, true]
       );
     }
+    await client.query(
+      `INSERT INTO content_changelog (content_type, scope, action, item_count, version, description, changed_by)
+       VALUES ('compliance_items', 'Hospital', 'initial_seed', $1, 'v1.0', 'Initial JCAHO Hospital compliance items seeded (EC, EM, HR, IC, LS, MM, NPSG, PI, RC, LD, MS)', 'system')`,
+      [HOSPITAL_COMPLIANCE_ITEMS.length]
+    );
     console.log(`Seeded ${HOSPITAL_COMPLIANCE_ITEMS.length} Hospital compliance items`);
   }
 }
@@ -725,6 +748,9 @@ export interface IStorage {
   getAllActivities(): Promise<DailyActivity[]>;
   getActivitiesForUsers(userIds: number[]): Promise<DailyActivity[]>;
   clearAllActivities(): Promise<void>;
+
+  addContentChangelog(entry: Omit<InsertContentChangelog, "id" | "changedAt">): Promise<ContentChangelog>;
+  getContentChangelog(limit?: number): Promise<ContentChangelog[]>;
 
   createFacility(data: InsertFacility): Promise<Facility>;
   updateFacility(id: number, data: { complianceMode?: string }): Promise<Facility>;
@@ -1455,6 +1481,17 @@ export class DatabaseStorage implements IStorage {
       lastName: userMap.get(r.userId)?.lastName ?? "",
       department: userMap.get(r.userId)?.department ?? null,
     }));
+  }
+
+  // ── Content Changelog ────────────────────────────────────────────────────────
+
+  async addContentChangelog(entry: Omit<InsertContentChangelog, "id" | "changedAt">): Promise<ContentChangelog> {
+    const [row] = await db.insert(contentChangelog).values(entry).returning();
+    return row;
+  }
+
+  async getContentChangelog(limit = 100): Promise<ContentChangelog[]> {
+    return db.select().from(contentChangelog).orderBy(desc(contentChangelog.changedAt)).limit(limit);
   }
 
   // ── Compliance ───────────────────────────────────────────────────────────────

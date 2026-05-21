@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
-import { ArrowLeft, Users, TrendingUp, Target, BarChart3, Calendar, UserPlus, Shield, ScrollText, FlaskConical, Database, Building2, BookOpen, ShieldCheck, PowerOff } from "lucide-react";
+import { ArrowLeft, Users, TrendingUp, Target, BarChart3, Calendar, UserPlus, Shield, ScrollText, FlaskConical, Database, Building2, BookOpen, ShieldCheck, PowerOff, GitCommit } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useAuth } from "@/lib/auth";
@@ -88,6 +88,15 @@ export default function AdminPage() {
   const { data: facilitySettings } = useQuery<{ complianceMode: string }>({
     queryKey: ["/api/facility/settings"],
     enabled: callerRank >= LEADERSHIP_RANK["director"],
+  });
+
+  const { data: contentChangelogEntries } = useQuery<Array<{
+    id: number; contentType: string; scope: string | null; action: string;
+    itemCount: number | null; version: string | null; description: string | null;
+    changedBy: string; changedAt: string;
+  }>>({
+    queryKey: ["/api/admin/content-changelog"],
+    enabled: callerRank >= LEADERSHIP_RANK["director"] && dataMode === "live",
   });
 
   const complianceModeMutation = useMutation({
@@ -389,6 +398,60 @@ export default function AdminPage() {
                   })}
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {callerRank >= LEADERSHIP_RANK["director"] && dataMode === "live" && (
+        <div className="max-w-4xl mx-auto px-4 mt-6">
+          <div className="rounded-2xl bg-card border border-card-border overflow-hidden" data-testid="container-content-changelog">
+            <div className="p-5 border-b border-card-border flex items-center gap-2">
+              <GitCommit size={18} className="text-primary" />
+              <h3 className="font-bold text-base">Content Version History</h3>
+              <span className="ml-auto text-sm text-foreground/60 font-medium">{contentChangelogEntries?.length ?? 0} entries</span>
+            </div>
+            <div className="overflow-x-auto max-h-64 overflow-y-auto">
+              {!contentChangelogEntries || contentChangelogEntries.length === 0 ? (
+                <div className="p-8 text-center text-muted-foreground text-sm">No content changes recorded yet.</div>
+              ) : (
+                <table className="w-full text-xs">
+                  <thead className="sticky top-0 bg-muted/60 backdrop-blur">
+                    <tr className="border-b border-card-border">
+                      <th className="text-left p-2 font-bold text-muted-foreground">Date</th>
+                      <th className="text-left p-2 font-bold text-muted-foreground">Type</th>
+                      <th className="text-left p-2 font-bold text-muted-foreground">Scope</th>
+                      <th className="text-left p-2 font-bold text-muted-foreground">Version</th>
+                      <th className="text-left p-2 font-bold text-muted-foreground">Action</th>
+                      <th className="text-right p-2 font-bold text-muted-foreground">Items</th>
+                      <th className="text-left p-2 font-bold text-muted-foreground hidden md:table-cell">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {contentChangelogEntries.map((entry) => (
+                      <tr key={entry.id} className="border-b border-card-border/40 last:border-0 hover:bg-muted/20" data-testid={`row-changelog-${entry.id}`}>
+                        <td className="p-2 text-muted-foreground whitespace-nowrap">
+                          {new Date(entry.changedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+                        </td>
+                        <td className="p-2 font-mono font-bold text-chart-4">{entry.contentType}</td>
+                        <td className="p-2">
+                          {entry.scope && (
+                            <span className={`px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
+                              entry.scope === "ASC" ? "bg-violet-500/10 text-violet-600" :
+                              entry.scope === "Hospital" ? "bg-blue-500/10 text-blue-600" :
+                              "bg-muted text-muted-foreground"
+                            }`}>{entry.scope}</span>
+                          )}
+                        </td>
+                        <td className="p-2 font-semibold text-foreground">{entry.version ?? "—"}</td>
+                        <td className="p-2 font-mono text-emerald-600">{entry.action}</td>
+                        <td className="p-2 text-right font-bold">{entry.itemCount ?? "—"}</td>
+                        <td className="p-2 text-muted-foreground hidden md:table-cell max-w-xs truncate">{entry.description ?? "—"}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
             </div>
           </div>
         </div>

@@ -3,6 +3,21 @@ import { pgTable, text, varchar, integer, boolean, timestamp, date, serial, json
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
+export const contentChangelog = pgTable("content_changelog", {
+  id: serial("id").primaryKey(),
+  contentType: text("content_type").notNull(),
+  scope: text("scope"),
+  action: text("action").notNull(),
+  itemCount: integer("item_count"),
+  version: text("version"),
+  description: text("description"),
+  changedBy: text("changed_by").notNull().default("system"),
+  changedAt: timestamp("changed_at").notNull().defaultNow(),
+});
+
+export type ContentChangelog = typeof contentChangelog.$inferSelect;
+export type InsertContentChangelog = typeof contentChangelog.$inferInsert;
+
 export const COMPLIANCE_MODES = ["off", "education_only", "full_platform"] as const;
 export type ComplianceMode = (typeof COMPLIANCE_MODES)[number];
 
