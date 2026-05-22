@@ -3,7 +3,7 @@ import { useRoute, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowLeft, BookOpen, ChevronDown, ChevronRight, Search,
-  AlertTriangle, Play, List, Brain
+  AlertTriangle, Play, List, Brain, ClipboardList, X, ZoomIn
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,6 +14,30 @@ import { dnvHandbook } from "@shared/dnv-niaho-handbook";
 import { findLevelById } from "@shared/all-levels";
 import { useAuth } from "@/lib/auth";
 import type { HandbookChapter, HandbookSection } from "@shared/schema";
+import wallchart1 from "@assets/IMG_5138_1778809817331.jpeg";
+import wallchart2 from "@assets/IMG_5139_1778809821358.jpeg";
+import wallchart3 from "@assets/IMG_5140_1778809824135.jpeg";
+
+const WALLCHARTS = [
+  {
+    id: "eoc-utilities",
+    label: "Environment of Care & Utilities",
+    subtitle: "Vols. 1–3 · Building, Emergency Preparedness, Utility Systems",
+    src: wallchart1,
+  },
+  {
+    id: "fire-safety",
+    label: "Fire Safety",
+    subtitle: "Vols. 4–5 · Fire Risks, Drills, Fire Alarm & Suppression",
+    src: wallchart2,
+  },
+  {
+    id: "medical-infection",
+    label: "Medical Equipment & Infection Control",
+    subtitle: "Vol. 6 · Equipment Testing, Sterilization, IPC Program",
+    src: wallchart3,
+  },
+];
 
 function SectionCard({ section, levelColor, index }: { section: HandbookSection; levelColor: string; index: number }) {
   const [expanded, setExpanded] = useState(false);
@@ -211,6 +235,8 @@ export default function HandbookPage() {
   const [, params] = useRoute("/handbook/:levelId");
   const [, setLocation] = useLocation();
   const [searchQuery, setSearchQuery] = useState("");
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+  const [lightboxLabel, setLightboxLabel] = useState<string>("");
   const { user } = useAuth();
 
   const isAsc = user?.organizationType === "asc";
@@ -294,6 +320,40 @@ export default function HandbookPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      {/* Lightbox overlay */}
+      <AnimatePresence>
+        {lightboxSrc && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/90 flex flex-col"
+            onClick={() => setLightboxSrc(null)}
+          >
+            <div className="flex items-center justify-between px-4 py-3 flex-shrink-0" onClick={(e) => e.stopPropagation()}>
+              <span className="text-white font-bold text-sm">{lightboxLabel}</span>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-white hover:bg-white/20"
+                onClick={() => setLightboxSrc(null)}
+                data-testid="button-close-lightbox"
+              >
+                <X size={22} />
+              </Button>
+            </div>
+            <div className="flex-1 overflow-auto p-2 flex items-start justify-center" onClick={(e) => e.stopPropagation()}>
+              <img
+                src={lightboxSrc}
+                alt={lightboxLabel}
+                className="max-w-full rounded-lg shadow-2xl"
+                data-testid="img-wallchart-lightbox"
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <div className="sticky top-[58px] z-40 border-b border-border bg-background/95 backdrop-blur-md">
         <div className="max-w-2xl mx-auto px-4 py-3 flex items-center gap-3">
           <Button variant="ghost" size="icon" onClick={() => setLocation("/")} data-testid="button-back-home">
@@ -330,6 +390,38 @@ export default function HandbookPage() {
             data-testid="input-handbook-search"
           />
         </div>
+
+        {isAsc && (
+          <div className="flex flex-col gap-3" data-testid="section-wallcharts">
+            <div className="flex items-center gap-2 px-1">
+              <ClipboardList size={16} className="text-primary" />
+              <h3 className="font-black text-sm uppercase tracking-wide text-primary">
+                2026 Compliance Checklists
+              </h3>
+            </div>
+            <div className="flex flex-col gap-2">
+              {WALLCHARTS.map((wc) => (
+                <motion.button
+                  key={wc.id}
+                  className="w-full text-left rounded-xl border-2 border-card-border bg-card p-4 flex items-center gap-4 hover:bg-accent/30 transition-all shadow-sm hover:shadow-md"
+                  onClick={() => { setLightboxSrc(wc.src); setLightboxLabel(wc.label); }}
+                  whileHover={{ y: -1 }}
+                  whileTap={{ scale: 0.98 }}
+                  data-testid={`button-wallchart-${wc.id}`}
+                >
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <ClipboardList size={22} className="text-primary" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-bold text-sm text-foreground">{wc.label}</p>
+                    <p className="text-xs text-muted-foreground mt-0.5 leading-snug">{wc.subtitle}</p>
+                  </div>
+                  <ZoomIn size={18} className="text-muted-foreground flex-shrink-0" />
+                </motion.button>
+              ))}
+            </div>
+          </div>
+        )}
 
         {isAsc && ascGroups ? (
           <div className="flex flex-col gap-6">
