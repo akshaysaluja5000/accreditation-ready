@@ -1,34 +1,85 @@
-# Hospital Standards Challenge: Joint Commission Standards Training
-**Live Game:** [https://hospitalstandardschallenge.com](https://hospitalstandardschallenge.com)
-**Hospital Standards Challenge** is a professional, gamified training platform designed to help healthcare staff master complex Joint Commission standards and clinical regulations. 
+# AccreditationReady
 
-## 🚀 The Mission
-Traditional compliance training can be dense and difficult to retain. This app transforms 220+ critical safety standards into high-stakes, scenario-based challenges. By gamifying the learning process, we ensure staff are not just "compliant" on paper, but ready for real-world clinical excellence.
+**Live Platform:** [https://accreditationready.ai](https://accreditationready.ai)
 
-## 🏥 Clinical Coverage (11 Levels)
-The platform features 20 scenario-based questions for each of the following critical areas:
-* **Transport of Instruments:** Handling surgical tools from OR to SPD.
-* **Environment & Surfaces:** Infection prevention for clinical surfaces.
-* **Clean vs. Dirty:** Segregation principles in high-risk zones.
-* **Sterile Storage:** Event-related sterility and supply standards.
-* **Instrument Integrity:** Identifying damage, rust, and packaging issues.
-* **Facilities & Equipment:** Warmers, oxygen, and electrical safety.
-* **SPD & Decontamination:** Specialized sterilization procedures.
-* **OR & Sterile Technique:** Surgical attire and sterile field integrity.
-* **Surgical Safety & Consent:** Universal Protocol and the Time-Out procedure.
-* **Patient Care & Documentation:** Clinical record-keeping and post-op care.
-* **EOC & Safety:** Environment of Care, sharps, and emergency equipment.
+AccreditationReady is a gamified compliance training platform for hospital and ambulatory surgery center staff. It turns dense accreditation standards into scenario-based challenges, spaced-repetition flashcards, and AI-assisted debriefs — so staff are genuinely prepared for survey, not just checkbox-compliant.
 
-## 🛠 Technical Stack
-* **Frontend:** React with TypeScript and Tailwind CSS for a responsive UI.
-* **Backend:** Python / Flask with Gunicorn for production-grade serving.
-* **State Management:** Shared schemas for data integrity across the stack.
-* **Deployment:** Managed via Cloudflare.
+---
 
-## 🌐 Infrastructure
-* **Hosting:** [Render Web Service](https://dashboard.render.com/web/srv-d6os5dv5gffc73dp5nsg)
-* **Database:** [PostgreSQL on Render](https://dashboard.render.com/web/srv-d6os5dv5gffc73dp5nsg)
-* **DNS/Domain:** [Cloudflare DNS](https://dash.cloudflare.com/0ae7848671520a27955c0c667f3f7929/hospitalstandardschallenge.com/dns/records)
+## Accreditation Modules
 
-## 🔒 Privacy & Compliance
-This repository is **Private** to protect proprietary training data and internal clinical scenarios.
+### Hospital — Joint Commission
+Standards-based training across 11+ clinical chapters including sterile technique, medication management, infection control, emergency management, patient rights, life safety, and the NPSG.
+
+### Ambulatory Surgery Center — AAAHC
+17-chapter coverage mapped to the AAAHC Accreditation Handbook for Medicare Deemed Status: administration, anesthesia and surgical services, behavioral health, care management, clinical privileges, credentialing, emergency management, facilities, governance, infection prevention, laboratory and radiology, medication management, patient rights, quality assessment, and more.
+
+### Hospital — DNV NIAHO
+Training aligned to DNV GL's NIAHO hospital accreditation standards across quality management, governance, medical staff, nursing services, medication management, surgical services, patient care, environment of care, patient rights, infection control, and physical environment.
+
+---
+
+## Learning Pathways
+
+- **Quiz Levels** — Scenario-based multiple-choice questions with XP rewards and streak tracking
+- **Deep Dive** — Two-stage questions (base + expert follow-up) for high-acuity topics
+- **Diagnostic Assessment** — Pre-training gap analysis across all chapters
+- **Mastery Test** — Post-training comprehensive assessment
+- **ASC Pre/Post-test** — Module-specific baseline and outcome measurement
+- **Flashcard Review** — Spaced-repetition study cards with SM-2 scheduling
+- **AI Tutor** — Three-depth explanation engine for wrong answers (powered by Claude)
+- **AI Handbook Search** — Natural language search across the full accreditation handbook
+- **Leaderboard** — Facility-scoped rankings by levels completed, questions answered, and accuracy
+
+---
+
+## Role-Based Learning
+
+Staff are assigned a job role (OR Nurse, Scrub Tech, PACU Nurse, Compliance Officer, and 30+ others) that scopes their chapter curriculum. Leadership roles (Educator, Director, CEO, Admin, Super Admin) unlock facility-wide analytics, team management, and compliance dashboards. MFA is enforced for CEO-level access and above.
+
+---
+
+## Compliance Tracking (Survey Readiness)
+
+A structured compliance layer allows facility administrators to:
+
+- Log completion of recurring standards items (daily, weekly, monthly, quarterly, annually)
+- Upload and tag policy documents against specific standards codes
+- Generate AI-assisted training modules from uploaded documents
+- Track open tasks, expiring documents, and overdue items
+- Monitor staff training alerts by role and department
+- Receive regulatory watch summaries for new CMS, Joint Commission, and AAAHC findings
+- Generate weekly executive briefs with readiness scores and trend direction
+
+---
+
+## Technical Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | React 18, TypeScript, Tailwind CSS, shadcn/ui |
+| Backend | Node.js, Express, TypeScript |
+| Database | PostgreSQL (Render managed) |
+| ORM | Drizzle ORM |
+| Auth | Passport.js (local strategy), express-session, TOTP/MFA |
+| AI | Anthropic Claude (claude-haiku-4-5 for tutoring, claude-sonnet for compliance analysis) |
+| File parsing | pdf-parse, mammoth (Word docs) |
+| Build | Vite (client), esbuild (server) |
+| Session store | connect-pg-simple (PostgreSQL-backed) |
+
+---
+
+## Infrastructure
+
+| Component | Service |
+|---|---|
+| Hosting | [Render Web Service](https://render.com) |
+| Database | Render PostgreSQL |
+| DNS | Cloudflare (accreditationready.ai) |
+| Media | Render persistent disk |
+
+---
+
+## Privacy & Compliance
+
+This repository is **private**. It contains proprietary training content mapped to Joint Commission, AAAHC, and DNV NIAHO accreditation standards. Content is not to be reproduced or distributed outside of licensed facility agreements.
