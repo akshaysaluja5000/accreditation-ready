@@ -2,7 +2,7 @@ import { useState, useMemo, useRef, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocation, Link } from "wouter";
-import { Flame, Zap, Target, TrendingUp, ChevronRight, ChevronDown, ChevronUp, LogOut, BarChart3, Calendar as CalendarIcon, Settings, BookOpen, Trophy, Shuffle, Microscope, BrainCircuit, Stethoscope, Crown, Briefcase, Play, FileText, ClipboardCheck, ShieldAlert, Brain, Layers, GraduationCap, Search, X as XIcon, HelpCircle, MessageSquare, MoreHorizontal, Moon, Sun, AlertCircle } from "lucide-react"; // eslint-disable-line @typescript-eslint/no-unused-vars
+import { Flame, Zap, Target, TrendingUp, ChevronRight, ChevronDown, ChevronUp, LogOut, BarChart3, Calendar as CalendarIcon, Settings, BookOpen, Trophy, Shuffle, Microscope, BrainCircuit, Stethoscope, Crown, Briefcase, Play, FileText, ClipboardCheck, ClipboardList, ShieldAlert, Brain, Layers, GraduationCap, Search, X as XIcon, ZoomIn, HelpCircle, MessageSquare, MoreHorizontal, Moon, Sun, AlertCircle } from "lucide-react"; // eslint-disable-line @typescript-eslint/no-unused-vars
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -21,6 +21,15 @@ import { ascHandbook, ASC_HANDBOOK_CATEGORY_ORDER, type AscHandbookChapter } fro
 import { MODULE_LABELS, type ModuleId } from "@shared/schema";
 import { getRoleConfig } from "@shared/roles";
 import { TopicQuizModal, type SearchEntry } from "@/components/topic-quiz-modal";
+import wallchart1 from "@assets/IMG_5138_1778809817331.jpeg";
+import wallchart2 from "@assets/IMG_5139_1778809821358.jpeg";
+import wallchart3 from "@assets/IMG_5140_1778809824135.jpeg";
+
+const WALLCHARTS = [
+  { id: "eoc-utilities", label: "Environment of Care & Utilities", subtitle: "Vols. 1–3 · Building, Emergency Preparedness, Utility Systems", src: wallchart1 },
+  { id: "fire-safety", label: "Fire Safety", subtitle: "Vols. 4–5 · Fire Risks, Drills, Alarm & Suppression", src: wallchart2 },
+  { id: "medical-infection", label: "Medical Equipment & Infection Control", subtitle: "Vol. 6 · Equipment Testing, Sterilization, IPC Program", src: wallchart3 },
+];
 
 const PATHWAY_HEADERS: Record<ModuleId, string> = {
   hospital: "Hospital Standards",
@@ -420,6 +429,8 @@ export default function DashboardPage() {
   const [feedbackOpen, setFeedbackOpen] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState("");
   const [feedbackSent, setFeedbackSent] = useState(false);
+  const [wallchartSrc, setWallchartSrc] = useState<string | null>(null);
+  const [wallchartLabel, setWallchartLabel] = useState<string>("");
 
   function toggleDark() {
     const next = !isDark;
@@ -511,6 +522,32 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-screen pb-20">
+      {/* Wallchart lightbox */}
+      <AnimatePresence>
+        {wallchartSrc && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/90 flex flex-col"
+            onClick={() => setWallchartSrc(null)}
+          >
+            <div className="flex items-center justify-between px-4 py-3 flex-shrink-0" onClick={(e) => e.stopPropagation()}>
+              <span className="text-white font-bold text-sm">{wallchartLabel}</span>
+              <button
+                className="text-white hover:bg-white/20 rounded-lg p-2"
+                onClick={() => setWallchartSrc(null)}
+                data-testid="button-close-wallchart"
+              >
+                <XIcon size={22} />
+              </button>
+            </div>
+            <div className="flex-1 overflow-auto p-2 flex items-start justify-center" onClick={(e) => e.stopPropagation()}>
+              <img src={wallchartSrc} alt={wallchartLabel} className="max-w-full rounded-lg shadow-2xl" data-testid="img-wallchart-view" />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       {/* Sub-header */}
       <div className="sticky top-[58px] z-40 border-b border-border bg-background/95 backdrop-blur-md">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-2">
@@ -876,6 +913,41 @@ export default function DashboardPage() {
                   >
                     Start <ChevronRight size={15} />
                   </button>
+                </div>
+              </motion.div>
+            )}
+
+            {/* 2026 ASC Compliance Checklists */}
+            {userModule === "asc" && (
+              <motion.div
+                className="flex flex-col gap-3"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                data-testid="section-asc-wallcharts"
+              >
+                <div className="flex items-center gap-2 px-1">
+                  <ClipboardList size={16} className="text-primary" />
+                  <h3 className="font-black text-sm uppercase tracking-wide text-primary">2026 Compliance Checklists</h3>
+                </div>
+                <div className="flex flex-col gap-2">
+                  {WALLCHARTS.map((wc) => (
+                    <motion.button
+                      key={wc.id}
+                      className="w-full text-left rounded-2xl border-2 border-card-border bg-card p-4 flex items-center gap-4 hover:bg-accent/30 transition-all shadow-sm hover:shadow-md"
+                      onClick={() => { setWallchartSrc(wc.src); setWallchartLabel(wc.label); }}
+                      whileTap={{ scale: 0.98 }}
+                      data-testid={`button-wallchart-${wc.id}`}
+                    >
+                      <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <ClipboardList size={20} className="text-primary" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="font-bold text-sm text-foreground">{wc.label}</p>
+                        <p className="text-xs text-muted-foreground mt-0.5 leading-snug">{wc.subtitle}</p>
+                      </div>
+                      <ZoomIn size={16} className="text-muted-foreground flex-shrink-0" />
+                    </motion.button>
+                  ))}
                 </div>
               </motion.div>
             )}
