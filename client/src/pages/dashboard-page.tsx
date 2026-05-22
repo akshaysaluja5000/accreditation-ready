@@ -34,6 +34,7 @@ const WALLCHARTS = [
 const PATHWAY_HEADERS: Record<ModuleId, string> = {
   hospital: "Hospital Standards",
   asc: "ASC Domains",
+  dnv: "DNV NIAHO Standards",
 };
 
 const PATHWAY_DISCLAIMERS: Record<ModuleId, string> = {
