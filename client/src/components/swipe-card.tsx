@@ -10,7 +10,7 @@ interface SwipeCardProps {
   onAnswer: (selectedIndex: number) => void;
   disabled?: boolean;
   previousAnswer?: { selectedIndex: number; correct: boolean } | null;
-  module?: "hospital" | "asc";
+  module?: "hospital" | "asc" | "dnv";
 }
 
 export function SwipeCard({ question, onAnswer, disabled, previousAnswer, module }: SwipeCardProps) {

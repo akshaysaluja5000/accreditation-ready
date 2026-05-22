@@ -1612,7 +1612,7 @@ export async function registerRoutes(
       depth: z.number().int().min(1).max(3).default(1),
       previousExplanations: z.array(z.string().max(3000)).max(2).optional(),
       allOptions: z.array(z.string().max(1500)).max(6).optional(),
-      module: z.enum(["hospital", "asc"]).default("hospital"),
+      module: z.enum(["hospital", "asc", "dnv"]).default("hospital"),
     });
     const parsed = aiTutorSchema.safeParse(req.body);
     if (!parsed.success) {
@@ -3306,7 +3306,7 @@ Return ONLY valid JSON (no markdown, no explanation):
     const schema = z.object({
       topic: z.string().min(1).max(200),
       context: z.string().max(4000).optional(),
-      module: z.enum(["hospital", "asc"]).default("hospital"),
+      module: z.enum(["hospital", "asc", "dnv"]).default("hospital"),
     });
     const parsed = schema.safeParse(req.body);
     if (!parsed.success) return res.status(400).json({ error: "Invalid request." });

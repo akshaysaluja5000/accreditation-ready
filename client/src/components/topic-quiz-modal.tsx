@@ -12,7 +12,7 @@ export type SearchEntry = {
   id: string;
   title: string;
   subtitle: string;
-  module: "hospital" | "asc";
+  module: "hospital" | "asc" | "dnv";
   levelId: string;
   aiContext: string;
 };

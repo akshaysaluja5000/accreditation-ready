@@ -10,7 +10,7 @@ interface AiTutorBoxProps {
   correctAnswer: string;
   explanation: string;
   allOptions?: string[];
-  module?: "hospital" | "asc";
+  module?: "hospital" | "asc" | "dnv";
 }
 
 export function AiTutorBox({ questionText, userAnswer, correctAnswer, explanation, allOptions, module }: AiTutorBoxProps) {

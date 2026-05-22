@@ -10,7 +10,7 @@ interface QuizCardProps {
   onAnswer: (selectedIndex: number) => void;
   disabled?: boolean;
   previousAnswer?: { selectedIndex: number; correct: boolean } | null;
-  module?: "hospital" | "asc";
+  module?: "hospital" | "asc" | "dnv";
 }
 
 export function QuizCard({ question, onAnswer, disabled, previousAnswer, module }: QuizCardProps) {
