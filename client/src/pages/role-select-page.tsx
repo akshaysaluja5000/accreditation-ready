@@ -603,9 +603,26 @@ export default function RoleSelectPage() {
               </Button>
             )}
           </div>
-          <p className="text-xs text-muted-foreground text-center -mt-4 mb-6 max-w-xl mx-auto">
-            Want to see every module? Pick "Select all roles" to unlock training across every department.
+          <p className="text-xs text-muted-foreground text-center -mt-4 mb-4 max-w-xl mx-auto">
+            "Select all roles" is intended for educators and managers who need visibility across departments.
           </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-6 text-xs text-muted-foreground" data-testid="scope-legend">
+            <span className="flex items-center gap-1.5">
+              <span className="inline-block px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-orange-500/10 text-orange-700 dark:text-orange-400 border border-orange-500/20">DEPT. ACCESS</span>
+              Training for your department only
+            </span>
+            <span className="text-border">·</span>
+            <span className="flex items-center gap-1.5">
+              <span className="inline-block px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-blue-500/10 text-blue-700 dark:text-blue-400 border border-blue-500/20">DEPT + ALL</span>
+              Your dept plus org-wide view
+            </span>
+            <span className="text-border">·</span>
+            <span className="flex items-center gap-1.5">
+              <span className="inline-block px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-primary/10 text-primary border border-primary/20">FULL ACCESS</span>
+              Full org training and reporting
+            </span>
+          </div>
 
           {visibleRoles.length === 0 && (
             <div
@@ -712,8 +729,11 @@ export default function RoleSelectPage() {
                                     </div>
                                   </div>
                                 ) : isRestricted ? (
-                                  <div className="shrink-0 rounded-full bg-amber-100 dark:bg-amber-900/40 p-1" data-testid={`lock-${role.id}`}>
-                                    <Lock size={12} className="text-amber-600 dark:text-amber-400" />
+                                  <div className="shrink-0 flex items-center gap-1" data-testid={`lock-${role.id}`}>
+                                    <span className="text-[10px] font-semibold text-amber-600 dark:text-amber-400">Leadership role</span>
+                                    <div className="rounded-full bg-amber-100 dark:bg-amber-900/40 p-1">
+                                      <Lock size={12} className="text-amber-600 dark:text-amber-400" />
+                                    </div>
                                   </div>
                                 ) : null}
                               </div>
@@ -763,12 +783,13 @@ export default function RoleSelectPage() {
               type="button"
               onClick={() => setShowMultiRoleModal(true)}
               data-testid="button-multi-role"
-              className="text-sm text-primary hover:underline font-medium"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-primary/30 bg-primary/5 text-sm font-semibold text-primary hover:bg-primary/10 hover:border-primary/50 transition-colors"
             >
+              <Users size={15} />
               I work in more than one role
             </button>
             <p className="text-xs text-muted-foreground mt-2">
-              Tap as many roles as you fill. Your first pick is your primary role.
+              SPD techs who also cover OR duties, or staff who float across departments, should use this.
             </p>
           </div>
           </>
