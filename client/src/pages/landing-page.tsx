@@ -147,7 +147,7 @@ export default function LandingPage() {
               </Button>
             </div>
             <p className="text-sm text-muted-foreground mt-1" data-testid="text-hero-supporting">
-              Built on real JC, AAAHC, and CMS standards · No in-service time required
+              Built on real JC, DNV, AAAHC, and CMS standards · No in-service time required
             </p>
           </motion.div>
         </section>
