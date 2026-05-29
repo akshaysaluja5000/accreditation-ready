@@ -500,6 +500,39 @@ export default function DashboardPage() {
   const todayQuestions = todayActivity?.questionsAnswered || 0;
   const goalProgress = Math.min((todayQuestions / dailyGoal) * 100, 100);
 
+  const [showAllModules, setShowAllModules] = useState(false);
+
+  const priorityLevelId = useMemo(() => {
+    if (!diagnosticResults || diagnosticResults.length === 0) return null;
+    if (isAsc || isDnv) return null;
+    const ss = (diagnosticResults[0] as any).sectionScores as Record<string, { correct: number; total: number }> | undefined;
+    if (!ss) return null;
+    const levelIds = new Set(assignedFilteredLevels.map(l => l.id));
+    let worstId: string | null = null;
+    let worstRatio = Infinity;
+    for (const [id, stats] of Object.entries(ss)) {
+      if (!stats || stats.total === 0) continue;
+      if (!levelIds.has(id)) continue;
+      const ratio = stats.correct / stats.total;
+      if (ratio < worstRatio) { worstRatio = ratio; worstId = id; }
+    }
+    return worstId;
+  }, [diagnosticResults, assignedFilteredLevels, isAsc, isDnv]);
+
+  const priorityLevel = priorityLevelId
+    ? (assignedFilteredLevels.find(l => l.id === priorityLevelId) ?? null)
+    : null;
+
+  const prioritySectionScore = useMemo(() => {
+    if (!priorityLevelId || !diagnosticResults || diagnosticResults.length === 0) return null;
+    const ss = (diagnosticResults[0] as any).sectionScores as Record<string, { correct: number; total: number }> | undefined;
+    return ss?.[priorityLevelId] ?? null;
+  }, [priorityLevelId, diagnosticResults]);
+
+  const visibleLevels = showAllModules
+    ? assignedFilteredLevels
+    : assignedFilteredLevels.slice(0, 4);
+
   if (isLoading) {
     return (
       <div className="min-h-screen p-6 max-w-6xl mx-auto">
@@ -522,7 +555,7 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen pb-20">
+    <div className="min-h-screen pb-28">
       {/* Wallchart lightbox */}
       <AnimatePresence>
         {wallchartSrc && (
@@ -828,33 +861,64 @@ export default function DashboardPage() {
               );
             })()}
 
-            {/* Hospital Diagnostic - first-timers: show in left column at top */}
+            {/* Daily goal strip — hospital only, compact row below role card */}
+            {!isAsc && !isDnv && (
+              <motion.div
+                className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-muted/50 border border-border"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                data-testid="strip-daily-goal"
+              >
+                <Flame size={15} className={`flex-shrink-0 ${todayQuestions > 0 ? "text-orange-500" : "text-muted-foreground"}`} />
+                <span className="text-xs font-bold text-muted-foreground flex-shrink-0">Today</span>
+                <div className="flex-1 h-2 rounded-full bg-muted overflow-hidden">
+                  <motion.div
+                    className="h-full rounded-full bg-gradient-to-r from-orange-400 to-primary"
+                    initial={{ width: 0 }}
+                    animate={{ width: `${goalProgress}%` }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                  />
+                </div>
+                <span className="text-xs font-bold text-foreground tabular-nums flex-shrink-0" data-testid="text-goal-strip-progress">
+                  {todayQuestions}/{dailyGoal}
+                </span>
+                {goalProgress >= 100 && (
+                  <span className="text-xs font-bold text-emerald-600 flex-shrink-0">Done!</span>
+                )}
+              </motion.div>
+            )}
+
+            {/* Hospital Up Next hero — pre-diagnostic state */}
             {userModule !== "asc" && !isDnv && !(diagnosticResults && diagnosticResults.length > 0) && (
               <motion.div
-                className="w-full rounded-2xl border-2 p-5 text-left bg-teal-500/5 border-teal-500/20"
+                className="w-full rounded-2xl border-2 p-5 bg-gradient-to-br from-teal-500/10 to-cyan-500/5 border-teal-500/30"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                data-testid="card-diagnostic-cta-main"
+                data-testid="card-up-next-hero"
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-teal-500 to-cyan-600 shadow-md">
-                    <Stethoscope size={22} className="text-white" />
+                <p className="text-[10px] font-black uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-3" data-testid="label-up-next">Up Next for You</p>
+                <div className="flex items-start gap-4">
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-teal-500 to-cyan-600 shadow-lg">
+                    <Stethoscope size={24} className="text-white" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <h3 className="font-bold text-base leading-tight">Diagnostic Quiz</h3>
-                      <span className="px-1.5 py-0.5 rounded text-[10px] font-black bg-teal-500/15 text-teal-500 uppercase tracking-wider">Start here</span>
+                      <h3 className="font-black text-lg leading-tight">Diagnostic Quiz</h3>
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-black bg-teal-500/20 text-teal-700 dark:text-teal-300 uppercase tracking-wider border border-teal-500/30">Benchmark</span>
                     </div>
-                    <p className="text-sm text-muted-foreground mt-0.5">25 questions · ~10 min - find your knowledge gaps before you start training</p>
+                    <p className="text-sm text-muted-foreground mt-1">25 questions · about 10 minutes · identifies your knowledge gaps before training begins</p>
+                    <p className="text-xs font-semibold text-emerald-700 dark:text-emerald-400 mt-1.5" data-testid="text-diagnostic-explainer">
+                      After you finish, we will show you which chapters to focus on first.
+                    </p>
                   </div>
-                  <button
-                    onClick={() => setLocation("/diagnostic")}
-                    data-testid="button-diagnostic-cta-main"
-                    className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-xl font-bold text-sm bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white shadow-md transition-all active:scale-95"
-                  >
-                    Begin <ChevronRight size={15} />
-                  </button>
                 </div>
+                <button
+                  onClick={() => setLocation("/diagnostic")}
+                  data-testid="button-up-next-hero-cta"
+                  className="mt-4 w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white shadow-md transition-all active:scale-95"
+                >
+                  Begin Diagnostic Quiz <ChevronRight size={16} />
+                </button>
               </motion.div>
             )}
 
@@ -918,37 +982,74 @@ export default function DashboardPage() {
               </motion.div>
             )}
 
-            {/* Retake Diagnostic - shown near top once the user has a score */}
+            {/* Hospital Up Next hero — post-diagnostic state */}
             {userModule !== "asc" && !isDnv && diagnosticResults && diagnosticResults.length > 0 && (
               <motion.div
-                className="w-full rounded-2xl border-2 p-5 text-left bg-teal-500/5 border-teal-500/20"
+                className={`w-full rounded-2xl border-2 p-5 ${priorityLevel ? "bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border-emerald-500/30" : "bg-teal-500/5 border-teal-500/20"}`}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                data-testid="card-diagnostic-retake"
+                data-testid="card-up-next-hero-post-diag"
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-teal-500 to-cyan-600 shadow-md">
-                    <Stethoscope size={22} className="text-white" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <h3 className="font-bold text-base leading-tight">Diagnostic Quiz</h3>
-                      <span className="px-1.5 py-0.5 rounded text-[10px] font-black bg-teal-500/15 text-teal-500 uppercase tracking-wider">
-                        Last score: {diagnosticResults[0].score}/{diagnosticResults[0].totalQuestions}
-                      </span>
+                <p className="text-[10px] font-black uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-3" data-testid="label-up-next-post">Up Next for You</p>
+
+                {priorityLevel ? (
+                  <>
+                    <div className="flex items-start gap-4">
+                      <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-emerald-500 to-teal-600 shadow-lg">
+                        <BookOpen size={22} className="text-white" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-black text-lg leading-tight" data-testid="text-priority-level-title">{priorityLevel.name}</h3>
+                        {prioritySectionScore && (
+                          <p className="text-sm text-muted-foreground mt-0.5">
+                            Diagnostic score: {prioritySectionScore.correct}/{prioritySectionScore.total} · lowest of your assigned chapters
+                          </p>
+                        )}
+                        {(priorityLevel.chapterSummary?.commonRiskPoints?.length ?? 0) > 0 && (
+                          <span className="inline-flex items-center gap-1 mt-1.5 px-2 py-0.5 rounded-full bg-red-500/10 text-red-600 dark:text-red-400 text-[11px] font-bold border border-red-500/20">
+                            <ShieldAlert size={11} />
+                            {priorityLevel.chapterSummary!.commonRiskPoints!.length} survey risk points
+                          </span>
+                        )}
+                      </div>
                     </div>
-                    <p className="text-sm text-muted-foreground mt-0.5">
-                      Retake anytime to track how your knowledge has improved
-                    </p>
+                    <div className="mt-4 flex items-center justify-between gap-3">
+                      <button
+                        onClick={() => setLocation(`/play/${priorityLevel.id}`)}
+                        data-testid="button-up-next-hero-play"
+                        className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white shadow-md transition-all active:scale-95"
+                      >
+                        Start Practice Quiz <ChevronRight size={16} />
+                      </button>
+                      <button
+                        onClick={() => setLocation("/diagnostic")}
+                        data-testid="button-retake-diagnostic-small"
+                        className="text-xs font-semibold text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2 flex-shrink-0"
+                      >
+                        Retake diagnostic
+                      </button>
+                    </div>
+                  </>
+                ) : (
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-teal-500 to-cyan-600 shadow-md">
+                      <Stethoscope size={20} className="text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-bold text-base leading-tight">Looking strong across all chapters</h3>
+                      <p className="text-sm text-muted-foreground mt-0.5">
+                        Last score: {diagnosticResults[0].score}/{diagnosticResults[0].totalQuestions} · keep building on your strengths. Choose any chapter below.
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => setLocation("/diagnostic")}
+                      data-testid="button-diagnostic-retake"
+                      className="flex-shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold text-xs bg-teal-500/15 text-teal-700 dark:text-teal-300 hover:bg-teal-500/25 transition-all"
+                    >
+                      Retake
+                    </button>
                   </div>
-                  <button
-                    onClick={() => setLocation("/diagnostic")}
-                    data-testid="button-diagnostic-retake"
-                    className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-xl font-bold text-sm bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white shadow-md transition-all active:scale-95"
-                  >
-                    Retake <ChevronRight size={15} />
-                  </button>
-                </div>
+                )}
               </motion.div>
             )}
 
@@ -1057,18 +1158,55 @@ export default function DashboardPage() {
                       </p>
                     </div>
                   ) : (
-                    assignedFilteredLevels.map((level, index) => (
-                      <LevelCard
-                        key={level.id}
-                        level={level}
-                        progress={progressMap.get(level.id)}
-                        savedSession={sessionsMap.get(level.id)}
-                        isUnlocked={isLevelUnlocked(index)}
-                        index={index}
-                        onPlay={() => setLocation(`/play/${level.id}`)}
-                        onStudy={() => setLocation(`/study/${level.id}`)}
-                      />
-                    ))
+                    <>
+                      {visibleLevels.map((level, index) => {
+                        const isPriority = level.id === priorityLevelId;
+                        const hasProgress = (progressMap.get(level.id)?.totalQuestions ?? 0) > 0;
+                        const isDimmed = !!priorityLevelId && !isPriority && !hasProgress;
+                        return (
+                          <div
+                            key={level.id}
+                            className={`relative transition-opacity duration-200 ${isDimmed ? "opacity-60" : ""} ${isPriority ? "ring-2 ring-emerald-500/60 rounded-[18px]" : ""}`}
+                            data-testid={isPriority ? "card-priority-module" : undefined}
+                          >
+                            {isPriority && (
+                              <span className="absolute -top-2 left-3 z-10 px-2 py-0.5 rounded-full bg-emerald-500 text-white text-[10px] font-black uppercase tracking-wider shadow-sm">
+                                Priority
+                              </span>
+                            )}
+                            <LevelCard
+                              level={level}
+                              progress={progressMap.get(level.id)}
+                              savedSession={sessionsMap.get(level.id)}
+                              isUnlocked={isLevelUnlocked(index)}
+                              index={index}
+                              onPlay={() => setLocation(`/play/${level.id}`)}
+                              onStudy={() => setLocation(`/study/${level.id}`)}
+                            />
+                          </div>
+                        );
+                      })}
+                      {!showAllModules && assignedFilteredLevels.length > 4 && (
+                        <button
+                          onClick={() => setShowAllModules(true)}
+                          data-testid="button-show-more-modules"
+                          className="w-full py-3 rounded-2xl border-2 border-dashed border-border text-sm font-bold text-muted-foreground hover:border-primary/40 hover:text-primary transition-colors flex items-center justify-center gap-2"
+                        >
+                          <ChevronDown size={16} />
+                          Show {assignedFilteredLevels.length - 4} more module{assignedFilteredLevels.length - 4 === 1 ? "" : "s"}
+                        </button>
+                      )}
+                      {showAllModules && assignedFilteredLevels.length > 4 && (
+                        <button
+                          onClick={() => setShowAllModules(false)}
+                          data-testid="button-show-fewer-modules"
+                          className="w-full py-3 rounded-2xl border-2 border-dashed border-border text-sm font-bold text-muted-foreground hover:border-primary/40 hover:text-primary transition-colors flex items-center justify-center gap-2"
+                        >
+                          <ChevronUp size={16} />
+                          Show fewer modules
+                        </button>
+                      )}
+                    </>
                   )}
                 </div>
               )}
@@ -1170,21 +1308,24 @@ export default function DashboardPage() {
               </motion.div>
             )}
 
-            {/* Handbook */}
+            {/* Handbook — styled as a reference tool, not a training module */}
             <motion.button
-              className="rounded-2xl border-2 p-4 flex items-center gap-3 transition-colors text-left bg-primary/5 border-primary/20 hover:bg-primary/10"
+              className="rounded-2xl border-2 border-dashed p-4 flex items-center gap-3 transition-colors text-left bg-muted/30 border-border hover:bg-muted/50 hover:border-border/80"
               onClick={() => setLocation("/handbook")}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               whileTap={{ scale: 0.98 }}
               data-testid="button-handbook"
             >
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 bg-primary/10">
-                <BookOpen size={20} className="text-primary" />
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 bg-muted border border-border">
+                <BookOpen size={20} className="text-muted-foreground" />
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="font-bold text-sm">Compliance Handbook</h3>
-                <p className="text-sm text-muted-foreground mt-0.5">Complete reference guide for all standards</p>
+                <div className="flex items-center gap-2">
+                  <h3 className="font-bold text-sm">Compliance Handbook</h3>
+                  <span className="px-1.5 py-0.5 rounded text-[10px] font-black bg-muted border border-border text-muted-foreground uppercase tracking-wider">Reference</span>
+                </div>
+                <p className="text-xs text-muted-foreground mt-0.5">Complete standards reference · search any topic</p>
               </div>
               <ChevronRight size={16} className="text-muted-foreground flex-shrink-0" />
             </motion.button>
@@ -1346,7 +1487,7 @@ export default function DashboardPage() {
                       {weakest.map(({ level, pct }) => (
                         <div key={level.id} className="flex items-center gap-2" data-testid={`row-gap-${level.id}`}>
                           <div className="flex-1 min-w-0">
-                            <p className="text-xs font-semibold truncate">{level.title}</p>
+                            <p className="text-xs font-semibold truncate">{level.name}</p>
                             <div className="flex items-center gap-1.5 mt-0.5">
                               <div className="flex-1 h-1.5 rounded-full bg-muted overflow-hidden">
                                 <div
@@ -1418,7 +1559,7 @@ export default function DashboardPage() {
       <button
         onClick={() => { setFeedbackOpen(true); setFeedbackSent(false); setFeedbackMessage(""); }}
         data-testid="button-open-feedback"
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-2.5 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all text-sm font-bold"
+        className="fixed bottom-20 right-4 z-50 flex items-center gap-2 px-4 py-2.5 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all text-sm font-bold"
       >
         <MessageSquare size={16} />
         Feedback

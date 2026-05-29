@@ -134,6 +134,8 @@ export default function ProfilePage() {
   const totalAnswered = activities?.reduce((sum, a) => sum + a.questionsAnswered, 0) || 0;
   const accuracy = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
   const daysActive = activities?.filter((a) => a.questionsAnswered > 0).length || 0;
+  // Accuracy and question count cover training quizzes only.
+  // Diagnostic and Final Assessment results are tracked separately and do not affect these totals.
 
   return (
     <div className="min-h-screen pb-20">
@@ -331,25 +333,30 @@ export default function ProfilePage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
-          {[
-            { label: "Days Active", value: daysActive, icon: Target, color: "text-primary" },
-            { label: "Accuracy", value: `${accuracy}%`, icon: Trophy, color: "text-chart-4" },
-            { label: "Total Questions", value: totalAnswered, icon: Zap, color: "text-chart-2" },
-            { label: "Best Streak", value: streak?.longestStreak || 0, icon: Flame, color: "text-chart-3" },
-          ].map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              className="rounded-2xl bg-card border border-card-border p-4 flex flex-col items-center gap-2"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.15 }}
-            >
-              <stat.icon size={20} className={stat.color} />
-              <span className="text-xl font-black">{stat.value}</span>
-              <span className="text-xs text-muted-foreground font-medium">{stat.label}</span>
-            </motion.div>
-          ))}
+        <div className="flex flex-col gap-2">
+          <div className="grid grid-cols-2 gap-3">
+            {[
+              { label: "Days Active", value: daysActive, icon: Target, color: "text-primary" },
+              { label: "Accuracy", value: `${accuracy}%`, icon: Trophy, color: "text-chart-4" },
+              { label: "Total Questions", value: totalAnswered, icon: Zap, color: "text-chart-2" },
+              { label: "Best Streak", value: streak?.longestStreak || 0, icon: Flame, color: "text-chart-3" },
+            ].map((stat) => (
+              <motion.div
+                key={stat.label}
+                className="rounded-2xl bg-card border border-card-border p-4 flex flex-col items-center gap-2"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.15 }}
+              >
+                <stat.icon size={20} className={stat.color} />
+                <span className="text-xl font-black">{stat.value}</span>
+                <span className="text-xs text-muted-foreground font-medium">{stat.label}</span>
+              </motion.div>
+            ))}
+          </div>
+          <p className="text-[11px] text-muted-foreground px-1" data-testid="text-accuracy-note">
+            Accuracy and question count reflect training quizzes only. Diagnostic and Final Assessment scores are tracked separately.
+          </p>
         </div>
 
         <div className="rounded-2xl bg-card border border-card-border p-5">
