@@ -526,7 +526,7 @@ export default function LandingPage() {
               Build readiness that holds up on survey day.
             </h2>
             <p className="text-base text-muted-foreground max-w-lg" data-testid="text-final-cta-subhead">
-              Give your team a consistent, measurable way to stay accreditation-ready all year.
+              Your team stays ready. Your documentation proves it.
             </p>
             <div className="flex items-center gap-3 flex-wrap justify-center mt-2">
               <Button
