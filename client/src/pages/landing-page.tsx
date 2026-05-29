@@ -458,11 +458,11 @@ export default function LandingPage() {
                   <Target size={20} className="text-emerald-600" />
                 </div>
                 <h2 className="text-2xl md:text-3xl font-black tracking-tight text-foreground" data-testid="text-proof-heading">
-                  Stop guessing. Start measuring.
+                  Measure readiness before surveyors do.
                 </h2>
               </div>
               <p className="text-base text-muted-foreground leading-relaxed mb-6 max-w-3xl" data-testid="text-proof-body">
-                Before Accreditation <em>Ready</em>, most quality leaders go into survey week with instinct and hope. After:
+                With Accreditation <em>Ready</em>, quality leaders have documented evidence of preparation:
               </p>
               <ul className="space-y-3">
                 {proofPoints.map((point, i) => (
