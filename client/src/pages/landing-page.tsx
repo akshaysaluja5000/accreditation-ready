@@ -174,7 +174,7 @@ export default function LandingPage() {
                   <AlertTriangle size={20} className="text-red-500" />
                 </div>
                 <h2 className="text-2xl md:text-3xl font-black tracking-tight text-foreground" data-testid="text-problem-heading">
-                  Most teams aren't unprepared - they're undertrained.
+                  Most survey failures come down to undertrained staff.
                 </h2>
               </div>
               <p className="text-base text-muted-foreground leading-relaxed mb-6 max-w-3xl" data-testid="text-problem-body">
