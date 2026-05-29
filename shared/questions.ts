@@ -1544,7 +1544,7 @@ const hospitalLevelsRaw: Level[] = [
     },
     studyMaterial: [
       {
-        title: "What Should You Look For During Visual Instrument Inspection?",
+        title: "During visual instrument inspection, what findings require immediate removal from service?",
         content: "Every instrument must be visually inspected before use and at assembly. Look for: rust (orange or brown staining), corrosion, pitting, cracks, bent tips, dull cutting edges, and stiff joints. Lighted magnification must be available at assembly and inspection stations. Any defect = remove from service.",
         keyPoint: "Inspect every instrument. Lighted magnification required at assembly. Defect = out of service.",
         category: "rule",
