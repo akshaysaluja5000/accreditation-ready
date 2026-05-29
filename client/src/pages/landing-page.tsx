@@ -126,7 +126,7 @@ export default function LandingPage() {
               Know your gaps. Close them before the surveyor does.
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed font-normal" data-testid="text-hero-subtitle">
-              Accreditation <em>Ready</em> turns Joint Commission, DNV, AAAHC, and CMS standards into focused daily training - so your staff stays survey-ready all year.
+              Accreditation <em>Ready</em> turns Joint Commission, DNV, AAAHC, and CMS standards into focused daily training your staff can actually keep up with.
             </p>
             <div className="flex items-center gap-3 mt-2 flex-wrap justify-center">
               <Button
@@ -156,7 +156,7 @@ export default function LandingPage() {
         <section className="border-y border-border py-8 bg-muted/40">
           <div className="max-w-5xl mx-auto px-4 text-center">
             <p className="text-lg md:text-xl font-semibold text-foreground" data-testid="text-positioning-strip">
-              Accreditation readiness shouldn't live in a binder. Now it doesn't.
+              Accreditation readiness, built into your team's daily routine.
             </p>
           </div>
         </section>
