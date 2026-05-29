@@ -23,7 +23,7 @@ const AGENTS: Agent[] = [
     number: 1,
     title: "Survey Readiness Agent",
     description:
-      "Continuously monitors every standard across all facilities - which ones have evidence attached, which staff have not completed training, which policies are expiring. Surfaces a live readiness score that is always current. A score that never stops updating.",
+      "Tracks evidence attachment, staff training completion, and policy expiration across every standard at every facility. Maintains a live readiness score updated in real time.",
     replaces: "The manual binder audit facilities run in the weeks before a survey.",
     icon: Radar,
     iconBg: "bg-primary/10",
@@ -134,7 +134,7 @@ export default function ExecutiveComplianceConsolePage() {
           transition={{ duration: 0.2 }}
         >
           <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl" data-testid="text-console-intro">
-            Instead of staff completing forms and managers chasing compliance, the Executive Compliance Console deploys a network of specialized agents that run the platform continuously - monitoring, learning, reporting, and responding without requiring manual oversight at every step.
+            The Executive Compliance Console deploys a network of specialized agents that handle monitoring, learning, and reporting continuously. The platform runs without requiring manual oversight at every step.
           </p>
         </motion.div>
 

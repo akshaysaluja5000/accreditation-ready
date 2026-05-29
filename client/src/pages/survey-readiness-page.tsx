@@ -624,7 +624,7 @@ export default function SurveyReadinessPage() {
                 <div className="bg-card rounded-xl border p-12 flex flex-col items-center gap-3">
                   <CheckCircle2 className="w-10 h-10 text-emerald-500" />
                   <p className="text-sm font-medium text-muted-foreground">
-                    {statusFilter === "all" ? "All items are current - great work!" : "No items match this filter."}
+                    {statusFilter === "all" ? "All items are current. Great work!" : "No items match this filter."}
                   </p>
                 </div>
               ) : (

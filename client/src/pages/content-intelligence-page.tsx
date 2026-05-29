@@ -235,7 +235,7 @@ export default function ContentIntelligencePage() {
         </div>
 
         <p className="text-sm text-muted-foreground -mt-4">
-          Upload a policy or procedure document. The agent reads it, tags {activeStandardsBody} standards, generates quiz questions, and flags any conflicts - ready for one-click approval.
+          Upload a policy or procedure document. The agent reads it, tags relevant {activeStandardsBody} standards, generates quiz questions, and flags any conflicts. All output is ready for one-click approval.
         </p>
 
         {/* Upload card */}

@@ -238,10 +238,10 @@ export default function LandingPage() {
                 </p>
               </div>
               <h2 className="text-2xl md:text-3xl font-black tracking-tight text-foreground mb-3" data-testid="text-agent-heading">
-                What's different.
+                What is different.
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed max-w-2xl mb-10" data-testid="text-agent-subhead">
-                Instead of staff completing forms and managers chasing compliance, you deploy a network of specialized agents that run the platform continuously.
+                The platform runs a network of specialized agents that handle monitoring, learning, and reporting continuously.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {/* Survey Readiness Agent */}
@@ -262,7 +262,7 @@ export default function LandingPage() {
                       </div>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Continuously monitors every standard across all facilities - which ones have evidence attached, which staff have not completed training, which policies are expiring. Surfaces a live readiness score that is always current.
+                      Tracks evidence attachment, staff training completion, and policy expiration across every standard at every facility. Maintains a live readiness score updated in real time.
                     </p>
                     <div className="mt-auto pt-2 border-t border-border">
                       <p className="text-xs text-muted-foreground leading-relaxed">
@@ -294,7 +294,7 @@ export default function LandingPage() {
                     </p>
                     <div className="mt-auto pt-2 border-t border-border">
                       <p className="text-xs text-muted-foreground leading-relaxed">
-                        <span className="font-semibold text-foreground">Your clearest differentiator</span> - no other compliance platform does this automatically.
+                        <span className="font-semibold text-foreground">Your clearest differentiator.</span> The only compliance platform that does this automatically.
                       </p>
                     </div>
                   </div>
@@ -318,7 +318,7 @@ export default function LandingPage() {
                       </div>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Instead of static assigned modules, this agent tracks each staff member's diagnostic scores, completion gaps, and quiz performance - then dynamically re-routes their learning plan. It knows who is weakest on sterile field standards and pushes those questions. It sends escalating nudges without a manager having to chase anyone.
+                      This agent tracks each staff member's diagnostic scores, completion gaps, and quiz performance, then re-routes their learning plan accordingly. Automated nudges keep training on track without manager follow-up.
                     </p>
                     <div className="mt-auto pt-2 border-t border-border">
                       <p className="text-xs text-muted-foreground leading-relaxed">

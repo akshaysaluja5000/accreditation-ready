@@ -329,8 +329,8 @@ function generateNarrative(
 
   if (recentAssigned + recentCompleted > 0) {
     text += trendImproving
-      ? " Completion is outpacing new assignments over the past four weeks - learners are progressing."
-      : " New assignments are outpacing completions over the past four weeks - follow-up is recommended.";
+      ? " Completion is outpacing new assignments over the past four weeks. Learners are progressing."
+      : " New assignments are outpacing completions over the past four weeks. Follow-up is recommended.";
   }
 
   return text;

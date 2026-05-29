@@ -326,7 +326,7 @@ function PurposeBanner() {
     <div className="rounded-2xl border border-primary/25 bg-primary/6 px-5 py-4" data-testid="banner-purpose">
       <p className="text-sm leading-relaxed text-foreground/80">
         <span className="font-semibold text-foreground/95">Guided Education Plans</span> are assigned when a learner scores below the required passing threshold on the final test.
-        Each plan provides targeted review steps, reinforcement activities, and - where needed - a supervisor reassessment before the plan is marked complete.
+        Each plan provides targeted review steps and reinforcement activities. Plans below 50% also require a supervisor reassessment before being marked complete.
       </p>
     </div>
   );
@@ -1459,7 +1459,7 @@ export default function CorrectiveActionPage() {
           <div className="rounded-2xl border border-red-500/30 bg-red-500/8 px-5 py-3.5 flex items-center gap-3" data-testid="banner-overdue">
             <AlertTriangle size={18} className="text-red-400 flex-shrink-0" />
             <p className="text-base font-bold text-red-400">
-              {overdueCount} plan{overdueCount > 1 ? "s are" : " is"} overdue - learner follow-up required.
+              {overdueCount} plan{overdueCount > 1 ? "s" : ""} overdue. Learner follow-up required.
             </p>
           </div>
         )}

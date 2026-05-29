@@ -111,7 +111,7 @@ export function RemediationPlanBox({ levelId, percentage }: RemediationPlanBoxPr
                 <div className="flex gap-2 items-start rounded-xl border border-green-500/20 bg-green-500/5 p-3">
                   <CheckCircle2 size={13} className="text-green-400 flex-shrink-0 mt-0.5" />
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    Complete {stepCount === 1 ? "this step" : "these steps"}, then try the quiz again. There is no limit on retakes - each attempt uses a fresh set of questions.
+                    Complete {stepCount === 1 ? "this step" : "these steps"}, then try the quiz again. Retakes are unlimited. Each attempt uses a fresh set of questions.
                   </p>
                 </div>
               )}

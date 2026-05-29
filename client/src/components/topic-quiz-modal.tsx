@@ -287,8 +287,8 @@ export function TopicQuizModal({
                     {pct >= 80
                       ? "Strong grasp of this topic."
                       : pct >= 60
-                      ? "Good start - review the explanations to reinforce."
-                      : "Keep practicing - this is a high-risk area."}
+                      ? "Good start. Review the explanations to reinforce."
+                      : "Keep practicing. This is a high-risk area."}
                   </p>
                 </div>
 

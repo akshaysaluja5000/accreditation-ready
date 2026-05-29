@@ -950,9 +950,9 @@ export default function StudyPage() {
               <Card className="rounded-2xl border-2 p-5" style={{ borderColor: `${level.color}25` }}>
                 <p className="text-sm text-foreground/75 leading-relaxed text-center">
                   {ratingCounts.again + ratingCounts.hard === 0
-                    ? "Excellent session - every card rated Good. Ready to prove it on the quiz?"
+                    ? "Excellent session. Every card rated Good. Ready to prove it on the quiz?"
                     : ratingCounts.good === 0
-                    ? "Keep reviewing - run through the deck again until more cards feel Good."
+                    ? "Keep reviewing. Run through the deck again until more cards feel Good."
                     : `${ratingCounts.good} card${ratingCounts.good !== 1 ? "s" : ""} feeling solid. ${ratingCounts.again + ratingCounts.hard} still need more review.`}
                 </p>
               </Card>
