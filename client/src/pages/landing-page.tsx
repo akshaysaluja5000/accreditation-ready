@@ -178,7 +178,7 @@ export default function LandingPage() {
                 </h2>
               </div>
               <p className="text-base text-muted-foreground leading-relaxed mb-6 max-w-3xl" data-testid="text-problem-body">
-                Policies exist. Binders are full. But when a surveyor walks through the door and asks your staff nurse to explain your fall prevention protocol, the answer matters.
+                Written policies and filled binders do not satisfy a surveyor. Staff who can explain the standard in their own words do.
               </p>
               <ul className="space-y-3">
                 {[
