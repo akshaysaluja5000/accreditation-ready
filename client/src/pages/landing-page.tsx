@@ -156,7 +156,7 @@ export default function LandingPage() {
         <section className="border-y border-border py-8 bg-muted/40">
           <div className="max-w-5xl mx-auto px-4 text-center">
             <p className="text-lg md:text-xl font-semibold text-foreground" data-testid="text-positioning-strip">
-              Accreditation readiness, built into your team's daily routine.
+              Accreditation readiness is built into your team's daily routine.
             </p>
           </div>
         </section>
