@@ -126,7 +126,7 @@ export default function LandingPage() {
               Know your gaps. Close them before the surveyor does.
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed font-normal" data-testid="text-hero-subtitle">
-              Accreditation <em>Ready</em> turns Joint Commission, DNV, AAAHC, and CMS standards into focused daily training - so your staff stays prepared year-round, not just before survey week.
+              Accreditation <em>Ready</em> turns Joint Commission, DNV, AAAHC, and CMS standards into focused daily training - so your staff stays survey-ready all year.
             </p>
             <div className="flex items-center gap-3 mt-2 flex-wrap justify-center">
               <Button
@@ -374,7 +374,7 @@ export default function LandingPage() {
                       </div>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      For the CEO/CNO level, this agent prepares the facility's readiness narrative - not just a dashboard, but a drafted summary of where you stand, what's at risk, and what actions are due this week. It's the difference between data and a briefing.
+                      For the CEO/CNO level, this agent drafts a weekly readiness briefing: where the facility stands, what's at risk, and what actions are due. Structured for board reporting and pre-survey prep.
                     </p>
                     <div className="mt-auto pt-2 border-t border-border">
                       <p className="text-xs text-muted-foreground leading-relaxed">
@@ -526,7 +526,7 @@ export default function LandingPage() {
               Build readiness that holds up on survey day.
             </h2>
             <p className="text-base text-muted-foreground max-w-lg" data-testid="text-final-cta-subhead">
-              Give your team a consistent, measurable way to stay accreditation-ready - year-round, not just the week before.
+              Give your team a consistent, measurable way to stay accreditation-ready all year.
             </p>
             <div className="flex items-center gap-3 flex-wrap justify-center mt-2">
               <Button

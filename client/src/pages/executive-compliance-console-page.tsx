@@ -67,7 +67,7 @@ const AGENTS: Agent[] = [
     number: 5,
     title: "Executive Readiness Agent",
     description:
-      "Prepares the facility's readiness narrative for the CEO/CNO level - not just a dashboard, but a drafted summary of where you stand, what's at risk, and what actions are due this week. The difference between data and a briefing.",
+      "Drafts a weekly readiness briefing for the CEO/CNO level: where the facility stands, what's at risk, and what actions are due. Structured for board reporting and pre-survey prep.",
     replaces: "Manually assembled board reports and pre-survey executive prep sessions.",
     icon: BriefcaseBusiness,
     iconBg: "bg-sky-500/10",
