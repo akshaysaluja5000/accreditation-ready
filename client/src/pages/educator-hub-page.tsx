@@ -100,7 +100,7 @@ export default function EducatorHubPage() {
             </div>
             <p className="text-sm font-medium text-foreground/70">
               {activeTab === "department"
-                ? `My team — ${team.length} learner${team.length !== 1 ? "s" : ""}`
+                ? `My team - ${team.length} learner${team.length !== 1 ? "s" : ""}`
                 : `${teams.length} team${teams.length !== 1 ? "s" : ""} in this facility`}
             </p>
           </div>
@@ -178,7 +178,7 @@ function DepartmentTab({ team, isLoading, department }: { team: TeamMember[]; is
             transition={{ delay: i * 0.05 }}
           >
             <stat.icon size={20} className={stat.color} />
-            <span className="text-xl font-black">{isLoading ? "—" : stat.value}</span>
+            <span className="text-xl font-black">{isLoading ? "-" : stat.value}</span>
             <span className="text-xs text-muted-foreground font-medium text-center">{stat.label}</span>
           </motion.div>
         ))}
@@ -229,11 +229,11 @@ function DepartmentTab({ team, isLoading, department }: { team: TeamMember[]; is
                         </div>
                       </div>
                     </td>
-                    <td className="p-3 text-muted-foreground hidden sm:table-cell text-sm">{m.department ?? "—"}</td>
+                    <td className="p-3 text-muted-foreground hidden sm:table-cell text-sm">{m.department ?? "-"}</td>
                     <td className="p-3 text-right font-bold text-chart-4">{m.totalXp}</td>
                     <td className="p-3 text-right">
                       <span className={`font-bold ${m.currentStreak > 0 ? "text-chart-2" : "text-muted-foreground"}`}>
-                        {m.currentStreak > 0 ? `🔥 ${m.currentStreak}` : "—"}
+                        {m.currentStreak > 0 ? `🔥 ${m.currentStreak}` : "-"}
                       </span>
                     </td>
                   </tr>
@@ -369,7 +369,7 @@ function TeamsTab({
             <DialogTitle>Delete Team</DialogTitle>
           </DialogHeader>
           <p className="text-sm text-muted-foreground">
-            Are you sure you want to delete this team? This cannot be undone. Members won't be deleted — just removed from the team.
+            Are you sure you want to delete this team? This cannot be undone. Members won't be deleted - just removed from the team.
           </p>
           <DialogFooter>
             <Button variant="outline" onClick={() => setDeleteTargetId(null)}>Cancel</Button>
@@ -490,11 +490,11 @@ function TeamCard({
                             <span className="font-medium truncate">{getDisplayName(m)}</span>
                           </div>
                         </td>
-                        <td className="p-3 text-muted-foreground hidden sm:table-cell">{m.department ?? "—"}</td>
+                        <td className="p-3 text-muted-foreground hidden sm:table-cell">{m.department ?? "-"}</td>
                         <td className="p-3 text-right font-bold text-chart-4">{m.totalXp}</td>
                         <td className="p-3 text-right font-bold">
                           <span className={m.currentStreak > 0 ? "text-chart-2" : "text-muted-foreground"}>
-                            {m.currentStreak > 0 ? `🔥 ${m.currentStreak}` : "—"}
+                            {m.currentStreak > 0 ? `🔥 ${m.currentStreak}` : "-"}
                           </span>
                         </td>
                       </tr>

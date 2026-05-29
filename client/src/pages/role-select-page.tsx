@@ -73,32 +73,32 @@ const ROLE_ICONS: Record<string, LucideIcon> = {
   compliance_officer: ShieldCheck,
   nurse_educator: GraduationCap,
   surgical_ortho_assistant: Stethoscope,
-  // ASC — Leadership & Compliance
+  // ASC - Leadership & Compliance
   asc_administrator: Building2,
   asc_medical_director: ShieldCheck,
   asc_director_of_nursing: ClipboardCheck,
   asc_quality_ip_coordinator: ShieldCheck,
   asc_nurse_educator: GraduationCap,
-  // ASC — Front Office & Patient Access
+  // ASC - Front Office & Patient Access
   asc_front_desk: DoorOpen,
   asc_scheduling_coordinator: CalendarClock,
   asc_medical_records: FileText,
-  // ASC — Pre-Op & PACU
+  // ASC - Pre-Op & PACU
   asc_pre_op_pacu_nurse: HeartPulse,
   asc_pacu_charge_nurse: ClipboardList,
-  // ASC — Operating Room
+  // ASC - Operating Room
   asc_or_circulating_nurse: Stethoscope,
   asc_or_manager: ClipboardList,
   asc_scrub_tech: Scissors,
   asc_surgical_assistant: Stethoscope,
-  // ASC — Sterile Processing
+  // ASC - Sterile Processing
   asc_spd_tech: Sparkles,
   asc_spd_lead: ClipboardCheck,
-  // ASC — Business Office & Credentialing
+  // ASC - Business Office & Credentialing
   asc_credentialing_coordinator: ClipboardCheck,
   asc_billing_business: Briefcase,
   asc_materials_supply: ClipboardList,
-  // ASC — Environmental & Facilities
+  // ASC - Environmental & Facilities
   asc_evs: Sparkles,
   asc_facilities: Wrench,
   // DNV NIAHO
@@ -159,7 +159,7 @@ export default function RoleSelectPage() {
 
   // Determine initial facility selection:
   // - Returning users (have a roleId): pre-select their current facility.
-  // - ASC/DNV users (no roleId): pre-select their current module — they bypass role selection anyway.
+  // - ASC/DNV users (no roleId): pre-select their current module - they bypass role selection anyway.
   // - New users coming from a solutions page: use the intended facility stored in sessionStorage.
   // - New users with no context: no pre-selection (they must actively choose).
   const initialFacility = (() => {
@@ -175,7 +175,7 @@ export default function RoleSelectPage() {
   const [pendingFacility, setPendingFacility] = useState<FacilityType | null>(initialFacility);
 
   useEffect(() => {
-    // Only keep in sync if the user already made a selection — don't auto-select for new users.
+    // Only keep in sync if the user already made a selection - don't auto-select for new users.
     setPendingFacility((prev) => (prev !== null ? facilityType : prev));
   }, [facilityType]);
 
@@ -195,7 +195,7 @@ export default function RoleSelectPage() {
         }
       }
     } catch {}
-    // No saved sessionStorage selection — prefill from the user's already-saved role(s)
+    // No saved sessionStorage selection - prefill from the user's already-saved role(s)
     // so a returning hospital user re-going through the wizard sees their picks pre-selected.
     if (dbRoles && user?.roleId) {
       const idToSlug = new Map<number, string>();
@@ -360,7 +360,7 @@ export default function RoleSelectPage() {
         return;
       }
     }
-    // ASC users skip role selection — chapters are universal by accreditor, not by role.
+    // ASC users skip role selection - chapters are universal by accreditor, not by role.
     if (pendingFacility === "asc") {
       try { sessionStorage.removeItem("mosh_force_role_select"); } catch {}
       try { sessionStorage.removeItem(SELECTION_KEY); } catch {}
@@ -424,9 +424,9 @@ export default function RoleSelectPage() {
             >
               {step === 1
                 ? (pendingFacility === "asc"
-                    ? "Step 1 of 1 — Choose your facility"
-                    : "Step 1 of 2 — Choose your facility")
-                : "Step 2 of 2 — Choose your role"}
+                    ? "Step 1 of 1 - Choose your facility"
+                    : "Step 1 of 2 - Choose your facility")
+                : "Step 2 of 2 - Choose your role"}
             </Badge>
           </div>
 
@@ -457,7 +457,7 @@ export default function RoleSelectPage() {
             <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
               {step === 1
                 ? (pendingFacility === "asc"
-                    ? "Great — AAAHC accreditation applies the same Universal Standards to every ASC, so there are no separate roles to choose. You can change this anytime."
+                    ? "Great - AAAHC accreditation applies the same Universal Standards to every ASC, so there are no separate roles to choose. You can change this anytime."
                     : "Pick the facility you work in so we can show you the right accreditation standards. You can change this anytime.")
                 : `Select your department so we can focus your training on the ${FACILITY_ACCREDITOR[facilityType]} standards that matter most to your work.`}
             </p>
@@ -768,7 +768,7 @@ export default function RoleSelectPage() {
               I work in more than one role
             </button>
             <p className="text-xs text-muted-foreground mt-2">
-              Tap as many roles as you fill — your first pick is your primary role.
+              Tap as many roles as you fill - your first pick is your primary role.
             </p>
           </div>
           </>
@@ -828,7 +828,7 @@ export default function RoleSelectPage() {
                             className="text-xs text-muted-foreground mt-0.5"
                             data-testid="text-asc-no-roles-note"
                           >
-                            ASC training applies to every team member — no role to choose.
+                            ASC training applies to every team member - no role to choose.
                           </p>
                         )}
                       </>
@@ -913,7 +913,7 @@ export default function RoleSelectPage() {
               <DialogDescription asChild>
                 <div className="pt-2 text-sm leading-relaxed space-y-3">
                   <p>
-                    Go ahead and tap every role you fill — you can pick as many as you need. Tap a role again to remove it.
+                    Go ahead and tap every role you fill - you can pick as many as you need. Tap a role again to remove it.
                   </p>
                   <ul className="list-disc pl-5 space-y-1">
                     <li>

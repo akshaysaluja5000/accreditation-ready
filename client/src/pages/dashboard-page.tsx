@@ -144,7 +144,7 @@ function AscChapterCard({
               )}
             </div>
 
-            {/* Practice / test options — always visible as a pair */}
+            {/* Practice / test options - always visible as a pair */}
             <div className="flex items-center gap-2 pt-1 border-t border-white/10 flex-wrap">
               <span className="text-xs font-bold text-white/90">Practice:</span>
               {hasPublishedQuiz && quizId && (
@@ -348,7 +348,7 @@ export default function DashboardPage() {
   const searchIndex = useMemo<SearchEntry[]>(() => {
     const entries: SearchEntry[] = [];
 
-    // Hospital levels — module-level entry + one entry per study concept for granular search
+    // Hospital levels - module-level entry + one entry per study concept for granular search
     const hospLevels = getVisibleLevelsForModule("hospital");
     for (const lvl of hospLevels) {
       const conceptText = (lvl.studyMaterial ?? [])
@@ -374,7 +374,7 @@ export default function DashboardPage() {
         levelId: lvl.id,
         aiContext: moduleAiContext,
       });
-      // Concept-level entries — one per study concept for specific topic searches
+      // Concept-level entries - one per study concept for specific topic searches
       for (const concept of (lvl.studyMaterial ?? [])) {
         if (!concept?.title) continue;
         entries.push({
@@ -388,7 +388,7 @@ export default function DashboardPage() {
       }
     }
 
-    // ASC handbook chapters — index title, overview, risk points, section content, study material, and questions
+    // ASC handbook chapters - index title, overview, risk points, section content, study material, and questions
     const ascLevelsAll = getVisibleLevelsForModule("asc");
     for (const ch of ascHandbook) {
       const ascLvl = ascLevelsAll.find((l) => l.id === ch.levelId);
@@ -474,7 +474,7 @@ export default function DashboardPage() {
         else if (title.startsWith(q)) score += 50;
         else if (title.includes(q)) score += 20;
         else if (subtitle.includes(q)) score += 10;
-        // Content-only match — lower priority but still shown
+        // Content-only match - lower priority but still shown
         const inContent = !title.includes(q) && !subtitle.includes(q);
         const snippet = inContent ? extractSnippet(e.aiContext, q) : undefined;
         return { entry: { ...e, snippet }, score };
@@ -571,7 +571,7 @@ export default function DashboardPage() {
           <div className="flex items-center gap-1.5 flex-shrink-0">
             <PathwayMenu triggerVariant="outline" triggerSize="sm" />
 
-            {/* Educator console — always visible, text collapses on mobile */}
+            {/* Educator console - always visible, text collapses on mobile */}
             {user?.leadershipRole === "educator" && !user?.isAdmin && (
               <Button
                 variant="outline"
@@ -585,7 +585,7 @@ export default function DashboardPage() {
               </Button>
             )}
 
-            {/* Leadership console — always visible, text collapses on mobile */}
+            {/* Leadership console - always visible, text collapses on mobile */}
             {(user?.isAdmin || ["director","ceo","admin","super_admin"].includes(user?.leadershipRole ?? "")) && (
               <Button
                 variant="outline"
@@ -621,7 +621,7 @@ export default function DashboardPage() {
             <Button variant="outline" size="sm" onClick={() => setLocation("/profile")} data-testid="button-profile" className="hidden sm:flex">
               <Settings size={16} />
             </Button>
-            {/* Dark mode toggle — always visible */}
+            {/* Dark mode toggle - always visible */}
             <Button variant="outline" size="sm" onClick={toggleDark} data-testid="button-toggle-dark" title={isDark ? "Switch to light mode" : "Switch to night mode"}>
               {isDark ? <Sun size={16} /> : <Moon size={16} />}
             </Button>
@@ -630,7 +630,7 @@ export default function DashboardPage() {
               <LogOut size={16} />
             </Button>
 
-            {/* Mobile overflow menu — replaces Trophy / Help / Settings / Logout */}
+            {/* Mobile overflow menu - replaces Trophy / Help / Settings / Logout */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="sm" className="sm:hidden" data-testid="button-mobile-menu">
@@ -676,7 +676,7 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* Compliance reminder panel — only visible to clinical staff with active alerts */}
+      {/* Compliance reminder panel - only visible to clinical staff with active alerts */}
       <ComplianceReminderBanner />
 
       {/* Two-column layout */}
@@ -828,7 +828,7 @@ export default function DashboardPage() {
               );
             })()}
 
-            {/* Hospital Diagnostic — first-timers: show in left column at top */}
+            {/* Hospital Diagnostic - first-timers: show in left column at top */}
             {userModule !== "asc" && !isDnv && !(diagnosticResults && diagnosticResults.length > 0) && (
               <motion.div
                 className="w-full rounded-2xl border-2 p-5 text-left bg-teal-500/5 border-teal-500/20"
@@ -845,7 +845,7 @@ export default function DashboardPage() {
                       <h3 className="font-bold text-base leading-tight">Diagnostic Quiz</h3>
                       <span className="px-1.5 py-0.5 rounded text-[10px] font-black bg-teal-500/15 text-teal-500 uppercase tracking-wider">Start here</span>
                     </div>
-                    <p className="text-sm text-muted-foreground mt-0.5">25 questions · ~10 min — find your knowledge gaps before you start training</p>
+                    <p className="text-sm text-muted-foreground mt-0.5">25 questions · ~10 min - find your knowledge gaps before you start training</p>
                   </div>
                   <button
                     onClick={() => setLocation("/diagnostic")}
@@ -875,7 +875,7 @@ export default function DashboardPage() {
                       <h3 className="font-bold text-base leading-tight">Diagnostic Quiz</h3>
                       <span className="px-1.5 py-0.5 rounded text-[10px] font-black bg-teal-500/15 text-teal-500 uppercase tracking-wider">Benchmark</span>
                     </div>
-                    <p className="text-sm text-muted-foreground mt-0.5">25 questions across all 11 NIAHO chapters — establish your baseline</p>
+                    <p className="text-sm text-muted-foreground mt-0.5">25 questions across all 11 NIAHO chapters - establish your baseline</p>
                   </div>
                   <button
                     onClick={() => setLocation("/dnv-pretest")}
@@ -888,7 +888,7 @@ export default function DashboardPage() {
               </motion.div>
             )}
 
-            {/* ASC Diagnostic — main column, mirrors hospital diagnostic placement */}
+            {/* ASC Diagnostic - main column, mirrors hospital diagnostic placement */}
             {userModule === "asc" && (
               <motion.div
                 className="w-full rounded-2xl border-2 p-5 text-left bg-teal-500/5 border-teal-500/20"
@@ -905,7 +905,7 @@ export default function DashboardPage() {
                       <h3 className="font-bold text-base leading-tight">Diagnostic Quiz</h3>
                       <span className="px-1.5 py-0.5 rounded text-[10px] font-black bg-teal-500/15 text-teal-500 uppercase tracking-wider">Benchmark</span>
                     </div>
-                    <p className="text-sm text-muted-foreground mt-0.5">25 questions across 6 AAAHC chapters — establish your baseline</p>
+                    <p className="text-sm text-muted-foreground mt-0.5">25 questions across 6 AAAHC chapters - establish your baseline</p>
                   </div>
                   <button
                     onClick={() => setLocation("/asc-pretest")}
@@ -918,7 +918,7 @@ export default function DashboardPage() {
               </motion.div>
             )}
 
-            {/* Retake Diagnostic — shown near top once the user has a score */}
+            {/* Retake Diagnostic - shown near top once the user has a score */}
             {userModule !== "asc" && !isDnv && diagnosticResults && diagnosticResults.length > 0 && (
               <motion.div
                 className="w-full rounded-2xl border-2 p-5 text-left bg-teal-500/5 border-teal-500/20"
@@ -966,7 +966,7 @@ export default function DashboardPage() {
               <div className="flex items-center gap-2 mb-4 px-3 py-3 rounded-xl bg-primary/5 border border-primary/10" data-testid="text-shuffle-note">
                 <Shuffle size={16} className="text-primary flex-shrink-0" />
                 <p className="text-sm text-muted-foreground">
-                  You get <span className="font-semibold text-foreground">fresh questions</span> every session — drawn from a larger pool each time you play.
+                  You get <span className="font-semibold text-foreground">fresh questions</span> every session - drawn from a larger pool each time you play.
                 </p>
               </div>
               {!isAsc && !isDnv && assignedData?.role && (
@@ -1074,7 +1074,7 @@ export default function DashboardPage() {
               )}
             </div>
 
-            {/* Final Assessment — hospital only */}
+            {/* Final Assessment - hospital only */}
             {masteryEligibility?.eligible && userModule !== "asc" && (
               <motion.div
                 className="w-full rounded-2xl border-2 p-5 text-left bg-primary/5 border-primary/30"
@@ -1092,7 +1092,7 @@ export default function DashboardPage() {
                       <span className="px-1.5 py-0.5 rounded text-[10px] font-black bg-primary/10 text-primary uppercase tracking-wider">Unlocked</span>
                     </div>
                     <p className="text-sm text-muted-foreground mt-1 leading-snug">
-                      25 advanced questions to see how much you've learned — compare your results to your Diagnostic score
+                      25 advanced questions to see how much you've learned - compare your results to your Diagnostic score
                     </p>
                   </div>
                 </div>
@@ -1449,7 +1449,7 @@ export default function DashboardPage() {
               <>
                 <div>
                   <h2 className="text-lg font-black">Send Feedback</h2>
-                  <p className="text-sm text-muted-foreground mt-1">Questions, concerns, or suggestions — we want to hear it all.</p>
+                  <p className="text-sm text-muted-foreground mt-1">Questions, concerns, or suggestions - we want to hear it all.</p>
                 </div>
                 <textarea
                   className="w-full min-h-[140px] rounded-xl border border-border bg-background px-4 py-3 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-primary/40 placeholder:text-muted-foreground"

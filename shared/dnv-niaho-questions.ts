@@ -3,12 +3,12 @@ import type { Level } from "./schema";
 export const dnvLevels: Level[] = [
 
   // ─────────────────────────────────────────────────────────────────────────
-  // CHAPTER 1 — Quality Management System (QM)
+  // CHAPTER 1 - Quality Management System (QM)
   // ─────────────────────────────────────────────────────────────────────────
   {
     id: "dnv_qm",
     name: "Quality Management System",
-    description: "Master the ISO 9001-based QMS requirements unique to DNV NIAHO — governing body accountability, management review, corrective action, and patient safety systems.",
+    description: "Master the ISO 9001-based QMS requirements unique to DNV NIAHO - governing body accountability, management review, corrective action, and patient safety systems.",
     icon: "ClipboardCheck",
     color: "hsl(217, 91%, 45%)",
     requiredScore: 0,
@@ -42,7 +42,7 @@ export const dnvLevels: Level[] = [
       },
       {
         title: "What Makes DNV Different: ISO 9001",
-        content: "DNV NIAHO's QMS is explicitly based on the ISO 9001 standard — unlike TJC or AAAHC. This means hospitals must establish documented quality objectives, perform internal audits, conduct formal management reviews, and maintain a documented QMS scope. ISO 9001 principles include customer focus (patient focus), process approach, continual improvement, and evidence-based decision making.",
+        content: "DNV NIAHO's QMS is explicitly based on the ISO 9001 standard - unlike TJC or AAAHC. This means hospitals must establish documented quality objectives, perform internal audits, conduct formal management reviews, and maintain a documented QMS scope. ISO 9001 principles include customer focus (patient focus), process approach, continual improvement, and evidence-based decision making.",
         keyPoint: "NIAHO QMS = ISO 9001 framework. Internal audits, management reviews, and documented objectives are required.",
         category: "definition",
       },
@@ -60,7 +60,7 @@ export const dnvLevels: Level[] = [
       },
       {
         title: "Patient Safety System Requirements",
-        content: "QM.8 requires a formal Patient Safety System that captures adverse events, near misses, and unsafe conditions. The system must support a safety culture — staff must feel safe reporting without fear of punishment. Analysis of safety events must drive improvement. Leadership is responsible for fostering this culture through visible commitment to non-punitive reporting.",
+        content: "QM.8 requires a formal Patient Safety System that captures adverse events, near misses, and unsafe conditions. The system must support a safety culture - staff must feel safe reporting without fear of punishment. Analysis of safety events must drive improvement. Leadership is responsible for fostering this culture through visible commitment to non-punitive reporting.",
         keyPoint: "Patient Safety System must capture events AND near misses. Non-punitive culture required. Leadership accountable.",
         category: "rule",
       },
@@ -71,7 +71,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO QM.1, who holds OVERALL ACCOUNTABILITY for the Quality Management System?",
         options: ["The Management Representative", "The CEO", "The Governing Body", "The Chief Quality Officer"],
         correctIndex: 2,
-        explanation: "QM.1 places overall accountability for the QMS with the governing body. The CEO is responsible for implementation, and the Management Representative coordinates activities — but ultimate accountability rests with the governing body.",
+        explanation: "QM.1 places overall accountability for the QMS with the governing body. The CEO is responsible for implementation, and the Management Representative coordinates activities - but ultimate accountability rests with the governing body.",
         category: "rule",
       },
       {
@@ -95,7 +95,7 @@ export const dnvLevels: Level[] = [
         question: "How often must management review of the QMS occur under NIAHO requirements?",
         options: ["Monthly", "At planned intervals", "Annually only", "After every adverse event"],
         correctIndex: 1,
-        explanation: "QM.2 (ISO 9001 framework) requires management review at planned intervals — the frequency is not prescribed as monthly or annual specifically, but must be planned and documented. The hospital defines the interval and must adhere to it.",
+        explanation: "QM.2 (ISO 9001 framework) requires management review at planned intervals - the frequency is not prescribed as monthly or annual specifically, but must be planned and documented. The hospital defines the interval and must adhere to it.",
         category: "rule",
       },
       {
@@ -103,7 +103,7 @@ export const dnvLevels: Level[] = [
         question: "A nurse discovers a near-miss medication event but decides not to report it because 'nothing bad happened.' Under NIAHO QM.8, this represents a failure of:",
         options: ["Medication management policy", "Patient safety culture", "Corrective action process", "Management representative duties"],
         correctIndex: 1,
-        explanation: "QM.8 requires a Patient Safety System that captures near misses — not just adverse events. Under-reporting due to fear of punishment or belief that near misses don't matter reflects a failure of patient safety culture, which leadership is responsible for fostering.",
+        explanation: "QM.8 requires a Patient Safety System that captures near misses - not just adverse events. Under-reporting due to fear of punishment or belief that near misses don't matter reflects a failure of patient safety culture, which leadership is responsible for fostering.",
         category: "scenario",
       },
       {
@@ -111,7 +111,7 @@ export const dnvLevels: Level[] = [
         question: "Which of the following is NOT required in the NIAHO Quality Outline/Plan (QM.3)?",
         options: ["Scope of the QMS", "Quality objectives", "Names of all quality committee members", "How performance will be measured"],
         correctIndex: 2,
-        explanation: "QM.3 requires the Quality Outline/Plan to define scope, objectives, and measurement methods. It does not require listing all committee member names — that is an administrative detail, not a QMS plan requirement.",
+        explanation: "QM.3 requires the Quality Outline/Plan to define scope, objectives, and measurement methods. It does not require listing all committee member names - that is an administrative detail, not a QMS plan requirement.",
         category: "rule",
       },
       {
@@ -119,7 +119,7 @@ export const dnvLevels: Level[] = [
         question: "Under QM.7, what must the hospital do with quality data it collects?",
         options: ["Share it publicly on its website", "Use it for measurement, monitoring, and analysis to drive improvement", "Submit it to DNV within 30 days of collection", "Store it for at least 10 years"],
         correctIndex: 1,
-        explanation: "QM.7 requires that data collected be used for measurement, monitoring, and analysis. The purpose is continual improvement — data must inform decisions, not just be collected and filed.",
+        explanation: "QM.7 requires that data collected be used for measurement, monitoring, and analysis. The purpose is continual improvement - data must inform decisions, not just be collected and filed.",
         category: "rule",
       },
       {
@@ -133,9 +133,9 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_qm_9",
         question: "A hospital wants to use data from peer review, patient satisfaction surveys, and infection rates to meet QM.7. This approach is:",
-        options: ["Non-compliant — only DNV-specified indicators are allowed", "Compliant — multiple data sources satisfy measurement and monitoring requirements", "Compliant — but only if DNV approves the data sources in advance", "Non-compliant — ISO 9001 requires a single unified metric"],
+        options: ["Non-compliant - only DNV-specified indicators are allowed", "Compliant - multiple data sources satisfy measurement and monitoring requirements", "Compliant - but only if DNV approves the data sources in advance", "Non-compliant - ISO 9001 requires a single unified metric"],
         correctIndex: 1,
-        explanation: "QM.7 requires measurement, monitoring, and analysis — using multiple relevant data sources like peer review, satisfaction, and infection rates is exactly the type of evidence-based approach the standard supports.",
+        explanation: "QM.7 requires measurement, monitoring, and analysis - using multiple relevant data sources like peer review, satisfaction, and infection rates is exactly the type of evidence-based approach the standard supports.",
         category: "scenario",
       },
       {
@@ -151,7 +151,7 @@ export const dnvLevels: Level[] = [
         question: "During a DNV survey, surveyors ask to see documentation of internal audits. The hospital provides audit reports but cannot show what actions resulted from audit findings. This gap is most directly a violation of:",
         options: ["QM.3", "QM.5", "QM.7", "QM.1"],
         correctIndex: 1,
-        explanation: "QM.5 requires corrective action on identified nonconformances. Internal audit findings that produce no documented corrective action indicate the corrective action process is not functioning — a QM.5 gap.",
+        explanation: "QM.5 requires corrective action on identified nonconformances. Internal audit findings that produce no documented corrective action indicate the corrective action process is not functioning - a QM.5 gap.",
         category: "scenario",
       },
       {
@@ -159,15 +159,15 @@ export const dnvLevels: Level[] = [
         question: "The ISO 9001 principle most closely aligned with DNV's patient-centered quality approach is:",
         options: ["Supplier relationship management", "Customer focus", "Context of the organization", "Leadership commitment to profit"],
         correctIndex: 1,
-        explanation: "ISO 9001's 'customer focus' principle translates directly to patient focus in healthcare. The hospital must understand patient needs, meet requirements, and aim to exceed expectations — which is the foundation of DNV's quality philosophy.",
+        explanation: "ISO 9001's 'customer focus' principle translates directly to patient focus in healthcare. The hospital must understand patient needs, meet requirements, and aim to exceed expectations - which is the foundation of DNV's quality philosophy.",
         category: "definition",
       },
       {
         id: "dnv_qm_13",
         question: "A hospital's Quality Outline/Plan has not been updated in three years despite significant service line additions. Under NIAHO, this is:",
-        options: ["Acceptable if the core objectives remain the same", "Non-compliant — the plan must reflect the current scope and objectives", "Acceptable if reviewed annually even without changes", "Non-compliant only if DNV requests an update"],
+        options: ["Acceptable if the core objectives remain the same", "Non-compliant - the plan must reflect the current scope and objectives", "Acceptable if reviewed annually even without changes", "Non-compliant only if DNV requests an update"],
         correctIndex: 1,
-        explanation: "QM.3 requires the Quality Outline/Plan to be current. Significant changes to the organization — such as new service lines — require the plan to be updated to reflect the current QMS scope and objectives.",
+        explanation: "QM.3 requires the Quality Outline/Plan to be current. Significant changes to the organization - such as new service lines - require the plan to be updated to reflect the current QMS scope and objectives.",
         category: "scenario",
       },
       {
@@ -191,7 +191,7 @@ export const dnvLevels: Level[] = [
         question: "A DNV surveyor asks the CEO to describe their role in the QMS. The CEO says 'I leave QMS to the quality director.' This response signals a potential gap in:",
         options: ["QM.8 Patient Safety", "QM.4 Management Representative", "QM.1 Responsibility and Accountability", "QM.5 Corrective Action"],
         correctIndex: 2,
-        explanation: "QM.1 makes the CEO responsible for implementing the QMS. Delegating all QMS responsibility without personal engagement contradicts the accountability structure — the CEO cannot fully abdicate this role.",
+        explanation: "QM.1 makes the CEO responsible for implementing the QMS. Delegating all QMS responsibility without personal engagement contradicts the accountability structure - the CEO cannot fully abdicate this role.",
         category: "scenario",
       },
       {
@@ -221,16 +221,16 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_qm_20",
         question: "A hospital's management review meeting minutes show the team reviewed quality data but made no decisions or action items. This is:",
-        options: ["Acceptable if the data showed no problems", "Non-compliant — management review must result in outputs/decisions", "Acceptable if the meeting was attended by the CEO", "Non-compliant only if the same issue recurs"],
+        options: ["Acceptable if the data showed no problems", "Non-compliant - management review must result in outputs/decisions", "Acceptable if the meeting was attended by the CEO", "Non-compliant only if the same issue recurs"],
         correctIndex: 1,
-        explanation: "ISO 9001 requires management review to produce outputs — decisions, actions, resource allocations, or improvements. A review that merely reviews data without generating outputs does not satisfy the standard's intent.",
+        explanation: "ISO 9001 requires management review to produce outputs - decisions, actions, resource allocations, or improvements. A review that merely reviews data without generating outputs does not satisfy the standard's intent.",
         category: "scenario",
       },
     ],
   },
 
   // ─────────────────────────────────────────────────────────────────────────
-  // CHAPTER 2 — Governance & Leadership (GB + CE)
+  // CHAPTER 2 - Governance & Leadership (GB + CE)
   // ─────────────────────────────────────────────────────────────────────────
   {
     id: "dnv_gov",
@@ -241,7 +241,7 @@ export const dnvLevels: Level[] = [
     requiredScore: 0,
     chapterSummary: {
       chapterTitle: "Governance & Leadership (GB + CE)",
-      plainLanguageSummary: "The governing body is legally responsible for the hospital's operations and must exercise active oversight — not simply rubber-stamp executive decisions. It approves an institutional plan and budget, oversees contracted services through written agreements, and appoints a qualified CEO who is responsible for day-to-day operations, staffing, and implementation of governing body policies.",
+      plainLanguageSummary: "The governing body is legally responsible for the hospital's operations and must exercise active oversight - not simply rubber-stamp executive decisions. It approves an institutional plan and budget, oversees contracted services through written agreements, and appoints a qualified CEO who is responsible for day-to-day operations, staffing, and implementation of governing body policies.",
       keyOperationalExpectations: [
         "Governing body exercises legal responsibility for all hospital operations.",
         "Institutional plan including a budget must be reviewed and approved by the governing body.",
@@ -262,13 +262,13 @@ export const dnvLevels: Level[] = [
     studyMaterial: [
       {
         title: "Governing Body Legal Responsibility",
-        content: "Under NIAHO GB.2, the governing body is legally responsible for the hospital. This means the board cannot simply delegate all authority to the CEO — it must actively oversee the quality of care, credentialing decisions, and organizational performance. The governing body approves bylaws, the institutional plan, and major policies.",
+        content: "Under NIAHO GB.2, the governing body is legally responsible for the hospital. This means the board cannot simply delegate all authority to the CEO - it must actively oversee the quality of care, credentialing decisions, and organizational performance. The governing body approves bylaws, the institutional plan, and major policies.",
         keyPoint: "Governing body = legally responsible. Active oversight required, not rubber-stamping.",
         category: "rule",
       },
       {
         title: "Contracted Services Oversight",
-        content: "GB.4 requires written agreements for all contracted clinical services. The hospital remains responsible for the quality of contracted services — it cannot outsource accountability. Contracts must define scope, performance expectations, and reporting requirements. The governing body must receive reports on contracted service quality.",
+        content: "GB.4 requires written agreements for all contracted clinical services. The hospital remains responsible for the quality of contracted services - it cannot outsource accountability. Contracts must define scope, performance expectations, and reporting requirements. The governing body must receive reports on contracted service quality.",
         keyPoint: "Written agreements required. Hospital keeps accountability for contracted service quality.",
         category: "rule",
       },
@@ -287,7 +287,7 @@ export const dnvLevels: Level[] = [
         question: "A hospital contracts with an outside company to provide all respiratory therapy services. Under NIAHO GB.4, the hospital:",
         options: ["Transfers all quality accountability to the contractor", "Must maintain a written agreement and retain accountability for service quality", "Is only responsible for credentialing the contractors' staff", "Can waive quality monitoring for contracted clinical services"],
         correctIndex: 1,
-        explanation: "GB.4 requires written agreements for contracted services AND holds the hospital accountable for the quality of those services. Contracting does not transfer accountability — the hospital remains responsible.",
+        explanation: "GB.4 requires written agreements for contracted services AND holds the hospital accountable for the quality of those services. Contracting does not transfer accountability - the hospital remains responsible.",
         category: "scenario",
       },
       {
@@ -311,7 +311,7 @@ export const dnvLevels: Level[] = [
         question: "A governing body approves every recommendation from the CEO without independent review or discussion. Under NIAHO GB.2, this pattern most directly represents:",
         options: ["Efficient governance", "Inadequate legal oversight", "Appropriate delegation of authority", "Compliant board behavior"],
         correctIndex: 1,
-        explanation: "GB.2 requires active legal oversight by the governing body. Consistently approving all CEO recommendations without independent review suggests the board is not exercising genuine oversight — a compliance gap.",
+        explanation: "GB.2 requires active legal oversight by the governing body. Consistently approving all CEO recommendations without independent review suggests the board is not exercising genuine oversight - a compliance gap.",
         category: "scenario",
       },
       {
@@ -319,15 +319,15 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO CE.1, CEO qualifications must be:",
         options: ["Identical to those of the Medical Staff President", "Appropriate to the size and complexity of the hospital", "Certified by DNV prior to appointment", "Limited to individuals with a medical degree"],
         correctIndex: 1,
-        explanation: "CE.1 requires that the CEO have qualifications — education and experience — that are appropriate to the hospital's size and complexity. There is no requirement for a medical degree; the key is fit for the role.",
+        explanation: "CE.1 requires that the CEO have qualifications - education and experience - that are appropriate to the hospital's size and complexity. There is no requirement for a medical degree; the key is fit for the role.",
         category: "rule",
       },
       {
         id: "dnv_gov_7",
         question: "A contracted pharmacy service has had three medication error events in six months. The governing body has not been informed. Under NIAHO GB.4, this is:",
-        options: ["Acceptable if the CEO is aware", "Non-compliant — contracted service quality must be reported to the governing body", "Acceptable if the contractor has its own quality program", "Non-compliant only if patients were harmed"],
+        options: ["Acceptable if the CEO is aware", "Non-compliant - contracted service quality must be reported to the governing body", "Acceptable if the contractor has its own quality program", "Non-compliant only if patients were harmed"],
         correctIndex: 1,
-        explanation: "GB.4 requires the governing body to receive quality reports on contracted services. The hospital retains oversight responsibility — the governing body must be kept informed of contracted service performance.",
+        explanation: "GB.4 requires the governing body to receive quality reports on contracted services. The hospital retains oversight responsibility - the governing body must be kept informed of contracted service performance.",
         category: "scenario",
       },
       {
@@ -335,7 +335,7 @@ export const dnvLevels: Level[] = [
         question: "Which of the following BEST describes the governing body's role in NIAHO GB.1 (Definition of a Hospital)?",
         options: ["To ensure the hospital meets the legal definition and scope of a hospital", "To personally perform patient care audits", "To credential all physicians annually", "To set nursing ratios for each unit"],
         correctIndex: 0,
-        explanation: "GB.1 defines what constitutes a hospital under NIAHO — inpatient services, 24-hour nursing, etc. The governing body ensures the organization meets these definitional requirements as part of its oversight role.",
+        explanation: "GB.1 defines what constitutes a hospital under NIAHO - inpatient services, 24-hour nursing, etc. The governing body ensures the organization meets these definitional requirements as part of its oversight role.",
         category: "rule",
       },
       {
@@ -343,7 +343,7 @@ export const dnvLevels: Level[] = [
         question: "The institutional plan under GB.3 is reviewed and approved by:",
         options: ["The Management Representative", "DNV surveyors annually", "The Governing Body", "The Chief Medical Officer only"],
         correctIndex: 2,
-        explanation: "GB.3 requires the institutional plan (including budget) to be reviewed and approved by the governing body — not just executive leadership. This is a core governance function.",
+        explanation: "GB.3 requires the institutional plan (including budget) to be reviewed and approved by the governing body - not just executive leadership. This is a core governance function.",
         category: "rule",
       },
       {
@@ -351,7 +351,7 @@ export const dnvLevels: Level[] = [
         question: "A hospital hires a new CEO whose only experience is managing a small physician office. Under CE.1, this raises a concern because:",
         options: ["CMS requires all CEOs to have a clinical background", "Qualifications must be appropriate to the hospital's size and complexity", "The governing body cannot appoint a CEO without DNV approval", "CEOs of hospitals must hold a specific state license"],
         correctIndex: 1,
-        explanation: "CE.1 requires CEO qualifications to match the hospital's size and complexity. A small physician office background may be insufficient for managing a full acute care hospital — the governing body must assess fit carefully.",
+        explanation: "CE.1 requires CEO qualifications to match the hospital's size and complexity. A small physician office background may be insufficient for managing a full acute care hospital - the governing body must assess fit carefully.",
         category: "scenario",
       },
       {
@@ -367,7 +367,7 @@ export const dnvLevels: Level[] = [
         question: "The governing body at a DNV hospital has not met in eight months due to scheduling difficulties. The most significant compliance concern is:",
         options: ["Delayed budget approval only", "Failure to exercise ongoing legal oversight responsibility under GB.2", "Non-compliance with CE.2 CEO duties", "Failure to maintain the Quality Outline/Plan"],
         correctIndex: 1,
-        explanation: "GB.2 requires active, ongoing legal oversight. An eight-month gap in governing body meetings means oversight functions — credentialing approvals, quality review, policy approval — have lapsed. This is a serious GB.2 gap.",
+        explanation: "GB.2 requires active, ongoing legal oversight. An eight-month gap in governing body meetings means oversight functions - credentialing approvals, quality review, policy approval - have lapsed. This is a serious GB.2 gap.",
         category: "scenario",
       },
       {
@@ -375,13 +375,13 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO, which entity approves medical staff bylaws?",
         options: ["The CEO only", "The Medical Staff President", "The Governing Body", "State medical licensing board"],
         correctIndex: 2,
-        explanation: "The governing body holds authority over medical staff bylaws under GB.2. Medical staff develop bylaws, but they require governing body approval — this is a foundational governance responsibility.",
+        explanation: "The governing body holds authority over medical staff bylaws under GB.2. Medical staff develop bylaws, but they require governing body approval - this is a foundational governance responsibility.",
         category: "rule",
       },
       {
         id: "dnv_gov_14",
         question: "A hospital's strategic plan was last updated four years ago before a major service line expansion. Under GB.3, this is:",
-        options: ["Acceptable — plans only need updating every five years", "A compliance concern — the institutional plan must reflect current operations and direction", "Acceptable if the CEO reports on new services to the board", "A concern only if DNV requests an update during survey"],
+        options: ["Acceptable - plans only need updating every five years", "A compliance concern - the institutional plan must reflect current operations and direction", "Acceptable if the CEO reports on new services to the board", "A concern only if DNV requests an update during survey"],
         correctIndex: 1,
         explanation: "GB.3 requires an institutional plan that accurately reflects the hospital's operations and direction. A plan that predates a major service line expansion is outdated and does not support effective governance oversight.",
         category: "scenario",
@@ -389,7 +389,7 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_gov_15",
         question: "The CEO implements a new policy that contradicts a governing body-approved policy without notifying the board. Under CE.2, this is:",
-        options: ["Acceptable if clinically justified", "Non-compliant — the CEO must implement, not override, governing body policies", "Acceptable in emergencies without board notification", "Compliant if the Management Representative is informed"],
+        options: ["Acceptable if clinically justified", "Non-compliant - the CEO must implement, not override, governing body policies", "Acceptable in emergencies without board notification", "Compliant if the Management Representative is informed"],
         correctIndex: 1,
         explanation: "CE.2 charges the CEO with implementing governing body policies. Unilaterally overriding a board-approved policy without going back to the governing body for revision contradicts the CEO's defined role.",
         category: "scenario",
@@ -407,7 +407,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO, the governing body's responsibility includes oversight of which of the following?",
         options: ["Only financial and budget matters", "Patient care quality, credentialing, bylaws, and institutional planning", "Only credentialing and privileging of physicians", "Only contracted services quality"],
         correctIndex: 1,
-        explanation: "The governing body's responsibility under GB.1-GB.4 is broad — it covers quality of patient care, credentialing, bylaws, institutional planning, and contracted services. It cannot limit its oversight to any single area.",
+        explanation: "The governing body's responsibility under GB.1-GB.4 is broad - it covers quality of patient care, credentialing, bylaws, institutional planning, and contracted services. It cannot limit its oversight to any single area.",
         category: "rule",
       },
       {
@@ -423,7 +423,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO GB.4, if a contracted service fails to meet performance expectations, who is accountable for corrective action?",
         options: ["The contractor exclusively", "The hospital, which must ensure the contractor improves or take other action", "DNV, which must intervene", "The state health department"],
         correctIndex: 1,
-        explanation: "The hospital retains accountability for contracted service quality under GB.4. If a contractor underperforms, the hospital must take action — modify the contract, require improvement, or change vendors.",
+        explanation: "The hospital retains accountability for contracted service quality under GB.4. If a contractor underperforms, the hospital must take action - modify the contract, require improvement, or change vendors.",
         category: "rule",
       },
       {
@@ -431,14 +431,14 @@ export const dnvLevels: Level[] = [
         question: "A governing board member states that their role is simply to 'trust the CEO and sign off on recommendations.' Under NIAHO GB.2, this attitude represents:",
         options: ["Appropriate division of governance and management", "Inadequate exercise of legal oversight responsibility", "Compliant behavior as long as the CEO is experienced", "Appropriate deference to operational expertise"],
         correctIndex: 1,
-        explanation: "GB.2 requires the governing body to exercise active legal oversight. Simply trusting and rubber-stamping executive decisions without independent review does not meet this standard — boards must engage substantively.",
+        explanation: "GB.2 requires the governing body to exercise active legal oversight. Simply trusting and rubber-stamping executive decisions without independent review does not meet this standard - boards must engage substantively.",
         category: "scenario",
       },
     ],
   },
 
   // ─────────────────────────────────────────────────────────────────────────
-  // CHAPTER 3 — Medical Staff (MS)
+  // CHAPTER 3 - Medical Staff (MS)
   // ─────────────────────────────────────────────────────────────────────────
   {
     id: "dnv_ms",
@@ -472,7 +472,7 @@ export const dnvLevels: Level[] = [
     studyMaterial: [
       {
         title: "FPPE vs. OPPE: The Two Pillars of Physician Performance Monitoring",
-        content: "FPPE (Focused Professional Practice Evaluation) is required for all newly granted clinical privileges — it is a time-limited, focused evaluation to confirm the practitioner can perform the privileged activities. Once FPPE is complete and competence is confirmed, the practitioner moves to OPPE (Ongoing Professional Practice Evaluation), which is continuous monitoring of performance through data — case volumes, outcomes, peer review, etc.",
+        content: "FPPE (Focused Professional Practice Evaluation) is required for all newly granted clinical privileges - it is a time-limited, focused evaluation to confirm the practitioner can perform the privileged activities. Once FPPE is complete and competence is confirmed, the practitioner moves to OPPE (Ongoing Professional Practice Evaluation), which is continuous monitoring of performance through data - case volumes, outcomes, peer review, etc.",
         keyPoint: "FPPE = new privileges, time-limited focus. OPPE = continuous monitoring for existing staff.",
         category: "definition",
       },
@@ -484,7 +484,7 @@ export const dnvLevels: Level[] = [
       },
       {
         title: "Telemedicine Credentialing Options",
-        content: "MS.15 addresses telemedicine. The distant-site hospital (where the telemedicine practitioner is physically located) must credential the practitioner. The originating-site hospital (where the patient is) may either fully credential the practitioner independently OR use credentialing by proxy — accepting the distant site's credentialing if the distant site is DNV-accredited or accredited by another recognized body and a written agreement exists.",
+        content: "MS.15 addresses telemedicine. The distant-site hospital (where the telemedicine practitioner is physically located) must credential the practitioner. The originating-site hospital (where the patient is) may either fully credential the practitioner independently OR use credentialing by proxy - accepting the distant site's credentialing if the distant site is DNV-accredited or accredited by another recognized body and a written agreement exists.",
         keyPoint: "Credentialing by proxy allowed for telemedicine if distant site is accredited and written agreement exists.",
         category: "definition",
       },
@@ -495,13 +495,13 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO MS.6, clinical privileges for a physician must be based on:",
         options: ["The physician's request and years of experience alone", "Demonstrated competence through credentialing review and FPPE", "The recommendation of the department chief without further review", "State licensure only"],
         correctIndex: 1,
-        explanation: "MS.6 requires privileges to be granted based on demonstrated competence — verified through the credentialing process and confirmed through FPPE for new privileges. Experience and licensure alone are insufficient.",
+        explanation: "MS.6 requires privileges to be granted based on demonstrated competence - verified through the credentialing process and confirmed through FPPE for new privileges. Experience and licensure alone are insufficient.",
         category: "rule",
       },
       {
         id: "dnv_ms_2",
         question: "A surgeon requests privileges for a new robotic surgery procedure. Under NIAHO, which process is required BEFORE routine independent practice begins?",
-        options: ["OPPE data collection", "FPPE — a focused, time-limited evaluation of competence", "Department peer review only", "No additional process if the surgeon is already privileged in open surgery"],
+        options: ["OPPE data collection", "FPPE - a focused, time-limited evaluation of competence", "Department peer review only", "No additional process if the surgeon is already privileged in open surgery"],
         correctIndex: 1,
         explanation: "MS.6 requires FPPE for newly granted privileges. Even if a surgeon holds existing privileges, a new procedural privilege requires FPPE to confirm competence in that specific procedure before routine independent practice.",
         category: "scenario",
@@ -511,13 +511,13 @@ export const dnvLevels: Level[] = [
         question: "OPPE (Ongoing Professional Practice Evaluation) under MS.8 must be:",
         options: ["Completed only at reappointment", "An annual self-assessment by each physician", "Continuous and data-driven, informing reappointment decisions", "Required only for physicians on probationary status"],
         correctIndex: 2,
-        explanation: "MS.8 requires OPPE to be ongoing — not just at reappointment. Data on case volumes, outcomes, peer review, and complaints must be continuously collected and reviewed to assess practitioner performance.",
+        explanation: "MS.8 requires OPPE to be ongoing - not just at reappointment. Data on case volumes, outcomes, peer review, and complaints must be continuously collected and reviewed to assess practitioner performance.",
         category: "rule",
       },
       {
         id: "dnv_ms_4",
         question: "Under NIAHO MS.13, an H&P completed 20 days before an elective surgery admission is:",
-        options: ["Non-compliant — H&P must be done within 7 days of admission", "Compliant — if updated within 24 hours of admission to note any interval changes", "Non-compliant — H&P must always be done after admission", "Compliant without any additional documentation needed"],
+        options: ["Non-compliant - H&P must be done within 7 days of admission", "Compliant - if updated within 24 hours of admission to note any interval changes", "Non-compliant - H&P must always be done after admission", "Compliant without any additional documentation needed"],
         correctIndex: 1,
         explanation: "MS.13 allows H&Ps within 30 days before admission, but when the H&P was done more than 24 hours before admission, an update must be documented within 24 hours of admission noting any interval changes in the patient's condition.",
         category: "scenario",
@@ -527,7 +527,7 @@ export const dnvLevels: Level[] = [
         question: "Medical staff bylaws under NIAHO MS.3 must be approved by:",
         options: ["The Medical Staff President only", "The CEO and Medical Staff President jointly", "The Governing Body", "DNV during the accreditation survey"],
         correctIndex: 2,
-        explanation: "MS.3 requires bylaws, rules, and regulations to be approved by the governing body. Medical staff develop them, but governing body approval is required — this is a core governance function.",
+        explanation: "MS.3 requires bylaws, rules, and regulations to be approved by the governing body. Medical staff develop them, but governing body approval is required - this is a core governance function.",
         category: "rule",
       },
       {
@@ -535,7 +535,7 @@ export const dnvLevels: Level[] = [
         question: "Temporary clinical privileges under NIAHO MS.7 may be granted:",
         options: ["To any physician for any reason at the CEO's discretion", "Only in specific defined circumstances with a time limit", "Without credentialing if the need is urgent", "Only by the Medical Staff President with governing body approval for each case"],
         correctIndex: 1,
-        explanation: "MS.7 allows temporary privileges only in defined circumstances — typically urgent patient care needs or pending completion of a credentialing file. They must be time-limited and granted through a defined process in the bylaws.",
+        explanation: "MS.7 allows temporary privileges only in defined circumstances - typically urgent patient care needs or pending completion of a credentialing file. They must be time-limited and granted through a defined process in the bylaws.",
         category: "rule",
       },
       {
@@ -559,7 +559,7 @@ export const dnvLevels: Level[] = [
         question: "A physician's OPPE data shows a pattern of elevated complication rates compared to peers. Under MS.8, the hospital should:",
         options: ["Wait until reappointment to address the issue", "Continue monitoring for another full year before acting", "Initiate focused review and potentially convert to FPPE or corrective action", "Remove the physician's privileges immediately without review"],
         correctIndex: 2,
-        explanation: "MS.8 requires OPPE data to be acted upon. A concerning pattern should trigger focused review — potentially converting back to FPPE-style monitoring or initiating the corrective action process defined in MS.10.",
+        explanation: "MS.8 requires OPPE data to be acted upon. A concerning pattern should trigger focused review - potentially converting back to FPPE-style monitoring or initiating the corrective action process defined in MS.10.",
         category: "scenario",
       },
       {
@@ -591,7 +591,7 @@ export const dnvLevels: Level[] = [
         question: "Medical staff participation in quality improvement activities is addressed under:",
         options: ["MS.1 Organization and Accountability", "MS.5 Medical Staff Participation", "MS.8 Performance Data", "MS.3 Bylaws and Regulations"],
         correctIndex: 1,
-        explanation: "MS.5 specifically addresses medical staff participation in quality management and improvement activities. Medical staff must be actively engaged in QMS processes — not just clinical care.",
+        explanation: "MS.5 specifically addresses medical staff participation in quality management and improvement activities. Medical staff must be actively engaged in QMS processes - not just clinical care.",
         category: "definition",
       },
       {
@@ -599,7 +599,7 @@ export const dnvLevels: Level[] = [
         question: "A patient is admitted for elective knee replacement. The surgeon completed the H&P 32 days ago. Under MS.13, the surgeon must:",
         options: ["Complete a new H&P within 24 hours of admission", "Use the existing H&P since it was done in a clinical setting", "Obtain governing body approval to use the existing H&P", "Complete an update noting any changes within 24 hours of admission"],
         correctIndex: 0,
-        explanation: "MS.13 allows H&Ps within 30 days before admission. At 32 days, the H&P is outside this window — a new H&P must be completed, not just an update. The 30-day maximum has been exceeded.",
+        explanation: "MS.13 allows H&Ps within 30 days before admission. At 32 days, the H&P is outside this window - a new H&P must be completed, not just an update. The 30-day maximum has been exceeded.",
         category: "scenario",
       },
       {
@@ -607,7 +607,7 @@ export const dnvLevels: Level[] = [
         question: "Required education and training for medical staff under MS.9 refers to:",
         options: ["Annual mandatory compliance training for all clinical staff", "Specialty-specific required training that physicians must complete to maintain privileges", "CME hours required for state licensure renewal only", "Training conducted exclusively by DNV-approved educators"],
         correctIndex: 1,
-        explanation: "MS.9 addresses required education and training specific to maintaining clinical privileges — including any specialty-specific training, simulation, or competency requirements that support the privileges a practitioner holds.",
+        explanation: "MS.9 addresses required education and training specific to maintaining clinical privileges - including any specialty-specific training, simulation, or competency requirements that support the privileges a practitioner holds.",
         category: "definition",
       },
       {
@@ -620,7 +620,7 @@ export const dnvLevels: Level[] = [
       },
       {
         id: "dnv_ms_17",
-        question: "A physician's medical record documentation is consistently poor — late entries, incomplete notes. Under NIAHO MS.12, the hospital should:",
+        question: "A physician's medical record documentation is consistently poor - late entries, incomplete notes. Under NIAHO MS.12, the hospital should:",
         options: ["Address it only if a patient complains", "Include medical record quality in OPPE data and take appropriate action if a pattern persists", "Report the physician to the state medical board immediately", "Suspend privileges immediately until records are complete"],
         correctIndex: 1,
         explanation: "MS.12 requires medical record maintenance, and MS.8 (OPPE) means performance data including documentation quality should be tracked. A persistent pattern of poor documentation should be addressed through the medical staff performance process.",
@@ -631,13 +631,13 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO MS.6, reappointment to the medical staff must be based on:",
         options: ["Years of service and positive peer relationships", "OPPE data reflecting actual performance over the appointment period", "Department chief recommendation without additional data", "The physician's self-reported caseload"],
         correctIndex: 1,
-        explanation: "MS.6 requires reappointment decisions to be informed by OPPE data — objective performance information collected during the appointment period. Relationship-based or self-reported data alone is insufficient.",
+        explanation: "MS.6 requires reappointment decisions to be informed by OPPE data - objective performance information collected during the appointment period. Relationship-based or self-reported data alone is insufficient.",
         category: "rule",
       },
       {
         id: "dnv_ms_19",
         question: "A patient's condition changes significantly after the H&P is completed but before surgery the next morning. Under MS.13, what must the surgeon do?",
-        options: ["Proceed with surgery — the H&P is valid for 30 days", "Document an update addressing the interval change before proceeding", "Obtain governing body approval to proceed", "Cancel the procedure and reschedule with a new H&P"],
+        options: ["Proceed with surgery - the H&P is valid for 30 days", "Document an update addressing the interval change before proceeding", "Obtain governing body approval to proceed", "Cancel the procedure and reschedule with a new H&P"],
         correctIndex: 1,
         explanation: "MS.13 requires that any H&P be updated to reflect interval changes in the patient's condition. If the patient's status has changed since the H&P, the surgeon must document an update before the procedure proceeds.",
         category: "scenario",
@@ -647,14 +647,14 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO MS.7, what is the maximum duration for temporary clinical privileges?",
         options: ["7 days", "30 days, unless extended by the CEO", "As defined in the medical staff bylaws with a specific time limit", "6 months with automatic renewal"],
         correctIndex: 2,
-        explanation: "MS.7 requires temporary privileges to be time-limited as defined in the medical staff bylaws. The specific duration is set by the hospital's bylaws — but it must be finite and defined, not open-ended.",
+        explanation: "MS.7 requires temporary privileges to be time-limited as defined in the medical staff bylaws. The specific duration is set by the hospital's bylaws - but it must be finite and defined, not open-ended.",
         category: "rule",
       },
     ],
   },
 
   // ─────────────────────────────────────────────────────────────────────────
-  // CHAPTER 4 — Nursing & Staffing Management (NS + SM)
+  // CHAPTER 4 - Nursing & Staffing Management (NS + SM)
   // ─────────────────────────────────────────────────────────────────────────
   {
     id: "dnv_ns",
@@ -665,19 +665,19 @@ export const dnvLevels: Level[] = [
     requiredScore: 0,
     chapterSummary: {
       chapterTitle: "Nursing & Staffing Management (NS.1–NS.4, SM.1–SM.7)",
-      plainLanguageSummary: "NIAHO requires an organized nursing service led by a qualified Nurse Executive who is accountable for nursing standards and staffing. Every patient must have an individualized plan of care developed from a thorough assessment. Staffing must be determined based on patient needs and acuity — not fixed ratios alone. All staff must be licensed, practicing within their professional scope, oriented to their role, and have competency assessed and documented. Job descriptions must exist for every position.",
+      plainLanguageSummary: "NIAHO requires an organized nursing service led by a qualified Nurse Executive who is accountable for nursing standards and staffing. Every patient must have an individualized plan of care developed from a thorough assessment. Staffing must be determined based on patient needs and acuity - not fixed ratios alone. All staff must be licensed, practicing within their professional scope, oriented to their role, and have competency assessed and documented. Job descriptions must exist for every position.",
       keyOperationalExpectations: [
         "Nursing service must be organized and adequately staffed 24/7.",
         "Nurse Executive must be qualified and have authority over nursing services.",
         "Every patient requires an individualized plan of care based on assessment.",
-        "Assessment must be ongoing — not just at admission.",
+        "Assessment must be ongoing - not just at admission.",
         "Staffing levels must be determined by patient acuity and needs, not fixed numbers alone.",
         "All staff must have documented job descriptions and operate within their professional scope.",
         "Orientation to the unit, role, and equipment is required for all new staff.",
-        "Competency must be assessed and documented — initial and ongoing.",
+        "Competency must be assessed and documented - initial and ongoing.",
       ],
       commonRiskPoints: [
-        "Care plans not individualized — same template used for all similar diagnoses.",
+        "Care plans not individualized - same template used for all similar diagnoses.",
         "Reassessment not documented when patient condition changes.",
         "Staffing based on fixed schedules rather than adjusted to patient acuity.",
         "Staff practicing outside their licensed scope without supervision.",
@@ -688,7 +688,7 @@ export const dnvLevels: Level[] = [
     studyMaterial: [
       {
         title: "The Nurse Executive Role",
-        content: "NS.2 requires a qualified Nurse Executive (CNO or equivalent) who has authority and responsibility for nursing services across the organization. The Nurse Executive establishes nursing policies, ensures adequate staffing, and is accountable for the quality of nursing care. The role must have the organizational authority to act on nursing concerns — not just advisory input.",
+        content: "NS.2 requires a qualified Nurse Executive (CNO or equivalent) who has authority and responsibility for nursing services across the organization. The Nurse Executive establishes nursing policies, ensures adequate staffing, and is accountable for the quality of nursing care. The role must have the organizational authority to act on nursing concerns - not just advisory input.",
         keyPoint: "Nurse Executive = qualified, organizationally empowered, accountable for nursing quality.",
         category: "rule",
       },
@@ -705,21 +705,21 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO NS.2, the Nurse Executive is responsible for:",
         options: ["Credentialing all nurses at the state level", "Nursing services quality, staffing, and nursing policy across the organization", "Approving all physician orders", "Setting the hospital's overall budget"],
         correctIndex: 1,
-        explanation: "NS.2 establishes the Nurse Executive as accountable for nursing service quality, staffing adequacy, and nursing policies. The role requires organizational authority — not just advisory input.",
+        explanation: "NS.2 establishes the Nurse Executive as accountable for nursing service quality, staffing adequacy, and nursing policies. The role requires organizational authority - not just advisory input.",
         category: "rule",
       },
       {
         id: "dnv_ns_2",
         question: "A care plan for a patient with pneumonia is identical to the standard pneumonia template with no individualization. Under NS.3, this is:",
-        options: ["Compliant if the template meets diagnosis-based standards", "Non-compliant — care plans must be individualized to each patient's needs", "Compliant if a physician signed the template", "Acceptable as long as nursing assessments are documented separately"],
+        options: ["Compliant if the template meets diagnosis-based standards", "Non-compliant - care plans must be individualized to each patient's needs", "Compliant if a physician signed the template", "Acceptable as long as nursing assessments are documented separately"],
         correctIndex: 1,
-        explanation: "NS.3 requires individualized plans of care. A template applied without patient-specific modification does not meet the individualization requirement — each patient's care plan must reflect their unique needs, conditions, and goals.",
+        explanation: "NS.3 requires individualized plans of care. A template applied without patient-specific modification does not meet the individualization requirement - each patient's care plan must reflect their unique needs, conditions, and goals.",
         category: "scenario",
       },
       {
         id: "dnv_ns_3",
         question: "NS.4 (Assessment-Reassessment) requires that patient assessment be:",
-        options: ["Completed only at admission and discharge", "Ongoing — performed when conditions change and at defined intervals", "Performed by physicians only", "Documented weekly regardless of condition changes"],
+        options: ["Completed only at admission and discharge", "Ongoing - performed when conditions change and at defined intervals", "Performed by physicians only", "Documented weekly regardless of condition changes"],
         correctIndex: 1,
         explanation: "NS.4 requires assessment and reassessment to be ongoing. When a patient's condition changes, a reassessment must be documented. Limiting assessment to admission and discharge misses critical interim changes.",
         category: "rule",
@@ -727,7 +727,7 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_ns_4",
         question: "Under NIAHO SM.4, staffing levels must be determined by:",
-        options: ["A fixed nurse-to-patient ratio set by state law only", "Patient acuity, census, and care needs — adjusted as conditions change", "The prior year's staffing budget", "Union contract minimums only"],
+        options: ["A fixed nurse-to-patient ratio set by state law only", "Patient acuity, census, and care needs - adjusted as conditions change", "The prior year's staffing budget", "Union contract minimums only"],
         correctIndex: 1,
         explanation: "SM.4 requires staffing to be determined and modified based on patient needs, acuity, and the scope of services. Fixed ratios may be a floor, but staffing must flex with actual patient needs.",
         category: "rule",
@@ -735,7 +735,7 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_ns_5",
         question: "A medical assistant is asked to administer IV medications on a unit. Under NIAHO SM.2, this is:",
-        options: ["Acceptable if the nurse is nearby", "Non-compliant — staff must practice within their professional scope and licensure", "Acceptable if the medical assistant has been trained on the specific medication", "Compliant if the CEO authorizes it in writing"],
+        options: ["Acceptable if the nurse is nearby", "Non-compliant - staff must practice within their professional scope and licensure", "Acceptable if the medical assistant has been trained on the specific medication", "Compliant if the CEO authorizes it in writing"],
         correctIndex: 1,
         explanation: "SM.2 requires staff to practice within their professional scope. IV medication administration is outside the scope of a medical assistant in virtually all states. Allowing this violates SM.2 and creates patient safety risk.",
         category: "scenario",
@@ -761,7 +761,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO SM.5, a job description must exist for:",
         options: ["Only clinical positions", "Every position in the hospital", "Only positions requiring a state license", "Only leadership and supervisory positions"],
         correctIndex: 1,
-        explanation: "SM.5 requires a job description for every position. This establishes expectations, scope of work, required qualifications, and reporting relationships — supporting accountability and competency assessment.",
+        explanation: "SM.5 requires a job description for every position. This establishes expectations, scope of work, required qualifications, and reporting relationships - supporting accountability and competency assessment.",
         category: "rule",
       },
       {
@@ -791,7 +791,7 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_ns_12",
         question: "A unit's staffing plan has not been adjusted despite a significant increase in patient acuity over the past month. Under SM.4, this represents:",
-        options: ["Acceptable management discretion", "A compliance gap — staffing must be modified in response to changing patient needs", "Acceptable if the fixed staffing budget is approved by the governing body", "A concern only if adverse events have occurred"],
+        options: ["Acceptable management discretion", "A compliance gap - staffing must be modified in response to changing patient needs", "Acceptable if the fixed staffing budget is approved by the governing body", "A concern only if adverse events have occurred"],
         correctIndex: 1,
         explanation: "SM.4 requires staffing to be determined AND modified based on patient acuity and needs. Failing to adjust staffing when acuity increases is a direct SM.4 compliance gap.",
         category: "scenario",
@@ -801,13 +801,13 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO NS.1, nursing service must be available:",
         options: ["During standard business hours, 7 days a week", "24 hours a day, 7 days a week", "Whenever patient census requires it, at nursing leadership discretion", "Only on units where physicians are present"],
         correctIndex: 1,
-        explanation: "NS.1 requires adequate nursing staff 24 hours a day, 7 days a week. This is a fundamental requirement for hospital licensure and NIAHO accreditation — nursing coverage cannot have gaps.",
+        explanation: "NS.1 requires adequate nursing staff 24 hours a day, 7 days a week. This is a fundamental requirement for hospital licensure and NIAHO accreditation - nursing coverage cannot have gaps.",
         category: "rule",
       },
       {
         id: "dnv_ns_14",
         question: "An LPN is working on a med-surg unit and is asked to perform an initial patient assessment independently. Under NIAHO SM.2, this is:",
-        options: ["Always acceptable under nurse delegation", "Depends on state scope of practice for LPNs — must not exceed their licensed scope", "Acceptable if the RN co-signs within 4 hours", "Acceptable since LPNs and RNs have equivalent scope"],
+        options: ["Always acceptable under nurse delegation", "Depends on state scope of practice for LPNs - must not exceed their licensed scope", "Acceptable if the RN co-signs within 4 hours", "Acceptable since LPNs and RNs have equivalent scope"],
         correctIndex: 1,
         explanation: "SM.2 requires all staff to practice within their professional scope. Whether an LPN can conduct an independent initial assessment depends on state scope of practice. NIAHO does not expand state-defined scopes.",
         category: "scenario",
@@ -823,9 +823,9 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_ns_16",
         question: "A hospital hires travel nurses who skip the facility's orientation because they are experienced. Under SM.6, this is:",
-        options: ["Acceptable if the travel nurse has worked at another hospital in the same state", "Non-compliant — orientation to the specific unit, environment, and policies is required for all new staff", "Acceptable if the agency certifies their competency", "Compliant if supervised by a permanent staff nurse for the first week"],
+        options: ["Acceptable if the travel nurse has worked at another hospital in the same state", "Non-compliant - orientation to the specific unit, environment, and policies is required for all new staff", "Acceptable if the agency certifies their competency", "Compliant if supervised by a permanent staff nurse for the first week"],
         correctIndex: 1,
-        explanation: "SM.6 requires orientation for all new staff — including travel staff. Orientation to the specific environment, equipment, policies, and procedures at this particular hospital is required regardless of prior experience elsewhere.",
+        explanation: "SM.6 requires orientation for all new staff - including travel staff. Orientation to the specific environment, equipment, policies, and procedures at this particular hospital is required regardless of prior experience elsewhere.",
         category: "scenario",
       },
       {
@@ -839,9 +839,9 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_ns_18",
         question: "A patient's care plan documents the goal as 'patient will improve.' Under NS.3, this goal is:",
-        options: ["Acceptable as a general direction", "Inadequate — goals must be specific, measurable, and individualized", "Acceptable if the physician wrote the care plan", "Adequate for documentation purposes only"],
+        options: ["Acceptable as a general direction", "Inadequate - goals must be specific, measurable, and individualized", "Acceptable if the physician wrote the care plan", "Adequate for documentation purposes only"],
         correctIndex: 1,
-        explanation: "NS.3 requires individualized care plans with meaningful goals. 'Patient will improve' is vague and unmeasurable — a compliant goal should specify what improvement looks like, by when, and for this specific patient.",
+        explanation: "NS.3 requires individualized care plans with meaningful goals. 'Patient will improve' is vague and unmeasurable - a compliant goal should specify what improvement looks like, by when, and for this specific patient.",
         category: "scenario",
       },
       {
@@ -857,14 +857,14 @@ export const dnvLevels: Level[] = [
         question: "Under SM.6, continuing education for hospital staff is required to:",
         options: ["Meet only state licensure renewal requirements", "Support ongoing competency and keep staff current with evolving practices", "Be approved by DNV for each topic covered", "Be completed during scheduled working hours only"],
         correctIndex: 1,
-        explanation: "SM.6 requires orientation and continuing education that supports ongoing competency. The purpose is keeping staff current with evolving practices, new equipment, and changing standards — not merely satisfying licensure hour requirements.",
+        explanation: "SM.6 requires orientation and continuing education that supports ongoing competency. The purpose is keeping staff current with evolving practices, new equipment, and changing standards - not merely satisfying licensure hour requirements.",
         category: "rule",
       },
     ],
   },
 
   // ─────────────────────────────────────────────────────────────────────────
-  // CHAPTER 5 — Medication Management (MM)
+  // CHAPTER 5 - Medication Management (MM)
   // ─────────────────────────────────────────────────────────────────────────
   {
     id: "dnv_mm",
@@ -880,14 +880,14 @@ export const dnvLevels: Level[] = [
         "Medications must be safely stored, dispensed, and administered.",
         "A formulary must be maintained and overseen by the pharmacy oversight group.",
         "Medication orders must be complete, legible, and properly authorized.",
-        "24-hour pharmacy access is required — including after-hours.",
+        "24-hour pharmacy access is required - including after-hours.",
         "Scheduled (controlled) drugs require special safeguards and accountability.",
         "An antimicrobial stewardship program must be in place.",
         "Drug information resources must be available to clinical staff.",
         "Self-administered medications must be assessed and documented.",
       ],
       commonRiskPoints: [
-        "Incomplete medication orders — missing dose, route, or frequency.",
+        "Incomplete medication orders - missing dose, route, or frequency.",
         "After-hours pharmacy access not clearly defined or consistently available.",
         "Controlled substance counts with unresolved discrepancies.",
         "Antimicrobial stewardship program existing on paper but not functioning.",
@@ -923,7 +923,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO MM.5, after-hours access to pharmacy services must be:",
         options: ["Available by on-call pharmacist phone consultation only", "Available 24 hours a day through defined means (on-site, on-call, or other approved mechanism)", "Available only for emergencies as defined by the medical director", "Provided by the charge nurse if the pharmacist is unavailable"],
         correctIndex: 1,
-        explanation: "MM.5 requires 24-hour access to pharmacy services. This can be through an on-site pharmacist, on-call pharmacist with secure medication access, or another approved mechanism — but access cannot have gaps.",
+        explanation: "MM.5 requires 24-hour access to pharmacy services. This can be through an on-site pharmacist, on-call pharmacist with secure medication access, or another approved mechanism - but access cannot have gaps.",
         category: "rule",
       },
       {
@@ -939,7 +939,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO MM.3, scheduled (controlled) drugs require:",
         options: ["Double-lock storage, strict count procedures, and documented accountability", "Storage in a standard medication room without additional security", "Monthly reconciliation with state pharmacy board records only", "DEA approval for each individual administration"],
         correctIndex: 0,
-        explanation: "MM.3 requires enhanced safeguards for scheduled (controlled) drugs — including secure storage (double-lock), documented counts at each shift or transaction, and accountability processes to detect and investigate discrepancies.",
+        explanation: "MM.3 requires enhanced safeguards for scheduled (controlled) drugs - including secure storage (double-lock), documented counts at each shift or transaction, and accountability processes to detect and investigate discrepancies.",
         category: "rule",
       },
       {
@@ -947,7 +947,7 @@ export const dnvLevels: Level[] = [
         question: "A pharmacy technician notices that the controlled substance count at shift change is off by one tablet. Under MM.3, the hospital must:",
         options: ["Wait until the end of the week to see if it resolves", "Document and investigate the discrepancy immediately according to policy", "Assume it was an administrative error and move on", "Report directly to DEA without internal investigation first"],
         correctIndex: 1,
-        explanation: "MM.3 requires that controlled substance discrepancies be documented and investigated immediately. Discrepancies cannot be assumed away — the investigation must be documented even if the resolution is eventually administrative.",
+        explanation: "MM.3 requires that controlled substance discrepancies be documented and investigated immediately. Discrepancies cannot be assumed away - the investigation must be documented even if the resolution is eventually administrative.",
         category: "scenario",
       },
       {
@@ -955,7 +955,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO MM.7, drug information resources must be:",
         options: ["Kept in the pharmacy only, accessible by pharmacists", "Available to clinical staff wherever medications are administered", "Updated no less than every 5 years", "Provided only in electronic format"],
         correctIndex: 1,
-        explanation: "MM.7 requires drug information to be available to clinical staff at the point of care — not just in the pharmacy. Nurses, physicians, and others administering medications need access to current drug references.",
+        explanation: "MM.7 requires drug information to be available to clinical staff at the point of care - not just in the pharmacy. Nurses, physicians, and others administering medications need access to current drug references.",
         category: "rule",
       },
       {
@@ -963,7 +963,7 @@ export const dnvLevels: Level[] = [
         question: "A patient asks to continue taking their home herbal supplements while hospitalized. Under NIAHO MM.9 (Self-Administered Medications), the hospital must:",
         options: ["Automatically allow it since herbal supplements are not prescription drugs", "Assess the patient's ability to self-administer and document the decision and safety assessment", "Prohibit all self-administered medications while hospitalized", "Require physician pre-approval for any supplement under 30mg"],
         correctIndex: 1,
-        explanation: "MM.9 requires the hospital to assess the appropriateness and safety of self-administered medications — including supplements. The assessment must be documented, and the policy must address when self-administration is and is not appropriate.",
+        explanation: "MM.9 requires the hospital to assess the appropriateness and safety of self-administered medications - including supplements. The assessment must be documented, and the policy must address when self-administration is and is not appropriate.",
         category: "scenario",
       },
       {
@@ -971,7 +971,7 @@ export const dnvLevels: Level[] = [
         question: "An antimicrobial stewardship program under MM.8 must include:",
         options: ["A requirement to prescribe only generic antibiotics", "Leadership commitment, defined responsibilities, and processes to optimize antibiotic use", "State pharmacy board pre-approval for all antibiotic prescriptions", "Mandatory infectious disease consultation for every antibiotic order"],
         correctIndex: 1,
-        explanation: "MM.8 requires a stewardship program with leadership support, defined accountability, drug use monitoring, and intervention processes to optimize antibiotic prescribing — reducing unnecessary use and combating resistance.",
+        explanation: "MM.8 requires a stewardship program with leadership support, defined accountability, drug use monitoring, and intervention processes to optimize antibiotic prescribing - reducing unnecessary use and combating resistance.",
         category: "rule",
       },
       {
@@ -987,7 +987,7 @@ export const dnvLevels: Level[] = [
         question: "A physician writes a medication order as 'Tylenol 500mg' without specifying route or frequency. Under MM.4, this order:",
         options: ["Can be filled by the pharmacist using standard dosing", "Is incomplete and must be clarified before dispensing or administration", "Is acceptable for PRN orders since the nurse can determine frequency", "Complies with NIAHO since the drug name and dose are present"],
         correctIndex: 1,
-        explanation: "MM.4 requires complete orders including route and frequency. Without these elements, the order is ambiguous and unsafe — it must be clarified with the prescriber before the medication is dispensed or administered.",
+        explanation: "MM.4 requires complete orders including route and frequency. Without these elements, the order is ambiguous and unsafe - it must be clarified with the prescriber before the medication is dispensed or administered.",
         category: "scenario",
       },
       {
@@ -995,7 +995,7 @@ export const dnvLevels: Level[] = [
         question: "Under MM.1, medications stored on patient care units must be:",
         options: ["Accessible to all hospital staff at all times for efficiency", "Stored securely with access limited to authorized staff, under appropriate conditions", "Kept at room temperature regardless of manufacturer recommendations", "Approved by the state board of pharmacy for unit storage"],
         correctIndex: 1,
-        explanation: "MM.1 requires medications to be stored securely — under appropriate conditions (temperature, light, humidity per manufacturer) — and accessible only to authorized staff. Unsecured medication storage is a common survey finding.",
+        explanation: "MM.1 requires medications to be stored securely - under appropriate conditions (temperature, light, humidity per manufacturer) - and accessible only to authorized staff. Unsecured medication storage is a common survey finding.",
         category: "rule",
       },
       {
@@ -1019,13 +1019,13 @@ export const dnvLevels: Level[] = [
         question: "The P&T (Pharmacy and Therapeutics) committee reviews a new medication request for the formulary. Under MM.6, the committee should evaluate:",
         options: ["The medication's cost relative to the hospital's revenue margin only", "Clinical evidence, safety profile, and appropriateness relative to existing formulary options", "Whether the pharmaceutical rep can provide samples for staff", "Only whether CMS will reimburse the medication"],
         correctIndex: 1,
-        explanation: "MM.6 requires the oversight group to evaluate medications for formulary inclusion based on clinical evidence, safety, and appropriateness. This is a clinical and quality function — not primarily a financial or vendor relationship decision.",
+        explanation: "MM.6 requires the oversight group to evaluate medications for formulary inclusion based on clinical evidence, safety, and appropriateness. This is a clinical and quality function - not primarily a financial or vendor relationship decision.",
         category: "scenario",
       },
       {
         id: "dnv_mm_15",
         question: "Under MM.1, high-alert medications (e.g., concentrated electrolytes, insulin) must:",
-        options: ["Be stored with all other medications to reduce handling time", "Have special storage, labeling, and administration safeguards to reduce harm risk", "Be available only in the pharmacy — never on patient care units", "Be restricted to physician administration only"],
+        options: ["Be stored with all other medications to reduce handling time", "Have special storage, labeling, and administration safeguards to reduce harm risk", "Be available only in the pharmacy - never on patient care units", "Be restricted to physician administration only"],
         correctIndex: 1,
         explanation: "MM.1 requires enhanced safeguards for high-alert medications. These include special storage (often locked separately), distinct labeling, independent double-checks before administration, and clear protocols to reduce error risk.",
         category: "rule",
@@ -1033,7 +1033,7 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_mm_16",
         question: "Under NIAHO, verbal medication orders should be:",
-        options: ["Prohibited entirely — all orders must be written", "Read back for confirmation and documented/signed within the timeframe in hospital policy", "Signed by the nurse who received them without physician follow-up", "Acceptable only in emergency situations with no documentation required"],
+        options: ["Prohibited entirely - all orders must be written", "Read back for confirmation and documented/signed within the timeframe in hospital policy", "Signed by the nurse who received them without physician follow-up", "Acceptable only in emergency situations with no documentation required"],
         correctIndex: 1,
         explanation: "MM.4 requires verbal/telephone orders to be confirmed by read-back and documented promptly. The prescriber must authenticate the order within the hospital's defined timeframe. This reduces transcription errors.",
         category: "rule",
@@ -1041,7 +1041,7 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_mm_17",
         question: "A patient's medication supply brought from home is not being tracked by the nursing staff. Under MM.9, this is:",
-        options: ["Acceptable since home medications are the patient's personal property", "A compliance gap — the hospital must assess and document home medication use", "Acceptable if the physician is aware", "A concern only if the patient takes more than three home medications"],
+        options: ["Acceptable since home medications are the patient's personal property", "A compliance gap - the hospital must assess and document home medication use", "Acceptable if the physician is aware", "A concern only if the patient takes more than three home medications"],
         correctIndex: 1,
         explanation: "MM.9 requires the hospital to address self-administered medications including those from home. Assessment and documentation of safety, interactions, and appropriateness are required.",
         category: "scenario",
@@ -1057,9 +1057,9 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_mm_19",
         question: "The antimicrobial stewardship program at a DNV hospital produces monthly reports but no physician has changed prescribing practices in two years. Under MM.8, this program:",
-        options: ["Is compliant since reports are being generated", "Is non-compliant — the program must demonstrate intervention and impact on prescribing", "Is compliant if physicians review and sign off on the reports", "Needs only to notify the state health department of patterns"],
+        options: ["Is compliant since reports are being generated", "Is non-compliant - the program must demonstrate intervention and impact on prescribing", "Is compliant if physicians review and sign off on the reports", "Needs only to notify the state health department of patterns"],
         correctIndex: 1,
-        explanation: "MM.8 requires a functioning stewardship program that influences prescribing — not just one that generates reports. No change in prescribing over two years despite a program suggests the intervention component is not functioning.",
+        explanation: "MM.8 requires a functioning stewardship program that influences prescribing - not just one that generates reports. No change in prescribing over two years despite a program suggests the intervention component is not functioning.",
         category: "scenario",
       },
       {
@@ -1074,7 +1074,7 @@ export const dnvLevels: Level[] = [
   },
 
   // ─────────────────────────────────────────────────────────────────────────
-  // CHAPTER 6 — Surgical & Anesthesia Services (SS + AS)
+  // CHAPTER 6 - Surgical & Anesthesia Services (SS + AS)
   // ─────────────────────────────────────────────────────────────────────────
   {
     id: "dnv_ss",
@@ -1100,7 +1100,7 @@ export const dnvLevels: Level[] = [
       ],
       commonRiskPoints: [
         "Consent signed after sedation administered.",
-        "Operative report not dictated promptly — only a brief note without full detail.",
+        "Operative report not dictated promptly - only a brief note without full detail.",
         "PACU discharge without documented criteria being met.",
         "Instruments reprocessed using modified or unapproved methods.",
         "Pre-anesthesia evaluation not documented for all cases.",
@@ -1116,7 +1116,7 @@ export const dnvLevels: Level[] = [
       },
       {
         title: "Informed Consent for Surgery",
-        content: "SS.9 requires surgical informed consent to be obtained and documented before the procedure. Consent must be signed while the patient is competent — never after sedation. The discussion must include the procedure, its purpose, material risks, alternatives, and the right to refuse. The surgeon performing the procedure is responsible for obtaining consent.",
+        content: "SS.9 requires surgical informed consent to be obtained and documented before the procedure. Consent must be signed while the patient is competent - never after sedation. The discussion must include the procedure, its purpose, material risks, alternatives, and the right to refuse. The surgeon performing the procedure is responsible for obtaining consent.",
         keyPoint: "Consent before sedation. Surgeon obtains consent. Includes risks, alternatives, right to refuse.",
         category: "rule",
       },
@@ -1133,17 +1133,17 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_ss_2",
         question: "A patient is given IV midazolam for anxiety before signing the surgical consent form. Under NIAHO SS.9, this is:",
-        options: ["Acceptable if the patient appears awake and oriented", "Non-compliant — informed consent must be obtained before sedation", "Acceptable if a family member witnesses the signing", "Compliant if the surgeon reviews the procedure verbally after sedation"],
+        options: ["Acceptable if the patient appears awake and oriented", "Non-compliant - informed consent must be obtained before sedation", "Acceptable if a family member witnesses the signing", "Compliant if the surgeon reviews the procedure verbally after sedation"],
         correctIndex: 1,
-        explanation: "SS.9 requires informed consent before any procedure. Sedation impairs decision-making capacity — consent signed after sedation is not valid informed consent and represents a serious compliance and ethical failure.",
+        explanation: "SS.9 requires informed consent before any procedure. Sedation impairs decision-making capacity - consent signed after sedation is not valid informed consent and represents a serious compliance and ethical failure.",
         category: "scenario",
       },
       {
         id: "dnv_ss_3",
         question: "Under NIAHO SS.6, the operating room register must contain:",
-        options: ["A financial record of each procedure's billing codes", "A log of all procedures performed including patient identification, procedure, and surgeon", "Only emergency surgery entries — elective procedures are tracked separately", "Pre-authorization numbers from insurance companies"],
+        options: ["A financial record of each procedure's billing codes", "A log of all procedures performed including patient identification, procedure, and surgeon", "Only emergency surgery entries - elective procedures are tracked separately", "Pre-authorization numbers from insurance companies"],
         correctIndex: 1,
-        explanation: "SS.6 requires an OR register that logs all procedures performed — not just emergencies. The log must include patient identification, the procedure performed, the operating surgeon, and other key data points.",
+        explanation: "SS.6 requires an OR register that logs all procedures performed - not just emergencies. The log must include patient identification, the procedure performed, the operating surgeon, and other key data points.",
         category: "rule",
       },
       {
@@ -1159,7 +1159,7 @@ export const dnvLevels: Level[] = [
         question: "Instrument reprocessing under SS.10 must follow:",
         options: ["The most cost-effective method available to the hospital", "Manufacturer instructions for reprocessing of each instrument or device", "General SPD decontamination guidelines only", "State health department-approved reprocessing protocols exclusively"],
         correctIndex: 1,
-        explanation: "SS.10 requires that surgical instruments, implants, and medical equipment be reprocessed according to manufacturer instructions. Deviating from manufacturer-validated methods — even with good intent — can compromise sterilization effectiveness.",
+        explanation: "SS.10 requires that surgical instruments, implants, and medical equipment be reprocessed according to manufacturer instructions. Deviating from manufacturer-validated methods - even with good intent - can compromise sterilization effectiveness.",
         category: "rule",
       },
       {
@@ -1175,15 +1175,15 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO AS.3, a pre-anesthesia evaluation must be performed:",
         options: ["Within 7 days of surgery during the pre-admission visit only", "Immediately before each anesthesia case to assess current status", "By the surgeon rather than the anesthesia provider", "Only for patients with ASA class III or higher"],
         correctIndex: 1,
-        explanation: "AS.3 requires a pre-anesthesia evaluation before every anesthesia case. This includes a review of the patient's current status, medical history, medications, allergies, airway assessment, and anesthesia plan — not just a review of prior records.",
+        explanation: "AS.3 requires a pre-anesthesia evaluation before every anesthesia case. This includes a review of the patient's current status, medical history, medications, allergies, airway assessment, and anesthesia plan - not just a review of prior records.",
         category: "rule",
       },
       {
         id: "dnv_ss_8",
         question: "A surgeon performs a procedure that is not listed in their delineated clinical privileges. Under NIAHO SS.3, this is:",
-        options: ["Acceptable in emergencies without prior notification", "A serious compliance violation — procedures must be within delineated privileges", "Acceptable if the OR charge nurse gives verbal approval", "Compliant if the surgeon has performed the procedure at another hospital"],
+        options: ["Acceptable in emergencies without prior notification", "A serious compliance violation - procedures must be within delineated privileges", "Acceptable if the OR charge nurse gives verbal approval", "Compliant if the surgeon has performed the procedure at another hospital"],
         correctIndex: 1,
-        explanation: "SS.3 requires practitioners to hold specific delineated privileges for procedures they perform. Performing outside privileged scope — even in apparent good faith — is a NIAHO violation and creates patient safety and legal risk.",
+        explanation: "SS.3 requires practitioners to hold specific delineated privileges for procedures they perform. Performing outside privileged scope - even in apparent good faith - is a NIAHO violation and creates patient safety and legal risk.",
         category: "scenario",
       },
       {
@@ -1191,7 +1191,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO SS.9, which element must be included in the surgical informed consent discussion?",
         options: ["The surgeon's personal complication rates for this procedure", "The procedure, its purpose, material risks, alternatives, and the right to refuse", "A mandatory 24-hour waiting period before signing", "The names of all OR staff who will be present"],
         correctIndex: 1,
-        explanation: "SS.9 requires informed consent to include: the procedure, its purpose, material (significant) risks, available alternatives, and the patient's right to refuse. Consent is a process — not just a signature on a form.",
+        explanation: "SS.9 requires informed consent to include: the procedure, its purpose, material (significant) risks, available alternatives, and the patient's right to refuse. Consent is a process - not just a signature on a form.",
         category: "rule",
       },
       {
@@ -1199,15 +1199,15 @@ export const dnvLevels: Level[] = [
         question: "Under AS.3, a post-anesthesia assessment before PACU discharge must evaluate:",
         options: ["Only the patient's pain level and vital signs", "Respiratory function, oxygenation, cardiovascular status, level of consciousness, and pain", "Whether the patient can ambulate independently", "Only whether the patient can take oral fluids"],
         correctIndex: 1,
-        explanation: "AS.3 requires a comprehensive post-anesthesia assessment before PACU discharge. This must include respiratory function, oxygenation status, cardiovascular status, level of consciousness, and pain management — not just one or two parameters.",
+        explanation: "AS.3 requires a comprehensive post-anesthesia assessment before PACU discharge. This must include respiratory function, oxygenation status, cardiovascular status, level of consciousness, and pain management - not just one or two parameters.",
         category: "rule",
       },
       {
         id: "dnv_ss_11",
         question: "Under SS.5, the surgical suite must have available emergency equipment that includes:",
-        options: ["Equipment as determined by surgeon preference only", "Equipment required to respond to anesthesia emergencies, cardiac arrest, and other urgent events", "Basic vital sign monitoring only — advanced equipment is kept in the ICU", "Equipment approved by the medical staff annually"],
+        options: ["Equipment as determined by surgeon preference only", "Equipment required to respond to anesthesia emergencies, cardiac arrest, and other urgent events", "Basic vital sign monitoring only - advanced equipment is kept in the ICU", "Equipment approved by the medical staff annually"],
         correctIndex: 1,
-        explanation: "SS.5 requires available emergency equipment in the surgical suite — including cardiac arrest and anesthesia emergency response supplies. Equipment must be present where procedures occur, not stored elsewhere.",
+        explanation: "SS.5 requires available emergency equipment in the surgical suite - including cardiac arrest and anesthesia emergency response supplies. Equipment must be present where procedures occur, not stored elsewhere.",
         category: "rule",
       },
       {
@@ -1229,9 +1229,9 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_ss_14",
         question: "Under NIAHO SS.2, surgical services staffing must include:",
-        options: ["At least one physician in the OR suite at all times regardless of case type", "Qualified personnel in sufficient numbers to provide surgical services safely", "Only OR nurses and the operating surgeon — no other roles are required", "A fixed nurse-to-case ratio set by the state"],
+        options: ["At least one physician in the OR suite at all times regardless of case type", "Qualified personnel in sufficient numbers to provide surgical services safely", "Only OR nurses and the operating surgeon - no other roles are required", "A fixed nurse-to-case ratio set by the state"],
         correctIndex: 1,
-        explanation: "SS.2 requires qualified personnel in sufficient numbers to provide surgical services safely. The team must include the appropriate mix of roles — surgeon, anesthesia provider, scrub and circulating personnel — matched to the case complexity.",
+        explanation: "SS.2 requires qualified personnel in sufficient numbers to provide surgical services safely. The team must include the appropriate mix of roles - surgeon, anesthesia provider, scrub and circulating personnel - matched to the case complexity.",
         category: "rule",
       },
       {
@@ -1239,13 +1239,13 @@ export const dnvLevels: Level[] = [
         question: "Under AS.2, anesthesia policies and procedures must address:",
         options: ["Only the types of agents approved for use", "Pre-anesthesia evaluation, monitoring during procedures, and post-anesthesia care", "Insurance billing for anesthesia services", "The anesthesiologist's scheduling preferences"],
         correctIndex: 1,
-        explanation: "AS.2 requires anesthesia policies to address the full continuum of anesthesia care — pre-anesthesia evaluation, intraoperative monitoring and management, and post-anesthesia recovery. All three phases must be covered.",
+        explanation: "AS.2 requires anesthesia policies to address the full continuum of anesthesia care - pre-anesthesia evaluation, intraoperative monitoring and management, and post-anesthesia recovery. All three phases must be covered.",
         category: "rule",
       },
       {
         id: "dnv_ss_16",
         question: "A PACU nurse discharges a patient to the floor because 'it's been long enough' without formally assessing discharge criteria. Under SS.7, this is:",
-        options: ["Acceptable if the surgeon ordered the transfer", "Non-compliant — discharge criteria must be formally assessed and documented before discharge", "Acceptable if vital signs have been stable for 30 minutes", "Compliant if the anesthesiologist verbally approved the discharge"],
+        options: ["Acceptable if the surgeon ordered the transfer", "Non-compliant - discharge criteria must be formally assessed and documented before discharge", "Acceptable if vital signs have been stable for 30 minutes", "Compliant if the anesthesiologist verbally approved the discharge"],
         correctIndex: 1,
         explanation: "SS.7 requires discharge criteria to be formally assessed and documented by qualified PACU staff. Time alone and verbal orders do not substitute for documented criteria-based discharge.",
         category: "scenario",
@@ -1255,7 +1255,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO SS.9, who is primarily responsible for obtaining informed consent for a surgical procedure?",
         options: ["The hospital's consent coordinator", "The surgeon who will perform the procedure", "The patient's primary care physician", "The anesthesiologist for their portion of the procedure"],
         correctIndex: 1,
-        explanation: "SS.9 places responsibility for obtaining surgical informed consent with the surgeon performing the procedure. They must personally discuss risks, alternatives, and the proposed procedure — this cannot be fully delegated to other staff.",
+        explanation: "SS.9 places responsibility for obtaining surgical informed consent with the surgeon performing the procedure. They must personally discuss risks, alternatives, and the proposed procedure - this cannot be fully delegated to other staff.",
         category: "rule",
       },
       {
@@ -1263,7 +1263,7 @@ export const dnvLevels: Level[] = [
         question: "Under AS.3, intraoperative monitoring during anesthesia must include monitoring of:",
         options: ["Only blood pressure and pulse oximetry", "Parameters as defined in anesthesia policies, typically including oxygenation, ventilation, circulation, and temperature", "Only parameters the anesthesiologist determines are relevant to the specific case", "The parameters listed in the patient's pre-op orders"],
         correctIndex: 1,
-        explanation: "AS.3 requires intraoperative monitoring that meets professional standards — typically oxygenation, ventilation, circulation, and temperature monitoring as appropriate. The specific parameters are defined in the hospital's anesthesia policies.",
+        explanation: "AS.3 requires intraoperative monitoring that meets professional standards - typically oxygenation, ventilation, circulation, and temperature monitoring as appropriate. The specific parameters are defined in the hospital's anesthesia policies.",
         category: "rule",
       },
       {
@@ -1286,7 +1286,7 @@ export const dnvLevels: Level[] = [
   },
 
   // ─────────────────────────────────────────────────────────────────────────
-  // CHAPTER 7 — Patient Care Services (OB, LS, RC, MI, NM, RS)
+  // CHAPTER 7 - Patient Care Services (OB, LS, RC, MI, NM, RS)
   // ─────────────────────────────────────────────────────────────────────────
   {
     id: "dnv_pc",
@@ -1326,7 +1326,7 @@ export const dnvLevels: Level[] = [
       },
       {
         title: "Radiation Protection in Medical Imaging",
-        content: "MI.2 requires a radiation protection program for all imaging using ionizing radiation (X-ray, CT, fluoroscopy). The program must minimize unnecessary exposure to patients, staff, and visitors. Requirements include shielding, dosimetry for staff, equipment inspection, and protocols for minimizing patient dose — particularly for vulnerable populations like pregnant patients and children.",
+        content: "MI.2 requires a radiation protection program for all imaging using ionizing radiation (X-ray, CT, fluoroscopy). The program must minimize unnecessary exposure to patients, staff, and visitors. Requirements include shielding, dosimetry for staff, equipment inspection, and protocols for minimizing patient dose - particularly for vulnerable populations like pregnant patients and children.",
         keyPoint: "Radiation protection: minimize dose, staff dosimetry, shielding, equipment inspection.",
         category: "rule",
       },
@@ -1345,15 +1345,15 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO RC.2, respiratory therapy treatments may be administered:",
         options: ["At the respiratory therapist's clinical discretion without a physician order", "Only with a physician's order specifying the treatment and parameters", "Based on standing protocols without individual physician orders", "At the patient's request without clinical evaluation"],
         correctIndex: 1,
-        explanation: "RC.2 requires physician orders for respiratory therapy treatments. Respiratory therapists are skilled clinicians, but they must operate under physician orders — they cannot initiate treatment based solely on their own clinical judgment.",
+        explanation: "RC.2 requires physician orders for respiratory therapy treatments. Respiratory therapists are skilled clinicians, but they must operate under physician orders - they cannot initiate treatment based solely on their own clinical judgment.",
         category: "rule",
       },
       {
         id: "dnv_pc_3",
         question: "A medical imaging department performs CT scans without a formal radiation protection program. Under NIAHO MI.2, this is:",
-        options: ["Acceptable if the CT is a low-dose protocol", "Non-compliant — a radiation protection program is required for all ionizing radiation imaging", "Acceptable if the radiologist monitors doses informally", "Compliant if the equipment was recently inspected"],
+        options: ["Acceptable if the CT is a low-dose protocol", "Non-compliant - a radiation protection program is required for all ionizing radiation imaging", "Acceptable if the radiologist monitors doses informally", "Compliant if the equipment was recently inspected"],
         correctIndex: 1,
-        explanation: "MI.2 requires a formal radiation protection program for all imaging using ionizing radiation. The program must be active and documented — not informal or assumed based on equipment capabilities.",
+        explanation: "MI.2 requires a formal radiation protection program for all imaging using ionizing radiation. The program must be active and documented - not informal or assumed based on equipment capabilities.",
         category: "scenario",
       },
       {
@@ -1361,7 +1361,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO OB.4, obstetrical care must include policies for:",
         options: ["Elective induction scheduling only", "Management of obstetric emergencies such as hemorrhage and eclampsia", "Epidural anesthesia pricing and consent", "Neonatal intensive care transfer protocols to tertiary centers only"],
         correctIndex: 1,
-        explanation: "OB.4 requires policies and protocols for obstetric emergencies — including hemorrhage, eclampsia/pre-eclampsia, and other urgent situations. These protocols must exist and staff must be trained on them.",
+        explanation: "OB.4 requires policies and protocols for obstetric emergencies - including hemorrhage, eclampsia/pre-eclampsia, and other urgent situations. These protocols must exist and staff must be trained on them.",
         category: "rule",
       },
       {
@@ -1369,13 +1369,13 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO NM.2, radioactive materials used in nuclear medicine must be:",
         options: ["Ordered by nurses without physician supervision", "Handled, stored, and disposed of in accordance with applicable regulations", "Approved for each patient use by the hospital governing body", "Stored in any locked room away from patients"],
         correctIndex: 1,
-        explanation: "NM.2 requires that radioactive materials be handled, stored, and disposed of in accordance with Nuclear Regulatory Commission (NRC) regulations and other applicable requirements — not just general safety practices.",
+        explanation: "NM.2 requires that radioactive materials be handled, stored, and disposed of in accordance with Nuclear Regulatory Commission (NRC) regulations and other applicable requirements - not just general safety practices.",
         category: "rule",
       },
       {
         id: "dnv_pc_6",
         question: "A rehabilitation patient receives therapy sessions without a physician's order. Under NIAHO RS.3, this is:",
-        options: ["Acceptable if the therapist is board-certified", "Non-compliant — rehabilitation treatment must be ordered by a physician", "Acceptable if the patient's PCP was verbally informed", "Compliant if the hospital has a standing order for rehabilitation services"],
+        options: ["Acceptable if the therapist is board-certified", "Non-compliant - rehabilitation treatment must be ordered by a physician", "Acceptable if the patient's PCP was verbally informed", "Compliant if the hospital has a standing order for rehabilitation services"],
         correctIndex: 1,
         explanation: "RS.3 requires physician orders for rehabilitation treatment. Physical, occupational, and speech therapists are skilled practitioners, but their treatment plans must be ordered and authorized by a physician.",
         category: "scenario",
@@ -1383,7 +1383,7 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_pc_7",
         question: "Under NIAHO MI.3, medical imaging equipment must be:",
-        options: ["Replaced every 5 years regardless of condition", "Regularly inspected and maintained to ensure safety and performance", "Approved by DNV before each use", "Operated only by radiologists — technologists cannot use equipment independently"],
+        options: ["Replaced every 5 years regardless of condition", "Regularly inspected and maintained to ensure safety and performance", "Approved by DNV before each use", "Operated only by radiologists - technologists cannot use equipment independently"],
         correctIndex: 1,
         explanation: "MI.3 requires imaging equipment to be regularly inspected and maintained. Proper maintenance ensures image quality for diagnostic accuracy and radiation dose is within acceptable ranges for patient safety.",
         category: "rule",
@@ -1391,7 +1391,7 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_pc_8",
         question: "Under NIAHO LS.3, a patient who received a blood transfusion later identified as from a potentially infectious donor must be:",
-        options: ["Notified by public health only — the hospital has no direct notification duty", "Notified by the hospital and offered appropriate follow-up testing and care", "Notified only if the patient specifically asks about transfusion history", "Notified only if they develop symptoms of infection"],
+        options: ["Notified by public health only - the hospital has no direct notification duty", "Notified by the hospital and offered appropriate follow-up testing and care", "Notified only if the patient specifically asks about transfusion history", "Notified only if they develop symptoms of infection"],
         correctIndex: 1,
         explanation: "LS.3 requires patient notification when a transfusion product is identified as potentially infectious. The hospital must notify the patient promptly and arrange for appropriate follow-up evaluation and testing.",
         category: "rule",
@@ -1399,15 +1399,15 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_pc_9",
         question: "Under NIAHO MI.5, interpretation of medical images must be performed by:",
-        options: ["Any licensed physician on medical staff", "Qualified individuals — typically radiologists or physicians with specific training and privileges", "The ordering physician who is familiar with the patient's case", "Only board-certified radiologists"],
+        options: ["Any licensed physician on medical staff", "Qualified individuals - typically radiologists or physicians with specific training and privileges", "The ordering physician who is familiar with the patient's case", "Only board-certified radiologists"],
         correctIndex: 1,
-        explanation: "MI.5 requires image interpretation to be performed by qualified personnel — meaning those with appropriate training, experience, and clinical privileges for image interpretation. The specific credential (radiologist or trained specialist) is defined by the hospital's privileging process.",
+        explanation: "MI.5 requires image interpretation to be performed by qualified personnel - meaning those with appropriate training, experience, and clinical privileges for image interpretation. The specific credential (radiologist or trained specialist) is defined by the hospital's privileging process.",
         category: "rule",
       },
       {
         id: "dnv_pc_10",
         question: "A respiratory therapist routinely adjusts ventilator settings based on clinical assessment without waiting for a new physician order. Under NIAHO RC.2, this practice:",
-        options: ["Is compliant if the therapist is experienced and certified", "Requires physician orders — settings may be adjusted only within parameters specified in the order", "Is acceptable if the supervising physician is in the hospital at the time", "Is fully compliant under respiratory therapy independent practice acts"],
+        options: ["Is compliant if the therapist is experienced and certified", "Requires physician orders - settings may be adjusted only within parameters specified in the order", "Is acceptable if the supervising physician is in the hospital at the time", "Is fully compliant under respiratory therapy independent practice acts"],
         correctIndex: 1,
         explanation: "RC.2 requires physician orders for respiratory interventions. Ventilator management adjustments must occur within physician-ordered parameters or under a new/modified order. Independent adjustment without order authority violates RC.2.",
         category: "scenario",
@@ -1415,9 +1415,9 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_pc_11",
         question: "Under NIAHO OB.3, obstetrical practitioner privileges must be:",
-        options: ["The same as general medical staff privileges — no separate OB delineation needed", "Specifically delineated for obstetric procedures and care", "Approved by the state department of health", "Self-reported by the practitioner based on training"],
+        options: ["The same as general medical staff privileges - no separate OB delineation needed", "Specifically delineated for obstetric procedures and care", "Approved by the state department of health", "Self-reported by the practitioner based on training"],
         correctIndex: 1,
-        explanation: "OB.3 requires specific privilege delineation for obstetrical procedures. Practitioners must have OB-specific privileges — general medical staff membership does not automatically confer obstetric privileges.",
+        explanation: "OB.3 requires specific privilege delineation for obstetrical procedures. Practitioners must have OB-specific privileges - general medical staff membership does not automatically confer obstetric privileges.",
         category: "rule",
       },
       {
@@ -1433,13 +1433,13 @@ export const dnvLevels: Level[] = [
         question: "Nuclear medicine staff handling radioactive materials must have:",
         options: ["A general nursing license and additional on-the-job training", "Qualifications appropriate to their role and compliance with NRC requirements for radiation workers", "DNV-specific nuclear medicine certification", "At least 5 years of radiology experience"],
         correctIndex: 1,
-        explanation: "NM.1 requires nuclear medicine staff to be qualified for their role. This includes meeting NRC requirements for radiation workers — training, dosimetry monitoring, and demonstrated competency in handling radioactive materials.",
+        explanation: "NM.1 requires nuclear medicine staff to be qualified for their role. This includes meeting NRC requirements for radiation workers - training, dosimetry monitoring, and demonstrated competency in handling radioactive materials.",
         category: "rule",
       },
       {
         id: "dnv_pc_14",
         question: "Under NIAHO LS.4 (General Blood Safety), the hospital's transfusion service must:",
-        options: ["Only test blood before transfusion — post-transfusion testing is not required", "Implement a blood safety program that includes compatibility testing, reaction reporting, and safety procedures", "Obtain state board of pharmacy approval for all blood products", "Limit transfusions to no more than two units per patient without special authorization"],
+        options: ["Only test blood before transfusion - post-transfusion testing is not required", "Implement a blood safety program that includes compatibility testing, reaction reporting, and safety procedures", "Obtain state board of pharmacy approval for all blood products", "Limit transfusions to no more than two units per patient without special authorization"],
         correctIndex: 1,
         explanation: "LS.4 requires a comprehensive blood safety program including compatibility testing before transfusion, procedures for managing transfusion reactions, and documentation of all transfusions. Safety is the central requirement.",
         category: "rule",
@@ -1449,7 +1449,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO MI.6, medical imaging staff qualifications must:",
         options: ["Be approved by the state board of medical imaging annually", "Match the modalities they operate and images they produce", "Include board certification in radiology for all technologists", "Be verified only at the time of hire"],
         correctIndex: 1,
-        explanation: "MI.6 requires that imaging staff have qualifications appropriate to the specific modalities they use. A CT technologist must be qualified for CT; an MRI technologist for MRI. Qualifications must be ongoing — not just verified at hire.",
+        explanation: "MI.6 requires that imaging staff have qualifications appropriate to the specific modalities they use. A CT technologist must be qualified for CT; an MRI technologist for MRI. Qualifications must be ongoing - not just verified at hire.",
         category: "rule",
       },
       {
@@ -1463,7 +1463,7 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_pc_17",
         question: "An obstetrician manages a labor patient without obstetric privileges at the hospital. Under NIAHO OB.3, this is:",
-        options: ["Acceptable since they hold a valid medical license", "A serious compliance violation — obstetric privileges must be specifically granted", "Acceptable in an emergency if no other OB is available without documentation", "Compliant if the patient's PCP refers them"],
+        options: ["Acceptable since they hold a valid medical license", "A serious compliance violation - obstetric privileges must be specifically granted", "Acceptable in an emergency if no other OB is available without documentation", "Compliant if the patient's PCP refers them"],
         correctIndex: 1,
         explanation: "OB.3 requires specific obstetric privileges. Holding a medical license or general medical staff membership does not confer obstetric privileges. Managing a labor patient without OB privileges is a credentialing violation.",
         category: "scenario",
@@ -1489,14 +1489,14 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO OB.2, supervision and staffing in obstetrical services must ensure:",
         options: ["At least one OB physician is present on the unit at all times regardless of census", "Adequate qualified supervision and staffing appropriate to the volume and acuity of patients", "A 1:1 nurse-to-patient ratio at all times in labor and delivery", "A pediatrician present at every delivery"],
         correctIndex: 1,
-        explanation: "OB.2 requires qualified supervision and adequate staffing appropriate to patient volume and acuity. The specific ratios and coverage are defined by the hospital in policy — the standard is adequacy for safe patient care, not a rigid universal ratio.",
+        explanation: "OB.2 requires qualified supervision and adequate staffing appropriate to patient volume and acuity. The specific ratios and coverage are defined by the hospital in policy - the standard is adequacy for safe patient care, not a rigid universal ratio.",
         category: "rule",
       },
     ],
   },
 
   // ─────────────────────────────────────────────────────────────────────────
-  // CHAPTER 8 — Emergency, Outpatient & Dietary Services (ES + OS + DS)
+  // CHAPTER 8 - Emergency, Outpatient & Dietary Services (ES + OS + DS)
   // ─────────────────────────────────────────────────────────────────────────
   {
     id: "dnv_es",
@@ -1507,7 +1507,7 @@ export const dnvLevels: Level[] = [
     requiredScore: 0,
     chapterSummary: {
       chapterTitle: "Emergency, Outpatient & Dietary Services (ES.1–ES.5, OS.1–OS.4, DS.1–DS.3)",
-      plainLanguageSummary: "Emergency services must be organized, appropriately staffed, and have protocols for the full range of emergencies the community may present — including emergencies for which the hospital will transfer patients. Outpatient services require the same quality care standards as inpatient. Dietary services must be led by a qualified dietitian, provide individualized therapeutic diets, and maintain a current diet manual used by all staff ordering diets.",
+      plainLanguageSummary: "Emergency services must be organized, appropriately staffed, and have protocols for the full range of emergencies the community may present - including emergencies for which the hospital will transfer patients. Outpatient services require the same quality care standards as inpatient. Dietary services must be led by a qualified dietitian, provide individualized therapeutic diets, and maintain a current diet manual used by all staff ordering diets.",
       keyOperationalExpectations: [
         "ED must be organized and staffed to respond to emergency presentations.",
         "Emergency protocols required for conditions treated and for those requiring transfer.",
@@ -1530,13 +1530,13 @@ export const dnvLevels: Level[] = [
     studyMaterial: [
       {
         title: "Emergency Services Not Provided",
-        content: "ES.4 specifically requires that when the hospital does not provide a particular emergency service, it must have written protocols for transferring patients who require that service. The hospital cannot simply say 'we don't do that' without having a plan — every potential emergency presentation must have a response pathway, even if that pathway is a transfer to a capable facility.",
+        content: "ES.4 specifically requires that when the hospital does not provide a particular emergency service, it must have written protocols for transferring patients who require that service. The hospital cannot simply say 'we don't do that' without having a plan - every potential emergency presentation must have a response pathway, even if that pathway is a transfer to a capable facility.",
         keyPoint: "If you don't provide an emergency service, you must have a written transfer protocol for that emergency.",
         category: "rule",
       },
       {
         title: "The Diet Manual Requirement",
-        content: "DS.3 requires the hospital to maintain a current diet manual that is the reference for all therapeutic diets ordered. The manual must be approved by the dietary service and the medical staff. It must be accessible to medical and nursing staff who order and implement diets — not just to dietary staff. Outdated manuals or manuals kept only in the dietary department are compliance findings.",
+        content: "DS.3 requires the hospital to maintain a current diet manual that is the reference for all therapeutic diets ordered. The manual must be approved by the dietary service and the medical staff. It must be accessible to medical and nursing staff who order and implement diets - not just to dietary staff. Outdated manuals or manuals kept only in the dietary department are compliance findings.",
         keyPoint: "Current diet manual: approved by dietary and medical staff, accessible to staff who order diets.",
         category: "rule",
       },
@@ -1545,7 +1545,7 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_es_1",
         question: "Under NIAHO ES.1, the emergency services department must be:",
-        options: ["Open only during business hours unless the hospital is a trauma center", "Organized and staffed to provide care for any emergency presentation at all hours", "Staffed by physicians on call — no requirement for on-site coverage between patients", "Providing only stabilization services — definitive care is always transferred"],
+        options: ["Open only during business hours unless the hospital is a trauma center", "Organized and staffed to provide care for any emergency presentation at all hours", "Staffed by physicians on call - no requirement for on-site coverage between patients", "Providing only stabilization services - definitive care is always transferred"],
         correctIndex: 1,
         explanation: "ES.1 requires the emergency department to be organized and staffed to provide emergency care around the clock. Hospitals must be capable of responding to emergency presentations at any time.",
         category: "rule",
@@ -1555,7 +1555,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO ES.4, if a hospital does not provide neurosurgical services, it must:",
         options: ["Decline patients who may need neurosurgery", "Have written protocols for transferring patients who require neurosurgical care", "Apply for a waiver from DNV", "Post a notice in the ED informing patients of this limitation"],
         correctIndex: 1,
-        explanation: "ES.4 requires written transfer protocols for emergency conditions the hospital cannot treat. Every potential emergency — including neurosurgical emergencies — must have a documented transfer pathway even if the hospital doesn't offer the service.",
+        explanation: "ES.4 requires written transfer protocols for emergency conditions the hospital cannot treat. Every potential emergency - including neurosurgical emergencies - must have a documented transfer pathway even if the hospital doesn't offer the service.",
         category: "rule",
       },
       {
@@ -1571,7 +1571,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO DS.3, the hospital diet manual must be:",
         options: ["Kept exclusively in the dietary department for staff reference", "Current, approved by dietary and medical staff, and accessible to staff ordering diets", "Updated only when new dietary guidelines are issued by the federal government", "Developed by the hospital CEO and medical staff without dietary input"],
         correctIndex: 1,
-        explanation: "DS.3 requires the diet manual to be current, approved by both dietary and medical staff, and accessible to nursing and medical staff who order diets. Accessibility is essential — it cannot be locked away in the dietary department.",
+        explanation: "DS.3 requires the diet manual to be current, approved by both dietary and medical staff, and accessible to nursing and medical staff who order diets. Accessibility is essential - it cannot be locked away in the dietary department.",
         category: "rule",
       },
       {
@@ -1579,13 +1579,13 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO DS.1, dietary services must be directed by:",
         options: ["A nurse with additional dietary training", "A qualified dietitian with appropriate credentials", "The Chief Nursing Officer as an additional responsibility", "Any clinical manager designated by the CEO"],
         correctIndex: 1,
-        explanation: "DS.1 requires dietary services to be organized under a qualified dietitian. Dietary is a clinical service — it requires professional leadership with the appropriate credential and training.",
+        explanation: "DS.1 requires dietary services to be organized under a qualified dietitian. Dietary is a clinical service - it requires professional leadership with the appropriate credential and training.",
         category: "rule",
       },
       {
         id: "dnv_es_6",
         question: "A patient with renal failure is served the same meal as the general diet patient. Under NIAHO DS.2, this is:",
-        options: ["Acceptable if no specific diet was ordered", "A compliance concern — diets must be individualized to the patient's medical needs", "Acceptable since the dietitian approves the general menu", "Compliant if the patient is not on fluid restriction"],
+        options: ["Acceptable if no specific diet was ordered", "A compliance concern - diets must be individualized to the patient's medical needs", "Acceptable since the dietitian approves the general menu", "Compliant if the patient is not on fluid restriction"],
         correctIndex: 1,
         explanation: "DS.2 requires diets to be appropriate to the patient's medical condition. A renal failure patient requires a kidney-appropriate diet restriction. Using the general diet without individualization violates the therapeutic diet requirement.",
         category: "scenario",
@@ -1595,7 +1595,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO ES.3, emergency department protocols must address:",
         options: ["Insurance verification procedures", "Management of the range of emergencies the community may present, including life-threatening conditions", "Scheduling of elective follow-up appointments", "Patient satisfaction survey distribution"],
         correctIndex: 1,
-        explanation: "ES.3 requires protocols for the emergencies the community may present — including life-threatening conditions. Protocols must cover clinical management, triage, escalation, and disposition.",
+        explanation: "ES.3 requires protocols for the emergencies the community may present - including life-threatening conditions. Protocols must cover clinical management, triage, escalation, and disposition.",
         category: "rule",
       },
       {
@@ -1603,15 +1603,15 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO OS.4, outpatient medication orders must be:",
         options: ["Verbal orders only with retroactive documentation within a week", "Properly documented in the patient's outpatient record with all required order elements", "Approved by the hospital pharmacist before being given to the patient", "Restricted to the hospital's inpatient formulary"],
         correctIndex: 1,
-        explanation: "OS.4 requires outpatient orders — including medication orders — to be properly documented. The same completeness requirements that apply to inpatient orders apply in the outpatient setting.",
+        explanation: "OS.4 requires outpatient orders - including medication orders - to be properly documented. The same completeness requirements that apply to inpatient orders apply in the outpatient setting.",
         category: "rule",
       },
       {
         id: "dnv_es_9",
         question: "Under NIAHO ES.2, emergency department staffing must be:",
-        options: ["Fixed at the level established during the most recent DNV survey", "Adequate to meet the volume and acuity of emergency presentations", "Limited to physicians and RNs only — ancillary roles are not required", "Based on state-mandated minimum staffing ratios exclusively"],
+        options: ["Fixed at the level established during the most recent DNV survey", "Adequate to meet the volume and acuity of emergency presentations", "Limited to physicians and RNs only - ancillary roles are not required", "Based on state-mandated minimum staffing ratios exclusively"],
         correctIndex: 1,
-        explanation: "ES.2 requires staffing adequate for the volume and acuity of the emergency department. Staffing must flex with demand — a fixed minimum that doesn't account for surge or high-acuity periods is not compliant.",
+        explanation: "ES.2 requires staffing adequate for the volume and acuity of the emergency department. Staffing must flex with demand - a fixed minimum that doesn't account for surge or high-acuity periods is not compliant.",
         category: "rule",
       },
       {
@@ -1627,15 +1627,15 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO OS.2, outpatient services staffing must ensure:",
         options: ["All outpatient staff hold inpatient care certifications", "Qualified personnel in numbers adequate to provide the scope of outpatient services offered", "A physician on-site at all times outpatient services are available", "Outpatient staff report to inpatient nursing leadership"],
         correctIndex: 1,
-        explanation: "OS.2 requires outpatient staffing to be adequate and qualified for the scope of services provided. This mirrors the inpatient staffing requirements — adequate qualified staff must be present when services are offered.",
+        explanation: "OS.2 requires outpatient staffing to be adequate and qualified for the scope of services provided. This mirrors the inpatient staffing requirements - adequate qualified staff must be present when services are offered.",
         category: "rule",
       },
       {
         id: "dnv_es_12",
         question: "A hospital's diet manual was last approved by medical staff in 2018. Under NIAHO DS.3, this is:",
-        options: ["Acceptable as long as dietary staff believe it remains clinically current", "A compliance concern — the diet manual must be kept current and re-approved by medical staff", "Acceptable if no patient complaints about diets have been received", "Compliant if the dietitian director has informally reviewed it more recently"],
+        options: ["Acceptable as long as dietary staff believe it remains clinically current", "A compliance concern - the diet manual must be kept current and re-approved by medical staff", "Acceptable if no patient complaints about diets have been received", "Compliant if the dietitian director has informally reviewed it more recently"],
         correctIndex: 1,
-        explanation: "DS.3 requires the diet manual to be current and approved by both dietary and medical staff. A manual not formally reviewed or re-approved since 2018 — with advancing nutritional science — is a compliance gap.",
+        explanation: "DS.3 requires the diet manual to be current and approved by both dietary and medical staff. A manual not formally reviewed or re-approved since 2018 - with advancing nutritional science - is a compliance gap.",
         category: "scenario",
       },
       {
@@ -1659,7 +1659,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO DS.1, a hospital that contracts its dietary services to an outside food service company:",
         options: ["Has no further NIAHO obligation since the contractor assumes all responsibility", "Must still ensure the contracted service meets NIAHO dietary requirements and maintain oversight", "Is exempt from diet manual requirements since it is not operating the service", "Only needs to verify the contractor has a food safety license"],
         correctIndex: 1,
-        explanation: "Like all contracted services under GB.4, the hospital retains accountability for contracted dietary services. The contractor must meet NIAHO requirements, and the hospital must maintain oversight — including ensuring a qualified dietitian directs the service.",
+        explanation: "Like all contracted services under GB.4, the hospital retains accountability for contracted dietary services. The contractor must meet NIAHO requirements, and the hospital must maintain oversight - including ensuring a qualified dietitian directs the service.",
         category: "scenario",
       },
       {
@@ -1683,13 +1683,13 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO DS.2, therapeutic diet services include which of the following?",
         options: ["Only calorie-counting for weight management patients", "Nutritional assessment, individualized diet orders, and monitoring of dietary response", "General healthy eating recommendations given by nurses", "Standard meal trays with optional condiments"],
         correctIndex: 1,
-        explanation: "DS.2 encompasses a full range of therapeutic diet services — including nutritional assessment, individualized diet prescriptions, and monitoring of the patient's response to the diet. It is a clinical service, not just a food delivery function.",
+        explanation: "DS.2 encompasses a full range of therapeutic diet services - including nutritional assessment, individualized diet prescriptions, and monitoring of the patient's response to the diet. It is a clinical service, not just a food delivery function.",
         category: "rule",
       },
       {
         id: "dnv_es_19",
         question: "Under NIAHO ES.2, the emergency department must have staffing that can:",
-        options: ["Manage only the most common diagnosis categories in the community", "Provide initial stabilization for any emergency presentation regardless of diagnosis", "Treat only adults — pediatric emergencies may be redirected", "Function with registered nurses as sole clinical staff if physicians are on call"],
+        options: ["Manage only the most common diagnosis categories in the community", "Provide initial stabilization for any emergency presentation regardless of diagnosis", "Treat only adults - pediatric emergencies may be redirected", "Function with registered nurses as sole clinical staff if physicians are on call"],
         correctIndex: 1,
         explanation: "ES.2 requires the ED to have staffing capable of providing initial stabilization for any emergency that may present. The department cannot pre-select which emergencies it will address based on staffing limitations.",
         category: "rule",
@@ -1706,7 +1706,7 @@ export const dnvLevels: Level[] = [
   },
 
   // ─────────────────────────────────────────────────────────────────────────
-  // CHAPTER 9 — Patient Rights (PR)
+  // CHAPTER 9 - Patient Rights (PR)
   // ─────────────────────────────────────────────────────────────────────────
   {
     id: "dnv_pr",
@@ -1723,9 +1723,9 @@ export const dnvLevels: Level[] = [
         "Patients must be informed of their rights and have them respected.",
         "Advance directives must be honored and documented.",
         "Language interpretation services must be available at no cost to patients.",
-        "Informed consent required before treatment — fully informed, voluntary, competent.",
+        "Informed consent required before treatment - fully informed, voluntary, competent.",
         "Grievance process must be defined, communicated to patients, and followed.",
-        "Restraints and seclusion governed by strict requirements — least restrictive, time-limited, continuous monitoring.",
+        "Restraints and seclusion governed by strict requirements - least restrictive, time-limited, continuous monitoring.",
         "Deaths associated with restraints must be reported to CMS within required timeframes.",
         "Patients at risk of self-harm or harm to others must receive care in safe settings.",
       ],
@@ -1742,7 +1742,7 @@ export const dnvLevels: Level[] = [
     studyMaterial: [
       {
         title: "Restraint and Seclusion: Core Requirements",
-        content: "PR.7 contains extensive restraint and seclusion requirements. Key rules: (1) Use the least restrictive intervention first. (2) Restraints require a physician order. (3) Orders must be time-limited — not standing orders. (4) Patients in restraints require continuous monitoring. (5) Restraints can only be used when clinically justified — never for punishment or staff convenience. (6) Violent/self-destructive restraint orders expire in shorter intervals (1 hour for children, 2 hours for adolescents, 4 hours for adults) and require reassessment.",
+        content: "PR.7 contains extensive restraint and seclusion requirements. Key rules: (1) Use the least restrictive intervention first. (2) Restraints require a physician order. (3) Orders must be time-limited - not standing orders. (4) Patients in restraints require continuous monitoring. (5) Restraints can only be used when clinically justified - never for punishment or staff convenience. (6) Violent/self-destructive restraint orders expire in shorter intervals (1 hour for children, 2 hours for adolescents, 4 hours for adults) and require reassessment.",
         keyPoint: "Restraints: least restrictive first, MD order required, time-limited, continuous monitoring, never for punishment.",
         category: "rule",
       },
@@ -1754,8 +1754,8 @@ export const dnvLevels: Level[] = [
       },
       {
         title: "Reporting Restraint-Associated Deaths",
-        content: "PR.9 requires that deaths associated with restraint or seclusion use be reported to CMS within one business day of the death. This is a hard federal deadline. The definition is broad — a death occurring while in restraints, within 24 hours of restraint removal, or within 1 week if restraints contributed to the death.",
-        keyPoint: "Restraint-associated death: report to CMS within 1 business day. Broad definition — includes 24 hours after removal.",
+        content: "PR.9 requires that deaths associated with restraint or seclusion use be reported to CMS within one business day of the death. This is a hard federal deadline. The definition is broad - a death occurring while in restraints, within 24 hours of restraint removal, or within 1 week if restraints contributed to the death.",
+        keyPoint: "Restraint-associated death: report to CMS within 1 business day. Broad definition - includes 24 hours after removal.",
         category: "rule",
       },
     ],
@@ -1765,7 +1765,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO PR.1, hospitals must not discriminate against patients based on:",
         options: ["Insurance status only", "Race, color, national origin, disability, age, sex, and other protected characteristics", "Clinical diagnosis only", "Ability to pay for services"],
         correctIndex: 1,
-        explanation: "PR.1 requires nondiscrimination on all federally and state-protected bases including race, color, national origin, disability, age, and sex. This applies to all aspects of care — admission, treatment, and discharge.",
+        explanation: "PR.1 requires nondiscrimination on all federally and state-protected bases including race, color, national origin, disability, age, and sex. This applies to all aspects of care - admission, treatment, and discharge.",
         category: "rule",
       },
       {
@@ -1773,7 +1773,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO PR.7, a restraint may be used when:",
         options: ["A patient is agitated and staff find it difficult to provide care", "Clinically justified to ensure patient safety and no less restrictive alternative is effective", "The charge nurse approves it without a physician order", "Standing orders for restraints exist for the unit"],
         correctIndex: 1,
-        explanation: "PR.7 requires restraints to be clinically justified for patient safety after less restrictive alternatives have been tried or considered. Standing orders for restraints are not permitted — each use requires an individual physician order.",
+        explanation: "PR.7 requires restraints to be clinically justified for patient safety after less restrictive alternatives have been tried or considered. Standing orders for restraints are not permitted - each use requires an individual physician order.",
         category: "rule",
       },
       {
@@ -1781,7 +1781,7 @@ export const dnvLevels: Level[] = [
         question: "A patient in four-point restraints must receive which of the following under NIAHO PR.7?",
         options: ["Assessment every 8 hours", "Continuous monitoring of physical and psychological status", "Physician presence in the room at all times", "Family notification before restraint application"],
         correctIndex: 1,
-        explanation: "PR.7 requires continuous monitoring of patients in restraints — not periodic checks. Staff must monitor physical and psychological well-being, circulation, and safety continuously when a patient is restrained.",
+        explanation: "PR.7 requires continuous monitoring of patients in restraints - not periodic checks. Staff must monitor physical and psychological well-being, circulation, and safety continuously when a patient is restrained.",
         category: "rule",
       },
       {
@@ -1795,17 +1795,17 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_pr_5",
         question: "A patient who speaks only Spanish is not provided an interpreter during the consent process. Under NIAHO PR.4, this is:",
-        options: ["Acceptable if a family member translates", "Non-compliant — qualified language interpretation must be available at no cost to the patient", "Acceptable if the physician speaks some Spanish", "Compliant if written translation is provided after the discussion"],
+        options: ["Acceptable if a family member translates", "Non-compliant - qualified language interpretation must be available at no cost to the patient", "Acceptable if the physician speaks some Spanish", "Compliant if written translation is provided after the discussion"],
         correctIndex: 1,
-        explanation: "PR.4 requires qualified language interpretation services at no cost to the patient. Using family members as interpreters for medical consent does not meet this standard — qualified medical interpreters are required.",
+        explanation: "PR.4 requires qualified language interpretation services at no cost to the patient. Using family members as interpreters for medical consent does not meet this standard - qualified medical interpreters are required.",
         category: "scenario",
       },
       {
         id: "dnv_pr_6",
         question: "Under NIAHO PR.6, a patient's written complaint about care quality is:",
-        options: ["An informal concern — no formal process required", "A grievance requiring acknowledgment, investigation, and written response", "Handled solely at the unit manager level without documentation", "Required to be submitted to DNV within 30 days"],
+        options: ["An informal concern - no formal process required", "A grievance requiring acknowledgment, investigation, and written response", "Handled solely at the unit manager level without documentation", "Required to be submitted to DNV within 30 days"],
         correctIndex: 1,
-        explanation: "PR.6 defines a written complaint as a grievance requiring a formal process — acknowledgment, investigation, and written response to the patient within a defined timeframe. All written complaints trigger the grievance process.",
+        explanation: "PR.6 defines a written complaint as a grievance requiring a formal process - acknowledgment, investigation, and written response to the patient within a defined timeframe. All written complaints trigger the grievance process.",
         category: "rule",
       },
       {
@@ -1829,7 +1829,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO PR.7, a restraint order for a violent adult patient must be renewed after how many hours?",
         options: ["Every 2 hours", "Every 4 hours", "Every 8 hours", "Every 12 hours"],
         correctIndex: 1,
-        explanation: "PR.7 requires restraint orders for violent or self-destructive behavior to be renewed every 4 hours for adults. These are time-limited orders — they cannot be standing and must be reassessed and reordered at required intervals.",
+        explanation: "PR.7 requires restraint orders for violent or self-destructive behavior to be renewed every 4 hours for adults. These are time-limited orders - they cannot be standing and must be reassessed and reordered at required intervals.",
         category: "number",
       },
       {
@@ -1845,13 +1845,13 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO PR.2, patients have the right to:",
         options: ["Choose any physician at any hospital regardless of credentialing", "Receive care with dignity, privacy, and access to information about their condition", "Discharge themselves without physician order at any time for any reason", "Refuse any treatment and receive unlimited alternative treatments at hospital cost"],
         correctIndex: 1,
-        explanation: "PR.2 enumerates specific rights including the right to dignity, privacy, and information about their health status. Rights are specific and defined — not unlimited — but must be genuinely respected and operationalized.",
+        explanation: "PR.2 enumerates specific rights including the right to dignity, privacy, and information about their health status. Rights are specific and defined - not unlimited - but must be genuinely respected and operationalized.",
         category: "rule",
       },
       {
         id: "dnv_pr_12",
         question: "A nursing home patient (resident) refuses a recommended medication. Under NIAHO PR.2, the healthcare team should:",
-        options: ["Administer the medication anyway for the patient's safety", "Respect the refusal, document it, and inform the physician — cannot force treatment on competent patients", "Seek emergency guardian appointment if the medication is important", "Discharge the patient if they refuse recommended treatment"],
+        options: ["Administer the medication anyway for the patient's safety", "Respect the refusal, document it, and inform the physician - cannot force treatment on competent patients", "Seek emergency guardian appointment if the medication is important", "Discharge the patient if they refuse recommended treatment"],
         correctIndex: 1,
         explanation: "PR.2 includes the right to refuse treatment. A competent patient's refusal must be respected, documented, and communicated to the care team. The patient cannot be forced to take medication or threatened with discharge for refusing.",
         category: "scenario",
@@ -1885,23 +1885,23 @@ export const dnvLevels: Level[] = [
         question: "A patient expresses that they would like to see a chaplain. Under NIAHO PR.2, the hospital must:",
         options: ["Require the patient to contact the chaplain independently", "Facilitate access to pastoral or spiritual care as part of the patient's rights", "Provide chaplaincy only if the hospital has a designated chaplain on staff", "Defer this request until the patient's medical condition is fully addressed"],
         correctIndex: 1,
-        explanation: "PR.2 includes the right to pastoral/spiritual care. The hospital must facilitate this access — not just permit it theoretically. This is a patient right, not an optional service.",
+        explanation: "PR.2 includes the right to pastoral/spiritual care. The hospital must facilitate this access - not just permit it theoretically. This is a patient right, not an optional service.",
         category: "scenario",
       },
       {
         id: "dnv_pr_17",
         question: "Under NIAHO PR.3, advance directives apply to:",
-        options: ["Long-term care patients only", "All patients — hospitals must inquire about and document advance directive status for every patient", "Patients over 65 only", "Only patients with terminal diagnoses"],
+        options: ["Long-term care patients only", "All patients - hospitals must inquire about and document advance directive status for every patient", "Patients over 65 only", "Only patients with terminal diagnoses"],
         correctIndex: 1,
-        explanation: "PR.3 requires hospitals to inquire about and document advance directive status for all patients — not just elderly or terminally ill patients. Every patient should be asked about advance directives at admission.",
+        explanation: "PR.3 requires hospitals to inquire about and document advance directive status for all patients - not just elderly or terminally ill patients. Every patient should be asked about advance directives at admission.",
         category: "rule",
       },
       {
         id: "dnv_pr_18",
         question: "Under NIAHO PR.7, which statement about seclusion is CORRECT?",
-        options: ["Seclusion requires only a nursing supervisor's approval", "Seclusion is subject to the same strict requirements as restraint — including physician order, time limits, and monitoring", "Seclusion may be used freely as an alternative to restraint since it is less physically restrictive", "Seclusion does not require documentation unless the patient is injured"],
+        options: ["Seclusion requires only a nursing supervisor's approval", "Seclusion is subject to the same strict requirements as restraint - including physician order, time limits, and monitoring", "Seclusion may be used freely as an alternative to restraint since it is less physically restrictive", "Seclusion does not require documentation unless the patient is injured"],
         correctIndex: 1,
-        explanation: "PR.7 applies the same rigorous requirements to seclusion as to restraint — physician orders, time limits, continuous monitoring, documentation, and prohibition against use for punishment or convenience.",
+        explanation: "PR.7 applies the same rigorous requirements to seclusion as to restraint - physician orders, time limits, continuous monitoring, documentation, and prohibition against use for punishment or convenience.",
         category: "rule",
       },
       {
@@ -1909,7 +1909,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO PR.4, language access services must be:",
         options: ["Available in the 10 most common languages spoken in the community", "Provided at no cost to the patient for all significant communications", "Provided only in the emergency department and surgical settings", "Limited to written translations of key documents"],
         correctIndex: 1,
-        explanation: "PR.4 requires language access services at no cost to the patient for significant communications — including consent, discharge instructions, and rights information. This applies throughout the hospital, not just in the ED.",
+        explanation: "PR.4 requires language access services at no cost to the patient for significant communications - including consent, discharge instructions, and rights information. This applies throughout the hospital, not just in the ED.",
         category: "rule",
       },
       {
@@ -1917,14 +1917,14 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO PR.10, environmental safety measures for patients at risk of self-harm must include:",
         options: ["Restraint as the first-line intervention", "Assessment of the environment and removal or mitigation of hazards that pose ligature or other self-harm risks", "Constant 1:1 physician observation at all times", "Transfer to a psychiatric facility immediately upon identification of risk"],
         correctIndex: 1,
-        explanation: "PR.10 requires a safe care environment for at-risk patients — including environmental assessment and mitigation of self-harm risks (ligature points, sharps, etc.). Environmental safety is a proactive, ongoing responsibility.",
+        explanation: "PR.10 requires a safe care environment for at-risk patients - including environmental assessment and mitigation of self-harm risks (ligature points, sharps, etc.). Environmental safety is a proactive, ongoing responsibility.",
         category: "rule",
       },
     ],
   },
 
   // ─────────────────────────────────────────────────────────────────────────
-  // CHAPTER 10 — Infection Control & Medical Records (IC + MR + DC + UR)
+  // CHAPTER 10 - Infection Control & Medical Records (IC + MR + DC + UR)
   // ─────────────────────────────────────────────────────────────────────────
   {
     id: "dnv_ic",
@@ -1940,7 +1940,7 @@ export const dnvLevels: Level[] = [
         "IPC program must have designated leadership and defined responsibilities.",
         "Antibiotic stewardship must be integrated with the IPC program.",
         "Medical records must be complete and authenticated within required timeframes.",
-        "Medical records must be retained per applicable law — typically minimum 5-10 years.",
+        "Medical records must be retained per applicable law - typically minimum 5-10 years.",
         "Discharge planning must begin at or near admission for every patient.",
         "Discharge plan must be individualized and include post-acute care needs.",
         "Utilization review must cover admission necessity, continued stay, and professional services.",
@@ -1948,8 +1948,8 @@ export const dnvLevels: Level[] = [
       commonRiskPoints: [
         "IPC program without designated infection preventionist or physician champion.",
         "Antibiotic stewardship disconnected from IPC data.",
-        "Incomplete medical records — missing discharge summaries or operative reports.",
-        "Discharge planning only for long-stay patients — not initiated for all patients.",
+        "Incomplete medical records - missing discharge summaries or operative reports.",
+        "Discharge planning only for long-stay patients - not initiated for all patients.",
         "Utilization review plan not updated or not functioning with defined processes.",
       ],
       cmsTags: ["IC.1", "IC.2", "IC.3", "MR.1", "MR.2", "MR.3", "MR.6", "DC.1", "DC.3", "UR.1", "UR.2"],
@@ -1982,7 +1982,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO IC.3, who has leadership responsibility for the infection prevention and control program?",
         options: ["The charge nurse on each unit individually", "A designated leader with organizational authority and accountability for IPC", "The hospital's legal counsel", "The state health department representative"],
         correctIndex: 1,
-        explanation: "IC.3 requires leadership responsibility for the IPC program — a designated individual with the authority and accountability to ensure the program functions effectively across the organization.",
+        explanation: "IC.3 requires leadership responsibility for the IPC program - a designated individual with the authority and accountability to ensure the program functions effectively across the organization.",
         category: "rule",
       },
       {
@@ -1996,7 +1996,7 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_ic_4",
         question: "Under NIAHO MR.2, a complete medical record must include:",
-        options: ["Financial billing codes and insurance information only", "Medical history, diagnoses, orders, treatment notes, consents, and a discharge summary", "Only physician notes — nursing documentation is optional", "Insurance authorization forms and patient satisfaction surveys"],
+        options: ["Financial billing codes and insurance information only", "Medical history, diagnoses, orders, treatment notes, consents, and a discharge summary", "Only physician notes - nursing documentation is optional", "Insurance authorization forms and patient satisfaction surveys"],
         correctIndex: 1,
         explanation: "MR.2 specifies that a complete medical record includes medical history, physical examination, diagnoses, physician orders, nursing and therapy documentation, consents, operative reports when applicable, and a discharge summary.",
         category: "rule",
@@ -2004,7 +2004,7 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_ic_5",
         question: "Under NIAHO MR.3, medical records must be retained for:",
-        options: ["A minimum of 2 years from the date of discharge", "A period consistent with applicable state and federal law — typically at least 5-10 years", "Indefinitely — all records must be kept permanently", "The duration of the patient's active insurance coverage"],
+        options: ["A minimum of 2 years from the date of discharge", "A period consistent with applicable state and federal law - typically at least 5-10 years", "Indefinitely - all records must be kept permanently", "The duration of the patient's active insurance coverage"],
         correctIndex: 1,
         explanation: "MR.3 requires records to be retained per applicable state and federal law. While specific periods vary by state, the minimum is typically 5-10 years (and longer for minors). Hospitals must know their state's specific requirements.",
         category: "rule",
@@ -2014,13 +2014,13 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO DC.3, discharge planning evaluation must occur:",
         options: ["Only for patients staying more than 3 days", "For all patients, initiated at or near the time of admission", "Only after a physician requests discharge planning", "Only for patients going to post-acute care facilities"],
         correctIndex: 1,
-        explanation: "DC.3 requires discharge planning evaluation for all patients, ideally beginning at or near admission. Early identification of discharge needs — social, functional, medical — allows adequate planning time.",
+        explanation: "DC.3 requires discharge planning evaluation for all patients, ideally beginning at or near admission. Early identification of discharge needs - social, functional, medical - allows adequate planning time.",
         category: "rule",
       },
       {
         id: "dnv_ic_7",
         question: "A patient is discharged without a discharge summary in the medical record. Under NIAHO MR.6, this is:",
-        options: ["Acceptable if the patient's stay was less than 24 hours", "Non-compliant — discharge summaries are required for all hospital admissions", "Acceptable if the physician writes the summary within one week", "Compliant if a brief note was written at discharge"],
+        options: ["Acceptable if the patient's stay was less than 24 hours", "Non-compliant - discharge summaries are required for all hospital admissions", "Acceptable if the physician writes the summary within one week", "Compliant if a brief note was written at discharge"],
         correctIndex: 1,
         explanation: "MR.6 requires a discharge summary for all patients. The summary must include the reason for admission, clinical course, diagnoses, discharge condition, and follow-up instructions. It is a required medical record element.",
         category: "scenario",
@@ -2046,7 +2046,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO IC.4, when a multi-hospital system has multiple facilities, the infection prevention program must be:",
         options: ["Identical across all facilities with no site-specific variation", "Unified and integrated across the system while addressing each facility's specific needs", "Independently operated at each facility with no system-level coordination", "Led by a single infection preventionist managing all facilities remotely"],
         correctIndex: 1,
-        explanation: "IC.4 requires a unified and integrated IPC program for multi-hospital systems — sharing data, coordinating responses, and maintaining consistent standards — while also addressing each facility's individual characteristics.",
+        explanation: "IC.4 requires a unified and integrated IPC program for multi-hospital systems - sharing data, coordinating responses, and maintaining consistent standards - while also addressing each facility's individual characteristics.",
         category: "rule",
       },
       {
@@ -2054,7 +2054,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO UR.3, continued stay review is required to evaluate:",
         options: ["Staff satisfaction with patient care assignments", "Whether continued inpatient status remains medically necessary", "The patient's financial ability to pay for continued hospitalization", "Whether the patient meets criteria for a room upgrade"],
         correctIndex: 1,
-        explanation: "UR.3 requires continued stay (extended stay) review to evaluate ongoing medical necessity of inpatient status. Patients must remain in the most appropriate care setting — neither discharged prematurely nor retained unnecessarily.",
+        explanation: "UR.3 requires continued stay (extended stay) review to evaluate ongoing medical necessity of inpatient status. Patients must remain in the most appropriate care setting - neither discharged prematurely nor retained unnecessarily.",
         category: "rule",
       },
       {
@@ -2062,13 +2062,13 @@ export const dnvLevels: Level[] = [
         question: "A patient is being transferred to a skilled nursing facility. Under NIAHO DC.2, the hospital must:",
         options: ["Inform the patient that all discharge arrangements are their own responsibility", "Have written transfer protocols and ensure appropriate communication of clinical information to the receiving facility", "Require the patient to independently contact the receiving facility", "Transfer responsibility entirely to the receiving facility at the time of the decision"],
         correctIndex: 1,
-        explanation: "DC.2 requires written transfer protocols and communication of clinical information to receiving facilities. The hospital retains responsibility for ensuring a safe, coordinated transition — it cannot simply hand off the patient without proper communication.",
+        explanation: "DC.2 requires written transfer protocols and communication of clinical information to receiving facilities. The hospital retains responsibility for ensuring a safe, coordinated transition - it cannot simply hand off the patient without proper communication.",
         category: "scenario",
       },
       {
         id: "dnv_ic_13",
         question: "Under NIAHO MR.7, physician orders in the medical record must be:",
-        options: ["Verbal only to maintain efficiency", "Properly authorized, dated, timed, and authenticated", "Co-signed by the charge nurse for all clinical orders", "Written in the physician's own handwriting — no electronic orders allowed"],
+        options: ["Verbal only to maintain efficiency", "Properly authorized, dated, timed, and authenticated", "Co-signed by the charge nurse for all clinical orders", "Written in the physician's own handwriting - no electronic orders allowed"],
         correctIndex: 1,
         explanation: "MR.7 requires orders to be properly authorized by an individual with order-writing authority, and to be dated, timed, and authenticated. Electronic orders fully meet this requirement when properly designed and implemented.",
         category: "rule",
@@ -2078,7 +2078,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO DC.1, discharge planning policies must:",
         options: ["Apply only to patients with complex medical needs", "Be written, define the process, and apply to all inpatient admissions", "Require physician pre-approval before any discharge planning contact occurs", "Be reviewed by DNV and approved before implementation"],
         correctIndex: 1,
-        explanation: "DC.1 requires written discharge planning policies that apply to all patients — not just those with complex needs. The policies must define how discharge planning is initiated, conducted, and documented.",
+        explanation: "DC.1 requires written discharge planning policies that apply to all patients - not just those with complex needs. The policies must define how discharge planning is initiated, conducted, and documented.",
         category: "rule",
       },
       {
@@ -2086,7 +2086,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO UR.1, the hospital's utilization review plan must be:",
         options: ["Approved by the state insurance commissioner", "Documented in writing with defined review criteria and processes", "Conducted entirely by external reviewers without hospital staff involvement", "Updated daily based on payer requirements"],
         correctIndex: 1,
-        explanation: "UR.1 requires a documented utilization review plan with defined criteria and processes. The plan must be written, implemented consistently, and cover all required UR functions — admission, continued stay, and professional services review.",
+        explanation: "UR.1 requires a documented utilization review plan with defined criteria and processes. The plan must be written, implemented consistently, and cover all required UR functions - admission, continued stay, and professional services review.",
         category: "rule",
       },
       {
@@ -2094,13 +2094,13 @@ export const dnvLevels: Level[] = [
         question: "An infection preventionist notices a cluster of SSIs on a surgical unit. Under NIAHO IC.1, the appropriate response is:",
         options: ["Monitor for 30 more days before taking action", "Investigate the cluster, identify contributing factors, and implement evidence-based prevention measures", "Report only to the governing body and await direction", "Notify the state health department without internal investigation first"],
         correctIndex: 1,
-        explanation: "IC.1 requires investigation of infection clusters and implementation of preventive measures. The IPC program must respond actively — investigation, root cause identification, and corrective intervention — not just observe.",
+        explanation: "IC.1 requires investigation of infection clusters and implementation of preventive measures. The IPC program must respond actively - investigation, root cause identification, and corrective intervention - not just observe.",
         category: "scenario",
       },
       {
         id: "dnv_ic_17",
         question: "Under NIAHO MR.5, entries in the medical record must be:",
-        options: ["Made only by licensed clinical staff — administrative staff may not document", "Dated, timed, and authenticated by the author", "Made exclusively in blue ink — black ink is not acceptable", "Completed only at the end of each nursing shift"],
+        options: ["Made only by licensed clinical staff - administrative staff may not document", "Dated, timed, and authenticated by the author", "Made exclusively in blue ink - black ink is not acceptable", "Completed only at the end of each nursing shift"],
         correctIndex: 1,
         explanation: "MR.5 requires that all entries be dated, timed, and authenticated by the person making the entry. This ensures accountability, legal validity, and the ability to reconstruct the care timeline accurately.",
         category: "rule",
@@ -2108,9 +2108,9 @@ export const dnvLevels: Level[] = [
       {
         id: "dnv_ic_18",
         question: "Under NIAHO DC.6, post-acute care services discussed in discharge planning must address:",
-        options: ["Only home care services — SNF placement is outside the hospital's scope", "The full range of appropriate post-acute options based on the patient's clinical and social needs", "Only services covered by the patient's primary insurance", "Only services provided by the hospital's affiliated post-acute facilities"],
+        options: ["Only home care services - SNF placement is outside the hospital's scope", "The full range of appropriate post-acute options based on the patient's clinical and social needs", "Only services covered by the patient's primary insurance", "Only services provided by the hospital's affiliated post-acute facilities"],
         correctIndex: 1,
-        explanation: "DC.6 requires discharge planning to address the full range of post-acute care options appropriate to the patient's needs — home health, SNF, rehabilitation, outpatient services, etc. Planning must not be limited by facility affiliation.",
+        explanation: "DC.6 requires discharge planning to address the full range of post-acute care options appropriate to the patient's needs - home health, SNF, rehabilitation, outpatient services, etc. Planning must not be limited by facility affiliation.",
         category: "rule",
       },
       {
@@ -2118,7 +2118,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO UR.4, review of professional services is intended to:",
         options: ["Evaluate physician billing practices for fraud and abuse", "Assess whether professional services provided are medically appropriate and necessary", "Review physician credentials at the time of service", "Evaluate patient satisfaction with physician communication"],
         correctIndex: 1,
-        explanation: "UR.4 (Review of Professional Services) evaluates whether the professional services delivered to patients are medically appropriate and necessary — not physician billing or credentialing.",
+        explanation: "UR.4 (Review of Professional Services) evaluates whether the professional services delivered to patients are medically appropriate and necessary - not physician billing or credentialing.",
         category: "rule",
       },
       {
@@ -2133,7 +2133,7 @@ export const dnvLevels: Level[] = [
   },
 
   // ─────────────────────────────────────────────────────────────────────────
-  // CHAPTER 11 — Physical Environment (PE + TO)
+  // CHAPTER 11 - Physical Environment (PE + TO)
   // ─────────────────────────────────────────────────────────────────────────
   {
     id: "dnv_pe",
@@ -2144,7 +2144,7 @@ export const dnvLevels: Level[] = [
     requiredScore: 0,
     chapterSummary: {
       chapterTitle: "Physical Environment & Emergency Preparedness (PE.1–PE.8, TO)",
-      plainLanguageSummary: "NIAHO's physical environment chapter covers the full environment of care including the physical facility's safety compliance (Life Safety Code), safety and security management systems, hazardous materials handling, emergency preparedness, medical equipment management (with specific AEM program rules), and utility systems. The emergency preparedness requirements are extensive — hospitals must have risk-based emergency plans, communication plans, training and testing programs, and coordinate with community partners. Organ procurement requires written agreements with OPOs and defined processes for identifying potential donors.",
+      plainLanguageSummary: "NIAHO's physical environment chapter covers the full environment of care including the physical facility's safety compliance (Life Safety Code), safety and security management systems, hazardous materials handling, emergency preparedness, medical equipment management (with specific AEM program rules), and utility systems. The emergency preparedness requirements are extensive - hospitals must have risk-based emergency plans, communication plans, training and testing programs, and coordinate with community partners. Organ procurement requires written agreements with OPOs and defined processes for identifying potential donors.",
       keyOperationalExpectations: [
         "Facility must comply with the applicable edition of NFPA Life Safety Code.",
         "Safety management system must address workplace safety hazards.",
@@ -2169,7 +2169,7 @@ export const dnvLevels: Level[] = [
     studyMaterial: [
       {
         title: "Alternate Equipment Management (AEM) Program",
-        content: "PE.7 allows hospitals to maintain certain medical equipment using alternative maintenance schedules that differ from manufacturer recommendations — but only if they implement a documented AEM program. The AEM program must: (1) be based on nationally recognized standards (e.g., ANSI/AAMI EQ56), (2) have a risk assessment for each device placed in the AEM program, (3) identify 'critical equipment' (devices where failure could cause serious injury or death), and (4) be managed by qualified personnel (typically biomedical engineers).",
+        content: "PE.7 allows hospitals to maintain certain medical equipment using alternative maintenance schedules that differ from manufacturer recommendations - but only if they implement a documented AEM program. The AEM program must: (1) be based on nationally recognized standards (e.g., ANSI/AAMI EQ56), (2) have a risk assessment for each device placed in the AEM program, (3) identify 'critical equipment' (devices where failure could cause serious injury or death), and (4) be managed by qualified personnel (typically biomedical engineers).",
         keyPoint: "AEM program: documented, risk-assessed, nationally-recognized standards, qualified personnel. Critical equipment requires special focus.",
         category: "rule",
       },
@@ -2181,7 +2181,7 @@ export const dnvLevels: Level[] = [
       },
       {
         title: "Organ Procurement Requirements",
-        content: "TO.1-TO.2 require hospitals to have a written agreement with a designated OPO (Organ Procurement Organization). The hospital must have a defined process for identifying potential organ donors and referring them to the OPO in a timely manner. All deaths and imminent deaths must be reported to the OPO. The hospital cannot make the determination of whether the patient is a suitable donor — that is the OPO's role.",
+        content: "TO.1-TO.2 require hospitals to have a written agreement with a designated OPO (Organ Procurement Organization). The hospital must have a defined process for identifying potential organ donors and referring them to the OPO in a timely manner. All deaths and imminent deaths must be reported to the OPO. The hospital cannot make the determination of whether the patient is a suitable donor - that is the OPO's role.",
         keyPoint: "OPO agreement required. Report all deaths/imminent deaths to OPO. Hospital identifies and refers; OPO evaluates suitability.",
         category: "rule",
       },
@@ -2200,13 +2200,13 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO PE.6, an emergency preparedness plan must be based on:",
         options: ["The previous year's incident volume statistics", "A Hazard Vulnerability Analysis (HVA) identifying likely hazards in the community and facility", "Federal FEMA templates applied uniformly", "Staff surveys about their emergency concerns"],
         correctIndex: 1,
-        explanation: "PE.6 requires emergency plans to be based on a Hazard Vulnerability Analysis — a structured assessment of likely hazards (natural, technological, human-caused) specific to the facility's geographic and operational context.",
+        explanation: "PE.6 requires emergency plans to be based on a Hazard Vulnerability Analysis - a structured assessment of likely hazards (natural, technological, human-caused) specific to the facility's geographic and operational context.",
         category: "rule",
       },
       {
         id: "dnv_pe_3",
         question: "Under NIAHO PE.6, how many emergency preparedness exercises must be conducted annually?",
-        options: ["One tabletop exercise only", "At least two exercises, with at least one being community-based", "Four exercises — one per quarter", "One full-scale drill and monthly tabletop exercises"],
+        options: ["One tabletop exercise only", "At least two exercises, with at least one being community-based", "Four exercises - one per quarter", "One full-scale drill and monthly tabletop exercises"],
         correctIndex: 1,
         explanation: "PE.6 requires at least two exercises annually, with at least one being a community-based exercise (coordinating with external agencies). Exercises may include full-scale drills, functional exercises, or tabletop exercises with appropriate community involvement.",
         category: "number",
@@ -2216,7 +2216,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO PE.2 (Life Safety Management System), a newly discovered fire code deficiency must be:",
         options: ["Corrected within 90 days or reported to DNV", "Corrected immediately or placed on an Interim Life Safety Measures (ILSM) plan until corrected", "Deferred until the next scheduled renovation", "Reported to the fire marshal only"],
         correctIndex: 1,
-        explanation: "PE.2 requires life safety deficiencies to be corrected immediately. If immediate correction is not possible, the hospital must implement ILSM — compensatory measures that provide equivalent protection while the deficiency is being corrected.",
+        explanation: "PE.2 requires life safety deficiencies to be corrected immediately. If immediate correction is not possible, the hospital must implement ILSM - compensatory measures that provide equivalent protection while the deficiency is being corrected.",
         category: "rule",
       },
       {
@@ -2224,7 +2224,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO TO.2, an organ procurement organization (OPO) agreement must include:",
         options: ["Financial compensation rates for organ donation staff", "Defined responsibilities of the hospital and OPO, including notification and referral requirements", "A list of approved transplant recipients", "CMS billing codes for organ procurement procedures"],
         correctIndex: 1,
-        explanation: "TO.2 requires the OPO agreement to define the responsibilities of both the hospital and OPO — including when and how the hospital must notify the OPO of potential donors and how the OPO will respond.",
+        explanation: "TO.2 requires the OPO agreement to define the responsibilities of both the hospital and OPO - including when and how the hospital must notify the OPO of potential donors and how the OPO will respond.",
         category: "rule",
       },
       {
@@ -2232,7 +2232,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO PE.7, which medical equipment is MOST scrutinized in an AEM program review?",
         options: ["Equipment that is inexpensive and easily replaced", "'Critical equipment' where failure could cause serious injury or death", "Equipment manufactured outside the United States", "Equipment used in the emergency department only"],
         correctIndex: 1,
-        explanation: "PE.7 directs surveyors to focus on 'critical equipment' in AEM programs — devices where failure or malfunction could cause serious injury or death. This equipment requires the most thorough risk assessment and justification for alternate maintenance.",
+        explanation: "PE.7 directs surveyors to focus on 'critical equipment' in AEM programs - devices where failure or malfunction could cause serious injury or death. This equipment requires the most thorough risk assessment and justification for alternate maintenance.",
         category: "rule",
       },
       {
@@ -2240,23 +2240,23 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO PE.6, after an emergency exercise, the hospital must:",
         options: ["Archive the exercise records without further review", "Conduct an after-action review, identify improvement opportunities, and update the plan accordingly", "Report exercise results to DNV within 30 days", "Conduct the next exercise within 30 days as a follow-up"],
         correctIndex: 1,
-        explanation: "PE.6 requires after-action review following exercises and actual emergency events. Lessons learned must be documented and used to improve the emergency plan and training program — exercises are only valuable if improvements result.",
+        explanation: "PE.6 requires after-action review following exercises and actual emergency events. Lessons learned must be documented and used to improve the emergency plan and training program - exercises are only valuable if improvements result.",
         category: "rule",
       },
       {
         id: "dnv_pe_8",
         question: "Under NIAHO PE.5 (Hazardous Material Management System), the hospital must:",
-        options: ["Track only radioactive materials — chemical hazards are covered by OSHA separately", "Have processes for identification, handling, storage, and disposal of all hazardous materials per applicable regulations", "Store all hazardous materials in the pharmacy for centralized management", "Obtain annual DNV approval for its hazardous material inventory"],
+        options: ["Track only radioactive materials - chemical hazards are covered by OSHA separately", "Have processes for identification, handling, storage, and disposal of all hazardous materials per applicable regulations", "Store all hazardous materials in the pharmacy for centralized management", "Obtain annual DNV approval for its hazardous material inventory"],
         correctIndex: 1,
-        explanation: "PE.5 requires a comprehensive hazardous material management system covering identification, safe handling, storage, and compliant disposal of all hazardous materials — including chemicals, radioactive materials, and biological hazards.",
+        explanation: "PE.5 requires a comprehensive hazardous material management system covering identification, safe handling, storage, and compliant disposal of all hazardous materials - including chemicals, radioactive materials, and biological hazards.",
         category: "rule",
       },
       {
         id: "dnv_pe_9",
         question: "Under NIAHO TO.1, when a patient is near death, the hospital must:",
-        options: ["Wait for family to request organ donation before contacting the OPO", "Refer all potential donors to the OPO in a timely manner — before pronouncing death when possible", "Determine organ suitability internally using the patient's medical records", "Contact the OPO only if the patient has a signed donor card"],
+        options: ["Wait for family to request organ donation before contacting the OPO", "Refer all potential donors to the OPO in a timely manner - before pronouncing death when possible", "Determine organ suitability internally using the patient's medical records", "Contact the OPO only if the patient has a signed donor card"],
         correctIndex: 1,
-        explanation: "TO.1 requires timely referral of all potential donors to the OPO — not just those with donor cards. The OPO makes the suitability determination. The hospital must refer ALL deaths and imminent deaths to the OPO without pre-screening.",
+        explanation: "TO.1 requires timely referral of all potential donors to the OPO - not just those with donor cards. The OPO makes the suitability determination. The hospital must refer ALL deaths and imminent deaths to the OPO without pre-screening.",
         category: "rule",
       },
       {
@@ -2264,7 +2264,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO PE.8 (Utility Management System), failure of a critical utility system requires:",
         options: ["Immediate facility evacuation", "Activation of defined emergency procedures and alternative utility provisions", "DNV notification before any corrective action is taken", "A 24-hour wait period before backup systems are activated"],
         correctIndex: 1,
-        explanation: "PE.8 requires defined emergency procedures for utility failures — immediate activation of backup systems and response protocols. Facilities must have pre-planned responses, not improvise when critical utilities fail.",
+        explanation: "PE.8 requires defined emergency procedures for utility failures - immediate activation of backup systems and response protocols. Facilities must have pre-planned responses, not improvise when critical utilities fail.",
         category: "rule",
       },
       {
@@ -2272,7 +2272,7 @@ export const dnvLevels: Level[] = [
         question: "A hospital places ventilators in its AEM program, scheduling maintenance less frequently than the manufacturer recommends. Under PE.7, the hospital must demonstrate:",
         options: ["The manufacturer's agreement with the modified schedule", "A risk assessment justifying the modification, documenting that safety is not compromised", "DNV pre-approval for ventilators in any AEM program", "That the reduced frequency saves at least 20% in maintenance costs"],
         correctIndex: 1,
-        explanation: "PE.7 requires risk assessment documentation for equipment in an AEM program. Ventilators are likely 'critical equipment' — the hospital must demonstrate through documented risk analysis that the modified schedule does not compromise patient safety.",
+        explanation: "PE.7 requires risk assessment documentation for equipment in an AEM program. Ventilators are likely 'critical equipment' - the hospital must demonstrate through documented risk analysis that the modified schedule does not compromise patient safety.",
         category: "scenario",
       },
       {
@@ -2280,15 +2280,15 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO PE.3, the safety management system must address:",
         options: ["Employee satisfaction with working conditions", "Workplace safety hazards, incident investigation, and ongoing safety monitoring", "Building exterior maintenance only", "Financial risk management and liability insurance"],
         correctIndex: 1,
-        explanation: "PE.3 requires the safety management system to identify and address workplace safety hazards, investigate incidents, and monitor safety performance on an ongoing basis — protecting patients, staff, and visitors.",
+        explanation: "PE.3 requires the safety management system to identify and address workplace safety hazards, investigate incidents, and monitor safety performance on an ongoing basis - protecting patients, staff, and visitors.",
         category: "rule",
       },
       {
         id: "dnv_pe_13",
         question: "The emergency preparedness communication plan under PE.6 must include:",
-        options: ["Primary phone systems only — cell phones are personal devices and not required", "Backup communication methods for when primary systems fail", "A social media strategy for public notification", "A single designated spokesperson with exclusive communication authority"],
+        options: ["Primary phone systems only - cell phones are personal devices and not required", "Backup communication methods for when primary systems fail", "A social media strategy for public notification", "A single designated spokesperson with exclusive communication authority"],
         correctIndex: 1,
-        explanation: "PE.6 requires the communication plan to include backup communication methods — primary systems may fail in a disaster. Backup options might include satellite phones, ham radio, or other redundant communication systems.",
+        explanation: "PE.6 requires the communication plan to include backup communication methods - primary systems may fail in a disaster. Backup options might include satellite phones, ham radio, or other redundant communication systems.",
         category: "rule",
       },
       {
@@ -2304,7 +2304,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO TO.4, the hospital must respect patient rights in the organ donation process by:",
         options: ["Requiring organ donation for all patients without next-of-kin who die in the hospital", "Ensuring donation is voluntary and that patient/family rights are respected throughout the process", "Deferring all donation decisions to the OPO without involving the family", "Documenting organ donation refusals as adverse events"],
         correctIndex: 1,
-        explanation: "TO.4 requires that patient and family rights be respected throughout the organ donation process. Donation must be fully voluntary — the hospital and OPO may approach families about donation, but they cannot coerce or override a patient's or family's decision.",
+        explanation: "TO.4 requires that patient and family rights be respected throughout the organ donation process. Donation must be fully voluntary - the hospital and OPO may approach families about donation, but they cannot coerce or override a patient's or family's decision.",
         category: "rule",
       },
       {
@@ -2312,13 +2312,13 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO PE.4, the security management system must:",
         options: ["Be staffed entirely by off-duty law enforcement officers", "Protect patients, staff, and visitors from security risks including infant abduction and workplace violence", "Focus exclusively on physical access to the facility exterior", "Require DNV-certified security personnel"],
         correctIndex: 1,
-        explanation: "PE.4 requires the security management system to protect all persons in the hospital — patients, staff, and visitors — from a range of security risks. This includes infant abduction prevention, workplace violence prevention, and general physical security.",
+        explanation: "PE.4 requires the security management system to protect all persons in the hospital - patients, staff, and visitors - from a range of security risks. This includes infant abduction prevention, workplace violence prevention, and general physical security.",
         category: "rule",
       },
       {
         id: "dnv_pe_17",
         question: "Under NIAHO PE.7, imaging and radiologic equipment is specifically:",
-        options: ["Eligible for AEM programs at the hospital's discretion", "NOT eligible for AEM programs — must be maintained per manufacturer recommendations (42 CFR 482.26)", "Eligible for AEM only with state radiology board approval", "Exempt from all maintenance requirements due to regulatory overlap with ACR standards"],
+        options: ["Eligible for AEM programs at the hospital's discretion", "NOT eligible for AEM programs - must be maintained per manufacturer recommendations (42 CFR 482.26)", "Eligible for AEM only with state radiology board approval", "Exempt from all maintenance requirements due to regulatory overlap with ACR standards"],
         correctIndex: 1,
         explanation: "PE.7 specifically identifies imaging/radiologic equipment as ineligible for AEM programs under 42 CFR 482.26(b)(2), which requires maintenance per manufacturer recommendations. This is one of the specific exclusions from AEM eligibility.",
         category: "rule",
@@ -2328,7 +2328,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO PE.6, the emergency preparedness program for a hospital that is part of a multi-hospital system must:",
         options: ["Be identical at all system facilities", "Be integrated and unified across the system while addressing each facility's specific risks", "Be operated as a completely independent program at each facility", "Be approved by the system CEO before it can be submitted to DNV"],
         correctIndex: 1,
-        explanation: "For multi-hospital systems, PE.6 requires the emergency preparedness program to be unified and integrated across the system — sharing resources and coordinating responses — while addressing each individual facility's specific hazard vulnerabilities.",
+        explanation: "For multi-hospital systems, PE.6 requires the emergency preparedness program to be unified and integrated across the system - sharing resources and coordinating responses - while addressing each individual facility's specific hazard vulnerabilities.",
         category: "rule",
       },
       {
@@ -2336,7 +2336,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO TO.6, if a hospital performs organ transplantation, it must:",
         options: ["Have its own OPO designation from HRSA", "Meet additional requirements specific to transplant programs under applicable regulations", "Limit transplants to kidneys and livers only unless specifically approved", "Perform transplants only on patients admitted to the hospital's service area"],
         correctIndex: 1,
-        explanation: "TO.6 addresses hospitals that perform organ transplantation — they must meet additional regulatory requirements beyond the basic OPO agreement, including federal transplant program standards and specific quality and outcome monitoring.",
+        explanation: "TO.6 addresses hospitals that perform organ transplantation - they must meet additional regulatory requirements beyond the basic OPO agreement, including federal transplant program standards and specific quality and outcome monitoring.",
         category: "rule",
       },
       {
@@ -2344,7 +2344,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO PE.7, which personnel are considered 'qualified' to make decisions about placing medical equipment in an AEM program?",
         options: ["The hospital CEO or CFO based on financial analysis", "Clinical or biomedical engineers/technicians with the relevant technical expertise", "Any licensed clinical staff member who uses the equipment", "DNV-certified maintenance coordinators only"],
         correctIndex: 1,
-        explanation: "PE.7 requires that decisions to place equipment in an AEM program be made by qualified personnel — specifically clinical or biomedical technicians or engineers with expertise in the equipment type. Financial staff alone cannot make this determination.",
+        explanation: "PE.7 requires that decisions to place equipment in an AEM program be made by qualified personnel - specifically clinical or biomedical technicians or engineers with expertise in the equipment type. Financial staff alone cannot make this determination.",
         category: "rule",
       },
     ],

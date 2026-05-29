@@ -4,7 +4,7 @@ export const ascSafLevel: Level = {
   id: "asc_saf",
   module: "asc",
   name: "Safety",
-  description: "AAAHC v44 SAF — risk management program, incident/adverse event definitions, hazard management, workplace safety, and fire protection.",
+  description: "AAAHC v44 SAF - risk management program, incident/adverse event definitions, hazard management, workplace safety, and fire protection.",
   icon: "ShieldAlert",
   color: "hsl(0, 70%, 45%)",
   requiredScore: 0,
@@ -23,42 +23,42 @@ export const ascSafLevel: Level = {
     commonRiskPoints: [
       "Incidents are logged but never analyzed to identify root causes or systemic improvements.",
       "Product recall policy exists but staff cannot describe how they are notified of recalled items.",
-      "Expiration date monitoring is informal — no systematic tracking or documentation of monitoring activities.",
+      "Expiration date monitoring is informal - no systematic tracking or documentation of monitoring activities.",
       "Fire safety training records do not cover all staff, or drills have not occurred within the past year.",
     ],
     aaahcStandards: ["SAF.100", "SAF.110", "SAF.120", "SAF.130", "SAF.140", "SAF.150", "SAF.160", "SAF.170", "SAF.240", "SAF.250", "SAF.260", "SAF.270"],
   },
   studyMaterial: [
     {
-      title: "SAF.100 / SAF.110 — Risk Management Program: Written Policies Required",
+      title: "SAF.100 / SAF.110 - Risk Management Program: Written Policies Required",
       content:
         "The risk management program must include written policies addressing: methods for dismissing or refusing care to patients, managing incapacitated health care professionals during procedures, addressing impaired health care professionals, documentation of after-hours coverage responsibility, documentation of after-hours clinical advice provided, and restrictions on observers in patient care areas (with consent requirements). Additionally, policies must address: near-miss reporting encouragement, reportable event communication, periodic litigation review, patient complaint review with defined response times, notification to the liability carrier of adverse events, and periodic clinical record review.",
       keyPoint:
         "SAF.100 and SAF.110 together require written risk management policies covering both patient safety and organizational risk topics. Six elements in SAF.100, seven in SAF.110.",
     },
     {
-      title: "SAF.120 / SAF.130 — Defining and Acting on Incidents and Adverse Events",
+      title: "SAF.120 / SAF.130 - Defining and Acting on Incidents and Adverse Events",
       content:
         "SAF.120 requires the risk management program to formally define 'incident' and 'adverse event.' An incident includes any clinical or non-clinical occurrence not consistent with routine care, including near-miss events. An adverse event includes unexpected occurrences causing death or serious injury not related to the patient's natural disease course, process variations with risk of serious adverse outcome, breaches in medical/administrative care, and drug/material reactions. SAF.130 requires that all incidents and adverse events are reviewed, acted upon when appropriate, analyzed to identify underlying causes, and that improvements are implemented when indicated.",
       keyPoint:
         "SAF.120 = definitions; SAF.130 = action. All incidents must be reviewed, near-misses must be analyzed for systemic factors, and improvements must be implemented when root cause analysis indicates they are needed.",
     },
     {
-      title: "SAF.140 — The Written Safety Program",
+      title: "SAF.140 - The Written Safety Program",
       content:
         "SAF.140 requires a written safety program that addresses the environment of care and meets or exceeds local, state, and federal safety requirements. The program must include processes for: managing identified hazards and near misses (SAF.140.10); reducing and avoiding medication errors (SAF.140.20); preventing falls and other physical injuries (SAF.140.30); preventing skin and tissue injury from chemicals, cleaning solutions, and hazardous exposure (SAF.140.40); and ensuring food and drink for patient use is handled in compliance with local, state, and federal guidelines (SAF.140.50, NA if not applicable).",
       keyPoint:
         "SAF.140's five program elements span hazard management, medication errors, falls, chemical injury, and food safety. All five must be present in the written safety program.",
     },
     {
-      title: "SAF.150 / SAF.160 — Product Recall and Expiration Date Programs",
+      title: "SAF.150 / SAF.160 - Product Recall and Expiration Date Programs",
       content:
-        "SAF.150 requires a written recall policy covering: sources of recall information (FDA, CDC, manufacturers); how staff are notified; how the organization determines if a recalled product is present or was given to patients; response to recalled products; disposition/return; and patient notification as appropriate. SAF.160 requires a written policy for monitoring and disposing of products with manufacturer expiration dates — covering all products, reagents, medications, and supplies — with a process for ensuring currency and compliant disposal of expired items.",
+        "SAF.150 requires a written recall policy covering: sources of recall information (FDA, CDC, manufacturers); how staff are notified; how the organization determines if a recalled product is present or was given to patients; response to recalled products; disposition/return; and patient notification as appropriate. SAF.160 requires a written policy for monitoring and disposing of products with manufacturer expiration dates - covering all products, reagents, medications, and supplies - with a process for ensuring currency and compliant disposal of expired items.",
       keyPoint:
         "Recalls require six policy elements (source, staff notification, product search, response, disposition, patient notification). Expiration monitoring requires a written policy AND documented monitoring activities.",
     },
     {
-      title: "SAF.250 / SAF.260 — Protecting Healthcare Workers from Biologic Hazards",
+      title: "SAF.250 / SAF.260 - Protecting Healthcare Workers from Biologic Hazards",
       content:
         "SAF.250 requires governing-body-approved occupational health and safety policies, an annually updated written exposure control plan, an immunization program covering agents of risk to staff and patients per the IPC risk assessment, and a TB detection and protection plan following applicable regulatory requirements or nationally recognized guidelines. SAF.260 specifically addresses bloodborne pathogen procedures: a hepatitis B immunization program; post-exposure evaluation and treatment; appropriate training on hazards; and appropriate recordkeeping. Personnel health records must document acceptance or declination of the hepatitis B vaccination.",
       keyPoint:
@@ -83,7 +83,7 @@ export const ascSafLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Incapacitation of a provider during an active procedure (cardiac event, syncope) requires an immediate, practiced response. The written policy ensures staff know exactly what steps to take — not improvise under pressure.",
+          "Incapacitation of a provider during an active procedure (cardiac event, syncope) requires an immediate, practiced response. The written policy ensures staff know exactly what steps to take - not improvise under pressure.",
         whyWrong: {
           A: "Training requests are an administrative HR matter, not a SAF.100.20 policy requirement.",
           C: "Scheduling conflicts are operational management matters.",
@@ -137,9 +137,9 @@ export const ascSafLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "SAF.130 takes a systems approach to adverse event analysis — the goal is identifying systemic process failures that can be improved, not assigning blame to individuals. This is the root cause analysis (RCA) model of safety improvement.",
+          "SAF.130 takes a systems approach to adverse event analysis - the goal is identifying systemic process failures that can be improved, not assigning blame to individuals. This is the root cause analysis (RCA) model of safety improvement.",
         whyWrong: {
-          A: "Identifying a responsible individual is not the SAF.130 purpose — systemic factors are the target.",
+          A: "Identifying a responsible individual is not the SAF.130 purpose - systemic factors are the target.",
           C: "Patient financial responsibility is a billing/risk management issue, not a SAF.130 analysis requirement.",
           D: "Malpractice determination is a legal function separate from the SAF.130 internal improvement analysis.",
         },
@@ -164,9 +164,9 @@ export const ascSafLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Medication errors are a primary patient safety concern in ASC settings. The safety program must include concrete processes — not just a general commitment — to reduce medication error risk.",
+          "Medication errors are a primary patient safety concern in ASC settings. The safety program must include concrete processes - not just a general commitment - to reduce medication error risk.",
         whyWrong: {
-          A: "Fire protection is addressed in SAF.240 — it is a separate safety program element.",
+          A: "Fire protection is addressed in SAF.240 - it is a separate safety program element.",
           C: "Workplace violence/external threats are mentioned in SAF.140 guidance notes but not as the specific SAF.140.20 element.",
           D: "Equipment theft is a security matter, not a SAF.140.20 safety program element.",
         },
@@ -191,7 +191,7 @@ export const ascSafLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Determining patient exposure is the most critical step in a recall response — it determines whether patient notification is needed (SAF.150.60). Without this step, the organization cannot protect affected patients.",
+          "Determining patient exposure is the most critical step in a recall response - it determines whether patient notification is needed (SAF.150.60). Without this step, the organization cannot protect affected patients.",
         whyWrong: {
           A: "Historical recall lists may be useful but are not one of the six required policy elements.",
           C: "Governing body liability is a legal matter, not a SAF.150 policy element.",
@@ -218,10 +218,10 @@ export const ascSafLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The monitoring must be documented — not just performed. Without documentation, a surveyor cannot determine whether monitoring occurred or products were simply not checked.",
+          "The monitoring must be documented - not just performed. Without documentation, a surveyor cannot determine whether monitoring occurred or products were simply not checked.",
         whyWrong: {
           A: "Verbal confirmation is not documented evidence of monitoring.",
-          C: "Documentation must occur regardless of whether expired products are found — the finding of 'no expired products' is the documentation.",
+          C: "Documentation must occur regardless of whether expired products are found - the finding of 'no expired products' is the documentation.",
           D: "SAF.160 applies to all products with manufacturer expiration dates: medications, reagents, solutions, supplies, and food products.",
         },
         operationalContext:
@@ -272,11 +272,11 @@ export const ascSafLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "SAF.240 requires two elements: (1) education policies for fire prevention, and (2) inclusion of fire safety in surveillance activities. Documentation of both — training records and surveillance reports — is needed.",
+          "SAF.240 requires two elements: (1) education policies for fire prevention, and (2) inclusion of fire safety in surveillance activities. Documentation of both - training records and surveillance reports - is needed.",
         whyWrong: {
           A: "Extinguisher inspections and fire drills are good practices but not specifically what SAF.240 requires as its two main elements.",
           C: "Fire marshal inspections and evacuation maps are useful but are not the specific SAF.240 requirements.",
-          D: "Building infrastructure requirements (sprinklers, detectors) are life safety code matters — not the SAF.240 policy requirements.",
+          D: "Building infrastructure requirements (sprinklers, detectors) are life safety code matters - not the SAF.240 policy requirements.",
         },
         operationalContext:
           "Create a fire safety training curriculum for all staff covering RACE (Rescue, Alarm, Confine, Extinguish/Evacuate). Document annual training completion. Include fire drill debriefs in safety surveillance reports.",
@@ -301,9 +301,9 @@ export const ascSafLevel: Level = {
         whyCorrect:
           "Near-miss reporting is a leading indicator of system vulnerability. Organizations that encourage and act on near-miss reports can prevent adverse events before they harm patients. A blame-based culture suppresses reporting and eliminates this learning opportunity.",
         whyWrong: {
-          A: "Penalizing near-miss reporters suppresses the very information needed to prevent adverse events — this violates just culture principles.",
+          A: "Penalizing near-miss reporters suppresses the very information needed to prevent adverse events - this violates just culture principles.",
           C: "State reporting requirements vary by jurisdiction but SAF.110.10 focuses on internal reporting encouragement, not mandatory external reporting of near-misses.",
-          D: "Near-miss documentation is essential — it is the organizational evidence of proactive risk management.",
+          D: "Near-miss documentation is essential - it is the organizational evidence of proactive risk management.",
         },
         operationalContext:
           "Implement a non-punitive, anonymous near-miss reporting system. Publicly recognize teams that identify and report near-misses as safety champions. Present near-miss trends to the safety committee to drive proactive improvement.",
@@ -326,7 +326,7 @@ export const ascSafLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Annual review of the exposure control plan — and specifically evaluation of safer devices — is an OSHA Bloodborne Pathogens Standard (29 CFR 1910.1030) requirement incorporated into AAAHC SAF.250. Technology evaluation must be documented, not just assumed.",
+          "Annual review of the exposure control plan - and specifically evaluation of safer devices - is an OSHA Bloodborne Pathogens Standard (29 CFR 1910.1030) requirement incorporated into AAAHC SAF.250. Technology evaluation must be documented, not just assumed.",
         whyWrong: {
           A: "Three-year intervals do not meet the annual review requirement.",
           C: "Annual review is required regardless of exposure incidents.",
@@ -353,10 +353,10 @@ export const ascSafLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "OSHA requires documentation of both acceptance (with vaccination dates) and declination (with signed declination form) for hepatitis B vaccination. The absence of documentation — in either direction — is a compliance gap.",
+          "OSHA requires documentation of both acceptance (with vaccination dates) and declination (with signed declination form) for hepatitis B vaccination. The absence of documentation - in either direction - is a compliance gap.",
         whyWrong: {
-          A: "A single date is not sufficient — the full series and titer results (if obtained) should be documented, or a formal declination if refused.",
-          C: "Both acceptance and declination must be documented — not just declinations.",
+          A: "A single date is not sufficient - the full series and titer results (if obtained) should be documented, or a formal declination if refused.",
+          C: "Both acceptance and declination must be documented - not just declinations.",
           D: "Lot numbers may appear in medication administration records but are not specifically required in the personnel file documentation of immunization acceptance/declination.",
         },
         operationalContext:
@@ -371,7 +371,7 @@ export const ascSafLevel: Level = {
         "Monthly chemical purchasing audits",
         "An annual hazard assessment of chemicals used in the workplace, conducted at least annually and as new products are added",
         "Elimination of all cleaning chemicals from the facility",
-        "Chemical safety is governed only by OSHA — no organizational policy is needed",
+        "Chemical safety is governed only by OSHA - no organizational policy is needed",
       ],
       correctIndex: 1,
       explanation:
@@ -380,11 +380,11 @@ export const ascSafLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The annual hazard assessment is the foundation of the chemical safety program. When new products are introduced, an interim assessment must be conducted — not waited for until the annual review.",
+          "The annual hazard assessment is the foundation of the chemical safety program. When new products are introduced, an interim assessment must be conducted - not waited for until the annual review.",
         whyWrong: {
           A: "Monthly purchasing audits are operational procurement matters, not SAF.270 requirements.",
-          C: "Eliminating cleaning chemicals is impractical and not the standard — the standard requires assessment and control measures.",
-          D: "OSHA regulations establish minimum requirements; organizations must implement programs to meet them — the policy is required.",
+          C: "Eliminating cleaning chemicals is impractical and not the standard - the standard requires assessment and control measures.",
+          D: "OSHA regulations establish minimum requirements; organizations must implement programs to meet them - the policy is required.",
         },
         operationalContext:
           "Use an annual OSHA chemical hazard assessment tool. Review all chemicals on your SDS list, identify exposure risks, document engineering controls (ventilation, fume hoods), PPE requirements, and training completed.",
@@ -402,16 +402,16 @@ export const ascSafLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "SAF.280 requires that work injury and illness records are documented and maintained in accordance with state and federal reporting requirements and any other insurance requirements — including OSHA recordkeeping (e.g., OSHA 300 log).",
+        "SAF.280 requires that work injury and illness records are documented and maintained in accordance with state and federal reporting requirements and any other insurance requirements - including OSHA recordkeeping (e.g., OSHA 300 log).",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
           "OSHA requires specific work injury and illness recordkeeping for covered employers (OSHA 300 Log, 300A Annual Summary, 301 Incident Report). SAF.280 aligns with these regulatory requirements.",
         whyWrong: {
-          A: "JCAHO is a different accreditation body — AAAHC standards reference OSHA and state/federal law.",
-          C: "Internal HR policy alone is insufficient — OSHA and state requirements must be met.",
-          D: "Workers' compensation is one aspect — OSHA recordkeeping requirements are separate and may apply independently.",
+          A: "JCAHO is a different accreditation body - AAAHC standards reference OSHA and state/federal law.",
+          C: "Internal HR policy alone is insufficient - OSHA and state requirements must be met.",
+          D: "Workers' compensation is one aspect - OSHA recordkeeping requirements are separate and may apply independently.",
         },
         operationalContext:
           "Maintain the OSHA 300 Log, complete a 301 Incident Report for each work injury/illness, and post the 300A Annual Summary each February 1 through April 30. Store records for five years.",
@@ -438,7 +438,7 @@ export const ascSafLevel: Level = {
         whyWrong: {
           A: "Cost estimation is a project management function, not the SAF.290 risk assessment content.",
           C: "Contractor licensing may be verified but is not the risk assessment content.",
-          D: "The facility bears responsibility for patient safety even during contractor-managed construction — the risk assessment cannot be delegated.",
+          D: "The facility bears responsibility for patient safety even during contractor-managed construction - the risk assessment cannot be delegated.",
         },
         operationalContext:
           "Use an Infection Control Risk Assessment (ICRA) tool for any construction or renovation project. Complete it before work begins, obtain IPC officer review, establish monitoring checkpoints, and document that monitoring occurred throughout the project.",
@@ -464,7 +464,7 @@ export const ascSafLevel: Level = {
           "Fall prevention without a reporting mechanism leaves the organization unable to learn from fall events and improve prevention. SAF.140.30 requires both sides of the safety loop: prevention and reporting.",
         whyWrong: {
           A: "No-fall guarantees are not realistic or required.",
-          C: "A dedicated coordinator is not required — the responsibility can be assigned to existing staff.",
+          C: "A dedicated coordinator is not required - the responsibility can be assigned to existing staff.",
           D: "Electronic tools are useful but are not specifically required by SAF.140.30.",
         },
         operationalContext:
@@ -488,11 +488,11 @@ export const ascSafLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Patient privacy and safety are both protected by observer policies. Patients have a right to know who is in the room and to consent to non-authorized individuals — such as students, vendor representatives, or media.",
+          "Patient privacy and safety are both protected by observer policies. Patients have a right to know who is in the room and to consent to non-authorized individuals - such as students, vendor representatives, or media.",
         whyWrong: {
-          A: "Observers may be permitted with appropriate policies and patient consent — a blanket ban is not required.",
+          A: "Observers may be permitted with appropriate policies and patient consent - a blanket ban is not required.",
           C: "The type of observer (family, student, vendor) does not exempt the requirement for restrictions and consent.",
-          D: "Patient consent — not just provider consent — is required for non-authorized persons in care areas.",
+          D: "Patient consent - not just provider consent - is required for non-authorized persons in care areas.",
         },
         operationalContext:
           "Develop a written observer policy: define who is considered 'authorized,' specify when patient consent is required and how it is obtained and documented, and list any restrictions on observer presence during specific procedures.",
@@ -510,7 +510,7 @@ export const ascSafLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "SAF.130.40 requires that improvements reducing future adverse events are implemented 'when indicated.' The qualifier 'when indicated' means the analysis determines whether systemic improvements are warranted — not every event requires a policy change.",
+        "SAF.130.40 requires that improvements reducing future adverse events are implemented 'when indicated.' The qualifier 'when indicated' means the analysis determines whether systemic improvements are warranted - not every event requires a policy change.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
@@ -518,8 +518,8 @@ export const ascSafLevel: Level = {
           "The 'when indicated' qualifier reflects proportionality. A one-time human error in an otherwise sound system may not warrant systemic process change. But a recurring pattern or a systemic gap identified by root cause analysis requires action.",
         whyWrong: {
           A: "No 30-day deadline is specified in SAF.130.40.",
-          C: "All adverse events — not just deaths — require analysis and implementation of improvements when indicated.",
-          D: "Operational improvements do not all require governing body approval — the appropriate level of authority is determined by the nature of the improvement.",
+          C: "All adverse events - not just deaths - require analysis and implementation of improvements when indicated.",
+          D: "Operational improvements do not all require governing body approval - the appropriate level of authority is determined by the nature of the improvement.",
         },
         operationalContext:
           "For each adverse event, complete a root cause analysis and document whether systemic improvements are indicated. If not, document the rationale. If yes, assign an owner, set a deadline, and verify completion.",
@@ -532,7 +532,7 @@ export const ascSafLevel: Level = {
       options: [
         "A standard list of required vaccines defined by AAAHC",
         "Vaccinations for infectious agents of risk to staff and patients as indicated by the infection prevention risk assessment",
-        "Only hepatitis B and influenza — all other vaccines are optional",
+        "Only hepatitis B and influenza - all other vaccines are optional",
         "The state health department's employee immunization requirements",
       ],
       correctIndex: 1,
@@ -542,10 +542,10 @@ export const ascSafLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The immunization program is risk-driven — the annual IPC risk assessment identifies which pathogens pose a risk in the organization's specific clinical environment, and the immunization program addresses those specific risks.",
+          "The immunization program is risk-driven - the annual IPC risk assessment identifies which pathogens pose a risk in the organization's specific clinical environment, and the immunization program addresses those specific risks.",
         whyWrong: {
-          A: "AAAHC does not publish a fixed vaccine list — the IPC risk assessment determines the list.",
-          C: "Hepatitis B and influenza are commonly required, but the list is determined by the risk assessment — it could include COVID-19, Tdap, varicella, and others.",
+          A: "AAAHC does not publish a fixed vaccine list - the IPC risk assessment determines the list.",
+          C: "Hepatitis B and influenza are commonly required, but the list is determined by the risk assessment - it could include COVID-19, Tdap, varicella, and others.",
           D: "State requirements set the legal floor; the risk assessment-driven immunization program may exceed state minimums.",
         },
         operationalContext:
@@ -569,7 +569,7 @@ export const ascSafLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Patient education on device use is a safety requirement — an improperly used device (crutches, wound VAC, insulin pump) can cause serious injury. Documentation proves the education occurred.",
+          "Patient education on device use is a safety requirement - an improperly used device (crutches, wound VAC, insulin pump) can cause serious injury. Documentation proves the education occurred.",
         whyWrong: {
           A: "Device financial information is a billing matter, not the SAF.220 documentation requirement.",
           C: "FDA clearance number documentation is relevant to device compliance (SAF.200) but not the SAF.220 patient instruction requirement.",
@@ -587,20 +587,20 @@ export const ascSafLevel: Level = {
         "Designated complaint reviewer and annual complaint summary report",
         "Ongoing review of patient complaints and grievances, AND defined response times as required by law and regulation",
         "Monthly complaint meetings and external ombudsman involvement",
-        "Only written complaints require defined response times — verbal complaints are exempt",
+        "Only written complaints require defined response times - verbal complaints are exempt",
       ],
       correctIndex: 1,
       explanation:
-        "SAF.110.40 requires policies that address the ongoing review of patient complaints and grievances AND define response times as required by law and regulation. Both elements — ongoing review and defined timelines — must be present.",
+        "SAF.110.40 requires policies that address the ongoing review of patient complaints and grievances AND define response times as required by law and regulation. Both elements - ongoing review and defined timelines - must be present.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Response times for grievances are legally required in most jurisdictions and by CMS Conditions of Participation. Policies must specify the timeframe — and the response must be documented as meeting that timeframe.",
+          "Response times for grievances are legally required in most jurisdictions and by CMS Conditions of Participation. Policies must specify the timeframe - and the response must be documented as meeting that timeframe.",
         whyWrong: {
           A: "Designated reviewers and annual summaries may be part of the process but are not the specifically named SAF.110.40 elements.",
           C: "Monthly meetings and ombudsman involvement are not specifically required by SAF.110.40.",
-          D: "Both verbal and written complaints require defined response processes — there is no verbal-complaint exemption.",
+          D: "Both verbal and written complaints require defined response processes - there is no verbal-complaint exemption.",
         },
         operationalContext:
           "Define specific response timeframes in the complaint/grievance policy (e.g., complaint acknowledged within 2 business days, written response within 30 days). Track compliance with these timelines in the grievance log.",

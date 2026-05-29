@@ -4,7 +4,7 @@ export const ascPrrLevel: Level = {
   id: "asc_prr",
   module: "asc",
   name: "Patient Rights & Protections",
-  description: "AAAHC v44 PRR — patient rights, responsibilities, informed consent, grievances, and communication.",
+  description: "AAAHC v44 PRR - patient rights, responsibilities, informed consent, grievances, and communication.",
   icon: "ScrollText",
   color: "hsl(210, 82%, 45%)",
   requiredScore: 0,
@@ -15,13 +15,13 @@ export const ascPrrLevel: Level = {
     keyOperationalExpectations: [
       "Patients are treated with respect for personal, cultural, and religious beliefs at all times.",
       "Rights and grievance pathways are communicated to both patients and staff before care is rendered.",
-      "Patients are informed of their responsibilities — accurate health history, treatment plan adherence, respectful behavior.",
+      "Patients are informed of their responsibilities - accurate health history, treatment plan adherence, respectful behavior.",
       "Organizational information (services, credentials, fees, after-hours) is accessible without the patient having to request it.",
       "Informed consent for procedures and anesthesia is documented in the clinical record before care begins.",
       "Interpretive services, visual/hearing aids, and plain-language materials are available to support communication.",
     ],
     commonRiskPoints: [
-      "Rights notice is given after the patient is already gowned — too late to be meaningful.",
+      "Rights notice is given after the patient is already gowned - too late to be meaningful.",
       "Grievances are resolved verbally with no written documentation of steps, results, or contact person.",
       "Consent form is signed but no evidence exists that the discussion of necessity and alternatives occurred.",
       "Staff cannot describe how patients with limited English access interpretive services.",
@@ -30,39 +30,39 @@ export const ascPrrLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "PRR.100 — Dignity, Privacy, and Shared Decision-Making",
+      title: "PRR.100 - Dignity, Privacy, and Shared Decision-Making",
       content:
         "AAAHC Standard PRR.100 requires that patients be treated in a manner respectful of personal, cultural, and religious beliefs; that patients have the right to personal privacy at check-in and in evaluation and treatment areas; and that patients are given the opportunity to participate in decisions involving their health care unless participation is contraindicated for medical reasons. In telehealth settings, staff must ensure visual, auditory, and electronic privacy on the clinical side, and should encourage patients to secure privacy on their end as well.",
       keyPoint:
         "Respect for beliefs, privacy at check-in and in care areas, and shared decision-making are the three non-negotiable pillars of PRR.100.",
     },
     {
-      title: "PRR.180 / PRR.190 — Communicating Rights and Responsibilities Before Care",
+      title: "PRR.180 / PRR.190 - Communicating Rights and Responsibilities Before Care",
       content:
-        "Before care begins, both patients and staff must be informed of patient rights — including how to voice grievances, how to provide feedback, the right to change providers if alternatives are available, and advance directive rights as required by law. Separately, patients must be informed of their responsibilities: providing complete and accurate health information (including OTC products, supplements, and allergies), following the agreed-upon treatment plan, arranging a responsible adult for transportation, accepting financial responsibility for uncovered charges, and behaving respectfully toward health care professionals and others.",
+        "Before care begins, both patients and staff must be informed of patient rights - including how to voice grievances, how to provide feedback, the right to change providers if alternatives are available, and advance directive rights as required by law. Separately, patients must be informed of their responsibilities: providing complete and accurate health information (including OTC products, supplements, and allergies), following the agreed-upon treatment plan, arranging a responsible adult for transportation, accepting financial responsibility for uncovered charges, and behaving respectfully toward health care professionals and others.",
       keyPoint:
         "PRR.180 = rights before care; PRR.190 = responsibilities before care. Both must be communicated to patients AND staff.",
     },
     {
-      title: "PRR.200 — Organizational Information Accessible to Patients",
+      title: "PRR.200 - Organizational Information Accessible to Patients",
       content:
-        "Standard PRR.200 requires that information about the organization is available to patients without them having to ask: the services provided, provisions for after-hours and emergency care, fees for services, payment policies, the credentials of health care professionals, and — if applicable — the absence of malpractice coverage. For telehealth organizations, an accurate fee schedule should be accessible and after-hours emergency access information should include how to reach clinicians remotely.",
+        "Standard PRR.200 requires that information about the organization is available to patients without them having to ask: the services provided, provisions for after-hours and emergency care, fees for services, payment policies, the credentials of health care professionals, and - if applicable - the absence of malpractice coverage. For telehealth organizations, an accurate fee schedule should be accessible and after-hours emergency access information should include how to reach clinicians remotely.",
       keyPoint:
-        "Patients should not need to chase down basic organizational information. PRR.200 is an availability standard — not a 'on request' standard.",
+        "Patients should not need to chase down basic organizational information. PRR.200 is an availability standard - not a 'on request' standard.",
     },
     {
-      title: "PRR.250 — Informed Consent for Procedures",
+      title: "PRR.250 - Informed Consent for Procedures",
       content:
         "PRR.250 requires that before a surgical or procedural intervention, the clinical record demonstrates that the necessity or appropriateness of the proposed procedure and the available alternative treatment techniques were discussed with the patient. The patient's written consent (or that of their representative) must appear in the clinical record before the procedure is performed. A separate standard, PRR.240, requires documented consent for anesthesia. One consent form may satisfy both standards.",
       keyPoint:
-        "Two elements must be documented: (1) the discussion of necessity, appropriateness, and alternatives; and (2) the written consent before the procedure — not after.",
+        "Two elements must be documented: (1) the discussion of necessity, appropriateness, and alternatives; and (2) the written consent before the procedure - not after.",
     },
     {
-      title: "PRR.440 — Communication in a Language and Manner the Patient Understands",
+      title: "PRR.440 - Communication in a Language and Manner the Patient Understands",
       content:
         "Standard PRR.440 requires that providers and staff communicate in a manner that the individual and/or the caregiver understands. This means interpretive services must be available for language differences, services must be available for patients with hearing or visual impairments, and information must be provided in a plain and easy-to-understand manner. Organizations should assume patients and caregivers may have difficulty comprehending health information and communicate proactively at an appropriate literacy level.",
       keyPoint:
-        "Communication accessibility is a requirement, not a courtesy — interpretive services, impairment accommodations, and plain language are all independently required by PRR.440.",
+        "Communication accessibility is a requirement, not a courtesy - interpretive services, impairment accommodations, and plain language are all independently required by PRR.440.",
     },
   ],
   questions: [
@@ -110,10 +110,10 @@ export const ascPrrLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The standard uses the phrase 'Patients and staff are informed' — staff knowledge is independently required so they can receive complaints, route them, and document them per policy.",
+          "The standard uses the phrase 'Patients and staff are informed' - staff knowledge is independently required so they can receive complaints, route them, and document them per policy.",
         whyWrong: {
           A: "Governing body awareness is addressed in GOV standards, not PRR.180.",
-          C: "All staff — not just contracted providers — must be informed. PRR.180 does not limit its scope.",
+          C: "All staff - not just contracted providers - must be informed. PRR.180 does not limit its scope.",
           D: "While family members may accompany patients, PRR.180 does not list them as a required recipient of rights education.",
         },
         operationalContext:
@@ -137,10 +137,10 @@ export const ascPrrLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "PRR.440 specifically requires that interpretive services be available. Family members introduce confidentiality risks, may soften bad news, and may not know medical terminology — making them unreliable for rights and consent conversations.",
+          "PRR.440 specifically requires that interpretive services be available. Family members introduce confidentiality risks, may soften bad news, and may not know medical terminology - making them unreliable for rights and consent conversations.",
         whyWrong: {
           A: "Patient acquiescence to family interpretation is not the standard. The organization must affirmatively provide interpretive services.",
-          C: "Bilingual staff may be used but the standard does not restrict services to physically present staff — telephone and video interpretation qualify.",
+          C: "Bilingual staff may be used but the standard does not restrict services to physically present staff - telephone and video interpretation qualify.",
           D: "The standard requires both accessible language AND manner of communication, which includes verbal interpretation for non-literate or visually impaired patients.",
         },
         operationalContext:
@@ -166,7 +166,7 @@ export const ascPrrLevel: Level = {
         whyCorrect:
           "PRR.250 is structured around two sequential duties: (1) have the discussion (and document that it happened), and (2) get written consent before the procedure starts. Both must appear in the clinical record.",
         whyWrong: {
-          A: "Risk discussion is part of thorough consent practice, but PRR.250 specifically names necessity, appropriateness, and alternatives — not a risk inventory.",
+          A: "Risk discussion is part of thorough consent practice, but PRR.250 specifically names necessity, appropriateness, and alternatives - not a risk inventory.",
           B: "Post-operative attestation is the wrong timing. Consent must be documented before the procedure.",
           D: "Insurance authorization is a billing/access function, not part of PRR.250.",
         },
@@ -179,14 +179,14 @@ export const ascPrrLevel: Level = {
       question:
         "An ASC's registration packet lists the services provided and payment policies, but omits information about the credentials of health care professionals who will provide care. Which PRR.200 element is missing?",
       options: [
-        "PRR.200 only requires fee and payment information — credentials are listed in credentialing files",
+        "PRR.200 only requires fee and payment information - credentials are listed in credentialing files",
         "The organization is missing information about the credentials of health care professionals, which must be available to patients",
         "Credentials must be posted on a website but not provided in writing to patients",
         "PRR.200 requires credential information only if the patient specifically requests it",
       ],
       correctIndex: 1,
       explanation:
-        "PRR.200.50 explicitly requires that information about the credentials of health care professionals is available to patients. This is an availability requirement — it should be accessible without the patient having to ask.",
+        "PRR.200.50 explicitly requires that information about the credentials of health care professionals is available to patients. This is an availability requirement - it should be accessible without the patient having to ask.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
@@ -194,7 +194,7 @@ export const ascPrrLevel: Level = {
           "PRR.200 enumerates six categories of organizational information that patients should be able to access: services, after-hours/emergency care, fees, payment policies, credentials, and (if applicable) absence of malpractice coverage. All must be available.",
         whyWrong: {
           A: "Credentials belong to the patient-facing information set under PRR.200, not buried in internal credentialing files.",
-          C: "PRR.200 does not restrict the medium to websites — the information must be 'available to patients' in whatever form works for the organization.",
+          C: "PRR.200 does not restrict the medium to websites - the information must be 'available to patients' in whatever form works for the organization.",
           D: "The standard does not say 'on request.' Availability means accessible without prompting.",
         },
         operationalContext:
@@ -213,7 +213,7 @@ export const ascPrrLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "PRR.180 requires that patients and staff are informed about advance directives as required by law and regulation, and the clinical record must reflect whether or not the patient has executed an advance directive. Prominent documentation in the chart — not just a verbal handoff — is required.",
+        "PRR.180 requires that patients and staff are informed about advance directives as required by law and regulation, and the clinical record must reflect whether or not the patient has executed an advance directive. Prominent documentation in the chart - not just a verbal handoff - is required.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
@@ -222,7 +222,7 @@ export const ascPrrLevel: Level = {
         whyWrong: {
           A: "Anesthesiologist notification may be appropriate clinically, but the documentation failure is the compliance issue.",
           C: "Having the original document on file is best practice but PRR.180 focuses on documenting the existence in the clinical record.",
-          D: "Verbal disclosure from patient to nurse does not substitute for chart documentation — surveyors look in the record.",
+          D: "Verbal disclosure from patient to nurse does not substitute for chart documentation - surveyors look in the record.",
         },
         operationalContext:
           "Add a mandatory 'Advance Directive: Yes / No / Unknown' checkbox to the pre-op nursing assessment that appears prominently on page one of the clinical record.",
@@ -245,7 +245,7 @@ export const ascPrrLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "OTC products and supplements are explicitly called out in PRR.190.10 because they can significantly affect anesthesia and medication management — yet patients often omit them thinking they are not 'real' medications.",
+          "OTC products and supplements are explicitly called out in PRR.190.10 because they can significantly affect anesthesia and medication management - yet patients often omit them thinking they are not 'real' medications.",
         whyWrong: {
           A: "Transportation arrangements are a responsibility (PRR.190.30) but the question asks which option is specifically listed, and option B is the most accurate verbatim match.",
           C: "Anesthesia selection is a clinical and consent matter, not a patient responsibility under PRR.190.",
@@ -262,7 +262,7 @@ export const ascPrrLevel: Level = {
       options: [
         "The manager should have immediately suspended the staff member",
         "Verbal resolution without documentation fails to demonstrate that the grievance was received, investigated, and resolved with a written response",
-        "Only written grievances require documentation — verbal ones may be resolved informally",
+        "Only written grievances require documentation - verbal ones may be resolved informally",
         "The patient should have been referred directly to the state agency at intake",
       ],
       correctIndex: 1,
@@ -272,11 +272,11 @@ export const ascPrrLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The grievance process must produce documentation of existence, submission, investigation, and disposition — regardless of whether the complaint was verbal or written. The written resolution must name a contact person, describe investigative steps, state the result, and give the completion date.",
+          "The grievance process must produce documentation of existence, submission, investigation, and disposition - regardless of whether the complaint was verbal or written. The written resolution must name a contact person, describe investigative steps, state the result, and give the completion date.",
         whyWrong: {
           A: "Personnel action is a separate matter from the documentation compliance failure.",
           C: "PRR standards apply to all complaints, verbal or written. There is no 'informal' exemption.",
-          D: "While patients always have the right to contact the state, ASCs must first make a good-faith internal effort — and document it.",
+          D: "While patients always have the right to contact the state, ASCs must first make a good-faith internal effort - and document it.",
         },
         operationalContext:
           "Use a grievance log that captures: date received, patient name, staff receiving it, summary, person in authority notified, steps taken, resolution, written response date, and contact information provided.",
@@ -299,7 +299,7 @@ export const ascPrrLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "PRR.200 is the 'organizational transparency' standard — it covers six categories of information patients need about the organization: services, after-hours/emergency access, fees, payment policies, credentials, and malpractice coverage status.",
+          "PRR.200 is the 'organizational transparency' standard - it covers six categories of information patients need about the organization: services, after-hours/emergency access, fees, payment policies, credentials, and malpractice coverage status.",
         whyWrong: {
           A: "PRR.100 covers dignity, privacy, and shared decision-making.",
           B: "PRR.190 addresses patient responsibilities.",
@@ -317,7 +317,7 @@ export const ascPrrLevel: Level = {
         "Only if the anesthesiologist and surgeon sign the same form simultaneously",
         "A single consent form may satisfy both standards as long as it captures anesthesia consent and surgical consent elements",
         "Only in facilities that perform exclusively local anesthesia",
-        "PRR.240 and PRR.250 always require separate consent forms — they cannot be combined",
+        "PRR.240 and PRR.250 always require separate consent forms - they cannot be combined",
       ],
       correctIndex: 1,
       explanation:
@@ -326,7 +326,7 @@ export const ascPrrLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The AAAHC guidance explicitly allows this: 'One consent form may be used to satisfy the Standard requirements for the anesthesia and surgical consents.' The key is that all elements — procedure necessity, alternatives, and anesthesia consent — must be documented.",
+          "The AAAHC guidance explicitly allows this: 'One consent form may be used to satisfy the Standard requirements for the anesthesia and surgical consents.' The key is that all elements - procedure necessity, alternatives, and anesthesia consent - must be documented.",
         whyWrong: {
           A: "No requirement exists for simultaneous signing by both providers.",
           C: "PRR.240 applies to organizations administering any level of sedation/anesthesia including minimal and local anesthesia topical applications.",
@@ -342,7 +342,7 @@ export const ascPrrLevel: Level = {
         "A patient with a hearing impairment arrives for a procedure. The front desk staff speaks loudly and slowly but does not arrange any other accommodation. What does PRR.440 require?",
       options: [
         "Speaking loudly and slowly is sufficient accommodation for hearing impairment under PRR.440",
-        "Services must be available to individuals with hearing or visual impairments — typically sign language interpretation or captioning",
+        "Services must be available to individuals with hearing or visual impairments - typically sign language interpretation or captioning",
         "Hearing-impaired patients may consent through their accompanying caregiver without additional accommodation",
         "PRR.440 only covers language barriers, not physical impairments",
       ],
@@ -355,7 +355,7 @@ export const ascPrrLevel: Level = {
         whyCorrect:
           "PRR.440 enumerates three communication requirements: interpretive services for language differences, services for hearing/visual impairments, and plain-language information. All three are independently required.",
         whyWrong: {
-          A: "This is not an acceptable accommodation — it is ineffective for many types of hearing impairment and not recognized under communication accessibility standards.",
+          A: "This is not an acceptable accommodation - it is ineffective for many types of hearing impairment and not recognized under communication accessibility standards.",
           C: "Routing communication through caregivers undermines patient privacy and autonomy; it is not equivalent to direct accommodated communication.",
           D: "PRR.440 explicitly covers 'individuals with hearing or visual impairments' as a separate requirement from language interpretation.",
         },
@@ -366,7 +366,7 @@ export const ascPrrLevel: Level = {
     {
       id: "asc_prr_12",
       question:
-        "Under PRR.190, what financial responsibility must patients be informed of before care — with a specific limitation for Medicare-certified ASCs?",
+        "Under PRR.190, what financial responsibility must patients be informed of before care - with a specific limitation for Medicare-certified ASCs?",
       options: [
         "Patients must be informed of the total cost of the procedure, including surgeon fees",
         "Patients must be informed of the need to accept financial responsibility for charges not covered by insurance, but for Medicare-certified ASCs this is limited to deductible and coinsurance",
@@ -375,12 +375,12 @@ export const ascPrrLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "PRR.190.40 requires that patients be informed of their financial responsibility for uncovered charges. For Medicare-certified ASCs, the AAAHC guidance notes that CMS limits what an ASC may charge — only the applicable deductible and coinsurance may be charged to Medicare patients.",
+        "PRR.190.40 requires that patients be informed of their financial responsibility for uncovered charges. For Medicare-certified ASCs, the AAAHC guidance notes that CMS limits what an ASC may charge - only the applicable deductible and coinsurance may be charged to Medicare patients.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The guidance clarifies that for Medicare-certified facilities, financial responsibility is limited to coinsurance and deductible — ASCs cannot balance-bill Medicare patients for facility fees beyond these amounts.",
+          "The guidance clarifies that for Medicare-certified facilities, financial responsibility is limited to coinsurance and deductible - ASCs cannot balance-bill Medicare patients for facility fees beyond these amounts.",
         whyWrong: {
           A: "Surgeon fees are typically separate from the facility fee. PRR.190 focuses on the patient's financial responsibility to the organization.",
           C: "A blank financial agreement does not satisfy the requirement to inform patients of the nature of their financial responsibilities.",
@@ -395,22 +395,22 @@ export const ascPrrLevel: Level = {
       question:
         "A patient's proposed procedure has two reasonable alternatives. The surgeon discusses only the procedure being performed and obtains a signed consent. What PRR.250 element is missing?",
       options: [
-        "Nothing — the signed consent form is sufficient documentation of the discussion",
+        "Nothing - the signed consent form is sufficient documentation of the discussion",
         "Evidence that alternative treatment techniques were discussed with the patient must be present in the clinical record",
         "A second consent form for each alternative must also be signed",
         "The surgeon must document why the alternatives were rejected by the patient",
       ],
       correctIndex: 1,
       explanation:
-        "PRR.250.10 requires documentation that both the necessity/appropriateness of the proposed procedure AND alternative treatment techniques were discussed with the patient. The record must reflect both elements — the signed form alone does not prove the alternatives discussion occurred.",
+        "PRR.250.10 requires documentation that both the necessity/appropriateness of the proposed procedure AND alternative treatment techniques were discussed with the patient. The record must reflect both elements - the signed form alone does not prove the alternatives discussion occurred.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
           "PRR.250.10 has two sub-elements: (1) necessity/appropriateness and (2) alternative treatment techniques. If the chart only reflects a signed consent without any note about alternatives discussed, the standard is not met.",
         whyWrong: {
-          A: "The signed consent form is documentation that the patient agreed — but it does not prove the substance of the discussion. A note or checked item describing the alternatives discussion is required.",
-          C: "No separate consent form for each alternative is required — just documentation that the discussion occurred.",
+          A: "The signed consent form is documentation that the patient agreed - but it does not prove the substance of the discussion. A note or checked item describing the alternatives discussion is required.",
+          C: "No separate consent form for each alternative is required - just documentation that the discussion occurred.",
           D: "Documenting why alternatives were rejected may be good clinical practice, but PRR.250 requires documentation that alternatives were presented, not the patient's reasoning for declining them.",
         },
         operationalContext:
@@ -438,7 +438,7 @@ export const ascPrrLevel: Level = {
         whyWrong: {
           A: "Consent signing is not a waiver of the right to change providers.",
           C: "Emergencies are addressed under EMG standards, not as an exception to PRR.180.",
-          D: "Having only one credentialed provider may be the factual basis for 'other qualified providers are not available,' but that framing should appear in the policy — not be assumed automatically.",
+          D: "Having only one credentialed provider may be the factual basis for 'other qualified providers are not available,' but that framing should appear in the policy - not be assumed automatically.",
         },
         operationalContext:
           "Include a statement in the rights notice describing the provider change right with the qualifier 'when other qualified providers are available.' In a solo-practitioner setting, document the limitation transparently.",
@@ -456,7 +456,7 @@ export const ascPrrLevel: Level = {
       ],
       correctIndex: 2,
       explanation:
-        "PRR.200.60 requires information about the absence of malpractice coverage — this is a disclosure requirement for uninsured practitioners, not a requirement to publish full policy details. It is rated Yes/No/NA, meaning it only applies where absence of coverage is a fact.",
+        "PRR.200.60 requires information about the absence of malpractice coverage - this is a disclosure requirement for uninsured practitioners, not a requirement to publish full policy details. It is rated Yes/No/NA, meaning it only applies where absence of coverage is a fact.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
@@ -483,7 +483,7 @@ export const ascPrrLevel: Level = {
       ],
       correctIndex: 2,
       explanation:
-        "When a court of proper jurisdiction has adjudicated a patient incompetent, the rights and consent authority are exercised by the person appointed under applicable state law — the court-appointed guardian. The guardianship order must be verified and documented.",
+        "When a court of proper jurisdiction has adjudicated a patient incompetent, the rights and consent authority are exercised by the person appointed under applicable state law - the court-appointed guardian. The guardianship order must be verified and documented.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
@@ -515,10 +515,10 @@ export const ascPrrLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Telehealth introduces unique privacy risks — an unencrypted connection, a clinician in a public space, or a patient in a location with bystanders can all compromise the privacy rights guaranteed under PRR.100.",
+          "Telehealth introduces unique privacy risks - an unencrypted connection, a clinician in a public space, or a patient in a location with bystanders can all compromise the privacy rights guaranteed under PRR.100.",
         whyWrong: {
-          A: "Telehealth services are explicitly addressed in PRR.100 guidance — they are not exempt.",
-          C: "Written communication is not the standard for telehealth — the same verbal and interactive communication required for in-person care applies.",
+          A: "Telehealth services are explicitly addressed in PRR.100 guidance - they are not exempt.",
+          C: "Written communication is not the standard for telehealth - the same verbal and interactive communication required for in-person care applies.",
           D: "Privacy requirements extend throughout the encounter, not just billing.",
         },
         operationalContext:
@@ -542,7 +542,7 @@ export const ascPrrLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "PRR.190.30 addresses the safety risk of unsupervised post-sedation patients. The ASC must communicate this responsibility to the patient — typically during pre-registration — and document the discussion.",
+          "PRR.190.30 addresses the safety risk of unsupervised post-sedation patients. The ASC must communicate this responsibility to the patient - typically during pre-registration - and document the discussion.",
         whyWrong: {
           A: "Auto insurance is not a PRR.190 element.",
           C: "Liability waivers are not part of the PRR.190 framework.",
@@ -559,7 +559,7 @@ export const ascPrrLevel: Level = {
       options: [
         "Their employer's insurance policy number",
         "Information about the purpose and scope of the test, confidentiality protections, the examiner's role, what may be conveyed to the employer, test results, and necessary follow-up",
-        "Only the test results — other information is confidential",
+        "Only the test results - other information is confidential",
         "PRR.330 only applies to pre-employment physical examinations",
       ],
       correctIndex: 1,
@@ -569,10 +569,10 @@ export const ascPrrLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "PRR.330 recognizes the unique ethical context of employer-directed testing — the patient is not a traditional voluntary care-seeker, and their interests must be protected by informing them of every aspect of the testing relationship.",
+          "PRR.330 recognizes the unique ethical context of employer-directed testing - the patient is not a traditional voluntary care-seeker, and their interests must be protected by informing them of every aspect of the testing relationship.",
         whyWrong: {
           A: "Insurance policy numbers are not part of PRR.330 requirements.",
-          C: "Results must be shared with the individual — confidentiality protections limit what goes to the employer, not what goes to the tested person.",
+          C: "Results must be shared with the individual - confidentiality protections limit what goes to the employer, not what goes to the tested person.",
           D: "PRR.330 covers any employer-mandated lab test or medical examination, not only pre-employment physicals.",
         },
         operationalContext:
@@ -596,11 +596,11 @@ export const ascPrrLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "A 12th-grade reading level is far above the average health literacy of adult patients. AAAHC v44 requires easy-to-understand communication — which typically means materials written at a 6th-grade or lower reading level.",
+          "A 12th-grade reading level is far above the average health literacy of adult patients. AAAHC v44 requires easy-to-understand communication - which typically means materials written at a 6th-grade or lower reading level.",
         whyWrong: {
           A: "Health literacy research consistently shows most adults read below a 12th-grade level, and medical information presents additional comprehension challenges.",
           C: "Plain language is required for all patients, not just pediatric populations.",
-          D: "While health literacy screening is good practice, PRR.440 does not require formal literacy assessments — it requires accessible communication as a baseline assumption.",
+          D: "While health literacy screening is good practice, PRR.440 does not require formal literacy assessments - it requires accessible communication as a baseline assumption.",
         },
         operationalContext:
           "Revise rights notices, consent forms, and patient education materials to a 6th-grade reading level using tools like the Flesch-Kincaid readability score or the CDC plain language guidelines.",

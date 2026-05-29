@@ -40,18 +40,18 @@ interface SolutionConfig {
 const SOLUTIONS: Record<string, SolutionConfig> = {
   hospitals: {
     slug: "hospitals",
-    pageTitle: "Hospitals — Accreditation Ready",
+    pageTitle: "Hospitals - Accreditation Ready",
     audience: "For Hospital Compliance Directors",
     heroIcon: Hospital,
     headline: "Compliance Training Built for Hospitals.",
     subhead:
-      "Get every nurse, tech, and unit leader Joint Commission ready — without adding hours to anyone's week. Short, gamified levels keep staff engaged between surveys, while leaderboards let you track readiness across every department.",
+      "Get every nurse, tech, and unit leader Joint Commission ready - without adding hours to anyone's week. Short, gamified levels keep staff engaged between surveys, while leaderboards let you track readiness across every department.",
     features: [
       {
         icon: ShieldCheck,
         title: "Joint Commission readiness",
         description:
-          "Real tracer scenarios across OR, SPD, EOC, infection control, patient care documentation, and more — mapped to current standards.",
+          "Real tracer scenarios across OR, SPD, EOC, infection control, patient care documentation, and more - mapped to current standards.",
       },
       {
         icon: Users,
@@ -71,18 +71,18 @@ const SOLUTIONS: Record<string, SolutionConfig> = {
   },
   asc: {
     slug: "asc",
-    pageTitle: "ASCs — Accreditation Ready",
+    pageTitle: "ASCs - Accreditation Ready",
     audience: "For Ambulatory Surgery Centers",
     heroIcon: Building2,
     headline: "ASC Accreditation Training That Sticks.",
     subhead:
-      "AAAHC, Joint Commission ASC pathway, and CMS Conditions for Coverage — covered. Built for the pace of an ASC, with fast onboarding for new hires, refreshers for veteran staff, and reporting designed for multi-site ASC operators.",
+      "AAAHC, Joint Commission ASC pathway, and CMS Conditions for Coverage - covered. Built for the pace of an ASC, with fast onboarding for new hires, refreshers for veteran staff, and reporting designed for multi-site ASC operators.",
     features: [
       {
         icon: ShieldCheck,
         title: "AAAHC, JC ASC & CMS CfC content",
         description:
-          "Modules aligned to AAAHC standards, the Joint Commission ASC accreditation pathway, and CMS Conditions for Coverage — the standards your surveyors actually cite.",
+          "Modules aligned to AAAHC standards, the Joint Commission ASC accreditation pathway, and CMS Conditions for Coverage - the standards your surveyors actually cite.",
       },
       {
         icon: Zap,
@@ -94,7 +94,7 @@ const SOLUTIONS: Record<string, SolutionConfig> = {
         icon: Building2,
         title: "Built for multi-site operators",
         description:
-          "Roles, reporting scopes, and dashboards designed for multi-site ASC operators — corporate, regional, and center-level leaders all see what they need.",
+          "Roles, reporting scopes, and dashboards designed for multi-site ASC operators - corporate, regional, and center-level leaders all see what they need.",
       },
     ],
     bottomLine:

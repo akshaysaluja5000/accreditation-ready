@@ -193,7 +193,7 @@ export const ROLE_CONFIGS: RoleConfig[] = [
 
   // ==========================================================================
   // DNV NIAHO ROLES (NIAHO 25-1 / Hospital DNV module)
-  // One role per published chapter. Follows ASC pattern — chapter-scoped tracks.
+  // One role per published chapter. Follows ASC pattern - chapter-scoped tracks.
   // ==========================================================================
   {
     id: "dnv_qm_track",

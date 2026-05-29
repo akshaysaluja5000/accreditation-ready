@@ -83,7 +83,7 @@ function ProtectedRoute({ component: Component }: { component: () => JSX.Element
     return <Redirect to="/auth" />;
   }
 
-  // ASC users do not have roles — chapters are universal by accreditor, not by role.
+  // ASC users do not have roles - chapters are universal by accreditor, not by role.
   const ascUser = user.organizationType === "asc";
   // Force the facility wizard right after login (flag set in auth-page) so the user
   // re-confirms hospital vs ASC every session, even when going directly to a deep-linked route.
@@ -253,7 +253,7 @@ function HomeRoute() {
     const forceRoleSelect = (() => {
       try { return sessionStorage.getItem("mosh_force_role_select") === "1"; } catch { return false; }
     })();
-    // ASC users have no role — only require role-select if hospital user without role, OR if forced (just logged in).
+    // ASC users have no role - only require role-select if hospital user without role, OR if forced (just logged in).
     const ascUser = user.organizationType === "asc";
     const needsSetup = !ascUser && !user.roleId;
     if (!user.isAdmin && (needsSetup || forceRoleSelect)) {
@@ -262,7 +262,7 @@ function HomeRoute() {
     try { sessionStorage.removeItem("mosh_force_role_select"); } catch {}
 
     // Role-based landing: CEO/Director → Leadership Hub (which routes further based on compliance mode)
-    // admin/super_admin (rank 4-5) land on the training dashboard — they use the hub manually
+    // admin/super_admin (rank 4-5) land on the training dashboard - they use the hub manually
     const effective = getEffectiveRole(user);
     const rank = LEADERSHIP_RANK[effective] ?? 0;
     if (rank === LEADERSHIP_RANK["ceo"]) return <Redirect to="/leadership" />;

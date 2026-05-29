@@ -75,7 +75,7 @@ const EXEC_MOCK_PLANS: ExecPlan[] = [
   {
     id: "rem-005",
     category: "EOC & Safety Compliance", facilityType: "Hospital",
-    learner: "RN — Pre/Post",
+    learner: "RN - Pre/Post",
     facility: "Midwest Orthopedic Specialty Hospital", facilityId: "facility_mosh",
     quizScore: 52, passingThreshold: 70,
     status: "Verified",
@@ -329,8 +329,8 @@ function generateNarrative(
 
   if (recentAssigned + recentCompleted > 0) {
     text += trendImproving
-      ? " Completion is outpacing new assignments over the past four weeks — learners are progressing."
-      : " New assignments are outpacing completions over the past four weeks — follow-up is recommended.";
+      ? " Completion is outpacing new assignments over the past four weeks - learners are progressing."
+      : " New assignments are outpacing completions over the past four weeks - follow-up is recommended.";
   }
 
   return text;
@@ -666,7 +666,7 @@ export default function ExecutiveReportPage() {
           <div className="flex items-start gap-2.5 rounded-xl border border-orange-500/40 bg-orange-50 dark:bg-orange-500/10 px-4 py-3" data-testid="banner-exec-demo-mode">
             <FlaskConical size={14} className="text-orange-600 dark:text-orange-400 flex-shrink-0 mt-0.5" />
             <p className="text-sm text-foreground/80 leading-relaxed">
-              <span className="font-bold text-foreground">Demo Data — </span>
+              <span className="font-bold text-foreground">Demo Data - </span>
               Sample guided education plans for demonstration. Switch to <strong className="text-foreground">Live</strong> to see your facility's real plan data.
             </p>
           </div>
@@ -810,7 +810,7 @@ export default function ExecutiveReportPage() {
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <TrendingUp size={14} className="text-primary" />
-                <h3 className="font-bold text-sm">Assigned vs Completed — 8 Weeks</h3>
+                <h3 className="font-bold text-sm">Assigned vs Completed - 8 Weeks</h3>
               </div>
               <span className={`text-[11px] font-bold flex items-center gap-1 ${trendImproving ? "text-green-400" : "text-destructive"}`}>
                 {trendImproving ? <TrendingDown size={12} /> : <TrendingUp size={12} />}
@@ -845,9 +845,9 @@ export default function ExecutiveReportPage() {
               {chapterBreakdown.map(({ category: cat, active, overdue }) => (
                 <div key={cat} className="grid grid-cols-4 text-xs px-1 py-1.5 rounded-lg hover:bg-white/5 transition-colors items-center" data-testid={`row-dept-${cat}`}>
                   <span className="col-span-2 font-medium truncate pr-2 text-[11px]">{cat}</span>
-                  <span className="text-center font-bold text-blue-600 dark:text-blue-400">{active || "—"}</span>
+                  <span className="text-center font-bold text-blue-600 dark:text-blue-400">{active || "-"}</span>
                   <span className={`text-center font-bold ${overdue > 0 ? "text-destructive" : "text-muted-foreground"}`}>
-                    {overdue > 0 ? overdue : "—"}
+                    {overdue > 0 ? overdue : "-"}
                   </span>
                 </div>
               ))}

@@ -314,7 +314,7 @@ export function AscTestRunner({
                     </div>
                     <Progress value={c.pct} className="h-2 mb-2" />
                     {missed === 0 ? (
-                      <p className="text-xs text-emerald-600 font-medium">Perfect — {c.total} of {c.total}.</p>
+                      <p className="text-xs text-emerald-600 font-medium">Perfect - {c.total} of {c.total}.</p>
                     ) : (
                       <p className="text-xs text-muted-foreground">
                         You missed {missed} of {c.total} {c.name} questions.

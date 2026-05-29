@@ -12,10 +12,10 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
       id: "dd-ss1",
       baseQuestion: "A surveyor finds sterile peel packs stored on a shelf 6 inches from the floor. Is this compliant?",
       baseOptions: [
-        "Non-compliant — sterile items must be stored 8-10 inches off the floor",
-        "Compliant — the six-inch clearance meets minimum floor distance rules",
-        "Non-compliant — sterile peel packs require enclosed cabinet storage only",
-        "Compliant — any distance off the floor satisfies the storage standard"
+        "Non-compliant - sterile items must be stored 8-10 inches off the floor",
+        "Compliant - the six-inch clearance meets minimum floor distance rules",
+        "Non-compliant - sterile peel packs require enclosed cabinet storage only",
+        "Compliant - any distance off the floor satisfies the storage standard"
       ],
       baseCorrectIndex: 0,
       baseExplanation: "Sterile items must be stored 8-10 inches off the floor to prevent splash contamination during cleaning and to allow proper air circulation underneath.",
@@ -30,7 +30,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           "The rule is based on preventing splash contamination during future"
         ],
         correctIndex: 3,
-          explanation: "The 8-10 inch off-floor requirement exists because mopping and floor cleaning create splash that can reach items stored too low. Current floor cleanliness is irrelevant — the standard protects against contamination during routine cleaning activities.",
+          explanation: "The 8-10 inch off-floor requirement exists because mopping and floor cleaning create splash that can reach items stored too low. Current floor cleanliness is irrelevant - the standard protects against contamination during routine cleaning activities.",
           expertXp: 25
         },
         {
@@ -54,7 +54,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           "Rust is a sign of moisture exposure, indicating potential environmental control issues"
         ],
         correctIndex: 3,
-          explanation: "Rust on shelving indicates chronic moisture exposure — a red flag for environmental control failures in sterile storage. Beyond the environmental concern, oxidized (rough) metal surfaces create micro-abrasions on peel pack material during placement and retrieval, compromising the sterile barrier. This is a dual finding: failed environmental monitoring and inadequate packaging protection per Joint Commission EC and IC standards.",
+          explanation: "Rust on shelving indicates chronic moisture exposure - a red flag for environmental control failures in sterile storage. Beyond the environmental concern, oxidized (rough) metal surfaces create micro-abrasions on peel pack material during placement and retrieval, compromising the sterile barrier. This is a dual finding: failed environmental monitoring and inadequate packaging protection per Joint Commission EC and IC standards.",
           expertXp: 35
         }
       ]
@@ -63,10 +63,10 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
       id: "dd-ss2",
       baseQuestion: "Rigid sterilization containers are stacked 3 high on a shelf. Each container weighs 9 lbs. Is this arrangement compliant?",
       baseOptions: [
-        "Compliant — stacking is permitted when total weight stays under 25 lbs",
-        "Compliant — manufacturer-rated containers may be stacked up to 4 high",
-        "Non-compliant — the combined stack weight exceeds the maximum shelf load",
-        "Non-compliant — rigid containers should not be stacked more than 2 high"
+        "Compliant - stacking is permitted when total weight stays under 25 lbs",
+        "Compliant - manufacturer-rated containers may be stacked up to 4 high",
+        "Non-compliant - the combined stack weight exceeds the maximum shelf load",
+        "Non-compliant - rigid containers should not be stacked more than 2 high"
       ],
       baseCorrectIndex: 3,
       baseExplanation: "Rigid containers should be stacked no more than 2 high regardless of individual weight to prevent damage to seals and to allow safe handling.",
@@ -93,7 +93,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           "This is acceptable as long as the containers were sterilized within the last 30 days"
         ],
         correctIndex: 1,
-          explanation: "Rigid container filter plates serve as the microbial barrier during and after sterilization. When placed face-down on a shelf, the filter can absorb moisture from the shelf surface, collect particulates, or sustain physical damage — all of which compromise the sterile barrier. Per manufacturer IFUs and AAMI ST79 guidance, containers should be stored with filter plates facing upward or on protective mats to preserve filter integrity.",
+          explanation: "Rigid container filter plates serve as the microbial barrier during and after sterilization. When placed face-down on a shelf, the filter can absorb moisture from the shelf surface, collect particulates, or sustain physical damage - all of which compromise the sterile barrier. Per manufacturer IFUs and AAMI ST79 guidance, containers should be stored with filter plates facing upward or on protective mats to preserve filter integrity.",
           expertXp: 30
         },
         {
@@ -105,7 +105,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           "Disposable filters are universal and interchangeable across rigid container brands"
         ],
         correctIndex: 1,
-          explanation: "Sterilization validation is specific to the container-filter combination specified in the manufacturer's IFU. Using an incorrect filter — even if the BI passes — means the sterilization process was performed outside validated parameters. A passing BI for one load does not validate an unapproved configuration. Joint Commission requires strict adherence to manufacturer IFUs per LD.04.01.01, and the facility's policy must include filter-to-container model verification as a mandatory step.",
+          explanation: "Sterilization validation is specific to the container-filter combination specified in the manufacturer's IFU. Using an incorrect filter - even if the BI passes - means the sterilization process was performed outside validated parameters. A passing BI for one load does not validate an unapproved configuration. Joint Commission requires strict adherence to manufacturer IFUs per LD.04.01.01, and the facility's policy must include filter-to-container model verification as a mandatory step.",
           expertXp: 35
         }
       ]
@@ -114,10 +114,10 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
       id: "dd-ss3",
       baseQuestion: "Sterile supplies are stored 20 inches below the ceiling sprinkler heads. Is this compliant?",
       baseOptions: [
-        "Non-compliant — sterile supplies cannot be stored under sprinklers",
-        "Compliant — items must be at least 18 inches below sprinklers",
-        "Non-compliant — the minimum required clearance is 24 inches",
-        "Compliant — only items within 12 inches of sprinklers are cited"
+        "Non-compliant - sterile supplies cannot be stored under sprinklers",
+        "Compliant - items must be at least 18 inches below sprinklers",
+        "Non-compliant - the minimum required clearance is 24 inches",
+        "Compliant - only items within 12 inches of sprinklers are cited"
       ],
       baseCorrectIndex: 1,
       baseExplanation: "Sterile items must be stored at least 18 inches below sprinkler heads to ensure proper sprinkler spray pattern coverage in case of fire. At 20 inches, this is compliant.",
@@ -132,7 +132,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           "Cardboard is not a stored item"
         ],
         correctIndex: 2,
-          explanation: "The 18-inch clearance rule below sprinkler heads applies to ALL items, not just sterile supplies. This is a fire safety requirement ensuring proper sprinkler spray distribution. Any object — sterile or not — that violates this clearance is a finding.",
+          explanation: "The 18-inch clearance rule below sprinkler heads applies to ALL items, not just sterile supplies. This is a fire safety requirement ensuring proper sprinkler spray distribution. Any object - sterile or not - that violates this clearance is a finding.",
           expertXp: 25
         },
         {
@@ -153,10 +153,10 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           "The facility must obtain clearance specifications from the sprinkler manufacturer and verification from the Authority Having",
           "Recessed heads require greater clearance (24 inches) because the cover plate delays activation",
           "Recessed sprinkler heads do allow reduced clearance to 12 inches, so the 14-inch clearance is compliant",
-          "The contractor's statement is sufficient documentation — contractors are considered subject matter experts on fire suppression systems"
+          "The contractor's statement is sufficient documentation - contractors are considered subject matter experts on fire suppression systems"
         ],
         correctIndex: 0,
-          explanation: "Sprinkler clearance requirements are determined by NFPA 13 based on sprinkler type, listing, and installation configuration — not by contractor opinion. The facility must obtain manufacturer specifications for the specific recessed head model and verify requirements with the Authority Having Jurisdiction (AHJ). Per JC PE.03 (formerly EC.02.03.05), facilities are responsible for maintaining life safety features per applicable codes. A contractor's informal statement is not an acceptable compliance document. Until verified, the standard 18-inch clearance should be maintained.",
+          explanation: "Sprinkler clearance requirements are determined by NFPA 13 based on sprinkler type, listing, and installation configuration - not by contractor opinion. The facility must obtain manufacturer specifications for the specific recessed head model and verify requirements with the Authority Having Jurisdiction (AHJ). Per JC PE.03 (formerly EC.02.03.05), facilities are responsible for maintaining life safety features per applicable codes. A contractor's informal statement is not an acceptable compliance document. Until verified, the standard 18-inch clearance should be maintained.",
           expertXp: 35
         }
       ]
@@ -171,7 +171,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
         "But only if a visual inspection log is documented daily"
       ],
       baseCorrectIndex: 2,
-      baseExplanation: "Under event-related sterility, items remain sterile until an event compromises package integrity (moisture, tears, soil, etc.). No expiration date is needed — the package integrity is what matters.",
+      baseExplanation: "Under event-related sterility, items remain sterile until an event compromises package integrity (moisture, tears, soil, etc.). No expiration date is needed - the package integrity is what matters.",
       baseXp: 15,
       followUps: [
         {
@@ -179,11 +179,11 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           options: [
           "The OR manager is correct",
           "The surgeon outranks the OR manager and the pack must be discarded",
-          "Neither — a biological indicator test should be run on the pack",
-          "The surgeon is correct — if it looks old, it should be discarded"
+          "Neither - a biological indicator test should be run on the pack",
+          "The surgeon is correct - if it looks old, it should be discarded"
         ],
         correctIndex: 0,
-          explanation: "Event-related sterility means intact packaging = sterile regardless of age. The OR manager is scientifically correct. However, a surgeon's concern should never be dismissed — it should be documented and addressed through education and proper communication channels. Patient care team concerns always merit a professional response.",
+          explanation: "Event-related sterility means intact packaging = sterile regardless of age. The OR manager is scientifically correct. However, a surgeon's concern should never be dismissed - it should be documented and addressed through education and proper communication channels. Patient care team concerns always merit a professional response.",
           expertXp: 30
         },
         {
@@ -216,10 +216,10 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
       id: "dd-ss5",
       baseQuestion: "Sterile storage room temperature reads 76°F and humidity is 55%. Are these within acceptable parameters?",
       baseOptions: [
-        "Humidity is too high — must be below 50%",
+        "Humidity is too high - must be below 50%",
         "Both are acceptable",
         "Temperature is too high and humidity is acceptable",
-        "Temperature is too high — must be 68-75°F"
+        "Temperature is too high - must be 68-75°F"
       ],
       baseCorrectIndex: 3,
       baseExplanation: "Sterile storage temperature must be 68-75°F. At 76°F, the temperature exceeds the upper limit. Humidity of 55% is within the acceptable 30-60% range per AAMI ST79.",
@@ -230,11 +230,11 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           options: [
           "Only items opened during that period need to be re-sterilized",
           "Document the excursion",
-          "Action needed — the HVAC corrected itself and current temp is fine",
+          "Action needed - the HVAC corrected itself and current temp is fine",
           "Discard all sterile items in the room regardless of packaging integrity"
         ],
         correctIndex: 1,
-          explanation: "A 6-hour temperature excursion to 82°F requires: (1) documentation of the event, (2) assessment of stored sterile items — prolonged heat can weaken packaging adhesives and seals, (3) implementation of off-hours monitoring or temperature alerting systems. Wholesale discard isn't necessary if packaging integrity is confirmed, but the risk assessment must be documented.",
+          explanation: "A 6-hour temperature excursion to 82°F requires: (1) documentation of the event, (2) assessment of stored sterile items - prolonged heat can weaken packaging adhesives and seals, (3) implementation of off-hours monitoring or temperature alerting systems. Wholesale discard isn't necessary if packaging integrity is confirmed, but the risk assessment must be documented.",
           expertXp: 30
         },
         {
@@ -250,7 +250,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           expertXp: 30
         },
         {
-          question: "The facility installs humidification and resolves the low-humidity issue. During a subsequent annual survey, the surveyor reviews 12 months of continuous environmental monitoring data and identifies 23 separate temperature or humidity excursions, each documented with a corrective action note stating 'HVAC adjusted — returned to range.' No root cause analysis was performed for any excursion, and no items were assessed. The surveyor cites this as a systemic failure. Why?",
+          question: "The facility installs humidification and resolves the low-humidity issue. During a subsequent annual survey, the surveyor reviews 12 months of continuous environmental monitoring data and identifies 23 separate temperature or humidity excursions, each documented with a corrective action note stating 'HVAC adjusted - returned to range.' No root cause analysis was performed for any excursion, and no items were assessed. The surveyor cites this as a systemic failure. Why?",
           options: [
           "Because each excursion requires a full product recall regardless of duration or severity",
           "Because 23 excursions in a year is above the Joint Commission's threshold of 12 allowable excursions per year",
@@ -296,14 +296,14 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           "Bowie-Dick tests allow for minor non-uniformity as long as the majority of the sheet shows adequate color change"
         ],
         correctIndex: 2,
-          explanation: "A Bowie-Dick test must demonstrate uniform color change across the entire test sheet. Any non-uniformity — including a single corner — indicates inadequate air removal from the sterilizer chamber. This is a failed test. The sterilizer must be taken out of service, inspected by a qualified technician, and must pass subsequent Bowie-Dick testing before returning to service. Partial passes do not exist for Bowie-Dick tests per AAMI ST79.",
+          explanation: "A Bowie-Dick test must demonstrate uniform color change across the entire test sheet. Any non-uniformity - including a single corner - indicates inadequate air removal from the sterilizer chamber. This is a failed test. The sterilizer must be taken out of service, inspected by a qualified technician, and must pass subsequent Bowie-Dick testing before returning to service. Partial passes do not exist for Bowie-Dick tests per AAMI ST79.",
           expertXp: 30
         },
         {
           question: "The sterilizer is serviced and passes Bowie-Dick testing. However, during the investigation, the facility discovers that the tech who skipped the original Bowie-Dick has been working independently for 6 months without completing the facility's sterilizer competency validation. The tech was trained at a previous facility. The surveyor asks for competency records. What are the compliance implications?",
           options: [
           "The tech only needs to complete an online continuing education module to satisfy the competency requirement retroactively",
-          "The tech's training at a previous facility transfers and is sufficient — only new hires without prior SPD experience need competency validation",
+          "The tech's training at a previous facility transfers and is sufficient - only new hires without prior SPD experience need competency validation",
           "Competency documentation from the prior facility can be accepted if the tech provides a copy of their previous employer's records",
           "The facility must have its own documented competency validation for every SPD staff member"
         ],
@@ -317,10 +317,10 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
       id: "dd-ss7",
       baseQuestion: "Blue-wrapped instrument trays are stored on open wire shelving in the sterile storage room. The wrapping is intact and there are dust covers on the shelves. Is this acceptable?",
       baseOptions: [
-        "Not acceptable — wrapped trays must be in closed cabinets",
-        "Acceptable — dust covers protect the wrapping",
-        "Not acceptable — open shelving violates AAMI ST79 guidance",
-        "Acceptable — but only if trays are double-wrapped underneath"
+        "Not acceptable - wrapped trays must be in closed cabinets",
+        "Acceptable - dust covers protect the wrapping",
+        "Not acceptable - open shelving violates AAMI ST79 guidance",
+        "Acceptable - but only if trays are double-wrapped underneath"
       ],
       baseCorrectIndex: 1,
       baseExplanation: "Open wire shelving is acceptable for sterile storage as long as items are properly wrapped and dust covers are used to protect packaging from environmental contamination. Closed cabinets are preferred but not strictly required.",
@@ -335,7 +335,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           "Placing a used dust cover (which collects environmental"
         ],
         correctIndex: 3,
-          explanation: "Dust covers accumulate environmental contaminants by design — that's their purpose. Placing a used dust cover directly on sterile peel packs transfers those contaminants to packaging surfaces. Staff should be trained to handle dust covers carefully and never place them on or against sterile items.",
+          explanation: "Dust covers accumulate environmental contaminants by design - that's their purpose. Placing a used dust cover directly on sterile peel packs transfers those contaminants to packaging surfaces. Staff should be trained to handle dust covers carefully and never place them on or against sterile items.",
           expertXp: 25
         },
         {
@@ -356,7 +356,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           "FDA regulates dust cover materials, so the facility should check for FDA clearance",
           "The facility should use only impervious plastic covers to ensure complete barrier protection",
           "The facility must evaluate whether the dust cover material provides an effective barrier against",
-          "There is no specific standard for dust cover material — any commercially marketed dust cover is acceptable"
+          "There is no specific standard for dust cover material - any commercially marketed dust cover is acceptable"
         ],
         correctIndex: 2,
           explanation: "Joint Commission IC.02.02.01 places responsibility on the facility to reduce infection risks, which includes ensuring protective measures are actually effective. A vendor's marketing claims do not constitute validation. The facility must evaluate whether the dust cover material adequately protects sterile items under their specific conditions (air quality, particulate levels, handling frequency). This may involve requesting manufacturer test data on particulate barrier performance or consulting with infection prevention to determine if the material is appropriate for their environment.",
@@ -378,11 +378,11 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
       baseXp: 15,
       followUps: [
         {
-          question: "The log shows readings consistently taken at 7:00 AM — always within range. A surveyor asks: 'How do you know conditions are maintained during the overnight hours when no one is here?' The facility has no answer. What should they implement?",
+          question: "The log shows readings consistently taken at 7:00 AM - always within range. A surveyor asks: 'How do you know conditions are maintained during the overnight hours when no one is here?' The facility has no answer. What should they implement?",
           options: [
           "Hire overnight staff to take readings every 4 hours",
           "Take a second reading at 5 PM before leaving",
-          "Nothing — once-daily readings are compliant and overnight isn't their responsibility",
+          "Nothing - once-daily readings are compliant and overnight isn't their responsibility",
           "Install continuous electronic temperature/humidity monitoring with"
         ],
         correctIndex: 3,
@@ -407,7 +407,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           "90 days of data retention is sufficient for Joint Commission surveys since surveyors only review current conditions",
           "The facility only needs to retain records showing out-of-range events; in-range data can be discarded",
           "Environmental monitoring records must be retained for a minimum period consistent with the facility's record retention",
-          "The only issue is the lack of backup — 90 days of retention is adequate as long as data is backed up"
+          "The only issue is the lack of backup - 90 days of retention is adequate as long as data is backed up"
         ],
         correctIndex: 2,
           explanation: "Joint Commission surveyors review sustained compliance over time, not just current readings. Environmental monitoring data is a critical quality record that must be retained per the facility's document retention policy (typically aligned with state regulations, often 2-3 years minimum). Auto-deletion after 90 days destroys evidence of sustained environmental control. Additionally, without backup, a hard drive failure would eliminate all monitoring history. The facility needs adequate data storage, regular backups, and a retention period that meets both regulatory requirements and the practical need for retrospective investigation of sterilization concerns.",
@@ -431,22 +431,22 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
         {
           question: "A tech argues: 'We have passing chemical indicators AND a passing biological indicator from this load. So these instruments are definitely sterile.' Is this statement fully accurate?",
           options: [
-          "Almost — but sterility also depends on packaging",
+          "Almost - but sterility also depends on packaging",
           "Passing CI + BI = confirmed sterility",
           "You also need a Bowie-Dick test for every load",
           "Biological indicators have a 20% false-negative rate"
         ],
         correctIndex: 0,
-          explanation: "Passing CIs and BIs confirm the sterilization PROCESS was effective. However, sterility is maintained only if packaging integrity is preserved through storage, handling, and transport. A perfectly sterilized item can become non-sterile through package compromise. Sterility is a chain — processing is one link.",
+          explanation: "Passing CIs and BIs confirm the sterilization PROCESS was effective. However, sterility is maintained only if packaging integrity is preserved through storage, handling, and transport. A perfectly sterilized item can become non-sterile through package compromise. Sterility is a chain - processing is one link.",
           expertXp: 30
         },
         {
           question: "During a tracer, a surveyor picks up a sterilized tray and examines the external chemical indicator (CI). The CI has changed color, but the surveyor notes the CI strip is partially peeling off the wrapper and asks whether this affects the validity of the indicator. The tech says the color change is what matters, not adhesion. Who is correct?",
           options: [
           "The surveyor raises a valid point",
-          "Neither — external CIs are optional and the internal CI is the only one that matters",
+          "Neither - external CIs are optional and the internal CI is the only one that matters",
           "The surveyor is correct but only because peeling indicators are an aesthetic concern that reflects poorly on quality control",
-          "The tech is correct — the chemical reaction occurred as evidenced by the color change, regardless of whether the strip is peeling"
+          "The tech is correct - the chemical reaction occurred as evidenced by the color change, regardless of whether the strip is peeling"
         ],
         correctIndex: 0,
           explanation: "A peeling external CI raises two concerns: (1) if the indicator was not in full contact with the package surface during sterilization, the color change may not accurately reflect conditions experienced by the package contents, and (2) a lifted strip creates a gap where the underlying wrapper is exposed to environmental contaminants, potentially compromising the sterile barrier. CIs must be properly secured per manufacturer IFU. This finding may indicate broader quality issues with labeling and preparation practices.",
@@ -458,10 +458,10 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           "Only if the Class 5 integrator is expired or stored improperly",
           "If the sterilizer door seal is leaking, the Class 5 will pass but sterility will fail",
           "If the sterilizer achieves the correct time, temperature",
-          "This cannot happen — Class 5 integrators are equivalent to biological indicators and are 100% reliable"
+          "This cannot happen - Class 5 integrators are equivalent to biological indicators and are 100% reliable"
         ],
         correctIndex: 2,
-          explanation: "Class 5 integrating indicators measure sterilization parameters (time, temperature, and steam presence) and are designed to correlate with BI kill. However, they measure conditions at their own location in the pack. If an instrument has complex geometry (narrow lumens, hinged joints, blind channels) where steam cannot penetrate despite adequate chamber conditions, the CI will pass while the instrument remains non-sterile in those inaccessible areas. This is why proper instrument cleaning, appropriate cycle selection per manufacturer IFU, and correct pack configuration are critical — CIs and even BIs confirm the process, but cannot guarantee steam reached every surface of every instrument.",
+          explanation: "Class 5 integrating indicators measure sterilization parameters (time, temperature, and steam presence) and are designed to correlate with BI kill. However, they measure conditions at their own location in the pack. If an instrument has complex geometry (narrow lumens, hinged joints, blind channels) where steam cannot penetrate despite adequate chamber conditions, the CI will pass while the instrument remains non-sterile in those inaccessible areas. This is why proper instrument cleaning, appropriate cycle selection per manufacturer IFU, and correct pack configuration are critical - CIs and even BIs confirm the process, but cannot guarantee steam reached every surface of every instrument.",
           expertXp: 35
         }
       ]
@@ -470,10 +470,10 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
       id: "dd-ss10",
       baseQuestion: "During a tracer, a surveyor notices that the sterile storage room door is propped open. Staff say they do this during busy periods for easier access. Is this acceptable?",
       baseOptions: [
-        "Acceptable — it improves workflow efficiency",
-        "Not acceptable — only allowed during active restocking",
-        "Acceptable — if the room has positive air pressure",
-        "Not acceptable — sterile storage doors must"
+        "Acceptable - it improves workflow efficiency",
+        "Not acceptable - only allowed during active restocking",
+        "Acceptable - if the room has positive air pressure",
+        "Not acceptable - sterile storage doors must"
       ],
       baseCorrectIndex: 3,
       baseExplanation: "Sterile storage room doors must remain closed to maintain proper temperature, humidity, and positive air pressure. Propping doors open introduces uncontrolled air, dust, and temperature fluctuations that can compromise sterile items.",
@@ -482,7 +482,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
         {
           question: "The manager installs an automatic door closer. However, during the tracer the surveyor notices the room has positive pressure (air flows OUT when the door opens). The manager says this proves the room is protected even when briefly open. Is the manager's reasoning correct?",
           options: [
-          "Partially — positive pressure does help prevent contamination ingress",
+          "Partially - positive pressure does help prevent contamination ingress",
           "Positive pressure has nothing to do with sterile storage",
           "Positive pressure means contaminants can't enter even with the door open",
           "Sterile storage should have negative pressure"
@@ -494,8 +494,8 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
         {
           question: "After addressing door management, the surveyor uses a smoke pencil at the doorway and confirms positive pressure. However, the surveyor then checks the adjacent corridor and discovers the corridor itself is also positively pressurized relative to the sterile storage room. This means air actually flows FROM the corridor INTO the sterile storage room. The facility's engineering report claims the sterile storage room is positive pressure. What went wrong?",
           options: [
-          "The surveyor's technique was incorrect — smoke pencils show airflow direction, not pressure",
-          "The smoke pencil test is unreliable and should not be used — only a manometer reading is valid",
+          "The surveyor's technique was incorrect - smoke pencils show airflow direction, not pressure",
+          "The smoke pencil test is unreliable and should not be used - only a manometer reading is valid",
           "Pressure relationships are relative; the facility likely tested the sterile storage room against",
           "This is acceptable because corridor air in hospitals is HEPA-filtered"
         ],
@@ -508,7 +508,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           options: [
           "The gap is that 4 ACH is below the ASHRAE 170 minimum of 6 ACH for clean storage spaces",
           "The facility needs to hire a certified HVAC engineer to provide a written endorsement of the 4 ACH rate",
-          "There is no gap — the engineer is correct that Joint Commission does not specify an ACH rate for sterile storage, so any rate is acceptable",
+          "There is no gap - the engineer is correct that Joint Commission does not specify an ACH rate for sterile storage, so any rate is acceptable",
           "While Joint Commission may not mandate a specific ACH"
         ],
         correctIndex: 3,
@@ -527,7 +527,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
         "The pinhole is too small to allow contamination"
       ],
       baseCorrectIndex: 2,
-      baseExplanation: "Under event-related sterility, any compromise to packaging integrity — no matter how small — renders the item non-sterile. A pinhole is a breach that allows microorganism entry.",
+      baseExplanation: "Under event-related sterility, any compromise to packaging integrity - no matter how small - renders the item non-sterile. A pinhole is a breach that allows microorganism entry.",
       baseXp: 15,
       followUps: [
         {
@@ -555,12 +555,12 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           expertXp: 30
         },
         {
-          question: "This loaner instrument situation prompts a broader investigation. The quality manager discovers the facility has no formal loaner instrument management policy — loaners arrive day-of-surgery, go directly to SPD for rush processing, and IFUs are sometimes unavailable. Over the past year, 15% of loaner trays arrived less than 2 hours before the scheduled case. A Joint Commission surveyor would cite this as a failure in which standard area, and what systemic corrective action is needed?",
+          question: "This loaner instrument situation prompts a broader investigation. The quality manager discovers the facility has no formal loaner instrument management policy - loaners arrive day-of-surgery, go directly to SPD for rush processing, and IFUs are sometimes unavailable. Over the past year, 15% of loaner trays arrived less than 2 hours before the scheduled case. A Joint Commission surveyor would cite this as a failure in which standard area, and what systemic corrective action is needed?",
           options: [
           "This represents failures across multiple standards: LD (Leadership) for lack of policy, IC (Infection Control) for processing without IFUs",
-          "This falls under HR standards for staff training — SPD techs need to be trained to process loaners faster",
-          "This is a vendor management issue outside the facility's control — the facility should document complaints to vendors but cannot be cited for vendor failures",
-          "This is an IC (Infection Control) issue only — the facility needs to add a step requiring IFU review before processing"
+          "This falls under HR standards for staff training - SPD techs need to be trained to process loaners faster",
+          "This is a vendor management issue outside the facility's control - the facility should document complaints to vendors but cannot be cited for vendor failures",
+          "This is an IC (Infection Control) issue only - the facility needs to add a step requiring IFU review before processing"
         ],
         correctIndex: 0,
           explanation: "Loaner instrument management failures span multiple Joint Commission standard areas. Leadership (LD.04.04.05) requires policies governing processes that affect patient safety. Infection Control (IC.02.02.01) requires adherence to manufacturer reprocessing instructions. Provision of Care (PC.01.03.01) requires safe care delivery. A comprehensive loaner policy must mandate advance delivery windows (24-48 hours is standard practice), require IFU availability before processing begins, define a process for rejecting same-day loaners when proper reprocessing cannot be completed, and include surgeon notification procedures. The facility bears responsibility for patient safety regardless of vendor behavior.",
@@ -572,10 +572,10 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
       id: "dd-ss12",
       baseQuestion: "Sterile trays are stored on shelving in a hallway alcove outside the OR suite. The alcove has no door but is covered by a curtain. Is this an acceptable sterile storage location?",
       baseOptions: [
-        "Acceptable — the curtain provides adequate protection",
-        "Not acceptable — sterile storage areas must be enclosed",
-        "Acceptable — if temperature and humidity are monitored daily",
-        "Not acceptable — unless the alcove has a HEPA filtration unit"
+        "Acceptable - the curtain provides adequate protection",
+        "Not acceptable - sterile storage areas must be enclosed",
+        "Acceptable - if temperature and humidity are monitored daily",
+        "Not acceptable - unless the alcove has a HEPA filtration unit"
       ],
       baseCorrectIndex: 1,
       baseExplanation: "Sterile storage requires an enclosed area with controlled temperature (68-75°F), humidity (30-60% per AAMI ST79), restricted access, and protection from environmental contamination. A curtained alcove does not meet these requirements.",
@@ -606,7 +606,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           expertXp: 30
         },
         {
-          question: "The renovation is completed with proper ICRA. The new enclosed room has a door, walls, temperature/humidity monitoring, and controlled access. However, the surveyor notes that the room was built using the existing hallway HVAC zone — meaning the room does not have independent ventilation control or filtration separate from the public hallway. The facility argues that the door creates an adequate barrier. Is this arrangement compliant for long-term sterile storage?",
+          question: "The renovation is completed with proper ICRA. The new enclosed room has a door, walls, temperature/humidity monitoring, and controlled access. However, the surveyor notes that the room was built using the existing hallway HVAC zone - meaning the room does not have independent ventilation control or filtration separate from the public hallway. The facility argues that the door creates an adequate barrier. Is this arrangement compliant for long-term sterile storage?",
           options: [
           "As long as temperature and humidity readings are within range, the source of the air supply is irrelevant",
           "But only if the hallway has carpet, which harbors more contaminants",
@@ -648,7 +648,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           question: "After reprocessing, the tech correctly loads the sterilizer and runs the cycle. The trays come out dry. However, the BI from the reprocessed load will not be read for 24 hours (standard incubation for the facility's BI system). A surgeon urgently needs one of the trays for an emergency case in 2 hours. What is the protocol?",
           options: [
           "The surgeon can sign a waiver assuming responsibility for using the tray before BI results",
-          "Run a rapid-read BI — all facilities are required to have rapid-read BI capability for emergencies",
+          "Run a rapid-read BI - all facilities are required to have rapid-read BI capability for emergencies",
           "The tray cannot be used under any circumstances until the BI incubation is complete",
           "For non-implantable items in urgent/emergency situations"
         ],
@@ -665,7 +665,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           "They investigated each event in isolation but failed to perform aggregate data analysis to"
         ],
         correctIndex: 3,
-          explanation: "Joint Commission PI.01.01.01 requires facilities to collect data, analyze patterns, and implement improvements. Five wet pack events in one month — even with different proximate causes — represent a cluster that demands aggregate analysis. Are there common factors? Is training inadequate? Is equipment aging? Is the loading process poorly designed? Investigating each event individually without looking at the pattern misses the opportunity to identify systemic root causes. The facility should perform a comprehensive analysis examining all 5 events together, looking for common contributing factors, and implementing systemic corrective actions.",
+          explanation: "Joint Commission PI.01.01.01 requires facilities to collect data, analyze patterns, and implement improvements. Five wet pack events in one month - even with different proximate causes - represent a cluster that demands aggregate analysis. Are there common factors? Is training inadequate? Is equipment aging? Is the loading process poorly designed? Investigating each event individually without looking at the pattern misses the opportunity to identify systemic root causes. The facility should perform a comprehensive analysis examining all 5 events together, looking for common contributing factors, and implementing systemic corrective actions.",
           expertXp: 35
         }
       ]
@@ -704,7 +704,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           "6 months is too short; if using time-related sterility, the minimum shelf life must be 12 months"
         ],
         correctIndex: 1,
-          explanation: "A facility must commit to either event-related or time-related sterility — not both simultaneously on the same items. Putting a 'use by' date on event-related packages creates dangerous confusion: staff may discard perfectly sterile items past the date (waste) or assume items within the date are safe without checking packaging (risk). Under event-related sterility, the sterilization date is acceptable for traceability, but no expiration or 'use by' date should appear. If the facility prefers time-related sterility, it must be implemented as a complete system with validated shelf-life parameters.",
+          explanation: "A facility must commit to either event-related or time-related sterility - not both simultaneously on the same items. Putting a 'use by' date on event-related packages creates dangerous confusion: staff may discard perfectly sterile items past the date (waste) or assume items within the date are safe without checking packaging (risk). Under event-related sterility, the sterilization date is acceptable for traceability, but no expiration or 'use by' date should appear. If the facility prefers time-related sterility, it must be implemented as a complete system with validated shelf-life parameters.",
           expertXp: 30
         },
         {
@@ -713,7 +713,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           "The facility should return to time-related sterility since event-related sterility is too difficult to monitor",
           "The facility should implement a multi-layered verification system including: documented competency assessments on package",
           "A barcode scanning system that logs when each package is opened at the point of use",
-          "A simple policy statement that staff must inspect packages is sufficient — verification of every inspection is impractical and not required"
+          "A simple policy statement that staff must inspect packages is sufficient - verification of every inspection is impractical and not required"
         ],
         correctIndex: 1,
           explanation: "Event-related sterility transfers the critical quality check to the point of use, making verification of that inspection essential. A training-only approach provides no evidence that inspections actually occur. Joint Commission requires demonstrable competency (HR.01.06.01) and measurable quality monitoring (PI.01.01.01). The facility needs: (1) documented competency on package inspection for all end-users, (2) periodic observational audits to verify inspections happen, (3) a rejection/reporting mechanism with tracking, and (4) integration into existing safety checklists. This creates auditable evidence that the critical quality step is being performed consistently.",
@@ -725,10 +725,10 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
       id: "dd-ss15",
       baseQuestion: "A surveyor observes that sterile supplies are stored in the same room as cleaning chemicals and disinfectants. Is this acceptable?",
       baseOptions: [
-        "Not acceptable — sterile supplies must not be stored with",
-        "Acceptable — if the room has adequate ventilation and airflow",
-        "Not acceptable — unless chemicals are in sealed containers",
-        "Acceptable — as long as they are on separate shelves"
+        "Not acceptable - sterile supplies must not be stored with",
+        "Acceptable - if the room has adequate ventilation and airflow",
+        "Not acceptable - unless chemicals are in sealed containers",
+        "Acceptable - as long as they are on separate shelves"
       ],
       baseCorrectIndex: 0,
       baseExplanation: "Cleaning chemicals and disinfectants must not be stored in sterile supply areas. Chemical fumes can degrade packaging materials, and spills can contaminate sterile items. Chemicals must be stored in a separate, designated area.",
@@ -762,7 +762,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           question: "With all chemicals removed from storage, the facility establishes a cleaning protocol for the sterile storage room. The protocol calls for daily damp mopping with a quaternary ammonium disinfectant and weekly shelf wiping. During a tracer, the surveyor asks: 'What is the dwell time for your disinfectant, and do staff remove sterile items from shelves before wiping?' The charge tech says dwell time is 10 minutes and that staff wipe around the sterile items on the shelf without moving them. What findings should the surveyor cite?",
           options: [
           "Wiping around items is acceptable as long as the disinfectant is applied properly to the shelf surfaces",
-          "The only finding is that quaternary ammonium compounds are not appropriate for sterile storage — only hydrogen peroxide-based cleaners should be used",
+          "The only finding is that quaternary ammonium compounds are not appropriate for sterile storage - only hydrogen peroxide-based cleaners should be used",
           "Multiple findings: (1) wiping around items means shelf surfaces under and behind items are never disinfected, creating bioburden reservoirs",
           "The only finding is that items should be removed before wiping to ensure complete surface coverage of the disinfectant"
         ],
@@ -791,10 +791,10 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           "Only notify the surgeon if the patient develops an infection",
           "Notify the surgeon, infection preventionist, and risk management",
           "File an incident report but no patient notification is necessary",
-          "Action needed — the chemical indicators on those trays changed color, so they were sterile"
+          "Action needed - the chemical indicators on those trays changed color, so they were sterile"
         ],
         correctIndex: 1,
-          explanation: "A positive BI with items already used in surgery is a serious event requiring immediate notification of the surgical team, infection prevention, and risk management. Patient surveillance for surgical site infection must be initiated. The root cause of sterilizer failure must be investigated. Chemical indicators only confirm exposure to sterilization conditions — they do not confirm sterility.",
+          explanation: "A positive BI with items already used in surgery is a serious event requiring immediate notification of the surgical team, infection prevention, and risk management. Patient surveillance for surgical site infection must be initiated. The root cause of sterilizer failure must be investigated. Chemical indicators only confirm exposure to sterilization conditions - they do not confirm sterility.",
           expertXp: 35
         },
         {
@@ -806,19 +806,19 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           "BI placement location does not affect results; BIs respond to temperature regardless of steam penetration"
         ],
         correctIndex: 1,
-          explanation: "Incorrect BI placement is a significant finding that may have contributed to the positive result, but it does not invalidate the result. A positive BI means sterilization conditions were not achieved at that location in the chamber — regardless of whether the placement was correct. This actually reveals two problems: (1) a potential sterilization failure requiring full investigation, and (2) a competency/training gap in BI placement. Both must be addressed. The recall and sterilizer shutdown remain in effect until root cause analysis is complete and three consecutive empty-chamber BIs pass with correct placement.",
+          explanation: "Incorrect BI placement is a significant finding that may have contributed to the positive result, but it does not invalidate the result. A positive BI means sterilization conditions were not achieved at that location in the chamber - regardless of whether the placement was correct. This actually reveals two problems: (1) a potential sterilization failure requiring full investigation, and (2) a competency/training gap in BI placement. Both must be addressed. The recall and sterilizer shutdown remain in effect until root cause analysis is complete and three consecutive empty-chamber BIs pass with correct placement.",
           expertXp: 30
         },
         {
           question: "The sterilizer is serviced, passes three consecutive empty-chamber BIs, and is returned to service. Six weeks later, the quality manager presents data to leadership showing that over the past 12 months, this sterilizer has had 3 positive BIs while the facility's other two sterilizers have had zero. All three positives were attributed to different causes (operator error, BI placement, and a steam quality issue). The surveyor asks: 'What is your threshold for determining when a sterilizer should be permanently replaced rather than continually repaired?' The facility has no defined threshold. What does this represent?",
           options: [
           "The facility should replace any sterilizer that has more than 2 positive BIs in a 12-month period per AAMI guidelines",
-          "This is not a compliance issue — equipment replacement is a financial decision for the facility's administration",
+          "This is not a compliance issue - equipment replacement is a financial decision for the facility's administration",
           "This represents a gap in the facility's medical equipment management program",
-          "The surveyor cannot recommend equipment replacement — that falls outside the scope of a Joint Commission survey"
+          "The surveyor cannot recommend equipment replacement - that falls outside the scope of a Joint Commission survey"
         ],
         correctIndex: 2,
-          explanation: "JC PE.04 (formerly EC.02.04.01) requires facilities to manage medical equipment throughout its lifecycle, including defining criteria for when equipment should be replaced. A sterilizer with recurring failures — even from different proximate causes — may have underlying reliability issues (aging components, cumulative wear) that make continued use a patient safety risk. The facility must have documented criteria defining when sterilizer performance indicates the need for major overhaul or replacement. Three positive BIs in 12 months on a single unit, while the other units have zero, is a significant data point that should trigger an engineering assessment of the sterilizer's continued fitness for service.",
+          explanation: "JC PE.04 (formerly EC.02.04.01) requires facilities to manage medical equipment throughout its lifecycle, including defining criteria for when equipment should be replaced. A sterilizer with recurring failures - even from different proximate causes - may have underlying reliability issues (aging components, cumulative wear) that make continued use a patient safety risk. The facility must have documented criteria defining when sterilizer performance indicates the need for major overhaul or replacement. Three positive BIs in 12 months on a single unit, while the other units have zero, is a significant data point that should trigger an engineering assessment of the sterilizer's continued fitness for service.",
           expertXp: 35
         }
       ]
@@ -849,11 +849,11 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           expertXp: 35
         },
         {
-          question: "As part of the corrective action, the facility initiates a comprehensive IFU audit. They discover that 12 instrument sets in their inventory have no manufacturer IFU on file at all — the original documentation was never obtained or was lost. The instruments have been in regular use for years and have been sterilized using 'standard' prevacuum cycles. What is the compliance status and required action?",
+          question: "As part of the corrective action, the facility initiates a comprehensive IFU audit. They discover that 12 instrument sets in their inventory have no manufacturer IFU on file at all - the original documentation was never obtained or was lost. The instruments have been in regular use for years and have been sterilized using 'standard' prevacuum cycles. What is the compliance status and required action?",
           options: [
-          "Only instruments purchased in the last 5 years need IFUs — older instruments predate the IFU requirement",
+          "Only instruments purchased in the last 5 years need IFUs - older instruments predate the IFU requirement",
           "The instruments must be removed from service until IFUs are obtained from each manufacturer",
-          "This is acceptable — if the instruments have been sterilized with standard validated prevacuum cycles for years without incident, the process is proven",
+          "This is acceptable - if the instruments have been sterilized with standard validated prevacuum cycles for years without incident, the process is proven",
           "The facility can write their own reprocessing instructions based on staff experience and use those until manufacturer IFUs are obtained"
         ],
         correctIndex: 1,
@@ -866,10 +866,10 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           "The facility can perform its own validation study comparing the two cleaners to justify the substitution",
           "The facility should contact the FDA for a waiver to use an alternative cleaner",
           "The facility must use the manufacturer-specified cleaner or obtain written documentation from the manufacturer",
-          "Substituting a cleaner with similar active ingredients is acceptable — the enzymatic action is what matters, not the brand name"
+          "Substituting a cleaner with similar active ingredients is acceptable - the enzymatic action is what matters, not the brand name"
         ],
         correctIndex: 2,
-          explanation: "Manufacturer IFUs represent validated reprocessing parameters, including specific cleaning agents. The manufacturer's validation was performed with the specified cleaner — 'similar' active ingredients do not guarantee equivalent performance on the specific materials and geometry of that instrument. Per Joint Commission IC.02.02.01 and FDA guidance on reprocessing, facilities must follow manufacturer instructions. If cost is a concern, the facility should: (1) contact the manufacturer to request validation data for alternative cleaners, (2) request the manufacturer validate the alternative, or (3) factor reprocessing costs into instrument procurement decisions. Using an unvalidated substitute shifts liability to the facility.",
+          explanation: "Manufacturer IFUs represent validated reprocessing parameters, including specific cleaning agents. The manufacturer's validation was performed with the specified cleaner - 'similar' active ingredients do not guarantee equivalent performance on the specific materials and geometry of that instrument. Per Joint Commission IC.02.02.01 and FDA guidance on reprocessing, facilities must follow manufacturer instructions. If cost is a concern, the facility should: (1) contact the manufacturer to request validation data for alternative cleaners, (2) request the manufacturer validate the alternative, or (3) factor reprocessing costs into instrument procurement decisions. Using an unvalidated substitute shifts liability to the facility.",
           expertXp: 35
         }
       ]
@@ -904,20 +904,20 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           options: [
           "Tightly packed cabinets are acceptable because the closed environment provides maximum protection",
           "The surveyor is concerned about ergonomic risk from heavy cabinet doors, not the sterile items themselves",
-          "The concern is only aesthetic — overcrowded cabinets look disorganized during surveys",
+          "The concern is only aesthetic - overcrowded cabinets look disorganized during surveys",
           "Overcrowded cabinets create friction and compression on sterile packaging during storage and retrieval"
         ],
         correctIndex: 3,
-          explanation: "Overcrowding sterile storage — whether cabinets or shelves — creates physical forces that compromise packaging integrity. When trays are compressed together, the friction from inserting and removing items can cause micro-tears in wrapping, disrupt heat seals on peel packs, and create stress points on rigid container gaskets. AAMI ST79 emphasizes that sterile items must be stored to allow handling without damaging adjacent packages. The benefits of closed cabinets are negated if overcrowding causes packaging damage.",
+          explanation: "Overcrowding sterile storage - whether cabinets or shelves - creates physical forces that compromise packaging integrity. When trays are compressed together, the friction from inserting and removing items can cause micro-tears in wrapping, disrupt heat seals on peel packs, and create stress points on rigid container gaskets. AAMI ST79 emphasizes that sterile items must be stored to allow handling without damaging adjacent packages. The benefits of closed cabinets are negated if overcrowding causes packaging damage.",
           expertXp: 30
         },
         {
           question: "The facility addresses cabinet overcrowding by reducing inventory levels. During a subsequent survey, the surveyor reviews the facility's par level methodology and discovers that par levels were set 4 years ago and have never been adjusted, despite significant changes in surgical volume (20% increase) and case mix. Some items are chronically overstocked (creating the overcrowding) while others frequently stock out, requiring emergency sterilization runs. The surveyor identifies this as a systemic issue. Under which Joint Commission standard does this fall, and what is the required corrective action?",
           options: [
-          "This is a nursing staffing issue — more staff would prevent stock-outs through better communication",
-          "This falls under EC.02.06.01 (managing the physical environment) only — the facility needs bigger cabinets",
+          "This is a nursing staffing issue - more staff would prevent stock-outs through better communication",
+          "This falls under EC.02.06.01 (managing the physical environment) only - the facility needs bigger cabinets",
           "This falls under multiple standards: LD.03.09.01 (performance improvement applied to processes)",
-          "This is a supply chain management issue outside Joint Commission scope — it falls under the facility's materials management department"
+          "This is a supply chain management issue outside Joint Commission scope - it falls under the facility's materials management department"
         ],
         correctIndex: 2,
           explanation: "Outdated par levels that cause both overstocking and stock-outs represent a failure in multiple domains. Leadership standards (LD.03.09.01) require systematic process improvement. Performance Improvement (PI.01.01.01) requires data-driven decision-making. Infection Control (IC.02.02.01) is impacted when stock-outs require emergency processing that may bypass normal quality checks. The corrective action must include a comprehensive par level review using current utilization data, a methodology for ongoing adjustment based on surgical volume changes, and integration with both storage capacity planning and emergency processing protocols.",
@@ -942,12 +942,12 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           question: "The electronic tracking system goes down for 4 hours during a busy surgical day. Trays are still being processed and distributed. The department has no backup documentation procedure. What risks does this create?",
           options: [
           "The system will capture the data when it comes back online",
-          "Minimal risk — staff can remember which trays they processed",
+          "Minimal risk - staff can remember which trays they processed",
           "The department should stop processing until the system is restored",
-          "Significant risk — without documentation"
+          "Significant risk - without documentation"
         ],
         correctIndex: 3,
-          explanation: "Loss of traceability means that if a sterilizer malfunction is discovered, the facility cannot identify which items were affected. Every SPD must have a documented manual backup procedure for system downtime that captures all required data elements. This must be implemented immediately when electronic systems fail — not after the fact.",
+          explanation: "Loss of traceability means that if a sterilizer malfunction is discovered, the facility cannot identify which items were affected. Every SPD must have a documented manual backup procedure for system downtime that captures all required data elements. This must be implemented immediately when electronic systems fail - not after the fact.",
           expertXp: 30
         },
         {
@@ -967,7 +967,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           options: [
           "The fundamental failure is in implementation: the facility created a procedure but failed to train",
           "The failure is in leadership for not hiring additional IT support staff",
-          "The procedure needs to be simplified — 15 steps and 3 forms is too complex for an emergency procedure",
+          "The procedure needs to be simplified - 15 steps and 3 forms is too complex for an emergency procedure",
           "The failure is that IT has not made the tracking system reliable enough to prevent downtime events"
         ],
         correctIndex: 0,
@@ -978,7 +978,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
     },
     {
       id: "dd-ss20",
-      baseQuestion: "A facility has a satellite sterile storage area in the OR suite that is restocked daily from the main SPD. The satellite area has no independent temperature or humidity monitoring — it relies on the OR suite's general HVAC system. Is this compliant?",
+      baseQuestion: "A facility has a satellite sterile storage area in the OR suite that is restocked daily from the main SPD. The satellite area has no independent temperature or humidity monitoring - it relies on the OR suite's general HVAC system. Is this compliant?",
       baseOptions: [
         "Satellite areas also need their own sterilization equipment",
         "Satellite sterile storage areas must have independent",
@@ -990,11 +990,11 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
       baseXp: 15,
       followUps: [
         {
-          question: "After installing monitoring, the satellite storage area consistently reads 66°F — within OR comfort range but below the 68-75°F sterile storage requirement. The OR team resists raising the temperature because surgeons prefer cooler ORs. How should this be resolved?",
+          question: "After installing monitoring, the satellite storage area consistently reads 66°F - within OR comfort range but below the 68-75°F sterile storage requirement. The OR team resists raising the temperature because surgeons prefer cooler ORs. How should this be resolved?",
           options: [
           "Install supplemental heating in the satellite storage area or relocate sterile storage",
           "The OR team's preference takes priority since they work in the space daily",
-          "Document the variance and continue — 66°F is close enough to 68°F",
+          "Document the variance and continue - 66°F is close enough to 68°F",
           "Only stock the satellite area with items needed for the next case to minimize exposure time"
         ],
         correctIndex: 0,
@@ -1002,7 +1002,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           expertXp: 30
         },
         {
-          question: "The facility installs a separate HVAC zone for the satellite storage area and achieves 70°F. However, the surveyor notes that the satellite area is an open alcove within the OR suite with no door or physical barrier — just a defined floor area with shelving. Staff, patients on gurneys, and equipment constantly pass by. The surveyor asks whether this open configuration is appropriate for sterile storage. What is the correct assessment?",
+          question: "The facility installs a separate HVAC zone for the satellite storage area and achieves 70°F. However, the surveyor notes that the satellite area is an open alcove within the OR suite with no door or physical barrier - just a defined floor area with shelving. Staff, patients on gurneys, and equipment constantly pass by. The surveyor asks whether this open configuration is appropriate for sterile storage. What is the correct assessment?",
           options: [
           "The configuration is only unacceptable if the OR suite does not have HEPA filtration",
           "An open configuration is acceptable for satellite storage since items are only stored briefly before use",
@@ -1010,19 +1010,19 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
           "An open satellite storage area within a high-traffic zone exposes sterile items to particulates from foot traffic"
         ],
         correctIndex: 3,
-          explanation: "Even within a controlled OR environment, open satellite storage in a high-traffic area exposes sterile items to particulates, linen fibers, skin cells, and aerosols generated by constant personnel and patient movement. The OR suite's overall air quality does not protect items at the local level from proximity contamination. Satellite storage should provide physical barriers — ideally an enclosed room, but at minimum enclosed shelving or cabinets with doors. AAMI ST79 and infection prevention principles require protection of sterile items from environmental contamination throughout storage, regardless of location.",
+          explanation: "Even within a controlled OR environment, open satellite storage in a high-traffic area exposes sterile items to particulates, linen fibers, skin cells, and aerosols generated by constant personnel and patient movement. The OR suite's overall air quality does not protect items at the local level from proximity contamination. Satellite storage should provide physical barriers - ideally an enclosed room, but at minimum enclosed shelving or cabinets with doors. AAMI ST79 and infection prevention principles require protection of sterile items from environmental contamination throughout storage, regardless of location.",
           expertXp: 30
         },
         {
           question: "The facility encloses the satellite storage area with walls and a door, installs independent environmental monitoring, and achieves compliant temperature and humidity. During a comprehensive survey, the surveyor reviews the restocking process and discovers that trays are transported from main SPD to the satellite location on an open cart through a public corridor that passes the main hospital lobby, a construction zone (with active ICRA barriers), and a loading dock area. The transport takes approximately 8 minutes. The surveyor asks to see the facility's transport protocol. No written protocol exists. What are the compliance implications?",
           options: [
           "The transport is acceptable if the facility can demonstrate that the corridor is cleaned hourly",
-          "Transport through public areas is acceptable as long as the wrapped trays are not touched by the public — no written protocol is needed for an 8-minute transport",
-          "The only issue is passing through the construction zone — a protocol is needed for that segment only",
+          "Transport through public areas is acceptable as long as the wrapped trays are not touched by the public - no written protocol is needed for an 8-minute transport",
+          "The only issue is passing through the construction zone - a protocol is needed for that segment only",
           "This represents multiple compliance failures: (1) no written transport protocol violates IC.02.02"
         ],
         correctIndex: 3,
-          explanation: "Sterile supply chain integrity extends from sterilization through storage to point of use — including transport. An 8-minute open-cart journey through a public lobby, active construction zone, and loading dock exposes sterile items to uncontrolled environmental conditions, particulates, temperature variations, and contamination risks. Per Joint Commission IC.02.02.01, facilities must implement measures to reduce infection risk throughout the care continuum. ICRA requirements (IC.02.02.01) specifically restrict traffic patterns through construction zones. The facility needs: a written transport protocol, covered/enclosed transport carts, an approved route avoiding construction and uncontrolled areas, staff training on transport procedures, and verification that transport conditions maintain packaging integrity.",
+          explanation: "Sterile supply chain integrity extends from sterilization through storage to point of use - including transport. An 8-minute open-cart journey through a public lobby, active construction zone, and loading dock exposes sterile items to uncontrolled environmental conditions, particulates, temperature variations, and contamination risks. Per Joint Commission IC.02.02.01, facilities must implement measures to reduce infection risk throughout the care continuum. ICRA requirements (IC.02.02.01) specifically restrict traffic patterns through construction zones. The facility needs: a written transport protocol, covered/enclosed transport carts, an approved route avoiding construction and uncontrolled areas, staff training on transport procedures, and verification that transport conditions maintain packaging integrity.",
           expertXp: 35
         }
       ]

@@ -350,7 +350,7 @@ export default function AuthPage() {
                             </div>
                           </FormControl>
                           <p className="text-xs text-muted-foreground mt-1">
-                            This keeps your team's progress private. Use the code your administrator shared, or pick a new one if you're the first from your facility — everyone who joins with the same code becomes part of the same group.
+                            This keeps your team's progress private. Use the code your administrator shared, or pick a new one if you're the first from your facility - everyone who joins with the same code becomes part of the same group.
                           </p>
                           <FormMessage />
                         </FormItem>

@@ -4,7 +4,7 @@ export const ascQuaLevel: Level = {
   id: "asc_qua",
   module: "asc",
   name: "Quality Management",
-  description: "AAAHC v44 QUA — peer review, ongoing monitoring, quality improvement studies, and linking QI to risk management and safety.",
+  description: "AAAHC v44 QUA - peer review, ongoing monitoring, quality improvement studies, and linking QI to risk management and safety.",
   icon: "BarChart3",
   color: "hsl(270, 55%, 48%)",
   requiredScore: 0,
@@ -14,7 +14,7 @@ export const ascQuaLevel: Level = {
       "The QUA category requires ASCs to maintain a multidimensional, multidisciplinary quality management and improvement program that integrates peer review, ongoing performance monitoring, infection prevention data, safety, and risk management. Peer review must be structured, ongoing, and include all privileged health care professionals. Quality improvement activities must use data to identify trends, drive action, and improve outcomes. Results must be reported to the governing body at least annually.",
     keyOperationalExpectations: [
       "Each physician, dentist, or health care professional is reviewed by at least one similarly privileged/licensed peer.",
-      "Peer review criteria are developed and applied by privileged professionals — not just administrators.",
+      "Peer review criteria are developed and applied by privileged professionals - not just administrators.",
       "Clinical care is selected for ongoing review covering all similarly privileged professionals.",
       "QI data is collected continuously, evaluated for trends, and acted upon when problems are identified.",
       "Peer review results are reported to the governing body at least annually.",
@@ -30,39 +30,39 @@ export const ascQuaLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "QUA.100 / QUA.120 — Peer Review: Who Reviews Whom",
+      title: "QUA.100 / QUA.120 - Peer Review: Who Reviews Whom",
       content:
         "Under QUA.100, each physician, dentist, or health care professional must be reviewed by at least one similarly privileged and/or similarly licensed peer. For solo practitioners, an outside peer must provide the review (QUA.110). QUA.120 requires that privileged health care professionals actively participate in peer review: they help develop and apply review criteria for the care they provide, care is selected for ongoing review, the selection process covers all similarly privileged professionals, all clinical incidents are reviewed, and each provider is reviewed at least annually.",
       keyPoint:
         "Peer review must be by peers (similarly privileged/licensed), cover all providers, include incidents, and occur at minimum annually. Documentation must prove this happened.",
     },
     {
-      title: "QUA.130 — Ongoing Monitoring: Data → Evaluation → Action",
+      title: "QUA.130 - Ongoing Monitoring: Data → Evaluation → Action",
       content:
         "QUA.130 requires ongoing monitoring of important aspects of care provided by physicians, dentists, and other health care professionals. The standard has three sequential elements: (1) data are collected in an ongoing manner; (2) data are periodically evaluated to identify trends or occurrences that affect patient outcomes; and (3) when data analysis identifies a problem and/or improvement opportunity, action is taken. The AAAHC guidance notes that benchmarking (comparing against external norms) is part of this process.",
       keyPoint:
         "QUA.130 is a three-step sequence: collect → evaluate for trends → act when problems are found. Documentation must show all three steps, not just data collection.",
     },
     {
-      title: "QUA.140 / QUA.150 — Governing Body Reporting and Privileging Connection",
+      title: "QUA.140 / QUA.150 - Governing Body Reporting and Privileging Connection",
       content:
-        "The results of peer review activities must be reported to the governing body at least annually (QUA.140). This creates accountability at the governance level. QUA.150 requires that peer review results are used as part of the process for granting continuation of clinical privileges — closing the loop between quality data and credentialing decisions. Facilities that maintain these as completely separate systems have a structural QUA deficiency.",
+        "The results of peer review activities must be reported to the governing body at least annually (QUA.140). This creates accountability at the governance level. QUA.150 requires that peer review results are used as part of the process for granting continuation of clinical privileges - closing the loop between quality data and credentialing decisions. Facilities that maintain these as completely separate systems have a structural QUA deficiency.",
       keyPoint:
         "Peer review results must go to the governing body AND be used in privilege continuation decisions. Two separate governance linkage requirements.",
     },
     {
-      title: "QUA.160 — Quality Improvement Studies",
+      title: "QUA.160 - Quality Improvement Studies",
       content:
         "QUA.160 requires that the quality improvement program include studies that systematically assess, improve, and document the quality of clinical care. A compliant QI study must include: a topic relevant to clinical care; a measurable goal; baseline data collection; an intervention designed to improve performance; re-measurement after the intervention; and documentation of outcomes. Studies may address clinical care processes, outcomes, access, patient safety, or efficiency.",
       keyPoint:
-        "A QI study without a baseline, a measurable goal, an intervention, and re-measurement is not a compliant study under QUA.160 — it is just data collection.",
+        "A QI study without a baseline, a measurable goal, an intervention, and re-measurement is not a compliant study under QUA.160 - it is just data collection.",
     },
     {
-      title: "QUA.220 — Integrating QI, IPC, Safety, and Risk Management",
+      title: "QUA.220 - Integrating QI, IPC, Safety, and Risk Management",
       content:
-        "QUA.220 requires that the quality management program links peer review, quality improvement activities, infection prevention and control, safety, and risk management in an organized, systematic way. This means that IPC surveillance data, safety event reports, and risk management findings all feed into the QI program — and that the governing body receives an integrated view of organizational performance, not siloed reports.",
+        "QUA.220 requires that the quality management program links peer review, quality improvement activities, infection prevention and control, safety, and risk management in an organized, systematic way. This means that IPC surveillance data, safety event reports, and risk management findings all feed into the QI program - and that the governing body receives an integrated view of organizational performance, not siloed reports.",
       keyPoint:
-        "QUA.220 is the integration standard — IPC, safety, risk management, and peer review all connect through the QI program. Separate reports that never inform each other fail QUA.220.",
+        "QUA.220 is the integration standard - IPC, safety, risk management, and peer review all connect through the QI program. Separate reports that never inform each other fail QUA.220.",
     },
   ],
   questions: [
@@ -83,7 +83,7 @@ export const ascQuaLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The 'similarly privileged/licensed peer' requirement ensures that reviewers are clinically qualified to evaluate the care being reviewed. A surgeon should review a surgeon's operative cases — not an administrator or a nurse.",
+          "The 'similarly privileged/licensed peer' requirement ensures that reviewers are clinically qualified to evaluate the care being reviewed. A surgeon should review a surgeon's operative cases - not an administrator or a nurse.",
         whyWrong: {
           A: "Patient satisfaction data may inform QI but does not constitute peer review.",
           C: "Quality consultants may support the process but cannot substitute for peer review by similarly qualified clinicians.",
@@ -110,7 +110,7 @@ export const ascQuaLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Solo practitioners cannot objectively review their own work. QUA.110 closes this gap by requiring external peer review — typically a peer from a neighboring facility or a regional peer review organization.",
+          "Solo practitioners cannot objectively review their own work. QUA.110 closes this gap by requiring external peer review - typically a peer from a neighboring facility or a regional peer review organization.",
         whyWrong: {
           A: "Self-review is explicitly excluded from AAAHC peer review requirements.",
           C: "There is no size-based waiver for peer review in QUA standards.",
@@ -125,23 +125,23 @@ export const ascQuaLevel: Level = {
       question:
         "QUA.120 requires that privileged health care professionals participate in peer review. What specific developmental role does this standard require providers to take?",
       options: [
-        "Providers must simply agree to be reviewed — no active development role is required",
+        "Providers must simply agree to be reviewed - no active development role is required",
         "Providers must participate in the development and application of peer review criteria used to evaluate the care they provide",
         "Providers must select the cases to be reviewed from their own practice",
         "Providers must conduct unannounced peer observations of their colleagues",
       ],
       correctIndex: 1,
       explanation:
-        "QUA.120.10 requires that privileged health care professionals participate in the development and application of the peer review criteria used to evaluate the care they provide. This is an active role — not passive consent to being reviewed.",
+        "QUA.120.10 requires that privileged health care professionals participate in the development and application of the peer review criteria used to evaluate the care they provide. This is an active role - not passive consent to being reviewed.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
           "Provider participation in criteria development ensures that review standards are clinically meaningful and appropriate for the specialty. Criteria imposed purely by administrators or outside parties may not reflect the nuances of the care being reviewed.",
         whyWrong: {
-          A: "Mere agreement to be reviewed is insufficient — active criteria development participation is specifically required.",
+          A: "Mere agreement to be reviewed is insufficient - active criteria development participation is specifically required.",
           C: "Providers selecting only their own cases for review would undermine the objectivity of peer review.",
-          D: "Unannounced observations are not mentioned in QUA.120 — the standard focuses on criteria development and ongoing selection processes.",
+          D: "Unannounced observations are not mentioned in QUA.120 - the standard focuses on criteria development and ongoing selection processes.",
         },
         operationalContext:
           "Hold an annual peer review committee meeting where all privileged providers review and approve the criteria to be used for the coming year. Document attendance and criteria decisions in committee minutes.",
@@ -159,14 +159,14 @@ export const ascQuaLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "QUA.120.50 requires that all privileged health care professionals are reviewed at least annually by a peer or supervising health care professional. This is a minimum requirement — more frequent review is permissible and encouraged.",
+        "QUA.120.50 requires that all privileged health care professionals are reviewed at least annually by a peer or supervising health care professional. This is a minimum requirement - more frequent review is permissible and encouraged.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
           "Annual review ensures ongoing monitoring of each provider's practice, not just episodic review triggered by problems. The 'at least annually' floor means no provider should go more than 12 months without documented peer review.",
         whyWrong: {
-          A: "Three-year reappointment cycles are credentialing intervals — QUA.120.50 requires annual peer review between reappointments.",
+          A: "Three-year reappointment cycles are credentialing intervals - QUA.120.50 requires annual peer review between reappointments.",
           C: "Incident-triggered review is addressed in QUA.120.40 but is in addition to, not instead of, annual review.",
           D: "Two-year accreditation cycles do not correspond to the peer review frequency requirement.",
         },
@@ -182,7 +182,7 @@ export const ascQuaLevel: Level = {
         "Data collection alone satisfies QUA.130 as long as it is ongoing",
         "The data must also be periodically evaluated for trends, and action must be taken when problems are identified",
         "Data must be submitted to a national registry to achieve compliance",
-        "QUA.130 only requires data collection — evaluation and action are addressed in QUA.160",
+        "QUA.130 only requires data collection - evaluation and action are addressed in QUA.160",
       ],
       correctIndex: 1,
       explanation:
@@ -191,7 +191,7 @@ export const ascQuaLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The AAAHC designs QUA.130 as a complete monitoring cycle — data collection is only valuable if it leads to evaluation and action. An ASC that collects data but never acts on findings fails QUA.130.20 and QUA.130.30.",
+          "The AAAHC designs QUA.130 as a complete monitoring cycle - data collection is only valuable if it leads to evaluation and action. An ASC that collects data but never acts on findings fails QUA.130.20 and QUA.130.30.",
         whyWrong: {
           A: "Data collection is the first step, not the complete requirement.",
           C: "National registry submission may be good practice but is not required by QUA.130.",
@@ -218,7 +218,7 @@ export const ascQuaLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The governing body needs to know how its peer review program is functioning. Annual reporting is the minimum — quarterly or semi-annual reporting provides better oversight.",
+          "The governing body needs to know how its peer review program is functioning. Annual reporting is the minimum - quarterly or semi-annual reporting provides better oversight.",
         whyWrong: {
           A: "Monthly is not required; at least annually is the stated minimum.",
           C: "Focused review triggers additional reporting but is not a substitute for the annual governing body report.",
@@ -247,7 +247,7 @@ export const ascQuaLevel: Level = {
         whyCorrect:
           "QUA.150 closes a critical governance loop: clinical performance data from peer review must feed into the credentialing decision about whether to renew privileges. An ASC that never considers peer review data at reappointment has a structural QUA.150 deficiency.",
         whyWrong: {
-          A: "Initial appointment decisions rely primarily on credentialing documents — QUA.150 specifically addresses continuation (renewal) of privileges.",
+          A: "Initial appointment decisions rely primarily on credentialing documents - QUA.150 specifically addresses continuation (renewal) of privileges.",
           C: "Employment decisions are HR functions separate from clinical privileging.",
           D: "Malpractice premiums are set by insurers, not by the organization using peer review data.",
         },
@@ -260,7 +260,7 @@ export const ascQuaLevel: Level = {
       question:
         "An ASC's QI committee reviews surgical volume data but has no systematic process for identifying trends. What QUA.130 element is missing?",
       options: [
-        "Volume data is sufficient for QI compliance — trend analysis is optional",
+        "Volume data is sufficient for QI compliance - trend analysis is optional",
         "QUA.130.20 requires periodic evaluation of data to identify trends or occurrences affecting patient outcomes",
         "Trend analysis is only required when an adverse event occurs",
         "Volume data belongs in the administrative report, not the QI program",
@@ -275,7 +275,7 @@ export const ascQuaLevel: Level = {
           "Trend identification is the mechanism by which QI data becomes actionable. Without a systematic trend analysis process, problems may persist undetected until they cause a serious event.",
         whyWrong: {
           A: "Volume data collection is step one of QUA.130; trend evaluation is step two. Both are required.",
-          C: "Trend analysis under QUA.130 is proactive and ongoing — not triggered by adverse events.",
+          C: "Trend analysis under QUA.130 is proactive and ongoing - not triggered by adverse events.",
           D: "Volume data may appear in administrative reports, but clinical volume as a QI metric belongs in the QI program.",
         },
         operationalContext:
@@ -287,7 +287,7 @@ export const ascQuaLevel: Level = {
       question:
         "A QI study at an ASC tracked post-operative nausea rates for three months, implemented an antiemetic protocol, and never re-measured. Which component of a compliant QI study is missing?",
       options: [
-        "The topic selection — post-operative nausea is not a required QI study topic",
+        "The topic selection - post-operative nausea is not a required QI study topic",
         "Re-measurement after the intervention to determine whether the change produced improvement",
         "Governing body approval of the study topic before implementation",
         "QI studies do not need re-measurement if the intervention was clinically sound",
@@ -301,7 +301,7 @@ export const ascQuaLevel: Level = {
         whyCorrect:
           "Re-measurement is the 'check' phase of a Plan-Do-Check-Act (PDCA) cycle. Without it, you have a Plan-Do with no evidence of effect. Surveyors specifically look for re-measurement data to confirm study completeness.",
         whyWrong: {
-          A: "Post-operative nausea is a relevant clinical quality topic — there is no prescribed list of required QI study topics.",
+          A: "Post-operative nausea is a relevant clinical quality topic - there is no prescribed list of required QI study topics.",
           C: "Governing body approval of each study topic is not a QUA.160 element; the governing body approves the overall QI program.",
           D: "Clinical soundness of the intervention does not eliminate the need to verify its actual effect through re-measurement.",
         },
@@ -314,21 +314,21 @@ export const ascQuaLevel: Level = {
       question:
         "QUA.220 requires that the quality management program links which organizational programs in a systematic way?",
       options: [
-        "Only peer review and QI studies — other programs are managed separately",
+        "Only peer review and QI studies - other programs are managed separately",
         "Peer review, QI activities, infection prevention and control, safety, and risk management",
-        "Only clinical programs — administrative functions are excluded",
+        "Only clinical programs - administrative functions are excluded",
         "The accreditation program, marketing, and patient experience",
       ],
       correctIndex: 1,
       explanation:
-        "QUA.220 requires the quality management program to link peer review, QI activities, infection prevention and control, safety, and risk management in an organized, systematic way. Integration is the core requirement — siloed programs fail this standard.",
+        "QUA.220 requires the quality management program to link peer review, QI activities, infection prevention and control, safety, and risk management in an organized, systematic way. Integration is the core requirement - siloed programs fail this standard.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
           "QUA.220 reflects the AAAHC's systems thinking approach: patient safety, quality of care, infection prevention, and risk are interconnected. An integrated program identifies patterns that siloed programs miss.",
         whyWrong: {
-          A: "IPC, safety, and risk management are explicitly named integration elements — not optional.",
+          A: "IPC, safety, and risk management are explicitly named integration elements - not optional.",
           C: "Administrative functions that affect clinical safety (e.g., risk management) are included in the integration mandate.",
           D: "Marketing and patient experience are not QUA.220 integration elements.",
         },
@@ -342,7 +342,7 @@ export const ascQuaLevel: Level = {
         "The QI committee reviews peer review findings but the governing body has not received a peer review report in two years. What AAAHC standard is at issue?",
       options: [
         "Peer review reporting to the governing body is optional if the QI committee reviews results",
-        "QUA.140 requires reporting to the governing body at least annually — two years without reporting is a deficiency",
+        "QUA.140 requires reporting to the governing body at least annually - two years without reporting is a deficiency",
         "GOV.240 is the only standard that addresses governing body review requirements",
         "QUA.140 applies only to organizations with employed physicians",
       ],
@@ -355,7 +355,7 @@ export const ascQuaLevel: Level = {
         whyCorrect:
           "The governing body must have direct visibility into peer review results to exercise its governance oversight of clinical quality. QI committee review alone does not satisfy the governing body reporting requirement.",
         whyWrong: {
-          A: "QI committee review and governing body reporting are separate requirements — one does not substitute for the other.",
+          A: "QI committee review and governing body reporting are separate requirements - one does not substitute for the other.",
           C: "GOV.240 requires annual program reviews, but QUA.140 is the specific peer review reporting standard.",
           D: "QUA.140 applies to all organizations with privileged health care professionals, regardless of employment model.",
         },
@@ -375,15 +375,15 @@ export const ascQuaLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "QUA.120.40 requires that all clinical incidents are reviewed in accordance with the organization's peer review policies and procedures. Incidents are not excluded from peer review — they are a core input.",
+        "QUA.120.40 requires that all clinical incidents are reviewed in accordance with the organization's peer review policies and procedures. Incidents are not excluded from peer review - they are a core input.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Clinical incidents are some of the most important cases for peer review — they may reveal system failures, skill gaps, or policy deficiencies that require correction. Excluding them from peer review removes a critical safety feedback loop.",
+          "Clinical incidents are some of the most important cases for peer review - they may reveal system failures, skill gaps, or policy deficiencies that require correction. Excluding them from peer review removes a critical safety feedback loop.",
         whyWrong: {
-          A: "Medical record documentation is required separately — it does not substitute for peer review of the incident.",
-          C: "Risk management and peer review work in parallel — an incident referred to risk management must also go through peer review.",
+          A: "Medical record documentation is required separately - it does not substitute for peer review of the incident.",
+          C: "Risk management and peer review work in parallel - an incident referred to risk management must also go through peer review.",
           D: "Peer review of incidents is not patient-complaint-triggered; it is system-triggered by the incident itself.",
         },
         operationalContext:
@@ -402,7 +402,7 @@ export const ascQuaLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "The AAAHC guidance notes that benchmarking — comparing against external norms — is part of the ongoing monitoring process under QUA.130. Benchmarking provides context for internal data, helping identify whether performance is truly good or merely acceptable compared to peers.",
+        "The AAAHC guidance notes that benchmarking - comparing against external norms - is part of the ongoing monitoring process under QUA.130. Benchmarking provides context for internal data, helping identify whether performance is truly good or merely acceptable compared to peers.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
@@ -411,7 +411,7 @@ export const ascQuaLevel: Level = {
         whyWrong: {
           A: "The AAAHC guidance specifically calls out benchmarking as part of the QUA.130 process.",
           C: "Benchmarking is recommended for all organizations, not limited to Medicare-certified ones.",
-          D: "Benchmarking supplements — it does not replace — internal data collection.",
+          D: "Benchmarking supplements - it does not replace - internal data collection.",
         },
         operationalContext:
           "Subscribe to a relevant ambulatory surgery outcome database (e.g., NACOR or the ASC Quality Collaboration) to access national benchmarks for your procedure-specific complication and unplanned admission rates.",
@@ -422,21 +422,21 @@ export const ascQuaLevel: Level = {
       question:
         "An ASC completes peer review of all surgeons but not of the anesthesia providers. What QUA standard is violated?",
       options: [
-        "Only surgeons require peer review — anesthesia providers are reviewed by their own professional boards",
-        "QUA.100 requires all physicians, dentists, or health care professionals to be reviewed — anesthesia providers are included",
+        "Only surgeons require peer review - anesthesia providers are reviewed by their own professional boards",
+        "QUA.100 requires all physicians, dentists, or health care professionals to be reviewed - anesthesia providers are included",
         "Anesthesia peer review is governed by the American Board of Anesthesiology, not AAAHC",
         "Peer review for anesthesia providers is optional if they hold current board certification",
       ],
       correctIndex: 1,
       explanation:
-        "QUA.100 requires that each physician, dentist, or health care professional is reviewed by at least one similarly privileged/licensed peer — this includes all credentialed providers such as anesthesiologists, CRNAs, and other APPs.",
+        "QUA.100 requires that each physician, dentist, or health care professional is reviewed by at least one similarly privileged/licensed peer - this includes all credentialed providers such as anesthesiologists, CRNAs, and other APPs.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The QUA.100 requirement covers all privileged health care professionals — not just surgeons. Anesthesia providers are independently credentialed and must independently receive peer review.",
+          "The QUA.100 requirement covers all privileged health care professionals - not just surgeons. Anesthesia providers are independently credentialed and must independently receive peer review.",
         whyWrong: {
-          A: "Professional board certification and AAAHC peer review serve different purposes — board certification proves training, peer review monitors ongoing practice.",
+          A: "Professional board certification and AAAHC peer review serve different purposes - board certification proves training, peer review monitors ongoing practice.",
           C: "AAAHC peer review requirements apply at the facility level, independently of external board review.",
           D: "Board certification does not exempt a provider from facility-based peer review requirements.",
         },
@@ -451,12 +451,12 @@ export const ascQuaLevel: Level = {
       options: [
         "Only cases with patient complaints are selected for review",
         "Clinical care is selected for review on an ongoing basis",
-        "Only randomly selected cases are reviewed — incident cases are excluded",
+        "Only randomly selected cases are reviewed - incident cases are excluded",
         "Clinical care is reviewed annually during the recredentialing cycle only",
       ],
       correctIndex: 1,
       explanation:
-        "QUA.120.20 requires that clinical care is selected for review on an ongoing basis — not just during credentialing cycles or incident investigations. Ongoing selection means review is a continuous, year-round process.",
+        "QUA.120.20 requires that clinical care is selected for review on an ongoing basis - not just during credentialing cycles or incident investigations. Ongoing selection means review is a continuous, year-round process.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
@@ -464,7 +464,7 @@ export const ascQuaLevel: Level = {
           "Ongoing review means the selection process runs continuously throughout the year, not just episodically. This allows for trend detection that point-in-time reviews would miss.",
         whyWrong: {
           A: "Complaint-only review is reactive and misses proactive quality monitoring.",
-          C: "Both random case selection and incident review are appropriate — the standard does not exclude either.",
+          C: "Both random case selection and incident review are appropriate - the standard does not exclude either.",
           D: "Annual-only review at recredentialing does not satisfy 'ongoing basis.'",
         },
         operationalContext:
@@ -476,7 +476,7 @@ export const ascQuaLevel: Level = {
       question:
         "An ASC's IPC data shows a trend of increasing wound infections, but this data is never shared with the QI committee or linked to peer review findings. What QUA standard is at risk?",
       options: [
-        "IPC data is the exclusive domain of the IPC officer — it does not need to go to the QI committee",
+        "IPC data is the exclusive domain of the IPC officer - it does not need to go to the QI committee",
         "QUA.220 requires integration of IPC data into the quality management program in a systematic way",
         "QI committees only review patient satisfaction and wait time data",
         "IPC data is reported to the governing body directly and does not require QI committee review",
@@ -492,7 +492,7 @@ export const ascQuaLevel: Level = {
         whyWrong: {
           A: "IPC data is the IPC officer's responsibility to collect, but QUA.220 requires it to be shared and integrated with the QI program.",
           C: "QI committees must review clinical outcomes data including IPC metrics.",
-          D: "Governing body reporting is separate from the QI committee review — and does not substitute for integration.",
+          D: "Governing body reporting is separate from the QI committee review - and does not substitute for integration.",
         },
         operationalContext:
           "Add IPC surveillance results as a standing item on the QI committee agenda. When IPC data identifies a trend, the QI committee should formally link it to peer review data and initiate a QI study if warranted.",
@@ -504,7 +504,7 @@ export const ascQuaLevel: Level = {
         "An ASC's QI program includes study topics that address administrative efficiency but no studies on clinical care outcomes. What does the QUA.160 principle require?",
       options: [
         "Administrative efficiency studies fully satisfy QI study requirements",
-        "QI studies must systematically assess and improve the quality of clinical care — clinical outcomes must be included",
+        "QI studies must systematically assess and improve the quality of clinical care - clinical outcomes must be included",
         "QI studies only need to address areas cited in the previous AAAHC survey",
         "The mix of study topics is at the organization's complete discretion",
       ],
@@ -528,12 +528,12 @@ export const ascQuaLevel: Level = {
     {
       id: "asc_qua_18",
       question:
-        "A QI committee meeting minute notes 'SSI rate discussed — 3.2%.' No trend context, no benchmark comparison, and no action taken is documented. Is this QUA.130 compliant?",
+        "A QI committee meeting minute notes 'SSI rate discussed - 3.2%.' No trend context, no benchmark comparison, and no action taken is documented. Is this QUA.130 compliant?",
       options: [
-        "Yes — mentioning the data in minutes demonstrates ongoing monitoring",
-        "No — QUA.130 requires evaluation for trends and action when problems are identified, not just data mention",
-        "Yes — the committee's expertise makes formal trend analysis unnecessary",
-        "No — only written QI studies can satisfy QUA.130 monitoring requirements",
+        "Yes - mentioning the data in minutes demonstrates ongoing monitoring",
+        "No - QUA.130 requires evaluation for trends and action when problems are identified, not just data mention",
+        "Yes - the committee's expertise makes formal trend analysis unnecessary",
+        "No - only written QI studies can satisfy QUA.130 monitoring requirements",
       ],
       correctIndex: 1,
       explanation:
@@ -542,11 +542,11 @@ export const ascQuaLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Surveyors look for evidence that committees actually analyzed data — not just heard a number. Minutes should show trend charts, benchmark comparisons, and the committee's decision about whether action is warranted.",
+          "Surveyors look for evidence that committees actually analyzed data - not just heard a number. Minutes should show trend charts, benchmark comparisons, and the committee's decision about whether action is warranted.",
         whyWrong: {
           A: "Mentioning a data point is not the same as evaluating trends or identifying actions.",
           C: "Committee expertise must be demonstrated through documented analysis, not assumed.",
-          D: "QUA.130 ongoing monitoring and formal QUA.160 studies are different requirements — but both require documented analysis.",
+          D: "QUA.130 ongoing monitoring and formal QUA.160 studies are different requirements - but both require documented analysis.",
         },
         operationalContext:
           "Structure committee minutes to include for each metric: current rate, prior period comparison (trend), benchmark if available, whether the rate is within acceptable range, and any action directed. A simple table format works well.",
@@ -555,10 +555,10 @@ export const ascQuaLevel: Level = {
     {
       id: "asc_qua_19",
       question:
-        "What is the significance of QUA.120.30 — that the case selection process applies to all similarly privileged health care professionals?",
+        "What is the significance of QUA.120.30 - that the case selection process applies to all similarly privileged health care professionals?",
       options: [
         "It allows high-volume surgeons to be reviewed more frequently than others",
-        "It ensures peer review is systematic and equitable — no provider is exempt from the selection process",
+        "It ensures peer review is systematic and equitable - no provider is exempt from the selection process",
         "It allows providers with clean records to be reviewed less frequently",
         "It only applies to providers who have had prior adverse peer review findings",
       ],
@@ -572,7 +572,7 @@ export const ascQuaLevel: Level = {
           "Universal application of the selection process ensures objectivity. If some providers are systematically excluded from case selection, the peer review program is incomplete and may fail to detect performance issues.",
         whyWrong: {
           A: "While high-volume surgeons may generate more cases for selection, the process must apply consistently to all similarly privileged providers.",
-          C: "Clean records do not exempt a provider from ongoing peer review — ongoing surveillance is how clean records are confirmed.",
+          C: "Clean records do not exempt a provider from ongoing peer review - ongoing surveillance is how clean records are confirmed.",
           D: "The selection process applies prospectively to all providers, not retrospectively to those with prior findings.",
         },
         operationalContext:
@@ -584,21 +584,21 @@ export const ascQuaLevel: Level = {
       question:
         "A new AAAHC v44 ambulatory surgery center has never had a peer review program. During the initial accreditation survey, what is the minimum evidence the surveyor will look for?",
       options: [
-        "A written peer review policy only — a new facility cannot have completed reviews yet",
+        "A written peer review policy only - a new facility cannot have completed reviews yet",
         "Both a written peer review policy AND documented evidence that peer review has been conducted for each privileged provider",
         "Three years of peer review data from previous facilities where the providers worked",
         "A signed attestation from the medical director that peer review is planned",
       ],
       correctIndex: 1,
       explanation:
-        "Even at initial survey, AAAHC expects to see that peer review is operational — not just planned. This means documented reviews for credentialed providers, not just a policy. The survey assesses current compliance, not future intentions.",
+        "Even at initial survey, AAAHC expects to see that peer review is operational - not just planned. This means documented reviews for credentialed providers, not just a policy. The survey assesses current compliance, not future intentions.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Accreditation surveys evaluate current operational compliance. A new organization must have its peer review program operational and producing results before applying for accreditation — not promise to start it post-survey.",
+          "Accreditation surveys evaluate current operational compliance. A new organization must have its peer review program operational and producing results before applying for accreditation - not promise to start it post-survey.",
         whyWrong: {
-          A: "A written policy alone is not sufficient — documented evidence of completed reviews is required.",
+          A: "A written policy alone is not sufficient - documented evidence of completed reviews is required.",
           C: "Prior facility data is not the same as the current facility's peer review program.",
           D: "Attestations and plans are not evidence of operational compliance.",
         },

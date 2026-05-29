@@ -144,7 +144,7 @@ export const ddOrLevel: DeepDiveLevel = {
           "Switch to a different sterilization method such as ethylene oxide for that instrument"
         ],
         correctIndex: 1,
-          explanation: "Repeated IUSS of the same instrument indicates a systemic issue — typically insufficient instrument inventory or inadequate turnaround scheduling. Joint Commission expects facilities to monitor IUSS frequency and treat repeated use as a quality improvement trigger. The corrective action must address the root cause, which usually means procuring additional sets so standard full-cycle sterilization with proper drying, cooling, and biological monitoring can be used instead of IUSS.",
+          explanation: "Repeated IUSS of the same instrument indicates a systemic issue - typically insufficient instrument inventory or inadequate turnaround scheduling. Joint Commission expects facilities to monitor IUSS frequency and treat repeated use as a quality improvement trigger. The corrective action must address the root cause, which usually means procuring additional sets so standard full-cycle sterilization with proper drying, cooling, and biological monitoring can be used instead of IUSS.",
           expertXp: 30
         },
         {
@@ -297,7 +297,7 @@ export const ddOrLevel: DeepDiveLevel = {
           "The test is inconclusive and requires a smoke test for verification"
         ],
         correctIndex: 2,
-          explanation: "A tissue fluttering inward indicates air is flowing from the corridor into the OR, meaning the OR is at negative pressure relative to the corridor. This is a critical deficiency — OR suites must maintain positive pressure so that air flows outward from the clean OR into the less-clean corridor. Negative pressure allows unfiltered corridor air containing particulates and microorganisms to enter the surgical environment, increasing SSI risk. This finding would require immediate corrective action and potentially suspension of elective cases in that room.",
+          explanation: "A tissue fluttering inward indicates air is flowing from the corridor into the OR, meaning the OR is at negative pressure relative to the corridor. This is a critical deficiency - OR suites must maintain positive pressure so that air flows outward from the clean OR into the less-clean corridor. Negative pressure allows unfiltered corridor air containing particulates and microorganisms to enter the surgical environment, increasing SSI risk. This finding would require immediate corrective action and potentially suspension of elective cases in that room.",
           expertXp: 30
         },
         {
@@ -450,7 +450,7 @@ export const ddOrLevel: DeepDiveLevel = {
           "Use the facility's established escalation pathway"
         ],
         correctIndex: 3,
-          explanation: "Joint Commission requires facilities to have established escalation pathways (such as CUS or two-challenge rule) that empower any team member to halt unsafe practices regardless of hierarchy. If the initial communication is dismissed, the scrub tech should escalate using the facility's chain of command — typically notifying the charge nurse or OR supervisor who can intervene. Simply documenting after the fact fails to protect the current patient. Joint Commission surveyors specifically look for evidence that escalation pathways exist and are used.",
+          explanation: "Joint Commission requires facilities to have established escalation pathways (such as CUS or two-challenge rule) that empower any team member to halt unsafe practices regardless of hierarchy. If the initial communication is dismissed, the scrub tech should escalate using the facility's chain of command - typically notifying the charge nurse or OR supervisor who can intervene. Simply documenting after the fact fails to protect the current patient. Joint Commission surveyors specifically look for evidence that escalation pathways exist and are used.",
           expertXp: 30
         },
         {
@@ -508,7 +508,7 @@ export const ddOrLevel: DeepDiveLevel = {
           question: "The surveyor asks the SPD manager to explain the difference between chemical indicator classes and when each is used in the sterilization monitoring program. Which response demonstrates comprehensive understanding per AAMI ST79?",
           options: [
           "We use Class 6 emulating indicators exclusively, as they are the most accurate chemical indicator and reduce the need for biological indicator testing",
-          "Class 1 indicators go on the outside of packs, Class 5 indicators go inside packs, and biological indicators are run once daily — that covers our monitoring program",
+          "Class 1 indicators go on the outside of packs, Class 5 indicators go inside packs, and biological indicators are run once daily - that covers our monitoring program",
           "Our program uses Class 1 external indicators on every package (process exposure), Class 5 integrators inside every package (parameter verification)",
           "We use Class 4 multi-variable indicators inside all packs, which eliminates the need for biological indicators on non-implant loads"
         ],
@@ -564,7 +564,7 @@ export const ddOrLevel: DeepDiveLevel = {
           "All medications and solutions on the sterile field must be labeled with the drug name, concentration"
         ],
         correctIndex: 3,
-          explanation: "JC National Performance Goal 14 (formerly NPSG 03.04.01) requires that all medications and solutions on and off the sterile field be labeled with the drug name, strength/concentration, and expiration time when preparation and administration are not immediately concurrent. On the sterile field, labeling must occur at the time the solution is transferred to the sterile container, and the circulator and scrub person must perform a verbal verification (read-back). Any unlabeled container must be discarded. This is one of the most frequently cited areas during OR tracers. Note: Effective January 1, 2026, NPSGs were replaced by National Performance Goals (NPGs) — the same requirements apply under the new NPG 14 medication management goal.",
+          explanation: "JC National Performance Goal 14 (formerly NPSG 03.04.01) requires that all medications and solutions on and off the sterile field be labeled with the drug name, strength/concentration, and expiration time when preparation and administration are not immediately concurrent. On the sterile field, labeling must occur at the time the solution is transferred to the sterile container, and the circulator and scrub person must perform a verbal verification (read-back). Any unlabeled container must be discarded. This is one of the most frequently cited areas during OR tracers. Note: Effective January 1, 2026, NPSGs were replaced by National Performance Goals (NPGs) - the same requirements apply under the new NPG 14 medication management goal.",
           expertXp: 35
         }
       ]
@@ -603,7 +603,7 @@ export const ddOrLevel: DeepDiveLevel = {
           "The incoming scrub tech signs the count sheet to accept responsibility for the count as reported by the outgoing tech"
         ],
         correctIndex: 0,
-          explanation: "Per AORN guidelines, any permanent relief of the scrub person requires a complete surgical count performed jointly by all three parties — the outgoing scrub person, incoming scrub person, and circulating nurse. This count must be performed concurrently and audibly, documented, and any discrepancies resolved before the outgoing team member leaves. A verbal report alone is insufficient because it does not verify actual item quantities and creates risk for count errors and retained surgical items.",
+          explanation: "Per AORN guidelines, any permanent relief of the scrub person requires a complete surgical count performed jointly by all three parties - the outgoing scrub person, incoming scrub person, and circulating nurse. This count must be performed concurrently and audibly, documented, and any discrepancies resolved before the outgoing team member leaves. A verbal report alone is insufficient because it does not verify actual item quantities and creates risk for count errors and retained surgical items.",
           expertXp: 30
         },
         {
@@ -717,7 +717,7 @@ export const ddOrLevel: DeepDiveLevel = {
           "The re-gowning and re-gloving procedure was likely performed incorrectly, introducing contamination"
         ],
         correctIndex: 0,
-          explanation: "The critical failure is leaving the sterile field unmonitored. Per AORN guidelines, the sterile field must be under continuous observation from setup through case completion. When a scrubbed team member needs to leave, a qualified relief scrub person must be available to maintain continuous monitoring of the sterile field. Covering the field with a drape does not substitute for continuous surveillance, as contamination events (falling particles, air currents from door openings, accidental contact) cannot be detected on an unmonitored field. This is a systems failure — the facility should have a relief scrub person available for prolonged cases.",
+          explanation: "The critical failure is leaving the sterile field unmonitored. Per AORN guidelines, the sterile field must be under continuous observation from setup through case completion. When a scrubbed team member needs to leave, a qualified relief scrub person must be available to maintain continuous monitoring of the sterile field. Covering the field with a drape does not substitute for continuous surveillance, as contamination events (falling particles, air currents from door openings, accidental contact) cannot be detected on an unmonitored field. This is a systems failure - the facility should have a relief scrub person available for prolonged cases.",
           expertXp: 35
         }
       ]
@@ -752,7 +752,7 @@ export const ddOrLevel: DeepDiveLevel = {
           options: [
           "Explain that while cover jackets with long sleeves are recommended in the semi-restricted area to contain skin",
           "Explain that only warm-up jackets with snapping closures are acceptable; zip-front jackets are prohibited",
-          "Confirm the nurse's statement — long-sleeved jackets are proven to reduce SSIs by containing skin squames",
+          "Confirm the nurse's statement - long-sleeved jackets are proven to reduce SSIs by containing skin squames",
           "State that cover jackets are not recommended by AORN and should be eliminated from the attire policy"
         ],
         correctIndex: 0,
@@ -867,10 +867,10 @@ export const ddOrLevel: DeepDiveLevel = {
           "Assigning arbitrary time-based expiration dates contradicts the event-related sterility",
           "The expiration date is appropriate but should be 6 months instead of 1 year",
           "Expiration dating is required by FDA for all sterilized medical devices and the facility is compliant",
-          "One year is too short — most sterile items should have a 2-year shelf life"
+          "One year is too short - most sterile items should have a 2-year shelf life"
         ],
         correctIndex: 0,
-          explanation: "AAMI ST79 and Joint Commission endorse event-related sterility, which holds that sterile items remain sterile until an event (tear, moisture, compression, contamination) compromises the packaging barrier — not until an arbitrary date expires. Assigning time-based expiration dates (e.g., 1 year) is inconsistent with this principle and creates unnecessary waste through re-processing of items with intact packaging. The facility's shelf-life policy should be event-related, with regular inspection of stored items for packaging integrity rather than date-based culling.",
+          explanation: "AAMI ST79 and Joint Commission endorse event-related sterility, which holds that sterile items remain sterile until an event (tear, moisture, compression, contamination) compromises the packaging barrier - not until an arbitrary date expires. Assigning time-based expiration dates (e.g., 1 year) is inconsistent with this principle and creates unnecessary waste through re-processing of items with intact packaging. The facility's shelf-life policy should be event-related, with regular inspection of stored items for packaging integrity rather than date-based culling.",
           expertXp: 35
         }
       ]
@@ -909,7 +909,7 @@ export const ddOrLevel: DeepDiveLevel = {
           "The green stain indicates fluid has penetrated the outer glove through a"
         ],
         correctIndex: 3,
-          explanation: "Indicator (colored) underglove systems work by creating a visible color contrast when fluid penetrates the outer glove through a micro-perforation. A green stain appearing on the outer glove surface means patient blood or body fluids have traveled through an invisible hole in the outer glove. The outer glove must be changed immediately. This demonstrates the value of indicator glove systems — studies show that up to 80% of glove perforations go undetected without an indicator system, and detection time is reduced from an average of 28 minutes to under 2 minutes with colored undergloves.",
+          explanation: "Indicator (colored) underglove systems work by creating a visible color contrast when fluid penetrates the outer glove through a micro-perforation. A green stain appearing on the outer glove surface means patient blood or body fluids have traveled through an invisible hole in the outer glove. The outer glove must be changed immediately. This demonstrates the value of indicator glove systems - studies show that up to 80% of glove perforations go undetected without an indicator system, and detection time is reduced from an average of 28 minutes to under 2 minutes with colored undergloves.",
           expertXp: 30
         },
         {
@@ -921,7 +921,7 @@ export const ddOrLevel: DeepDiveLevel = {
           "Change gloves, document the injury after the case, and follow up with employee health within 72 hours"
         ],
         correctIndex: 2,
-          explanation: "OSHA Bloodborne Pathogen Standard (29 CFR 1910.1030) requires a defined post-exposure protocol. The immediate actions are: step away from the field, remove gloves, wash the wound with soap and water (do not squeeze), and report the injury. Post-procedure requirements include: incident reporting, baseline testing for HIV, HBV, and HCV within 1-2 hours, evaluation for post-exposure prophylaxis (PEP — especially for HIV exposure, which is time-sensitive), source patient identification and testing (with consent), and follow-up testing at defined intervals (6 weeks, 3 months, 6 months). Joint Commission requires facilities to demonstrate that post-exposure protocols are in place, staff are trained, and timely medical evaluation is accessible.",
+          explanation: "OSHA Bloodborne Pathogen Standard (29 CFR 1910.1030) requires a defined post-exposure protocol. The immediate actions are: step away from the field, remove gloves, wash the wound with soap and water (do not squeeze), and report the injury. Post-procedure requirements include: incident reporting, baseline testing for HIV, HBV, and HCV within 1-2 hours, evaluation for post-exposure prophylaxis (PEP - especially for HIV exposure, which is time-sensitive), source patient identification and testing (with consent), and follow-up testing at defined intervals (6 weeks, 3 months, 6 months). Joint Commission requires facilities to demonstrate that post-exposure protocols are in place, staff are trained, and timely medical evaluation is accessible.",
           expertXp: 35
         }
       ]
@@ -969,7 +969,7 @@ export const ddOrLevel: DeepDiveLevel = {
           "Terminal cleaning is more extensive than between-case cleaning and includes: cleaning all horizontal and vertical surfaces (walls to a",
           "Terminal cleaning requires use of a different EPA-registered disinfectant than between-case cleaning",
           "Terminal cleaning only adds floor scrubbing with a mechanical floor scrubber to the between-case protocol",
-          "The charge nurse is correct — between-case and terminal cleaning use the same protocol; the only difference is that terminal cleaning occurs at the end of the day"
+          "The charge nurse is correct - between-case and terminal cleaning use the same protocol; the only difference is that terminal cleaning occurs at the end of the day"
         ],
         correctIndex: 0,
           explanation: "AORN distinguishes between-case cleaning (focused on immediate procedural area, horizontal surfaces, and equipment used during the case) and terminal cleaning (comprehensive cleaning of the entire room). Terminal cleaning adds: cleaning all wall surfaces to a minimum height (typically door height or higher), moving all portable equipment to clean floor underneath, cleaning ceiling-mounted equipment tracks and surgical light fixtures, wet-vacuuming or damp-mopping the entire floor surface, and cleaning adjacent substerile areas and scrub sinks. Both processes use EPA-registered hospital-grade disinfectants at proper contact time, but terminal cleaning is significantly more extensive in scope.",
@@ -1023,7 +1023,7 @@ export const ddOrLevel: DeepDiveLevel = {
           "Employee vaccination records for Hepatitis B and annual bloodborne pathogen training attendance"
         ],
         correctIndex: 0,
-          explanation: "The Needlestick Safety and Prevention Act (amending OSHA's Bloodborne Pathogen Standard) requires facilities to maintain: a detailed sharps injury log (type of device, department, circumstances — more detailed than the OSHA 300 log), documentation of annual evaluation of safer sharps devices with direct input from frontline healthcare workers who use the devices, evidence that safety-engineered sharps devices are implemented unless contraindicated (with documented clinical justification for exceptions), and an Exposure Control Plan updated at least annually. Joint Commission surveyors verify these elements and expect the facility to demonstrate an active sharps injury prevention program, not just documentation of past injuries.",
+          explanation: "The Needlestick Safety and Prevention Act (amending OSHA's Bloodborne Pathogen Standard) requires facilities to maintain: a detailed sharps injury log (type of device, department, circumstances - more detailed than the OSHA 300 log), documentation of annual evaluation of safer sharps devices with direct input from frontline healthcare workers who use the devices, evidence that safety-engineered sharps devices are implemented unless contraindicated (with documented clinical justification for exceptions), and an Exposure Control Plan updated at least annually. Joint Commission surveyors verify these elements and expect the facility to demonstrate an active sharps injury prevention program, not just documentation of past injuries.",
           expertXp: 35
         }
       ]

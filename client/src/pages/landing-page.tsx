@@ -15,7 +15,7 @@ const features = [
   {
     icon: CalendarCheck,
     title: "Train Without Pulling Staff Off the Floor",
-    description: "Role-based sessions take 10–15 minutes. They fit into real workflows — not ideal schedules that never happen.",
+    description: "Role-based sessions take 10–15 minutes. They fit into real workflows - not ideal schedules that never happen.",
   },
   {
     icon: BarChart3,
@@ -25,7 +25,7 @@ const features = [
   {
     icon: Search,
     title: "Simulate Real Survey Scenarios",
-    description: "Deep Dive Tracer Mode mirrors how surveyors actually probe — so staff aren't caught off guard by unexpected questions.",
+    description: "Deep Dive Tracer Mode mirrors how surveyors actually probe - so staff aren't caught off guard by unexpected questions.",
   },
   {
     icon: BrainCircuit,
@@ -35,7 +35,7 @@ const features = [
 ];
 
 const howItWorksSteps = [
-  "Take the diagnostic — know your gaps immediately",
+  "Take the diagnostic - know your gaps immediately",
   "Deploy targeted training by department",
   "Monitor readiness on your dashboard weekly",
   "Walk into survey week with documented proof of preparation",
@@ -44,7 +44,7 @@ const howItWorksSteps = [
 const proofPoints = [
   "Baseline vs. final scores show exactly how far you've come",
   "Department-level dashboards show where risk still lives",
-  "Staff walk in knowing what surveyors will ask — and how to answer",
+  "Staff walk in knowing what surveyors will ask - and how to answer",
 ];
 
 export default function LandingPage() {
@@ -126,7 +126,7 @@ export default function LandingPage() {
               Know your gaps. Close them before the surveyor does.
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed font-normal" data-testid="text-hero-subtitle">
-              Accreditation <em>Ready</em> turns Joint Commission, DNV, AAAHC, and CMS standards into focused daily training — so your staff stays prepared year-round, not just before survey week.
+              Accreditation <em>Ready</em> turns Joint Commission, DNV, AAAHC, and CMS standards into focused daily training - so your staff stays prepared year-round, not just before survey week.
             </p>
             <div className="flex items-center gap-3 mt-2 flex-wrap justify-center">
               <Button
@@ -174,7 +174,7 @@ export default function LandingPage() {
                   <AlertTriangle size={20} className="text-red-500" />
                 </div>
                 <h2 className="text-2xl md:text-3xl font-black tracking-tight text-foreground" data-testid="text-problem-heading">
-                  Most teams aren't unprepared — they're undertrained.
+                  Most teams aren't unprepared - they're undertrained.
                 </h2>
               </div>
               <p className="text-base text-muted-foreground leading-relaxed mb-6 max-w-3xl" data-testid="text-problem-body">
@@ -215,7 +215,7 @@ export default function LandingPage() {
                 </h2>
               </div>
               <p className="text-base text-muted-foreground leading-relaxed max-w-3xl" data-testid="text-solution-body">
-                Accreditation <em>Ready</em> converts accreditation standards into short, role-based training sessions staff complete in 10–15 minutes — and gives quality leaders a live readiness dashboard across every unit.
+                Accreditation <em>Ready</em> converts accreditation standards into short, role-based training sessions staff complete in 10–15 minutes - and gives quality leaders a live readiness dashboard across every unit.
               </p>
             </motion.div>
           </div>
@@ -262,7 +262,7 @@ export default function LandingPage() {
                       </div>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Continuously monitors every standard across all facilities — which ones have evidence attached, which staff haven't completed training, which policies are expiring. Surfaces a live readiness score that's always current.
+                      Continuously monitors every standard across all facilities - which ones have evidence attached, which staff haven't completed training, which policies are expiring. Surfaces a live readiness score that's always current.
                     </p>
                     <div className="mt-auto pt-2 border-t border-border">
                       <p className="text-xs text-muted-foreground leading-relaxed">
@@ -294,7 +294,7 @@ export default function LandingPage() {
                     </p>
                     <div className="mt-auto pt-2 border-t border-border">
                       <p className="text-xs text-muted-foreground leading-relaxed">
-                        <span className="font-semibold text-foreground">Your clearest differentiator</span> — no other compliance platform does this automatically.
+                        <span className="font-semibold text-foreground">Your clearest differentiator</span> - no other compliance platform does this automatically.
                       </p>
                     </div>
                   </div>
@@ -318,7 +318,7 @@ export default function LandingPage() {
                       </div>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Instead of static assigned modules, this agent tracks each staff member's diagnostic scores, completion gaps, and quiz performance — then dynamically re-routes their learning plan. It knows who is weakest on sterile field standards and pushes those questions. It sends escalating nudges without a manager having to chase anyone.
+                      Instead of static assigned modules, this agent tracks each staff member's diagnostic scores, completion gaps, and quiz performance - then dynamically re-routes their learning plan. It knows who is weakest on sterile field standards and pushes those questions. It sends escalating nudges without a manager having to chase anyone.
                     </p>
                     <div className="mt-auto pt-2 border-t border-border">
                       <p className="text-xs text-muted-foreground leading-relaxed">
@@ -346,7 +346,7 @@ export default function LandingPage() {
                       </div>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Monitors Joint Commission, DNV, AAAHC, and CMS public channels for standard updates, new chapters, and survey focus shifts. When the NPG chapter launched January 2026, this agent would have flagged it automatically and initiated a content build task — rather than discovering the gap months later.
+                      Monitors Joint Commission, DNV, AAAHC, and CMS public channels for standard updates, new chapters, and survey focus shifts. When the NPG chapter launched January 2026, this agent would have flagged it automatically and initiated a content build task - rather than discovering the gap months later.
                     </p>
                     <div className="mt-auto pt-2 border-t border-border">
                       <p className="text-xs text-muted-foreground leading-relaxed">
@@ -374,7 +374,7 @@ export default function LandingPage() {
                       </div>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      For the CEO/CNO level, this agent prepares the facility's readiness narrative — not just a dashboard, but a drafted summary of where you stand, what's at risk, and what actions are due this week. It's the difference between data and a briefing.
+                      For the CEO/CNO level, this agent prepares the facility's readiness narrative - not just a dashboard, but a drafted summary of where you stand, what's at risk, and what actions are due this week. It's the difference between data and a briefing.
                     </p>
                     <div className="mt-auto pt-2 border-t border-border">
                       <p className="text-xs text-muted-foreground leading-relaxed">
@@ -495,7 +495,7 @@ export default function LandingPage() {
                     How ready is your team right now?
                   </h2>
                   <p className="text-base text-muted-foreground leading-relaxed mb-4 max-w-xl" data-testid="text-diagnostic-promo-body">
-                    Take a free 25-question diagnostic across every compliance domain — no studying, no prep, just honest answers that show you where to focus.
+                    Take a free 25-question diagnostic across every compliance domain - no studying, no prep, just honest answers that show you where to focus.
                   </p>
                   <div className="flex items-center gap-3 flex-wrap justify-center md:justify-start">
                     <Button
@@ -526,7 +526,7 @@ export default function LandingPage() {
               Build readiness that holds up on survey day.
             </h2>
             <p className="text-base text-muted-foreground max-w-lg" data-testid="text-final-cta-subhead">
-              Give your team a consistent, measurable way to stay accreditation-ready — year-round, not just the week before.
+              Give your team a consistent, measurable way to stay accreditation-ready - year-round, not just the week before.
             </p>
             <div className="flex items-center gap-3 flex-wrap justify-center mt-2">
               <Button

@@ -288,14 +288,14 @@ export default function MasteryExamPage() {
               <Crown size={40} className="text-white" />
             </div>
             <h1 className="text-3xl font-black mb-2 bg-gradient-to-r from-primary to-indigo-600 bg-clip-text text-transparent">Final Assessment</h1>
-            <p className="text-muted-foreground text-lg">You've completed the training — now prove you're survey-ready</p>
+            <p className="text-muted-foreground text-lg">You've completed the training - now prove you're survey-ready</p>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.15 }} className="rounded-2xl bg-white/80 dark:bg-card border border-border p-6 mb-6 shadow-sm">
             <h2 className="font-bold text-lg mb-3 text-primary">What to expect</h2>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="flex items-start gap-3"><Sparkles size={16} className="text-primary mt-0.5 flex-shrink-0" /><span>25 advanced questions — a focused sample from each compliance area</span></li>
-              <li className="flex items-start gap-3"><Sparkles size={16} className="text-primary mt-0.5 flex-shrink-0" /><span>Answer all questions first — detailed results, correct answers, and explanations are revealed at the end</span></li>
+              <li className="flex items-start gap-3"><Sparkles size={16} className="text-primary mt-0.5 flex-shrink-0" /><span>25 advanced questions - a focused sample from each compliance area</span></li>
+              <li className="flex items-start gap-3"><Sparkles size={16} className="text-primary mt-0.5 flex-shrink-0" /><span>Answer all questions first - detailed results, correct answers, and explanations are revealed at the end</span></li>
               <li className="flex items-start gap-3"><Sparkles size={16} className="text-primary mt-0.5 flex-shrink-0" /><span>You can go back to change previous answers and save progress to finish later</span></li>
               <li className="flex items-start gap-3"><Sparkles size={16} className="text-primary mt-0.5 flex-shrink-0" /><span>Compare your score to your Diagnostic Quiz to see how far you've come</span></li>
             </ul>
@@ -316,7 +316,7 @@ export default function MasteryExamPage() {
           {hasSession && (
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.15 }} className="rounded-2xl bg-primary/5 dark:bg-primary/10 border-2 border-primary/40 p-5 mb-6">
               <div className="flex items-center gap-2 mb-3"><Save size={18} className="text-primary" /><span className="font-bold text-sm text-primary">You have a saved assessment in progress</span></div>
-              <p className="text-sm text-muted-foreground mb-4">Question {(savedSession?.currentQuestion || 0) + 1} of {savedSession?.questions?.length || 25} — {savedSession?.answers?.length || 0} answers saved</p>
+              <p className="text-sm text-muted-foreground mb-4">Question {(savedSession?.currentQuestion || 0) + 1} of {savedSession?.questions?.length || 25} - {savedSession?.answers?.length || 0} answers saved</p>
               <div className="flex gap-3">
                 <Button className="flex-1 h-11 font-bold bg-gradient-to-r from-primary to-indigo-600 hover:from-primary/90 hover:to-indigo-700 text-white rounded-xl" onClick={resumeSession} data-testid="button-resume-mastery">Resume Assessment</Button>
                 <Button variant="outline" className="flex-1 h-11 font-bold border-primary/30 text-primary rounded-xl" onClick={async () => { await deleteSavedSession.mutateAsync(); startFresh(); }} data-testid="button-start-fresh-mastery">Start Fresh</Button>

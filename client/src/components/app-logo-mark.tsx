@@ -16,7 +16,7 @@ export function AppLogoMark({ variant = "sm" }: AppLogoMarkProps) {
       className="text-[hsl(218,68%,32%)] dark:text-white"
     >
       {/* Circle arc with ~60° gap at 1 o'clock position
-          Center (22,22) radius 18 — arc from 2 o'clock clockwise to 12 o'clock */}
+          Center (22,22) radius 18 - arc from 2 o'clock clockwise to 12 o'clock */}
       <path
         d="M 37.6 13 A 18 18 0 1 1 22 4"
         stroke="currentColor"

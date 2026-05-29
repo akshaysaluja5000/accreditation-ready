@@ -26,7 +26,7 @@ export interface AuditEntry {
 
 export function auditLog(entry: Omit<AuditEntry, "timestamp">) {
   const full: AuditEntry = { ...entry, timestamp: new Date().toISOString() };
-  // Fire-and-forget — never block the UI
+  // Fire-and-forget - never block the UI
   apiRequest("POST", "/api/audit-log", {
     leadershipRole: full.leadershipRole,
     facilityId: full.facilityId,
@@ -34,7 +34,7 @@ export function auditLog(entry: Omit<AuditEntry, "timestamp">) {
     action: full.action,
     meta: full.meta ?? null,
   }).catch(() => {
-    // Silently ignore network failures — audit is best-effort from client
+    // Silently ignore network failures - audit is best-effort from client
     console.warn("[AUDIT] failed to persist:", full.action);
   });
 }

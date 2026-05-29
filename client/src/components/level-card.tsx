@@ -113,7 +113,7 @@ export function LevelCard({ level, progress, savedSession, index, onPlay, onStud
               </button>
             </div>
 
-            {/* Practice / test options — always visible as a pair */}
+            {/* Practice / test options - always visible as a pair */}
             <div className="flex items-center gap-2 pt-1 border-t border-white/10 flex-wrap">
               <span className="text-xs font-bold text-white/90">Practice:</span>
               {hasInProgress ? (

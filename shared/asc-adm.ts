@@ -4,7 +4,7 @@ export const ascAdmLevel: Level = {
   id: "asc_adm",
   module: "asc",
   name: "Administration",
-  description: "AAAHC v44 ADM — administrative structure, staffing, personnel records, training, and organizational policies.",
+  description: "AAAHC v44 ADM - administrative structure, staffing, personnel records, training, and organizational policies.",
   icon: "ClipboardList",
   color: "hsl(190, 70%, 40%)",
   requiredScore: 0,
@@ -21,7 +21,7 @@ export const ascAdmLevel: Level = {
       "Staff are oriented to and demonstrate knowledge of emergency procedures.",
     ],
     commonRiskPoints: [
-      "Personnel files lack documentation of current licensure — licenses lapsed without detection.",
+      "Personnel files lack documentation of current licensure - licenses lapsed without detection.",
       "Orientation records are incomplete for clinical staff hired within the past 12 months.",
       "Policies have not been reviewed or updated within the organization's stated review cycle.",
       "Staffing levels are not formally evaluated against patient volume and case complexity.",
@@ -30,46 +30,46 @@ export const ascAdmLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "ADM.100 — Notifying AAAHC of Significant Events Within 15 Days",
+      title: "ADM.100 - Notifying AAAHC of Significant Events Within 15 Days",
       content:
         "ADM.100 requires the organization to notify AAAHC in writing within 15 calendar days of significant organizational, ownership, operational, or quality of care events. Examples of reportable events include changes in ownership, changes in the governing body, significant changes in services offered, patient deaths that may reflect a quality of care concern, and other events specified in AAAHC policies and procedures. This notification requirement ensures that AAAHC can determine whether an interim survey or other follow-up action is needed. Failure to notify AAAHC of a reportable event is itself a compliance deficiency and may affect accreditation status.",
       keyPoint:
-        "15 calendar days from the significant event — not 15 business days. When in doubt whether an event is reportable, notify AAAHC and let them determine whether it requires further action.",
+        "15 calendar days from the significant event - not 15 business days. When in doubt whether an event is reportable, notify AAAHC and let them determine whether it requires further action.",
     },
     {
-      title: "ADM.110 — Accurate Public Representation of Accreditation",
+      title: "ADM.110 - Accurate Public Representation of Accreditation",
       content:
-        "ADM.110 requires that the organization's representation of its accreditation to the public accurately reflects the AAAHC-accredited entity. This means the organization may only state that it is AAAHC-accredited if the specific site, service line, and entity are covered by a current AAAHC accreditation. Organizations may not imply broader accreditation coverage than actually exists — for example, representing that a non-accredited satellite location is covered by the accreditation of the main site, or advertising as accredited after accreditation has lapsed.",
+        "ADM.110 requires that the organization's representation of its accreditation to the public accurately reflects the AAAHC-accredited entity. This means the organization may only state that it is AAAHC-accredited if the specific site, service line, and entity are covered by a current AAAHC accreditation. Organizations may not imply broader accreditation coverage than actually exists - for example, representing that a non-accredited satellite location is covered by the accreditation of the main site, or advertising as accredited after accreditation has lapsed.",
       keyPoint:
         "Public accreditation claims must match reality. Only the specific entity with an active AAAHC accreditation may represent itself as accredited. Misrepresentation is an ADM.110 deficiency and a potential legal matter.",
     },
     {
-      title: "ADM.120 — Administrative Policies, Procedures, and Controls",
+      title: "ADM.120 - Administrative Policies, Procedures, and Controls",
       content:
-        "ADM.120 requires that administrative policies, procedures, and controls adopted by the governing body are implemented to ensure orderly and efficient management. Key sub-elements include: (1) all policies adopted by the governing body are appropriate for the organization's services and patient population; (2) personnel files demonstrate that all staff possess at least the minimum qualifications, experience, competencies, and licensure/certification required for their positions; (3) written job descriptions define and delineate functional responsibilities, authority, and required qualifications; (4) written policies and documentation show reasonable steps to comply with applicable laws and regulations; and (5) official organizational documents — including governing body meeting minutes, corporate documents, and bylaws — are properly filed, secured, and safeguarded.",
+        "ADM.120 requires that administrative policies, procedures, and controls adopted by the governing body are implemented to ensure orderly and efficient management. Key sub-elements include: (1) all policies adopted by the governing body are appropriate for the organization's services and patient population; (2) personnel files demonstrate that all staff possess at least the minimum qualifications, experience, competencies, and licensure/certification required for their positions; (3) written job descriptions define and delineate functional responsibilities, authority, and required qualifications; (4) written policies and documentation show reasonable steps to comply with applicable laws and regulations; and (5) official organizational documents - including governing body meeting minutes, corporate documents, and bylaws - are properly filed, secured, and safeguarded.",
       keyPoint:
         "ADM.120 is the administrative infrastructure standard: policies govern operations, job descriptions define roles, personnel files prove qualifications, and official documents are secured. Surveyors will ask to see personnel files, job descriptions, and organizational records.",
     },
     {
-      title: "ADM.130 — Fiscal Controls",
+      title: "ADM.130 - Fiscal Controls",
       content:
-        "ADM.130 requires that fiscal controls are in place to protect the assets of the organization. Written policies and procedures must address: (1) accounting controls over assets, liabilities, revenues, and expenses; (2) controlling accounts receivable and accounts payable; (3) controlling cash payments and credit arrangements; (4) managing unpaid accounts and accounts being considered for transfer to a collection agency; and (5) managing the purchase, receipt, distribution, maintenance, and security of supplies, equipment, and facilities. The fiscal controls standard ensures financial integrity and protection of organizational assets — a governing body responsibility that is evaluated during AAAHC surveys.",
+        "ADM.130 requires that fiscal controls are in place to protect the assets of the organization. Written policies and procedures must address: (1) accounting controls over assets, liabilities, revenues, and expenses; (2) controlling accounts receivable and accounts payable; (3) controlling cash payments and credit arrangements; (4) managing unpaid accounts and accounts being considered for transfer to a collection agency; and (5) managing the purchase, receipt, distribution, maintenance, and security of supplies, equipment, and facilities. The fiscal controls standard ensures financial integrity and protection of organizational assets - a governing body responsibility that is evaluated during AAAHC surveys.",
       keyPoint:
         "ADM.130 requires written fiscal control policies covering five areas: accounting controls, accounts receivable/payable, cash/credit, unpaid accounts/collections, and supply/equipment management. Verbal financial controls are not sufficient.",
     },
     {
-      title: "ADM.140 / ADM.150 / ADM.160 — Personnel Policies, Orientation Content, and Completion",
+      title: "ADM.140 / ADM.150 / ADM.160 - Personnel Policies, Orientation Content, and Completion",
       content:
-        "ADM.140 requires written personnel policies to be established and implemented, covering: communication of policies to employees at hire, any incentive programs, employee privileges and responsibilities (including incident/adverse event reporting), workplace violence and aggression handling, periodic performance appraisals (including current competence), and I-9 (employment eligibility) compliance. ADM.150 requires that orientation and training content addresses the organization's key programs — specifically: patient rights and responsibilities, workplace violence, safety (including fire and sharps injury prevention), emergency and disaster preparedness, infection prevention (including OSHA bloodborne pathogen training), risk management and incident reporting, and confidentiality/privacy (HIPAA). ADM.160 requires that orientation and training are actually completed: personnel files must document orientation within 30 days of employment, completion of annual training, and training provided when an identified need arises.",
+        "ADM.140 requires written personnel policies to be established and implemented, covering: communication of policies to employees at hire, any incentive programs, employee privileges and responsibilities (including incident/adverse event reporting), workplace violence and aggression handling, periodic performance appraisals (including current competence), and I-9 (employment eligibility) compliance. ADM.150 requires that orientation and training content addresses the organization's key programs - specifically: patient rights and responsibilities, workplace violence, safety (including fire and sharps injury prevention), emergency and disaster preparedness, infection prevention (including OSHA bloodborne pathogen training), risk management and incident reporting, and confidentiality/privacy (HIPAA). ADM.160 requires that orientation and training are actually completed: personnel files must document orientation within 30 days of employment, completion of annual training, and training provided when an identified need arises.",
       keyPoint:
-        "ADM.140: written personnel policies communicated at hire. ADM.150: seven specific orientation topics required. ADM.160: orientation documented within 30 days of hire, annual training documented, and training when a need is identified. All three are linked — the policy (140) defines what training is required (150) and the records prove it happened (160).",
+        "ADM.140: written personnel policies communicated at hire. ADM.150: seven specific orientation topics required. ADM.160: orientation documented within 30 days of hire, annual training documented, and training when a need is identified. All three are linked - the policy (140) defines what training is required (150) and the records prove it happened (160).",
     },
     {
-      title: "ADM.170 / ADM.180 — Professional Development and Personnel Sufficiency",
+      title: "ADM.170 / ADM.180 - Professional Development and Personnel Sufficiency",
       content:
-        "ADM.170 requires that ongoing professional development and improvement of staff performance are supported. This includes providing convenient access to reliable, up-to-date clinical and educational information, and encouraging healthcare professionals to participate in internal or external educational programs consistent with the organization's mission. ADM.180 requires that all personnel assisting in the provision of healthcare services are (1) appropriately qualified, (2) appropriately supervised, and (3) available in sufficient numbers for the care provided. Both qualification and supervision must be evidenced in personnel records; sufficient numbers must be confirmed through interviews and observation. This standard applies to all clinical support personnel — not only licensed independent practitioners.",
+        "ADM.170 requires that ongoing professional development and improvement of staff performance are supported. This includes providing convenient access to reliable, up-to-date clinical and educational information, and encouraging healthcare professionals to participate in internal or external educational programs consistent with the organization's mission. ADM.180 requires that all personnel assisting in the provision of healthcare services are (1) appropriately qualified, (2) appropriately supervised, and (3) available in sufficient numbers for the care provided. Both qualification and supervision must be evidenced in personnel records; sufficient numbers must be confirmed through interviews and observation. This standard applies to all clinical support personnel - not only licensed independent practitioners.",
       keyPoint:
-        "ADM.170: professional development is supported (education access, participation encouraged). ADM.180: three requirements for all healthcare personnel — appropriately qualified, appropriately supervised, and sufficient in number. All three must be demonstrated with evidence.",
+        "ADM.170: professional development is supported (education access, participation encouraged). ADM.180: three requirements for all healthcare personnel - appropriately qualified, appropriately supervised, and sufficient in number. All three must be demonstrated with evidence.",
     },
   ],
   questions: [
@@ -78,21 +78,21 @@ export const ascAdmLevel: Level = {
       question:
         "An AAAHC surveyor asks for the organizational chart. The administrator says relationships are 'well understood by all staff' but there is no written document. What is the compliance issue?",
       options: [
-        "There is no compliance issue — verbal understanding meets ADM requirements",
+        "There is no compliance issue - verbal understanding meets ADM requirements",
         "The organizational structure must be defined and documented in writing",
         "Only organizations with more than 25 employees need organizational charts",
         "Organizational charts are only required if the governing body has more than five members",
       ],
       correctIndex: 1,
       explanation:
-        "ADM standards require that the organizational structure be clearly defined, establishing reporting relationships and authority. Verbal understanding is not documented evidence — surveyors must be able to review a written organizational structure.",
+        "ADM standards require that the organizational structure be clearly defined, establishing reporting relationships and authority. Verbal understanding is not documented evidence - surveyors must be able to review a written organizational structure.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
           "An organizational chart provides objective evidence of the reporting structure. Without it, the surveyor cannot verify that lines of authority are clear and that the organizational structure is rationally designed to support safe operations.",
         whyWrong: {
-          A: "Verbal understanding cannot be verified or audited — it is not a compliance basis.",
+          A: "Verbal understanding cannot be verified or audited - it is not a compliance basis.",
           C: "ADM standards do not establish an employee-count threshold for organizational charts.",
           D: "Governing body size is irrelevant to the organizational chart requirement.",
         },
@@ -106,7 +106,7 @@ export const ascAdmLevel: Level = {
         "A newly hired operating room nurse begins patient care orientation on day one. Under ADM.130, what must be documented before she provides independent patient care?",
       options: [
         "Only the date of hire and department assignment",
-        "Orientation to the organization, job duties, emergency procedures, and applicable policies — before independent practice",
+        "Orientation to the organization, job duties, emergency procedures, and applicable policies - before independent practice",
         "Only the proof of RN licensure",
         "A 90-day probationary performance evaluation",
       ],
@@ -121,7 +121,7 @@ export const ascAdmLevel: Level = {
         whyWrong: {
           A: "Date of hire and assignment are administrative records, not orientation documentation.",
           C: "Licensure verification is required but does not substitute for completed orientation documentation.",
-          D: "Performance evaluation at 90 days is a follow-up activity — it does not satisfy orientation requirements.",
+          D: "Performance evaluation at 90 days is a follow-up activity - it does not satisfy orientation requirements.",
         },
         operationalContext:
           "Use a structured orientation checklist that is signed off by the employee and their supervisor or trainer as each element is completed. File the completed checklist in the personnel record before the employee goes independent.",
@@ -144,7 +144,7 @@ export const ascAdmLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Operating with staff on lapsed licenses is both a regulatory violation and a patient safety failure. AAAHC ADM standards require documented current licensure — and surveyors will check.",
+          "Operating with staff on lapsed licenses is both a regulatory violation and a patient safety failure. AAAHC ADM standards require documented current licensure - and surveyors will check.",
         whyWrong: {
           A: "There is no 90-day grace period in AAAHC standards for practicing on an expired license.",
           C: "ADM licensure requirements apply to all licensed personnel, not only physicians.",
@@ -160,7 +160,7 @@ export const ascAdmLevel: Level = {
         "A staff member's annual competency verification was due six months ago and has not been completed. The employee has been practicing without a current competency assessment. What is the AAAHC finding?",
       options: [
         "Annual competencies are optional if the employee has been with the organization for more than three years",
-        "This is a deficiency — ADM requires documented ongoing competency verification at defined intervals",
+        "This is a deficiency - ADM requires documented ongoing competency verification at defined intervals",
         "Only new employees need competency verification; experienced staff are exempt",
         "This is only a finding if the employee made a clinical error in the past year",
       ],
@@ -171,11 +171,11 @@ export const ascAdmLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Competency verification is ongoing — it confirms current ability to perform required job functions, not just initial ability at hire. Long-tenured employees still need annual verification.",
+          "Competency verification is ongoing - it confirms current ability to perform required job functions, not just initial ability at hire. Long-tenured employees still need annual verification.",
         whyWrong: {
           A: "Tenure does not exempt employees from competency requirements.",
           C: "Initial competency verification is required at hire; ongoing verification is required annually (or per organizational policy).",
-          D: "Competency requirements exist independently of whether errors occurred — they are preventive, not reactive.",
+          D: "Competency requirements exist independently of whether errors occurred - they are preventive, not reactive.",
         },
         operationalContext:
           "Build competency schedules into the HR system with due-date alerts. A simple rule: all competencies must be completed before the employee's hire anniversary date each year.",
@@ -187,21 +187,21 @@ export const ascAdmLevel: Level = {
         "An ASC's medication storage policy was last reviewed and approved 27 months ago. The organization's policy management system calls for annual review. What does this represent under ADM standards?",
       options: [
         "A minor documentation gap that can be resolved after the survey",
-        "A compliance deficiency — policies must be reviewed at the interval defined by the organization's own policy management system",
-        "Acceptable — AAAHC only requires policy review every 3 years",
+        "A compliance deficiency - policies must be reviewed at the interval defined by the organization's own policy management system",
+        "Acceptable - AAAHC only requires policy review every 3 years",
         "Only clinical policies require annual review; administrative policies may be reviewed less frequently",
       ],
       correctIndex: 1,
       explanation:
-        "ADM requires policies to be current and reviewed at the organization's own defined interval. If the organization's standard calls for annual review, failing to review for 27 months is a deficiency — organizations are held to their own stated standards.",
+        "ADM requires policies to be current and reviewed at the organization's own defined interval. If the organization's standard calls for annual review, failing to review for 27 months is a deficiency - organizations are held to their own stated standards.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
           "Surveyors check both whether policies exist and whether they have been reviewed per the organization's own policy management system. Exceeding your own review deadline is a self-imposed compliance failure.",
         whyWrong: {
-          A: "Post-survey remediation does not satisfy the standard — the review must be current at the time of survey.",
-          C: "AAAHC does not specify a universal policy review interval — organizations set their own, but must then follow it.",
+          A: "Post-survey remediation does not satisfy the standard - the review must be current at the time of survey.",
+          C: "AAAHC does not specify a universal policy review interval - organizations set their own, but must then follow it.",
           D: "No ADM category distinction between clinical and administrative policy review intervals is made.",
         },
         operationalContext:
@@ -220,16 +220,16 @@ export const ascAdmLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "ADM personnel health records must include health screening relevant to the role — such as immunization status, TB testing, and any occupational health baseline assessments. Full medical history is not required; health records must be maintained separately from the general personnel file and kept confidential.",
+        "ADM personnel health records must include health screening relevant to the role - such as immunization status, TB testing, and any occupational health baseline assessments. Full medical history is not required; health records must be maintained separately from the general personnel file and kept confidential.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
           "Occupational health records for healthcare workers include role-specific elements: immunization documentation, TB screening, and any exposure-related assessments required by OSHA. These are separate from the general HR file.",
         whyWrong: {
-          A: "Pre-employment physicals alone are not sufficient — ongoing health monitoring (annual TB, flu vaccination status) must be maintained.",
+          A: "Pre-employment physicals alone are not sufficient - ongoing health monitoring (annual TB, flu vaccination status) must be maintained.",
           C: "Full medical histories are private information the employer is not permitted to request or retain.",
-          D: "Employers are permitted and required to maintain occupational health records — separate from the general personnel file, with appropriate confidentiality protections.",
+          D: "Employers are permitted and required to maintain occupational health records - separate from the general personnel file, with appropriate confidentiality protections.",
         },
         operationalContext:
           "Maintain a separate, locked health records file for each employee. Contents: immunization records, TB screening, exposure incident documentation, and any occupational health assessments required by your role category.",
@@ -247,7 +247,7 @@ export const ascAdmLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "ADM.110 requires ongoing assessment of personnel sufficiency — in number AND qualifications — for all services provided. Before opening a new service line, the organization must verify it has enough appropriately trained staff to provide care safely.",
+        "ADM.110 requires ongoing assessment of personnel sufficiency - in number AND qualifications - for all services provided. Before opening a new service line, the organization must verify it has enough appropriately trained staff to provide care safely.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
@@ -255,7 +255,7 @@ export const ascAdmLevel: Level = {
           "Adding a service without assessing staffing adequacy is a patient safety risk and an ADM deficiency. The assessment must address both headcount and whether existing staff have the specific competencies for endoscopy.",
         whyWrong: {
           A: "Profitability assessment is a business function, not an ADM requirement.",
-          C: "Physical space requirements are addressed in FAC standards — ADM focuses on personnel.",
+          C: "Physical space requirements are addressed in FAC standards - ADM focuses on personnel.",
           D: "Staffing assessment must occur before a new service opens, not six months after.",
         },
         operationalContext:
@@ -270,7 +270,7 @@ export const ascAdmLevel: Level = {
         "Fire safety knowledge is optional for administrative staff",
         "ADM orientation requirements include emergency procedures, and staff must demonstrate knowledge of those procedures",
         "Fire safety training is only required for facilities with an inpatient component",
-        "The surveyor cannot test emergency knowledge — only observe drills",
+        "The surveyor cannot test emergency knowledge - only observe drills",
       ],
       correctIndex: 1,
       explanation:
@@ -279,11 +279,11 @@ export const ascAdmLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Emergency preparedness is explicitly listed as an orientation element under ADM. Staff must not only receive the training — they must be able to demonstrate knowledge when asked.",
+          "Emergency preparedness is explicitly listed as an orientation element under ADM. Staff must not only receive the training - they must be able to demonstrate knowledge when asked.",
         whyWrong: {
           A: "Emergency training applies to all staff, including administrative personnel.",
           C: "ADM emergency training requirements apply to all ASCs.",
-          D: "Surveyors absolutely may interview staff to test knowledge of emergency procedures — this is a standard survey technique.",
+          D: "Surveyors absolutely may interview staff to test knowledge of emergency procedures - this is a standard survey technique.",
         },
         operationalContext:
           "Include a brief emergency knowledge quiz in orientation completion verification. Conduct unannounced emergency knowledge spot-checks during drills and document results in the drill report.",
@@ -296,7 +296,7 @@ export const ascAdmLevel: Level = {
       options: [
         "Equipment can be put into service immediately based on manufacturer instructions",
         "Training on the new equipment must be provided to all intended operators before it is used in patient care",
-        "Only the medical director needs equipment training — other staff learn on the job",
+        "Only the medical director needs equipment training - other staff learn on the job",
         "Training is only required for equipment with specific FDA-required training programs",
       ],
       correctIndex: 1,
@@ -309,7 +309,7 @@ export const ascAdmLevel: Level = {
           "Using clinical equipment in patient care without documented operator training is both an ADM and a SAF deficiency. The training must be completed and documented before the first patient use.",
         whyWrong: {
           A: "Manufacturer instructions supplement, but do not substitute for, formal staff training.",
-          C: "All intended operators — not just the medical director — must receive training.",
+          C: "All intended operators - not just the medical director - must receive training.",
           D: "ADM training requirements apply to all new clinical equipment, not just FDA-designated training programs.",
         },
         operationalContext:
@@ -324,7 +324,7 @@ export const ascAdmLevel: Level = {
         "No documentation is needed for temporary staff if they are from a staffing agency",
         "The temporary manager's authority, responsibilities, and qualifications must be documented, including any required licensure or certification",
         "Temporary managers are exempt from ADM documentation requirements for the first 90 days",
-        "Only clinical staff require documentation — administrative temporary staff are exempt",
+        "Only clinical staff require documentation - administrative temporary staff are exempt",
       ],
       correctIndex: 1,
       explanation:
@@ -355,14 +355,14 @@ export const ascAdmLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "ADM training requirements apply to any new task assigned to personnel — not just initial job training. A nurse cross-trained into sterile processing must receive documented training in those specific tasks and demonstrate competency before performing them independently.",
+        "ADM training requirements apply to any new task assigned to personnel - not just initial job training. A nurse cross-trained into sterile processing must receive documented training in those specific tasks and demonstrate competency before performing them independently.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
           "Competency must be task-specific and role-specific. Adding new tasks to an employee's responsibilities triggers a new training and competency documentation requirement.",
         whyWrong: {
-          A: "Observational learning without documentation is not sufficient — training content, date, trainer, and employee demonstration of competency must be recorded.",
+          A: "Observational learning without documentation is not sufficient - training content, date, trainer, and employee demonstration of competency must be recorded.",
           C: "ADM training requirements follow the task, not the job title.",
           D: "Cross-training does not exempt employees from training and competency requirements.",
         },
@@ -375,7 +375,7 @@ export const ascAdmLevel: Level = {
       question:
         "An ASC operates Monday through Friday, 7 AM to 5 PM. A patient calls Saturday evening with a post-operative concern. Under ADM standards, what must the facility have in place?",
       options: [
-        "Patients accept inherent limitations of outpatient care — no after-hours coverage is required",
+        "Patients accept inherent limitations of outpatient care - no after-hours coverage is required",
         "Documentation of how clinical coverage or advice is provided after normal working hours, as required by the organization's policies",
         "A contracted hospital must accept all after-hours calls from ASC patients",
         "After-hours care is only required for facilities that use general anesthesia",
@@ -387,10 +387,10 @@ export const ascAdmLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Post-operative patients may have urgent questions or complications after hours. The organization must have a documented process — and patients must be informed of how to access after-hours care (PRR.200.20).",
+          "Post-operative patients may have urgent questions or complications after hours. The organization must have a documented process - and patients must be informed of how to access after-hours care (PRR.200.20).",
         whyWrong: {
           A: "After-hours coverage is a documented requirement, not an optional convenience.",
-          C: "Contracted hospital coverage may be one approach but is not specifically required — the standard is that a documented process exists.",
+          C: "Contracted hospital coverage may be one approach but is not specifically required - the standard is that a documented process exists.",
           D: "After-hours care provisions apply regardless of anesthesia type.",
         },
         operationalContext:
@@ -470,7 +470,7 @@ export const ascAdmLevel: Level = {
         whyCorrect:
           "Primary source verification eliminates the risk of forged or altered documents. Licensing boards typically provide online license verification portals that make this straightforward.",
         whyWrong: {
-          A: "A photocopy is not primary source verification — the employee controls what they copy.",
+          A: "A photocopy is not primary source verification - the employee controls what they copy.",
           C: "Primary source verification applies to all licensed and certified personnel.",
           D: "Tenure does not eliminate the need for verified, current credentials.",
         },
@@ -483,14 +483,14 @@ export const ascAdmLevel: Level = {
       question:
         "An ASC's policies address the clinical side of operations but have no written policies for administrative functions such as billing disputes, visitor management, or vendor access. Is this a compliance concern under ADM?",
       options: [
-        "No — ADM only requires clinical policies; administrative policies are optional",
-        "Yes — ADM requires written policies covering all aspects of operations, including administrative functions",
+        "No - ADM only requires clinical policies; administrative policies are optional",
+        "Yes - ADM requires written policies covering all aspects of operations, including administrative functions",
         "Only billing policies are required for Medicare-participating ASCs",
         "Administrative policies must only be in place if the organization has received a patient complaint about those issues",
       ],
       correctIndex: 1,
       explanation:
-        "ADM requires comprehensive written policies for all aspects of the organization's operations. Administrative functions — visitor management, vendor access, billing disputes — are part of the operational fabric and must be covered by written policy.",
+        "ADM requires comprehensive written policies for all aspects of the organization's operations. Administrative functions - visitor management, vendor access, billing disputes - are part of the operational fabric and must be covered by written policy.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
@@ -498,7 +498,7 @@ export const ascAdmLevel: Level = {
           "AAAHC takes a whole-organization view of policy requirements. Gaps in administrative policies can affect patient safety (e.g., uncontrolled vendor access to patient care areas) and organizational integrity.",
         whyWrong: {
           A: "ADM has no clinical-only exemption for policy requirements.",
-          C: "Billing dispute policies are one example, but the requirement is broader — all operational functions need written policies.",
+          C: "Billing dispute policies are one example, but the requirement is broader - all operational functions need written policies.",
           D: "Policies are proactive requirements, not reactive responses to complaints.",
         },
         operationalContext:
@@ -511,7 +511,7 @@ export const ascAdmLevel: Level = {
         "A new anesthesia machine is delivered to the ASC. The vendor representative provides a 30-minute walkthrough for one nurse and one anesthesiologist. Other OR staff receive no formal training. What standard is at risk?",
       options: [
         "Only the anesthesiologist's training matters for equipment compliance",
-        "SAF.230 and ADM training requirements are at risk — vendor representatives cannot be the sole source of training, and all intended operators must be trained",
+        "SAF.230 and ADM training requirements are at risk - vendor representatives cannot be the sole source of training, and all intended operators must be trained",
         "Equipment training is the vendor's responsibility, not the organization's",
         "Training documentation is only required after the first patient is treated with the equipment",
       ],
@@ -524,9 +524,9 @@ export const ascAdmLevel: Level = {
         whyCorrect:
           "SAF.230 has two key requirements: (1) a designated organizational person is responsible for ensuring clinical education occurs before use, and (2) vendors cannot be the sole training source. Both were violated in this scenario.",
         whyWrong: {
-          A: "All intended operators — not just the anesthesiologist — must be trained on equipment they will use.",
+          A: "All intended operators - not just the anesthesiologist - must be trained on equipment they will use.",
           C: "Organizational responsibility for training cannot be delegated entirely to vendors.",
-          D: "Training must be complete before the first patient use — not after.",
+          D: "Training must be complete before the first patient use - not after.",
         },
         operationalContext:
           "For any new equipment: identify all staff who will operate or interact with it, supplement vendor training with an organizational clinical educator's review, document training for each staff member, and clear for use only after all intended operators are trained.",
@@ -539,19 +539,19 @@ export const ascAdmLevel: Level = {
       options: [
         "Wait until the next annual review cycle to update the policy",
         "Update the policy promptly to reflect the regulatory change and ensure staff are notified of the revision",
-        "Regulations supersede policies automatically — no policy update is needed",
+        "Regulations supersede policies automatically - no policy update is needed",
         "The governing body must vote on all regulatory-driven policy changes at their next meeting",
       ],
       correctIndex: 1,
       explanation:
-        "ADM standards require policies to be current and revised when regulations, standards, or practices change. A known regulatory change that makes a policy outdated requires prompt revision — not waiting for the next scheduled review.",
+        "ADM standards require policies to be current and revised when regulations, standards, or practices change. A known regulatory change that makes a policy outdated requires prompt revision - not waiting for the next scheduled review.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Policy management requires responsiveness to regulatory changes. An outdated policy that conflicts with current law is a compliance risk even if it was recently reviewed — organizations must act on known changes.",
+          "Policy management requires responsiveness to regulatory changes. An outdated policy that conflicts with current law is a compliance risk even if it was recently reviewed - organizations must act on known changes.",
         whyWrong: {
-          A: "Annual review cycles are for routine refreshes — regulatory changes require immediate action.",
+          A: "Annual review cycles are for routine refreshes - regulatory changes require immediate action.",
           C: "Regulations do not automatically update internal policies. Staff follow policies; policies must align with regulations.",
           D: "While governing body approval may be needed for significant policy changes, urgent regulatory compliance should not wait for a scheduled board meeting.",
         },
@@ -578,7 +578,7 @@ export const ascAdmLevel: Level = {
         whyCorrect:
           "Documentation must prove two things: (1) the policy exists and was provided to staff, and (2) staff received training on its contents. Signed acknowledgments address (1); training records address (2).",
         whyWrong: {
-          A: "Patient-facing posting is a PRR requirement — it does not demonstrate staff awareness of the policy.",
+          A: "Patient-facing posting is a PRR requirement - it does not demonstrate staff awareness of the policy.",
           C: "Verbal statements from administrators are not verifiable by a surveyor.",
           D: "A timestamp on the policy proves when it was last updated, not whether staff were informed.",
         },
@@ -591,14 +591,14 @@ export const ascAdmLevel: Level = {
       question:
         "An ASC's administrator is solely responsible for all clinical operations, administrative management, quality oversight, and staff scheduling. No delegation of authority has been documented. What risk does this create?",
       options: [
-        "No risk — a capable administrator can manage all these functions without documented delegation",
-        "Lack of documented delegation creates a governance and continuity risk — if the administrator is unavailable, no one has clear authority to act",
+        "No risk - a capable administrator can manage all these functions without documented delegation",
+        "Lack of documented delegation creates a governance and continuity risk - if the administrator is unavailable, no one has clear authority to act",
         "Only large ASCs need documented delegation of authority",
         "Delegation documentation is only required when the administrator is away on leave",
       ],
       correctIndex: 1,
       explanation:
-        "ADM standards require that authority and responsibility are clearly defined and documented. Undocumented centralization of authority creates succession and continuity risks — and makes it impossible for surveyors to verify organizational governance.",
+        "ADM standards require that authority and responsibility are clearly defined and documented. Undocumented centralization of authority creates succession and continuity risks - and makes it impossible for surveyors to verify organizational governance.",
       xpReward: 15,
       isSwipe: false,
       tutor: {

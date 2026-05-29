@@ -4,7 +4,7 @@ export const ascFacLevel: Level = {
   id: "asc_fac",
   module: "asc",
   name: "Facilities & Equipment",
-  description: "AAAHC v44 FAC — physical environment safety, space requirements, equipment maintenance, emergency power, and environmental controls.",
+  description: "AAAHC v44 FAC - physical environment safety, space requirements, equipment maintenance, emergency power, and environmental controls.",
   icon: "Building",
   color: "hsl(170, 50%, 38%)",
   requiredScore: 0,
@@ -21,7 +21,7 @@ export const ascFacLevel: Level = {
       "Alternate power is available in operative and recovery areas for facilities using moderate/deep sedation or general anesthesia.",
     ],
     commonRiskPoints: [
-      "Decontamination area shares space with clean or sterile areas — no physical separation.",
+      "Decontamination area shares space with clean or sterile areas - no physical separation.",
       "Equipment maintenance logs are absent or show gaps between preventive maintenance dates.",
       "Emergency power backup is untested or documented only at initial installation without subsequent testing.",
       "Environmental control parameters (OR temperature/humidity) are not monitored or documented.",
@@ -30,44 +30,44 @@ export const ascFacLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "FAC.100 / FAC.110 — Building Code Compliance and Safe, Secure Operations",
+      title: "FAC.100 / FAC.110 - Building Code Compliance and Safe, Secure Operations",
       content:
-        "FAC.100 requires documentation demonstrating that the facility complies with applicable building codes and regulations — examples include an occupancy permit, a report or letter from a relevant fire authority, or documentation from a building approval authority. FAC.110 requires that the facility is operated in a safe and secure manner: written policies addressing safety and security practices must be present, and observation and interviews during survey must confirm that security practices are actually followed. These two standards establish the foundational physical environment requirements — the facility must be legally permitted, code-compliant, and actively managed to maintain safety and security.",
+        "FAC.100 requires documentation demonstrating that the facility complies with applicable building codes and regulations - examples include an occupancy permit, a report or letter from a relevant fire authority, or documentation from a building approval authority. FAC.110 requires that the facility is operated in a safe and secure manner: written policies addressing safety and security practices must be present, and observation and interviews during survey must confirm that security practices are actually followed. These two standards establish the foundational physical environment requirements - the facility must be legally permitted, code-compliant, and actively managed to maintain safety and security.",
       keyPoint:
         "FAC.100: building code compliance must be documented (occupancy permit, fire authority letter). FAC.110: written security policies must exist AND be observed in practice. Both documentary evidence and observed behavior are evaluated.",
     },
     {
-      title: "FAC.120 — Physical Environment Supporting Patient Comfort and Privacy",
+      title: "FAC.120 - Physical Environment Supporting Patient Comfort and Privacy",
       content:
         "FAC.120 requires that the physical environment supports patient comfort and privacy. Specific requirements include: reception areas and restroom facilities appropriate for patient/visitor volume; examination rooms, dressing rooms, and reception areas constructed and maintained to ensure patient privacy during interviews, examinations, treatment, and consultation; smoking prohibited within the facility; provisions to reasonably accommodate disabled individuals; adequate lighting and ventilation in all areas; and confirmation through observation and interviews that space allocated for each function is adequate for the activities performed. For telehealth settings, clinical staff must ensure visual, auditory, and electronic privacy are maintained.",
       keyPoint:
         "FAC.120 evaluates six elements of patient-centered environment: volume-appropriate reception/restrooms, privacy during exams and consultations, smoking prohibition, disability accommodation, adequate lighting/ventilation, and space adequacy verified through observation.",
     },
     {
-      title: "FAC.130 / FAC.140 — Clean and Maintained Facilities; No Visible Hazards",
+      title: "FAC.130 / FAC.140 - Clean and Maintained Facilities; No Visible Hazards",
       content:
-        "FAC.130 requires that facilities are clean and properly maintained. Elements of compliance include: surfaces free of dust and visible soil; smooth, uniform, easy-to-clean wall finishes; absence of mold and rust; functioning plumbing, hardware, and HVAC systems; and no visible damage or wear on electrical receptacles and switches. FAC.140 requires that there are no visible hazards that might lead to slipping, falling, electrical shock, burns, poisoning, or other trauma. These standards are evaluated primarily through physical observation of the facility during survey — surveyors walk every patient care area and look for hazards, cleanliness issues, and maintenance deficiencies.",
+        "FAC.130 requires that facilities are clean and properly maintained. Elements of compliance include: surfaces free of dust and visible soil; smooth, uniform, easy-to-clean wall finishes; absence of mold and rust; functioning plumbing, hardware, and HVAC systems; and no visible damage or wear on electrical receptacles and switches. FAC.140 requires that there are no visible hazards that might lead to slipping, falling, electrical shock, burns, poisoning, or other trauma. These standards are evaluated primarily through physical observation of the facility during survey - surveyors walk every patient care area and look for hazards, cleanliness issues, and maintenance deficiencies.",
       keyPoint:
         "FAC.130/140 are observation-based standards. Surveyors physically walk the facility looking for: cleanliness failures (dust, soil, mold), maintenance deficiencies (damaged electrical outlets, non-functioning HVAC), and visible safety hazards (tripping hazards, unlabeled chemicals, exposed wiring).",
     },
     {
-      title: "FAC.150 / FAC.160 — Fire Protection and Safe Emergency Exiting",
+      title: "FAC.150 / FAC.160 - Fire Protection and Safe Emergency Exiting",
       content:
         "FAC.150 requires that the facility is equipped to protect occupants from fire. This includes: fire extinguishers at visually obvious locations (the nearest 2A or larger extinguisher within 75 feet walking distance from any location); monthly inspections of extinguishers documented; and annual maintenance performed and documented per manufacturer recommendations and fire authority requirements. FAC.160 requires that the facility is designed to provide safe exiting in an emergency: prominently displayed illuminated exit signs with emergency power capability at all exits including exits from each floor or hallway; and if stairwells are part of required exiting, they must be enclosed in fire walls with fire-rated doors.",
       keyPoint:
         "FAC.150: fire extinguishers within 75 feet of any location, monthly inspection documentation, annual maintenance. FAC.160: illuminated exit signs with emergency power at all exits, fire-rated stairwell enclosures where applicable.",
     },
     {
-      title: "FAC.250 — Medical Equipment Maintenance",
+      title: "FAC.250 - Medical Equipment Maintenance",
       content:
         "FAC.250 requires that medical equipment is appropriately maintained. Written policies and procedures for equipment maintenance must be present and must address: standardized use of the equipment; requirements for periodic calibration according to manufacturer's specifications (if applicable); and requirements for periodic testing and preventive maintenance according to manufacturer specifications. Documentation must confirm that calibration has been performed per manufacturer specifications (for equipment requiring calibration) and that preventive maintenance has been performed per manufacturer instructions. Equipment maintenance records are reviewed during surveys as evidence of compliance.",
       keyPoint:
         "FAC.250 requires written policies AND documentation: (1) calibration records per manufacturer specs (if calibration is required), and (2) preventive maintenance records per manufacturer specs. Both written policy and maintenance evidence must be present.",
     },
     {
-      title: "FAC.260 — Alternate Power for Operative and Recovery Areas",
+      title: "FAC.260 - Alternate Power for Operative and Recovery Areas",
       content:
-        "FAC.260 is a selective standard requiring that alternate power adequate for the types of surgery and procedures performed is available in operative and recovery areas. This standard applies to organizations that administer moderate sedation/analgesia, regional anesthesia, deep sedation/analgesia, or general anesthesia. Two specific requirements must be met: (1) alternate power is available in operative and recovery areas, and (2) the alternate power is adequate for the types of surgery/procedures performed. The standard evaluates both the presence and the adequacy of backup power — a generator that cannot power all critical OR equipment does not satisfy FAC.260.",
+        "FAC.260 is a selective standard requiring that alternate power adequate for the types of surgery and procedures performed is available in operative and recovery areas. This standard applies to organizations that administer moderate sedation/analgesia, regional anesthesia, deep sedation/analgesia, or general anesthesia. Two specific requirements must be met: (1) alternate power is available in operative and recovery areas, and (2) the alternate power is adequate for the types of surgery/procedures performed. The standard evaluates both the presence and the adequacy of backup power - a generator that cannot power all critical OR equipment does not satisfy FAC.260.",
       keyPoint:
         "FAC.260 applies when the ASC uses moderate sedation or deeper. Two requirements: alternate power must be present AND adequate for the procedures performed. Document testing results to demonstrate adequacy.",
     },
@@ -78,21 +78,21 @@ export const ascFacLevel: Level = {
       question:
         "During an AAAHC survey, the surveyor observes that the instrument decontamination sink is located in the same room as the clean instrument packaging area, with no physical barrier. What FAC standard is this most likely violating?",
       options: [
-        "FAC.100 — general physical environment safety",
-        "IPC.170 — decontamination area must be separate from clean areas with unidirectional workflow",
-        "FAC.250 — equipment maintenance requirement",
-        "FAC.260 — alternate power requirement",
+        "FAC.100 - general physical environment safety",
+        "IPC.170 - decontamination area must be separate from clean areas with unidirectional workflow",
+        "FAC.250 - equipment maintenance requirement",
+        "FAC.260 - alternate power requirement",
       ],
       correctIndex: 1,
       explanation:
-        "IPC.170 requires a separate decontamination area with unidirectional workflow — soiled instruments should travel from decontamination to cleaning to sterile packaging without crossing clean areas. A shared space violates this physical separation requirement.",
+        "IPC.170 requires a separate decontamination area with unidirectional workflow - soiled instruments should travel from decontamination to cleaning to sterile packaging without crossing clean areas. A shared space violates this physical separation requirement.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The physical separation of soiled from clean processes is fundamental to preventing cross-contamination during instrument processing. IPC.170 (and IPC.170) require this separation — not just a policy commitment to be careful.",
+          "The physical separation of soiled from clean processes is fundamental to preventing cross-contamination during instrument processing. IPC.170 (and IPC.170) require this separation - not just a policy commitment to be careful.",
         whyWrong: {
-          A: "FAC.100 is the overarching environment safety standard — IPC.170 is the specific instrument processing standard that applies here.",
+          A: "FAC.100 is the overarching environment safety standard - IPC.170 is the specific instrument processing standard that applies here.",
           C: "FAC.250 addresses equipment maintenance, not area separation.",
           D: "FAC.260 addresses backup power, not physical layout.",
         },
@@ -105,22 +105,22 @@ export const ascFacLevel: Level = {
       question:
         "An ASC's backup generator was installed three years ago. There are no records of any testing since installation. What FAC.260 requirement is not being met?",
       options: [
-        "Generators only need to be tested at initial installation — no ongoing testing is required",
-        "The alternate power must be tested to confirm adequacy, and results must be documented — the absence of test records is a deficiency",
+        "Generators only need to be tested at initial installation - no ongoing testing is required",
+        "The alternate power must be tested to confirm adequacy, and results must be documented - the absence of test records is a deficiency",
         "Testing is required only after a power outage",
         "Generator testing is an FAC requirement only for facilities performing cardiac procedures",
       ],
       correctIndex: 1,
       explanation:
-        "FAC.260 requires alternate power to be available AND adequate for the procedures performed. 'Available and adequate' implies testing — and the NFPA 110 and other applicable standards require periodic generator testing (typically monthly load testing) with documented results.",
+        "FAC.260 requires alternate power to be available AND adequate for the procedures performed. 'Available and adequate' implies testing - and the NFPA 110 and other applicable standards require periodic generator testing (typically monthly load testing) with documented results.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
           "A generator that has never been tested since installation may not actually start or provide adequate power when needed. Testing with documentation is the only way to verify continued adequacy.",
         whyWrong: {
-          A: "Ongoing testing is required — generators must be regularly exercised to ensure they will function when needed.",
-          C: "Testing should be proactive, not reactive — waiting for a power outage to verify adequacy is not compliant.",
+          A: "Ongoing testing is required - generators must be regularly exercised to ensure they will function when needed.",
+          C: "Testing should be proactive, not reactive - waiting for a power outage to verify adequacy is not compliant.",
           D: "FAC.260 applies to any organization using moderate or deeper sedation, not just those performing cardiac procedures.",
         },
         operationalContext:
@@ -146,9 +146,9 @@ export const ascFacLevel: Level = {
         whyCorrect:
           "These two documentation types prove that equipment is being maintained according to the manufacturer's requirements. Without them, the organization cannot demonstrate that equipment is in safe operating condition.",
         whyWrong: {
-          A: "Purchase receipts and warranties establish acquisition history — they do not prove ongoing maintenance.",
-          C: "Manufacturer data sheets are reference documents — they don't document that maintenance was performed.",
-          D: "Insurance and serial numbers are administrative records — not maintenance documentation.",
+          A: "Purchase receipts and warranties establish acquisition history - they do not prove ongoing maintenance.",
+          C: "Manufacturer data sheets are reference documents - they don't document that maintenance was performed.",
+          D: "Insurance and serial numbers are administrative records - not maintenance documentation.",
         },
         operationalContext:
           "Create an equipment inventory log with columns for: equipment name, serial number, location, calibration frequency required, last calibration date/result, PM frequency required, and last PM date. Review this log quarterly.",
@@ -162,18 +162,18 @@ export const ascFacLevel: Level = {
         "Only the revenue potential of the new procedure",
         "Whether space, equipment, and supplies are adequate for the type and volume of the new procedure",
         "Whether all existing staff are interested in learning the new procedure",
-        "FAC.100 only applies to procedures already in the scope — new procedures are covered by GOV",
+        "FAC.100 only applies to procedures already in the scope - new procedures are covered by GOV",
       ],
       correctIndex: 1,
       explanation:
-        "FAC.100 requires that space, equipment, and supplies are adequate for the types of procedures performed. Before adding a new procedure, the organization must assess whether its facilities can support it safely — including physical space, specialized equipment, and required supplies.",
+        "FAC.100 requires that space, equipment, and supplies are adequate for the types of procedures performed. Before adding a new procedure, the organization must assess whether its facilities can support it safely - including physical space, specialized equipment, and required supplies.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "FAC.100 is not static — it applies to the current scope of services and must be re-evaluated when services change. Adding a procedure without facility assessment is a potential patient safety failure.",
+          "FAC.100 is not static - it applies to the current scope of services and must be re-evaluated when services change. Adding a procedure without facility assessment is a potential patient safety failure.",
         whyWrong: {
-          A: "Revenue potential is a business decision — FAC.100 requires a safety and capacity assessment.",
+          A: "Revenue potential is a business decision - FAC.100 requires a safety and capacity assessment.",
           C: "Staff interest is relevant to training planning but is not the FAC.100 assessment requirement.",
           D: "FAC.100 applies continuously to all procedures performed, including newly added ones.",
         },
@@ -200,9 +200,9 @@ export const ascFacLevel: Level = {
         whyCorrect:
           "ASHRAE 170 specifies OR temperature (68-75°F), relative humidity (20-60%), minimum air exchanges per hour, and pressure differentials for different room types. AAAHC surveyors expect facilities to reference and meet these parameters.",
         whyWrong: {
-          A: "OSHA 29 CFR 1910.1030 is the Bloodborne Pathogens Standard — not an environmental control standard.",
-          C: "The Joint Commission is a different accreditation body — AAAHC does not reference TJC EOC standards.",
-          D: "NFPA 70 is the electrical code — not applicable to ventilation and temperature requirements.",
+          A: "OSHA 29 CFR 1910.1030 is the Bloodborne Pathogens Standard - not an environmental control standard.",
+          C: "The Joint Commission is a different accreditation body - AAAHC does not reference TJC EOC standards.",
+          D: "NFPA 70 is the electrical code - not applicable to ventilation and temperature requirements.",
         },
         operationalContext:
           "Install OR temperature and humidity monitors with real-time display. Set alarms at the ASHRAE 170 thresholds. Document readings daily. When parameters fall out of range, implement the defined response procedure and document the resolution.",
@@ -213,22 +213,22 @@ export const ascFacLevel: Level = {
       question:
         "An autoclave's biological indicator tests show a recent failure, but the preventive maintenance log shows PM was completed six months ago per the manufacturer's 6-month schedule. What additional FAC.250 step is triggered?",
       options: [
-        "Nothing additional — PM is current per the manufacturer schedule",
-        "A sterilizer failure requires taking the unit out of service and investigating the cause — PM alone does not address a biological indicator failure",
+        "Nothing additional - PM is current per the manufacturer schedule",
+        "A sterilizer failure requires taking the unit out of service and investigating the cause - PM alone does not address a biological indicator failure",
         "The sterilizer may continue to be used until the next scheduled PM",
-        "Only the IPC officer needs to be notified — FAC standards are not implicated",
+        "Only the IPC officer needs to be notified - FAC standards are not implicated",
       ],
       correctIndex: 1,
       explanation:
-        "A biological indicator failure (positive spore test) indicates a sterilization failure — this is an equipment performance issue that goes beyond routine PM. The sterilizer must be taken out of service, investigated, and cleared before return to use. FAC.250 requires equipment to be maintained to safe operating standards — a malfunctioning sterilizer is not meeting that standard.",
+        "A biological indicator failure (positive spore test) indicates a sterilization failure - this is an equipment performance issue that goes beyond routine PM. The sterilizer must be taken out of service, investigated, and cleared before return to use. FAC.250 requires equipment to be maintained to safe operating standards - a malfunctioning sterilizer is not meeting that standard.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Preventive maintenance ensures the equipment is serviced per schedule — but when the equipment fails its performance test, additional investigation is required regardless of PM status. PM and performance testing are complementary, not substitutes.",
+          "Preventive maintenance ensures the equipment is serviced per schedule - but when the equipment fails its performance test, additional investigation is required regardless of PM status. PM and performance testing are complementary, not substitutes.",
         whyWrong: {
-          A: "Current PM does not excuse a performance failure — PM is maintenance, not performance validation.",
-          C: "A failed sterilizer must not continue in use — all items from the failed cycle must be quarantined.",
+          A: "Current PM does not excuse a performance failure - PM is maintenance, not performance validation.",
+          C: "A failed sterilizer must not continue in use - all items from the failed cycle must be quarantined.",
           D: "FAC.250 (equipment maintenance and performance) is directly implicated in a sterilizer failure.",
         },
         operationalContext:
@@ -242,19 +242,19 @@ export const ascFacLevel: Level = {
       options: [
         "A safety inspection at initial accreditation satisfies FAC.150 permanently",
         "The physical environment must be continuously maintained as safe for patients, staff, and visitors, with identified hazards addressed promptly",
-        "FAC.150 is only relevant to the procedure rooms — common areas are excluded",
+        "FAC.150 is only relevant to the procedure rooms - common areas are excluded",
         "FAC.150 compliance is the contractor's responsibility, not the ASC's",
       ],
       correctIndex: 1,
       explanation:
-        "FAC.150 and FAC.100 together establish that the physical environment must be maintained as safe on an ongoing basis — not just at the time of a survey. Identified hazards must be remediated promptly, and the organization must have processes for identifying new hazards.",
+        "FAC.150 and FAC.100 together establish that the physical environment must be maintained as safe on an ongoing basis - not just at the time of a survey. Identified hazards must be remediated promptly, and the organization must have processes for identifying new hazards.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Physical environment safety is an ongoing operational requirement. Hazards that emerge between surveys (damaged flooring, malfunctioning equipment, blocked exits) must be addressed promptly — not allowed to persist until the next accreditation visit.",
+          "Physical environment safety is an ongoing operational requirement. Hazards that emerge between surveys (damaged flooring, malfunctioning equipment, blocked exits) must be addressed promptly - not allowed to persist until the next accreditation visit.",
         whyWrong: {
-          A: "Survey findings establish a compliance baseline — ongoing maintenance is the continuous requirement.",
+          A: "Survey findings establish a compliance baseline - ongoing maintenance is the continuous requirement.",
           C: "FAC standards apply to the entire facility: procedure rooms, recovery areas, common areas, staff work areas, and patient pathways.",
           D: "The ASC bears responsibility for the safety of its physical environment regardless of who manages the building.",
         },
@@ -279,11 +279,11 @@ export const ascFacLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "FAC.100 is a selective standard that applies when lithotripsy is offered. It requires three elements: equipment, supplies, and written guidelines — all aligned with the manufacturer's specifications.",
+          "FAC.100 is a selective standard that applies when lithotripsy is offered. It requires three elements: equipment, supplies, and written guidelines - all aligned with the manufacturer's specifications.",
         whyWrong: {
-          A: "Written policies alone are not sufficient — the equipment and supplies must also be adequate.",
-          C: "A designated urologist oversight is a GOV.320 requirement — not a FAC.100 facility equipment requirement.",
-          D: "A dedicated lithotripsy suite is not specifically required by FAC.100 — adequate space within the facility for safe treatment is what is required.",
+          A: "Written policies alone are not sufficient - the equipment and supplies must also be adequate.",
+          C: "A designated urologist oversight is a GOV.320 requirement - not a FAC.100 facility equipment requirement.",
+          D: "A dedicated lithotripsy suite is not specifically required by FAC.100 - adequate space within the facility for safe treatment is what is required.",
         },
         operationalContext:
           "When adding lithotripsy, create a service-specific facility checklist: equipment purchase and validation, supply inventory, written lithotripsy policies per manufacturer IFU, and governing body approval of the service (GOV.180) and urologist oversight (GOV.320).",
@@ -294,10 +294,10 @@ export const ascFacLevel: Level = {
       question:
         "The AAAHC survey team notes that the procedure room's humidity gauge consistently reads above the maximum level for a procedure room. The administrator says it has been that way for months. What FAC standard is violated?",
       options: [
-        "FAC.100 — general physical environment safety",
-        "Both IPC.230/230 — written environmental controls policy requirement and the implementation/monitoring requirement",
-        "FAC.250 — equipment maintenance requirement",
-        "No FAC standard is violated — humidity is a comfort issue, not a patient safety issue",
+        "FAC.100 - general physical environment safety",
+        "Both IPC.230/230 - written environmental controls policy requirement and the implementation/monitoring requirement",
+        "FAC.250 - equipment maintenance requirement",
+        "No FAC standard is violated - humidity is a comfort issue, not a patient safety issue",
       ],
       correctIndex: 1,
       explanation:
@@ -310,7 +310,7 @@ export const ascFacLevel: Level = {
         whyWrong: {
           A: "FAC.100 is the overarching standard, but IPC.230/230 are the specific environmental controls standards violated.",
           C: "FAC.250 addresses equipment maintenance, not environmental parameters.",
-          D: "Humidity is absolutely a patient safety issue — high humidity in procedure rooms increases SSI risk and creates other hazards.",
+          D: "Humidity is absolutely a patient safety issue - high humidity in procedure rooms increases SSI risk and creates other hazards.",
         },
         operationalContext:
           "When a procedure room's environmental parameters fall out of range, log the event, notify the facilities manager, and assess whether affected cases need additional clinical review. Do not use the room for procedures until parameters are corrected and re-verified.",
@@ -335,9 +335,9 @@ export const ascFacLevel: Level = {
         whyCorrect:
           "Blood glucose meters are medical equipment subject to FAC.250 maintenance requirements. Calibration verification (using control solutions) and PM per manufacturer specifications must be performed and documented.",
         whyWrong: {
-          A: "All medical equipment — including simple diagnostic devices — falls under FAC.250.",
+          A: "All medical equipment - including simple diagnostic devices - falls under FAC.250.",
           C: "Purchase documentation proves acquisition; maintenance documentation proves ongoing calibration and PM compliance.",
-          D: "Calibration is performed on a schedule — not only when a QC failure occurs. QC failure triggers corrective action, but scheduled calibration is proactive.",
+          D: "Calibration is performed on a schedule - not only when a QC failure occurs. QC failure triggers corrective action, but scheduled calibration is proactive.",
         },
         operationalContext:
           "Create an equipment log for each glucose meter: serial number, control solution lot number, calibration verification date and result, and PM completion date. Check controls at each use or at defined intervals per manufacturer instructions.",
@@ -360,10 +360,10 @@ export const ascFacLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The trigger for FAC.260 is the administration of sedation or anesthesia beyond minimal sedation. At these levels, equipment-dependent monitoring and life support become essential — power failure during a case could be catastrophic without backup power.",
+          "The trigger for FAC.260 is the administration of sedation or anesthesia beyond minimal sedation. At these levels, equipment-dependent monitoring and life support become essential - power failure during a case could be catastrophic without backup power.",
         whyWrong: {
           A: "Facilities using only local anesthesia/minimal sedation may not be required to meet FAC.260.",
-          C: "The requirement applies to moderate sedation and above — not only general anesthesia.",
+          C: "The requirement applies to moderate sedation and above - not only general anesthesia.",
           D: "FAC.260 applicability is determined by anesthesia level, not procedure room count.",
         },
         operationalContext:
@@ -378,7 +378,7 @@ export const ascFacLevel: Level = {
         "Equipment used in telehealth is exempt from FAC maintenance requirements",
         "Medical equipment used in telehealth encounters is subject to the same FAC maintenance standards as in-person equipment",
         "Telehealth equipment is only subject to IT department standards",
-        "FAC.250 only applies to physical equipment used in the procedure room — not remote monitoring equipment",
+        "FAC.250 only applies to physical equipment used in the procedure room - not remote monitoring equipment",
       ],
       correctIndex: 1,
       explanation:
@@ -389,8 +389,8 @@ export const ascFacLevel: Level = {
         whyCorrect:
           "The AAAHC v44 guidance directly addresses telehealth equipment: the same maintenance standards apply. Remote monitoring devices, digital stethoscopes, or pulse oximeters provided to patients must be maintained per manufacturer specifications.",
         whyWrong: {
-          A: "Telehealth equipment is not exempt — it is explicitly covered by FAC.250 guidance.",
-          C: "IT standards address connectivity and security — they do not substitute for medical device maintenance requirements.",
+          A: "Telehealth equipment is not exempt - it is explicitly covered by FAC.250 guidance.",
+          C: "IT standards address connectivity and security - they do not substitute for medical device maintenance requirements.",
           D: "FAC.250 applies to all medical equipment regardless of where it is deployed.",
         },
         operationalContext:
@@ -403,7 +403,7 @@ export const ascFacLevel: Level = {
         "An ASC provides radiation oncology teletherapy services. Under FAC.280, what equipment must be available?",
       options: [
         "Only a radiation safety survey meter",
-        "Super voltage or megavoltage machine(s) for external beam treatments, kilovoltage x-ray source, computerized dosimetry, and simulation/CT imaging — all must be present or accessible",
+        "Super voltage or megavoltage machine(s) for external beam treatments, kilovoltage x-ray source, computerized dosimetry, and simulation/CT imaging - all must be present or accessible",
         "A single linear accelerator is sufficient for all teletherapy requirements",
         "FAC.280 equipment requirements are waived if the organization has an agreement with a hospital-based radiation oncology department",
       ],
@@ -416,9 +416,9 @@ export const ascFacLevel: Level = {
         whyCorrect:
           "FAC.280 is a comprehensive equipment standard for teletherapy that covers the full spectrum of equipment required for safe radiation treatment planning and delivery.",
         whyWrong: {
-          A: "A safety survey meter is one component — FAC.280 requires a full complement of treatment planning and delivery equipment.",
+          A: "A safety survey meter is one component - FAC.280 requires a full complement of treatment planning and delivery equipment.",
           C: "A single linear accelerator alone would not meet all FAC.280 requirements (dosimetry, simulation, etc.).",
-          D: "FAC.280 applies to organizations that provide teletherapy services — agreements do not substitute for having required equipment present or accessible.",
+          D: "FAC.280 applies to organizations that provide teletherapy services - agreements do not substitute for having required equipment present or accessible.",
         },
         operationalContext:
           "For radiation oncology services, FAC.280 should be reviewed by the radiation oncology medical physicist during annual safety review. Document equipment availability and accessibility for each required element.",
@@ -430,7 +430,7 @@ export const ascFacLevel: Level = {
         "Under FAC.100, what must be present in post-anesthesia care units (PACU) or recovery areas?",
       options: [
         "Only supplemental oxygen equipment",
-        "Equipment, supplies, and staff adequate to monitor and respond to patients recovering from anesthesia — as required by the level of anesthesia used",
+        "Equipment, supplies, and staff adequate to monitor and respond to patients recovering from anesthesia - as required by the level of anesthesia used",
         "A minimum of two nurses per patient at all times",
         "FAC.100 only applies to facilities that use general anesthesia",
       ],
@@ -443,9 +443,9 @@ export const ascFacLevel: Level = {
         whyCorrect:
           "Recovery area requirements are calibrated to the highest level of anesthesia used. A facility using general anesthesia must have more comprehensive monitoring equipment and staffing than one using only local anesthesia.",
         whyWrong: {
-          A: "Oxygen alone is not sufficient — monitoring equipment (pulse oximetry, cardiac monitoring), emergency response equipment, and appropriately qualified staff are all required.",
+          A: "Oxygen alone is not sufficient - monitoring equipment (pulse oximetry, cardiac monitoring), emergency response equipment, and appropriately qualified staff are all required.",
           C: "Staffing ratios may be defined by state regulation, but FAC.100 does not specify a 2:1 patient ratio.",
-          D: "FAC.100 applies at any level of anesthesia — the standard scales with the depth of sedation used.",
+          D: "FAC.100 applies at any level of anesthesia - the standard scales with the depth of sedation used.",
         },
         operationalContext:
           "Establish written PACU standards: minimum monitoring equipment (SpO2, EtCO2, NIBP, ECG), staff qualification requirements, discharge criteria, and patient observation ratios. Calibrate these to the deepest level of anesthesia used at your facility.",
@@ -454,24 +454,24 @@ export const ascFacLevel: Level = {
     {
       id: "asc_fac_15",
       question:
-        "A biomedical technician performs preventive maintenance on all OR equipment on the same day. One piece of equipment — the electrosurgical unit — shows an anomaly on its performance test but is put back in service anyway. What FAC.250 risk does this create?",
+        "A biomedical technician performs preventive maintenance on all OR equipment on the same day. One piece of equipment - the electrosurgical unit - shows an anomaly on its performance test but is put back in service anyway. What FAC.250 risk does this create?",
       options: [
-        "No risk — the PM was completed as scheduled",
+        "No risk - the PM was completed as scheduled",
         "Returning equipment with a documented performance anomaly to patient service without resolution is a safety failure under FAC.250",
         "The anomaly can be addressed at the next scheduled PM",
         "FAC.250 compliance is based on PM completion, not on performance test results",
       ],
       correctIndex: 1,
       explanation:
-        "FAC.250 requires that equipment is 'appropriately maintained' — which means that identified anomalies must be investigated and resolved before the equipment is returned to patient use. Completing the PM schedule while ignoring a performance anomaly does not satisfy FAC.250.",
+        "FAC.250 requires that equipment is 'appropriately maintained' - which means that identified anomalies must be investigated and resolved before the equipment is returned to patient use. Completing the PM schedule while ignoring a performance anomaly does not satisfy FAC.250.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "An electrosurgical unit (ESU) with a performance anomaly poses significant patient safety risk — including fire, unintended tissue damage, and patient burns. FAC.250 requires equipment to be maintained to safe operating standards, which means anomalies must be resolved.",
+          "An electrosurgical unit (ESU) with a performance anomaly poses significant patient safety risk - including fire, unintended tissue damage, and patient burns. FAC.250 requires equipment to be maintained to safe operating standards, which means anomalies must be resolved.",
         whyWrong: {
-          A: "PM completion is the schedule requirement — equipment safety is the performance requirement. Both must be met.",
-          C: "A performance anomaly identified during PM requires immediate action — not deferral to the next PM cycle.",
+          A: "PM completion is the schedule requirement - equipment safety is the performance requirement. Both must be met.",
+          C: "A performance anomaly identified during PM requires immediate action - not deferral to the next PM cycle.",
           D: "FAC.250 compliance includes both completing the PM schedule and addressing identified performance issues.",
         },
         operationalContext:
@@ -483,23 +483,23 @@ export const ascFacLevel: Level = {
       question:
         "An ASC's physical plant has a patient restroom with a broken grab bar that has been awaiting repair for three weeks. What FAC concern does this represent?",
       options: [
-        "No FAC concern — bathroom fixtures are not medical equipment",
+        "No FAC concern - bathroom fixtures are not medical equipment",
         "A hazard that must be addressed promptly as part of maintaining a safe physical environment under FAC.100/150",
         "This is only an ADA compliance issue, not an AAAHC concern",
-        "Only the building owner is responsible for fixture repairs — the ASC has no AAAHC obligation",
+        "Only the building owner is responsible for fixture repairs - the ASC has no AAAHC obligation",
       ],
       correctIndex: 1,
       explanation:
-        "A broken grab bar in a patient restroom is a fall hazard — which directly implicates FAC.100/150 (safe physical environment) and SAF.140.30 (fall prevention). The three-week repair delay with no interim safety measure (like a 'do not use' closure) demonstrates inadequate hazard response.",
+        "A broken grab bar in a patient restroom is a fall hazard - which directly implicates FAC.100/150 (safe physical environment) and SAF.140.30 (fall prevention). The three-week repair delay with no interim safety measure (like a 'do not use' closure) demonstrates inadequate hazard response.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "A grab bar exists specifically to prevent patient falls — a broken one creates the exact risk the fixture was installed to prevent. Prompt hazard resolution is required under FAC and SAF standards.",
+          "A grab bar exists specifically to prevent patient falls - a broken one creates the exact risk the fixture was installed to prevent. Prompt hazard resolution is required under FAC and SAF standards.",
         whyWrong: {
           A: "Patient safety infrastructure (including grab bars) is part of the physical environment subject to FAC requirements.",
-          C: "ADA and AAAHC obligations overlap but are independent — AAAHC requires a safe environment regardless of ADA compliance.",
-          D: "The ASC bears responsibility for the safety of its patient care environment — even if the building owner holds the repair responsibility, the ASC must take interim safety measures.",
+          C: "ADA and AAAHC obligations overlap but are independent - AAAHC requires a safe environment regardless of ADA compliance.",
+          D: "The ASC bears responsibility for the safety of its patient care environment - even if the building owner holds the repair responsibility, the ASC must take interim safety measures.",
         },
         operationalContext:
           "When a facility hazard is identified: (1) immediately implement interim safety measures (close the restroom, post a warning, provide alternative access), (2) issue a work order with a target repair date, and (3) document both the interim measure and the completed repair in the safety event log.",
@@ -517,7 +517,7 @@ export const ascFacLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "Unidirectional workflow — soiled instruments moving from decontamination → cleaning → packaging → sterile storage — prevents clean or sterile items from becoming contaminated by soiled instruments or associated aerosols. This is a patient safety requirement, not just an efficiency measure.",
+        "Unidirectional workflow - soiled instruments moving from decontamination → cleaning → packaging → sterile storage - prevents clean or sterile items from becoming contaminated by soiled instruments or associated aerosols. This is a patient safety requirement, not just an efficiency measure.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
@@ -525,8 +525,8 @@ export const ascFacLevel: Level = {
           "Cross-contamination during instrument processing is a direct cause of healthcare-associated infections. The physical separation and unidirectional flow are engineering controls that make it structurally impossible for soiled and clean/sterile items to occupy the same space.",
         whyWrong: {
           A: "Efficiency may be a secondary benefit, but cross-contamination prevention is the patient safety rationale.",
-          C: "OSHA traffic control is not the regulatory framework for decontamination flow — IPC and FAC standards are.",
-          D: "IPC.170 makes this a requirement — it is not advisory.",
+          C: "OSHA traffic control is not the regulatory framework for decontamination flow - IPC and FAC standards are.",
+          D: "IPC.170 makes this a requirement - it is not advisory.",
         },
         operationalContext:
           "Map the physical flow of instruments through your decontamination area on a floor plan. Mark soiled intake, soiled sink, decontamination, clean rinsing, drying, inspection, packaging, and sterile storage as sequential zones. Post the flow map and enforce unidirectional traffic.",
@@ -537,14 +537,14 @@ export const ascFacLevel: Level = {
       question:
         "An ASC performs upper endoscopy procedures using flexible endoscopes. What special FAC concern applies to these scopes compared to surgical instruments?",
       options: [
-        "Endoscopes have no special FAC concerns — they are processed the same as all surgical instruments",
-        "Flexible endoscopes are complex devices that cannot be steam sterilized and require high-level disinfection per manufacturer instructions and nationally recognized guidelines (AAMI, SGNA, ASGE) — with specific FAC facility requirements for safe processing",
-        "Endoscopes are disposable after each use — no processing area is needed",
+        "Endoscopes have no special FAC concerns - they are processed the same as all surgical instruments",
+        "Flexible endoscopes are complex devices that cannot be steam sterilized and require high-level disinfection per manufacturer instructions and nationally recognized guidelines (AAMI, SGNA, ASGE) - with specific FAC facility requirements for safe processing",
+        "Endoscopes are disposable after each use - no processing area is needed",
         "IPC.170 exempts flexible endoscopes from unidirectional workflow requirements",
       ],
       correctIndex: 1,
       explanation:
-        "Flexible endoscopes are heat-sensitive and cannot be autoclaved — they require manual cleaning followed by high-level disinfection (HLD) using chemical germicides. This process requires dedicated sinks, HLD solution monitoring, and ventilation controls for personnel protection. IPC.170 and IPC.170 apply to endoscope reprocessing.",
+        "Flexible endoscopes are heat-sensitive and cannot be autoclaved - they require manual cleaning followed by high-level disinfection (HLD) using chemical germicides. This process requires dedicated sinks, HLD solution monitoring, and ventilation controls for personnel protection. IPC.170 and IPC.170 apply to endoscope reprocessing.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
@@ -571,16 +571,16 @@ export const ascFacLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "IPC.230 requires implementation and documentation of environmental controls. Surveyors look for monitoring logs showing that temperature, humidity, and pressure parameters are being actively measured and recorded — with values confirmed to be within the acceptable ranges specified by nationally recognized guidelines.",
+        "IPC.230 requires implementation and documentation of environmental controls. Surveyors look for monitoring logs showing that temperature, humidity, and pressure parameters are being actively measured and recorded - with values confirmed to be within the acceptable ranges specified by nationally recognized guidelines.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
           "Monitoring logs provide objective, time-stamped evidence that parameters are continuously maintained. Logs also reveal when parameters go out of range and whether corrective action was taken.",
         whyWrong: {
-          A: "Original design specifications prove intent — not current operating conditions.",
+          A: "Original design specifications prove intent - not current operating conditions.",
           C: "Staff comfort is subjective and cannot verify compliance with specific temperature/humidity parameters.",
-          D: "Service invoices prove maintenance was performed — not that the system is operating within required parameters.",
+          D: "Service invoices prove maintenance was performed - not that the system is operating within required parameters.",
         },
         operationalContext:
           "Use a daily OR environmental monitoring log with fields for: date, time, temperature reading, humidity reading, pressure differential (positive/negative vs. corridor), and staff initials. Review monthly for trends. Investigate and document any out-of-range readings.",
@@ -593,20 +593,20 @@ export const ascFacLevel: Level = {
       options: [
         "All staff must use the same brand of equipment",
         "Written policies must define how each piece of equipment is to be used correctly and consistently by trained personnel",
-        "Equipment use is standardized by the manufacturer — no organizational policy is needed",
+        "Equipment use is standardized by the manufacturer - no organizational policy is needed",
         "Only the biomedical engineer defines how equipment is used",
       ],
       correctIndex: 1,
       explanation:
-        "FAC.250.20.1 requires that equipment maintenance policies address 'standardized use of the equipment.' This means written operational procedures defining how the equipment is correctly and consistently used by trained personnel — covering set-up, operation, and any safety precautions.",
+        "FAC.250.20.1 requires that equipment maintenance policies address 'standardized use of the equipment.' This means written operational procedures defining how the equipment is correctly and consistently used by trained personnel - covering set-up, operation, and any safety precautions.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Standardized use procedures ensure that every trained operator uses the equipment the same way — reducing user-error-related equipment malfunctions and patient safety incidents. This is distinct from the maintenance/calibration documentation requirement.",
+          "Standardized use procedures ensure that every trained operator uses the equipment the same way - reducing user-error-related equipment malfunctions and patient safety incidents. This is distinct from the maintenance/calibration documentation requirement.",
         whyWrong: {
-          A: "Brand standardization is a procurement preference — FAC.250 requires standardized use procedures, not brand uniformity.",
-          C: "Manufacturer IFU provides the baseline — organizational policies must translate this into operational procedures applicable to the specific clinical setting.",
+          A: "Brand standardization is a procurement preference - FAC.250 requires standardized use procedures, not brand uniformity.",
+          C: "Manufacturer IFU provides the baseline - organizational policies must translate this into operational procedures applicable to the specific clinical setting.",
           D: "Operational use procedures are a clinical/nursing documentation responsibility, not solely a biomedical engineering function.",
         },
         operationalContext:

@@ -67,7 +67,7 @@ export default function ProfilePage() {
     queryKey: ["/api/game/sessions"],
   });
 
-  // Module-scoped XP — match the dashboard / leaderboard so the user sees consistent numbers per module.
+  // Module-scoped XP - match the dashboard / leaderboard so the user sees consistent numbers per module.
   const userModule: ModuleId = (user?.organizationType as ModuleId) || "hospital";
   const moduleLevelIdSet = new Set(getVisibleLevelsForModule(userModule, { includeDraft: true }).map((l) => l.id));
   const moduleXp = savedSessions

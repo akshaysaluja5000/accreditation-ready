@@ -77,13 +77,13 @@ const FLIP_VARIANTS = {
 };
 
 function getTopicLabel(title: string): string {
-  const dashIdx = title.indexOf(" — ");
+  const dashIdx = title.indexOf(" - ");
   if (dashIdx !== -1) return title.slice(dashIdx + 3);
   return title;
 }
 
 function getCodeLabel(title: string): string | null {
-  const dashIdx = title.indexOf(" — ");
+  const dashIdx = title.indexOf(" - ");
   if (dashIdx !== -1) return title.slice(0, dashIdx);
   return null;
 }
@@ -418,7 +418,7 @@ export default function StudyPage() {
     // Store rating for this card
     setRatings((prev) => ({ ...prev, [currentCardIndex]: rating }));
 
-    // Persist to backend (fire-and-forget — session UX is not blocked)
+    // Persist to backend (fire-and-forget - session UX is not blocked)
     if (levelId) {
       reviewMutation.mutate({ cardIndex: currentCardIndex, rating });
     }
@@ -436,7 +436,7 @@ export default function StudyPage() {
         setQueueIndex(nextQueueIndex);
       }
     } else {
-      // Good / Easy — just advance
+      // Good / Easy - just advance
       if (nextQueueIndex >= queue.length) {
         setSessionDone(true);
       } else {
@@ -460,7 +460,7 @@ export default function StudyPage() {
     setSessionDone(false);
   };
 
-  // Summary counts — use last rating per card
+  // Summary counts - use last rating per card
   const ratingCounts: Record<SRRating, number> = { again: 0, hard: 0, good: 0 };
   Object.values(ratings).forEach((r) => { ratingCounts[r]++; });
   const totalRated = Object.values(ratingCounts).reduce((a, b) => a + b, 0);
@@ -532,7 +532,7 @@ export default function StudyPage() {
             </div>
           )}
 
-          {/* Progress dots — one per original card */}
+          {/* Progress dots - one per original card */}
           {view === "concepts" && !sessionDone && (
             <div className="flex gap-1">
               {concepts.map((_, i) => (
@@ -645,15 +645,15 @@ export default function StudyPage() {
               <div className="grid grid-cols-3 gap-2 text-xs">
                 <div className="rounded-xl border border-red-500/30 bg-red-500/8 p-2.5 text-center">
                   <p className="font-black text-red-400">Again</p>
-                  <p className="text-muted-foreground mt-0.5 leading-tight">Forgot it — shows again right away</p>
+                  <p className="text-muted-foreground mt-0.5 leading-tight">Forgot it - shows again right away</p>
                 </div>
                 <div className="rounded-xl border border-orange-500/30 bg-orange-500/8 p-2.5 text-center">
                   <p className="font-black text-orange-400">Hard</p>
-                  <p className="text-muted-foreground mt-0.5 leading-tight">Struggled — comes back in ~15 min</p>
+                  <p className="text-muted-foreground mt-0.5 leading-tight">Struggled - comes back in ~15 min</p>
                 </div>
                 <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/8 p-2.5 text-center">
                   <p className="font-black text-emerald-400">Good</p>
-                  <p className="text-muted-foreground mt-0.5 leading-tight">Got it — scheduled for tomorrow</p>
+                  <p className="text-muted-foreground mt-0.5 leading-tight">Got it - scheduled for tomorrow</p>
                 </div>
               </div>
               <p className="text-[10px] text-muted-foreground mt-2.5 leading-relaxed">
@@ -787,7 +787,7 @@ export default function StudyPage() {
                       </div>
                     </div>
 
-                    {/* Answer — keyPoint is the direct answer shown first and prominently */}
+                    {/* Answer - keyPoint is the direct answer shown first and prominently */}
                     <div
                       className="rounded-xl p-5 border"
                       style={{ backgroundColor: `${level.color}12`, borderColor: `${level.color}30` }}
@@ -800,7 +800,7 @@ export default function StudyPage() {
                       </p>
                     </div>
 
-                    {/* Explanation — content is supplementary context below the answer */}
+                    {/* Explanation - content is supplementary context below the answer */}
                     <div className="flex flex-col gap-1.5">
                       <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">
                         Explanation
@@ -950,9 +950,9 @@ export default function StudyPage() {
               <Card className="rounded-2xl border-2 p-5" style={{ borderColor: `${level.color}25` }}>
                 <p className="text-sm text-foreground/75 leading-relaxed text-center">
                   {ratingCounts.again + ratingCounts.hard === 0
-                    ? "Excellent session — every card rated Good. Ready to prove it on the quiz?"
+                    ? "Excellent session - every card rated Good. Ready to prove it on the quiz?"
                     : ratingCounts.good === 0
-                    ? "Keep reviewing — run through the deck again until more cards feel Good."
+                    ? "Keep reviewing - run through the deck again until more cards feel Good."
                     : `${ratingCounts.good} card${ratingCounts.good !== 1 ? "s" : ""} feeling solid. ${ratingCounts.again + ratingCounts.hard} still need more review.`}
                 </p>
               </Card>
@@ -1007,7 +1007,7 @@ export default function StudyPage() {
                   data-testid="button-forget-all"
                 >
                   <Trash2 size={13} className="mr-1.5" />
-                  {resetMutation.isPending ? "Resetting…" : "Forget all — start from scratch"}
+                  {resetMutation.isPending ? "Resetting…" : "Forget all - start from scratch"}
                 </Button>
               </div>
             </motion.div>

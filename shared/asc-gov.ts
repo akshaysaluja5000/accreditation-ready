@@ -4,14 +4,14 @@ export const ascGovLevel: Level = {
   id: "asc_gov",
   module: "asc",
   name: "Governance",
-  description: "AAAHC v44 GOV — governing body responsibilities, strategic direction, clinical operations, contracts, and regulatory compliance.",
+  description: "AAAHC v44 GOV - governing body responsibilities, strategic direction, clinical operations, contracts, and regulatory compliance.",
   icon: "Building2",
   color: "hsl(240, 60%, 50%)",
   requiredScore: 0,
   chapterSummary: {
     chapterTitle: "GOV: Governance",
     plainLanguageSummary:
-      "The GOV category sets expectations for the governing body's role in ensuring high-quality health care and organizational integrity. The governing body is legally responsible for all operations — clinical and administrative — and must establish strategic direction, define the scope of services, approve contracts, ensure regulatory compliance, and review accreditation requirements at least annually. Specific selective standards address anesthesia, surgical services, energy-emitting devices, laboratory, imaging, dental, and research oversight.",
+      "The GOV category sets expectations for the governing body's role in ensuring high-quality health care and organizational integrity. The governing body is legally responsible for all operations - clinical and administrative - and must establish strategic direction, define the scope of services, approve contracts, ensure regulatory compliance, and review accreditation requirements at least annually. Specific selective standards address anesthesia, surgical services, energy-emitting devices, laboratory, imaging, dental, and research oversight.",
     keyOperationalExpectations: [
       "The governing body determines the mission, goals, and objectives and evaluates progress annually.",
       "Bylaws, policies, financial management, and legal compliance are established and maintained by the governing body.",
@@ -30,39 +30,39 @@ export const ascGovLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "GOV.160 / GOV.170 — Strategic Direction and Operational Accountability",
+      title: "GOV.160 / GOV.170 - Strategic Direction and Operational Accountability",
       content:
-        "The governing body is responsible for setting strategic direction (mission, goals, long-range plans) and ensuring they are pursued — GOV.160. Under GOV.170, the governing body bears full legal responsibility for organizational operations either directly or through professional delegation. This includes establishing organizational structure, adopting bylaws, implementing financial management, ensuring compliance with all applicable laws (ADA, HIPAA, fraud/abuse, NPDB reporting), and overseeing compliance with AAAHC Standards. Product sales to patients and telehealth services must also be reviewed and approved.",
+        "The governing body is responsible for setting strategic direction (mission, goals, long-range plans) and ensuring they are pursued - GOV.160. Under GOV.170, the governing body bears full legal responsibility for organizational operations either directly or through professional delegation. This includes establishing organizational structure, adopting bylaws, implementing financial management, ensuring compliance with all applicable laws (ADA, HIPAA, fraud/abuse, NPDB reporting), and overseeing compliance with AAAHC Standards. Product sales to patients and telehealth services must also be reviewed and approved.",
       keyPoint:
-        "GOV.160 = direction; GOV.170 = accountability. Both are Universal/Tier 1 standards — failures here carry the highest survey weight.",
+        "GOV.160 = direction; GOV.170 = accountability. Both are Universal/Tier 1 standards - failures here carry the highest survey weight.",
     },
     {
-      title: "GOV.180 — Defining the Scope of Services",
+      title: "GOV.180 - Defining the Scope of Services",
       content:
         "The governing body must formally define the scope of services (GOV.180), documenting: the treatments, procedures, and services the organization provides; the population served; and the hours of operation. If telehealth or telemedicine services are offered, they must be referenced, defined, and approved in the scope of services. The governing body must review the scope of services at least annually (GOV.240.60) and revise as needed.",
       keyPoint:
         "Scope of services = what you do + who you serve + when you are open. All three elements must be in writing and governing-body-approved.",
     },
     {
-      title: "GOV.200 — Contract and Arrangement Oversight",
+      title: "GOV.200 - Contract and Arrangement Oversight",
       content:
-        "GOV.200 requires governing body approval and compliance oversight for all major contracts affecting clinical care — including external service contracts (radiology, pathology, lab, housekeeping), education contracts for students and trainees, after-hours telephone triage contracts, and delegated activity arrangements. GOV.200.50 further requires that services provided under all major contracts are rendered in a safe and effective manner, meaning ongoing monitoring — not just initial approval — is expected.",
+        "GOV.200 requires governing body approval and compliance oversight for all major contracts affecting clinical care - including external service contracts (radiology, pathology, lab, housekeeping), education contracts for students and trainees, after-hours telephone triage contracts, and delegated activity arrangements. GOV.200.50 further requires that services provided under all major contracts are rendered in a safe and effective manner, meaning ongoing monitoring - not just initial approval - is expected.",
       keyPoint:
-        "Governing body approval must extend to ongoing compliance monitoring — signed contracts alone are not sufficient. Add quarterly or annual contract performance review to governing body minutes.",
+        "Governing body approval must extend to ongoing compliance monitoring - signed contracts alone are not sufficient. Add quarterly or annual contract performance review to governing body minutes.",
     },
     {
-      title: "GOV.230 / GOV.240 — Meeting Frequency and Annual Review Requirements",
+      title: "GOV.230 / GOV.240 - Meeting Frequency and Annual Review Requirements",
       content:
         "The governing body must meet at least annually (GOV.230), with minutes or records kept for each meeting. At least annually (GOV.240), the governing body must review: patient rights and responsibilities, delegated administrative responsibilities, the QI program, the IPC program, the safety program, the emergency and disaster preparedness plan, the risk management program, the organization's policies and procedures, appointment/reappointment processes, and the scope of services. Revisions must be made as needed following each review.",
       keyPoint:
-        "GOV.240 is the annual review mandate. Surveyors look at board minutes to confirm each item was reviewed — a generic 'annual review conducted' statement is not sufficient.",
+        "GOV.240 is the annual review mandate. Surveyors look at board minutes to confirm each item was reviewed - a generic 'annual review conducted' statement is not sufficient.",
     },
     {
-      title: "GOV.270 / GOV.290 — Governing Body Oversight of Anesthesia and Surgery",
+      title: "GOV.270 / GOV.290 - Governing Body Oversight of Anesthesia and Surgery",
       content:
         "Anesthesia techniques used in the organization must be limited to those approved by the governing body upon the recommendation of qualified professional personnel (GOV.270). Similarly, surgical procedures must be limited to those approved by the governing body upon the recommendation of qualified medical staff (GOV.290). For organizations using energy-emitting devices (lasers, light-based technologies), each provider must receive governing body-granted privileges for each specific device they use (GOV.310).",
       keyPoint:
-        "Governing body approval of anesthesia techniques and surgical procedures is not a formality — the approved list must exist in writing and be tied to the actual procedures performed.",
+        "Governing body approval of anesthesia techniques and surgical procedures is not a formality - the approved list must exist in writing and be tied to the actual procedures performed.",
     },
   ],
   questions: [
@@ -78,7 +78,7 @@ export const ascGovLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "GOV.140 requires documentation of legal constitution — for a corporation, this is the articles of incorporation. For other entity types, acceptable documentation includes articles of organization, partnership agreements, operating agreements, legislative or executive acts, or bylaws (except sole proprietorships).",
+        "GOV.140 requires documentation of legal constitution - for a corporation, this is the articles of incorporation. For other entity types, acceptable documentation includes articles of organization, partnership agreements, operating agreements, legislative or executive acts, or bylaws (except sole proprietorships).",
       xpReward: 15,
       isSwipe: false,
       tutor: {
@@ -112,7 +112,7 @@ export const ascGovLevel: Level = {
         whyCorrect:
           "Long-range planning is a core governance function. The governing body must demonstrate that its strategic decisions are tied to the stated mission and goals and evaluated for progress (GOV.160.30).",
         whyWrong: {
-          A: "Delegation is permitted under GOV.170 but the governing body retains oversight responsibility — it cannot fully abdicate long-range planning.",
+          A: "Delegation is permitted under GOV.170 but the governing body retains oversight responsibility - it cannot fully abdicate long-range planning.",
           C: "State approval of long-range plans is not a GOV.160 requirement.",
           D: "GOV.160 applies universally regardless of organization size.",
         },
@@ -164,7 +164,7 @@ export const ascGovLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "These three elements define what the organization does, who it serves, and when it operates — the minimum content for a scope of services that surveyors can verify against actual practice.",
+          "These three elements define what the organization does, who it serves, and when it operates - the minimum content for a scope of services that surveyors can verify against actual practice.",
         whyWrong: {
           A: "Mission statements relate to GOV.160; financial projections and staffing ratios are not scope of services elements under GOV.180.",
           C: "QI, IPC, and emergency programs are reviewed under GOV.240 but are not scope of services elements.",
@@ -179,7 +179,7 @@ export const ascGovLevel: Level = {
       question:
         "GOV.190.50 requires the governing body to establish, implement, and oversee a risk management program. What must this program specifically include?",
       options: [
-        "Only financial risk — clinical risk is managed by the medical director",
+        "Only financial risk - clinical risk is managed by the medical director",
         "Review of risk management activities, as part of governing body oversight",
         "Monthly audits of all patient records by a third-party reviewer",
         "Risk management applies only to facilities with prior adverse survey findings",
@@ -191,9 +191,9 @@ export const ascGovLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Governing body oversight includes actual review of risk management activities — not just approving a policy. The governing body should receive regular risk management reports and document its review in meeting minutes.",
+          "Governing body oversight includes actual review of risk management activities - not just approving a policy. The governing body should receive regular risk management reports and document its review in meeting minutes.",
         whyWrong: {
-          A: "GOV.190.50 requires the governing body to oversee the risk management program — clinical delegation does not eliminate governing body accountability.",
+          A: "GOV.190.50 requires the governing body to oversee the risk management program - clinical delegation does not eliminate governing body accountability.",
           C: "Monthly third-party record audits are not required by GOV.190.50.",
           D: "GOV.190.50 applies to all AAAHC-accredited organizations regardless of prior survey history.",
         },
@@ -218,10 +218,10 @@ export const ascGovLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The minimum is annual. However, most accreditation experts and governance best practices call for more frequent meetings — quarterly is common — to stay ahead of compliance requirements.",
+          "The minimum is annual. However, most accreditation experts and governance best practices call for more frequent meetings - quarterly is common - to stay ahead of compliance requirements.",
         whyWrong: {
           A: "Monthly is not required by GOV.230, though it is permissible.",
-          B: "Quarterly is not the stated minimum — the standard says 'at least annually.'",
+          B: "Quarterly is not the stated minimum - the standard says 'at least annually.'",
           D: "Semi-annual is not the stated minimum.",
         },
         operationalContext:
@@ -267,16 +267,16 @@ export const ascGovLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "GOV.200.50 requires ongoing monitoring of contracted services to ensure they are safe and effective — initial contract approval alone is not sufficient. The governing body must have a process for reviewing contractor performance on an ongoing basis.",
+        "GOV.200.50 requires ongoing monitoring of contracted services to ensure they are safe and effective - initial contract approval alone is not sufficient. The governing body must have a process for reviewing contractor performance on an ongoing basis.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The standard's phrase 'ensures that services rendered under all major contracts are provided in a safe and effective manner' implies active, ongoing assurance — not a one-time sign-off at contract execution.",
+          "The standard's phrase 'ensures that services rendered under all major contracts are provided in a safe and effective manner' implies active, ongoing assurance - not a one-time sign-off at contract execution.",
         whyWrong: {
           A: "Licensing may be a contract requirement but it does not fulfill the monitoring requirement of GOV.200.50.",
           C: "AAAHC does not require contractors to be AAAHC-accredited.",
-          D: "GOV.200 does not establish a dollar threshold — it applies to all major contracts affecting clinical care.",
+          D: "GOV.200 does not establish a dollar threshold - it applies to all major contracts affecting clinical care.",
         },
         operationalContext:
           "Include a contract performance review section in the annual governing body agenda. For high-risk contracts (anesthesia, lab, radiology), request quarterly performance reports.",
@@ -302,7 +302,7 @@ export const ascGovLevel: Level = {
           "Governing body approval of anesthesia techniques is a fundamental patient safety control. The approved technique list, with documentation of the professional recommendation, should appear in governing body minutes or policy.",
         whyWrong: {
           A: "Clinical judgment does not substitute for the required governing body approval process.",
-          C: "While state medical boards regulate practitioners, they do not approve specific techniques at specific facilities — that is a governing body function.",
+          C: "While state medical boards regulate practitioners, they do not approve specific techniques at specific facilities - that is a governing body function.",
           D: "The guidance note explicitly states GOV.270 applies 'to all organizations involved in the administration of sedation and anesthesia, including those where only local or topical anesthesia is administered.'",
         },
         operationalContext:
@@ -317,7 +317,7 @@ export const ascGovLevel: Level = {
         "It is required only for facilities that exclusively treat children",
         "The governing body must define the pediatric population and state whether or not this population is included in the scope of services",
         "Pediatric definition is left to the individual practitioners based on their clinical judgment",
-        "The AAAHC defines pediatric as under 18 years old for all organizations — no individual definition is needed",
+        "The AAAHC defines pediatric as under 18 years old for all organizations - no individual definition is needed",
       ],
       correctIndex: 1,
       explanation:
@@ -326,9 +326,9 @@ export const ascGovLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The AAAHC v44 guidance notes that organizations define pediatrics based on state regulations or criteria which may include age, puberty, height/weight, BMI, emergency capabilities, or other items — there is no single universal definition.",
+          "The AAAHC v44 guidance notes that organizations define pediatrics based on state regulations or criteria which may include age, puberty, height/weight, BMI, emergency capabilities, or other items - there is no single universal definition.",
         whyWrong: {
-          A: "The definition requirement applies to all ASCs — even those that serve primarily adults must define and document whether or not they treat pediatric patients.",
+          A: "The definition requirement applies to all ASCs - even those that serve primarily adults must define and document whether or not they treat pediatric patients.",
           C: "Individual practitioner judgment is not an acceptable substitute for a governing body definition.",
           D: "AAAHC does not impose a fixed age cutoff; each organization must define it based on state requirements and clinical capabilities.",
         },
@@ -380,7 +380,7 @@ export const ascGovLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Lithotripsy oversight requires urological expertise. GOV.320 specifies 'qualified urologists' — not just any physician or clinical personnel.",
+          "Lithotripsy oversight requires urological expertise. GOV.320 specifies 'qualified urologists' - not just any physician or clinical personnel.",
         whyWrong: {
           A: "Nursing certification, however specialized, is not the qualification specified in GOV.320.",
           C: "Risk managers are administrative professionals, not qualified to oversee a clinical service.",
@@ -449,26 +449,26 @@ export const ascGovLevel: Level = {
       question:
         "An ASC's governing body approved a contract with an outside laboratory. Six months later, reports show the laboratory is frequently missing turnaround time benchmarks. What does GOV.200.50 require at this point?",
       options: [
-        "Nothing — the governing body's only responsibility was initial contract approval",
+        "Nothing - the governing body's only responsibility was initial contract approval",
         "The governing body must ensure services are provided safely and effectively, meaning performance issues must be addressed through governing body oversight",
         "The contract must be terminated immediately",
         "GOV.200.50 only applies to clinical care contractors, not laboratory services",
       ],
       correctIndex: 1,
       explanation:
-        "GOV.200.50 requires ongoing assurance that contracted services are provided safely and effectively. Sustained turnaround time failures are a patient safety concern that the governing body must address — not ignore because the initial contract was approved.",
+        "GOV.200.50 requires ongoing assurance that contracted services are provided safely and effectively. Sustained turnaround time failures are a patient safety concern that the governing body must address - not ignore because the initial contract was approved.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "GOV.200.50 is an ongoing oversight standard. When contracted services fail performance expectations, the governing body must take corrective action — whether that is a performance improvement plan, contract renegotiation, or contractor replacement.",
+          "GOV.200.50 is an ongoing oversight standard. When contracted services fail performance expectations, the governing body must take corrective action - whether that is a performance improvement plan, contract renegotiation, or contractor replacement.",
         whyWrong: {
-          A: "Initial approval is not the end of governing body responsibility — GOV.200.50 requires ensuring ongoing safe and effective service delivery.",
+          A: "Initial approval is not the end of governing body responsibility - GOV.200.50 requires ensuring ongoing safe and effective service delivery.",
           C: "Immediate termination may be warranted in extreme cases but is not the required first step. Escalating to governing body review and implementing a corrective plan is the appropriate response.",
           D: "Laboratory services are explicitly listed in GOV.200.10 as an example of external service contracts requiring governing body oversight.",
         },
         operationalContext:
-          "Build a contract monitoring function into the governing body agenda — review performance reports for all major clinical service contracts at least annually, with a process for escalating persistent failures.",
+          "Build a contract monitoring function into the governing body agenda - review performance reports for all major clinical service contracts at least annually, with a process for escalating persistent failures.",
       },
     },
     {
@@ -491,7 +491,7 @@ export const ascGovLevel: Level = {
           "Minutes are the primary evidence of governing body oversight. They should show that quality data was presented, questions were asked, and actions were directed when problems were identified.",
         whyWrong: {
           A: "Committee size is not a GOV.190.40 requirement.",
-          C: "The quality officer's qualifications support program implementation, but governing body oversight is evidenced by documentation of their engagement — not by the officer's credentials.",
+          C: "The quality officer's qualifications support program implementation, but governing body oversight is evidenced by documentation of their engagement - not by the officer's credentials.",
           D: "Patient satisfaction scores are one metric but not the standard against which GOV.190.40 compliance is measured.",
         },
         operationalContext:
@@ -515,7 +515,7 @@ export const ascGovLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Medicare participation involves a specific legal agreement (the Medicare certification) and ongoing compliance obligations. The governing body must approve participation and ensure compliance — not just delegate it to administrative staff.",
+          "Medicare participation involves a specific legal agreement (the Medicare certification) and ongoing compliance obligations. The governing body must approve participation and ensure compliance - not just delegate it to administrative staff.",
         whyWrong: {
           B: "Cost report submission is a financial/administrative function, not what GOV.210 specifically requires of the governing body.",
           C: "A full-time compliance officer is not required by GOV.210.",
@@ -542,11 +542,11 @@ export const ascGovLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Device-specific privileges are a governing body function. Each provider must demonstrate training and competency with each specific device — and the governing body formally recognizes this through the privilege granting process.",
+          "Device-specific privileges are a governing body function. Each provider must demonstrate training and competency with each specific device - and the governing body formally recognizes this through the privilege granting process.",
         whyWrong: {
           A: "Manufacturer training is a prerequisite for privileges, not a substitute for the governing body's privilege granting action.",
           C: "Insurance is a financial matter, not the governing body function required by GOV.310.",
-          D: "Warning signs are an IPC/safety requirement (SAF.320) — not the governing body action required by GOV.310.",
+          D: "Warning signs are an IPC/safety requirement (SAF.320) - not the governing body action required by GOV.310.",
         },
         operationalContext:
           "Add device-specific privilege categories to the credentialing delineation of privileges form (e.g., CO2 laser, Nd:YAG laser) and require documented competency before each new privilege is granted.",
@@ -569,10 +569,10 @@ export const ascGovLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The governing body establishes policy — it does not manage operations. GOV.190.70 requires a governing body-level policy commitment to patient education and ongoing staff competency development.",
+          "The governing body establishes policy - it does not manage operations. GOV.190.70 requires a governing body-level policy commitment to patient education and ongoing staff competency development.",
         whyWrong: {
           A: "Surgical scheduling is an operational function, not a governing body responsibility.",
-          C: "Chart audits are conducted by QI and clinical staff — not directly by the governing body.",
+          C: "Chart audits are conducted by QI and clinical staff - not directly by the governing body.",
           D: "Individual employee performance reviews are a management function, not a governing body duty.",
         },
         operationalContext:
@@ -591,7 +591,7 @@ export const ascGovLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "GOV.240.70 requires that revisions are made as needed to maintain compliance following the annual review. This closes the loop — the review is not simply an academic exercise but must result in documented updates when gaps are identified.",
+        "GOV.240.70 requires that revisions are made as needed to maintain compliance following the annual review. This closes the loop - the review is not simply an academic exercise but must result in documented updates when gaps are identified.",
       xpReward: 15,
       isSwipe: false,
       tutor: {

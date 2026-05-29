@@ -4,7 +4,7 @@ export const ascBehLevel: Level = {
   id: "asc_beh",
   module: "asc",
   name: "Behavioral Health Services",
-  description: "AAAHC v44 BEH — mental health and substance use disorder services in ambulatory settings, telehealth delivery, and patient rights in behavioral health.",
+  description: "AAAHC v44 BEH - mental health and substance use disorder services in ambulatory settings, telehealth delivery, and patient rights in behavioral health.",
   icon: "Brain",
   color: "hsl(280, 55%, 48%)",
   requiredScore: 0,
@@ -14,7 +14,7 @@ export const ascBehLevel: Level = {
       "The BEH category applies to ambulatory organizations that provide behavioral health services including mental health evaluation and treatment, substance use disorder (SUD) treatment, or both. Standards address therapeutic settings, patient rights specific to behavioral health (including restraint and seclusion restrictions), individualized treatment planning, documentation requirements, continuity of care, and staff competencies. Telehealth delivery of behavioral health services is explicitly addressed with specific requirements for privacy, therapeutic environment, and documentation.",
     keyOperationalExpectations: [
       "Therapeutic settings are appropriate for the type and intensity of behavioral health services provided.",
-      "Patient rights specific to behavioral health — including freedom from inappropriate restraint and seclusion — are communicated and protected.",
+      "Patient rights specific to behavioral health - including freedom from inappropriate restraint and seclusion - are communicated and protected.",
       "Each patient has an individualized treatment plan based on comprehensive assessment.",
       "Staff providing behavioral health services have documented qualifications and training appropriate to their scope of practice.",
       "Continuity of care is facilitated through care coordination and discharge planning.",
@@ -22,47 +22,47 @@ export const ascBehLevel: Level = {
     ],
     commonRiskPoints: [
       "Group therapy rooms lack adequate privacy to prevent auditory or visual disclosure to other patients.",
-      "Treatment plans are generic rather than individualized — lacking measurable goals or specific intervention plans.",
-      "Staff qualifications for behavioral health are not verified — scope of practice for licensed counselors vs. psychologists is unclear.",
+      "Treatment plans are generic rather than individualized - lacking measurable goals or specific intervention plans.",
+      "Staff qualifications for behavioral health are not verified - scope of practice for licensed counselors vs. psychologists is unclear.",
       "Telehealth behavioral health visits lack documentation of the technology platform used and privacy protections in place.",
     ],
     aaahcStandards: ["BEH.100", "BEH.110", "BEH.120", "BEH.130", "BEH.140", "BEH.150"],
   },
   studyMaterial: [
     {
-      title: "BEH.100 — Behavioral Health Settings and Therapeutic Environment",
+      title: "BEH.100 - Behavioral Health Settings and Therapeutic Environment",
       content:
         "Behavioral health services must be provided in settings appropriate for the type and intensity of services offered. Settings must ensure: adequate privacy during individual therapy sessions (visual and auditory privacy); appropriate group therapy spaces that maintain patient confidentiality from non-participants; safe physical environments that do not pose ligature or self-harm risks for at-risk populations; and access to emergency support appropriate to the behavioral health conditions treated. For telehealth delivery, the therapeutic environment requires that the platform is HIPAA-compliant, staff are in a private location, and patients are informed of and encouraged to secure their own privacy.",
       keyPoint:
-        "Behavioral health settings must provide true privacy — not just visual privacy but auditory privacy. Group therapy rooms must not allow other patients to overhear individual disclosures.",
+        "Behavioral health settings must provide true privacy - not just visual privacy but auditory privacy. Group therapy rooms must not allow other patients to overhear individual disclosures.",
     },
     {
-      title: "BEH.110 — Patient Rights in Behavioral Health",
+      title: "BEH.110 - Patient Rights in Behavioral Health",
       content:
-        "Patients receiving behavioral health services retain all rights described in the PRR category plus additional rights specific to behavioral health: freedom from inappropriate use of restraint or seclusion; the right to participate in treatment planning; the right to refuse specific treatments (with documentation of informed refusal); the right to have an advocate present; and specific protections related to confidentiality under 42 CFR Part 2 for substance use disorder records. SUD records have more stringent confidentiality protections than standard HIPAA — they generally cannot be disclosed without explicit patient consent, even to other treating providers.",
+        "Patients receiving behavioral health services retain all rights described in the PRR category plus additional rights specific to behavioral health: freedom from inappropriate use of restraint or seclusion; the right to participate in treatment planning; the right to refuse specific treatments (with documentation of informed refusal); the right to have an advocate present; and specific protections related to confidentiality under 42 CFR Part 2 for substance use disorder records. SUD records have more stringent confidentiality protections than standard HIPAA - they generally cannot be disclosed without explicit patient consent, even to other treating providers.",
       keyPoint:
-        "SUD records under 42 CFR Part 2 have stricter confidentiality protections than standard HIPAA records — they require specific patient consent for most disclosures, including disclosures to other healthcare providers.",
+        "SUD records under 42 CFR Part 2 have stricter confidentiality protections than standard HIPAA records - they require specific patient consent for most disclosures, including disclosures to other healthcare providers.",
     },
     {
-      title: "BEH.120 — Assessment and Individualized Treatment Planning",
+      title: "BEH.120 - Assessment and Individualized Treatment Planning",
       content:
         "Each behavioral health patient must receive a comprehensive assessment appropriate to the presenting condition, which forms the basis for an individualized treatment plan. The treatment plan must include: presenting problems and diagnoses (using current DSM criteria); measurable treatment goals with target timelines; specific interventions planned; the disciplines/providers involved; a discharge or transition planning component; and documentation of the patient's involvement in treatment planning. Treatment plans must be reviewed and updated at defined intervals based on the patient's progress and changing needs.",
       keyPoint:
-        "Treatment plans must be individualized, measurable, and updated based on progress. 'Routine counseling' is not a treatment plan — specific goals (e.g., 'patient will develop and practice two coping strategies for anxiety within 30 days') with specific interventions are required.",
+        "Treatment plans must be individualized, measurable, and updated based on progress. 'Routine counseling' is not a treatment plan - specific goals (e.g., 'patient will develop and practice two coping strategies for anxiety within 30 days') with specific interventions are required.",
     },
     {
-      title: "BEH.130 — Staff Qualifications in Behavioral Health",
+      title: "BEH.130 - Staff Qualifications in Behavioral Health",
       content:
-        "Staff providing behavioral health services must hold the qualifications required by their state for their scope of practice — licensure as appropriate (licensed professional counselor, licensed clinical social worker, psychologist, psychiatrist, certified alcohol and drug counselor, etc.). The organization must verify these credentials through primary source verification and ensure that staff practice within their licensed scope. Supervision requirements for associate-licensed or license-eligible staff must be documented, with the supervising licensed clinician's credentials on file. Clinical staff must receive training appropriate to the specific behavioral health conditions treated.",
+        "Staff providing behavioral health services must hold the qualifications required by their state for their scope of practice - licensure as appropriate (licensed professional counselor, licensed clinical social worker, psychologist, psychiatrist, certified alcohol and drug counselor, etc.). The organization must verify these credentials through primary source verification and ensure that staff practice within their licensed scope. Supervision requirements for associate-licensed or license-eligible staff must be documented, with the supervising licensed clinician's credentials on file. Clinical staff must receive training appropriate to the specific behavioral health conditions treated.",
       keyPoint:
         "Behavioral health licensure is state-specific and scope-specific. An LPC may not perform the same services as a licensed psychologist. Supervision arrangements for associate-licensed staff must be formally documented.",
     },
     {
-      title: "BEH.150 — Continuity of Care and Discharge Planning",
+      title: "BEH.150 - Continuity of Care and Discharge Planning",
       content:
         "Continuity of care is particularly important in behavioral health, where abrupt interruption of treatment can have serious consequences including relapse or mental health crisis. The organization must have processes for: referring patients to higher or lower levels of care as clinically indicated (using established criteria such as ASAM criteria for SUD); ensuring warm handoffs when patients transition between providers or levels of care; communicating clinical information to receiving providers; and following up with patients who disengage from treatment prematurely. Discharge planning begins at admission and is updated throughout treatment.",
       keyPoint:
-        "Discharge planning begins at admission in behavioral health — not when discharge is imminent. ASAM criteria guide level-of-care transitions for SUD. Premature disengagement requires documented follow-up attempts.",
+        "Discharge planning begins at admission in behavioral health - not when discharge is imminent. ASAM criteria guide level-of-care transitions for SUD. Premature disengagement requires documented follow-up attempts.",
     },
   ],
   questions: [
@@ -71,22 +71,22 @@ export const ascBehLevel: Level = {
       question:
         "An ambulatory behavioral health organization conducts individual therapy sessions in offices separated by thin partition walls where conversations can be overheard in adjacent offices. What BEH.100 requirement is at risk?",
       options: [
-        "Visual privacy is met — auditory privacy is not required in outpatient settings",
-        "BEH.100 requires both visual and auditory privacy in individual therapy settings — overheard conversations violate patient confidentiality and therapeutic privacy",
-        "Acoustic privacy is the patient's responsibility — they should speak quietly",
+        "Visual privacy is met - auditory privacy is not required in outpatient settings",
+        "BEH.100 requires both visual and auditory privacy in individual therapy settings - overheard conversations violate patient confidentiality and therapeutic privacy",
+        "Acoustic privacy is the patient's responsibility - they should speak quietly",
         "Partitions are acceptable if patients sign a confidentiality waiver",
       ],
       correctIndex: 1,
       explanation:
-        "BEH.100 requires that individual therapy settings provide adequate privacy — both visual and auditory. Therapy conversations that can be overheard through thin partitions violate the patient's privacy and undermine the therapeutic relationship.",
+        "BEH.100 requires that individual therapy settings provide adequate privacy - both visual and auditory. Therapy conversations that can be overheard through thin partitions violate the patient's privacy and undermine the therapeutic relationship.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Confidentiality is the foundation of the therapeutic relationship in behavioral health. Patients who know their conversations can be overheard may not disclose sensitive information — compromising the quality of care. Physical privacy safeguards this disclosure-safe environment.",
+          "Confidentiality is the foundation of the therapeutic relationship in behavioral health. Patients who know their conversations can be overheard may not disclose sensitive information - compromising the quality of care. Physical privacy safeguards this disclosure-safe environment.",
         whyWrong: {
-          A: "Auditory privacy is specifically required — visual-only privacy is not sufficient in individual therapy settings.",
-          C: "The organization bears the responsibility for providing an appropriately private therapeutic environment — this cannot be shifted to patients.",
+          A: "Auditory privacy is specifically required - visual-only privacy is not sufficient in individual therapy settings.",
+          C: "The organization bears the responsibility for providing an appropriately private therapeutic environment - this cannot be shifted to patients.",
           D: "Confidentiality waivers do not address the therapeutic environment requirement or the protection of other patients whose conversations may also be overheard.",
         },
         operationalContext:
@@ -99,22 +99,22 @@ export const ascBehLevel: Level = {
         "A patient receiving substance use disorder (SUD) treatment asks that their provider not share any treatment information with their primary care physician. Under 42 CFR Part 2, how should this be handled?",
       options: [
         "The standard HIPAA treatment, payment, and operations exception allows SUD information to be shared with the primary care physician",
-        "42 CFR Part 2 requires specific patient consent for most disclosures of SUD records — the patient's request must be respected unless a legally defined exception applies",
+        "42 CFR Part 2 requires specific patient consent for most disclosures of SUD records - the patient's request must be respected unless a legally defined exception applies",
         "The primary care physician may always access SUD records through a HIE",
         "SUD records are subject to the same disclosure rules as all other health records under HIPAA",
       ],
       correctIndex: 1,
       explanation:
-        "42 CFR Part 2 provides stronger confidentiality protections for SUD treatment records than HIPAA. These records generally cannot be disclosed to any person or entity — including treating providers — without the patient's written consent, unless a specific exception applies (e.g., medical emergency, court order).",
+        "42 CFR Part 2 provides stronger confidentiality protections for SUD treatment records than HIPAA. These records generally cannot be disclosed to any person or entity - including treating providers - without the patient's written consent, unless a specific exception applies (e.g., medical emergency, court order).",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
           "42 CFR Part 2 was designed specifically to protect SUD patients from discrimination and to encourage treatment-seeking. The confidentiality protections are deliberately stronger than HIPAA to address the unique stigma and legal risks associated with SUD disclosure.",
         whyWrong: {
-          A: "HIPAA's treatment exception does not override 42 CFR Part 2 — the stronger protection applies.",
-          C: "Health information exchanges must also comply with 42 CFR Part 2 — SUD information cannot be shared through a HIE without appropriate consent.",
-          D: "SUD records have stronger protections than standard HIPAA records — the two frameworks are not equivalent.",
+          A: "HIPAA's treatment exception does not override 42 CFR Part 2 - the stronger protection applies.",
+          C: "Health information exchanges must also comply with 42 CFR Part 2 - SUD information cannot be shared through a HIE without appropriate consent.",
+          D: "SUD records have stronger protections than standard HIPAA records - the two frameworks are not equivalent.",
         },
         operationalContext:
           "Train all clinical and administrative staff on 42 CFR Part 2 requirements. Use a Part 2-compliant consent form for any SUD record disclosure. Implement EHR safeguards to flag SUD records requiring Part 2 consent before disclosure.",
@@ -125,10 +125,10 @@ export const ascBehLevel: Level = {
       question:
         "A behavioral health organization's treatment plans all contain the same boilerplate goal: 'Patient will improve coping skills.' Is this an adequate treatment plan under BEH.120?",
       options: [
-        "Yes — coping skills improvement is a universally appropriate behavioral health goal",
-        "No — treatment goals must be specific, measurable, and individualized to the patient's presenting problems and diagnosis",
-        "Yes — the goal is appropriate as long as a specific intervention type is listed",
-        "Treatment plan specificity is left to the clinician's discretion — AAAHC does not prescribe goal format",
+        "Yes - coping skills improvement is a universally appropriate behavioral health goal",
+        "No - treatment goals must be specific, measurable, and individualized to the patient's presenting problems and diagnosis",
+        "Yes - the goal is appropriate as long as a specific intervention type is listed",
+        "Treatment plan specificity is left to the clinician's discretion - AAAHC does not prescribe goal format",
       ],
       correctIndex: 1,
       explanation:
@@ -137,11 +137,11 @@ export const ascBehLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Individualized, measurable goals drive clinical accountability — they allow the clinician and patient to assess whether treatment is working. Generic goals offer no basis for assessing progress or adjusting the treatment approach.",
+          "Individualized, measurable goals drive clinical accountability - they allow the clinician and patient to assess whether treatment is working. Generic goals offer no basis for assessing progress or adjusting the treatment approach.",
         whyWrong: {
           A: "Generic goals are not individualized to the patient's specific diagnosis, severity, or functional impairment.",
           C: "Specificity of interventions is important, but the goals themselves must also be specific and measurable.",
-          D: "AAAHC BEH.120 requires individualized treatment plans with measurable goals — clinician discretion operates within these parameters.",
+          D: "AAAHC BEH.120 requires individualized treatment plans with measurable goals - clinician discretion operates within these parameters.",
         },
         operationalContext:
           "Train clinicians to write SMART goals: Specific (related to the presenting problem), Measurable (observable behavior or validated scale score), Attainable, Relevant (to the patient's stated priorities), and Time-bound (target date or interval). Audit a sample of treatment plans monthly for SMART goal quality.",
@@ -152,23 +152,23 @@ export const ascBehLevel: Level = {
       question:
         "An associate-licensed counselor (working toward full licensure) provides therapy at a behavioral health ASC. What BEH.130 documentation must be in place?",
       options: [
-        "The associate license is sufficient — no additional documentation is required",
+        "The associate license is sufficient - no additional documentation is required",
         "A documented supervision arrangement with a fully licensed clinician, including the supervisor's credentials and the frequency and format of supervision",
-        "Only the supervising clinician's credentials need to be on file — the associate's credential is assumed from employment",
+        "Only the supervising clinician's credentials need to be on file - the associate's credential is assumed from employment",
         "Associate-licensed staff may not provide services in AAAHC-accredited settings",
       ],
       correctIndex: 1,
       explanation:
-        "BEH.130 requires that supervision arrangements for associate-licensed or license-eligible staff are formally documented — including the supervisor's name and credentials, the supervisory relationship (what services, at what frequency, in what format), and the associate's current credential status.",
+        "BEH.130 requires that supervision arrangements for associate-licensed or license-eligible staff are formally documented - including the supervisor's name and credentials, the supervisory relationship (what services, at what frequency, in what format), and the associate's current credential status.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Associate licensure is a supervised practice credential — the supervision arrangement is the clinical safeguard that protects patients. Without documented supervision, the organization cannot demonstrate that required oversight is occurring.",
+          "Associate licensure is a supervised practice credential - the supervision arrangement is the clinical safeguard that protects patients. Without documented supervision, the organization cannot demonstrate that required oversight is occurring.",
         whyWrong: {
-          A: "Associate licenses authorize supervised practice — the supervision arrangement is the required safeguard.",
+          A: "Associate licenses authorize supervised practice - the supervision arrangement is the required safeguard.",
           C: "Both the associate's credential and the supervisor's credentials must be verified and on file.",
-          D: "Associate-licensed staff may provide services in AAAHC settings — with documented, qualified supervision.",
+          D: "Associate-licensed staff may provide services in AAAHC settings - with documented, qualified supervision.",
         },
         operationalContext:
           "Create a supervision agreement template for each associate-licensed clinician: supervisor name, credentials, license number, supervision modality (individual, group, or both), frequency (weekly, bi-weekly), and specific cases/services covered. File signed copies and update when supervision arrangements change.",
@@ -179,19 +179,19 @@ export const ascBehLevel: Level = {
       question:
         "A patient abruptly stops attending behavioral health sessions after four appointments. Under BEH.150, what must the organization do?",
       options: [
-        "Close the case after 30 days of no contact — no further action is required",
-        "Attempt documented follow-up with the patient who disengaged prematurely — the organization must have a policy for following up with patients who leave treatment early",
+        "Close the case after 30 days of no contact - no further action is required",
+        "Attempt documented follow-up with the patient who disengaged prematurely - the organization must have a policy for following up with patients who leave treatment early",
         "Immediately refer the case to the emergency crisis line",
         "Send the patient's file to their primary care physician automatically",
       ],
       correctIndex: 1,
       explanation:
-        "BEH.150 requires that the organization has a process for following up with patients who disengage from treatment prematurely. Behavioral health disengagement can signal a crisis or relapse — documented outreach attempts are required to demonstrate the organization fulfilled its duty of care.",
+        "BEH.150 requires that the organization has a process for following up with patients who disengage from treatment prematurely. Behavioral health disengagement can signal a crisis or relapse - documented outreach attempts are required to demonstrate the organization fulfilled its duty of care.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Premature disengagement from behavioral health treatment is a clinical concern — patients who abruptly stop may be experiencing a crisis, medication side effects, or therapeutic rupture. A documented outreach process ensures the organization fulfills its clinical and ethical duty to the patient.",
+          "Premature disengagement from behavioral health treatment is a clinical concern - patients who abruptly stop may be experiencing a crisis, medication side effects, or therapeutic rupture. A documented outreach process ensures the organization fulfills its clinical and ethical duty to the patient.",
         whyWrong: {
           A: "Passive case closure without outreach attempts does not fulfill the continuity of care obligation.",
           C: "A crisis referral may be appropriate in some situations but is not the standard response to missed appointments.",
@@ -220,9 +220,9 @@ export const ascBehLevel: Level = {
         whyCorrect:
           "ASAM criteria are the nationally recognized standard for SUD level-of-care determination. Using ASAM ensures clinical decisions about treatment intensity are systematic, evidence-based, and defensible.",
         whyWrong: {
-          A: "DSM-5 severity specifiers describe diagnosis severity — they do not guide treatment level placement decisions.",
+          A: "DSM-5 severity specifiers describe diagnosis severity - they do not guide treatment level placement decisions.",
           C: "The GAF has largely been replaced by more specific functioning measures and is not the referenced SUD placement tool.",
-          D: "Beck Anxiety Inventory measures anxiety symptoms — it is not a level-of-care placement tool.",
+          D: "Beck Anxiety Inventory measures anxiety symptoms - it is not a level-of-care placement tool.",
         },
         operationalContext:
           "Train SUD intake clinicians on ASAM criteria. Use a validated ASAM placement tool at intake and re-assess at defined intervals (typically monthly for IOP patients). Document ASAM criteria findings as the basis for all level-of-care recommendations.",
@@ -247,7 +247,7 @@ export const ascBehLevel: Level = {
         whyCorrect:
           "Telehealth behavioral health sessions involve sensitive disclosures that require privacy protection on both ends. A patient speaking from their car in a parking lot has very different privacy than one speaking from a private office. The clinician must actively assess and document the patient's environmental privacy.",
         whyWrong: {
-          A: "Insurance eligibility is an administrative function — not a therapeutic environment requirement.",
+          A: "Insurance eligibility is an administrative function - not a therapeutic environment requirement.",
           C: "Internet stability affects session quality but is not the BEH.100 privacy requirement.",
           D: "HIPAA establishes baseline privacy requirements, but BEH.100 adds specific telehealth therapeutic environment requirements for behavioral health.",
         },
@@ -261,7 +261,7 @@ export const ascBehLevel: Level = {
         "Under BEH.110, when may a patient in a behavioral health program be placed in seclusion or restraint?",
       options: [
         "Whenever the patient becomes disruptive to the therapeutic group process",
-        "Only as a last resort when there is an immediate safety risk and less restrictive interventions have been ineffective or are not appropriate — and only in compliance with applicable state and federal regulations",
+        "Only as a last resort when there is an immediate safety risk and less restrictive interventions have been ineffective or are not appropriate - and only in compliance with applicable state and federal regulations",
         "Restraint may be used at the clinical team's discretion for non-compliant patients",
         "Seclusion is always prohibited in ambulatory behavioral health settings under any circumstances",
       ],
@@ -272,11 +272,11 @@ export const ascBehLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Restraint and seclusion are inherently coercive — their use must be strictly limited to immediate safety emergencies. Routine or punitive use is prohibited. Each use must be clinically justified, time-limited, and documented.",
+          "Restraint and seclusion are inherently coercive - their use must be strictly limited to immediate safety emergencies. Routine or punitive use is prohibited. Each use must be clinically justified, time-limited, and documented.",
         whyWrong: {
-          A: "Disruption to group process does not meet the threshold for restraint or seclusion — it requires de-escalation or removal from the group.",
-          C: "Clinical team discretion does not justify restraint use — specific regulatory criteria must be met.",
-          D: "Seclusion is not categorically prohibited in all ambulatory settings — but its use must meet strict safety and regulatory criteria.",
+          A: "Disruption to group process does not meet the threshold for restraint or seclusion - it requires de-escalation or removal from the group.",
+          C: "Clinical team discretion does not justify restraint use - specific regulatory criteria must be met.",
+          D: "Seclusion is not categorically prohibited in all ambulatory settings - but its use must meet strict safety and regulatory criteria.",
         },
         operationalContext:
           "Train all behavioral health staff in crisis de-escalation techniques (e.g., CPI or therapeutic options training). Establish a clear policy on restraint/seclusion use that meets state law and federal requirements. Conduct a post-event review for every restraint or seclusion episode.",
@@ -288,22 +288,22 @@ export const ascBehLevel: Level = {
         "A behavioral health ASC treats both mental health and substance use disorder patients. What specific privacy protection applies to SUD records that does not apply to general mental health records?",
       options: [
         "SUD records must be stored in a separate physical file cabinet",
-        "42 CFR Part 2 requires SUD records to be kept confidential and not disclosed without explicit patient consent, even to treating providers — with limited exceptions",
+        "42 CFR Part 2 requires SUD records to be kept confidential and not disclosed without explicit patient consent, even to treating providers - with limited exceptions",
         "SUD records must be destroyed after five years regardless of state law",
         "Only the patient's psychiatrist may access SUD records",
       ],
       correctIndex: 1,
       explanation:
-        "42 CFR Part 2 imposes stricter confidentiality on SUD records than HIPAA. Unlike standard medical records (which can be shared for treatment under HIPAA's treatment exception), SUD records generally require explicit patient consent before disclosure — even to other treating providers, with narrow exceptions for emergencies and court orders.",
+        "42 CFR Part 2 imposes stricter confidentiality on SUD records than HIPAA. Unlike standard medical records (which can be shared for treatment under HIPAA's treatment exception), SUD records generally require explicit patient consent before disclosure - even to other treating providers, with narrow exceptions for emergencies and court orders.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The stronger protections under 42 CFR Part 2 recognize that SUD patients face unique risks from disclosure — including criminal penalties, employment consequences, and family disruption. The consent requirement reflects the need for trust in SUD treatment relationships.",
+          "The stronger protections under 42 CFR Part 2 recognize that SUD patients face unique risks from disclosure - including criminal penalties, employment consequences, and family disruption. The consent requirement reflects the need for trust in SUD treatment relationships.",
         whyWrong: {
           A: "Physical storage location is a practical consideration but is not what distinguishes 42 CFR Part 2 from HIPAA.",
           C: "Record retention is governed by state law, not 42 CFR Part 2.",
-          D: "42 CFR Part 2 restricts disclosure to all parties without consent — it is not limited to access by psychiatrists.",
+          D: "42 CFR Part 2 restricts disclosure to all parties without consent - it is not limited to access by psychiatrists.",
         },
         operationalContext:
           "Develop a consent form that meets 42 CFR Part 2 requirements: patient name, program name, person/organization to whom disclosure is made, purpose of disclosure, specific information to be disclosed, and patient's right to revoke. Track consent status in the EHR.",
@@ -317,20 +317,20 @@ export const ascBehLevel: Level = {
         "Patient signature on any form is sufficient to demonstrate involvement",
         "Documentation of the patient's input into goals and preferences, their agreement (or documented disagreement) with the treatment plan, and any modifications made based on their feedback",
         "Patient involvement is assumed unless the patient specifically objects",
-        "Patient involvement only needs to be documented at the initial treatment plan — updates can be clinician-directed",
+        "Patient involvement only needs to be documented at the initial treatment plan - updates can be clinician-directed",
       ],
       correctIndex: 1,
       explanation:
-        "BEH.120 requires that the patient participates in treatment planning and that this participation is documented. The documentation should reflect actual collaboration — the patient's stated goals, their agreement with the plan, any modifications made based on their input, and the process by which the plan was developed jointly.",
+        "BEH.120 requires that the patient participates in treatment planning and that this participation is documented. The documentation should reflect actual collaboration - the patient's stated goals, their agreement with the plan, any modifications made based on their input, and the process by which the plan was developed jointly.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Patient involvement in treatment planning is both an ethical requirement and a therapeutic strategy. Research consistently shows that patient-led goal-setting produces better treatment adherence and outcomes. Documentation must prove the collaboration occurred — not just note that the plan was reviewed.",
+          "Patient involvement in treatment planning is both an ethical requirement and a therapeutic strategy. Research consistently shows that patient-led goal-setting produces better treatment adherence and outcomes. Documentation must prove the collaboration occurred - not just note that the plan was reviewed.",
         whyWrong: {
-          A: "A signature proves the patient was present — not that they were meaningfully involved in developing the plan.",
-          C: "Involvement cannot be assumed — it must be documented.",
-          D: "Treatment plan updates should also involve patient input — ongoing collaboration throughout treatment is required.",
+          A: "A signature proves the patient was present - not that they were meaningfully involved in developing the plan.",
+          C: "Involvement cannot be assumed - it must be documented.",
+          D: "Treatment plan updates should also involve patient input - ongoing collaboration throughout treatment is required.",
         },
         operationalContext:
           "Use a treatment plan format that includes a 'Patient Goals' section filled in by the patient or in the patient's own words. Have patients co-sign the treatment plan. Document any disagreements and how they were addressed. At each review, document patient's self-assessment of progress toward goals.",
@@ -341,7 +341,7 @@ export const ascBehLevel: Level = {
       question:
         "What is the significance of 'level of care' determination in ambulatory behavioral health treatment?",
       options: [
-        "Level of care only matters for billing purposes — all patients receive equivalent intensity of services",
+        "Level of care only matters for billing purposes - all patients receive equivalent intensity of services",
         "Level of care determines the intensity of services a patient receives, matching clinical need to treatment intensity using criteria such as ASAM for SUD or equivalent criteria for mental health",
         "Level of care is determined solely by the patient's insurance plan",
         "All ambulatory behavioral health patients receive the same level of care by definition",
@@ -353,11 +353,11 @@ export const ascBehLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Level-of-care matching is a clinical safety issue — a patient with severe SUD receiving weekly outpatient counseling when they need intensive outpatient (IOP) or residential treatment is under-treated and at risk for serious adverse outcomes including relapse and death.",
+          "Level-of-care matching is a clinical safety issue - a patient with severe SUD receiving weekly outpatient counseling when they need intensive outpatient (IOP) or residential treatment is under-treated and at risk for serious adverse outcomes including relapse and death.",
         whyWrong: {
           A: "Service intensity must be clinically determined, not assumed to be equivalent across patients.",
-          C: "Insurance coverage may affect access, but clinical need must drive the level-of-care recommendation — the organization then advocates for appropriate coverage.",
-          D: "Ambulatory behavioral health includes a spectrum from outpatient to intensive outpatient to partial hospitalization — all are different levels of care.",
+          C: "Insurance coverage may affect access, but clinical need must drive the level-of-care recommendation - the organization then advocates for appropriate coverage.",
+          D: "Ambulatory behavioral health includes a spectrum from outpatient to intensive outpatient to partial hospitalization - all are different levels of care.",
         },
         operationalContext:
           "Implement level-of-care assessment at intake using ASAM criteria (for SUD) or an equivalent validated tool (for mental health). Document the level-of-care rationale. Reassess at each clinical review. If a patient's needs exceed your organization's level of care, refer to a higher-intensity program.",
@@ -368,23 +368,23 @@ export const ascBehLevel: Level = {
       question:
         "A behavioral health organization uses master's-level counselors to conduct psychiatric medication evaluations and prescribe psychotropic medications. Is this practice compliant under BEH.130?",
       options: [
-        "Yes — master's-level counselors may prescribe medications if supervised by a psychiatrist",
-        "No — prescribing psychotropic medications requires licensure as a prescribing provider (psychiatrist, psychiatric APRN, or as authorized by state law) — master's-level counselors are not authorized to prescribe",
+        "Yes - master's-level counselors may prescribe medications if supervised by a psychiatrist",
+        "No - prescribing psychotropic medications requires licensure as a prescribing provider (psychiatrist, psychiatric APRN, or as authorized by state law) - master's-level counselors are not authorized to prescribe",
         "Prescribing is permitted if the counselor has completed a medication management training course",
         "BEH.130 does not address prescribing authority",
       ],
       correctIndex: 1,
       explanation:
-        "BEH.130 requires that staff practice within their licensed scope of practice. Prescribing psychotropic medications requires prescriptive authority under state law — which is granted to physicians (psychiatrists), psychiatric APRNs, physician assistants with prescriptive authority, and in some states, pharmacists — not to master's-level counselors regardless of supervision.",
+        "BEH.130 requires that staff practice within their licensed scope of practice. Prescribing psychotropic medications requires prescriptive authority under state law - which is granted to physicians (psychiatrists), psychiatric APRNs, physician assistants with prescriptive authority, and in some states, pharmacists - not to master's-level counselors regardless of supervision.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Scope of practice for behavioral health licensure is clearly defined in state law. Master's-level counselors (LPC, LCSW, etc.) are authorized to provide psychotherapy and counseling — prescribing medications is outside their legal scope in all US states.",
+          "Scope of practice for behavioral health licensure is clearly defined in state law. Master's-level counselors (LPC, LCSW, etc.) are authorized to provide psychotherapy and counseling - prescribing medications is outside their legal scope in all US states.",
         whyWrong: {
-          A: "Supervision does not expand scope of practice — it supports practice within the defined scope.",
-          C: "Training courses do not confer prescriptive authority — state licensure and prescriptive authority designation are required.",
-          D: "BEH.130 directly addresses staff qualifications and scope of practice — it is central to this issue.",
+          A: "Supervision does not expand scope of practice - it supports practice within the defined scope.",
+          C: "Training courses do not confer prescriptive authority - state licensure and prescriptive authority designation are required.",
+          D: "BEH.130 directly addresses staff qualifications and scope of practice - it is central to this issue.",
         },
         operationalContext:
           "Create a scope-of-practice reference for each license type at your organization. Clearly delineate who may prescribe, who may diagnose, and who may conduct assessments. Include scope boundaries in job descriptions and use them to assign clinical responsibilities appropriately.",
@@ -396,21 +396,21 @@ export const ascBehLevel: Level = {
         "A patient in a behavioral health program is diagnosed with co-occurring major depressive disorder and alcohol use disorder. Under BEH.120, how should the treatment plan address both conditions?",
       options: [
         "Each condition requires a separate treatment plan managed by different providers without coordination",
-        "The integrated treatment plan should address both diagnoses with specific goals and interventions for each — recognizing their interaction and the need for coordinated treatment",
+        "The integrated treatment plan should address both diagnoses with specific goals and interventions for each - recognizing their interaction and the need for coordinated treatment",
         "Only the primary diagnosis (whichever is more severe) needs to be addressed in the treatment plan",
-        "Alcohol use disorder requires a separate program — it cannot be addressed in a mental health treatment plan",
+        "Alcohol use disorder requires a separate program - it cannot be addressed in a mental health treatment plan",
       ],
       correctIndex: 1,
       explanation:
-        "BEH.120 requires individualized treatment plans based on comprehensive assessment — and for patients with co-occurring disorders, this means integrated treatment addressing both conditions simultaneously. Siloed, condition-separate treatment is not as effective as integrated dual-diagnosis care.",
+        "BEH.120 requires individualized treatment plans based on comprehensive assessment - and for patients with co-occurring disorders, this means integrated treatment addressing both conditions simultaneously. Siloed, condition-separate treatment is not as effective as integrated dual-diagnosis care.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
           "Co-occurring mental health and SUD disorders are the norm rather than the exception. Research shows that integrated treatment of both conditions simultaneously produces better outcomes than sequential or parallel treatment by separate teams.",
         whyWrong: {
-          A: "Separate plans without coordination fragment care — integrated treatment is the evidence-based best practice.",
-          C: "Both diagnoses require specific goals and interventions — the 'primary' diagnosis framing may minimize the importance of addressing both.",
+          A: "Separate plans without coordination fragment care - integrated treatment is the evidence-based best practice.",
+          C: "Both diagnoses require specific goals and interventions - the 'primary' diagnosis framing may minimize the importance of addressing both.",
           D: "Integrated behavioral health programs are specifically designed to address both mental health and SUD concurrently.",
         },
         operationalContext:
@@ -422,7 +422,7 @@ export const ascBehLevel: Level = {
       question:
         "What must be documented when a behavioral health patient refuses a recommended treatment intervention?",
       options: [
-        "Nothing — patient autonomy means refusal requires no documentation",
+        "Nothing - patient autonomy means refusal requires no documentation",
         "The refusal must be documented along with the clinician's explanation of the recommendation, the risks of refusal communicated to the patient, and any alternative plan discussed",
         "A refusal terminates the treatment relationship automatically",
         "Only the patient's signature on a refusal form is needed",
@@ -436,9 +436,9 @@ export const ascBehLevel: Level = {
         whyCorrect:
           "Documenting informed refusal protects both the patient and the organization. It demonstrates that the organization fulfilled its duty to inform, the patient made an autonomous decision with complete information, and an alternative plan was developed to continue supporting the patient's care.",
         whyWrong: {
-          A: "Informed refusal requires documentation precisely because of the patient's autonomous choice — it creates an important clinical and legal record.",
-          C: "Refusal of a specific intervention does not end the treatment relationship — an alternative plan should be explored.",
-          D: "A signature proves acknowledgment — the clinical documentation must also capture what was explained and what alternative plan was offered.",
+          A: "Informed refusal requires documentation precisely because of the patient's autonomous choice - it creates an important clinical and legal record.",
+          C: "Refusal of a specific intervention does not end the treatment relationship - an alternative plan should be explored.",
+          D: "A signature proves acknowledgment - the clinical documentation must also capture what was explained and what alternative plan was offered.",
         },
         operationalContext:
           "Create a 'Treatment Refusal' note template: recommended intervention, explanation of risks and benefits provided, patient's reason for refusal (if given), alternative plan discussed, and clinical plan going forward. Both clinician and patient should sign when possible.",
@@ -449,23 +449,23 @@ export const ascBehLevel: Level = {
       question:
         "Under BEH.150, what distinguishes 'discharge' from a behavioral health program versus a 'warm handoff' to another level of care?",
       options: [
-        "They are the same — any transition out of a program is called a discharge",
+        "They are the same - any transition out of a program is called a discharge",
         "Discharge is the completion of a treatment episode; a warm handoff is an active, supported transition to another provider or level of care with direct communication between the referring and receiving clinicians",
         "Warm handoffs are only required for SUD patients transitioning to residential care",
         "Warm handoffs require a formal transfer agreement between organizations",
       ],
       correctIndex: 1,
       explanation:
-        "BEH.150 requires that transitions between levels of care involve direct clinician-to-clinician communication (warm handoff) to ensure continuity. A warm handoff is an active transition — not just sending records. The referring clinician makes direct contact with the receiving clinician to facilitate the transfer of care.",
+        "BEH.150 requires that transitions between levels of care involve direct clinician-to-clinician communication (warm handoff) to ensure continuity. A warm handoff is an active transition - not just sending records. The referring clinician makes direct contact with the receiving clinician to facilitate the transfer of care.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Warm handoffs dramatically reduce the risk of patients falling through the cracks during care transitions. A direct clinician-to-clinician call or meeting conveys nuanced clinical information that a chart note cannot — particularly about safety concerns, therapeutic relationship factors, and treatment barriers.",
+          "Warm handoffs dramatically reduce the risk of patients falling through the cracks during care transitions. A direct clinician-to-clinician call or meeting conveys nuanced clinical information that a chart note cannot - particularly about safety concerns, therapeutic relationship factors, and treatment barriers.",
         whyWrong: {
-          A: "These are distinct concepts — discharge is completion; warm handoff is a facilitated transition.",
+          A: "These are distinct concepts - discharge is completion; warm handoff is a facilitated transition.",
           C: "Warm handoffs apply to all level-of-care transitions, not only SUD patients transitioning to residential.",
-          D: "Formal transfer agreements address organizational relationships. A warm handoff is a clinical communication practice — it can occur between organizations without a formal agreement.",
+          D: "Formal transfer agreements address organizational relationships. A warm handoff is a clinical communication practice - it can occur between organizations without a formal agreement.",
         },
         operationalContext:
           "Train clinicians on warm handoff technique: (1) call the receiving clinician before the patient's first appointment, (2) share key clinical information (diagnosis, current symptoms, safety history, treatment barriers), (3) review any special considerations for the patient, (4) document the handoff call in the clinical record, including who was contacted and what was communicated.",
@@ -476,8 +476,8 @@ export const ascBehLevel: Level = {
       question:
         "A group therapy session has 12 participants in a room designed for 8. Several patients must sit in the doorway or hallway. What BEH.100 requirement is at risk?",
       options: [
-        "Group size is a therapeutic preference — space requirements do not apply",
-        "The therapeutic setting must be appropriate for the service provided — an overcrowded group therapy space compromises both confidentiality and therapeutic environment",
+        "Group size is a therapeutic preference - space requirements do not apply",
+        "The therapeutic setting must be appropriate for the service provided - an overcrowded group therapy space compromises both confidentiality and therapeutic environment",
         "Patients in the hallway maintain confidentiality as long as the hallway is not public space",
         "Only individual therapy rooms have specific space requirements under BEH standards",
       ],
@@ -490,7 +490,7 @@ export const ascBehLevel: Level = {
         whyCorrect:
           "Group therapy settings must protect participant confidentiality, provide adequate space for the therapeutic modality (including movement-based or experiential techniques), and allow all participants to engage meaningfully. An overcrowded group fails on all these dimensions.",
         whyWrong: {
-          A: "Space requirements in therapeutic settings are a BEH.100 compliance matter — not a preference.",
+          A: "Space requirements in therapeutic settings are a BEH.100 compliance matter - not a preference.",
           C: "Any non-controlled, non-soundproofed space (including a hallway) fails the confidentiality standard.",
           D: "Group therapy settings have space and privacy requirements just as individual therapy rooms do.",
         },
@@ -504,22 +504,22 @@ export const ascBehLevel: Level = {
         "A behavioral health organization reviews a patient's treatment plan six weeks into treatment. The patient has not met any goals and reports feeling worse. What BEH.120 step is now required?",
       options: [
         "Document the lack of progress and continue the current treatment plan for another six weeks",
-        "Revise the treatment plan based on the updated assessment — changing goals, interventions, or level of care as clinically indicated",
+        "Revise the treatment plan based on the updated assessment - changing goals, interventions, or level of care as clinically indicated",
         "Discharge the patient for non-compliance with the treatment plan",
-        "BEH.120 review cycles are not triggered by lack of progress — only by time intervals",
+        "BEH.120 review cycles are not triggered by lack of progress - only by time intervals",
       ],
       correctIndex: 1,
       explanation:
-        "BEH.120 requires treatment plans to be reviewed and updated based on the patient's progress and changing needs. A patient who has not met any goals and reports worsening symptoms requires immediate treatment plan revision — which may include changing interventions, modifying goals, or stepping up to a higher level of care.",
+        "BEH.120 requires treatment plans to be reviewed and updated based on the patient's progress and changing needs. A patient who has not met any goals and reports worsening symptoms requires immediate treatment plan revision - which may include changing interventions, modifying goals, or stepping up to a higher level of care.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "A treatment plan that is not producing results must be changed — not continued unchanged. This is the clinical accountability function of the treatment plan review process.",
+          "A treatment plan that is not producing results must be changed - not continued unchanged. This is the clinical accountability function of the treatment plan review process.",
         whyWrong: {
           A: "Waiting another six weeks when a patient is deteriorating is clinically inappropriate and a BEH.120 failure.",
-          C: "Lack of progress is a clinical problem to be solved — not a reason to discharge the patient.",
-          D: "Treatment plan reviews are triggered by clinical indicators including lack of progress — not solely by calendar intervals.",
+          C: "Lack of progress is a clinical problem to be solved - not a reason to discharge the patient.",
+          D: "Treatment plan reviews are triggered by clinical indicators including lack of progress - not solely by calendar intervals.",
         },
         operationalContext:
           "Define clinical triggers for unscheduled treatment plan reviews: (1) lack of progress toward goals at any scheduled review, (2) significant change in clinical status (improvement or deterioration), (3) safety concern, (4) patient request. Document the clinical rationale for each treatment plan revision.",
@@ -530,7 +530,7 @@ export const ascBehLevel: Level = {
       question:
         "What must be included in the informed consent for telehealth behavioral health services beyond standard informed consent for in-person care?",
       options: [
-        "Standard informed consent is sufficient — telehealth does not require additional elements",
+        "Standard informed consent is sufficient - telehealth does not require additional elements",
         "Informed consent for telehealth must include: the nature of telehealth and its limitations, confidentiality in the telehealth context, the technology platform to be used, what happens in case of technical failure, and emergency contact protocols if the patient experiences a crisis during a session",
         "Only the patient's agreement to pay the telehealth copay is required",
         "Telehealth consent requires notarization",
@@ -545,7 +545,7 @@ export const ascBehLevel: Level = {
           "Telehealth introduces unique risks and limitations that patients must understand: potential technical failures interrupting care, the clinician's inability to physically intervene in an emergency, and confidentiality risks on the patient's end. These require specific informed consent elements.",
         whyWrong: {
           A: "Standard consent does not cover telehealth-specific risks and modality limitations.",
-          C: "Financial consent is a billing function — it does not constitute informed consent for the telehealth modality.",
+          C: "Financial consent is a billing function - it does not constitute informed consent for the telehealth modality.",
           D: "Notarization is not required for telehealth consent.",
         },
         operationalContext:
@@ -557,14 +557,14 @@ export const ascBehLevel: Level = {
       question:
         "A behavioral health organization's licensed clinical social worker (LCSW) conducts psychological testing and provides formal diagnostic assessments using standardized psychological tests such as the MMPI-2. Is this within scope of practice under BEH.130?",
       options: [
-        "Yes — LCSWs may conduct any type of assessment if supervised by a psychologist",
-        "It depends on state law — in many states psychological testing is restricted to licensed psychologists, and the organization must verify state scope of practice before authorizing this service",
+        "Yes - LCSWs may conduct any type of assessment if supervised by a psychologist",
+        "It depends on state law - in many states psychological testing is restricted to licensed psychologists, and the organization must verify state scope of practice before authorizing this service",
         "LCSWs are always authorized to conduct psychological testing in behavioral health settings",
         "Psychological testing scope of practice is determined by the employer, not state law",
       ],
       correctIndex: 1,
       explanation:
-        "Psychological testing scope of practice varies by state. In many states, the administration and interpretation of formal psychological tests (MMPI, Rorschach, intelligence testing) is restricted to licensed psychologists. BEH.130 requires staff to practice within their licensed scope — the organization must verify state law before authorizing LCSWs or other non-psychologists to conduct formal psychological testing.",
+        "Psychological testing scope of practice varies by state. In many states, the administration and interpretation of formal psychological tests (MMPI, Rorschach, intelligence testing) is restricted to licensed psychologists. BEH.130 requires staff to practice within their licensed scope - the organization must verify state law before authorizing LCSWs or other non-psychologists to conduct formal psychological testing.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
@@ -572,8 +572,8 @@ export const ascBehLevel: Level = {
           "State scope-of-practice laws are the controlling authority for behavioral health professional practice. Some states restrict formal psychological testing to licensed psychologists; others permit LCSWs with specific training. The organization must verify the applicable state law, not assume broad authorization.",
         whyWrong: {
           A: "Supervision does not expand statutory scope of practice.",
-          C: "LCSWs' authorization for psychological testing varies by state — it is not universal.",
-          D: "State law establishes scope of practice — employers cannot authorize services that exceed the licensed scope.",
+          C: "LCSWs' authorization for psychological testing varies by state - it is not universal.",
+          D: "State law establishes scope of practice - employers cannot authorize services that exceed the licensed scope.",
         },
         operationalContext:
           "Review each state's behavioral health licensing statutes and scope-of-practice regulations before authorizing any service. Consult the state licensing board or legal counsel when scope questions arise. Document the regulatory basis for each clinical service provided by each license category.",
@@ -585,7 +585,7 @@ export const ascBehLevel: Level = {
         "Under BEH.150, discharge planning in behavioral health begins at what point in the treatment episode?",
       options: [
         "When the patient requests discharge",
-        "At admission — discharge planning begins from the first day of treatment",
+        "At admission - discharge planning begins from the first day of treatment",
         "When the patient has met all treatment plan goals",
         "When the clinical team determines discharge is imminent",
       ],
@@ -599,7 +599,7 @@ export const ascBehLevel: Level = {
           "Early discharge planning in behavioral health reflects the reality that many patients disengage before completing treatment. Starting the conversation about transition, community resources, and aftercare at admission increases the likelihood that patients are connected to appropriate support before they leave.",
         whyWrong: {
           A: "Patient-requested discharge triggers documentation requirements but discharge planning should have started at admission.",
-          C: "Waiting until goals are met to begin discharge planning is reactive — it may delay transition when the patient is ready.",
+          C: "Waiting until goals are met to begin discharge planning is reactive - it may delay transition when the patient is ready.",
           D: "Imminent discharge planning is far too late to ensure appropriate community support and aftercare resources are in place.",
         },
         operationalContext:

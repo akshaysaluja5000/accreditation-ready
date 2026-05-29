@@ -23,7 +23,7 @@ const AGENTS: Agent[] = [
     number: 1,
     title: "Survey Readiness Agent",
     description:
-      "Continuously monitors every standard across all facilities — which ones have evidence attached, which staff haven't completed training, which policies are expiring. Surfaces a live readiness score that is always current. Not a report you run — a score that never stops updating.",
+      "Continuously monitors every standard across all facilities - which ones have evidence attached, which staff haven't completed training, which policies are expiring. Surfaces a live readiness score that is always current. Not a report you run - a score that never stops updating.",
     replaces: "The manual binder audit facilities run in the weeks before a survey.",
     icon: Radar,
     iconBg: "bg-primary/10",
@@ -34,7 +34,7 @@ const AGENTS: Agent[] = [
     number: 2,
     title: "Content Intelligence Agent",
     description:
-      "When a new policy or procedure is uploaded, this agent reads it, auto-tags it to the relevant JC/AAAHC standards, generates quiz questions from it, and flags if the policy contradicts a standard. Your clearest differentiator — no other compliance platform does this automatically.",
+      "When a new policy or procedure is uploaded, this agent reads it, auto-tags it to the relevant JC/AAAHC standards, generates quiz questions from it, and flags if the policy contradicts a standard. Your clearest differentiator - no other compliance platform does this automatically.",
     replaces: "Manual policy reviews and the months of lag before new content reaches staff training.",
     icon: FileSearch2,
     iconBg: "bg-violet-500/10",
@@ -45,7 +45,7 @@ const AGENTS: Agent[] = [
     number: 3,
     title: "Staff Learning Agent",
     description:
-      "Tracks each staff member's diagnostic scores, completion gaps, and quiz performance — then dynamically re-routes their learning plan. It knows who is weakest on sterile field standards and pushes those questions. Sends escalating nudges without a manager having to chase anyone.",
+      "Tracks each staff member's diagnostic scores, completion gaps, and quiz performance - then dynamically re-routes their learning plan. It knows who is weakest on sterile field standards and pushes those questions. Sends escalating nudges without a manager having to chase anyone.",
     replaces: "Manually assigned training plans and manager follow-up emails.",
     icon: GraduationCap,
     iconBg: "bg-emerald-500/10",
@@ -56,7 +56,7 @@ const AGENTS: Agent[] = [
     number: 4,
     title: "Regulatory Watch Agent",
     description:
-      "Monitors Joint Commission, DNV, AAAHC, and CMS public channels for standard updates, new chapters, and survey focus shifts. When the NPG chapter launched January 2026, this agent would have flagged it automatically and initiated a content build task — rather than discovering the gap months later.",
+      "Monitors Joint Commission, DNV, AAAHC, and CMS public channels for standard updates, new chapters, and survey focus shifts. When the NPG chapter launched January 2026, this agent would have flagged it automatically and initiated a content build task - rather than discovering the gap months later.",
     replaces: "Manual monitoring of accreditation body bulletins, field communications, and update emails.",
     icon: Telescope,
     iconBg: "bg-amber-500/10",
@@ -67,7 +67,7 @@ const AGENTS: Agent[] = [
     number: 5,
     title: "Executive Readiness Agent",
     description:
-      "Prepares the facility's readiness narrative for the CEO/CNO level — not just a dashboard, but a drafted summary of where you stand, what's at risk, and what actions are due this week. The difference between data and a briefing.",
+      "Prepares the facility's readiness narrative for the CEO/CNO level - not just a dashboard, but a drafted summary of where you stand, what's at risk, and what actions are due this week. The difference between data and a briefing.",
     replaces: "Manually assembled board reports and pre-survey executive prep sessions.",
     icon: BriefcaseBusiness,
     iconBg: "bg-sky-500/10",
@@ -134,7 +134,7 @@ export default function ExecutiveComplianceConsolePage() {
           transition={{ duration: 0.2 }}
         >
           <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl" data-testid="text-console-intro">
-            Instead of staff completing forms and managers chasing compliance, the Executive Compliance Console deploys a network of specialized agents that run the platform continuously — monitoring, learning, reporting, and responding without requiring manual oversight at every step.
+            Instead of staff completing forms and managers chasing compliance, the Executive Compliance Console deploys a network of specialized agents that run the platform continuously - monitoring, learning, reporting, and responding without requiring manual oversight at every step.
           </p>
         </motion.div>
 

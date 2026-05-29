@@ -122,7 +122,7 @@ export function TopicQuizModal({
   return (
     <Dialog open={open} onOpenChange={handleOpen}>
       <DialogContent className="max-w-lg w-full gap-0 p-0 flex flex-col max-h-[90dvh]">
-        {/* Header — always visible, never scrolls away */}
+        {/* Header - always visible, never scrolls away */}
         <DialogHeader className="px-6 pt-5 pb-4 border-b border-border flex-shrink-0">
           <div className="flex items-center gap-2">
             <BrainCircuit size={18} className="text-primary flex-shrink-0" />
@@ -287,8 +287,8 @@ export function TopicQuizModal({
                     {pct >= 80
                       ? "Strong grasp of this topic."
                       : pct >= 60
-                      ? "Good start — review the explanations to reinforce."
-                      : "Keep practicing — this is a high-risk area."}
+                      ? "Good start - review the explanations to reinforce."
+                      : "Keep practicing - this is a high-risk area."}
                   </p>
                 </div>
 

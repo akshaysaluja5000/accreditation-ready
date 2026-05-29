@@ -36,10 +36,10 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
         {
           question: "A patient arrives for an elective procedure with an H&P completed 28 days ago. The attending physician documents a brief update note stating 'no changes.' The update was written 26 hours before the scheduled procedure. A JC surveyor reviews the chart. What is the compliance finding?",
           options: [
-          "Fully compliant — the H&P is within 30 days and has an update note",
-          "Non-compliant — the update must be completed within 24 hours before surgery; 26 hours exceeds the requirement",
-          "Compliant — the 24-hour update rule applies only when the H&P is older than 30 days",
-          "Non-compliant — the original H&P should have been performed within 7 days for elective cases"
+          "Fully compliant - the H&P is within 30 days and has an update note",
+          "Non-compliant - the update must be completed within 24 hours before surgery; 26 hours exceeds the requirement",
+          "Compliant - the 24-hour update rule applies only when the H&P is older than 30 days",
+          "Non-compliant - the original H&P should have been performed within 7 days for elective cases"
         ],
         correctIndex: 1,
           explanation: "Per CMS CoP §482.51(b)(1) and Joint Commission standards, when the H&P is performed more than 24 hours prior to the procedure, an updated examination must be completed and documented within 24 hours before the procedure. At 26 hours, the update is outside the allowable window and is non-compliant.",
@@ -54,7 +54,7 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
           "The resident's H&P is sufficient if the attending co-signs within 72 hours post-procedure"
         ],
         correctIndex: 2,
-          explanation: "Joint Commission PC.03.01.03 and medical staff bylaws require that the H&P be performed or authenticated by a credentialed practitioner before the procedure begins. While residents may document the H&P, the responsible attending must authenticate it per the facility's medical staff rules. Emergency status does not waive this requirement — it only allows the facility to define an expedited process.",
+          explanation: "Joint Commission PC.03.01.03 and medical staff bylaws require that the H&P be performed or authenticated by a credentialed practitioner before the procedure begins. While residents may document the H&P, the responsible attending must authenticate it per the facility's medical staff rules. Emergency status does not waive this requirement - it only allows the facility to define an expedited process.",
           expertXp: 35
         }
       ]
@@ -97,12 +97,12 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
           expertXp: 30
         },
         {
-          question: "A JC surveyor is tracing a case where the surgeon performed an intraoperative add-on procedure. The surveyor finds: (1) a second time-out was performed, (2) no separate consent was obtained, and (3) the surgeon documented 'emergent finding requiring immediate intervention — abscess encountered.' The patient was hemodynamically stable. How should the surveyor evaluate this?",
+          question: "A JC surveyor is tracing a case where the surgeon performed an intraoperative add-on procedure. The surveyor finds: (1) a second time-out was performed, (2) no separate consent was obtained, and (3) the surgeon documented 'emergent finding requiring immediate intervention - abscess encountered.' The patient was hemodynamically stable. How should the surveyor evaluate this?",
           options: [
-          "Compliant — the surgeon documented the emergent finding which justifies proceeding without separate consent",
-          "Compliant — the second time-out alone satisfies all requirements for add-on procedures",
-          "Non-compliant — the hospital should have contacted the ethics committee before proceeding",
-          "Non-compliant — an abscess in a hemodynamically stable patient does not constitute an emergency that"
+          "Compliant - the surgeon documented the emergent finding which justifies proceeding without separate consent",
+          "Compliant - the second time-out alone satisfies all requirements for add-on procedures",
+          "Non-compliant - the hospital should have contacted the ethics committee before proceeding",
+          "Non-compliant - an abscess in a hemodynamically stable patient does not constitute an emergency that"
         ],
         correctIndex: 3,
           explanation: "The emergency exception to informed consent applies only when the patient faces an immediate life-threatening situation and delay to obtain consent would cause serious harm. A hemodynamically stable patient with an abscess does not meet this threshold. The team should have attempted to obtain consent from the patient's surrogate decision-maker or awakened the patient if feasible. Joint Commission surveyors specifically look for appropriate application of the emergency consent exception.",
@@ -132,7 +132,7 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
           "A dot of indelible ink on the operative side"
         ],
         correctIndex: 2,
-          explanation: "The Joint Commission requires the mark to be unambiguous (initials or 'YES' — never an 'X' which can be interpreted as 'not here'), placed at or near the procedure site, and visible after the patient is prepped and draped. The mark must be made with a permanent marker.",
+          explanation: "The Joint Commission requires the mark to be unambiguous (initials or 'YES' - never an 'X' which can be interpreted as 'not here'), placed at or near the procedure site, and visible after the patient is prepped and draped. The mark must be made with a permanent marker.",
           expertXp: 30
         },
         {
@@ -150,13 +150,13 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
         {
           question: "During a JC survey, a facility's site marking policy is reviewed. The policy permits the use of adhesive arrows for site marking on patients receiving anticoagulation therapy (to avoid needle-stick bruising from marking). A surveyor asks whether this practice is acceptable. What is the correct assessment?",
           options: [
-          "Non-compliant — Joint Commission requires ink markings only and does not permit adhesive alternatives",
-          "Compliant — adhesive markers are acceptable as an alternative method if the facility's policy documents when",
-          "Compliant — any visible indicator is acceptable without additional policy documentation",
-          "Non-compliant — anticoagulated patients should simply have ink marks placed with lighter pressure"
+          "Non-compliant - Joint Commission requires ink markings only and does not permit adhesive alternatives",
+          "Compliant - adhesive markers are acceptable as an alternative method if the facility's policy documents when",
+          "Compliant - any visible indicator is acceptable without additional policy documentation",
+          "Non-compliant - anticoagulated patients should simply have ink marks placed with lighter pressure"
         ],
         correctIndex: 1,
-          explanation: "Joint Commission FAQ guidance on UP.01.02.01 permits alternative marking methods (including adhesive markers) when standard indelible ink marking is not feasible or appropriate, provided the facility has a written policy specifying when alternatives are used, who applies them, and how they remain visible through prep and draping. The key requirement is that the mark be unambiguous, at or near the site, and visible after preparation — the medium is flexible if properly governed by policy.",
+          explanation: "Joint Commission FAQ guidance on UP.01.02.01 permits alternative marking methods (including adhesive markers) when standard indelible ink marking is not feasible or appropriate, provided the facility has a written policy specifying when alternatives are used, who applies them, and how they remain visible through prep and draping. The key requirement is that the mark be unambiguous, at or near the site, and visible after preparation - the medium is flexible if properly governed by policy.",
           expertXp: 35
         }
       ]
@@ -201,13 +201,13 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
         {
           question: "A JC surveyor reviews 50 time-out records and finds that in 8 cases, the documented time-out occurred more than 15 minutes before the incision time due to delays (equipment issues, attending late). The time-outs were not repeated before incision. What is the surveyor's likely finding?",
           options: [
-          "Non-compliant — the standard requires the time-out to occur within exactly 5 minutes of incision",
-          "Compliant — there is no specific time limit between time-out and incision in Joint Commission standards",
-          "Non-compliant — the time-out must occur 'immediately before' the procedure",
-          "Compliant — the time-outs were performed and documented; the timing gap is acceptable"
+          "Non-compliant - the standard requires the time-out to occur within exactly 5 minutes of incision",
+          "Compliant - there is no specific time limit between time-out and incision in Joint Commission standards",
+          "Non-compliant - the time-out must occur 'immediately before' the procedure",
+          "Compliant - the time-outs were performed and documented; the timing gap is acceptable"
         ],
         correctIndex: 2,
-          explanation: "While Joint Commission does not specify an exact time limit, UP.01.03.01 requires the time-out occur 'immediately before starting the procedure.' When significant delays occur between the time-out and the start of the procedure — especially with intervening events like team member changes, patient repositioning, or equipment setup — conditions verified during the original time-out may no longer be valid. The facility should have a policy requiring a repeat time-out when significant delays or changes occur.",
+          explanation: "While Joint Commission does not specify an exact time limit, UP.01.03.01 requires the time-out occur 'immediately before starting the procedure.' When significant delays occur between the time-out and the start of the procedure - especially with intervening events like team member changes, patient repositioning, or equipment setup - conditions verified during the original time-out may no longer be valid. The facility should have a policy requiring a repeat time-out when significant delays or changes occur.",
           expertXp: 35
         }
       ]
@@ -252,10 +252,10 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
         {
           question: "A JC surveyor is reviewing your facility's site marking exemption policy. The policy exempts the following from site marking: midline sternotomy, emergency intubation, single-organ cases (appendectomy, cholecystectomy), and all interventional radiology procedures. The surveyor identifies a compliance gap. Which exemption is problematic?",
           options: [
-          "Emergency intubation — all airway procedures require marking",
-          "Single-organ cases — appendectomy and cholecystectomy should still be marked",
+          "Emergency intubation - all airway procedures require marking",
+          "Single-organ cases - appendectomy and cholecystectomy should still be marked",
           "All interventional radiology procedures",
-          "Midline sternotomy — cardiac procedures always require site marking"
+          "Midline sternotomy - cardiac procedures always require site marking"
         ],
         correctIndex: 2,
           explanation: "Blanket-exempting all interventional radiology procedures is non-compliant because many IR procedures involve laterality (e.g., left vs. right renal artery embolization, unilateral nephrostomy, lateralized biopsies). Each procedure must be individually assessed for laterality, multiple structures, or multiple levels. Midline sternotomy and single-organ cases without laterality can appropriately be exempted, and emergent airway procedures may follow alternative verification processes.",
@@ -304,7 +304,7 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
           question: "A JC surveyor discovers that a facility uses telephone interpreter services for informed consent in surgical cases. The surveyor asks what quality assurance process exists for telephone interpreters. The facility has no QA process. What standard does this implicate, and what corrective action is required?",
           options: [
           "Joint Commission RI.01.01",
-          "Standard addresses telephone interpretation quality — only in-person interpreters require QA",
+          "Standard addresses telephone interpretation quality - only in-person interpreters require QA",
           "The facility simply needs to switch to in-person interpreters for all surgical consents",
           "Telephone interpretation is prohibited for surgical consent under Joint Commission standards"
         ],
@@ -342,10 +342,10 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
         {
           question: "A JC surveyor observes that the facility uses its own customized surgical safety checklist rather than the exact WHO version. The customized checklist includes all WHO elements plus facility-specific additions. Is this compliant?",
           options: [
-          "Compliant — Joint Commission allows facilities to customize their surgical safety",
-          "Non-compliant — any deviation from the WHO checklist invalidates the safety process",
-          "Compliant — but only if the WHO formally approves the modifications",
-          "Non-compliant — facilities must use the exact WHO checklist without modifications"
+          "Compliant - Joint Commission allows facilities to customize their surgical safety",
+          "Non-compliant - any deviation from the WHO checklist invalidates the safety process",
+          "Compliant - but only if the WHO formally approves the modifications",
+          "Non-compliant - facilities must use the exact WHO checklist without modifications"
         ],
         correctIndex: 0,
           explanation: "Joint Commission does not mandate the use of the WHO checklist specifically. Rather, it requires compliance with the Universal Protocol standards (UP.01.01.01 pre-procedure verification, UP.01.02.01 site marking, UP.01.03.01 time-out). Facilities may customize their checklists to meet these standards and add institution-specific elements. The WHO checklist is a widely adopted framework but customization is both permitted and encouraged to fit the facility's workflow.",
@@ -405,9 +405,9 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
         {
           question: "During a JC tracer, the surveyor discovers that the facility's temporary identification policy uses sequential naming (Trauma 1, Trauma 2, Trauma 3) and that the temporary identifiers are not reconciled with the patient's true identity when it becomes known. The surveyor also finds that the wristband with the temporary ID was not replaced when the patient was identified 6 hours later. What are the compliance gaps?",
           options: [
-          "Only the wristband issue is a problem — sequential naming is acceptable",
-          "Only the naming convention is problematic — wristband replacement is not required if the patient has been verbally identified",
-          "Neither is a compliance gap — temporary identification processes are at the facility's discretion",
+          "Only the wristband issue is a problem - sequential naming is acceptable",
+          "Only the naming convention is problematic - wristband replacement is not required if the patient has been verbally identified",
+          "Neither is a compliance gap - temporary identification processes are at the facility's discretion",
           "Both are compliance gaps: sequential numbering creates confusion risk among multiple unknowns"
         ],
         correctIndex: 3,
@@ -418,7 +418,7 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
     },
     {
       id: "dd-ssc9",
-      baseQuestion: "According to Joint Commission National Performance Goals (NPG 1 — correct patient, correct care, correct time), when must surgical specimens be labeled?",
+      baseQuestion: "According to Joint Commission National Performance Goals (NPG 1 - correct patient, correct care, correct time), when must surgical specimens be labeled?",
       baseOptions: [
         "When the circulating nurse has a free moment",
         "At the point of collection",
@@ -444,10 +444,10 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
         {
           question: "A surgeon hands off three specimens in rapid succession during a complex case: right axillary sentinel node, right breast mass, and right breast margin. The circulating nurse labels them at the back table after all three are collected. A JC surveyor observes this. What is the compliance finding?",
           options: [
-          "Compliant — as long as the nurse correctly identifies each specimen when labeling",
-          "Non-compliant — but only because the nurse should have used pre-printed labels",
-          "Compliant — all specimens were labeled before leaving the OR",
-          "Non-compliant — each specimen must be labeled immediately at the point of"
+          "Compliant - as long as the nurse correctly identifies each specimen when labeling",
+          "Non-compliant - but only because the nurse should have used pre-printed labels",
+          "Compliant - all specimens were labeled before leaving the OR",
+          "Non-compliant - each specimen must be labeled immediately at the point of"
         ],
         correctIndex: 3,
           explanation: "NPG 1 / formerly NPSG.01.03.01 requires labeling at the point of collection, in the presence of the patient. Collecting multiple specimens and labeling them later creates significant risk of mislabeling because the nurse must rely on memory or position to identify which specimen is which. Each specimen must be labeled immediately upon collection with read-back verification before the next specimen is passed off the field.",
@@ -456,7 +456,7 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
         {
           question: "A JC surveyor reviews a sentinel event involving a specimen labeling error: a right breast biopsy specimen was mislabeled as left breast, leading to the wrong side being treated with radiation. The root cause analysis reveals that the surgeon verbally stated the laterality, the circulating nurse repeated it back, but wrote the wrong side on the label. What system-level corrective action would best address this failure mode?",
           options: [
-          "Add a third person to the verification process — the scrub tech must also confirm laterality verbally",
+          "Add a third person to the verification process - the scrub tech must also confirm laterality verbally",
           "Implement a redundant verification system: surgeon states laterality, nurse labels the specimen",
           "Require surgeons to write their own specimen labels to eliminate transcription errors",
           "Switch to electronic labeling systems which eliminate all human error"
@@ -495,10 +495,10 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
         {
           question: "During the root cause analysis of the near-miss events, the team discovers that in both cases, the time-out was led by the circulating nurse while the surgeon was scrubbing and the anesthesiologist was charting. Staff interviews reveal this is a common practice 'to save time.' What Joint Commission standard is being violated, and what corrective action is most appropriate?",
           options: [
-          "Standard is violated — the time-out was performed and documented",
-          "The violation is with staffing standards — the unit needs more nurses so time-outs don't feel rushed",
+          "Standard is violated - the time-out was performed and documented",
+          "The violation is with staffing standards - the unit needs more nurses so time-outs don't feel rushed",
           "UP.01.03.01 requires active participation of all team members",
-          "UP.01.02.01 is violated — the marking process should compensate for incomplete time-outs"
+          "UP.01.02.01 is violated - the marking process should compensate for incomplete time-outs"
         ],
         correctIndex: 2,
           explanation: "UP.01.03.01 explicitly requires that the time-out involve 'the immediate members of the procedure team: the individual performing the procedure, anesthesia providers, and circulating nurse, operating room technician, and other active participants who will be participating in the procedure from the beginning.' All must actively participate. The corrective action must address both the individual behavior and the systemic culture that normalized passive time-outs.",
@@ -547,12 +547,12 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
           question: "A junior circulating nurse tells the surveyor she once noticed a discrepancy during a time-out but felt intimidated to speak up because the surgeon dismissed her concern and said 'let's just go.' She did not escalate the issue. What Joint Commission concept does this scenario illustrate, and what systemic fix is required?",
           options: [
           "This is an interpersonal conflict that should be handled by human resources",
-          "This illustrates a documentation problem — the nurse should have documented her concern in the chart",
+          "This illustrates a documentation problem - the nurse should have documented her concern in the chart",
           "This illustrates a failure of the 'just culture' and psychological safety environment",
-          "This illustrates a training gap — the nurse needs additional education on the Universal Protocol"
+          "This illustrates a training gap - the nurse needs additional education on the Universal Protocol"
         ],
         correctIndex: 2,
-          explanation: "Joint Commission Leadership standard LD.03.01.01 requires a culture of safety where staff feel free to report safety concerns without fear of retaliation. The scenario illustrates a failure of psychological safety and hierarchical intimidation — a well-documented contributor to surgical errors. The corrective action must include a formal 'stop the line' policy, leadership commitment to non-retaliation, crew resource management (CRM) training, and mechanisms for anonymous reporting.",
+          explanation: "Joint Commission Leadership standard LD.03.01.01 requires a culture of safety where staff feel free to report safety concerns without fear of retaliation. The scenario illustrates a failure of psychological safety and hierarchical intimidation - a well-documented contributor to surgical errors. The corrective action must include a formal 'stop the line' policy, leadership commitment to non-retaliation, crew resource management (CRM) training, and mechanisms for anonymous reporting.",
           expertXp: 30
         },
         {
@@ -560,7 +560,7 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
           options: [
           "The voluntary reporting system should be replaced with a mandatory reporting system to increase numbers",
           "The low reporting rate likely indicates underreporting due to barriers such as fear of retaliation",
-          "Leadership's interpretation is reasonable — low reporting indicates high compliance",
+          "Leadership's interpretation is reasonable - low reporting indicates high compliance",
           "The reporting rate is only concerning if the facility has had recent sentinel events"
         ],
         correctIndex: 1,
@@ -609,9 +609,9 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
         {
           question: "A JC surveyor asks the OR charge nurse to describe the facility's surgical fire drill process. The charge nurse states that fire drills are conducted annually in the OR and that staff know to 'stop, drop, and roll.' The surveyor identifies several deficiencies. Which response identifies the most critical gap?",
           options: [
-          "The gap is that only the charge nurse was interviewed — all staff should be able to describe the process",
+          "The gap is that only the charge nurse was interviewed - all staff should be able to describe the process",
           "Fire drills should include participation from the fire department each time",
-          "Annual drills are insufficient — Joint Commission requires monthly fire drills in the OR",
+          "Annual drills are insufficient - Joint Commission requires monthly fire drills in the OR",
           "The response protocol described is for personal clothing fires"
         ],
         correctIndex: 3,
@@ -634,7 +634,7 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
       baseXp: 15,
       followUps: [
         {
-          question: "The final surgical count before closure is incorrect — one laparotomy sponge is unaccounted for. What is the required course of action?",
+          question: "The final surgical count before closure is incorrect - one laparotomy sponge is unaccounted for. What is the required course of action?",
           options: [
           "Repeat the count, conduct a thorough wound",
           "Ask the team to recount from memory",
@@ -661,7 +661,7 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
           question: "A JC surveyor reviews a facility's retained surgical item prevention program. The facility uses radiopaque sponges and manual counting. The surveyor notes that the facility has had 2 retained sponge events in 18 months despite correct final counts being documented in both cases. What additional technology and process improvement should the surveyor expect the facility to evaluate?",
           options: [
           "The facility should switch from laparotomy sponges to non-radiopaque gauze to make X-ray detection easier",
-          "Additional measures are needed — the counts were documented as correct, so the system worked",
+          "Additional measures are needed - the counts were documented as correct, so the system worked",
           "The facility should simply increase the number of count audits performed by management",
           "The facility should consider implementing adjunct technology (radiofrequency detection systems or barcode"
         ],
@@ -711,13 +711,13 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
         {
           question: "A JC surveyor reviews the facility's blood administration policies and observes that in the OR, the two verifiers for blood products are consistently the circulating nurse and the surgical technologist. The facility's policy defines 'qualified individuals' for blood verification as 'RN or physician.' What is the compliance finding?",
           options: [
-          "Compliant — any two healthcare workers can serve as verifiers for blood products",
-          "Non-compliant — blood products in the OR should only be verified by the anesthesiologist and the circulating nurse",
-          "Non-compliant — the surgical technologist does not meet the facility's own definition of 'qualified individuals'",
-          "Compliant — the surgical technologist is a member of the operative team and is qualified by proximity"
+          "Compliant - any two healthcare workers can serve as verifiers for blood products",
+          "Non-compliant - blood products in the OR should only be verified by the anesthesiologist and the circulating nurse",
+          "Non-compliant - the surgical technologist does not meet the facility's own definition of 'qualified individuals'",
+          "Compliant - the surgical technologist is a member of the operative team and is qualified by proximity"
         ],
         correctIndex: 2,
-          explanation: "JC NPG 1 / formerly NPSG.01.03.01 requires that blood product verification be performed by individuals qualified per the facility's own policy. If the facility's policy defines qualified verifiers as 'RN or physician,' then using a surgical technologist — regardless of competency — violates the facility's own standard. The surveyor would cite this as non-compliance with the facility's implementation of NPG 1. The facility must either change its policy to include surgical technologists (with competency validation) or ensure only defined qualified individuals perform verification.",
+          explanation: "JC NPG 1 / formerly NPSG.01.03.01 requires that blood product verification be performed by individuals qualified per the facility's own policy. If the facility's policy defines qualified verifiers as 'RN or physician,' then using a surgical technologist - regardless of competency - violates the facility's own standard. The surveyor would cite this as non-compliance with the facility's implementation of NPG 1. The facility must either change its policy to include surgical technologists (with competency validation) or ensure only defined qualified individuals perform verification.",
           expertXp: 35
         }
       ]
@@ -750,10 +750,10 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
         {
           question: "A JC surveyor traces a patient through pre-procedure verification and finds that the verification was performed in the holding area but not re-verified at the OR door or upon entering the OR. The facility's policy states verification occurs 'at each transition point.' What is the compliance finding?",
           options: [
-          "Compliant — verification in the holding area is sufficient since the patient has not changed",
-          "Compliant — re-verification is only required if there is a change in team members",
-          "Non-compliant — the facility's own policy requires verification at each transition point",
-          "Non-compliant — but only because the OR door is where the official verification should occur"
+          "Compliant - verification in the holding area is sufficient since the patient has not changed",
+          "Compliant - re-verification is only required if there is a change in team members",
+          "Non-compliant - the facility's own policy requires verification at each transition point",
+          "Non-compliant - but only because the OR door is where the official verification should occur"
         ],
         correctIndex: 2,
           explanation: "Joint Commission UP.01.01.01 describes pre-procedure verification as an ongoing process at each transition point. When a facility's policy specifies verification at each transition (which aligns with JC expectations), failure to verify at the holding-to-OR transition is non-compliant with both the facility's policy and the standard. Each transition represents an opportunity to catch discrepancies before they reach the time-out.",
@@ -763,12 +763,12 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
           question: "A JC surveyor discovers that a facility's pre-procedure verification process relies entirely on a single paper checklist that travels with the patient. The checklist is completed with checkmarks and no narrative documentation. Staff interviews reveal that nurses sometimes check boxes without actually performing the verification steps ('checkbox culture'). What systemic risk does this represent, and what corrective action best addresses it?",
           options: [
           "The facility should eliminate checklists entirely and rely on verbal verification",
-          "The paper checklist is adequate — the facility should simply re-educate staff on its importance",
+          "The paper checklist is adequate - the facility should simply re-educate staff on its importance",
           "The systemic risk is normalization of deviance where safety checks become rote rather than",
           "The facility should add more checkboxes to the checklist to make it more comprehensive"
         ],
         correctIndex: 2,
-          explanation: "This scenario illustrates 'normalization of deviance' — a well-documented safety culture failure where safety processes become perfunctory rituals rather than meaningful verifications. Joint Commission LD.03.01.01 (safety culture) and PI.01.01.01 (performance improvement) require organizations to identify and address such systemic risks. Effective corrective actions include redesigning verification tools to require active engagement (free-text responses, specific data entry), conducting unannounced direct observation audits, implementing electronic verification with hard stops that prevent progression without completion, and addressing the underlying culture through leadership engagement.",
+          explanation: "This scenario illustrates 'normalization of deviance' - a well-documented safety culture failure where safety processes become perfunctory rituals rather than meaningful verifications. Joint Commission LD.03.01.01 (safety culture) and PI.01.01.01 (performance improvement) require organizations to identify and address such systemic risks. Effective corrective actions include redesigning verification tools to require active engagement (free-text responses, specific data entry), conducting unannounced direct observation audits, implementing electronic verification with hard stops that prevent progression without completion, and addressing the underlying culture through leadership engagement.",
           expertXp: 35
         }
       ]
@@ -801,10 +801,10 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
         {
           question: "A JC surveyor asks the perioperative director what specific alternative marking methods are included in the facility's policy for patients where standard indelible ink is not visible. The director responds that 'staff use their best judgment on a case-by-case basis.' What is the compliance finding?",
           options: [
-          "Compliant — Joint Commission allows flexibility in marking methods",
-          "Non-compliant — the facility must have a written policy specifying approved",
-          "Non-compliant — but only because the director should have been more specific in the response",
-          "Compliant — clinical judgment is always the gold standard"
+          "Compliant - Joint Commission allows flexibility in marking methods",
+          "Non-compliant - the facility must have a written policy specifying approved",
+          "Non-compliant - but only because the director should have been more specific in the response",
+          "Compliant - clinical judgment is always the gold standard"
         ],
         correctIndex: 1,
           explanation: "Joint Commission UP.01.02.01 requires organizations to have a written, standardized process for site marking, including alternative methods. Relying on individual judgment without a policy creates inconsistency and potential safety gaps. The policy must specify what alternatives are approved (e.g., specific marker colors, adhesive markers, wristband-style markers), criteria for when they are used, who applies them, and how they are verified during the time-out.",
@@ -852,9 +852,9 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
         {
           question: "A JC surveyor observes the OR-to-PACU handoff and notes that the anesthesiologist gives a rapid verbal report while the PACU nurse is simultaneously connecting monitors and assessing the patient. The nurse does not ask any clarifying questions. What Joint Commission standard is at risk, and what improvement is needed?",
           options: [
-          "PC.02.02.01 — the issue is with discharge planning, not handoff",
+          "PC.02.02.01 - the issue is with discharge planning, not handoff",
           "NPSG.02.03.01 (handoff communication)",
-          "Standard is at risk — this is a normal and efficient handoff process",
+          "Standard is at risk - this is a normal and efficient handoff process",
           "The handoff is adequate as long as it is documented in the chart"
         ],
         correctIndex: 1,
@@ -903,9 +903,9 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
         {
           question: "A surgeon argues that site marking for a thyroid lobectomy is unnecessary because 'the neck is so small that left and right are obvious, and I'll confirm with ultrasound intraoperatively.' A JC surveyor hears this during a tracer interview. What is the surveyor's assessment?",
           options: [
-          "The surgeon's reasoning is sound — intraoperative ultrasound provides definitive laterality confirmation",
+          "The surgeon's reasoning is sound - intraoperative ultrasound provides definitive laterality confirmation",
           "The surgeon is partially correct",
-          "The surgeon is correct — site marking for thyroid lobectomy is at the facility's discretion",
+          "The surgeon is correct - site marking for thyroid lobectomy is at the facility's discretion",
           "The surveyor should defer to the surgeon's clinical judgment on this matter"
         ],
         correctIndex: 1,
@@ -954,13 +954,13 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
         {
           question: "A cosmetic surgery patient refuses site marking because she does not want any residual ink marks on her skin after surgery. The surgeon agrees and states marking is 'not necessary for cosmetic procedures.' A JC surveyor reviews this case. What is the finding?",
           options: [
-          "Non-compliant — the patient should be counseled that marking is mandatory and non-negotiable",
-          "Compliant — the patient's autonomy to refuse marking overrides the requirement without any additional steps",
-          "Compliant — cosmetic procedures are exempt from site marking requirements",
-          "Non-compliant — the surgeon's exemption of cosmetic procedures is not supported by JC standards"
+          "Non-compliant - the patient should be counseled that marking is mandatory and non-negotiable",
+          "Compliant - the patient's autonomy to refuse marking overrides the requirement without any additional steps",
+          "Compliant - cosmetic procedures are exempt from site marking requirements",
+          "Non-compliant - the surgeon's exemption of cosmetic procedures is not supported by JC standards"
         ],
         correctIndex: 3,
-          explanation: "Joint Commission does not exempt cosmetic procedures from the Universal Protocol. If the procedure involves laterality, multiple structures, or multiple levels, site marking is required. When a patient refuses, the facility's alternative verification policy applies — the surgeon cannot unilaterally waive the requirement. The facility must document the refusal, implement the alternative process, and ensure all time-out participants are aware of the modified verification approach.",
+          explanation: "Joint Commission does not exempt cosmetic procedures from the Universal Protocol. If the procedure involves laterality, multiple structures, or multiple levels, site marking is required. When a patient refuses, the facility's alternative verification policy applies - the surgeon cannot unilaterally waive the requirement. The facility must document the refusal, implement the alternative process, and ensure all time-out participants are aware of the modified verification approach.",
           expertXp: 30
         },
         {
@@ -972,7 +972,7 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
           "The policy is insufficiently robust"
         ],
         correctIndex: 3,
-          explanation: "Joint Commission expects that alternative processes for patients who refuse marking provide verification that is at least equivalent in reliability to standard site marking. A policy that simply relies on verbal confirmation during the standard time-out does not add any safety barrier beyond what already exists — it effectively waives the marking requirement without substituting an alternative. The policy must include documentation of the refusal, specific alternative verification methods, communication to the entire team, and evidence that the alternative process has been validated to prevent wrong-site events.",
+          explanation: "Joint Commission expects that alternative processes for patients who refuse marking provide verification that is at least equivalent in reliability to standard site marking. A policy that simply relies on verbal confirmation during the standard time-out does not add any safety barrier beyond what already exists - it effectively waives the marking requirement without substituting an alternative. The policy must include documentation of the refusal, specific alternative verification methods, communication to the entire team, and evidence that the alternative process has been validated to prevent wrong-site events.",
           expertXp: 35
         }
       ]
@@ -1017,13 +1017,13 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
         {
           question: "Six months after implementing the PACS two-identifier retrieval requirement, a JC surveyor returns for a follow-up survey. The facility shows data that wrong-patient imaging retrieval events dropped from 4 per quarter to zero. However, the surveyor discovers that OR staff have developed a workaround: when the PACS two-identifier search is slow, they photograph the imaging screen with a personal phone and use that image for surgical planning. What compliance issues does this workaround create?",
           options: [
-          "Compliance issue — staff are being resourceful to maintain workflow efficiency",
+          "Compliance issue - staff are being resourceful to maintain workflow efficiency",
           "The workaround is acceptable as a temporary measure while the PACS speed is improved",
           "Multiple compliance issues: (1) personal device images bypass the two-identifier verification",
-          "The only issue is HIPAA — personal phone photographs of patient imaging violate privacy rules"
+          "The only issue is HIPAA - personal phone photographs of patient imaging violate privacy rules"
         ],
         correctIndex: 2,
-          explanation: "This scenario illustrates how safety system implementations can create unintended workarounds that introduce new risks — a concept known as 'risk migration.' The workaround bypasses the very safety barrier implemented to prevent wrong-patient imaging events, violates HIPAA through PHI on personal devices, may provide diagnostically inadequate images, and signals that the safety fix created an operational barrier staff felt compelled to circumvent. Joint Commission expects organizations to monitor for workarounds after implementing safety changes (PI.01.01.01), address them through process improvement (such as improving PACS speed or providing facility-owned devices), and maintain the integrity of safety barriers.",
+          explanation: "This scenario illustrates how safety system implementations can create unintended workarounds that introduce new risks - a concept known as 'risk migration.' The workaround bypasses the very safety barrier implemented to prevent wrong-patient imaging events, violates HIPAA through PHI on personal devices, may provide diagnostically inadequate images, and signals that the safety fix created an operational barrier staff felt compelled to circumvent. Joint Commission expects organizations to monitor for workarounds after implementing safety changes (PI.01.01.01), address them through process improvement (such as improving PACS speed or providing facility-owned devices), and maintain the integrity of safety barriers.",
           expertXp: 35
         }
       ]

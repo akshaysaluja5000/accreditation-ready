@@ -68,13 +68,13 @@ const FLIP_VARIANTS = {
 };
 
 function getTopicLabel(title: string): string {
-  const dashIdx = title.indexOf(" — ");
+  const dashIdx = title.indexOf(" - ");
   if (dashIdx !== -1) return title.slice(dashIdx + 3);
   return title;
 }
 
 function getCodeLabel(title: string): string | null {
-  const dashIdx = title.indexOf(" — ");
+  const dashIdx = title.indexOf(" - ");
   if (dashIdx !== -1) return title.slice(0, dashIdx);
   return null;
 }
@@ -580,7 +580,7 @@ export default function FlashcardReviewPage() {
                       </button>
                     </div>
 
-                    {/* Answer — keyPoint is the direct answer */}
+                    {/* Answer - keyPoint is the direct answer */}
                     <div
                       className="rounded-xl p-5 border"
                       style={{ backgroundColor: `${levelColor}12`, borderColor: `${levelColor}30` }}
@@ -715,7 +715,7 @@ export default function FlashcardReviewPage() {
               <Card className="rounded-2xl border-2 p-5 border-violet-500/20">
                 <p className="text-sm text-foreground/75 leading-relaxed text-center">
                   {ratingCounts.again + ratingCounts.hard === 0
-                    ? "Excellent! All cards rated Good — they'll return tomorrow."
+                    ? "Excellent! All cards rated Good - they'll return tomorrow."
                     : `${ratingCounts.good} card${ratingCounts.good !== 1 ? "s" : ""} scheduled for tomorrow. ${ratingCounts.again + ratingCounts.hard} card${ratingCounts.again + ratingCounts.hard !== 1 ? "s" : ""} coming back sooner.`}
                 </p>
               </Card>

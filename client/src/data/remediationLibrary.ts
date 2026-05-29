@@ -1,9 +1,9 @@
 // ── Remediation Library ────────────────────────────────────────────────────
 //
 // STRUCTURE:
-//   REMEDIATION_LIBRARY  — category name → array of 3 preset plans
-//   LEVEL_TO_CATEGORY    — levelId → category name (one-to-one)
-//   getRemediationPlan() — levelId + score % → assigned steps + reassessment flag
+//   REMEDIATION_LIBRARY  - category name → array of 3 preset plans
+//   LEVEL_TO_CATEGORY    - levelId → category name (one-to-one)
+//   getRemediationPlan() - levelId + score % → assigned steps + reassessment flag
 //
 // SCORE THRESHOLDS (final/post-test only):
 //   ≥ 70%     : no remediation
@@ -80,7 +80,7 @@ export const REMEDIATION_LIBRARY: Record<string, [LibraryStep, LibraryStep, Libr
     {
       title: "Scenario Review + Reassessment",
       description:
-        "Review two or three common decontamination scenarios from the study material — particularly around PPE breaches and instrument flow. Once confident, schedule a reassessment with your supervisor.",
+        "Review two or three common decontamination scenarios from the study material - particularly around PPE breaches and instrument flow. Once confident, schedule a reassessment with your supervisor.",
     },
   ],
 
@@ -88,7 +88,7 @@ export const REMEDIATION_LIBRARY: Record<string, [LibraryStep, LibraryStep, Libr
     {
       title: "Sterile Field and Attire Review",
       description:
-        "Review the study concepts covering gown and glove technique, sterile field boundaries, and what constitutes a break in sterility. The key rules are specific — read each one carefully before retesting.",
+        "Review the study concepts covering gown and glove technique, sterile field boundaries, and what constitutes a break in sterility. The key rules are specific - read each one carefully before retesting.",
     },
     {
       title: "Observed Sterile Technique Reinforcement",
@@ -129,7 +129,7 @@ export const REMEDIATION_LIBRARY: Record<string, [LibraryStep, LibraryStep, Libr
     {
       title: "Area Walkthrough with Supervisor",
       description:
-        "Walk a patient care area or clinical space with your supervisor. Discuss what you observe from a cleanliness and compliance standpoint — look at surfaces, waste containers, and environmental conditions together.",
+        "Walk a patient care area or clinical space with your supervisor. Discuss what you observe from a cleanliness and compliance standpoint - look at surfaces, waste containers, and environmental conditions together.",
     },
     {
       title: "Scenario-Based Surface Safety Review",
@@ -160,7 +160,7 @@ export const REMEDIATION_LIBRARY: Record<string, [LibraryStep, LibraryStep, Libr
     {
       title: "Sterile Storage Standards Review",
       description:
-        "Review the study cards covering sterile storage — shelf height requirements, event-related vs. time-related expiration, humidity and temperature ranges, and what to look for on packaging integrity.",
+        "Review the study cards covering sterile storage - shelf height requirements, event-related vs. time-related expiration, humidity and temperature ranges, and what to look for on packaging integrity.",
     },
     {
       title: "Storage Area Guided Review",
@@ -170,7 +170,7 @@ export const REMEDIATION_LIBRARY: Record<string, [LibraryStep, LibraryStep, Libr
     {
       title: "Storage Decision Scenarios",
       description:
-        "Work through the scenario-type study cards in the Sterile Storage category. These focus on edge cases — damaged packaging, borderline shelf heights, and expiration decisions — that often appear on surveys.",
+        "Work through the scenario-type study cards in the Sterile Storage category. These focus on edge cases - damaged packaging, borderline shelf heights, and expiration decisions - that often appear on surveys.",
     },
   ],
 
@@ -258,7 +258,7 @@ export const REMEDIATION_LIBRARY: Record<string, [LibraryStep, LibraryStep, Libr
     {
       title: "Guided Review + Teach-Back on Oversight Roles",
       description:
-        "With a supervisor or administrator, walk through the key governance roles in your ASC — who is on the governing body, what they are responsible for, and how that accountability is documented. Teach the structure back in your own words.",
+        "With a supervisor or administrator, walk through the key governance roles in your ASC - who is on the governing body, what they are responsible for, and how that accountability is documented. Teach the structure back in your own words.",
     },
     {
       title: "Governance Readiness Verification",
@@ -299,7 +299,7 @@ export const REMEDIATION_LIBRARY: Record<string, [LibraryStep, LibraryStep, Libr
     {
       title: "Quality Standards Teach-Back",
       description:
-        "Explain to your supervisor or educator the key quality-of-care requirements for your ASC — what must be assessed, documented, and followed up on. Teaching the concept back helps confirm your understanding before retesting.",
+        "Explain to your supervisor or educator the key quality-of-care requirements for your ASC - what must be assessed, documented, and followed up on. Teaching the concept back helps confirm your understanding before retesting.",
     },
   ],
 
@@ -330,7 +330,7 @@ export const REMEDIATION_LIBRARY: Record<string, [LibraryStep, LibraryStep, Libr
     {
       title: "Documentation Scenario Review",
       description:
-        "Work through the scenario-based cards in this chapter. Each scenario presents a documentation gap — practice identifying what is missing and what the correct action is. Discuss tricky scenarios with your supervisor.",
+        "Work through the scenario-based cards in this chapter. Each scenario presents a documentation gap - practice identifying what is missing and what the correct action is. Discuss tricky scenarios with your supervisor.",
     },
     {
       title: "Documentation Teach-Back + Verification",
@@ -366,7 +366,7 @@ export const REMEDIATION_LIBRARY: Record<string, [LibraryStep, LibraryStep, Libr
     {
       title: "Guided Environment Walkthrough Review",
       description:
-        "Walk through your ASC's clinical and support spaces with a supervisor or facilities contact. Identify together what a surveyor would evaluate — emergency exits, medical gas storage, equipment condition, and environmental cleanliness.",
+        "Walk through your ASC's clinical and support spaces with a supervisor or facilities contact. Identify together what a surveyor would evaluate - emergency exits, medical gas storage, equipment condition, and environmental cleanliness.",
     },
     {
       title: "Facilities Readiness Verification",
@@ -492,7 +492,7 @@ export const REMEDIATION_LIBRARY: Record<string, [LibraryStep, LibraryStep, Libr
     {
       title: "Guided Documentation Review",
       description:
-        "Walk through a sample patient record with your charge nurse or clinical supervisor. Together identify whether all required CMC elements are present — from the pre-op assessment through the discharge instructions — and note any gaps.",
+        "Walk through a sample patient record with your charge nurse or clinical supervisor. Together identify whether all required CMC elements are present - from the pre-op assessment through the discharge instructions - and note any gaps.",
     },
     {
       title: "Clinical Record Audit Verification",
@@ -600,7 +600,7 @@ export const REMEDIATION_LIBRARY: Record<string, [LibraryStep, LibraryStep, Libr
     {
       title: "Guided Review + Teach-Back on Risk and Safety Management",
       description:
-        "Walk through your ASC's safety and risk management programs with your safety officer or administrator. Explain the incident reporting process, how adverse events are defined and reviewed, and how product recalls are handled — then ask for feedback on your understanding.",
+        "Walk through your ASC's safety and risk management programs with your safety officer or administrator. Explain the incident reporting process, how adverse events are defined and reviewed, and how product recalls are handled - then ask for feedback on your understanding.",
     },
     {
       title: "Safety Program Documentation Review",
@@ -632,7 +632,7 @@ export const REMEDIATION_LIBRARY: Record<string, [LibraryStep, LibraryStep, Libr
 // ── Level ID → Category mapping ────────────────────────────────────────────
 // HOSPITAL levels map to hospital categories.
 // ASC levels map to ASC categories (prefixed "ASC: ").
-// The getRemediationPlan() function works for both — no separate function needed.
+// The getRemediationPlan() function works for both - no separate function needed.
 
 export const LEVEL_TO_CATEGORY: Record<string, string> = {
   // ── Hospital (Joint Commission) ───────────────────────────────────────────
@@ -687,7 +687,7 @@ export function getRemediationPlan(
   const plans = REMEDIATION_LIBRARY[category];
   if (!plans) return null;
 
-  // 60–69%: 1 step — targeted review only
+  // 60–69%: 1 step - targeted review only
   if (percentage >= 60) {
     return {
       category,
@@ -696,7 +696,7 @@ export function getRemediationPlan(
     };
   }
 
-  // 50–59%: 2 steps — review + reinforcement activity
+  // 50–59%: 2 steps - review + reinforcement activity
   if (percentage >= 50) {
     return {
       category,

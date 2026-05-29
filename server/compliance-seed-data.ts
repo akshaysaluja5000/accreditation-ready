@@ -8,7 +8,7 @@ export const ASC_COMPLIANCE_ITEMS: {
   surveyorPriority: number;
   moduleScope: string;
 }[] = [
-  // V1 — Building Info, Construction, Hazmat, Eyewash
+  // V1 - Building Info, Construction, Hazmat, Eyewash
   { volume: "V1", standardCode: "FAC.100", itemName: "Current and Accurate Life Safety Drawings", frequency: "Annually", tier: 2, category: "Building & Life Safety", surveyorPriority: 1, moduleScope: "ASC" },
   { volume: "V1", standardCode: "FAC.100", itemName: "Documentation of Compliance with Building Codes and Regulations", frequency: "Annually", tier: 2, category: "Building & Life Safety", surveyorPriority: 1, moduleScope: "ASC" },
   { volume: "V1", standardCode: "FAC.100", itemName: "AHJ Inspection Reports (Local, State, etc.)", frequency: "Annually", tier: 4, category: "Building & Life Safety", surveyorPriority: 1, moduleScope: "ASC" },
@@ -27,7 +27,7 @@ export const ASC_COMPLIANCE_ITEMS: {
   { volume: "V1", standardCode: "ANSI Z358.1", itemName: "Emergency Eyewash Annual Inspections and Tests", frequency: "Annually", tier: 1, category: "Building & Life Safety", surveyorPriority: 1, moduleScope: "ASC" },
   { volume: "V1", standardCode: "ANSI Z358.1", itemName: "Emergency Eyewash Weekly Tests", frequency: "Weekly", tier: 1, category: "Building & Life Safety", surveyorPriority: 1, moduleScope: "ASC" },
 
-  // V2 — Emergency Preparedness, Safety, Security
+  // V2 - Emergency Preparedness, Safety, Security
   { volume: "V2", standardCode: "QUA.210", itemName: "Written Quality Improvement Program", frequency: "Quarterly", tier: 2, category: "Quality Management", surveyorPriority: 2, moduleScope: "ASC" },
   { volume: "V2", standardCode: "FAC.110", itemName: "Written Plan for Environmental Safety", frequency: "Annually", tier: 2, category: "Building & Life Safety", surveyorPriority: 2, moduleScope: "ASC" },
   { volume: "V2", standardCode: "FAC.110", itemName: "Written Plan for Security", frequency: "Annually", tier: 2, category: "Building & Life Safety", surveyorPriority: 2, moduleScope: "ASC" },
@@ -51,7 +51,7 @@ export const ASC_COMPLIANCE_ITEMS: {
   { volume: "V2", standardCode: "EMG.170", itemName: "Initial/Annual Emergency and Disaster Preparedness Training Docs", frequency: "Annually", tier: 2, category: "Emergency Preparedness", surveyorPriority: 1, moduleScope: "ASC" },
   { volume: "V2", standardCode: "EMG.170", itemName: "Emergency and Disaster Preparedness Drill Critiques and Exercises", frequency: "Annually", tier: 2, category: "Emergency Preparedness", surveyorPriority: 2, moduleScope: "ASC" },
 
-  // V3 — Utility Systems
+  // V3 - Utility Systems
   { volume: "V3", standardCode: "FAC.250", itemName: "Medical Gas and Vacuum Systems Installer Performance Testing", frequency: "Annually", tier: 4, category: "Utility Systems", surveyorPriority: 1, moduleScope: "ASC" },
   { volume: "V3", standardCode: "FAC.250", itemName: "Medical Gas and Vacuum Systems Verification Testing by Third Party", frequency: "Annually", tier: 4, category: "Utility Systems", surveyorPriority: 1, moduleScope: "ASC" },
   { volume: "V3", standardCode: "FAC.250", itemName: "Medical Gas and Vacuum Systems Component Testing", frequency: "Annually", tier: 4, category: "Utility Systems", surveyorPriority: 1, moduleScope: "ASC" },
@@ -69,7 +69,7 @@ export const ASC_COMPLIANCE_ITEMS: {
   { volume: "V3", standardCode: "FAC.260", itemName: "3-Year 4-Hour Generator Load and Exhaust Gas Temperature Tests", frequency: "Triennially", tier: 4, category: "Utility Systems", surveyorPriority: 1, moduleScope: "ASC" },
   { volume: "V3", standardCode: "IPC.230.70", itemName: "Air Exchange, Pressure Relationship, Temperature and Humidity Testing", frequency: "Annually", tier: 1, category: "Utility Systems", surveyorPriority: 1, moduleScope: "ASC" },
 
-  // V4 — Fire Risks & Drills, Fire Alarm Documents
+  // V4 - Fire Risks & Drills, Fire Alarm Documents
   { volume: "V4", standardCode: "SAF.240", itemName: "Fire Drill Policy", frequency: "Annually", tier: 2, category: "Fire Safety", surveyorPriority: 1, moduleScope: "ASC" },
   { volume: "V4", standardCode: "SAF.240", itemName: "Quarterly Fire Drill Schedule", frequency: "Quarterly", tier: 1, category: "Fire Safety", surveyorPriority: 1, moduleScope: "ASC" },
   { volume: "V4", standardCode: "SAF.240", itemName: "Fire Drill Critiques", frequency: "Quarterly", tier: 1, category: "Fire Safety", surveyorPriority: 1, moduleScope: "ASC" },
@@ -86,7 +86,7 @@ export const ASC_COMPLIANCE_ITEMS: {
   { volume: "V4", standardCode: "FAC.150.60", itemName: "Semiannual Fire Alarm Battery Load Tests", frequency: "Semiannually", tier: 4, category: "Fire Safety", surveyorPriority: 1, moduleScope: "ASC" },
   { volume: "V4", standardCode: "FAC.150.60", itemName: "Annual Audible-Visual Device Tests", frequency: "Annually", tier: 4, category: "Fire Safety", surveyorPriority: 1, moduleScope: "ASC" },
 
-  // V5 — Fire Safety Inspections & Testing
+  // V5 - Fire Safety Inspections & Testing
   { volume: "V5", standardCode: "FAC.150.60", itemName: "Annual Offsite Responder Notifications", frequency: "Annually", tier: 2, category: "Fire Safety", surveyorPriority: 1, moduleScope: "ASC" },
   { volume: "V5", standardCode: "FAC.150.60", itemName: "Fire Alarm Systems Inspection, Testing, and Maintenance Records", frequency: "Annually", tier: 4, category: "Fire Safety", surveyorPriority: 1, moduleScope: "ASC" },
   { volume: "V5", standardCode: "FAC.150.60", itemName: "Weekly Fire Pump Inspection", frequency: "Weekly", tier: 1, category: "Fire Safety", surveyorPriority: 1, moduleScope: "ASC" },
@@ -119,7 +119,7 @@ export const ASC_COMPLIANCE_ITEMS: {
   { volume: "V5", standardCode: "FAC.150.60", itemName: "Fire and Smoke Damper Tests (Every 4 Years)", frequency: "Quadrennially", tier: 4, category: "Fire Safety", surveyorPriority: 1, moduleScope: "ASC" },
   { volume: "V5", standardCode: "FAC.140", itemName: "NFPA 99 Utilities Risk Assessment", frequency: "Annually", tier: 2, category: "Utility Systems", surveyorPriority: 1, moduleScope: "ASC" },
 
-  // V6 — Medical Equipment & Infection Control
+  // V6 - Medical Equipment & Infection Control
   { volume: "V6", standardCode: "FAC.340", itemName: "Operating Room Wet Area Risk Assessment", frequency: "Annually", tier: 2, category: "Medical Equipment", surveyorPriority: 1, moduleScope: "ASC" },
   { volume: "V6", standardCode: "FAC.250.10", itemName: "Medical Equipment Maintenance Policies and Procedures", frequency: "Annually", tier: 2, category: "Medical Equipment", surveyorPriority: 2, moduleScope: "ASC" },
   { volume: "V6", standardCode: "FAC.250.20-30", itemName: "Medical Equipment Test and Inspection Matrix; Calibration Reports", frequency: "Annually", tier: 2, category: "Medical Equipment", surveyorPriority: 1, moduleScope: "ASC" },
@@ -164,7 +164,7 @@ export const HOSPITAL_COMPLIANCE_ITEMS: {
   surveyorPriority: number;
   moduleScope: string;
 }[] = [
-  // EC — Environment of Care
+  // EC - Environment of Care
   { volume: "EC", standardCode: "EC.01.01.01", itemName: "Written Safety Management Plan", frequency: "Annually", tier: 2, category: "Environment of Care", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "EC", standardCode: "EC.02.01.01", itemName: "Safety Risk Assessments and Rounds Documentation", frequency: "Annually", tier: 1, category: "Environment of Care", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "EC", standardCode: "EC.02.02.01", itemName: "Hazardous Materials and Waste Management Plan", frequency: "Annually", tier: 2, category: "Hazardous Materials", surveyorPriority: 1, moduleScope: "Hospital" },
@@ -181,21 +181,21 @@ export const HOSPITAL_COMPLIANCE_ITEMS: {
   { volume: "EC", standardCode: "EC.04.01.01", itemName: "Environment of Care Committee Meeting Minutes", frequency: "Quarterly", tier: 1, category: "Environment of Care", surveyorPriority: 2, moduleScope: "Hospital" },
   { volume: "EC", standardCode: "EC.04.01.01", itemName: "Annual Evaluation of Safety Management Plans", frequency: "Annually", tier: 2, category: "Environment of Care", surveyorPriority: 2, moduleScope: "Hospital" },
 
-  // EM — Emergency Management
+  // EM - Emergency Management
   { volume: "EM", standardCode: "EM.01.01.01", itemName: "Emergency Operations Plan (EOP)", frequency: "Annually", tier: 2, category: "Emergency Management", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "EM", standardCode: "EM.01.01.01", itemName: "Hazard Vulnerability Analysis (HVA)", frequency: "Annually", tier: 2, category: "Emergency Management", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "EM", standardCode: "EM.02.02.01", itemName: "Biannual Emergency Management Drills", frequency: "Semiannually", tier: 1, category: "Emergency Management", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "EM", standardCode: "EM.02.02.01", itemName: "After-Action Reports for Emergency Drills", frequency: "Semiannually", tier: 2, category: "Emergency Management", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "EM", standardCode: "EM.03.01.01", itemName: "Annual Emergency Management Program Evaluation", frequency: "Annually", tier: 2, category: "Emergency Management", surveyorPriority: 2, moduleScope: "Hospital" },
 
-  // HR — Human Resources
+  // HR - Human Resources
   { volume: "HR", standardCode: "HR.01.02.01", itemName: "Staff Hiring Verification Records (License, Education, Work History)", frequency: "Annually", tier: 2, category: "Human Resources", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "HR", standardCode: "HR.01.04.01", itemName: "Staff Orientation Documentation", frequency: "Annually", tier: 2, category: "Human Resources", surveyorPriority: 2, moduleScope: "Hospital" },
   { volume: "HR", standardCode: "HR.01.05.03", itemName: "Staff Competency Assessments", frequency: "Annually", tier: 2, category: "Human Resources", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "HR", standardCode: "HR.01.06.01", itemName: "Ongoing Education Records for Licensed Staff", frequency: "Annually", tier: 2, category: "Human Resources", surveyorPriority: 2, moduleScope: "Hospital" },
   { volume: "HR", standardCode: "HR.01.07.01", itemName: "Staff Health Screening Records (TB, Vaccines, Fit Testing)", frequency: "Annually", tier: 2, category: "Human Resources", surveyorPriority: 1, moduleScope: "Hospital" },
 
-  // IC — Infection Prevention and Control
+  // IC - Infection Prevention and Control
   { volume: "IC", standardCode: "IC.01.02.01", itemName: "Infection Prevention and Control Program Goals", frequency: "Annually", tier: 2, category: "Infection Control", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "IC", standardCode: "IC.02.01.01", itemName: "Hand Hygiene Program and Compliance Monitoring", frequency: "Quarterly", tier: 1, category: "Infection Control", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "IC", standardCode: "IC.02.02.01", itemName: "Sterilization and Disinfection Policies and Monitoring Records", frequency: "Annually", tier: 2, category: "Infection Control", surveyorPriority: 1, moduleScope: "Hospital" },
@@ -206,9 +206,9 @@ export const HOSPITAL_COMPLIANCE_ITEMS: {
   { volume: "IC", standardCode: "IC.02.01.01", itemName: "Contact/Droplet/Airborne Precautions Policies", frequency: "Annually", tier: 2, category: "Infection Control", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "IC", standardCode: "IC.02.01.01", itemName: "Written Exposure Control Plan (Bloodborne Pathogens)", frequency: "Annually", tier: 2, category: "Infection Control", surveyorPriority: 1, moduleScope: "Hospital" },
 
-  // LS — Life Safety
+  // LS - Life Safety
   { volume: "LS", standardCode: "LS.01.01.01", itemName: "Statement of Conditions (SOC) and Basic Building Information", frequency: "Annually", tier: 2, category: "Life Safety", surveyorPriority: 1, moduleScope: "Hospital" },
-  { volume: "LS", standardCode: "LS.02.01.10", itemName: "Fire Drills — All Shifts, All Buildings (Quarterly)", frequency: "Quarterly", tier: 1, category: "Life Safety", surveyorPriority: 1, moduleScope: "Hospital" },
+  { volume: "LS", standardCode: "LS.02.01.10", itemName: "Fire Drills - All Shifts, All Buildings (Quarterly)", frequency: "Quarterly", tier: 1, category: "Life Safety", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "LS", standardCode: "LS.02.01.10", itemName: "Fire Drill Critique Reports", frequency: "Quarterly", tier: 2, category: "Life Safety", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "LS", standardCode: "LS.02.01.20", itemName: "Annual Portable Fire Extinguisher Maintenance", frequency: "Annually", tier: 4, category: "Life Safety", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "LS", standardCode: "LS.02.01.20", itemName: "Monthly Portable Fire Extinguisher Inspections", frequency: "Monthly", tier: 1, category: "Life Safety", surveyorPriority: 1, moduleScope: "Hospital" },
@@ -223,7 +223,7 @@ export const HOSPITAL_COMPLIANCE_ITEMS: {
   { volume: "LS", standardCode: "LS.02.01.20", itemName: "Monthly Exit Sign and Emergency Lighting Tests", frequency: "Monthly", tier: 1, category: "Life Safety", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "LS", standardCode: "LS.02.01.20", itemName: "Annual 1.5-Hour Emergency Lighting Tests", frequency: "Annually", tier: 4, category: "Life Safety", surveyorPriority: 1, moduleScope: "Hospital" },
 
-  // MM — Medication Management
+  // MM - Medication Management
   { volume: "MM", standardCode: "MM.01.01.03", itemName: "Formulary and Medication Management Policy", frequency: "Annually", tier: 2, category: "Medication Management", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "MM", standardCode: "MM.01.01.03", itemName: "High-Alert Medication List and Policies", frequency: "Annually", tier: 2, category: "Medication Management", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "MM", standardCode: "MM.02.01.01", itemName: "Medication Storage and Security Audit Logs", frequency: "Monthly", tier: 1, category: "Medication Management", surveyorPriority: 1, moduleScope: "Hospital" },
@@ -233,7 +233,7 @@ export const HOSPITAL_COMPLIANCE_ITEMS: {
   { volume: "MM", standardCode: "MM.06.01.01", itemName: "Medication Administration Policy and Nursing Competency Records", frequency: "Annually", tier: 2, category: "Medication Management", surveyorPriority: 2, moduleScope: "Hospital" },
   { volume: "MM", standardCode: "MM.09.01.01", itemName: "Adverse Drug Event / Medication Error Reporting Records", frequency: "Monthly", tier: 1, category: "Medication Management", surveyorPriority: 1, moduleScope: "Hospital" },
 
-  // NPSG — National Patient Safety Goals
+  // NPSG - National Patient Safety Goals
   { volume: "NPSG", standardCode: "NPSG.01.01.01", itemName: "Patient Identification Policy (Two-Identifier Protocol)", frequency: "Annually", tier: 2, category: "Patient Safety", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "NPSG", standardCode: "NPSG.01.01.01", itemName: "Patient Identification Compliance Audits", frequency: "Quarterly", tier: 1, category: "Patient Safety", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "NPSG", standardCode: "NPSG.02.03.01", itemName: "Critical Test/Result Reporting Policy and Audit Records", frequency: "Annually", tier: 2, category: "Patient Safety", surveyorPriority: 1, moduleScope: "Hospital" },
@@ -247,25 +247,25 @@ export const HOSPITAL_COMPLIANCE_ITEMS: {
   { volume: "NPSG", standardCode: "NPSG.09.02.01", itemName: "Fall Prevention Program and Risk Assessment Audits", frequency: "Quarterly", tier: 1, category: "Patient Safety", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "NPSG", standardCode: "NPSG.15.01.01", itemName: "Suicide Risk Screening Protocol and Environmental Safety Rounds", frequency: "Quarterly", tier: 1, category: "Patient Safety", surveyorPriority: 1, moduleScope: "Hospital" },
 
-  // PI — Performance Improvement
+  // PI - Performance Improvement
   { volume: "PI", standardCode: "PI.01.01.01", itemName: "Performance Improvement Plan", frequency: "Annually", tier: 2, category: "Performance Improvement", surveyorPriority: 2, moduleScope: "Hospital" },
   { volume: "PI", standardCode: "PI.02.01.01", itemName: "Quality and Patient Safety Data Collection Reports", frequency: "Quarterly", tier: 1, category: "Performance Improvement", surveyorPriority: 2, moduleScope: "Hospital" },
   { volume: "PI", standardCode: "PI.03.01.01", itemName: "RCA / Intensive Analysis Documentation for Sentinel Events", frequency: "Annually", tier: 2, category: "Performance Improvement", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "PI", standardCode: "PI.03.01.01", itemName: "Proactive Risk Reduction Activities (FMEA / Risk Assessment)", frequency: "Annually", tier: 2, category: "Performance Improvement", surveyorPriority: 1, moduleScope: "Hospital" },
 
-  // RC — Record of Care
+  // RC - Record of Care
   { volume: "RC", standardCode: "RC.01.01.01", itemName: "Medical Record Completion Policy and Audit Logs", frequency: "Quarterly", tier: 1, category: "Record of Care", surveyorPriority: 2, moduleScope: "Hospital" },
   { volume: "RC", standardCode: "RC.01.02.01", itemName: "Medical Record Authentication / Timeliness Compliance Audits", frequency: "Quarterly", tier: 1, category: "Record of Care", surveyorPriority: 2, moduleScope: "Hospital" },
   { volume: "RC", standardCode: "RC.02.01.01", itemName: "Informed Consent Policy and Signed Consent Audit Logs", frequency: "Quarterly", tier: 1, category: "Record of Care", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "RC", standardCode: "RC.02.01.01", itemName: "History and Physical Completion Within 24-Hour Audit Log", frequency: "Monthly", tier: 1, category: "Record of Care", surveyorPriority: 1, moduleScope: "Hospital" },
 
-  // LD — Leadership
+  // LD - Leadership
   { volume: "LD", standardCode: "LD.03.01.01", itemName: "Governing Body Meeting Minutes", frequency: "Quarterly", tier: 1, category: "Leadership", surveyorPriority: 2, moduleScope: "Hospital" },
   { volume: "LD", standardCode: "LD.03.02.01", itemName: "Medical Staff Bylaws and Credentialing Policies", frequency: "Annually", tier: 2, category: "Leadership", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "LD", standardCode: "LD.04.01.01", itemName: "Culture of Safety Survey Results and Action Plans", frequency: "Annually", tier: 2, category: "Leadership", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "LD", standardCode: "LD.04.01.01", itemName: "Patient Safety Event Reporting System Policy", frequency: "Annually", tier: 2, category: "Leadership", surveyorPriority: 1, moduleScope: "Hospital" },
 
-  // MS — Medical Staff
+  // MS - Medical Staff
   { volume: "MS", standardCode: "MS.06.01.01", itemName: "Initial Credentialing and Privileging Files", frequency: "Biennially", tier: 2, category: "Medical Staff", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "MS", standardCode: "MS.06.01.05", itemName: "Ongoing Professional Practice Evaluation (OPPE) Records", frequency: "Semiannually", tier: 2, category: "Medical Staff", surveyorPriority: 1, moduleScope: "Hospital" },
   { volume: "MS", standardCode: "MS.06.01.07", itemName: "Focused Professional Practice Evaluation (FPPE) Records", frequency: "Annually", tier: 2, category: "Medical Staff", surveyorPriority: 1, moduleScope: "Hospital" },

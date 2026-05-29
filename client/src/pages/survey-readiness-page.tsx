@@ -397,7 +397,7 @@ export default function SurveyReadinessPage() {
       queryClient.invalidateQueries({ queryKey: ["/api/compliance/training-modules"] });
       setUploadResult(data);
       if (!data.module) {
-        toast({ title: "Document Saved", description: "Marked on file (no AI analysis — file could not be read)." });
+        toast({ title: "Document Saved", description: "Marked on file (no AI analysis - file could not be read)." });
         setLogItem(null);
         setDocName("");
         setDocExpiry("");
@@ -624,7 +624,7 @@ export default function SurveyReadinessPage() {
                 <div className="bg-card rounded-xl border p-12 flex flex-col items-center gap-3">
                   <CheckCircle2 className="w-10 h-10 text-emerald-500" />
                   <p className="text-sm font-medium text-muted-foreground">
-                    {statusFilter === "all" ? "All items are current — great work!" : "No items match this filter."}
+                    {statusFilter === "all" ? "All items are current - great work!" : "No items match this filter."}
                   </p>
                 </div>
               ) : (
@@ -642,7 +642,7 @@ export default function SurveyReadinessPage() {
                 <div className="flex items-center gap-2 mb-4">
                   <Bot className="w-4 h-4 text-primary" />
                   <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
-                    Content Intelligence Agent — Training Modules
+                    Content Intelligence Agent - Training Modules
                   </h2>
                   {pendingModules.length > 0 && (
                     <Badge className="text-xs bg-amber-500 text-white border-0 ml-1">
@@ -773,11 +773,11 @@ export default function SurveyReadinessPage() {
                             data-testid="input-doc-name" />
                         </div>
 
-                        {/* File Upload — triggers Content Intelligence Agent */}
+                        {/* File Upload - triggers Content Intelligence Agent */}
                         <div className="space-y-2">
                           <Label className="flex items-center gap-1.5">
                             <Bot className="w-3.5 h-3.5 text-primary" />
-                            Upload Document <span className="text-muted-foreground font-normal">(optional — enables AI analysis)</span>
+                            Upload Document <span className="text-muted-foreground font-normal">(optional - enables AI analysis)</span>
                           </Label>
                           <input
                             ref={fileInputRef}

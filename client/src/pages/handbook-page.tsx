@@ -194,7 +194,7 @@ function ChapterView({ chapter, onBack }: { chapter: HandbookChapter; onBack: ()
           >
             <div className="px-4 py-3 flex items-center gap-2" style={{ backgroundColor: `${color}10` }}>
               <List size={18} style={{ color }} />
-              <h3 className="font-bold text-base">Quick Reference — {chapter.title}</h3>
+              <h3 className="font-bold text-base">Quick Reference - {chapter.title}</h3>
             </div>
             <div className="divide-y divide-border">
               {(chapter.quickReference ?? []).map((item, i) => (
@@ -277,8 +277,8 @@ export default function HandbookPage() {
   const introCopy = isAsc
     ? "The full AAAHC Accreditation Handbook for Medicare Deemed Status (v44), organized by chapter exactly as published. Universal Standards apply to every accredited ASC; Selective Standards apply when the listed service is provided."
     : isDnv
-    ? "Comprehensive coverage of DNV NIAHO 25-1 standards — organized by chapter with detailed explanations, critical values, and real-world scenarios. Use this alongside the quizzes to build deep understanding of NIAHO requirements."
-    : "Everything you need to know for Joint Commission compliance — organized by topic with detailed explanations, critical values, and real-world scenarios. Use this alongside the quizzes to build deep understanding.";
+    ? "Comprehensive coverage of DNV NIAHO 25-1 standards - organized by chapter with detailed explanations, critical values, and real-world scenarios. Use this alongside the quizzes to build deep understanding of NIAHO requirements."
+    : "Everything you need to know for Joint Commission compliance - organized by topic with detailed explanations, critical values, and real-world scenarios. Use this alongside the quizzes to build deep understanding.";
 
   const renderChapterCard = (chapter: HandbookChapter) => {
     const level = findLevelById(chapter.levelId);

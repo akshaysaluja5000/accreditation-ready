@@ -134,7 +134,7 @@ export default function LeaderboardPage() {
                   </span>
                 </div>
                 <div>
-                  <p className="font-bold text-sm">Your Ranking — {periodLabel}</p>
+                  <p className="font-bold text-sm">Your Ranking - {periodLabel}</p>
                   <p className="text-xs text-muted-foreground">
                     {myEntry.totalXp} XP · {myEntry.levelsCompleted}/{totalLevels} levels · {myEntry.accuracy}% accuracy
                   </p>
@@ -284,7 +284,7 @@ export default function LeaderboardPage() {
           >
             <h3 className="font-bold text-sm mb-3 flex items-center gap-2">
               <TrendingUp size={16} className="text-primary" />
-              Team Stats — {periodLabel}
+              Team Stats - {periodLabel}
             </h3>
             <div className="grid grid-cols-3 gap-3">
               <div className="text-center">

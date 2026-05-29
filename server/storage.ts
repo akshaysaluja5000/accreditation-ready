@@ -589,7 +589,7 @@ export async function ensureTablesExist() {
   } finally {
     client.release();
   }
-  // MEDIUM-7: seed question/level/handbook content (idempotent — skips if already seeded)
+  // MEDIUM-7: seed question/level/handbook content (idempotent - skips if already seeded)
   try {
     const { seedAllContent } = await import("./seed-content.js");
     await seedAllContent();
@@ -961,7 +961,7 @@ export class DatabaseStorage implements IStorage {
   }
 
   async upsertProgress(userId: number, levelId: string, score: number, totalQuestions: number): Promise<UserProgress> {
-    // MEDIUM-5: single atomic INSERT … ON CONFLICT DO UPDATE — eliminates race-condition duplicates
+    // MEDIUM-5: single atomic INSERT … ON CONFLICT DO UPDATE - eliminates race-condition duplicates
     const [row] = await db
       .insert(userProgress)
       .values({

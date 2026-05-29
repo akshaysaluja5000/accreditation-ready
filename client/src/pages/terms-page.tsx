@@ -125,7 +125,7 @@ export default function TermsPage() {
                 Accreditation <em>Ready</em> is <span className="font-bold text-foreground">not affiliated with, endorsed by, or sponsored by The Joint Commission, DNV, AAAHC, or CMS</span>. "The Joint Commission" is a registered trademark of The Joint Commission. "AAAHC" refers to the Accreditation Association for Ambulatory Health Care. CMS refers to the Centers for Medicare &amp; Medicaid Services.
               </p>
               <p>
-                All content provided through Accreditation <em>Ready</em> is for educational and training purposes only. It is designed to supplement, not replace, official accreditation standards, guidelines, or processes — including those published by The Joint Commission, DNV, AAAHC, and CMS.
+                All content provided through Accreditation <em>Ready</em> is for educational and training purposes only. It is designed to supplement, not replace, official accreditation standards, guidelines, or processes - including those published by The Joint Commission, DNV, AAAHC, and CMS.
               </p>
               <p>
                 Facility administrators and healthcare professionals should always refer to official publications from the relevant accrediting or regulatory body for authoritative guidance on compliance requirements. Hospital pathway content references The Joint Commission standards. ASC pathway content references AAAHC Accreditation Handbook standards and CMS Conditions for Coverage.

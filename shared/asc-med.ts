@@ -4,14 +4,14 @@ export const ascMedLevel: Level = {
   id: "asc_med",
   module: "asc",
   name: "Medication Management",
-  description: "AAAHC v44 MED — pharmaceutical services oversight, prescription security, medication storage, labeling, disposal, high-alert medications, and vaccine storage.",
+  description: "AAAHC v44 MED - pharmaceutical services oversight, prescription security, medication storage, labeling, disposal, high-alert medications, and vaccine storage.",
   icon: "Pill",
   color: "hsl(30, 80%, 45%)",
   requiredScore: 0,
   chapterSummary: {
     chapterTitle: "MED: Medication Management",
     plainLanguageSummary:
-      "The MED category applies to all ASCs that use drugs, biologicals, pharmaceutical supplies, or samples — regardless of whether an on-site pharmacy is present. The standards address oversight of pharmaceutical services, staff knowledge of prevailing laws, high-alert and look-alike/sound-alike (LASA) medication management, drug security and diversion prevention, medication storage and labeling, patient medication education, device maintenance for medication delivery, vaccine storage protocols, and disposal of expired or recalled medications.",
+      "The MED category applies to all ASCs that use drugs, biologicals, pharmaceutical supplies, or samples - regardless of whether an on-site pharmacy is present. The standards address oversight of pharmaceutical services, staff knowledge of prevailing laws, high-alert and look-alike/sound-alike (LASA) medication management, drug security and diversion prevention, medication storage and labeling, patient medication education, device maintenance for medication delivery, vaccine storage protocols, and disposal of expired or recalled medications.",
     keyOperationalExpectations: [
       "A written policy defines safe medication handling and administration per nationally recognized guidelines.",
       "DEA certification for controlled substances is current and readily retrievable.",
@@ -22,47 +22,47 @@ export const ascMedLevel: Level = {
     ],
     commonRiskPoints: [
       "High-alert medication list exists but antidotes/reversal agents are not co-stored with the medications.",
-      "Medications are labeled with drug name only — strength, expiration, and preparer's identity are missing.",
+      "Medications are labeled with drug name only - strength, expiration, and preparer's identity are missing.",
       "Multi-dose vials are used for multiple patients without documented policy or single-patient assignment.",
-      "Vaccine temperature monitoring logs are absent or incomplete — temperature excursion response training is not documented.",
+      "Vaccine temperature monitoring logs are absent or incomplete - temperature excursion response training is not documented.",
     ],
     aaahcStandards: ["MED.100", "MED.140", "MED.150", "MED.160", "MED.170", "MED.180", "MED.190", "MED.200", "MED.220", "MED.230", "MED.240"],
   },
   studyMaterial: [
     {
-      title: "MED.100 — Pharmaceutical Services Oversight",
+      title: "MED.100 - Pharmaceutical Services Oversight",
       content:
         "MED.100 requires pharmaceutical services to be provided in accordance with standards of care and prevailing laws. Specific requirements include: a written policy defining safe handling and administration per nationally recognized guidelines; posting of current pharmacy state license if required; maintenance of current DEA certification onsite (when controlled substances are present); staff demonstration of knowledge of prevailing pharmaceutical laws; and direct access to current drug information and decision support resources for all relevant staff. If services are provided by telehealth or telemedicine, the standard still applies.",
       keyPoint:
         "Four staff-facing requirements: written policy on safe handling, DEA certification on site, demonstrated knowledge of pharma laws, and direct access to current drug information for all relevant staff.",
     },
     {
-      title: "MED.140 / MED.150 / MED.160 — High-Alert and LASA Medications",
+      title: "MED.140 / MED.150 / MED.160 - High-Alert and LASA Medications",
       content:
-        "MED.140 requires monitoring the medication inventory to track high-alert medications and medications with confused drug names (LASA), with a written policy, documented staff training, and documented monitoring activities. MED.150 requires maintaining a list of currently stocked high-alert medications, implementing error-prevention processes per nationally recognized guidelines, and — critically — co-stocking antidotes, rescue agents, or reversal agents in the same area as the high-alert medication. MED.160 requires a LASA list and processes to prevent LASA administration errors.",
+        "MED.140 requires monitoring the medication inventory to track high-alert medications and medications with confused drug names (LASA), with a written policy, documented staff training, and documented monitoring activities. MED.150 requires maintaining a list of currently stocked high-alert medications, implementing error-prevention processes per nationally recognized guidelines, and - critically - co-stocking antidotes, rescue agents, or reversal agents in the same area as the high-alert medication. MED.160 requires a LASA list and processes to prevent LASA administration errors.",
       keyPoint:
         "High-alert: list it, prevent errors, and co-stock the antidote. LASA: list it and prevent mix-ups. Both require documented monitoring. MED.150.30 on antidote co-stocking is a frequent survey finding.",
     },
     {
-      title: "MED.170 / MED.180 — Drug Security and Storage",
+      title: "MED.170 / MED.180 - Drug Security and Storage",
       content:
         "MED.170 addresses drug security and diversion prevention: pre-signed and post-dated prescriptions are prohibited by written policy (MED.170.10); if prescription pads are used, they must be controlled and secured from unauthorized access; if electronic prescribing is used, systems must be controlled and secured. MED.180 requires drug storage (including samples) to maintain medication safety: medications must be segregated into organized, labeled storage areas designed to minimize drug selection errors; and medications must be stored per manufacturer requirements, state guidelines, and CDC guidelines.",
       keyPoint:
-        "Pre-signed and post-dated prescriptions are a hard prohibition — not just a strong recommendation. Drug storage segregation into labeled areas and temperature/condition compliance are the key MED.180 elements.",
+        "Pre-signed and post-dated prescriptions are a hard prohibition - not just a strong recommendation. Drug storage segregation into labeled areas and temperature/condition compliance are the key MED.180 elements.",
     },
     {
-      title: "MED.200 — Medication Labeling Outside the Original Container",
+      title: "MED.200 - Medication Labeling Outside the Original Container",
       content:
-        "When a medication is removed from its original container or packaging and not immediately administered, it must be labeled in a standard format. MED.200 requires labels to include at minimum: drug name(s), drug strength(s), amount(s) or volume(s) if not apparent from the container, expiration date and time, and the name or initials of the person transferring the drug. 'Immediate administration' means the person who prepares the medication administers it completely without any break in the process — if there is any gap, labeling is required.",
+        "When a medication is removed from its original container or packaging and not immediately administered, it must be labeled in a standard format. MED.200 requires labels to include at minimum: drug name(s), drug strength(s), amount(s) or volume(s) if not apparent from the container, expiration date and time, and the name or initials of the person transferring the drug. 'Immediate administration' means the person who prepares the medication administers it completely without any break in the process - if there is any gap, labeling is required.",
       keyPoint:
         "Five required label elements: name, strength, amount/volume (if not obvious), expiration date/time, and preparer's name or initials. Any gap between preparation and administration triggers the labeling requirement.",
     },
     {
-      title: "MED.240 — Vaccine Storage and Handling",
+      title: "MED.240 - Vaccine Storage and Handling",
       content:
         "MED.240 requires that nationally recognized guidelines for vaccine storage and handling are followed and adopted by the governing body. Written policies must address routine storage and handling, AND emergency storage/handling (equipment failure, power outage, disaster). Staff who receive, handle, or administer vaccines must be trained on these policies. The vaccine storage unit must be equipped with a temperature monitoring device per adopted guidelines. Staff must demonstrate knowledge of procedures when vaccines are exposed to temperature excursions.",
       keyPoint:
-        "Six MED.240 elements: governing body adoption of guidelines, routine policies, emergency policies, staff training, temperature monitoring device, and temperature excursion response knowledge — all six must be present.",
+        "Six MED.240 elements: governing body adoption of guidelines, routine policies, emergency policies, staff training, temperature monitoring device, and temperature excursion response knowledge - all six must be present.",
     },
   ],
   questions: [
@@ -78,16 +78,16 @@ export const ascMedLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "MED.100.30 specifically requires that when controlled substances are present, a current DEA certification is maintained onsite and readily retrievable by authorized personnel. It must be immediately accessible — not filed remotely or retrievable only within 24 hours.",
+        "MED.100.30 specifically requires that when controlled substances are present, a current DEA certification is maintained onsite and readily retrievable by authorized personnel. It must be immediately accessible - not filed remotely or retrievable only within 24 hours.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
           "DEA inspectors and AAAHC surveyors may request to see the DEA registration during a visit. 'Onsite and readily retrievable' means it can be produced quickly by any authorized person who knows where to find it.",
         whyWrong: {
-          A: "24-hour retrieval is not 'readily retrievable' — the certificate must be accessible immediately.",
-          C: "The DEA certificate is kept at the facility — it is not submitted to the state pharmacy board.",
-          D: "Posting in the medication room is not specifically required — 'readily retrievable' means accessible, not necessarily posted on a wall.",
+          A: "24-hour retrieval is not 'readily retrievable' - the certificate must be accessible immediately.",
+          C: "The DEA certificate is kept at the facility - it is not submitted to the state pharmacy board.",
+          D: "Posting in the medication room is not specifically required - 'readily retrievable' means accessible, not necessarily posted on a wall.",
         },
         operationalContext:
           "Keep a framed copy of the DEA registration certificate in the medication room or administrator's office. Maintain a digital copy as backup. Track expiration dates and renew at least 60 days before expiration.",
@@ -110,10 +110,10 @@ export const ascMedLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Co-location of the reversal agent with the high-alert medication ensures that if an adverse reaction occurs during administration, the reversal agent is immediately at hand — not in a separate room requiring retrieval.",
+          "Co-location of the reversal agent with the high-alert medication ensures that if an adverse reaction occurs during administration, the reversal agent is immediately at hand - not in a separate room requiring retrieval.",
         whyWrong: {
           A: "Five-minute accessibility is not close enough for reversal agents during active adverse events.",
-          C: "The crash cart alone may not be where the high-alert medication is being used — co-location means at the point of use.",
+          C: "The crash cart alone may not be where the high-alert medication is being used - co-location means at the point of use.",
           D: "The administrator's office is not an appropriate medication storage location.",
         },
         operationalContext:
@@ -125,7 +125,7 @@ export const ascMedLevel: Level = {
       question:
         "A nurse draws up propofol into two syringes for two different patients. She labels the syringes only with 'Propofol.' What elements of the MED.200 labeling requirement are missing?",
       options: [
-        "The label is complete — drug name is all that is required",
+        "The label is complete - drug name is all that is required",
         "Missing: drug strength, amount/volume, expiration date/time, and the nurse's name or initials",
         "Missing: patient name and procedure type",
         "Propofol does not require labeling because it is administered immediately",
@@ -140,11 +140,11 @@ export const ascMedLevel: Level = {
           "All five MED.200 elements are independently required. Strength identifies the concentration (10 mg/mL), amount/volume clarifies if a non-standard volume is drawn, expiration date/time limits how long the labeled syringe is valid, and the preparer's identity creates accountability.",
         whyWrong: {
           A: "Drug name alone satisfies only one of five required elements.",
-          C: "Patient name is not a MED.200 required label element — though it may be good practice.",
-          D: "Once drawn into a second syringe, the medication is no longer in its original container. 'Immediate administration' means no break in the process — preparing two syringes for two different patients involves a break.",
+          C: "Patient name is not a MED.200 required label element - though it may be good practice.",
+          D: "Once drawn into a second syringe, the medication is no longer in its original container. 'Immediate administration' means no break in the process - preparing two syringes for two different patients involves a break.",
         },
         operationalContext:
-          "Use pre-printed medication labels with fields for all five required elements. OR staff should complete all fields at the time of draw — before the syringe leaves the preparation area.",
+          "Use pre-printed medication labels with fields for all five required elements. OR staff should complete all fields at the time of draw - before the syringe leaves the preparation area.",
       },
     },
     {
@@ -159,7 +159,7 @@ export const ascMedLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "MED.170.10 establishes a hard prohibition: pre-signed and post-dated prescriptions are prohibited by written policy. There are no exceptions — not for co-signature, not for specific drug types, not for short use windows.",
+        "MED.170.10 establishes a hard prohibition: pre-signed and post-dated prescriptions are prohibited by written policy. There are no exceptions - not for co-signature, not for specific drug types, not for short use windows.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
@@ -168,7 +168,7 @@ export const ascMedLevel: Level = {
         whyWrong: {
           A: "Co-signature does not legitimize a pre-signed prescription under MED.170.10.",
           C: "The prohibition applies to all prescription types, not just controlled substances.",
-          D: "No time window exception exists — pre-signed prescriptions are categorically prohibited.",
+          D: "No time window exception exists - pre-signed prescriptions are categorically prohibited.",
         },
         operationalContext:
           "Include the pre-signed/post-dated prescription prohibition in the pharmacy/medication management policy. Include it in practitioner orientation and the prescribing privileges granted by the governing body.",
@@ -186,15 +186,15 @@ export const ascMedLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "MED.180.10 requires that medications are segregated into organized, labeled storage areas designed to minimize drug selection errors — the most frequent cause of wrong-drug administration events.",
+        "MED.180.10 requires that medications are segregated into organized, labeled storage areas designed to minimize drug selection errors - the most frequent cause of wrong-drug administration events.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Medication segregation — separating LASA medications, organizing by category, and using clear labels — directly reduces the risk of a nurse or provider picking the wrong medication from a storage area.",
+          "Medication segregation - separating LASA medications, organizing by category, and using clear labels - directly reduces the risk of a nurse or provider picking the wrong medication from a storage area.",
         whyWrong: {
-          A: "Temperature management is a separate requirement (MED.180.20, SAF.180) — not the design goal of segregation.",
-          C: "Theft prevention is a MED.170 drug security issue — segregation is about selection error prevention.",
+          A: "Temperature management is a separate requirement (MED.180.20, SAF.180) - not the design goal of segregation.",
+          C: "Theft prevention is a MED.170 drug security issue - segregation is about selection error prevention.",
           D: "Label protection is not the purpose of storage area organization.",
         },
         operationalContext:
@@ -218,9 +218,9 @@ export const ascMedLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The qualifier 'consistent with legal requirements and patient needs' acknowledges that medication education must be individualized — a patient with limited literacy needs verbal and visual education; a complex medication regimen needs more detailed instruction.",
+          "The qualifier 'consistent with legal requirements and patient needs' acknowledges that medication education must be individualized - a patient with limited literacy needs verbal and visual education; a complex medication regimen needs more detailed instruction.",
         whyWrong: {
-          A: "Written-only education is not required — verbal education with documentation of the discussion is acceptable.",
+          A: "Written-only education is not required - verbal education with documentation of the discussion is acceptable.",
           C: "While pharmacist education is ideal, MED.190 does not restrict instruction to pharmacists.",
           D: "Medication education requirements apply to all medications provided, not only controlled substances.",
         },
@@ -240,15 +240,15 @@ export const ascMedLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "MED.220.20 specifically requires the policy to mandate regular monitoring of all medications — including vaccines and samples — for expiration dates. This ensures expired medications are identified and removed before they can be inadvertently administered.",
+        "MED.220.20 specifically requires the policy to mandate regular monitoring of all medications - including vaccines and samples - for expiration dates. This ensures expired medications are identified and removed before they can be inadvertently administered.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The explicit inclusion of vaccines and samples is important — these are often overlooked in routine expiration monitoring. Vaccine samples are a common finding during surveys.",
+          "The explicit inclusion of vaccines and samples is important - these are often overlooked in routine expiration monitoring. Vaccine samples are a common finding during surveys.",
         whyWrong: {
-          A: "Quarterly pharmacist review is not specifically required — the standard requires regular monitoring per organizational policy.",
-          C: "Disposal documentation to the DEA is required for controlled substance disposal — it is not what MED.220.20 requires organizationally.",
+          A: "Quarterly pharmacist review is not specifically required - the standard requires regular monitoring per organizational policy.",
+          C: "Disposal documentation to the DEA is required for controlled substance disposal - it is not what MED.220.20 requires organizationally.",
           D: "The requirement applies to all medications, not only Schedule II controlled substances.",
         },
         operationalContext:
@@ -272,7 +272,7 @@ export const ascMedLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Temperature excursions destroy vaccine potency. A continuous temperature monitoring device (digital data logger) provides a complete record of storage conditions — a simple thermometer read once a day misses excursions that occur between readings.",
+          "Temperature excursions destroy vaccine potency. A continuous temperature monitoring device (digital data logger) provides a complete record of storage conditions - a simple thermometer read once a day misses excursions that occur between readings.",
         whyWrong: {
           A: "Automated administration is not a MED.240 requirement.",
           C: "Humidity sensing is not a MED.240 element for vaccines.",
@@ -330,7 +330,7 @@ export const ascMedLevel: Level = {
         whyWrong: {
           A: "The AMA does not publish a prescribing safety guide specific to LASA medications.",
           C: "The Joint Commission's Sentinel Event database identifies adverse event trends but is not the LASA list resource.",
-          D: "The FDA Drug Approval Database tracks drug approvals — it does not publish LASA medication lists.",
+          D: "The FDA Drug Approval Database tracks drug approvals - it does not publish LASA medication lists.",
         },
         operationalContext:
           "Download and review the current ISMP Confused Drug Names list at least annually. Cross-reference against your current medication inventory to identify which LASA pairs you stock. Document the review and implement visual differentiation strategies (tall-man lettering, physical separation, color coding) for each identified pair.",
@@ -355,7 +355,7 @@ export const ascMedLevel: Level = {
         whyCorrect:
           "Medication delivery devices that are improperly maintained or cleaned can cause medication errors, infections, or delivery failures. Adherence to manufacturer instructions is the minimum standard for these devices.",
         whyWrong: {
-          A: "Annual replacement is not the standard — manufacturer maintenance schedules govern replacement intervals.",
+          A: "Annual replacement is not the standard - manufacturer maintenance schedules govern replacement intervals.",
           C: "MED.230 does not restrict device operation to nursing staff.",
           D: "State pharmacy board validation is not a MED.230 requirement.",
         },
@@ -383,7 +383,7 @@ export const ascMedLevel: Level = {
           "MED.140 has three layers: the policy itself (MED.140.10), documented staff training on the policy (MED.140.20), and documentation of actual monitoring activities (MED.140.30). All three must be present.",
         whyWrong: {
           A: "Weekly pharmacist inspection is not specified in MED.140.20.",
-          C: "ISMP is a resource organization — submission of monitoring results to ISMP is not required.",
+          C: "ISMP is a resource organization - submission of monitoring results to ISMP is not required.",
           D: "Purchasing records address supply management, not the MED.140.20 staff training documentation requirement.",
         },
         operationalContext:
@@ -407,10 +407,10 @@ export const ascMedLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "MED.130 ensures that contracted pharmaceutical services are not held to a lower standard. The governing body must verify the contractor's credentials — a signed contract alone is not sufficient.",
+          "MED.130 ensures that contracted pharmaceutical services are not held to a lower standard. The governing body must verify the contractor's credentials - a signed contract alone is not sufficient.",
         whyWrong: {
           A: "Physician ownership of the contractor is not required.",
-          C: "Liability allocation is a legal/contractual matter — not the MED.130.20 credential verification requirement.",
+          C: "Liability allocation is a legal/contractual matter - not the MED.130.20 credential verification requirement.",
           D: "Proximity is not a MED.130 requirement.",
         },
         operationalContext:
@@ -422,26 +422,26 @@ export const ascMedLevel: Level = {
       question:
         "Under MED.180.20, medications must be stored and managed in accordance with what sources?",
       options: [
-        "Only state guidelines — federal guidelines are secondary",
+        "Only state guidelines - federal guidelines are secondary",
         "Manufacturer requirements AND state and/or CDC guidelines",
         "The organization's internal pharmacy policy, which supersedes all other guidelines",
-        "Only the CDC guidelines — manufacturer requirements are advisory",
+        "Only the CDC guidelines - manufacturer requirements are advisory",
       ],
       correctIndex: 1,
       explanation:
-        "MED.180.20 requires that medications are stored and managed in accordance with both manufacturer requirements AND state and/or CDC guidelines. All applicable standards must be met — not just the most convenient one.",
+        "MED.180.20 requires that medications are stored and managed in accordance with both manufacturer requirements AND state and/or CDC guidelines. All applicable standards must be met - not just the most convenient one.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
           "Medication storage conditions (temperature ranges, light exposure, humidity) are specified by manufacturers in package inserts. State and CDC guidelines may add additional requirements. Both must be observed.",
         whyWrong: {
-          A: "Both federal and state requirements apply — neither is categorically secondary.",
-          C: "Internal policies must comply with applicable external standards — they cannot supersede manufacturer or regulatory requirements.",
-          D: "Manufacturer requirements are not merely advisory — they are legally relevant to product liability and patient safety.",
+          A: "Both federal and state requirements apply - neither is categorically secondary.",
+          C: "Internal policies must comply with applicable external standards - they cannot supersede manufacturer or regulatory requirements.",
+          D: "Manufacturer requirements are not merely advisory - they are legally relevant to product liability and patient safety.",
         },
         operationalContext:
-          "Review the package insert storage conditions for each medication in your formulary. Ensure storage locations meet both manufacturer and CDC/state requirements — especially for temperature-sensitive medications and vaccines.",
+          "Review the package insert storage conditions for each medication in your formulary. Ensure storage locations meet both manufacturer and CDC/state requirements - especially for temperature-sensitive medications and vaccines.",
       },
     },
     {
@@ -456,7 +456,7 @@ export const ascMedLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "MED.100.40 specifically states that 'through interviews, staff demonstrates knowledge of prevailing pharmaceutical laws and regulations.' Surveyors assess this through direct staff interviews — not just policy review.",
+        "MED.100.40 specifically states that 'through interviews, staff demonstrates knowledge of prevailing pharmaceutical laws and regulations.' Surveyors assess this through direct staff interviews - not just policy review.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
@@ -465,7 +465,7 @@ export const ascMedLevel: Level = {
         whyWrong: {
           A: "The pharmacy license demonstrates licensure, not staff knowledge.",
           C: "There is no state pharmacy board submission requirement under MED.100.40.",
-          D: "All relevant staff — not just the medical director — must demonstrate knowledge.",
+          D: "All relevant staff - not just the medical director - must demonstrate knowledge.",
         },
         operationalContext:
           "Train all clinical staff on the pharmaceutical laws and regulations relevant to their role (controlled substance handling, prescription pad security, DEA requirements). Use a brief annual knowledge test to document and confirm ongoing competency.",
@@ -488,10 +488,10 @@ export const ascMedLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The segregation step is a bridge between identifying a medication for disposal and actually disposing of it — it prevents anyone from accidentally using the identified item before it is properly disposed of.",
+          "The segregation step is a bridge between identifying a medication for disposal and actually disposing of it - it prevents anyone from accidentally using the identified item before it is properly disposed of.",
         whyWrong: {
-          A: "Flushing medications is not environmentally compliant for most medications and is not the MED.220 step — that is a disposal method, not segregation.",
-          C: "DEA authorization is required for controlled substance disposal specifically — not for all medications under MED.220.30.",
+          A: "Flushing medications is not environmentally compliant for most medications and is not the MED.220 step - that is a disposal method, not segregation.",
+          C: "DEA authorization is required for controlled substance disposal specifically - not for all medications under MED.220.30.",
           D: "Manufacturer return may be the disposal method for some medications, but segregation from active stock must happen immediately while the return process is arranged.",
         },
         operationalContext:
@@ -515,9 +515,9 @@ export const ascMedLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Vaccines are temperature-sensitive — a refrigerator failure or power outage can destroy an entire vaccine inventory. Pre-established emergency procedures ensure rapid response to protect vaccines before they are damaged.",
+          "Vaccines are temperature-sensitive - a refrigerator failure or power outage can destroy an entire vaccine inventory. Pre-established emergency procedures ensure rapid response to protect vaccines before they are damaged.",
         whyWrong: {
-          A: "Expiring vaccines are addressed in routine storage policies and MED.220 — not MED.240.30.",
+          A: "Expiring vaccines are addressed in routine storage policies and MED.220 - not MED.240.30.",
           C: "Adding a new vaccine to the formulary is addressed in governance and training, not MED.240.30.",
           D: "Patient vaccine declination is a clinical and consent matter, not a storage policy issue.",
         },
@@ -542,10 +542,10 @@ export const ascMedLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The 'no break in the process' definition means: if you draw it up and immediately inject it into the patient in one continuous action, labeling may not be required. If you set it down, hand it to someone, or wait any time — labeling is required.",
+          "The 'no break in the process' definition means: if you draw it up and immediately inject it into the patient in one continuous action, labeling may not be required. If you set it down, hand it to someone, or wait any time - labeling is required.",
         whyWrong: {
-          A: "Time elapsed is not the determining factor — the continuity of the process is.",
-          C: "Verification by a second nurse introduces a break in the process — labeling would be required.",
+          A: "Time elapsed is not the determining factor - the continuity of the process is.",
+          C: "Verification by a second nurse introduces a break in the process - labeling would be required.",
           D: "Same-shift preparation does not meet the 'no break' standard.",
         },
         operationalContext:
@@ -557,10 +557,10 @@ export const ascMedLevel: Level = {
       question:
         "An ASC routinely administers heparin from a 10-unit/mL vial and also stocks heparin 1,000-unit/mL vials. Both are stored adjacent to each other. What MED.150 and MED.160 concern does this create?",
       options: [
-        "No concern — heparin is not a high-alert medication",
+        "No concern - heparin is not a high-alert medication",
         "Both high-alert medication error prevention (MED.150) and LASA error prevention (MED.160) concerns, because heparin is high-alert and the two concentrations are a known look-alike error risk",
-        "Only MED.160 applies — concentration differences are LASA issues only",
-        "Only MED.150 applies — LASA concerns only exist for medications with different names",
+        "Only MED.160 applies - concentration differences are LASA issues only",
+        "Only MED.150 applies - LASA concerns only exist for medications with different names",
       ],
       correctIndex: 1,
       explanation:
@@ -572,11 +572,11 @@ export const ascMedLevel: Level = {
           "Heparin concentration errors have resulted in patient deaths, including high-profile cases involving neonates. Both MED.150 (high-alert error prevention) and MED.160 (LASA confusion prevention) apply, and the storage arrangement described is a direct risk factor.",
         whyWrong: {
           A: "Heparin is on both the ISMP high-alert medications list and the ISMP confused drug names list.",
-          C: "LASA risks include different concentrations of the same drug — this is a documented heparin-specific risk category.",
-          D: "LASA risks are not limited to different drug names — different concentrations and formulations of the same drug are equally hazardous.",
+          C: "LASA risks include different concentrations of the same drug - this is a documented heparin-specific risk category.",
+          D: "LASA risks are not limited to different drug names - different concentrations and formulations of the same drug are equally hazardous.",
         },
         operationalContext:
-          "Physically separate the two heparin concentrations — different storage bins or drawers. Apply tall-man lettering and color-coded alerts to each. Conduct a double-check before heparin administration. Remove the concentration not needed for your specific patient population if clinically feasible.",
+          "Physically separate the two heparin concentrations - different storage bins or drawers. Apply tall-man lettering and color-coded alerts to each. Conduct a double-check before heparin administration. Remove the concentration not needed for your specific patient population if clinically feasible.",
       },
     },
     {
@@ -587,20 +587,20 @@ export const ascMedLevel: Level = {
         "Only the medical director and pharmacist",
         "All relevant staff",
         "Only staff with controlled substance handling responsibilities",
-        "Clinical staff only — administrative staff are excluded",
+        "Clinical staff only - administrative staff are excluded",
       ],
       correctIndex: 1,
       explanation:
-        "MED.100.50 requires direct access to current drug information and decision support resources for all relevant staff — not just physicians or pharmacists. Any staff member involved in medication management (nurses, anesthesia providers, surgical technicians) must have access.",
+        "MED.100.50 requires direct access to current drug information and decision support resources for all relevant staff - not just physicians or pharmacists. Any staff member involved in medication management (nurses, anesthesia providers, surgical technicians) must have access.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Drug information access at the point of care enables safe real-time decision-making. Nurses administering medications need to verify doses, interactions, and side effects — access to current drug information is a fundamental safety tool.",
+          "Drug information access at the point of care enables safe real-time decision-making. Nurses administering medications need to verify doses, interactions, and side effects - access to current drug information is a fundamental safety tool.",
         whyWrong: {
-          A: "Drug information access is not limited to physicians and pharmacists — all staff involved in medication management need it.",
-          C: "Controlled substance-only access is too narrow — all relevant staff are covered.",
-          D: "Administrative staff may be 'relevant' if they are involved in medication-related functions — the standard covers 'all relevant staff.'",
+          A: "Drug information access is not limited to physicians and pharmacists - all staff involved in medication management need it.",
+          C: "Controlled substance-only access is too narrow - all relevant staff are covered.",
+          D: "Administrative staff may be 'relevant' if they are involved in medication-related functions - the standard covers 'all relevant staff.'",
         },
         operationalContext:
           "Subscribe to a clinical drug information database (e.g., Lexicomp, Micromedex, or ClinicalKey Pharmacology) accessible on workstations in medication rooms, procedure rooms, and at nursing stations. Ensure all relevant staff have accounts or shared access.",

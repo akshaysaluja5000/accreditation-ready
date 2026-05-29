@@ -71,7 +71,7 @@ export function log(message: string, source = "express") {
   console.log(`${formattedTime} [${source}] ${message}`);
 }
 
-// HIGH-2: Log only method, path, status, and duration — no response body
+// HIGH-2: Log only method, path, status, and duration - no response body
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;

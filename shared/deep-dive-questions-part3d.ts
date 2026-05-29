@@ -263,7 +263,7 @@ export const ddEocLevel: DeepDiveLevel = {
         "Semi-annually per shift with at least one unannounced"
       ],
       baseCorrectIndex: 0,
-      baseExplanation: "Per NFPA 101 and JC standards (EC.02.03.03 EP 3 for ambulatory; PE.03.01.01 EP 3 for hospitals), fire drills must be conducted at least quarterly on each shift — a minimum of 12 drills per year across three shifts. All drills must be unannounced, held at unexpected times, and conducted under varying conditions. As of March 1, 2026, two formerly required scheduling restrictions were eliminated: the rule that drills must be spaced at least one hour apart within the same quarter, and the rule requiring each quarterly drill to fall within plus or minus ten days of the last. These restrictions no longer apply. Documentation must include date, time, shift, participants, scenario, and any identified deficiencies with corrective actions.",
+      baseExplanation: "Per NFPA 101 and JC standards (EC.02.03.03 EP 3 for ambulatory; PE.03.01.01 EP 3 for hospitals), fire drills must be conducted at least quarterly on each shift - a minimum of 12 drills per year across three shifts. All drills must be unannounced, held at unexpected times, and conducted under varying conditions. As of March 1, 2026, two formerly required scheduling restrictions were eliminated: the rule that drills must be spaced at least one hour apart within the same quarter, and the rule requiring each quarterly drill to fall within plus or minus ten days of the last. These restrictions no longer apply. Documentation must include date, time, shift, participants, scenario, and any identified deficiencies with corrective actions.",
       baseXp: 15,
       followUps: [{
         question: "During a fire drill review, the surveyor notices that all drills on the night shift for the past year were announced in advance and conducted in the same nursing unit. What deficiency should be cited?",
@@ -274,7 +274,7 @@ export const ddEocLevel: DeepDiveLevel = {
           "Night shift drills are optional since fewer patients are awake during those hours"
         ],
         correctIndex: 0,
-        explanation: "JC and NFPA 101 require fire drills to realistically test actual staff response capabilities. All drills must be unannounced — not just a percentage of them — and must be conducted at unexpected times and under varying conditions. Conducting all drills in the same location and announcing them in advance defeats the purpose entirely. Drills should vary in location, timing, and scenario design to provide a meaningful and defensible assessment of the organization's fire response program.",
+        explanation: "JC and NFPA 101 require fire drills to realistically test actual staff response capabilities. All drills must be unannounced - not just a percentage of them - and must be conducted at unexpected times and under varying conditions. Conducting all drills in the same location and announcing them in advance defeats the purpose entirely. Drills should vary in location, timing, and scenario design to provide a meaningful and defensible assessment of the organization's fire response program.",
         expertXp: 25
       },
       {

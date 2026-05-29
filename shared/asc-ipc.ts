@@ -4,7 +4,7 @@ export const ascIpcLevel: Level = {
   id: "asc_ipc",
   module: "asc",
   name: "Infection Prevention & Control",
-  description: "AAAHC v44 IPC — written program, hand hygiene, sterilization, sharps safety, surgical environment, and cross-infection prevention.",
+  description: "AAAHC v44 IPC - written program, hand hygiene, sterilization, sharps safety, surgical environment, and cross-infection prevention.",
   icon: "ShieldCheck",
   color: "hsl(150, 60%, 38%)",
   requiredScore: 0,
@@ -22,7 +22,7 @@ export const ascIpcLevel: Level = {
     ],
     commonRiskPoints: [
       "Active surveillance of hand hygiene or safe injection practices is absent or not documented.",
-      "Biological indicators are missing from sterilization cycles — only external/internal indicators are used.",
+      "Biological indicators are missing from sterilization cycles - only external/internal indicators are used.",
       "Sharps containers are overfilled beyond the fill line, or placed in locations where they cannot be secured from tampering.",
       "Environmental controls (temperature, humidity, air pressure in ORs) are not monitored or documented against nationally recognized guidelines.",
     ],
@@ -30,39 +30,39 @@ export const ascIpcLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "IPC.100 — The Written IPC Program",
+      title: "IPC.100 - The Written IPC Program",
       content:
         "Standard IPC.100 requires a written infection prevention and control program that is (1) approved by the governing body, (2) validated by an annual formal infection prevention risk assessment, (3) based on nationally recognized guidelines selected by the governing body, (4) integrated into the quality improvement program, and (5) compliant with all applicable state, federal, and OSHA requirements. For Medicare Deemed Status organizations, failure to follow nationally recognized infection control guidelines can result in a condition-level citation.",
       keyPoint:
         "Five compliance elements: governing body approval, annual risk assessment, nationally recognized guidelines, QI integration, and OSHA/regulatory compliance.",
     },
     {
-      title: "IPC.130 — Hand Hygiene and Safe Injection Practice Surveillance",
+      title: "IPC.130 - Hand Hygiene and Safe Injection Practice Surveillance",
       content:
-        "The written IPC program must require active surveillance of hand hygiene consistent with WHO, CDC, or other nationally recognized guidelines (IPC.130.30), and active surveillance of safe injection practices consistent with CDC or other nationally recognized guidelines (IPC.130.40). Active surveillance means ongoing, documented observation — not just a policy statement. IPC.130.20 requires a written hand hygiene policy specifying appropriate products per manufacturer's instructions for use.",
+        "The written IPC program must require active surveillance of hand hygiene consistent with WHO, CDC, or other nationally recognized guidelines (IPC.130.30), and active surveillance of safe injection practices consistent with CDC or other nationally recognized guidelines (IPC.130.40). Active surveillance means ongoing, documented observation - not just a policy statement. IPC.130.20 requires a written hand hygiene policy specifying appropriate products per manufacturer's instructions for use.",
       keyPoint:
         "Active surveillance of both hand hygiene AND safe injection practices must be documented. A policy alone does not satisfy IPC.130.30 or IPC.130.40.",
     },
     {
-      title: "IPC.170 — Sterilization: The Three-Indicator Requirement",
+      title: "IPC.170 - Sterilization: The Three-Indicator Requirement",
       content:
         "IPC.170 governs the cleaning, decontamination, high-level disinfection, and sterilization of instruments, equipment, supplies, and implants. Critically, IPC.170.30 requires that internal AND external indicators, including biological indicators, are used with items undergoing sterilization. Biological indicators (e.g., Geobacillus stearothermophilus spore strips) provide the highest level of sterilization assurance. All processes must adhere to nationally recognized guidelines, manufacturer's instructions, and state/federal requirements.",
       keyPoint:
         "Sterilization requires three types of indicators: external (tape/label changes), internal (chemical integrators inside packs), AND biological (spore tests). Missing any one of the three is a deficiency.",
     },
     {
-      title: "IPC.180 — Sharps Injury Prevention Program",
+      title: "IPC.180 - Sharps Injury Prevention Program",
       content:
-        "IPC.180 requires a written sharps injury prevention program covering: disposal of intact needles and syringes into appropriate puncture-resistant sharps containers; placement of containers in appropriate care areas secured from tampering; replacement when the fill line is reached; and proper handling, storage, and disposal of filled containers in accordance with applicable regulations. Containers must not be overfilled — replacement at the fill line is a specific, enforceable requirement.",
+        "IPC.180 requires a written sharps injury prevention program covering: disposal of intact needles and syringes into appropriate puncture-resistant sharps containers; placement of containers in appropriate care areas secured from tampering; replacement when the fill line is reached; and proper handling, storage, and disposal of filled containers in accordance with applicable regulations. Containers must not be overfilled - replacement at the fill line is a specific, enforceable requirement.",
       keyPoint:
         "Four elements: proper disposal, proper placement (secured from tampering), replacement at fill line (not when overflowing), and compliant disposal of full containers. All must be in written policy.",
     },
     {
-      title: "IPC.230 — Surgical Environment Safeguards",
+      title: "IPC.230 - Surgical Environment Safeguards",
       content:
         "Selective standard IPC.230 applies to facilities with operating or procedure rooms. It requires written policies for: proper attire for all persons entering ORs/procedure rooms; acceptable aseptic techniques; removal or covering of patient clothing prior to OR entry; freshly laundered attire donned inside the facility before entering restricted areas; surgical hand antisepsis using antimicrobial soap or alcohol-based hand rub; pre-procedure site antisepsis; and environmental controls (temperature, humidity, air pressure) following nationally recognized guidelines. Note: NA may be applied if only non-sterile procedures are conducted.",
       keyPoint:
-        "IPC.230 covers seven elements of surgical environment control. Environmental controls for temperature, humidity, and air pressure must align with nationally recognized guidelines — not just be set to comfortable levels.",
+        "IPC.230 covers seven elements of surgical environment control. Environmental controls for temperature, humidity, and air pressure must align with nationally recognized guidelines - not just be set to comfortable levels.",
     },
   ],
   questions: [
@@ -110,11 +110,11 @@ export const ascIpcLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "IPC.150 has two distinct requirements: (1) the governing body or designee must formally assign a qualified health care professional, and (2) that person must have documented training and current competence — not just a clinical background generally.",
+          "IPC.150 has two distinct requirements: (1) the governing body or designee must formally assign a qualified health care professional, and (2) that person must have documented training and current competence - not just a clinical background generally.",
         whyWrong: {
           A: "The governing body chair is a governance function, not necessarily a qualified IPC professional.",
           C: "Survey-only consultants do not satisfy the 'designated and qualified' ongoing director requirement.",
-          D: "The medical director may serve in this role but must have specific IPC training and demonstrated competence — the role is not automatic.",
+          D: "The medical director may serve in this role but must have specific IPC training and demonstrated competence - the role is not automatic.",
         },
         operationalContext:
           "Designate an IPC officer in writing (by job title or name), verify their IPC training (CIC certification or equivalent training documentation), and maintain a file of their IPC competency evidence.",
@@ -126,22 +126,22 @@ export const ascIpcLevel: Level = {
         "During a survey, the IPC officer states that hand hygiene compliance is assumed to be good because 'staff know to wash their hands.' What IPC.130 requirement is not met?",
       options: [
         "The IPC program must include annual hand hygiene retraining",
-        "Active surveillance of hand hygiene must be conducted and documented — assumption is not surveillance",
+        "Active surveillance of hand hygiene must be conducted and documented - assumption is not surveillance",
         "Hand hygiene compliance only needs to be measured if there is an outbreak",
         "IPC.130 only requires a hand hygiene policy, not active observation",
       ],
       correctIndex: 1,
       explanation:
-        "IPC.130.30 requires active surveillance of hand hygiene consistent with nationally recognized guidelines. Active surveillance means documented observation and measurement of actual compliance — not assumption or self-reporting.",
+        "IPC.130.30 requires active surveillance of hand hygiene consistent with nationally recognized guidelines. Active surveillance means documented observation and measurement of actual compliance - not assumption or self-reporting.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Active surveillance is the key term. It requires systematic, documented observation of hand hygiene moments and compliance rates. The IPC officer's assumption — however well-intentioned — is not surveillance.",
+          "Active surveillance is the key term. It requires systematic, documented observation of hand hygiene moments and compliance rates. The IPC officer's assumption - however well-intentioned - is not surveillance.",
         whyWrong: {
           A: "Annual retraining may be good practice but is not specifically what IPC.130.30 requires.",
           C: "Surveillance must be ongoing, not triggered by outbreaks.",
-          D: "IPC.130.30 goes beyond the policy level — it requires active (documented, observational) surveillance.",
+          D: "IPC.130.30 goes beyond the policy level - it requires active (documented, observational) surveillance.",
         },
         operationalContext:
           "Implement a monthly hand hygiene observation log where IPC staff or designees conduct and document direct observations at defined 'hand hygiene moments' (before patient contact, before aseptic task, after body fluid exposure, after patient contact). Report rates to QI committee.",
@@ -152,8 +152,8 @@ export const ascIpcLevel: Level = {
       question:
         "A sterilization load at an ASC uses external chemical indicator tape and internal chemical integrators but no biological indicators. What does IPC.170.30 require?",
       options: [
-        "Two types of indicators are sufficient — biological indicators are optional for low-risk loads",
-        "IPC.170.30 requires internal AND external indicators including biological indicators — all three types are required for items undergoing sterilization",
+        "Two types of indicators are sufficient - biological indicators are optional for low-risk loads",
+        "IPC.170.30 requires internal AND external indicators including biological indicators - all three types are required for items undergoing sterilization",
         "Biological indicators are only required for implants, not for general surgical instrument sets",
         "External indicators alone are sufficient for Class 4 chemical indicators",
       ],
@@ -166,7 +166,7 @@ export const ascIpcLevel: Level = {
         whyCorrect:
           "Biological indicators (spore tests) are the gold standard for sterilization assurance because they test the actual killing of living organisms. External and internal chemical indicators confirm exposure to sterilization conditions but cannot confirm organism death the way biological indicators can.",
         whyWrong: {
-          A: "There is no 'low-risk load' exemption in IPC.170.30 — all items undergoing sterilization require all three indicator types.",
+          A: "There is no 'low-risk load' exemption in IPC.170.30 - all items undergoing sterilization require all three indicator types.",
           C: "The standard does not limit biological indicator use to implants alone.",
           D: "Class 4 or higher chemical indicators are not a substitute for biological indicators under IPC.170.30.",
         },
@@ -191,14 +191,14 @@ export const ascIpcLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The fill line exists precisely to prevent overfilling. When a container is filled past the line, the top of the container is no longer a safe deposit zone — sharps can be pushed back out during deposit, causing injury.",
+          "The fill line exists precisely to prevent overfilling. When a container is filled past the line, the top of the container is no longer a safe deposit zone - sharps can be pushed back out during deposit, causing injury.",
         whyWrong: {
           A: "Filling to the top exceeds the safe fill line and violates IPC.180.30.",
-          C: "Daily replacement is not the standard — replacement at the fill line is.",
+          C: "Daily replacement is not the standard - replacement at the fill line is.",
           D: "Replacement based on injury occurrence is reactive; the standard requires proactive fill-level management.",
         },
         operationalContext:
-          "Train all staff to replace sharps containers when the manufacturer's fill-line indicator is reached — not when overfull. Include fill-line monitoring in daily environmental rounds.",
+          "Train all staff to replace sharps containers when the manufacturer's fill-line indicator is reached - not when overfull. Include fill-line monitoring in daily environmental rounds.",
       },
     },
     {
@@ -218,11 +218,11 @@ export const ascIpcLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Reportable conditions requirements vary by state but the organization must have a written policy that addresses when and how to notify public health — and must actually make those notifications as required.",
+          "Reportable conditions requirements vary by state but the organization must have a written policy that addresses when and how to notify public health - and must actually make those notifications as required.",
         whyWrong: {
           A: "Patient deaths may trigger reports but are not the only trigger for public health notification.",
           C: "Risk assessment findings trigger internal IPC program changes, not necessarily public health reporting.",
-          D: "Reportable conditions extend well beyond respiratory pandemic diseases — they include enteric diseases, sexually transmitted infections, and many others depending on the jurisdiction.",
+          D: "Reportable conditions extend well beyond respiratory pandemic diseases - they include enteric diseases, sexually transmitted infections, and many others depending on the jurisdiction.",
         },
         operationalContext:
           "Download your state's list of reportable conditions and build a reference card for the IPC officer and relevant clinical staff. Include a reporting flowchart in the IPC policy.",
@@ -233,7 +233,7 @@ export const ascIpcLevel: Level = {
       question:
         "What does IPC.200 require when assessing whether an ASC can safely protect patients and others from cross-infection?",
       options: [
-        "Only personnel numbers matter — equipment and supplies are secondary",
+        "Only personnel numbers matter - equipment and supplies are secondary",
         "Space, equipment, supplies, AND personnel must all be assessed as sufficient",
         "Cross-infection protection is assessed only during outbreak investigations",
         "IPC.200 only applies to facilities that perform invasive procedures",
@@ -247,7 +247,7 @@ export const ascIpcLevel: Level = {
         whyCorrect:
           "IPC.200 takes a whole-system view of infection prevention resources. An ASC with excellent policies but insufficient PPE supply or overcrowded procedure rooms cannot adequately protect patients from cross-infection.",
         whyWrong: {
-          A: "Personnel alone are not sufficient — all four resource categories must be assessed.",
+          A: "Personnel alone are not sufficient - all four resource categories must be assessed.",
           C: "IPC.200 is an ongoing requirement, not limited to outbreak situations.",
           D: "IPC.200 applies to all ambulatory health care organizations.",
         },
@@ -275,7 +275,7 @@ export const ascIpcLevel: Level = {
           "IPC.210 establishes three distinct cleaning timeframes: pre-use, between-patient, and terminal (end-of-session or end-of-day). Each requires specific policy guidance because the depth and products used may differ.",
         whyWrong: {
           A: "End-of-day terminal cleaning alone does not address pre-use or between-patient cleaning requirements.",
-          C: "Monthly deep cleaning is supplemental — it does not satisfy the daily operational cleaning requirements.",
+          C: "Monthly deep cleaning is supplemental - it does not satisfy the daily operational cleaning requirements.",
           D: "Cleaning is required as a routine infection prevention measure, not only after visible contamination events.",
         },
         operationalContext:
@@ -289,8 +289,8 @@ export const ascIpcLevel: Level = {
       options: [
         "The organization's preference based on historical practice",
         "The manufacturer's instructions or nationally recognized guidelines, whichever are more stringent",
-        "Only the manufacturer's instructions apply — guidelines are advisory",
-        "Only nationally recognized guidelines apply — manufacturer instructions are secondary",
+        "Only the manufacturer's instructions apply - guidelines are advisory",
+        "Only nationally recognized guidelines apply - manufacturer instructions are secondary",
       ],
       correctIndex: 1,
       explanation:
@@ -302,8 +302,8 @@ export const ascIpcLevel: Level = {
           "When there is a gap between manufacturer instructions and nationally recognized guidelines, the more stringent standard must be applied. This protects patients even when manufacturers have not updated their instructions to reflect the latest evidence.",
         whyWrong: {
           A: "Historical practice is not a valid compliance standard under IPC.220.",
-          C: "Neither manufacturer instructions nor guidelines alone govern — the more stringent of the two applies.",
-          D: "Neither source takes automatic precedence — the more stringent standard applies.",
+          C: "Neither manufacturer instructions nor guidelines alone govern - the more stringent of the two applies.",
+          D: "Neither source takes automatic precedence - the more stringent standard applies.",
         },
         operationalContext:
           "For each type of reusable device, document the manufacturer's IFU (instructions for use) and compare with current AAMI/CDC/SGNA guidelines. Apply whichever is more stringent and document your rationale.",
@@ -326,10 +326,10 @@ export const ascIpcLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Environmental controls in ORs and procedure rooms are critical for preventing airborne contamination. AAAHC requires policies that adopt nationally recognized guidelines for these parameters — not just 'comfortable' conditions.",
+          "Environmental controls in ORs and procedure rooms are critical for preventing airborne contamination. AAAHC requires policies that adopt nationally recognized guidelines for these parameters - not just 'comfortable' conditions.",
         whyWrong: {
           A: "Patient pre-op bathing is a surgical site infection prevention practice, not an IPC.230 environmental control.",
-          C: "Six air exchanges is one parameter found in some guidelines, but the standard requires alignment with specific nationally recognized guidelines — not a single arbitrary number.",
+          C: "Six air exchanges is one parameter found in some guidelines, but the standard requires alignment with specific nationally recognized guidelines - not a single arbitrary number.",
           D: "Negative pressure rooms are appropriate for airborne infection isolation, not standard OR environmental control.",
         },
         operationalContext:
@@ -341,22 +341,22 @@ export const ascIpcLevel: Level = {
       question:
         "An ASC uses a contract laundry service for OR attire contaminated with blood or body fluids. What does IPC.240 require?",
       options: [
-        "Contracted laundry is prohibited — all contaminated attire must be laundered on-site",
+        "Contracted laundry is prohibited - all contaminated attire must be laundered on-site",
         "The laundry must adhere to nationally recognized guidelines AND be approved by the organization",
         "Only the laundry's state license needs to be verified",
         "Contaminated attire can be laundered at a commercial laundromat if cost-effective",
       ],
       correctIndex: 1,
       explanation:
-        "IPC.240 requires that attire contaminated with blood or body fluids is laundered by an approved laundry that adheres to nationally recognized guidelines. Both elements — compliance with guidelines AND organizational approval of the laundry — are required.",
+        "IPC.240 requires that attire contaminated with blood or body fluids is laundered by an approved laundry that adheres to nationally recognized guidelines. Both elements - compliance with guidelines AND organizational approval of the laundry - are required.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
           "IPC.240 protects against the risk of improperly laundered attire being returned to use in patient care areas. The organization must vet and formally approve the laundry service, not just contract with whoever is cheapest.",
         whyWrong: {
-          A: "On-site laundering is not required — contracted services are permitted if they meet IPC.240 requirements.",
-          C: "State licensing alone is not sufficient — national guideline compliance must also be verified.",
+          A: "On-site laundering is not required - contracted services are permitted if they meet IPC.240 requirements.",
+          C: "State licensing alone is not sufficient - national guideline compliance must also be verified.",
           D: "Commercial laundromats are not equipped to handle regulated medical attire per bloodborne pathogen standards.",
         },
         operationalContext:
@@ -380,10 +380,10 @@ export const ascIpcLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The annual risk assessment is the mechanism by which the program stays current. Without it, the organization cannot demonstrate that its IPC program addresses current, relevant risks — which is the core requirement of IPC.100.20.",
+          "The annual risk assessment is the mechanism by which the program stays current. Without it, the organization cannot demonstrate that its IPC program addresses current, relevant risks - which is the core requirement of IPC.100.20.",
         whyWrong: {
-          A: "Annual review is required — the standard explicitly requires the annual risk assessment as evidence of relevance.",
-          C: "There is no three-year review cycle in IPC.100 — it requires annual review.",
+          A: "Annual review is required - the standard explicitly requires the annual risk assessment as evidence of relevance.",
+          C: "There is no three-year review cycle in IPC.100 - it requires annual review.",
           D: "The risk assessment requirement is proactive and ongoing, not outbreak-triggered.",
         },
         operationalContext:
@@ -395,7 +395,7 @@ export const ascIpcLevel: Level = {
       question:
         "What does IPC.130.20 require regarding hand hygiene products?",
       options: [
-        "Only alcohol-based hand rubs are compliant — soap and water is insufficient",
+        "Only alcohol-based hand rubs are compliant - soap and water is insufficient",
         "A written hand hygiene policy must address appropriate products and their use according to the manufacturer's instructions for use",
         "Hand hygiene products must be approved by the FDA before use",
         "Soap and water must be used between all patients; hand rubs are supplementary only",
@@ -410,8 +410,8 @@ export const ascIpcLevel: Level = {
           "Different hand hygiene situations call for different products (e.g., soap and water for C. diff, ABHR for most routine situations). The policy must define when each product is used and per manufacturer instructions for proper application.",
         whyWrong: {
           A: "Soap and water is the appropriate choice for specific pathogens (e.g., Clostridioides difficile) where alcohol-based hand rubs are less effective.",
-          C: "FDA approval of the product itself is separate from the organizational policy requirement — IPC.130.20 focuses on having a policy about proper use.",
-          D: "Alcohol-based hand rubs are the primary product recommended for most situations per CDC/WHO guidelines — soap and water is specifically indicated for visibly soiled hands and certain pathogens.",
+          C: "FDA approval of the product itself is separate from the organizational policy requirement - IPC.130.20 focuses on having a policy about proper use.",
+          D: "Alcohol-based hand rubs are the primary product recommended for most situations per CDC/WHO guidelines - soap and water is specifically indicated for visibly soiled hands and certain pathogens.",
         },
         operationalContext:
           "Develop a hand hygiene policy that specifies product types, when each is used (per WHO 5 moments), duration and technique, and references the product manufacturer's IFU for application instructions.",
@@ -436,9 +436,9 @@ export const ascIpcLevel: Level = {
         whyCorrect:
           "A positive spore test is a sterilization failure. All items in the load must be considered unsterile and cannot be used. The sterilizer must be inspected before returning to service. This is a patient safety emergency, not a documentation issue.",
         whyWrong: {
-          A: "Chemical indicators confirm cycle parameters were achieved but do not prove sterilization — biological indicators are the definitive test.",
+          A: "Chemical indicators confirm cycle parameters were achieved but do not prove sterilization - biological indicators are the definitive test.",
           C: "Occasional positive results are NOT expected and always require action.",
-          D: "Waiting 48 hours is dangerous — items must be immediately recalled, not used while awaiting re-testing.",
+          D: "Waiting 48 hours is dangerous - items must be immediately recalled, not used while awaiting re-testing.",
         },
         operationalContext:
           "Post a sterilizer failure response protocol in the SPD area: (1) immediately quarantine all items from the failed load, (2) attempt to recall any distributed items, (3) take sterilizer out of service, (4) notify IPC officer and risk manager, (5) inspect and test before returning to service, (6) document the event.",
@@ -510,7 +510,7 @@ export const ascIpcLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "IPC.170.40 requires a written policy addressing the identification and processing (recall/reprocessing) of medical equipment and instruments that fail to meet high-level disinfection or sterilization parameters — defining the failure response process.",
+        "IPC.170.40 requires a written policy addressing the identification and processing (recall/reprocessing) of medical equipment and instruments that fail to meet high-level disinfection or sterilization parameters - defining the failure response process.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
@@ -537,7 +537,7 @@ export const ascIpcLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "IPC.130.40 requires active surveillance of safe injection practices consistent with CDC or other nationally recognized guidelines. This applies to all organizations that administer injections — it is not limited by anesthesia type or vial type.",
+        "IPC.130.40 requires active surveillance of safe injection practices consistent with CDC or other nationally recognized guidelines. This applies to all organizations that administer injections - it is not limited by anesthesia type or vial type.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
@@ -564,16 +564,16 @@ export const ascIpcLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "Unauthorized personnel — vendors, students, visitors, repair technicians — in patient care areas introduce potential contamination risks if they are not trained in IPC practices (hand hygiene, attire, etc.). IPC.190.40 requires written policies defining who is authorized to be in care areas.",
+        "Unauthorized personnel - vendors, students, visitors, repair technicians - in patient care areas introduce potential contamination risks if they are not trained in IPC practices (hand hygiene, attire, etc.). IPC.190.40 requires written policies defining who is authorized to be in care areas.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "From an IPC perspective, unauthorized personnel may track in environmental contamination, fail to follow hand hygiene protocols, or enter restricted areas without appropriate attire — all of which can contribute to patient-to-patient cross-infection.",
+          "From an IPC perspective, unauthorized personnel may track in environmental contamination, fail to follow hand hygiene protocols, or enter restricted areas without appropriate attire - all of which can contribute to patient-to-patient cross-infection.",
         whyWrong: {
-          A: "Security and IPC overlap in this policy — access control protects both patient safety and privacy.",
+          A: "Security and IPC overlap in this policy - access control protects both patient safety and privacy.",
           C: "The requirement applies to all ambulatory facilities, not just those with immunocompromised populations.",
-          D: "The clinical significance is infection risk from uncontrolled access — it is both an IPC and a patient rights (privacy) requirement.",
+          D: "The clinical significance is infection risk from uncontrolled access - it is both an IPC and a patient rights (privacy) requirement.",
         },
         operationalContext:
           "Establish a visitor and vendor management policy that defines: who may enter patient care areas, what IPC training or escort is required, and how access is documented (sign-in log, badge).",
@@ -585,22 +585,22 @@ export const ascIpcLevel: Level = {
         "A sterile pack returned from the CSSD has a package integrity breach (torn wrapper). Under IPC.170, what must happen?",
       options: [
         "The pack may be used if the internal chemical indicator passed",
-        "The sterility of the pack cannot be assumed — it must be reprocessed before use",
+        "The sterility of the pack cannot be assumed - it must be reprocessed before use",
         "The pack may be used if the breach is less than 1 cm in size",
-        "A torn wrapper is a minor defect — the surgeon decides whether to use the item",
+        "A torn wrapper is a minor defect - the surgeon decides whether to use the item",
       ],
       correctIndex: 1,
       explanation:
-        "IPC.170.60 requires that sterile packs are handled and stored to maintain their sterility. A breach in package integrity means sterility can no longer be assumed — the item must be reprocessed regardless of indicator results.",
+        "IPC.170.60 requires that sterile packs are handled and stored to maintain their sterility. A breach in package integrity means sterility can no longer be assumed - the item must be reprocessed regardless of indicator results.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Sterile packaging maintains the sterile barrier. Once that barrier is compromised — regardless of the size of the breach — the sterility of the contents is in question and the item must be reprocessed.",
+          "Sterile packaging maintains the sterile barrier. Once that barrier is compromised - regardless of the size of the breach - the sterility of the contents is in question and the item must be reprocessed.",
         whyWrong: {
           A: "Chemical indicators confirm cycle parameters, not ongoing sterility after a packaging breach.",
-          C: "There is no acceptable size of breach in a sterile package — any integrity failure requires reprocessing.",
-          D: "Sterility determination is an objective standard based on packaging integrity — not a clinical judgment call.",
+          C: "There is no acceptable size of breach in a sterile package - any integrity failure requires reprocessing.",
+          D: "Sterility determination is an objective standard based on packaging integrity - not a clinical judgment call.",
         },
         operationalContext:
           "Train OR and sterile processing staff to inspect packages before opening: check for wet packaging, visible breaches, expired dates, and proper sealing. Any failure = reprocess. Document rejected packs in the sterilization log.",

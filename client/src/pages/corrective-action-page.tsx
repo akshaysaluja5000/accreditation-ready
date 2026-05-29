@@ -25,10 +25,10 @@ import { REMEDIATION_LIBRARY, type LibraryStep } from "@/data/remediationLibrary
 // passing threshold on a FINAL test.
 //
 // Assessment types tracked across the platform:
-//   "diagnostic" — knowledge-gap diagnostic, never triggers remediation
-//   "drill"      — rapid-fire drill, never triggers remediation
-//   "practice"   — practice quiz, never triggers remediation
-//   "final"      — formal post-test / final assessment — the ONLY type that
+//   "diagnostic" - knowledge-gap diagnostic, never triggers remediation
+//   "drill"      - rapid-fire drill, never triggers remediation
+//   "practice"   - practice quiz, never triggers remediation
+//   "final"      - formal post-test / final assessment - the ONLY type that
 //                  triggers remediation when score < passing threshold
 
 export type AssessmentType = "diagnostic" | "drill" | "practice" | "final";
@@ -268,10 +268,10 @@ function PlanDirectoryCard({ facilityTypeFilter }: { facilityTypeFilter: "All" |
               {steps && (
                 <div className="flex flex-col gap-4">
 
-                  {/* Step 1 — Score 60–69% */}
+                  {/* Step 1 - Score 60–69% */}
                   <div className="flex flex-col gap-2">
                     <span className="self-start text-xs font-bold px-2.5 py-0.5 rounded-full bg-blue-500/20 border border-blue-400/40 text-blue-400">
-                      Score 60–69% — Step 1 assigned
+                      Score 60–69% - Step 1 assigned
                     </span>
                     <div className="pl-4 border-l-2 border-blue-400/40 flex flex-col gap-0.5">
                       <p className="text-sm font-semibold">{steps[0].title}</p>
@@ -279,10 +279,10 @@ function PlanDirectoryCard({ facilityTypeFilter }: { facilityTypeFilter: "All" |
                     </div>
                   </div>
 
-                  {/* Step 2 — Score 50–59% */}
+                  {/* Step 2 - Score 50–59% */}
                   <div className="flex flex-col gap-2">
                     <span className="self-start text-xs font-bold px-2.5 py-0.5 rounded-full bg-orange-500/10 border border-orange-500/25 text-orange-300">
-                      Score 50–59% — Step 2 also assigned
+                      Score 50–59% - Step 2 also assigned
                     </span>
                     <div className="pl-4 border-l-2 border-orange-400/40 flex flex-col gap-0.5">
                       <p className="text-sm font-semibold">{steps[1].title}</p>
@@ -290,18 +290,18 @@ function PlanDirectoryCard({ facilityTypeFilter }: { facilityTypeFilter: "All" |
                     </div>
                   </div>
 
-                  {/* Reassessment note — below 50% */}
+                  {/* Reassessment note - below 50% */}
                   <div className="flex items-start gap-2 rounded-xl border border-orange-500/25 bg-orange-500/8 px-3 py-2.5">
                     <ShieldAlert size={13} className="text-orange-400 flex-shrink-0 mt-0.5" />
                     <p className="text-xs text-orange-300 font-semibold leading-relaxed">
-                      Score below 50% — Steps 1 + 2 assigned, plus supervisor reassessment required before the plan can be marked Verified.
+                      Score below 50% - Steps 1 + 2 assigned, plus supervisor reassessment required before the plan can be marked Verified.
                     </p>
                   </div>
 
-                  {/* Step 3 — educator-led reinforcement */}
+                  {/* Step 3 - educator-led reinforcement */}
                   <div className="flex flex-col gap-2">
                     <span className="self-start text-xs font-bold px-2.5 py-0.5 rounded-full bg-muted/60 border border-border text-muted-foreground">
-                      Step 3 — educator-led reinforcement
+                      Step 3 - educator-led reinforcement
                     </span>
                     <div className="pl-4 border-l-2 border-border/60 flex flex-col gap-0.5">
                       <p className="text-sm font-semibold">{steps[2].title}</p>
@@ -326,7 +326,7 @@ function PurposeBanner() {
     <div className="rounded-2xl border border-primary/25 bg-primary/6 px-5 py-4" data-testid="banner-purpose">
       <p className="text-sm leading-relaxed text-foreground/80">
         <span className="font-semibold text-foreground/95">Guided Education Plans</span> are assigned when a learner scores below the required passing threshold on the final test.
-        Each plan provides targeted review steps, reinforcement activities, and — where needed — a supervisor reassessment before the plan is marked complete.
+        Each plan provides targeted review steps, reinforcement activities, and - where needed - a supervisor reassessment before the plan is marked complete.
       </p>
     </div>
   );
@@ -363,10 +363,10 @@ function HowToReadBox() {
               <div>
                 <p className="font-bold text-foreground/90 mb-2 text-sm uppercase tracking-wide">Status</p>
                 <ul className="space-y-2 pl-1">
-                  <li><span className="font-semibold text-blue-300">Assigned</span> — the guided education plan has been created and assigned</li>
-                  <li><span className="font-semibold text-blue-400">In Progress</span> — the learner is completing review or reinforcement steps</li>
-                  <li><span className="font-semibold text-green-300">Completed</span> — the learner finished the assigned education activities</li>
-                  <li><span className="font-semibold text-purple-500">Verified</span> — a supervisor or educator confirmed completion</li>
+                  <li><span className="font-semibold text-blue-300">Assigned</span> - the guided education plan has been created and assigned</li>
+                  <li><span className="font-semibold text-blue-400">In Progress</span> - the learner is completing review or reinforcement steps</li>
+                  <li><span className="font-semibold text-green-300">Completed</span> - the learner finished the assigned education activities</li>
+                  <li><span className="font-semibold text-purple-500">Verified</span> - a supervisor or educator confirmed completion</li>
                 </ul>
               </div>
               <div>
@@ -1414,7 +1414,7 @@ export default function CorrectiveActionPage() {
             <div className="flex items-start gap-2.5 rounded-xl border border-orange-500/40 bg-orange-500/10 px-4 py-3" data-testid="banner-demo-mode">
               <FlaskConical size={14} className="text-orange-500 flex-shrink-0 mt-0.5" />
               <p className="text-sm text-orange-500/90 leading-relaxed">
-                <span className="font-bold text-orange-500">Demo Data — </span>
+                <span className="font-bold text-orange-500">Demo Data - </span>
                 Sample guided education plans for demonstration. In production, plans are assigned automatically when a learner scores below the passing threshold on a final test.
               </p>
             </div>
@@ -1459,7 +1459,7 @@ export default function CorrectiveActionPage() {
           <div className="rounded-2xl border border-red-500/30 bg-red-500/8 px-5 py-3.5 flex items-center gap-3" data-testid="banner-overdue">
             <AlertTriangle size={18} className="text-red-400 flex-shrink-0" />
             <p className="text-base font-bold text-red-400">
-              {overdueCount} plan{overdueCount > 1 ? "s are" : " is"} overdue — learner follow-up required.
+              {overdueCount} plan{overdueCount > 1 ? "s are" : " is"} overdue - learner follow-up required.
             </p>
           </div>
         )}

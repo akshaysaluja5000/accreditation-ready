@@ -212,7 +212,7 @@ export default function AdminPage() {
           <div className="flex items-start gap-3 rounded-xl border border-orange-500/40 bg-orange-500/8 px-4 py-3" data-testid="banner-demo-mode">
             <FlaskConical size={15} className="text-orange-500 mt-0.5 flex-shrink-0" />
             <p className="text-sm text-foreground/80">
-              <span className="font-bold text-orange-500">Demo Data — </span>
+              <span className="font-bold text-orange-500">Demo Data - </span>
               Sample staff roster for demonstration. Switch to Live to see your facility's actual learners.
             </p>
           </div>
@@ -368,7 +368,7 @@ export default function AdminPage() {
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {[
-                    { value: "education_only", label: "Education Only", desc: "Training tools only — quizzes, flashcards, reports.", Icon: BookOpen, color: "text-blue-600", bg: "bg-blue-500/10", border: "border-blue-500/40" },
+                    { value: "education_only", label: "Education Only", desc: "Training tools only - quizzes, flashcards, reports.", Icon: BookOpen, color: "text-blue-600", bg: "bg-blue-500/10", border: "border-blue-500/40" },
                     { value: "full_platform", label: "Full Platform", desc: "Education + all compliance management tools.", Icon: ShieldCheck, color: "text-emerald-600", bg: "bg-emerald-500/10", border: "border-emerald-500/40" },
                     { value: "off", label: "Off", desc: "Compliance tools disabled and hidden for all users.", Icon: PowerOff, color: "text-muted-foreground", bg: "bg-muted/40", border: "border-border" },
                   ].map(({ value, label, desc, Icon, color, bg, border }) => {
@@ -443,10 +443,10 @@ export default function AdminPage() {
                             }`}>{entry.scope}</span>
                           )}
                         </td>
-                        <td className="p-2 font-semibold text-foreground">{entry.version ?? "—"}</td>
+                        <td className="p-2 font-semibold text-foreground">{entry.version ?? "-"}</td>
                         <td className="p-2 font-mono text-emerald-600">{entry.action}</td>
-                        <td className="p-2 text-right font-bold">{entry.itemCount ?? "—"}</td>
-                        <td className="p-2 text-muted-foreground hidden md:table-cell max-w-xs truncate">{entry.description ?? "—"}</td>
+                        <td className="p-2 text-right font-bold">{entry.itemCount ?? "-"}</td>
+                        <td className="p-2 text-muted-foreground hidden md:table-cell max-w-xs truncate">{entry.description ?? "-"}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -485,10 +485,10 @@ export default function AdminPage() {
                         <td className="p-2 text-muted-foreground whitespace-nowrap">
                           {new Date(entry.createdAt).toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })}
                         </td>
-                        <td className="p-2 font-medium">{entry.username ?? "—"}</td>
+                        <td className="p-2 font-medium">{entry.username ?? "-"}</td>
                         <td className="p-2 text-muted-foreground">{entry.leadershipRole}</td>
                         <td className="p-2 font-mono text-xs text-chart-4">{entry.action}</td>
-                        <td className="p-2 text-muted-foreground hidden sm:table-cell">{entry.facilityName ?? "—"}</td>
+                        <td className="p-2 text-muted-foreground hidden sm:table-cell">{entry.facilityName ?? "-"}</td>
                       </tr>
                     ))}
                   </tbody>

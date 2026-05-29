@@ -4,7 +4,7 @@ export const ascCrdLevel: Level = {
   id: "asc_crd",
   module: "asc",
   name: "Clinical Records",
-  description: "AAAHC v44 CRD — clinical records system, written policies, record content requirements, confidentiality, allergy documentation, informed consent, and continuity of care documentation.",
+  description: "AAAHC v44 CRD - clinical records system, written policies, record content requirements, confidentiality, allergy documentation, informed consent, and continuity of care documentation.",
   icon: "FileText",
   color: "hsl(200, 65%, 42%)",
   requiredScore: 0,
@@ -21,67 +21,67 @@ export const ascCrdLevel: Level = {
       "Allergy and sensitivity information is recorded in a prominent, consistent location in every record and verified at each encounter.",
     ],
     commonRiskPoints: [
-      "Clinical records are not consistently organized — different practitioners use different formats making record navigation unreliable.",
+      "Clinical records are not consistently organized - different practitioners use different formats making record navigation unreliable.",
       "Allergy documentation is missing from some records or recorded in varying locations rather than a prominent, consistent location.",
-      "Patients are not asked about allergies and sensitivities at each encounter — only at initial registration.",
+      "Patients are not asked about allergies and sensitivities at each encounter - only at initial registration.",
       "Provider authentication (signature or electronic equivalent) is absent from some visit entries.",
     ],
     aaahcStandards: ["CRD.120", "CRD.130", "CRD.140", "CRD.160", "CRD.180", "CRD.190", "CRD.210", "CRD.220", "CRD.230", "CRD.250"],
   },
   studyMaterial: [
     {
-      title: "CRD.120 — Clinical Records System: Collection, Processing, and Maintenance",
+      title: "CRD.120 - Clinical Records System: Collection, Processing, and Maintenance",
       content:
-        "CRD.120 requires the organization to maintain a system for the accurate collection, processing, maintenance, storage, retrieval, and distribution of clinical records. Two designated persons are required: one in charge of clinical records overall, and one in charge of the health information system. The system must include measures to ensure adherence to written policies and procedures, and it must be monitored on a regular basis. This standard establishes the infrastructure on which all other CRD standards depend — without a defined, monitored system, the organization cannot consistently satisfy record content and security requirements.",
+        "CRD.120 requires the organization to maintain a system for the accurate collection, processing, maintenance, storage, retrieval, and distribution of clinical records. Two designated persons are required: one in charge of clinical records overall, and one in charge of the health information system. The system must include measures to ensure adherence to written policies and procedures, and it must be monitored on a regular basis. This standard establishes the infrastructure on which all other CRD standards depend - without a defined, monitored system, the organization cannot consistently satisfy record content and security requirements.",
       keyPoint:
-        "CRD.120 requires two designated roles (clinical records oversight + health information system) and a monitored system with written procedures. The system must be actively overseen — not simply exist.",
+        "CRD.120 requires two designated roles (clinical records oversight + health information system) and a monitored system with written procedures. The system must be actively overseen - not simply exist.",
     },
     {
-      title: "CRD.130 — Written Policies for Clinical Records",
+      title: "CRD.130 - Written Policies for Clinical Records",
       content:
-        "Written policies for clinical records must address seven specific areas: (1) security of information — including accountability for editing, deletion, and access of record content; (2) release of patient records — including patient authorization requirements; (3) protection of records from damage or loss — including backup systems for electronic records; (4) methods to deter unauthorized access; (5) ensuring timely access to individual records for authorized personnel; (6) retention of active records; and (7) retirement of inactive records. The retention policy must be consistent with applicable state and federal law. Backup systems for electronic records are explicitly required.",
+        "Written policies for clinical records must address seven specific areas: (1) security of information - including accountability for editing, deletion, and access of record content; (2) release of patient records - including patient authorization requirements; (3) protection of records from damage or loss - including backup systems for electronic records; (4) methods to deter unauthorized access; (5) ensuring timely access to individual records for authorized personnel; (6) retention of active records; and (7) retirement of inactive records. The retention policy must be consistent with applicable state and federal law. Backup systems for electronic records are explicitly required.",
       keyPoint:
-        "CRD.130 requires seven specific policy topics. Electronic record backup systems are explicitly mentioned — organizations using EHRs must have a documented backup and recovery procedure as part of their written records policies.",
+        "CRD.130 requires seven specific policy topics. Electronic record backup systems are explicitly mentioned - organizations using EHRs must have a documented backup and recovery procedure as part of their written records policies.",
     },
     {
-      title: "CRD.140 — Records Maintained to Facilitate Safe Care",
+      title: "CRD.140 - Records Maintained to Facilitate Safe Care",
       content:
-        "Clinical records must be maintained in a manner that facilitates the provision of safe care. This means: (1) consistent content and format — organized in the same sequence across records except where law requires otherwise; (2) legibility — all entries must be legible, including items scanned into an electronic record; (3) accessibility — entries must be easily accessible within the record by authorized personnel; (4) availability — all clinical information relevant to a patient must be readily available to authorized personnel any time the organization is open to patients; and (5) patient control of release — patients must be given the opportunity to approve or refuse release of their records, except when release is permitted or required by law.",
+        "Clinical records must be maintained in a manner that facilitates the provision of safe care. This means: (1) consistent content and format - organized in the same sequence across records except where law requires otherwise; (2) legibility - all entries must be legible, including items scanned into an electronic record; (3) accessibility - entries must be easily accessible within the record by authorized personnel; (4) availability - all clinical information relevant to a patient must be readily available to authorized personnel any time the organization is open to patients; and (5) patient control of release - patients must be given the opportunity to approve or refuse release of their records, except when release is permitted or required by law.",
       keyPoint:
         "CRD.140 has five elements: consistent format, legible entries, easy accessibility, availability during all operating hours, and patient authorization for release. A scanned document that is illegible violates CRD.140 just as a handwritten illegible entry does.",
     },
     {
-      title: "CRD.160 — Strict Confidentiality of Clinical Records",
+      title: "CRD.160 - Strict Confidentiality of Clinical Records",
       content:
-        "Any record containing clinical, social, financial, or other data about a patient must be treated as strictly confidential — except when release is required by law. Written policies must require strict confidentiality, and interviews and observation during survey must confirm that patient data is handled confidentially in practice. This standard applies across all forms of records — paper, electronic, verbal discussions, and any other medium in which patient data is communicated. If the organization provides telehealth or telemedicine services, compliance with the HITECH Act must be included in the confidentiality policies.",
+        "Any record containing clinical, social, financial, or other data about a patient must be treated as strictly confidential - except when release is required by law. Written policies must require strict confidentiality, and interviews and observation during survey must confirm that patient data is handled confidentially in practice. This standard applies across all forms of records - paper, electronic, verbal discussions, and any other medium in which patient data is communicated. If the organization provides telehealth or telemedicine services, compliance with the HITECH Act must be included in the confidentiality policies.",
       keyPoint:
-        "Confidentiality covers all patient data — clinical, social, and financial — in all formats. The standard requires both written policies AND observed practice. A staff member discussing a patient case in a public area violates CRD.160 even if no written policies were violated.",
+        "Confidentiality covers all patient data - clinical, social, and financial - in all formats. The standard requires both written policies AND observed practice. A staff member discussing a patient case in a public area violates CRD.160 even if no written policies were violated.",
     },
     {
-      title: "CRD.180 / CRD.190 — Individual Record Requirements and Consistent Visit Entries",
+      title: "CRD.180 / CRD.190 - Individual Record Requirements and Consistent Visit Entries",
       content:
         "CRD.180 requires that an individual clinical record is established for each person receiving care. The record must include the patient's name, identification number (if used in the organization's system), date of birth, gender, and responsible party. CRD.190 requires that entries for each visit are consistent across records and include: (1) date and department (if departmentalized); (2) chief complaint or purpose of visit and history; (3) clinical findings and studies ordered (labs, imaging); (4) care rendered and therapies administered; (5) any changes in prescription or non-prescription medications with name, dosage, and frequency when available; (6) discharge diagnosis or impression and disposition, recommendations, and instructions given to the patient; and (7) signature or authentication by the healthcare professional.",
       keyPoint:
         "CRD.180/190 together define the minimum record content: patient identifiers plus seven required entry elements per visit. Provider authentication (signature or electronic equivalent) on each entry is a non-negotiable requirement.",
     },
     {
-      title: "CRD.210 — Allergy and Sensitivity Documentation",
+      title: "CRD.210 - Allergy and Sensitivity Documentation",
       content:
-        "CRD.210 is a Tier 1 patient safety standard requiring that the presence or absence of allergies, sensitivities, and other reactions to drugs, materials, food, and environmental factors is recorded in a prominent and consistently defined location in all clinical records. Four specific requirements apply: (1) patients are asked about allergies and sensitivities at each encounter — not just at registration; (2) patients reporting allergies or sensitivities must be asked to describe their specific reaction (rash, anaphylaxis, GI symptoms, etc.) — not just list the allergen; (3) allergy and sensitivity information is recorded in a prominent and consistently defined location — not buried in free-text notes; and (4) the information is verified at each encounter and updated when changes are reported.",
+        "CRD.210 is a Tier 1 patient safety standard requiring that the presence or absence of allergies, sensitivities, and other reactions to drugs, materials, food, and environmental factors is recorded in a prominent and consistently defined location in all clinical records. Four specific requirements apply: (1) patients are asked about allergies and sensitivities at each encounter - not just at registration; (2) patients reporting allergies or sensitivities must be asked to describe their specific reaction (rash, anaphylaxis, GI symptoms, etc.) - not just list the allergen; (3) allergy and sensitivity information is recorded in a prominent and consistently defined location - not buried in free-text notes; and (4) the information is verified at each encounter and updated when changes are reported.",
       keyPoint:
         "CRD.210 has four requirements: ask at EACH encounter (not just at intake), document the REACTION (not just the allergen), record in a PROMINENT/CONSISTENT location, and VERIFY and UPDATE at every encounter. Missing any one of these four is a deficiency.",
     },
     {
-      title: "CRD.220 / CRD.230 — Incorporating Reports and Documenting Informed Consent Discussions",
+      title: "CRD.220 / CRD.230 - Incorporating Reports and Documenting Informed Consent Discussions",
       content:
-        "CRD.220 requires that reports, histories and physicals, progress notes, and other patient information — including laboratory reports, x-ray readings, operative reports, and consultations — are reviewed and incorporated into the record as required by the organization's written policies. Evidence that each item was reviewed prior to incorporation must be present (e.g., a provider's initials or signature with date). CRD.230 requires that clinical records document discussions with the patient about the necessity, appropriateness, and risks of proposed care, surgery, or procedures, as well as discussions of treatment alternatives as applicable. The informed consent discussion must be documented — a signed consent form alone may not capture the substance of the discussion.",
+        "CRD.220 requires that reports, histories and physicals, progress notes, and other patient information - including laboratory reports, x-ray readings, operative reports, and consultations - are reviewed and incorporated into the record as required by the organization's written policies. Evidence that each item was reviewed prior to incorporation must be present (e.g., a provider's initials or signature with date). CRD.230 requires that clinical records document discussions with the patient about the necessity, appropriateness, and risks of proposed care, surgery, or procedures, as well as discussions of treatment alternatives as applicable. The informed consent discussion must be documented - a signed consent form alone may not capture the substance of the discussion.",
       keyPoint:
-        "CRD.220: reports must be reviewed (evidenced) and incorporated per policy. CRD.230: the informed consent DISCUSSION must be documented in the record — not just the existence of a signed form.",
+        "CRD.220: reports must be reviewed (evidenced) and incorporated per policy. CRD.230: the informed consent DISCUSSION must be documented in the record - not just the existence of a signed form.",
     },
     {
-      title: "CRD.250 — Continuity of Care Documentation",
+      title: "CRD.250 - Continuity of Care Documentation",
       content:
-        "CRD.250 requires that clinical records demonstrate the organization ensures continuity of care. Three specific elements are required: (1) documentation of missed and canceled appointments (if any occur) — allowing the organization to identify patients who may need follow-up; (2) documentation of medical advice given to a patient by text, email, or telephone — including after-hours medical advice, with the content of the advice documented, not just that a call occurred; and (3) for patients who have had three or more visits or admissions, or who have a complex and lengthy record, a summary of past and current diagnoses, problems, and past procedures must be present in the record to facilitate continuity. This summary may take the form of a problem list, a cumulative medication list, or a structured summary note.",
+        "CRD.250 requires that clinical records demonstrate the organization ensures continuity of care. Three specific elements are required: (1) documentation of missed and canceled appointments (if any occur) - allowing the organization to identify patients who may need follow-up; (2) documentation of medical advice given to a patient by text, email, or telephone - including after-hours medical advice, with the content of the advice documented, not just that a call occurred; and (3) for patients who have had three or more visits or admissions, or who have a complex and lengthy record, a summary of past and current diagnoses, problems, and past procedures must be present in the record to facilitate continuity. This summary may take the form of a problem list, a cumulative medication list, or a structured summary note.",
       keyPoint:
         "CRD.250 has three continuity elements: document missed/canceled appointments, document telephone/text/email medical advice (including after-hours), and maintain a problem summary for patients with 3+ visits or complex records.",
     },
@@ -93,7 +93,7 @@ export const ascCrdLevel: Level = {
         "An ASC uses an electronic health record (EHR) system. Under CRD.130, what written policy element must specifically address the EHR?",
       options: [
         "An annual review policy for the EHR vendor contract",
-        "A backup system policy to protect records from damage or loss — explicitly including backup systems for electronic records",
+        "A backup system policy to protect records from damage or loss - explicitly including backup systems for electronic records",
         "A policy designating the EHR as the legal medical record",
         "A policy requiring paper copies of all electronic records",
       ],
@@ -106,9 +106,9 @@ export const ascCrdLevel: Level = {
         whyCorrect:
           "Electronic records are particularly vulnerable to data loss from hardware failure, ransomware, or system crashes. CRD.130 specifically calls out backup systems for electronic records because this is a known high-risk area for healthcare organizations.",
         whyWrong: {
-          A: "Vendor contract review is a governance matter — not a CRD.130 required policy element.",
+          A: "Vendor contract review is a governance matter - not a CRD.130 required policy element.",
           C: "Designation of the legal medical record is a health information management practice but not a specific CRD.130 requirement.",
-          D: "CRD.130 does not require paper copies of electronic records — it requires backup systems for electronic records.",
+          D: "CRD.130 does not require paper copies of electronic records - it requires backup systems for electronic records.",
         },
         operationalContext:
           "Document your EHR backup frequency, backup storage location (offsite or cloud), recovery time objective, and who is responsible for verifying backup integrity. Test your recovery process at least annually and document the results.",
@@ -117,28 +117,28 @@ export const ascCrdLevel: Level = {
     {
       id: "asc_crd_02",
       question:
-        "During an AAAHC survey, a surveyor reviews ten clinical records and finds that allergy information is recorded in different locations in each record — some in a front-page header, some in a free-text nursing note, and some in the medication history section. What CRD standard does this violate?",
+        "During an AAAHC survey, a surveyor reviews ten clinical records and finds that allergy information is recorded in different locations in each record - some in a front-page header, some in a free-text nursing note, and some in the medication history section. What CRD standard does this violate?",
       options: [
-        "CRD.120 — the clinical records system is not adequately monitored",
-        "CRD.210 — allergy information must be recorded in a prominent and consistently defined location in all records",
-        "CRD.140 — records must be organized in a consistent format",
-        "CRD.160 — confidentiality of allergy information is not maintained",
+        "CRD.120 - the clinical records system is not adequately monitored",
+        "CRD.210 - allergy information must be recorded in a prominent and consistently defined location in all records",
+        "CRD.140 - records must be organized in a consistent format",
+        "CRD.160 - confidentiality of allergy information is not maintained",
       ],
       correctIndex: 1,
       explanation:
-        "CRD.210 specifically requires that allergy and sensitivity information be recorded in a prominent AND consistently defined location across all records. Variation in where allergies are recorded creates patient safety risk — a provider looking for allergy information in the expected location will miss it if it was recorded elsewhere.",
+        "CRD.210 specifically requires that allergy and sensitivity information be recorded in a prominent AND consistently defined location across all records. Variation in where allergies are recorded creates patient safety risk - a provider looking for allergy information in the expected location will miss it if it was recorded elsewhere.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The 'prominent and consistently defined location' requirement exists for patient safety — in an emergency, a clinician must be able to find allergy information immediately and reliably. Inconsistent placement defeats this safety purpose.",
+          "The 'prominent and consistently defined location' requirement exists for patient safety - in an emergency, a clinician must be able to find allergy information immediately and reliably. Inconsistent placement defeats this safety purpose.",
         whyWrong: {
-          A: "CRD.120 addresses the overall records system — the specific allergy location requirement is CRD.210.",
-          C: "CRD.140 addresses overall record organization and format consistency — CRD.210 is the specific standard for allergy documentation.",
-          D: "Allergy information is not inherently confidential in the same way as diagnostic or social history — the issue here is safety and consistency.",
+          A: "CRD.120 addresses the overall records system - the specific allergy location requirement is CRD.210.",
+          C: "CRD.140 addresses overall record organization and format consistency - CRD.210 is the specific standard for allergy documentation.",
+          D: "Allergy information is not inherently confidential in the same way as diagnostic or social history - the issue here is safety and consistency.",
         },
         operationalContext:
-          "Designate a specific, prominent field or section in your record/EHR for allergy documentation — for example, a mandatory allergy banner at the top of the record. Configure the EHR to require allergy documentation in this field, not in free-text notes.",
+          "Designate a specific, prominent field or section in your record/EHR for allergy documentation - for example, a mandatory allergy banner at the top of the record. Configure the EHR to require allergy documentation in this field, not in free-text notes.",
       },
     },
     {
@@ -153,7 +153,7 @@ export const ascCrdLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "CRD.210 requires that patients reporting allergies and sensitivities describe their reaction. The nature of the reaction — whether it was a mild rash, severe anaphylaxis, GI intolerance, or other type — is clinically important for prescribing decisions. A documented 'penicillin allergy: rash' is very different from 'penicillin allergy: anaphylaxis' in terms of clinical management.",
+        "CRD.210 requires that patients reporting allergies and sensitivities describe their reaction. The nature of the reaction - whether it was a mild rash, severe anaphylaxis, GI intolerance, or other type - is clinically important for prescribing decisions. A documented 'penicillin allergy: rash' is very different from 'penicillin allergy: anaphylaxis' in terms of clinical management.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
@@ -173,14 +173,14 @@ export const ascCrdLevel: Level = {
       question:
         "A patient who has been coming to the ASC for annual colonoscopies for the past five years was not asked about allergies at their most recent visit because staff assumed the allergy information was already in the chart. Under CRD.210, is this acceptable?",
       options: [
-        "Yes — if allergy information is already documented, re-asking at each visit is redundant",
-        "No — CRD.210 requires patients to be asked about allergies and sensitivities at each encounter, and the information must be verified and updated at each encounter",
-        "Yes — for established patients with multiple prior visits, annual allergy verification is sufficient",
+        "Yes - if allergy information is already documented, re-asking at each visit is redundant",
+        "No - CRD.210 requires patients to be asked about allergies and sensitivities at each encounter, and the information must be verified and updated at each encounter",
+        "Yes - for established patients with multiple prior visits, annual allergy verification is sufficient",
         "Only if the existing allergy documentation was verified at the previous visit",
       ],
       correctIndex: 1,
       explanation:
-        "CRD.210 requires that patients are asked about allergies at each encounter and that the information is verified and updated at each encounter. Patients may develop new allergies, may report a reaction to a medication given at the last visit, or may have new food or environmental sensitivities — any of which could be missed if staff assume prior documentation is still current.",
+        "CRD.210 requires that patients are asked about allergies at each encounter and that the information is verified and updated at each encounter. Patients may develop new allergies, may report a reaction to a medication given at the last visit, or may have new food or environmental sensitivities - any of which could be missed if staff assume prior documentation is still current.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
@@ -200,14 +200,14 @@ export const ascCrdLevel: Level = {
       question:
         "A surgeon performs a laparoscopic cholecystectomy and dictates an operative report. The operative report is transcribed and available the next day. Under CRD.220, what must happen before the report is placed in the patient's record?",
       options: [
-        "The report may be filed as received — no additional action is required",
+        "The report may be filed as received - no additional action is required",
         "The report must be reviewed by the ordering or performing provider before incorporation, with evidence that the review occurred",
         "The report must be reviewed by the medical records director",
         "The report must be co-signed by the anesthesiologist before filing",
       ],
       correctIndex: 1,
       explanation:
-        "CRD.220 requires that reports, including operative reports, are reviewed and incorporated into the record as required by organizational policy — with evidence that such items were reviewed prior to incorporation. A transcription error in an operative report that was filed without review could result in inaccurate documentation driving future clinical decisions.",
+        "CRD.220 requires that reports, including operative reports, are reviewed and incorporated into the record as required by organizational policy - with evidence that such items were reviewed prior to incorporation. A transcription error in an operative report that was filed without review could result in inaccurate documentation driving future clinical decisions.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
@@ -215,11 +215,11 @@ export const ascCrdLevel: Level = {
           "The review requirement ensures accuracy of transcribed and external reports before they become a permanent part of the record. A surgeon who reviews and authenticates their own operative report confirms that the transcription accurately reflects what occurred.",
         whyWrong: {
           A: "Simply filing reports without evidence of review violates CRD.220.",
-          C: "CRD.220 requires review by the ordering or performing provider — not the medical records director.",
+          C: "CRD.220 requires review by the ordering or performing provider - not the medical records director.",
           D: "The anesthesiologist's co-signature is not required for a surgical operative report.",
         },
         operationalContext:
-          "Establish a policy requiring providers to review and authenticate dictated reports (with signature or electronic authentication) within a defined timeframe — for example, 72 hours. Track unauthenticated reports as a quality monitoring indicator.",
+          "Establish a policy requiring providers to review and authenticate dictated reports (with signature or electronic authentication) within a defined timeframe - for example, 72 hours. Track unauthenticated reports as a quality monitoring indicator.",
       },
     },
     {
@@ -241,9 +241,9 @@ export const ascCrdLevel: Level = {
         whyCorrect:
           "Provider authentication connects each clinical entry to a specific accountable professional. An unauthenticated note cannot be attributed to a specific provider and creates legal and clinical accountability gaps.",
         whyWrong: {
-          A: "Insurance authorization numbers are administrative records — not a required CRD.190 clinical entry element.",
+          A: "Insurance authorization numbers are administrative records - not a required CRD.190 clinical entry element.",
           C: "Exact arrival and discharge times are not specified as required CRD.190 entry elements (though they may be required by other standards for recovery documentation).",
-          D: "CRD.190 requires current visit entries — prior vital signs are historical data, not required entry content for the current visit.",
+          D: "CRD.190 requires current visit entries - prior vital signs are historical data, not required entry content for the current visit.",
         },
         operationalContext:
           "Audit your records regularly for unauthenticated entries. In an EHR, configure workflows to require provider signature/authentication before an encounter note can be finalized. Paper records should require a wet-ink signature before filing.",
@@ -254,19 +254,19 @@ export const ascCrdLevel: Level = {
       question:
         "An ASC nurse gives a patient post-operative discharge instructions by phone because the patient left before the nurse could provide them in person. Under CRD.250, what must be documented?",
       options: [
-        "Only that a call was made — the content of instructions given by phone is not a documentation requirement",
+        "Only that a call was made - the content of instructions given by phone is not a documentation requirement",
         "The medical advice given by telephone must be documented in the patient's clinical record",
         "Phone calls to patients are documented in the nurse's personal call log, not the clinical record",
         "Telephone medical advice is only documented if the patient calls back with a complaint",
       ],
       correctIndex: 1,
       explanation:
-        "CRD.250 requires documentation of medical advice given to a patient by telephone (as well as text or email). The advice itself — not just the fact that a call was made — must be documented in the clinical record. This ensures continuity of care if the patient presents to another provider who needs to know what instructions were given.",
+        "CRD.250 requires documentation of medical advice given to a patient by telephone (as well as text or email). The advice itself - not just the fact that a call was made - must be documented in the clinical record. This ensures continuity of care if the patient presents to another provider who needs to know what instructions were given.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "Post-operative instructions given by phone are clinical communications that affect patient care. Another provider treating complications needs to know what the patient was told — this information belongs in the clinical record.",
+          "Post-operative instructions given by phone are clinical communications that affect patient care. Another provider treating complications needs to know what the patient was told - this information belongs in the clinical record.",
         whyWrong: {
           A: "The content of the advice, not just the occurrence of a call, must be documented under CRD.250.",
           C: "Personal call logs are not clinical records and do not satisfy the CRD.250 documentation requirement.",
@@ -315,19 +315,19 @@ export const ascCrdLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "CRD.250 requires that for patients with three or more visits or admissions — or with complex, lengthy records — a summary of past and current diagnoses or problems, including past procedures, must be present in the record to facilitate continuity of care. A patient with eight visits over three years clearly meets this threshold.",
+        "CRD.250 requires that for patients with three or more visits or admissions - or with complex, lengthy records - a summary of past and current diagnoses or problems, including past procedures, must be present in the record to facilitate continuity of care. A patient with eight visits over three years clearly meets this threshold.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
           "For complex patients seen repeatedly, a provider encountering the patient for the first time (or after a gap) cannot safely and efficiently review years of visit notes. The problem summary serves as a navigational tool that enables safe, informed care.",
         whyWrong: {
-          A: "CRD.250 requires a summary — not copies of all prior notes from all providers. External records may be incorporated per CRD.220 but a complete external note collection is not the requirement.",
+          A: "CRD.250 requires a summary - not copies of all prior notes from all providers. External records may be incorporated per CRD.220 but a complete external note collection is not the requirement.",
           C: "Independent second opinions are not a CRD.250 requirement.",
           D: "Pharmacist medication reconciliation is a clinical practice recommendation but not a specific CRD.250 required element.",
         },
         operationalContext:
-          "Create a policy requiring that a problem list or cumulative summary be initiated after a patient's third visit and updated at each subsequent visit. In an EHR, use the problem list, medication list, and diagnosis history features as your summary — ensure they are actively maintained.",
+          "Create a policy requiring that a problem list or cumulative summary be initiated after a patient's third visit and updated at each subsequent visit. In an EHR, use the problem list, medication list, and diagnosis history features as your summary - ensure they are actively maintained.",
       },
     },
     {
@@ -335,9 +335,9 @@ export const ascCrdLevel: Level = {
       question:
         "A patient requests a copy of their clinical record. Under CRD.130, what written policy must address this request?",
       options: [
-        "Only HIPAA governs patient record release — a separate organizational policy is not required",
+        "Only HIPAA governs patient record release - a separate organizational policy is not required",
         "CRD.130 requires written policies addressing the release of patient records, including patient authorization requirements",
-        "Record release is governed only by CRD.140's patient approval requirement — a separate written policy is not needed",
+        "Record release is governed only by CRD.140's patient approval requirement - a separate written policy is not needed",
         "Only records from the past two years must be released upon patient request",
       ],
       correctIndex: 1,
@@ -347,10 +347,10 @@ export const ascCrdLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "HIPAA establishes the federal floor for patient privacy rights — but CRD.130 additionally requires the organization to have its own written policies addressing record release. The written policy operationalizes HIPAA requirements in the organization's specific context.",
+          "HIPAA establishes the federal floor for patient privacy rights - but CRD.130 additionally requires the organization to have its own written policies addressing record release. The written policy operationalizes HIPAA requirements in the organization's specific context.",
         whyWrong: {
-          A: "HIPAA establishes legal requirements, but CRD.130 requires a written organizational policy — which should incorporate HIPAA compliance.",
-          C: "CRD.130 specifically enumerates record release as one of seven required policy topics — it is not covered by CRD.140 alone.",
+          A: "HIPAA establishes legal requirements, but CRD.130 requires a written organizational policy - which should incorporate HIPAA compliance.",
+          C: "CRD.130 specifically enumerates record release as one of seven required policy topics - it is not covered by CRD.140 alone.",
           D: "No time limitation on the records to be released is specified by CRD.130.",
         },
         operationalContext:
@@ -362,23 +362,23 @@ export const ascCrdLevel: Level = {
       question:
         "Under CRD.140, a clinical record entry that was scanned into the electronic health record is illegible. What standard does this violate?",
       options: [
-        "No standard — legibility requirements only apply to handwritten entries, not scanned documents",
-        "CRD.140 — clinical records must be legible, including items scanned into an electronic record",
-        "CRD.220 — reports must be reviewed before incorporation, and a legible copy should have been obtained",
-        "CRD.180 — the individual record must be complete",
+        "No standard - legibility requirements only apply to handwritten entries, not scanned documents",
+        "CRD.140 - clinical records must be legible, including items scanned into an electronic record",
+        "CRD.220 - reports must be reviewed before incorporation, and a legible copy should have been obtained",
+        "CRD.180 - the individual record must be complete",
       ],
       correctIndex: 1,
       explanation:
-        "CRD.140 explicitly states that clinical record entries must be legible, 'including items that are scanned into an electronic record.' An illegible scan — whether from poor image quality, a rotated document, or other issues — violates CRD.140 regardless of whether it was originally a paper document.",
+        "CRD.140 explicitly states that clinical record entries must be legible, 'including items that are scanned into an electronic record.' An illegible scan - whether from poor image quality, a rotated document, or other issues - violates CRD.140 regardless of whether it was originally a paper document.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
           "The AAAHC specifically added 'including items scanned into an electronic record' to address the common practice of scanning poor-quality paper documents. A record entry that cannot be read provides no clinical value and creates patient safety risk.",
         whyWrong: {
-          A: "CRD.140 explicitly covers scanned items — legibility requirements apply to all entry types.",
+          A: "CRD.140 explicitly covers scanned items - legibility requirements apply to all entry types.",
           C: "CRD.220 review is relevant, but the legibility deficiency is specifically addressed by CRD.140.",
-          D: "CRD.180 addresses required patient identifier elements — legibility of entries is CRD.140.",
+          D: "CRD.180 addresses required patient identifier elements - legibility of entries is CRD.140.",
         },
         operationalContext:
           "When scanning paper documents, use quality settings that ensure legibility. Review each scanned document immediately after scanning. Reject and rescan any document that is not clearly legible. Train scanning staff on quality standards.",
@@ -389,26 +389,26 @@ export const ascCrdLevel: Level = {
       question:
         "A staff member in the front office is overheard discussing a patient's diagnosis and procedure with another staff member in the waiting room where other patients can hear. What CRD standard does this violate?",
       options: [
-        "No CRD standard — verbal discussions are not covered by clinical records standards",
-        "CRD.160 — any record containing patient data must be treated as strictly confidential, and observed practice must confirm confidential handling",
-        "CRD.130 — written policies addressing security of information were not followed",
-        "CRD.140 — patient data must be accessible only to authorized personnel",
+        "No CRD standard - verbal discussions are not covered by clinical records standards",
+        "CRD.160 - any record containing patient data must be treated as strictly confidential, and observed practice must confirm confidential handling",
+        "CRD.130 - written policies addressing security of information were not followed",
+        "CRD.140 - patient data must be accessible only to authorized personnel",
       ],
       correctIndex: 1,
       explanation:
-        "CRD.160 requires that records containing clinical, social, financial, or other patient data are treated as strictly confidential. Critically, surveyors verify this through 'interviews and observation' — meaning observed practice, not just written policies, is evaluated. Discussing patient information in a public area is a CRD.160 violation discovered through observed practice.",
+        "CRD.160 requires that records containing clinical, social, financial, or other patient data are treated as strictly confidential. Critically, surveyors verify this through 'interviews and observation' - meaning observed practice, not just written policies, is evaluated. Discussing patient information in a public area is a CRD.160 violation discovered through observed practice.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "CRD.160 is unique among the CRD standards in explicitly requiring that compliance be verified through observation and interviews — not just through written policies. A perfect confidentiality policy does not satisfy CRD.160 if staff behavior violates confidentiality in practice.",
+          "CRD.160 is unique among the CRD standards in explicitly requiring that compliance be verified through observation and interviews - not just through written policies. A perfect confidentiality policy does not satisfy CRD.160 if staff behavior violates confidentiality in practice.",
         whyWrong: {
-          A: "CRD.160 covers all patient data in all forms — including verbal discussions — not only written records.",
+          A: "CRD.160 covers all patient data in all forms - including verbal discussions - not only written records.",
           C: "CRD.130 addresses written security policies. The observed behavior violation is specifically captured by CRD.160's observation requirement.",
-          D: "CRD.140 addresses accessibility within the clinical record — confidentiality of verbal communications is CRD.160.",
+          D: "CRD.140 addresses accessibility within the clinical record - confidentiality of verbal communications is CRD.160.",
         },
         operationalContext:
-          "Train all staff — clinical and administrative — on HIPAA minimum necessary standards and the prohibition on discussing patient information in public areas. Include observation of staff behavior during internal compliance rounds to catch CRD.160 issues before survey.",
+          "Train all staff - clinical and administrative - on HIPAA minimum necessary standards and the prohibition on discussing patient information in public areas. Include observation of staff behavior during internal compliance rounds to catch CRD.160 issues before survey.",
       },
     },
     {
@@ -428,14 +428,14 @@ export const ascCrdLevel: Level = {
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "CRD.180 specifies five required record identifiers: name, ID number, date of birth, gender, and responsible party. Date of birth also functions as a patient identifier for safety purposes — used to confirm correct patient identity before procedures.",
+          "CRD.180 specifies five required record identifiers: name, ID number, date of birth, gender, and responsible party. Date of birth also functions as a patient identifier for safety purposes - used to confirm correct patient identity before procedures.",
         whyWrong: {
           A: "Emergency contact is not among the five required CRD.180 elements.",
           C: "Insurance information is administrative data not specified in CRD.180.",
           D: "PCP name is not a required CRD.180 element.",
         },
         operationalContext:
-          "Audit a sample of records to confirm all five CRD.180 elements are present in every record: name, ID, DOB, gender, and responsible party. EHR systems typically capture these at registration — ensure they are mandatory fields.",
+          "Audit a sample of records to confirm all five CRD.180 elements are present in every record: name, ID, DOB, gender, and responsible party. EHR systems typically capture these at registration - ensure they are mandatory fields.",
       },
     },
     {
@@ -450,7 +450,7 @@ export const ascCrdLevel: Level = {
       ],
       correctIndex: 1,
       explanation:
-        "CRD.230 requires that clinical records document discussions with the patient concerning the necessity, appropriateness, and risks of proposed care — as well as discussions of treatment alternatives, as applicable. A signed consent form confirms consent was obtained but does not typically capture the substance of alternative treatment discussions.",
+        "CRD.230 requires that clinical records document discussions with the patient concerning the necessity, appropriateness, and risks of proposed care - as well as discussions of treatment alternatives, as applicable. A signed consent form confirms consent was obtained but does not typically capture the substance of alternative treatment discussions.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
@@ -459,7 +459,7 @@ export const ascCrdLevel: Level = {
         whyWrong: {
           A: "A signed consent form confirms consent was given but typically does not document the specific alternatives discussed.",
           C: "CRD.230 requires documentation of the discussion regardless of which treatment the patient chooses.",
-          D: "CRD.230 requires documentation in the clinical record — the consent form alone does not satisfy this requirement if it does not capture the alternatives discussion.",
+          D: "CRD.230 requires documentation in the clinical record - the consent form alone does not satisfy this requirement if it does not capture the alternatives discussion.",
         },
         operationalContext:
           "Add a dedicated section to your pre-procedure note template for documenting patient education and alternatives discussed. Include: what alternatives were presented, the patient's response/preference, and any questions asked by the patient.",
@@ -470,21 +470,21 @@ export const ascCrdLevel: Level = {
       question:
         "The CRD.120 standard requires a designated person in charge of clinical records and a designated person in charge of the health information system. At a small ASC, may the same person serve in both roles?",
       options: [
-        "No — CRD.120 requires two separate individuals",
-        "Yes — the same person may fill both roles as long as the dual responsibility is documented",
+        "No - CRD.120 requires two separate individuals",
+        "Yes - the same person may fill both roles as long as the dual responsibility is documented",
         "Only if the person is a licensed health information manager (RHIA or RHIT)",
         "Only for ASCs with fewer than 500 patient encounters per year",
       ],
       correctIndex: 1,
       explanation:
-        "CRD.120 designates two roles — clinical records oversight and health information system oversight — but does not prohibit one person from fulfilling both roles. At small ASCs, the same administrator or health information manager often serves both functions. What matters is that the responsibility is designated and documented, not that it is filled by separate individuals.",
+        "CRD.120 designates two roles - clinical records oversight and health information system oversight - but does not prohibit one person from fulfilling both roles. At small ASCs, the same administrator or health information manager often serves both functions. What matters is that the responsibility is designated and documented, not that it is filled by separate individuals.",
       xpReward: 15,
       isSwipe: false,
       tutor: {
         whyCorrect:
-          "The designation requirement in CRD.120 ensures accountability — someone is formally responsible for each function. In small organizations, role consolidation is common and acceptable as long as the designations are documented and the functions are being performed.",
+          "The designation requirement in CRD.120 ensures accountability - someone is formally responsible for each function. In small organizations, role consolidation is common and acceptable as long as the designations are documented and the functions are being performed.",
         whyWrong: {
-          A: "CRD.120 does not require two separate individuals — it requires two designated roles.",
+          A: "CRD.120 does not require two separate individuals - it requires two designated roles.",
           C: "While RHIA/RHIT certification is valuable, CRD.120 does not specify a required credential for these designees.",
           D: "No volume threshold is specified for role separation in CRD.120.",
         },

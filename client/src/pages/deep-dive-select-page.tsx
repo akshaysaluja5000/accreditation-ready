@@ -67,7 +67,7 @@ export default function DeepDiveSelectPage() {
               <h3 className="font-bold text-sm mb-1">How Deep Dive Works</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 Answer a base compliance question. Get it right, and a deeper follow-up
-                question unlocks — testing expert-level knowledge. Earn{" "}
+                question unlocks - testing expert-level knowledge. Earn{" "}
                 <span className="font-bold text-secondary">Expert XP</span> for
                 mastering the follow-ups. Miss the base? You move to the next question
                 without the follow-up opportunity.
