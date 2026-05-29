@@ -4854,7 +4854,7 @@ const hospitalLevelsRaw: Level[] = [
   {
     id: "npsg",
     name: "National Performance Goals (NPGs)",
-    description: "Effective January 1, 2026, NPSGs were replaced by 14 National Performance Goals. Same clinical requirements, patient ID, hand hygiene, fall prevention, suicide risk, alarm safety, and anticoagulation, under the new NPG framework.",
+    description: "Patient identification, hand hygiene, fall prevention, suicide risk screening, alarm safety, and anticoagulation standards under the NPG framework.",
     icon: "ShieldCheck",
     color: "hsl(271, 76%, 53%)",
     requiredScore: 60,
