@@ -424,9 +424,9 @@ export default function RoleSelectPage() {
             >
               {step === 1
                 ? (pendingFacility === "asc"
-                    ? "Step 1 of 1 - Choose your facility"
-                    : "Step 1 of 2 - Choose your facility")
-                : "Step 2 of 2 - Choose your role"}
+                    ? "Step 1 of 1: Choose your facility"
+                    : "Step 1 of 2: Choose your facility")
+                : "Step 2 of 2: Choose your role"}
             </Badge>
           </div>
 
@@ -457,7 +457,7 @@ export default function RoleSelectPage() {
             <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
               {step === 1
                 ? (pendingFacility === "asc"
-                    ? "Great - AAAHC accreditation applies the same Universal Standards to every ASC, so there are no separate roles to choose. You can change this anytime."
+                    ? "AAAHC accreditation applies the same Universal Standards to every ASC, so there are no separate roles to choose. You can change this anytime."
                     : "Pick the facility you work in so we can show you the right accreditation standards. You can change this anytime.")
                 : `Select your department so we can focus your training on the ${FACILITY_ACCREDITOR[facilityType]} standards that matter most to your work.`}
             </p>
@@ -768,7 +768,7 @@ export default function RoleSelectPage() {
               I work in more than one role
             </button>
             <p className="text-xs text-muted-foreground mt-2">
-              Tap as many roles as you fill - your first pick is your primary role.
+              Tap as many roles as you fill. Your first pick is your primary role.
             </p>
           </div>
           </>
@@ -828,7 +828,7 @@ export default function RoleSelectPage() {
                             className="text-xs text-muted-foreground mt-0.5"
                             data-testid="text-asc-no-roles-note"
                           >
-                            ASC training applies to every team member - no role to choose.
+                            ASC training applies to every team member. No role selection needed.
                           </p>
                         )}
                       </>
@@ -913,7 +913,7 @@ export default function RoleSelectPage() {
               <DialogDescription asChild>
                 <div className="pt-2 text-sm leading-relaxed space-y-3">
                   <p>
-                    Go ahead and tap every role you fill - you can pick as many as you need. Tap a role again to remove it.
+                    Tap every role you fill. You can pick as many as you need. Tap a role again to remove it.
                   </p>
                   <ul className="list-disc pl-5 space-y-1">
                     <li>

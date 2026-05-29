@@ -49,7 +49,7 @@ function RoleContextLine() {
         className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold leading-none"
         data-testid="text-role-context"
       >
-        Training - {title}
+        Training: {title}
       </p>
       <span aria-hidden="true" className="text-muted-foreground text-[10px]">·</span>
       <button

@@ -1092,7 +1092,7 @@ export default function DashboardPage() {
                       <span className="px-1.5 py-0.5 rounded text-[10px] font-black bg-primary/10 text-primary uppercase tracking-wider">Unlocked</span>
                     </div>
                     <p className="text-sm text-muted-foreground mt-1 leading-snug">
-                      25 advanced questions to see how much you have learned - compare your results to your Diagnostic score
+                      25 advanced questions to see how much you have learned. Compare your results to your Diagnostic score.
                     </p>
                   </div>
                 </div>

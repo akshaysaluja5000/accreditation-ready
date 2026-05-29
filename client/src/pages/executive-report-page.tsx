@@ -75,7 +75,7 @@ const EXEC_MOCK_PLANS: ExecPlan[] = [
   {
     id: "rem-005",
     category: "EOC & Safety Compliance", facilityType: "Hospital",
-    learner: "RN - Pre/Post",
+    learner: "RN Pre/Post",
     facility: "Midwest Orthopedic Specialty Hospital", facilityId: "facility_mosh",
     quizScore: 52, passingThreshold: 70,
     status: "Verified",

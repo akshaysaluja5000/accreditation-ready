@@ -715,7 +715,7 @@ export default function FlashcardReviewPage() {
               <Card className="rounded-2xl border-2 p-5 border-violet-500/20">
                 <p className="text-sm text-foreground/75 leading-relaxed text-center">
                   {ratingCounts.again + ratingCounts.hard === 0
-                    ? "Excellent! All cards rated Good - they will return tomorrow."
+                    ? "Excellent! All cards rated Good. They will return tomorrow."
                     : `${ratingCounts.good} card${ratingCounts.good !== 1 ? "s" : ""} scheduled for tomorrow. ${ratingCounts.again + ratingCounts.hard} card${ratingCounts.again + ratingCounts.hard !== 1 ? "s" : ""} coming back sooner.`}
                 </p>
               </Card>

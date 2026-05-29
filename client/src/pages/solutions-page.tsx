@@ -40,7 +40,7 @@ interface SolutionConfig {
 const SOLUTIONS: Record<string, SolutionConfig> = {
   hospitals: {
     slug: "hospitals",
-    pageTitle: "Hospitals - Accreditation Ready",
+    pageTitle: "Hospitals | Accreditation Ready",
     audience: "For Hospital Compliance Directors",
     heroIcon: Hospital,
     headline: "Compliance Training Built for Hospitals.",
@@ -71,7 +71,7 @@ const SOLUTIONS: Record<string, SolutionConfig> = {
   },
   asc: {
     slug: "asc",
-    pageTitle: "ASCs - Accreditation Ready",
+    pageTitle: "ASCs | Accreditation Ready",
     audience: "For Ambulatory Surgery Centers",
     heroIcon: Building2,
     headline: "ASC Accreditation Training That Sticks.",

@@ -190,7 +190,7 @@ export default function ContentIntelligencePage() {
       if (data.module) {
         toast({ title: "Document analyzed", description: `${data.summary?.questionsGenerated ?? 0} questions generated. Review below.` });
       } else {
-        toast({ title: "Document saved", description: "No AI analysis - file could not be read." });
+        toast({ title: "Document saved", description: "File could not be read for AI analysis." });
         resetForm();
       }
     },
@@ -282,7 +282,7 @@ export default function ContentIntelligencePage() {
                     data-testid="btn-pick-item"
                     className="w-full flex items-center justify-between px-3 py-2.5 border rounded-lg text-sm bg-background hover:bg-muted/30 transition-colors text-left">
                     <span className={selectedItem ? "text-foreground" : "text-muted-foreground"}>
-                      {selectedItem ? `${selectedItem.standardCode} - ${selectedItem.itemName}` : "Search standards…"}
+                      {selectedItem ? `${selectedItem.standardCode}: ${selectedItem.itemName}` : "Search standards…"}
                     </span>
                     <ChevronDown className="w-3.5 h-3.5 text-muted-foreground shrink-0" />
                   </button>
@@ -409,7 +409,7 @@ export default function ContentIntelligencePage() {
             <div className="rounded-2xl border bg-card p-10 flex flex-col items-center gap-3 text-center">
               <FileSearch2 className="w-9 h-9 text-muted-foreground/30" />
               <p className="text-sm font-medium text-muted-foreground">
-                {trainingModules.length === 0 ? "No modules yet - upload a document above to get started." : "No modules in this category."}
+                {trainingModules.length === 0 ? "No modules yet. Upload a document above to get started." : "No modules in this category."}
               </p>
             </div>
           ) : (

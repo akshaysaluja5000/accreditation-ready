@@ -100,7 +100,7 @@ export default function EducatorHubPage() {
             </div>
             <p className="text-sm font-medium text-foreground/70">
               {activeTab === "department"
-                ? `My team - ${team.length} learner${team.length !== 1 ? "s" : ""}`
+                ? `My team: ${team.length} learner${team.length !== 1 ? "s" : ""}`
                 : `${teams.length} team${teams.length !== 1 ? "s" : ""} in this facility`}
             </p>
           </div>
@@ -369,7 +369,7 @@ function TeamsTab({
             <DialogTitle>Delete Team</DialogTitle>
           </DialogHeader>
           <p className="text-sm text-muted-foreground">
-            Are you sure you want to delete this team? This cannot be undone. Members will not be deleted - just removed from the team.
+            Are you sure you want to delete this team? This cannot be undone. Members will not be deleted, just removed from the team.
           </p>
           <DialogFooter>
             <Button variant="outline" onClick={() => setDeleteTargetId(null)}>Cancel</Button>

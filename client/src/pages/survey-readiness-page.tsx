@@ -397,7 +397,7 @@ export default function SurveyReadinessPage() {
       queryClient.invalidateQueries({ queryKey: ["/api/compliance/training-modules"] });
       setUploadResult(data);
       if (!data.module) {
-        toast({ title: "Document Saved", description: "Marked on file (no AI analysis - file could not be read)." });
+        toast({ title: "Document Saved", description: "Marked on file. File could not be read for AI analysis." });
         setLogItem(null);
         setDocName("");
         setDocExpiry("");

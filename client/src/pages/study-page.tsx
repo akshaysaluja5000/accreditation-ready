@@ -1007,7 +1007,7 @@ export default function StudyPage() {
                   data-testid="button-forget-all"
                 >
                   <Trash2 size={13} className="mr-1.5" />
-                  {resetMutation.isPending ? "Resetting…" : "Forget all - start from scratch"}
+                  {resetMutation.isPending ? "Resetting…" : "Reset and start from scratch"}
                 </Button>
               </div>
             </motion.div>

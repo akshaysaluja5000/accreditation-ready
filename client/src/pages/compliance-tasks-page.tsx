@@ -295,7 +295,7 @@ export default function ComplianceTasksPage() {
                   data-testid="btn-pick-item"
                   className="w-full flex items-center justify-between px-3 py-2.5 border rounded-lg text-sm bg-background hover:bg-muted/30 transition-colors text-left">
                   <span className={selectedItem ? "text-foreground" : "text-muted-foreground"}>
-                    {selectedItem ? `${selectedItem.standardCode} - ${selectedItem.itemName.slice(0, 45)}…` : "Search and select an item…"}
+                    {selectedItem ? `${selectedItem.standardCode}: ${selectedItem.itemName.slice(0, 45)}…` : "Search and select an item…"}
                   </span>
                   <ChevronDown className="w-3.5 h-3.5 text-muted-foreground" />
                 </button>
