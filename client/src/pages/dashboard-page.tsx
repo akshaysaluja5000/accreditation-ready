@@ -966,7 +966,7 @@ export default function DashboardPage() {
               <div className="flex items-center gap-2 mb-4 px-3 py-3 rounded-xl bg-primary/5 border border-primary/10" data-testid="text-shuffle-note">
                 <Shuffle size={16} className="text-primary flex-shrink-0" />
                 <p className="text-sm text-muted-foreground">
-                  You get <span className="font-semibold text-foreground">fresh questions</span> every session - drawn from a larger pool each time you play.
+                  You get <span className="font-semibold text-foreground">fresh questions</span> every session, drawn from a larger pool each time you play.
                 </p>
               </div>
               {!isAsc && !isDnv && assignedData?.role && (

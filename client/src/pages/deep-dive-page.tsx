@@ -543,7 +543,7 @@ export default function DeepDivePage() {
           <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-secondary/5 border border-secondary/10 mb-6" data-testid="text-dd-shuffle-note">
             <Shuffle size={14} className="text-secondary flex-shrink-0" />
             <p className="text-xs text-muted-foreground">
-              Play again for <span className="font-semibold text-foreground">fresh questions</span> each time - drawn from a larger pool every session.
+              Play again for <span className="font-semibold text-foreground">fresh questions</span> each time, drawn from a larger pool every session.
             </p>
           </div>
 
