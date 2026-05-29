@@ -56,7 +56,7 @@ export function AppShell({ children }: AppShellProps) {
 
       {showTabBar && (
         <nav
-          className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/97 backdrop-blur-md"
+          className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background shadow-[0_-1px_8px_rgba(0,0,0,0.08)]"
           data-testid="nav-bottom-tab-bar"
         >
           <div className="flex items-stretch h-14 max-w-lg mx-auto">
@@ -68,7 +68,7 @@ export function AppShell({ children }: AppShellProps) {
                   onClick={onClick}
                   data-testid={`tab-nav-${id}`}
                   className={`flex-1 flex flex-col items-center justify-center gap-0.5 transition-colors ${
-                    isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                    isActive ? "text-primary" : "text-foreground/50 hover:text-foreground/80"
                   }`}
                 >
                   <Icon size={20} strokeWidth={isActive ? 2.5 : 2} />
