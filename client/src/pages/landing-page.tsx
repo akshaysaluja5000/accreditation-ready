@@ -15,7 +15,7 @@ const features = [
   {
     icon: CalendarCheck,
     title: "Train Without Pulling Staff Off the Floor",
-    description: "Role-based sessions take 10–15 minutes. They fit into real workflows - not ideal schedules that never happen.",
+    description: "Role-based sessions take 10–15 minutes and fit into real workflows.",
   },
   {
     icon: BarChart3,
@@ -25,7 +25,7 @@ const features = [
   {
     icon: Search,
     title: "Simulate Real Survey Scenarios",
-    description: "Deep Dive Tracer Mode mirrors how surveyors actually probe - so staff are not caught off guard by unexpected questions.",
+    description: "Deep Dive Tracer Mode mirrors how surveyors actually probe, so staff are prepared for the questions that come up on survey day.",
   },
   {
     icon: BrainCircuit,
