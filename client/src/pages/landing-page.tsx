@@ -44,7 +44,7 @@ const howItWorksSteps = [
 const proofPoints = [
   "Baseline vs. final scores show exactly how far you have come",
   "Department-level dashboards show where risk still lives",
-  "Staff walk in knowing what surveyors will ask - and how to answer",
+  "Staff walk in knowing what surveyors will ask and how to answer",
 ];
 
 export default function LandingPage() {
