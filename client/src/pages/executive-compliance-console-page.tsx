@@ -54,17 +54,6 @@ const AGENTS: Agent[] = [
   },
   {
     number: 4,
-    title: "Incident Intelligence Agent",
-    description:
-      "When an incident is reported, instead of a blank form, the agent conducts a structured interview, drafts the formal report, routes it to the right people based on severity and type, and cross-references past incidents to flag emerging patterns. Suggests corrective actions tied to specific standards.",
-    replaces: "Blank incident forms, manual routing, and disconnected corrective action tracking.",
-    icon: ClipboardList,
-    iconBg: "bg-rose-500/10",
-    iconColor: "text-rose-500",
-    status: "coming-soon",
-  },
-  {
-    number: 5,
     title: "Regulatory Watch Agent",
     description:
       "Monitors Joint Commission, DNV, AAAHC, and CMS public channels for standard updates, new chapters, and survey focus shifts. When the NPG chapter launched January 2026, this agent would have flagged it automatically and initiated a content build task — rather than discovering the gap months later.",
@@ -75,7 +64,7 @@ const AGENTS: Agent[] = [
     status: "coming-soon",
   },
   {
-    number: 6,
+    number: 5,
     title: "Executive Readiness Agent",
     description:
       "Prepares the facility's readiness narrative for the CEO/CNO level — not just a dashboard, but a drafted summary of where you stand, what's at risk, and what actions are due this week. The difference between data and a briefing.",

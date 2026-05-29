@@ -4353,7 +4353,7 @@ Write a 3-4 sentence executive summary. Open with the readiness status and trend
     }
   });
 
-  // ── Regulatory Watch Agent (Agent 4) ───────────────────────────────────────
+  // ── Regulatory Watch Agent ─────────────────────────────────────────────────
   async function tryFetchPage(url: string, timeoutMs = 5000): Promise<string> {
     try {
       const controller = new AbortController();

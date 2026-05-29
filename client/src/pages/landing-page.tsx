@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { CalendarCheck, BarChart3, FileText, BookOpen, ArrowRight, BrainCircuit, CheckCircle2, Users, TrendingUp, Search, Stethoscope, Crown, Lock, Sparkles, AlertTriangle, Target, ShieldCheck, Moon, Sun, Radar, FileSearch2, Zap, GraduationCap, ClipboardList, Telescope, BriefcaseBusiness } from "lucide-react";
+import { CalendarCheck, BarChart3, FileText, BookOpen, ArrowRight, BrainCircuit, CheckCircle2, Users, TrendingUp, Search, Stethoscope, Crown, Lock, Sparkles, AlertTriangle, Target, ShieldCheck, Moon, Sun, Radar, FileSearch2, Zap, GraduationCap, Telescope, BriefcaseBusiness } from "lucide-react";
 import { AppLogoMark } from "@/components/app-logo-mark";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
@@ -328,34 +328,6 @@ export default function LandingPage() {
                   </div>
                 </motion.div>
 
-                {/* Incident Intelligence Agent */}
-                <motion.div
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.18, delay: 0.2 }}
-                  data-testid="card-agent-incident-intelligence"
-                >
-                  <div className="rounded-2xl border border-border bg-card p-6 h-full flex flex-col gap-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-11 h-11 rounded-xl bg-rose-500/10 border border-rose-400/20 flex items-center justify-center flex-shrink-0">
-                        <ClipboardList size={22} className="text-rose-500" />
-                      </div>
-                      <div>
-                        <p className="text-[10px] font-bold tracking-widest uppercase text-muted-foreground">Agent 4</p>
-                        <h3 className="font-bold text-base text-foreground leading-tight" data-testid="text-agent-4-title">Incident Intelligence Agent</h3>
-                      </div>
-                    </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      When an incident is reported, instead of a blank form, the agent conducts a structured interview, drafts the formal report, routes it to the right people based on severity and type, and cross-references past incidents to flag emerging patterns. It then suggests corrective actions tied to specific standards.
-                    </p>
-                    <div className="mt-auto pt-2 border-t border-border">
-                      <p className="text-xs text-muted-foreground leading-relaxed">
-                        <span className="font-semibold text-foreground">Replaces:</span> blank incident forms, manual routing, and disconnected corrective action tracking.
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-
                 {/* Regulatory Watch Agent */}
                 <motion.div
                   initial={{ opacity: 0, y: 16 }}
@@ -369,8 +341,8 @@ export default function LandingPage() {
                         <Telescope size={22} className="text-amber-600" />
                       </div>
                       <div>
-                        <p className="text-[10px] font-bold tracking-widest uppercase text-muted-foreground">Agent 5</p>
-                        <h3 className="font-bold text-base text-foreground leading-tight" data-testid="text-agent-5-title">Regulatory Watch Agent</h3>
+                        <p className="text-[10px] font-bold tracking-widest uppercase text-muted-foreground">Agent 4</p>
+                        <h3 className="font-bold text-base text-foreground leading-tight" data-testid="text-agent-4-title">Regulatory Watch Agent</h3>
                       </div>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
@@ -397,8 +369,8 @@ export default function LandingPage() {
                         <BriefcaseBusiness size={22} className="text-sky-600" />
                       </div>
                       <div>
-                        <p className="text-[10px] font-bold tracking-widest uppercase text-muted-foreground">Agent 6</p>
-                        <h3 className="font-bold text-base text-foreground leading-tight" data-testid="text-agent-6-title">Executive Readiness Agent</h3>
+                        <p className="text-[10px] font-bold tracking-widest uppercase text-muted-foreground">Agent 5</p>
+                        <h3 className="font-bold text-base text-foreground leading-tight" data-testid="text-agent-5-title">Executive Readiness Agent</h3>
                       </div>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
