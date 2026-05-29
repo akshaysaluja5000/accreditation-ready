@@ -178,7 +178,7 @@ export default function LandingPage() {
                 </h2>
               </div>
               <p className="text-base text-muted-foreground leading-relaxed mb-6 max-w-3xl" data-testid="text-problem-body">
-                Written policies and filled binders do not satisfy a surveyor. Staff who can explain the standard in their own words do.
+                Surveyors assess staff knowledge, on the spot, in plain conversation. A policy binder on the shelf tells them nothing about whether your team actually understands it.
               </p>
               <ul className="space-y-3">
                 {[
