@@ -369,7 +369,7 @@ function TeamsTab({
             <DialogTitle>Delete Team</DialogTitle>
           </DialogHeader>
           <p className="text-sm text-muted-foreground">
-            Are you sure you want to delete this team? This cannot be undone. Members won't be deleted - just removed from the team.
+            Are you sure you want to delete this team? This cannot be undone. Members will not be deleted - just removed from the team.
           </p>
           <DialogFooter>
             <Button variant="outline" onClick={() => setDeleteTargetId(null)}>Cancel</Button>

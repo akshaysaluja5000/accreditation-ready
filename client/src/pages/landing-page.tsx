@@ -10,7 +10,7 @@ const features = [
   {
     icon: Stethoscope,
     title: "Measure Readiness from Day One",
-    description: "A 25-question diagnostic gives every staff member a personalized baseline. You'll know exactly where your gaps are before a surveyor ever asks.",
+    description: "A 25-question diagnostic gives every staff member a personalized baseline. You will know exactly where your gaps are before a surveyor ever asks.",
   },
   {
     icon: CalendarCheck,
@@ -25,11 +25,11 @@ const features = [
   {
     icon: Search,
     title: "Simulate Real Survey Scenarios",
-    description: "Deep Dive Tracer Mode mirrors how surveyors actually probe - so staff aren't caught off guard by unexpected questions.",
+    description: "Deep Dive Tracer Mode mirrors how surveyors actually probe - so staff are not caught off guard by unexpected questions.",
   },
   {
     icon: BrainCircuit,
-    title: "Understand, Don't Just Memorize",
+    title: "Build Real Understanding",
     description: "AI-powered explanations break down missed questions in plain language, with real clinical context your team can actually apply.",
   },
 ];
@@ -42,7 +42,7 @@ const howItWorksSteps = [
 ];
 
 const proofPoints = [
-  "Baseline vs. final scores show exactly how far you've come",
+  "Baseline vs. final scores show exactly how far you have come",
   "Department-level dashboards show where risk still lives",
   "Staff walk in knowing what surveyors will ask - and how to answer",
 ];
@@ -184,7 +184,7 @@ export default function LandingPage() {
                 {[
                   "In-services are too infrequent and too long to retain",
                   "Knowledge gaps stay invisible until survey day",
-                  "Leaders can't see where their real risk is by department",
+                  "Leaders cannot see where their real risk is by department",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3" data-testid={`text-problem-bullet-${i}`}>
                     <div className="w-5 h-5 rounded-full bg-red-500/15 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -262,7 +262,7 @@ export default function LandingPage() {
                       </div>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Continuously monitors every standard across all facilities - which ones have evidence attached, which staff haven't completed training, which policies are expiring. Surfaces a live readiness score that's always current.
+                      Continuously monitors every standard across all facilities - which ones have evidence attached, which staff have not completed training, which policies are expiring. Surfaces a live readiness score that is always current.
                     </p>
                     <div className="mt-auto pt-2 border-t border-border">
                       <p className="text-xs text-muted-foreground leading-relaxed">
@@ -374,7 +374,7 @@ export default function LandingPage() {
                       </div>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      For the CEO/CNO level, this agent drafts a weekly readiness briefing: where the facility stands, what's at risk, and what actions are due. Structured for board reporting and pre-survey prep.
+                      For the CEO/CNO level, this agent drafts a weekly readiness briefing: where the facility stands, what is at risk, and what actions are due. Structured for board reporting and pre-survey prep.
                     </p>
                     <div className="mt-auto pt-2 border-t border-border">
                       <p className="text-xs text-muted-foreground leading-relaxed">

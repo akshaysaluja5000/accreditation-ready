@@ -226,7 +226,7 @@ export default function RoleSelectPage() {
       await queryClient.invalidateQueries({ queryKey: ["/api/levels"] });
       toast({
         title: "Facility module switched",
-        description: `You're now using the ${MODULE_LABELS[updatedUser.organizationType as ModuleId] || updatedUser.organizationType} module.`,
+        description: `You are now using the ${MODULE_LABELS[updatedUser.organizationType as ModuleId] || updatedUser.organizationType} module.`,
       });
     },
     onError: (err: any) => {
@@ -260,8 +260,8 @@ export default function RoleSelectPage() {
       toast({
         title: "Role saved",
         description: extra > 0
-          ? `You're set up as ${primary.title} (+${extra} more role${extra > 1 ? "s" : ""}).`
-          : `You're set up as ${primary.title}.`,
+          ? `You are set up as ${primary.title} (+${extra} more role${extra > 1 ? "s" : ""}).`
+          : `You are set up as ${primary.title}.`,
       });
       window.location.assign("/");
     },
@@ -463,7 +463,7 @@ export default function RoleSelectPage() {
             </p>
             {step === 2 && (
               <p className="text-sm text-muted-foreground/80 max-w-xl mx-auto mt-2">
-                You'll go straight to the training that matches this role. You can change your role later from your profile.
+                You will go straight to the training that matches this role. You can change your role later from your profile.
               </p>
             )}
           </div>
@@ -617,7 +617,7 @@ export default function RoleSelectPage() {
                 Roles for {MODULE_LABELS[facilityType] || facilityType} are coming soon
               </h3>
               <p className="text-sm text-muted-foreground max-w-md mx-auto">
-                We're building out role-specific training for this facility type. Switch your
+                We are building out role-specific training for this facility type. Switch your
                 facility module below to access available training right now.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-2 mt-5">
@@ -917,10 +917,10 @@ export default function RoleSelectPage() {
                   </p>
                   <ul className="list-disc pl-5 space-y-1">
                     <li>
-                      <strong>Your first pick is your primary role.</strong> It's what we'll use to label your training.
+                      <strong>Your first pick is your primary role.</strong> It is what we will use to label your training.
                     </li>
                     <li>
-                      We'll combine the chapters from every role you select so your training covers all of your work.
+                      We will combine the chapters from every role you select so your training covers all of your work.
                     </li>
                     <li>
                       You can update your roles anytime from your profile.

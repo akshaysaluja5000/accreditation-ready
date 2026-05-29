@@ -431,7 +431,7 @@ export default function ProfilePage() {
           <AlertDialogHeader>
             <AlertDialogTitle>Switch roles?</AlertDialogTitle>
             <AlertDialogDescription className="pt-2 leading-relaxed">
-              Your current progress will be saved under your existing role. You'll be taken back to the role selection screen.
+              Your current progress will be saved under your existing role. You will be taken back to the role selection screen.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>

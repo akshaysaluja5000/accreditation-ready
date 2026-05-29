@@ -310,7 +310,7 @@ export default function RiskAssessmentPage() {
 
   function handleSubmit() {
     if (selected.length === 0) {
-      toast({ title: "Select at least one risk area", description: "Choose the areas where you'd like to improve.", variant: "destructive" });
+      toast({ title: "Select at least one risk area", description: "Choose the areas where you would like to improve.", variant: "destructive" });
       return;
     }
     generateMutation.mutate({ module, riskAreas: selected, notes });

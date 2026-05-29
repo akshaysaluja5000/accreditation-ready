@@ -328,7 +328,7 @@ export default function PlayPage() {
                 {percentage >= 80
                   ? "Great job! You really know this material."
                   : percentage >= 50
-                  ? "You're getting there. Review the study material and try again!"
+                  ? "Keep going. Review the study material and try again!"
                   : "Try studying this section first, then give it another shot!"}
               </p>
             </div>
@@ -463,7 +463,7 @@ export default function PlayPage() {
           >
             <h3 className="font-bold text-lg text-center" data-testid="text-quit-title">Leave this quiz?</h3>
             <p className="text-sm text-muted-foreground text-center">
-              You're on question {gameState.currentQuestion + 1} of {questions.length}. What would you like to do?
+              Question {gameState.currentQuestion + 1} of {questions.length}. What would you like to do?
             </p>
             <div className="flex flex-col gap-2">
               <Button

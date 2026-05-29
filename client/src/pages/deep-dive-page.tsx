@@ -894,7 +894,7 @@ export default function DeepDivePage() {
                 </Button>
               </div>
               <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-                You've answered {gameState.answers.length} of {questions.length} questions.
+                You have answered {gameState.answers.length} of {questions.length} questions.
                 What would you like to do?
               </p>
               <div className="flex flex-col gap-2">

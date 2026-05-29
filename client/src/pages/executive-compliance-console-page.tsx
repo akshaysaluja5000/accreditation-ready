@@ -23,7 +23,7 @@ const AGENTS: Agent[] = [
     number: 1,
     title: "Survey Readiness Agent",
     description:
-      "Continuously monitors every standard across all facilities - which ones have evidence attached, which staff haven't completed training, which policies are expiring. Surfaces a live readiness score that is always current. Not a report you run - a score that never stops updating.",
+      "Continuously monitors every standard across all facilities - which ones have evidence attached, which staff have not completed training, which policies are expiring. Surfaces a live readiness score that is always current. A score that never stops updating.",
     replaces: "The manual binder audit facilities run in the weeks before a survey.",
     icon: Radar,
     iconBg: "bg-primary/10",
@@ -67,7 +67,7 @@ const AGENTS: Agent[] = [
     number: 5,
     title: "Executive Readiness Agent",
     description:
-      "Drafts a weekly readiness briefing for the CEO/CNO level: where the facility stands, what's at risk, and what actions are due. Structured for board reporting and pre-survey prep.",
+      "Drafts a weekly readiness briefing for the CEO/CNO level: where the facility stands, what is at risk, and what actions are due. Structured for board reporting and pre-survey prep.",
     replaces: "Manually assembled board reports and pre-survey executive prep sessions.",
     icon: BriefcaseBusiness,
     iconBg: "bg-sky-500/10",

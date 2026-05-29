@@ -284,10 +284,10 @@ function RoleErrorRoute() {
             <AlertCircle size={28} />
           </div>
           <h1 className="text-2xl font-bold text-foreground" data-testid="text-role-error-title">
-            We couldn't start your training
+            We could not start your training
           </h1>
           <p className="text-muted-foreground">
-            The role you selected isn't available. Please choose a different role to continue.
+            The role you selected is not available. Please choose a different role to continue.
           </p>
           <Button data-testid="button-role-error-change" onClick={() => navigate("/role-select")}>
             Change role

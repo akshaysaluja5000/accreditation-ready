@@ -53,7 +53,7 @@ export function AiTutorBox({ questionText, userAnswer, correctAnswer, explanatio
     } catch (e: any) {
       const msg = e?.message || "";
       if (msg.includes("429")) {
-        setError("You've reached the AI Tutor limit. Please try again later.");
+        setError("You have reached the AI Tutor limit. Please try again later.");
       } else {
         try {
           const parsed = JSON.parse(msg.substring(msg.indexOf("{")));

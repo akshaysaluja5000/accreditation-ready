@@ -1053,7 +1053,7 @@ export default function DashboardPage() {
                     <div className="rounded-2xl border-2 border-dashed border-border bg-muted/30 p-6 text-center" data-testid="empty-state-pathway-domains">
                       <p className="font-semibold text-base mb-1">{MODULE_LABELS[userModule]} content is in development</p>
                       <p className="text-sm text-muted-foreground">
-                        Domains for the {MODULE_LABELS[userModule]} pathway are set up, but training questions and study material aren't published yet. Check back soon.
+                        Domains for the {MODULE_LABELS[userModule]} pathway are set up, but training questions and study material are not published yet. Check back soon.
                       </p>
                     </div>
                   ) : (
@@ -1092,7 +1092,7 @@ export default function DashboardPage() {
                       <span className="px-1.5 py-0.5 rounded text-[10px] font-black bg-primary/10 text-primary uppercase tracking-wider">Unlocked</span>
                     </div>
                     <p className="text-sm text-muted-foreground mt-1 leading-snug">
-                      25 advanced questions to see how much you've learned - compare your results to your Diagnostic score
+                      25 advanced questions to see how much you have learned - compare your results to your Diagnostic score
                     </p>
                   </div>
                 </div>

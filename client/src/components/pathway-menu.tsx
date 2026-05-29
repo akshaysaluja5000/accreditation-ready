@@ -84,7 +84,7 @@ export function PathwayMenu({
     },
     onError: (err: any) => {
       toast({
-        title: "Couldn't switch facility",
+        title: "Could not switch facility",
         description: err?.message ?? "Please try again.",
         variant: "destructive",
       });
