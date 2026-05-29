@@ -35,7 +35,7 @@ const features = [
 ];
 
 const howItWorksSteps = [
-  "Take the diagnostic - know your gaps immediately",
+  "Take the diagnostic and know your gaps immediately",
   "Deploy targeted training by department",
   "Monitor readiness on your dashboard weekly",
   "Walk into survey week with documented proof of preparation",
