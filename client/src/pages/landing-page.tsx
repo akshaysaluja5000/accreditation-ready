@@ -238,7 +238,7 @@ export default function LandingPage() {
                 </p>
               </div>
               <h2 className="text-2xl md:text-3xl font-black tracking-tight text-foreground mb-3" data-testid="text-agent-heading">
-                What is different.
+                What is different?
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed max-w-2xl mb-10" data-testid="text-agent-subhead">
                 The platform runs a network of specialized agents that handle monitoring, learning, and reporting continuously.
