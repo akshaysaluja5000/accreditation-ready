@@ -45,6 +45,7 @@ import ExecutiveBriefPage from "@/pages/executive-brief-page";
 import MyLogEntriesPage from "@/pages/my-log-entries-page";
 import ComplianceTasksPage from "@/pages/compliance-tasks-page";
 import ContentIntelligencePage from "@/pages/content-intelligence-page";
+import AscWallChartPage from "@/pages/asc-wall-chart-page";
 import { Loader2 } from "lucide-react";
 
 function ScrollToTop() {
@@ -385,6 +386,9 @@ function Router() {
       </Route>
       <Route path="/flashcard-review">
         {() => <ProtectedRoute component={FlashcardReviewPage} />}
+      </Route>
+      <Route path="/asc-wall-chart">
+        {() => <ProtectedRoute component={AscWallChartPage} />}
       </Route>
       <Route path="/mfa-setup" component={MfaSetupPage} />
       <Route path="/mfa-verify" component={MfaVerifyPage} />

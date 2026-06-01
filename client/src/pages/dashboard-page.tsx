@@ -1308,6 +1308,30 @@ export default function DashboardPage() {
               </motion.div>
             )}
 
+            {/* Wall Chart Tracker — ASC only */}
+            {isAsc && (
+              <motion.button
+                className="rounded-2xl border-2 p-4 flex items-center gap-3 transition-colors text-left bg-primary/5 border-primary/20 hover:bg-primary/10 hover:border-primary/30"
+                onClick={() => setLocation("/asc-wall-chart")}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                whileTap={{ scale: 0.98 }}
+                data-testid="button-wall-chart"
+              >
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 bg-primary/10">
+                  <ClipboardCheck size={20} className="text-primary" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2">
+                    <h3 className="font-bold text-sm">Wall Chart Tracker</h3>
+                    <span className="px-1.5 py-0.5 rounded text-[10px] font-black bg-primary/10 text-primary uppercase tracking-wider border border-primary/20">Required Postings</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-0.5">AAAHC required postings · verify status and due dates</p>
+                </div>
+                <ChevronRight size={16} className="text-muted-foreground flex-shrink-0" />
+              </motion.button>
+            )}
+
             {/* Handbook — styled as a reference tool, not a training module */}
             <motion.button
               className="rounded-2xl border-2 border-dashed p-4 flex items-center gap-3 transition-colors text-left bg-muted/30 border-border hover:bg-muted/50 hover:border-border/80"

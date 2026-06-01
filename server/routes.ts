@@ -4014,6 +4014,37 @@ Rules:
     }
   });
 
+  app.get("/api/compliance/wall-chart", requireAuth, async (req: Request, res: Response) => {
+    try {
+      const user = req.user as any;
+      const facilityId: number = user.facilityId ?? 0;
+      const data = await storage.getWallChartData(facilityId);
+      res.json(data);
+    } catch (err) {
+      console.error("Wall chart fetch error:", err);
+      res.status(500).json({ error: "Failed to fetch wall chart data." });
+    }
+  });
+
+  app.post("/api/compliance/wall-chart/mark", requireAuth, async (req: Request, res: Response) => {
+    try {
+      const user = req.user as any;
+      const facilityId: number = user.facilityId ?? 0;
+      const { itemId, assignedTo, dueDate } = req.body as { itemId: number; assignedTo?: string; dueDate?: string };
+      if (!itemId || typeof itemId !== "number") return res.status(400).json({ error: "itemId required." });
+      const task = await storage.markWallChartPosting(
+        facilityId,
+        itemId,
+        assignedTo || "Compliance Officer",
+        dueDate || new Date(Date.now() + 365 * 86400000).toISOString().slice(0, 10),
+      );
+      res.json(task);
+    } catch (err) {
+      console.error("Wall chart mark error:", err);
+      res.status(500).json({ error: "Failed to update posting." });
+    }
+  });
+
   app.get("/api/compliance/tasks", requireAuth, requireLeadershipRole("director"), async (req: Request, res: Response) => {
     try {
       const user = req.user as any;

@@ -668,6 +668,20 @@ async function seedComplianceItems(client: pg.PoolClient) {
     console.log(`Seeded ${ASC_COMPLIANCE_ITEMS.length} ASC compliance items`);
   }
 
+  // Seed AAAHC posting requirement items (runs on existing DBs too — idempotent check by category)
+  const { rows: postingRows } = await client.query("SELECT COUNT(*) FROM compliance_items WHERE category = 'Posting Requirements'");
+  if (parseInt(postingRows[0].count) === 0) {
+    const { ASC_POSTING_REQUIREMENTS } = await import("./compliance-seed-data.js");
+    for (const item of ASC_POSTING_REQUIREMENTS) {
+      await client.query(
+        `INSERT INTO compliance_items (module, module_scope, volume, standard_code, item_name, frequency, tier, category, surveyor_priority, agent_watch)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
+        ["asc", "ASC", item.volume, item.standardCode, item.itemName, item.frequency, item.tier, item.category, item.surveyorPriority, true]
+      );
+    }
+    console.log(`Seeded ${ASC_POSTING_REQUIREMENTS.length} ASC posting requirement items`);
+  }
+
   const { rows: hospRows } = await client.query("SELECT COUNT(*) FROM compliance_items WHERE module_scope = 'Hospital'");
   if (parseInt(hospRows[0].count) === 0) {
     for (const item of HOSPITAL_COMPLIANCE_ITEMS) {
@@ -1687,6 +1701,43 @@ export class DatabaseStorage implements IStorage {
     return db.select().from(complianceTasks)
       .where(eq(complianceTasks.facilityId, facilityId))
       .orderBy(desc(complianceTasks.createdAt));
+  }
+
+  async getWallChartData(facilityId: number): Promise<{ item: ComplianceItem; task: ComplianceTask | null }[]> {
+    const [items, allTasks] = await Promise.all([
+      db.select().from(complianceItems)
+        .where(eq(complianceItems.category, "Posting Requirements"))
+        .orderBy(complianceItems.surveyorPriority, complianceItems.itemName),
+      db.select().from(complianceTasks)
+        .where(eq(complianceTasks.facilityId, facilityId)),
+    ]);
+    const tasksByItem = new Map<number, ComplianceTask>();
+    for (const task of allTasks) {
+      const existing = tasksByItem.get(task.itemId);
+      if (!existing || task.id > existing.id) {
+        tasksByItem.set(task.itemId, task);
+      }
+    }
+    return items.map(item => ({ item, task: tasksByItem.get(item.id) ?? null }));
+  }
+
+  async markWallChartPosting(facilityId: number, itemId: number, assignedTo: string, dueDate: string): Promise<ComplianceTask> {
+    const existing = await db.select().from(complianceTasks)
+      .where(and(eq(complianceTasks.facilityId, facilityId), eq(complianceTasks.itemId, itemId)))
+      .orderBy(desc(complianceTasks.id))
+      .limit(1);
+    if (existing.length > 0) {
+      const [row] = await db.update(complianceTasks)
+        .set({ status: "completed", dueDate, assignedTo, escalated: false })
+        .where(eq(complianceTasks.id, existing[0].id))
+        .returning();
+      return row;
+    }
+    const [row] = await db.insert(complianceTasks).values({
+      facilityId, itemId, assignedTo, dueDate,
+      createdBy: "manual", createdByAgent: false, status: "completed",
+    }).returning();
+    return row;
   }
 
   async getExecutiveBriefs(facilityId: number): Promise<ExecutiveBrief[]> {
