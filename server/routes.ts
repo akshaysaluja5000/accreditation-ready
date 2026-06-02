@@ -4040,6 +4040,75 @@ Rules:
     }
   });
 
+  // ── Compliance Checklist Completion Logging ───────────────────────────────
+  const FREQ_DAYS: Record<string, number> = {
+    "Daily": 1, "Weekly": 7, "Monthly": 30, "Quarterly": 90,
+    "Semiannually": 180, "Annually": 365, "Biennially": 730,
+    "Triennially": 1095, "Quadrennially": 1460, "Quinquennially": 1825,
+  };
+
+  app.post("/api/compliance-checklist/:id/log-completion", requireAuth, async (req: Request, res: Response) => {
+    try {
+      const user = req.user as any;
+      const itemId = parseInt(req.params.id);
+      if (isNaN(itemId)) return res.status(400).json({ error: "Invalid item id." });
+      const { completedBy, notes, itemCode, itemName, volume, frequency } =
+        req.body as { completedBy?: string; notes?: string; itemCode: string; itemName: string; volume: number; frequency: string };
+      const facilityId = String(user.facilityId ?? 0);
+      const log = await storage.logChecklistCompletion({
+        itemId, itemCode, itemName, frequency,
+        completedBy: completedBy?.trim() || user.username || "Compliance Officer",
+        notes, facilityId, volume: Number(volume) || 0,
+      });
+      res.json(log);
+    } catch (err) {
+      console.error("log-completion error:", err);
+      res.status(500).json({ error: "Failed to log completion." });
+    }
+  });
+
+  app.get("/api/compliance-checklist/logs", requireAuth, async (req: Request, res: Response) => {
+    try {
+      const user = req.user as any;
+      const facilityId = String(user.facilityId ?? 0);
+      const logs = await storage.getChecklistLogs(facilityId);
+      res.json(logs);
+    } catch (err) {
+      res.status(500).json({ error: "Failed to fetch logs." });
+    }
+  });
+
+  app.get("/api/compliance-checklist/overdue", requireAuth, async (req: Request, res: Response) => {
+    try {
+      const user = req.user as any;
+      const facilityId = String(user.facilityId ?? 0);
+      const logs = await storage.getChecklistLogs(facilityId);
+      const now = Date.now();
+      const overdue = logs.filter(l => {
+        if (!l.frequency || !l.completedAt) return false;
+        const freqDays = FREQ_DAYS[l.frequency] ?? 365;
+        const daysSince = (now - new Date(l.completedAt).getTime()) / 86400000;
+        return daysSince > freqDays;
+      });
+      res.json(overdue);
+    } catch (err) {
+      res.status(500).json({ error: "Failed to fetch overdue items." });
+    }
+  });
+
+  app.get("/api/compliance-checklist/:id/history", requireAuth, async (req: Request, res: Response) => {
+    try {
+      const user = req.user as any;
+      const itemId = parseInt(req.params.id);
+      if (isNaN(itemId)) return res.status(400).json({ error: "Invalid item id." });
+      const facilityId = String(user.facilityId ?? 0);
+      const history = await storage.getChecklistHistory(itemId, facilityId);
+      res.json(history);
+    } catch (err) {
+      res.status(500).json({ error: "Failed to fetch history." });
+    }
+  });
+
   // ── Wall Chart (item-level status, no task join) ──────────────────────────
   app.get("/api/wall-chart/items", requireAuth, async (_req: Request, res: Response) => {
     try {

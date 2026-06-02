@@ -796,6 +796,22 @@ export const contentAssessmentQuestions = pgTable("content_assessment_questions"
   index("idx_content_assessment_type").on(t.assessmentType),
 ]);
 
+export const complianceCompletionLog = pgTable("compliance_completion_log", {
+  id: serial("id").primaryKey(),
+  itemId: integer("item_id").notNull(),
+  itemCode: varchar("item_code", { length: 50 }),
+  itemName: text("item_name"),
+  completedBy: varchar("completed_by", { length: 100 }),
+  completedAt: timestamp("completed_at", { withTimezone: true }).defaultNow(),
+  notes: text("notes"),
+  facilityId: varchar("facility_id", { length: 50 }),
+  module: varchar("module", { length: 20 }).default("ASC"),
+  volume: integer("volume"),
+  frequency: varchar("frequency", { length: 30 }),
+});
+
+export type ComplianceCompletionLog = typeof complianceCompletionLog.$inferSelect;
+
 export interface DeepDiveGameState {
   currentQuestion: number;
   totalQuestions: number;

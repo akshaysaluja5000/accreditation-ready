@@ -8,7 +8,7 @@ import {
   dnvPretestResults, dnvPosttestResults,
   roles, roleChapterMappings, flashcardReviews, auditLogs, riskAssessments, feedback, leadershipRoleCodes,
   complianceItems, complianceLogs, complianceDocuments, complianceTrainingModules,
-  complianceTasks, staffTrainingAlerts, regulatoryWatchFindings, executiveBriefs,
+  complianceTasks, complianceCompletionLog, staffTrainingAlerts, regulatoryWatchFindings, executiveBriefs,
   teams, teamMembers, rateLimitEvents,
   contentLevels, contentQuestions, contentDeepDiveLevels, contentDeepDiveQuestions,
   contentHandbookChapters, contentAssessmentQuestions,
@@ -19,7 +19,7 @@ import {
   type AscPretestResult, type AscPosttestResult, type FlashcardReview, type AuditLog, type RiskAssessment, type Feedback,
   type DnvPretestResult, type DnvPosttestResult,
   type ComplianceItem, type ComplianceLog, type ComplianceDocument, type ComplianceTrainingModule,
-  type ComplianceTask, type StaffTrainingAlert, type RegulatoryWatchFinding, type ExecutiveBrief,
+  type ComplianceTask, type ComplianceCompletionLog, type StaffTrainingAlert, type RegulatoryWatchFinding, type ExecutiveBrief,
   type ContentChangelog, type InsertContentChangelog,
   type Team,
   type Level, type Question, type DeepDiveLevel, type HandbookChapter, type ModuleId,
@@ -650,6 +650,21 @@ async function seedComplianceItems(client: pg.PoolClient) {
   await client.query(`ALTER TABLE compliance_items ADD COLUMN IF NOT EXISTS module_scope TEXT NOT NULL DEFAULT 'ASC'`);
   await client.query(`ALTER TABLE compliance_items ADD COLUMN IF NOT EXISTS surface TEXT NOT NULL DEFAULT 'tasks'`);
   await client.query(`ALTER TABLE compliance_items ADD COLUMN IF NOT EXISTS owner_role TEXT NOT NULL DEFAULT 'administrator'`);
+  await client.query(`
+    CREATE TABLE IF NOT EXISTS compliance_completion_log (
+      id            SERIAL PRIMARY KEY,
+      item_id       INTEGER NOT NULL,
+      item_code     VARCHAR(50),
+      item_name     TEXT,
+      completed_by  VARCHAR(100),
+      completed_at  TIMESTAMPTZ DEFAULT NOW(),
+      notes         TEXT,
+      facility_id   VARCHAR(50),
+      module        VARCHAR(20) DEFAULT 'ASC',
+      volume        INTEGER,
+      frequency     VARCHAR(30)
+    )
+  `);
   await client.query(`ALTER TABLE compliance_items ADD COLUMN IF NOT EXISTS status VARCHAR(20) DEFAULT 'missing'`);
   await client.query(`ALTER TABLE compliance_items ADD COLUMN IF NOT EXISTS posted_date TIMESTAMPTZ DEFAULT NULL`);
   await client.query(`ALTER TABLE compliance_items ADD COLUMN IF NOT EXISTS next_due_date TIMESTAMPTZ DEFAULT NULL`);
@@ -914,6 +929,9 @@ export interface IStorage {
   getDocumentVaultItems(): Promise<ComplianceItem[]>;
   getWallChartItems(): Promise<ComplianceItem[]>;
   markWallChartItemPosted(itemId: number, postedBy: string, nextDueDate: string): Promise<ComplianceItem>;
+  logChecklistCompletion(data: { itemId: number; itemCode: string; itemName: string; completedBy: string; notes?: string; facilityId: string; volume: number; frequency: string }): Promise<ComplianceCompletionLog>;
+  getChecklistLogs(facilityId: string): Promise<ComplianceCompletionLog[]>;
+  getChecklistHistory(itemId: number, facilityId: string): Promise<ComplianceCompletionLog[]>;
   getComplianceLogs(facilityId: number): Promise<ComplianceLog[]>;
   createComplianceLog(data: { facilityId: number; itemId: number; completedBy: string; notes?: string; nextDue?: string }): Promise<ComplianceLog>;
   getComplianceDocuments(facilityId: number): Promise<ComplianceDocument[]>;
@@ -1636,6 +1654,45 @@ export class DatabaseStorage implements IStorage {
     return db.select().from(complianceItems)
       .where(eq(complianceItems.surface, "wall_chart"))
       .orderBy(complianceItems.surveyorPriority, complianceItems.itemName);
+  }
+
+  async logChecklistCompletion(data: { itemId: number; itemCode: string; itemName: string; completedBy: string; notes?: string; facilityId: string; volume: number; frequency: string }): Promise<ComplianceCompletionLog> {
+    const [row] = await db.insert(complianceCompletionLog).values({
+      itemId: data.itemId,
+      itemCode: data.itemCode,
+      itemName: data.itemName,
+      completedBy: data.completedBy,
+      notes: data.notes ?? null,
+      facilityId: data.facilityId,
+      module: "ASC",
+      volume: data.volume,
+      frequency: data.frequency,
+    }).returning();
+    return row;
+  }
+
+  async getChecklistLogs(facilityId: string): Promise<ComplianceCompletionLog[]> {
+    // Most recent log per item_id for this facility
+    const all = await db.select().from(complianceCompletionLog)
+      .where(eq(complianceCompletionLog.facilityId, facilityId))
+      .orderBy(desc(complianceCompletionLog.completedAt));
+    // De-dup: keep most recent per itemId
+    const seen = new Set<number>();
+    return all.filter(r => {
+      if (seen.has(r.itemId)) return false;
+      seen.add(r.itemId);
+      return true;
+    });
+  }
+
+  async getChecklistHistory(itemId: number, facilityId: string): Promise<ComplianceCompletionLog[]> {
+    return db.select().from(complianceCompletionLog)
+      .where(and(
+        eq(complianceCompletionLog.itemId, itemId),
+        eq(complianceCompletionLog.facilityId, facilityId),
+      ))
+      .orderBy(desc(complianceCompletionLog.completedAt))
+      .limit(20);
   }
 
   async markWallChartItemPosted(itemId: number, postedBy: string, nextDueDate: string): Promise<ComplianceItem> {
