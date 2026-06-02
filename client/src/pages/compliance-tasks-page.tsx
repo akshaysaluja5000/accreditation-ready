@@ -5,8 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowLeft, ClipboardList, Plus, RefreshCw, AlertCircle,
   CheckCircle2, Clock, Play, RotateCcw, Bot, User, Calendar,
-  ChevronDown, Search,
+  ChevronDown, ChevronRight, Search, ClipboardCheck, FileText,
 } from "lucide-react";
+import { useAuth } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
@@ -132,6 +133,8 @@ function TaskCard({ task, onStatusChange }: { task: Task; onStatusChange: (id: n
 export default function ComplianceTasksPage() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
+  const { user } = useAuth();
+  const isAsc = user?.organizationType === "asc";
   const [filter, setFilter] = useState<StatusFilter>("all");
   const [showCreate, setShowCreate] = useState(false);
   const [itemSearch, setItemSearch] = useState("");
@@ -226,6 +229,45 @@ export default function ComplianceTasksPage() {
             <Plus className="w-4 h-4" />New Task
           </Button>
         </div>
+
+        {/* ASC Reference Tools */}
+        {isAsc && (
+          <div className="space-y-2">
+            <p className="text-[11px] font-black uppercase tracking-wider text-muted-foreground px-1">ASC Reference Tools</p>
+            <div className="grid grid-cols-2 gap-3">
+              <motion.button
+                className="rounded-2xl border p-3.5 flex items-center gap-3 text-left bg-card hover:bg-muted/40 transition-colors"
+                onClick={() => setLocation("/asc-wall-chart")}
+                whileTap={{ scale: 0.98 }}
+                data-testid="btn-asc-wall-chart-shortcut"
+              >
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 bg-primary/10">
+                  <ClipboardCheck size={18} className="text-primary" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="font-bold text-xs leading-snug">Wall Chart Tracker</p>
+                  <p className="text-[10px] text-muted-foreground mt-0.5">Required postings</p>
+                </div>
+                <ChevronRight size={14} className="text-muted-foreground shrink-0" />
+              </motion.button>
+              <motion.button
+                className="rounded-2xl border p-3.5 flex items-center gap-3 text-left bg-card hover:bg-muted/40 transition-colors"
+                onClick={() => setLocation("/asc-checklist")}
+                whileTap={{ scale: 0.98 }}
+                data-testid="btn-asc-checklist-shortcut"
+              >
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 bg-muted">
+                  <FileText size={18} className="text-muted-foreground" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="font-bold text-xs leading-snug">2026 Checklist</p>
+                  <p className="text-[10px] text-muted-foreground mt-0.5">6 volumes · AAAHC</p>
+                </div>
+                <ChevronRight size={14} className="text-muted-foreground shrink-0" />
+              </motion.button>
+            </div>
+          </div>
+        )}
 
         {/* Summary tiles */}
         {!isLoading && (
