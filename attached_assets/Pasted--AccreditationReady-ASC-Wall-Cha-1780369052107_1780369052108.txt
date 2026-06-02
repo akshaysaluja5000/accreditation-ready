@@ -1,0 +1,323 @@
+// ============================================================
+// AccreditationReady — ASC Wall Chart Complete Seed Script v2
+// Includes surface and owner_role routing fields
+//
+// HOW TO RUN:
+//   1. Make sure Step 1 migration has been run first
+//   2. Copy this file to Replit project root
+//   3. In Replit shell: node seed_wall_charts_v2.js
+//
+// SURFACE VALUES:
+//   wall_chart     → Wall Chart Tracker (TIER_3 posting items)
+//   facility_logs  → Facility Logs / Compliance Tasks (TIER_1 recurring)
+//   document_vault → Document Vault (TIER_2 policies + TIER_4 vendor certs)
+//
+// OWNER_ROLE VALUES:
+//   administrator  → office manager / compliance officer
+//   facilities     → maintenance person / facilities contractor
+//   nursing        → charge nurse / DON / IPC coordinator
+//   vendor         → third-party contractor (stores their certificate)
+// ============================================================
+
+const { Pool } = require('pg');
+const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+
+const items = [
+
+  // ══════════════════════════════════════════════════════════
+  // WALL CHART TRACKER — Physical posting requirements only
+  // surface: wall_chart | owner_role: administrator
+  // ══════════════════════════════════════════════════════════
+
+  { code: 'ADM.010', name: 'State Facility License / Permit to Operate',                       tier: 'TIER_3', category: 'Administration',       frequency: 'annual',       surface: 'wall_chart',     owner_role: 'administrator', module: 'ASC' },
+  { code: 'ADM.020', name: 'Medicare / Medicaid Certification',                                 tier: 'TIER_3', category: 'Administration',       frequency: 'annual',       surface: 'wall_chart',     owner_role: 'administrator', module: 'ASC' },
+  { code: 'ADM.030', name: 'Non-Discrimination Notice (ADA / Section 1557)',                    tier: 'TIER_3', category: 'Administration',       frequency: 'annual',       surface: 'wall_chart',     owner_role: 'administrator', module: 'ASC' },
+  { code: 'ADM.040', name: 'HIPAA Notice of Privacy Practices',                                 tier: 'TIER_3', category: 'Administration',       frequency: 'annual',       surface: 'wall_chart',     owner_role: 'administrator', module: 'ASC' },
+  { code: 'ADM.050', name: "Workers' Compensation Notice",                                      tier: 'TIER_3', category: 'Administration',       frequency: 'annual',       surface: 'wall_chart',     owner_role: 'administrator', module: 'ASC' },
+  { code: 'ADM.060', name: "OSHA Workers' Rights Poster",                                       tier: 'TIER_3', category: 'Administration',       frequency: 'annual',       surface: 'wall_chart',     owner_role: 'administrator', module: 'ASC' },
+  { code: 'RGT.010', name: 'AAAHC Accreditation Certificate',                                   tier: 'TIER_3', category: 'Governance',           frequency: 'triennial',    surface: 'wall_chart',     owner_role: 'administrator', module: 'ASC' },
+  { code: 'RGT.020', name: 'Patient Bill of Rights',                                            tier: 'TIER_3', category: 'Governance',           frequency: 'annual',       surface: 'wall_chart',     owner_role: 'administrator', module: 'ASC' },
+  { code: 'RGT.030', name: 'Patient Grievance Process and Contact Information',                  tier: 'TIER_3', category: 'Governance',           frequency: 'annual',       surface: 'wall_chart',     owner_role: 'administrator', module: 'ASC' },
+  { code: 'IPC.010', name: 'Infection Prevention Contact Information',                           tier: 'TIER_3', category: 'Infection Prevention', frequency: 'annual',       surface: 'wall_chart',     owner_role: 'administrator', module: 'ASC' },
+
+  // ══════════════════════════════════════════════════════════
+  // FACILITY LOGS — Recurring operational checklists
+  // surface: facility_logs
+  // owner_role: facilities (maintenance) or nursing (clinical)
+  // ══════════════════════════════════════════════════════════
+
+  // — Facilities / Maintenance owned —
+  { code: 'FAC.010', name: 'Daily Egress Inspections',                                          tier: 'TIER_1', category: 'Facilities',           frequency: 'daily',        surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'FAC.020', name: 'Emergency Eyewash Weekly Tests',                                    tier: 'TIER_1', category: 'Facilities',           frequency: 'weekly',       surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'FAC.030', name: 'Weekly Emergency Power Supply Systems (EPSS) Testing',              tier: 'TIER_1', category: 'Facilities',           frequency: 'weekly',       surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'FAC.040', name: 'Monthly Audio and Visual Indicator LIM Testing',                    tier: 'TIER_1', category: 'Facilities',           frequency: 'monthly',      surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'FAC.050', name: 'Monthly Generator Tests',                                           tier: 'TIER_1', category: 'Facilities',           frequency: 'monthly',      surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'FAC.060', name: 'Monthly Automatic Transfer Switch Tests',                           tier: 'TIER_1', category: 'Facilities',           frequency: 'monthly',      surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'FAC.070', name: 'Air Exchange Pressure Temperature and Humidity Testing',            tier: 'TIER_1', category: 'Facilities',           frequency: 'daily',        surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'FAC.080', name: 'Monthly Elevator Firefighters Emergency Operations Tests',          tier: 'TIER_1', category: 'Facilities',           frequency: 'monthly',      surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'FAC.090', name: 'Monthly 30-Second Egress and Exit Sign Battery-Powered Light Tests',tier: 'TIER_1', category: 'Facilities',           frequency: 'monthly',      surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'FAC.100', name: 'Safety Rounds Documentation',                                       tier: 'TIER_1', category: 'Facilities',           frequency: 'monthly',      surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'SAF.010', name: 'Quarterly Fire Drill Schedule and Critiques',                       tier: 'TIER_1', category: 'Fire Safety',          frequency: 'quarterly',    surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'SAF.020', name: 'Weekly Fire Pump Inspection',                                       tier: 'TIER_1', category: 'Fire Safety',          frequency: 'weekly',       surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'SAF.030', name: 'Monthly Electric Fire Pump Test Log',                               tier: 'TIER_1', category: 'Fire Safety',          frequency: 'monthly',      surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'SAF.040', name: 'Monthly Fire Sprinkler Control Valve Inspections',                  tier: 'TIER_1', category: 'Fire Safety',          frequency: 'monthly',      surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'SAF.050', name: 'Monthly Fire Suppression Pressure Gauge Inspections',               tier: 'TIER_1', category: 'Fire Safety',          frequency: 'monthly',      surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'SAF.060', name: 'Quarterly Water Supply Connection Inspections',                     tier: 'TIER_1', category: 'Fire Safety',          frequency: 'quarterly',    surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'SAF.070', name: 'Quarterly Fire Department Connection Inspections',                  tier: 'TIER_1', category: 'Fire Safety',          frequency: 'quarterly',    surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'SAF.080', name: 'Quarterly Hydraulic Nameplate Inspections',                         tier: 'TIER_1', category: 'Fire Safety',          frequency: 'quarterly',    surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'SAF.090', name: 'Quarterly Fire Water Tank Inspections',                             tier: 'TIER_1', category: 'Fire Safety',          frequency: 'quarterly',    surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'SAF.100', name: 'Quarterly Main Drain Testing',                                      tier: 'TIER_1', category: 'Fire Safety',          frequency: 'quarterly',    surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'SAF.110', name: 'Quarterly Dry / Pre-Action Priming Tests',                          tier: 'TIER_1', category: 'Fire Safety',          frequency: 'quarterly',    surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'SAF.120', name: 'Semiannual Water Tank Water Level Alarm Tests',                     tier: 'TIER_1', category: 'Fire Safety',          frequency: 'semiannual',   surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'SAF.130', name: 'Semiannual Valve Tamper Switch Tests',                              tier: 'TIER_1', category: 'Fire Safety',          frequency: 'semiannual',   surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+  { code: 'SAF.140', name: 'Monthly Portable Fire Extinguisher Inspections',                    tier: 'TIER_1', category: 'Fire Safety',          frequency: 'monthly',      surface: 'facility_logs',  owner_role: 'facilities',    module: 'ASC' },
+
+  // — Nursing / Clinical owned —
+  { code: 'IPC.020', name: 'Sterilization Biological Indicator Log (every cycle)',              tier: 'TIER_1', category: 'Infection Prevention', frequency: 'per_cycle',    surface: 'facility_logs',  owner_role: 'nursing',       module: 'ASC' },
+  { code: 'IPC.030', name: 'Sterilization Chemical Indicator Log',                              tier: 'TIER_1', category: 'Infection Prevention', frequency: 'per_cycle',    surface: 'facility_logs',  owner_role: 'nursing',       module: 'ASC' },
+  { code: 'IPC.040', name: 'High-Level Disinfection Log',                                       tier: 'TIER_1', category: 'Infection Prevention', frequency: 'per_use',      surface: 'facility_logs',  owner_role: 'nursing',       module: 'ASC' },
+  { code: 'IPC.050', name: 'ATP Environmental Cleaning Validation Log (OR / SPD)',              tier: 'TIER_1', category: 'Infection Prevention', frequency: 'monthly',      surface: 'facility_logs',  owner_role: 'nursing',       module: 'ASC' },
+  { code: 'IPC.060', name: 'Sterilizer Maintenance and Repair Log',                             tier: 'TIER_1', category: 'Infection Prevention', frequency: 'as_needed',    surface: 'facility_logs',  owner_role: 'nursing',       module: 'ASC' },
+  { code: 'IPC.070', name: 'Sterile Supply Expiration Date Audit',                              tier: 'TIER_1', category: 'Infection Prevention', frequency: 'monthly',      surface: 'facility_logs',  owner_role: 'nursing',       module: 'ASC' },
+  { code: 'IPC.080', name: 'Hand Hygiene Compliance Audit',                                     tier: 'TIER_1', category: 'Infection Prevention', frequency: 'quarterly',    surface: 'facility_logs',  owner_role: 'nursing',       module: 'ASC' },
+  { code: 'IPC.090', name: 'Surgical Site Infection Surveillance Log',                          tier: 'TIER_1', category: 'Infection Prevention', frequency: 'monthly',      surface: 'facility_logs',  owner_role: 'nursing',       module: 'ASC' },
+  { code: 'IPC.100', name: 'Sharps and Biohazard Waste Disposal Log',                           tier: 'TIER_1', category: 'Infection Prevention', frequency: 'monthly',      surface: 'facility_logs',  owner_role: 'nursing',       module: 'ASC' },
+  { code: 'EMG.010', name: 'Emergency Preparedness Scenario-Based Drill',                       tier: 'TIER_1', category: 'Emergency Management', frequency: 'quarterly',    surface: 'facility_logs',  owner_role: 'nursing',       module: 'ASC' },
+  { code: 'EMG.020', name: 'Emergency Preparedness Drill Critiques',                            tier: 'TIER_1', category: 'Emergency Management', frequency: 'quarterly',    surface: 'facility_logs',  owner_role: 'nursing',       module: 'ASC' },
+  { code: 'EMG.030', name: 'Malignant Hyperthermia Drill',                                      tier: 'TIER_1', category: 'Emergency Management', frequency: 'annual',       surface: 'facility_logs',  owner_role: 'nursing',       module: 'ASC' },
+  { code: 'QUA.010', name: 'Adverse Event and Incident Log',                                    tier: 'TIER_1', category: 'Quality',              frequency: 'ongoing',      surface: 'facility_logs',  owner_role: 'nursing',       module: 'ASC' },
+  { code: 'QUA.020', name: 'Patient Satisfaction Survey Results',                               tier: 'TIER_1', category: 'Quality',              frequency: 'quarterly',    surface: 'facility_logs',  owner_role: 'nursing',       module: 'ASC' },
+  { code: 'QUA.030', name: 'Unplanned Transfer to Hospital Log',                                tier: 'TIER_1', category: 'Quality',              frequency: 'ongoing',      surface: 'facility_logs',  owner_role: 'nursing',       module: 'ASC' },
+  { code: 'QUA.040', name: 'Cancellation and Delay Log',                                        tier: 'TIER_1', category: 'Quality',              frequency: 'monthly',      surface: 'facility_logs',  owner_role: 'nursing',       module: 'ASC' },
+  { code: 'QUA.050', name: 'Wrong Site Surgery Prevention Checklist (Universal Protocol)',      tier: 'TIER_1', category: 'Quality',              frequency: 'per_case',     surface: 'facility_logs',  owner_role: 'nursing',       module: 'ASC' },
+  { code: 'QUA.060', name: 'Time-Out Documentation Log',                                        tier: 'TIER_1', category: 'Quality',              frequency: 'per_case',     surface: 'facility_logs',  owner_role: 'nursing',       module: 'ASC' },
+  { code: 'QUA.070', name: 'Medication Error Log',                                              tier: 'TIER_1', category: 'Quality',              frequency: 'ongoing',      surface: 'facility_logs',  owner_role: 'nursing',       module: 'ASC' },
+  { code: 'QUA.080', name: 'Anesthesia Adverse Event Log',                                      tier: 'TIER_1', category: 'Quality',              frequency: 'ongoing',      surface: 'facility_logs',  owner_role: 'nursing',       module: 'ASC' },
+
+  // ══════════════════════════════════════════════════════════
+  // DOCUMENT VAULT — Policies, plans, certifications
+  // surface: document_vault
+  // owner_role: administrator (TIER_2) or vendor (TIER_4)
+  // ══════════════════════════════════════════════════════════
+
+  // — Administrator owned (TIER_2) —
+  { code: 'ADM.100', name: 'Governing Body Meeting Minutes',                                    tier: 'TIER_2', category: 'Administration',       frequency: 'monthly',      surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'ADM.110', name: 'Medical Executive Committee Meeting Minutes',                       tier: 'TIER_2', category: 'Administration',       frequency: 'monthly',      surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'ADM.120', name: 'Quality Improvement Committee Meeting Minutes',                     tier: 'TIER_2', category: 'Administration',       frequency: 'quarterly',    surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'ADM.130', name: 'Annual Facility Risk Assessment',                                   tier: 'TIER_2', category: 'Administration',       frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'ADM.140', name: 'Credentialing and Privileging Files (all physicians)',              tier: 'TIER_2', category: 'Administration',       frequency: 'biennial',     surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'ADM.150', name: 'Staff Competency Verification Records',                             tier: 'TIER_2', category: 'Administration',       frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'ADM.160', name: 'Business Associate Agreements (all vendors)',                       tier: 'TIER_2', category: 'Administration',       frequency: 'as_needed',    surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'ADM.170', name: 'Peer Review Documentation',                                         tier: 'TIER_2', category: 'Administration',       frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'EMG.040', name: 'Emergency Operations Plan and HVA',                                 tier: 'TIER_2', category: 'Emergency Management', frequency: 'biennial',     surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'EMG.050', name: 'Emergency and Disaster Preparedness Policies',                      tier: 'TIER_2', category: 'Emergency Management', frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'EMG.060', name: 'Communication Plans for Emergencies',                               tier: 'TIER_2', category: 'Emergency Management', frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'EMG.070', name: '1135 Waiver Procedure',                                             tier: 'TIER_2', category: 'Emergency Management', frequency: 'as_needed',    surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'EMG.080', name: 'Initial/Annual Emergency and Disaster Preparedness Training Docs',  tier: 'TIER_2', category: 'Emergency Management', frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'EMG.090', name: 'BLS Policy and Training Documentation',                             tier: 'TIER_2', category: 'Emergency Management', frequency: 'biennial',     surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'EMG.100', name: 'ACLS Training Documentation',                                       tier: 'TIER_2', category: 'Emergency Management', frequency: 'biennial',     surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'EMG.110', name: 'PALS Policy and Training Documentation',                            tier: 'TIER_2', category: 'Emergency Management', frequency: 'biennial',     surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'EMG.120', name: 'Malignant Hyperthermia Policy Training Documentation',              tier: 'TIER_2', category: 'Emergency Management', frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'EMG.130', name: 'Hospital Notification Letter',                                      tier: 'TIER_2', category: 'Emergency Management', frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'EMG.140', name: 'Emergency Medical Care Transfer Procedure',                         tier: 'TIER_2', category: 'Emergency Management', frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'EMG.150', name: 'Sprinkler Shutdown Fire Watch Policy',                              tier: 'TIER_2', category: 'Emergency Management', frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'EMG.160', name: 'Emergency Preparedness Risk Assessment and Participant List',       tier: 'TIER_2', category: 'Emergency Management', frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'FAC.110', name: 'Routine Maintenance Program for Piped Medical Gas and Vacuum Systems', tier: 'TIER_2', category: 'Facilities',       frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'SAF.150', name: 'Fire Drill Policy',                                                 tier: 'TIER_2', category: 'Fire Safety',          frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'SAF.160', name: 'Written Plan for Fire Safety Management',                           tier: 'TIER_2', category: 'Fire Safety',          frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'SAF.170', name: 'Smoking Policy',                                                    tier: 'TIER_2', category: 'Fire Safety',          frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'SAF.180', name: 'Fire Alarm Operations and Maintenance Manual',                      tier: 'TIER_2', category: 'Fire Safety',          frequency: 'as_needed',    surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'SAF.190', name: 'Fire Alarm As-Built Drawings',                                      tier: 'TIER_2', category: 'Fire Safety',          frequency: 'as_needed',    surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'SAF.200', name: 'Fire Alarm Sequence of Operation',                                  tier: 'TIER_2', category: 'Fire Safety',          frequency: 'as_needed',    surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'SAF.210', name: 'Emergency Evacuation Route Maps (all exits)',                       tier: 'TIER_2', category: 'Fire Safety',          frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'SAF.220', name: 'Fire Safety Response Procedures (RACE / PASS)',                     tier: 'TIER_2', category: 'Fire Safety',          frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'IPC.110', name: 'Infection Prevention and Control Plan',                             tier: 'TIER_2', category: 'Infection Prevention', frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'IPC.120', name: 'Sterilization Policies and Procedures (AAMI ST79)',                 tier: 'TIER_2', category: 'Infection Prevention', frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'IPC.130', name: 'High-Level Disinfection Policy',                                    tier: 'TIER_2', category: 'Infection Prevention', frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'IPC.140', name: 'Staff Bloodborne Pathogen Training Records',                        tier: 'TIER_2', category: 'Infection Prevention', frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'IPC.150', name: 'Occupational Exposure Plan and Follow-Up Records',                  tier: 'TIER_2', category: 'Infection Prevention', frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'IPC.160', name: 'PPE Policy and Availability Documentation',                         tier: 'TIER_2', category: 'Infection Prevention', frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'IPC.170', name: 'HVAC and Air Handling Verification for OR',                         tier: 'TIER_2', category: 'Infection Prevention', frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'IPC.180', name: 'Instrument Recall and Rapid Response Policy',                       tier: 'TIER_2', category: 'Infection Prevention', frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'QUA.090', name: 'Quality Improvement Plan',                                          tier: 'TIER_2', category: 'Quality',              frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'QUA.100', name: 'Annual QI Summary Report',                                          tier: 'TIER_2', category: 'Quality',              frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'QUA.110', name: 'Peer Review Policy and Completed Reviews',                          tier: 'TIER_2', category: 'Quality',              frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'QUA.120', name: 'Patient Rights and Responsibilities Policy',                        tier: 'TIER_2', category: 'Quality',              frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'QUA.130', name: 'Advance Directive Policy and Patient Notification',                 tier: 'TIER_2', category: 'Quality',              frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'QUA.140', name: 'Informed Consent Policy and Sample Forms',                          tier: 'TIER_2', category: 'Quality',              frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'QUA.150', name: 'Anesthesia Policy and Procedure Manual',                            tier: 'TIER_2', category: 'Quality',              frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'QUA.160', name: 'Moderate Sedation Policy',                                          tier: 'TIER_2', category: 'Quality',              frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'QUA.170', name: 'Post-Procedure Follow-Up Call Documentation Policy',                tier: 'TIER_2', category: 'Quality',              frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'QUA.180', name: 'Controlled Substance Policy and DEA Registration',                  tier: 'TIER_2', category: 'Quality',              frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+  { code: 'QUA.190', name: 'Drug Diversion Policy and Audit Trail',                             tier: 'TIER_2', category: 'Quality',              frequency: 'annual',       surface: 'document_vault', owner_role: 'administrator', module: 'ASC' },
+
+  // — Vendor owned (TIER_4) —
+  { code: 'FAC.120', name: 'Medical Gas and Vacuum Systems Installer Performance Testing',      tier: 'TIER_4', category: 'Facilities',           frequency: 'as_needed',    surface: 'document_vault', owner_role: 'vendor',        module: 'ASC' },
+  { code: 'FAC.130', name: 'Verification Testing by Third Party (Medical Gas)',                 tier: 'TIER_4', category: 'Facilities',           frequency: 'as_needed',    surface: 'document_vault', owner_role: 'vendor',        module: 'ASC' },
+  { code: 'FAC.140', name: 'Annual LIM Testing by Vendor',                                      tier: 'TIER_4', category: 'Facilities',           frequency: 'annual',       surface: 'document_vault', owner_role: 'vendor',        module: 'ASC' },
+  { code: 'FAC.150', name: 'Documentation of Receptacle Testing',                               tier: 'TIER_4', category: 'Facilities',           frequency: 'annual',       surface: 'document_vault', owner_role: 'vendor',        module: 'ASC' },
+  { code: 'FAC.160', name: 'EPSS Service Records',                                              tier: 'TIER_4', category: 'Facilities',           frequency: 'annual',       surface: 'document_vault', owner_role: 'vendor',        module: 'ASC' },
+  { code: 'FAC.170', name: 'Annual Generator Load Tests',                                       tier: 'TIER_4', category: 'Facilities',           frequency: 'annual',       surface: 'document_vault', owner_role: 'vendor',        module: 'ASC' },
+  { code: 'FAC.180', name: 'Annual Fuel Quality Tests',                                         tier: 'TIER_4', category: 'Facilities',           frequency: 'annual',       surface: 'document_vault', owner_role: 'vendor',        module: 'ASC' },
+  { code: 'FAC.190', name: '3-Year Generator Load and Exhaust Gas Temperature Tests',           tier: 'TIER_4', category: 'Facilities',           frequency: 'triennial',    surface: 'document_vault', owner_role: 'vendor',        module: 'ASC' },
+  { code: 'FAC.200', name: 'Operations and Purity Testing (Medical Gas)',                       tier: 'TIER_4', category: 'Facilities',           frequency: 'annual',       surface: 'document_vault', owner_role: 'vendor',        module: 'ASC' },
+  { code: 'SAF.230', name: 'Qualifications for Fire Alarm Personnel',                           tier: 'TIER_4', category: 'Fire Safety',          frequency: 'as_needed',    surface: 'document_vault', owner_role: 'vendor',        module: 'ASC' },
+  { code: 'SAF.240', name: 'Annual Detector Tests by Certified Vendor',                         tier: 'TIER_4', category: 'Fire Safety',          frequency: 'annual',       surface: 'document_vault', owner_role: 'vendor',        module: 'ASC' },
+  { code: 'SAF.250', name: 'Semiannual Visual Inspection by Vendor',                            tier: 'TIER_4', category: 'Fire Safety',          frequency: 'semiannual',   surface: 'document_vault', owner_role: 'vendor',        module: 'ASC' },
+  { code: 'SAF.260', name: 'Annual Full Flow Pump Test by Vendor',                              tier: 'TIER_4', category: 'Fire Safety',          frequency: 'annual',       surface: 'document_vault', owner_role: 'vendor',        module: 'ASC' },
+  { code: 'SAF.270', name: 'Annual Extinguisher Service by Vendor',                             tier: 'TIER_4', category: 'Fire Safety',          frequency: 'annual',       surface: 'document_vault', owner_role: 'vendor',        module: 'ASC' },
+  { code: 'SAF.280', name: 'Annual Fire Alarm System Test by Vendor',                           tier: 'TIER_4', category: 'Fire Safety',          frequency: 'annual',       surface: 'document_vault', owner_role: 'vendor',        module: 'ASC' },
+  { code: 'SAF.290', name: '5-Year Fire Sprinkler Internal Obstruction Investigation',          tier: 'TIER_4', category: 'Fire Safety',          frequency: 'every_5_years',surface: 'document_vault', owner_role: 'vendor',        module: 'ASC' },
+  { code: 'SAF.300', name: 'Annual Suppression System Service by Vendor',                       tier: 'TIER_4', category: 'Fire Safety',          frequency: 'annual',       surface: 'document_vault', owner_role: 'vendor',        module: 'ASC' },
+  { code: 'IPC.190', name: 'Annual Sterilizer Calibration by Vendor',                           tier: 'TIER_4', category: 'Infection Prevention', frequency: 'annual',       surface: 'document_vault', owner_role: 'vendor',        module: 'ASC' },
+  { code: 'IPC.200', name: 'Water Quality Testing (where applicable)',                          tier: 'TIER_4', category: 'Infection Prevention', frequency: 'annual',       surface: 'document_vault', owner_role: 'vendor',        module: 'ASC' },
+];
+
+// ── RUN SEED ─────────────────────────────────────────────────────────────────
+
+async function seed() {
+  const client = await pool.connect();
+  try {
+    // Print column names so we can verify schema match
+    const cols = await client.query(`
+      SELECT column_name FROM information_schema.columns
+      WHERE table_name = 'compliance_items' ORDER BY ordinal_position
+    `);
+    console.log('\n📋 compliance_items columns:', cols.rows.map(r => r.column_name).join(', '));
+
+    await client.query('BEGIN');
+
+    // Delete existing ASC items to avoid duplicates
+    const deleted = await client.query(`DELETE FROM compliance_items WHERE module = 'ASC'`);
+    console.log(`🗑  Deleted ${deleted.rowCount} existing ASC items\n`);
+
+    // Insert all items
+    let inserted = 0;
+    for (const item of items) {
+      await client.query(`
+        INSERT INTO compliance_items
+          (code, name, tier, category, frequency, surface, owner_role, module, created_at, updated_at)
+        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,NOW(),NOW())
+        ON CONFLICT (code, name) DO UPDATE SET
+          tier        = EXCLUDED.tier,
+          category    = EXCLUDED.category,
+          frequency   = EXCLUDED.frequency,
+          surface     = EXCLUDED.surface,
+          owner_role  = EXCLUDED.owner_role,
+          module      = EXCLUDED.module,
+          updated_at  = NOW()
+      `, [item.code, item.name, item.tier, item.category,
+          item.frequency, item.surface, item.owner_role, item.module]);
+      inserted++;
+    }
+
+    await client.query('COMMIT');
+
+    // Verification report
+    const counts = await client.query(`
+      SELECT surface, owner_role, COUNT(*) as count
+      FROM compliance_items WHERE module = 'ASC'
+      GROUP BY surface, owner_role
+      ORDER BY surface, owner_role
+    `);
+
+    console.log('✅ Seed complete!\n');
+    console.log('SURFACE              OWNER          COUNT');
+    console.log('─────────────────────────────────────────');
+    counts.rows.forEach(r => {
+      console.log(`${r.surface.padEnd(20)} ${r.owner_role.padEnd(14)} ${r.count}`);
+    });
+
+    const total = await client.query(`SELECT COUNT(*) FROM compliance_items WHERE module = 'ASC'`);
+    console.log(`─────────────────────────────────────────`);
+    console.log(`TOTAL                               ${total.rows[0].count}`);
+    console.log(`\nExpected: 101 items across 3 surfaces`);
+
+    const wallChart = items.filter(i => i.surface === 'wall_chart').length;
+    const facilityLogs = items.filter(i => i.surface === 'facility_logs').length;
+    const docVault = items.filter(i => i.surface === 'document_vault').length;
+    console.log(`\nIn-script count:`);
+    console.log(`  wall_chart:     ${wallChart}`);
+    console.log(`  facility_logs:  ${facilityLogs}`);
+    console.log(`  document_vault: ${docVault}`);
+    console.log(`  TOTAL:          ${items.length}`);
+
+  } catch (err) {
+    await client.query('ROLLBACK');
+    console.error('\n❌ Seed failed — rolled back');
+    console.error('Error:', err.message);
+    console.error('\nCommon fixes:');
+    console.error('  - If "column does not exist": run Step 1 migration first');
+    console.error('  - If "relation does not exist": table name may differ, check schema');
+    console.error('  - If "ON CONFLICT": table may not have unique constraint on (code, name)');
+    console.error('    Fix: change ON CONFLICT line to just: ) ON CONFLICT DO NOTHING');
+  } finally {
+    client.release();
+    await pool.end();
+  }
+}
+
+seed();
+
+# Wall Chart Restoration — Complete Package for Akshay
+
+# Run everything in this exact order. Do not skip steps.
+
+# Estimated total time: 2-3 hours
+
+## STEP 1 — Database Migration (5 minutes)
+
+## Run this in the Replit Database console (not the shell)
+
+```sql
+ALTER TABLE compliance_items
+ADD COLUMN IF NOT EXISTS surface VARCHAR(20) DEFAULT 'tasks',
+ADD COLUMN IF NOT EXISTS owner_role VARCHAR(30) DEFAULT 'administrator';
+```
+
+Confirm it worked:
+
+```sql
+SELECT column_name FROM information_schema.columns
+WHERE table_name = 'compliance_items';
+```
+
+You should see surface and owner_role in the list.
+
+-----
+
+## STEP 2 — Run the Seed Script (30 min to update + 2 min to run)
+
+## Copy seed_wall_charts_v2.js into Replit root, then run: node seed_wall_charts_v2.js
+
+-----
+
+## STEP 3 — Update UI Queries (1 hour)
+
+## In your Wall Chart Tracker component, change the query to:
+
+SELECT * FROM compliance_items WHERE module = ‘ASC’ AND surface = ‘wall_chart’
+
+## In your Compliance Tasks / Facility Logs component:
+
+SELECT * FROM compliance_items WHERE module = ‘ASC’ AND surface = ‘facility_logs’
+
+## Create new Document Vault page:
+
+SELECT * FROM compliance_items WHERE module = ‘ASC’ AND surface = ‘document_vault’
+
+-----
+
+## STEP 4 — Rename Compliance Tasks to Facility Logs in ASC module only
+
+-----
+
+## STEP 5 — Verify counts
+
+SELECT surface, COUNT(*) FROM compliance_items WHERE module = ‘ASC’ GROUP BY surface;
+
+Expected output:
+wall_chart     | 10
+facility_logs  | 67 
+document_vault | 24
+TOTAL          | 101
