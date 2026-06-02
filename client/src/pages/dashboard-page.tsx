@@ -1125,6 +1125,30 @@ export default function DashboardPage() {
                       </div>
                     </div>
                   ))}
+
+                  {/* Visual Wall Charts */}
+                  <div className="flex flex-col gap-3" data-testid="group-dashboard-wall-charts">
+                    <div className="flex items-baseline justify-between px-1">
+                      <h3 className="font-black text-sm uppercase tracking-wide text-primary">Wall Charts</h3>
+                      <span className="text-xs text-muted-foreground">Tap to enlarge</span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-3">
+                      {WALLCHARTS.map((wc) => (
+                        <button
+                          key={wc.id}
+                          onClick={() => { setWallchartSrc(wc.src); setWallchartLabel(wc.label); }}
+                          data-testid={`button-wallchart-${wc.id}`}
+                          className="rounded-xl overflow-hidden border border-border bg-muted/30 flex flex-col text-left hover:border-primary/40 hover:shadow-md transition-all active:scale-95"
+                        >
+                          <img src={wc.src} alt={wc.label} className="w-full aspect-[3/4] object-cover object-top" />
+                          <div className="px-2 py-2">
+                            <p className="text-[11px] font-bold leading-tight">{wc.label}</p>
+                            <p className="text-[10px] text-muted-foreground mt-0.5 leading-tight">{wc.subtitle}</p>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               ) : isDnv ? (
                 <div className="flex flex-col gap-3">
