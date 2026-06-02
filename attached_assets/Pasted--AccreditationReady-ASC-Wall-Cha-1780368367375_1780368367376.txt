@@ -1,0 +1,249 @@
+// ============================================================
+// AccreditationReady — ASC Wall Chart Compliance Items
+// Full seed script — all 6 volumes from AAAHC wall charts
+// Run once in Replit console: node seed_wall_charts.js
+// ============================================================
+// TIER definitions:
+//   TIER_1 = Recurring log (daily/weekly/monthly/quarterly)
+//   TIER_2 = Document vault (policy/plan/cert with expiry)
+//   TIER_3 = Physical wall posting only
+//   TIER_4 = Third-party managed (store vendor certificate)
+// ============================================================
+
+const { Pool } = require('pg');
+const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+
+const items = [
+
+  // ── VOL 1 — ADMINISTRATION & GOVERNANCE ─────────────────────────────────
+
+  // TIER 3 — Wall postings (already in Wall Chart Tracker — confirm not duplicated)
+  { code: 'ADM.010', name: 'State Facility License / Permit to Operate',                    tier: 'TIER_3', category: 'Administration', frequency: 'annual',    module: 'ASC' },
+  { code: 'ADM.020', name: 'Medicare / Medicaid Certification',                              tier: 'TIER_3', category: 'Administration', frequency: 'annual',    module: 'ASC' },
+  { code: 'ADM.030', name: 'Non-Discrimination Notice (ADA / Section 1557)',                 tier: 'TIER_3', category: 'Administration', frequency: 'annual',    module: 'ASC' },
+  { code: 'ADM.040', name: 'HIPAA Notice of Privacy Practices',                              tier: 'TIER_3', category: 'Administration', frequency: 'annual',    module: 'ASC' },
+  { code: 'ADM.050', name: "Workers' Compensation Notice",                                   tier: 'TIER_3', category: 'Administration', frequency: 'annual',    module: 'ASC' },
+  { code: 'ADM.060', name: "OSHA Workers' Rights Poster",                                    tier: 'TIER_3', category: 'Administration', frequency: 'annual',    module: 'ASC' },
+  { code: 'RGT.030', name: 'AAAHC Accreditation Certificate',                                tier: 'TIER_3', category: 'Governance',     frequency: 'triennial', module: 'ASC' },
+  { code: 'RGT.030', name: 'Patient Bill of Rights',                                         tier: 'TIER_3', category: 'Governance',     frequency: 'annual',    module: 'ASC' },
+  { code: 'RGT.030', name: 'Patient Grievance Process and Contact Information',               tier: 'TIER_3', category: 'Governance',     frequency: 'annual',    module: 'ASC' },
+  { code: 'IPC.010', name: 'Infection Prevention Contact Information',                        tier: 'TIER_3', category: 'Infection Prevention', frequency: 'annual', module: 'ASC' },
+
+  // TIER 2 — Document vault
+  { code: 'ADM.100', name: 'Governing Body Meeting Minutes',                                  tier: 'TIER_2', category: 'Administration', frequency: 'monthly',   module: 'ASC' },
+  { code: 'ADM.110', name: 'Medical Executive Committee Meeting Minutes',                     tier: 'TIER_2', category: 'Administration', frequency: 'monthly',   module: 'ASC' },
+  { code: 'ADM.120', name: 'Quality Improvement Committee Meeting Minutes',                   tier: 'TIER_2', category: 'Administration', frequency: 'quarterly', module: 'ASC' },
+  { code: 'ADM.130', name: 'Annual Facility Risk Assessment',                                 tier: 'TIER_2', category: 'Administration', frequency: 'annual',    module: 'ASC' },
+  { code: 'ADM.140', name: 'Credentialing and Privileging Files (all physicians)',            tier: 'TIER_2', category: 'Administration', frequency: 'biennial',  module: 'ASC' },
+  { code: 'ADM.150', name: 'Staff Competency Verification Records',                           tier: 'TIER_2', category: 'Administration', frequency: 'annual',    module: 'ASC' },
+  { code: 'ADM.160', name: 'Business Associate Agreements (all vendors)',                     tier: 'TIER_2', category: 'Administration', frequency: 'as_needed', module: 'ASC' },
+  { code: 'ADM.170', name: 'Peer Review Documentation',                                       tier: 'TIER_2', category: 'Administration', frequency: 'annual',    module: 'ASC' },
+
+  // ── VOL 2 — EMERGENCY PREPAREDNESS ──────────────────────────────────────
+
+  // TIER 1 — Recurring logs
+  { code: 'EMG.010', name: 'Emergency Preparedness Scenario-Based Drill',                    tier: 'TIER_1', category: 'Emergency Management', frequency: 'quarterly', module: 'ASC' },
+  { code: 'EMG.020', name: 'Emergency Preparedness Drill Critiques',                         tier: 'TIER_1', category: 'Emergency Management', frequency: 'quarterly', module: 'ASC' },
+  { code: 'EMG.030', name: 'Malignant Hyperthermia Drill',                                    tier: 'TIER_1', category: 'Emergency Management', frequency: 'annual',    module: 'ASC' },
+
+  // TIER 2 — Document vault
+  { code: 'EMG.040', name: 'Emergency Operations Plan and HVA',                              tier: 'TIER_2', category: 'Emergency Management', frequency: 'biennial',  module: 'ASC' },
+  { code: 'EMG.050', name: 'Emergency and Disaster Preparedness Policies',                   tier: 'TIER_2', category: 'Emergency Management', frequency: 'annual',    module: 'ASC' },
+  { code: 'EMG.060', name: 'Communication Plans for Emergencies',                             tier: 'TIER_2', category: 'Emergency Management', frequency: 'annual',    module: 'ASC' },
+  { code: 'EMG.070', name: '1135 Waiver Procedure',                                           tier: 'TIER_2', category: 'Emergency Management', frequency: 'as_needed', module: 'ASC' },
+  { code: 'EMG.080', name: 'Initial/Annual Emergency and Disaster Preparedness Training Docs',tier: 'TIER_2', category: 'Emergency Management', frequency: 'annual',    module: 'ASC' },
+  { code: 'EMG.090', name: 'BLS Policy and Training Documentation',                           tier: 'TIER_2', category: 'Emergency Management', frequency: 'biennial',  module: 'ASC' },
+  { code: 'EMG.100', name: 'ACLS Training Documentation',                                     tier: 'TIER_2', category: 'Emergency Management', frequency: 'biennial',  module: 'ASC' },
+  { code: 'EMG.110', name: 'PALS Policy and Training Documentation',                          tier: 'TIER_2', category: 'Emergency Management', frequency: 'biennial',  module: 'ASC' },
+  { code: 'EMG.120', name: 'Malignant Hyperthermia Policy Training Documentation',            tier: 'TIER_2', category: 'Emergency Management', frequency: 'annual',    module: 'ASC' },
+  { code: 'EMG.130', name: 'Hospital Notification Letter',                                    tier: 'TIER_2', category: 'Emergency Management', frequency: 'annual',    module: 'ASC' },
+  { code: 'EMG.140', name: 'Emergency Medical Care Transfer Procedure',                       tier: 'TIER_2', category: 'Emergency Management', frequency: 'annual',    module: 'ASC' },
+  { code: 'EMG.150', name: 'Sprinkler Shutdown Fire Watch Policy',                            tier: 'TIER_2', category: 'Emergency Management', frequency: 'annual',    module: 'ASC' },
+  { code: 'EMG.160', name: 'Emergency Preparedness Risk Assessment and Participant List',     tier: 'TIER_2', category: 'Emergency Management', frequency: 'annual',    module: 'ASC' },
+
+  // ── VOL 3 — ENVIRONMENT OF CARE ─────────────────────────────────────────
+
+  // TIER 1 — Recurring logs
+  { code: 'FAC.010', name: 'Daily Egress Inspections',                                        tier: 'TIER_1', category: 'Facilities', frequency: 'daily',     module: 'ASC' },
+  { code: 'FAC.020', name: 'Emergency Eyewash Weekly Tests',                                  tier: 'TIER_1', category: 'Facilities', frequency: 'weekly',    module: 'ASC' },
+  { code: 'FAC.030', name: 'Weekly Emergency Power Supply Systems (EPSS) Testing',            tier: 'TIER_1', category: 'Facilities', frequency: 'weekly',    module: 'ASC' },
+  { code: 'FAC.040', name: 'Monthly Audio and Visual Indicator LIM Testing',                  tier: 'TIER_1', category: 'Facilities', frequency: 'monthly',   module: 'ASC' },
+  { code: 'FAC.050', name: 'Monthly Generator Tests',                                         tier: 'TIER_1', category: 'Facilities', frequency: 'monthly',   module: 'ASC' },
+  { code: 'FAC.060', name: 'Monthly Automatic Transfer Switch Tests',                         tier: 'TIER_1', category: 'Facilities', frequency: 'monthly',   module: 'ASC' },
+  { code: 'FAC.070', name: 'Air Exchange Pressure Temperature and Humidity Testing',          tier: 'TIER_1', category: 'Facilities', frequency: 'daily',     module: 'ASC' },
+  { code: 'FAC.080', name: 'Monthly Elevator Firefighters Emergency Operations Tests',        tier: 'TIER_1', category: 'Facilities', frequency: 'monthly',   module: 'ASC' },
+  { code: 'FAC.090', name: 'Monthly 30-Second Egress and Exit Sign Battery-Powered Light Tests', tier: 'TIER_1', category: 'Facilities', frequency: 'monthly', module: 'ASC' },
+  { code: 'FAC.100', name: 'Safety Rounds Documentation',                                     tier: 'TIER_1', category: 'Facilities', frequency: 'monthly',   module: 'ASC' },
+
+  // TIER 2 — Document vault
+  { code: 'FAC.110', name: 'Routine Maintenance Program for Piped Medical Gas and Vacuum Systems', tier: 'TIER_2', category: 'Facilities', frequency: 'annual', module: 'ASC' },
+
+  // TIER 4 — Third party managed
+  { code: 'FAC.120', name: 'Medical Gas and Vacuum Systems Installer Performance Testing',    tier: 'TIER_4', category: 'Facilities', frequency: 'as_needed', module: 'ASC' },
+  { code: 'FAC.130', name: 'Verification Testing by Third Party (Medical Gas)',               tier: 'TIER_4', category: 'Facilities', frequency: 'as_needed', module: 'ASC' },
+  { code: 'FAC.140', name: 'Annual LIM Testing by Vendor',                                    tier: 'TIER_4', category: 'Facilities', frequency: 'annual',    module: 'ASC' },
+  { code: 'FAC.150', name: 'Documentation of Receptacle Testing',                             tier: 'TIER_4', category: 'Facilities', frequency: 'annual',    module: 'ASC' },
+  { code: 'FAC.160', name: 'EPSS Service Records',                                            tier: 'TIER_4', category: 'Facilities', frequency: 'annual',    module: 'ASC' },
+  { code: 'FAC.170', name: 'Annual Generator Load Tests',                                     tier: 'TIER_4', category: 'Facilities', frequency: 'annual',    module: 'ASC' },
+  { code: 'FAC.180', name: 'Annual Fuel Quality Tests',                                       tier: 'TIER_4', category: 'Facilities', frequency: 'annual',    module: 'ASC' },
+  { code: 'FAC.190', name: '3-Year Generator Load and Exhaust Gas Temperature Tests',         tier: 'TIER_4', category: 'Facilities', frequency: 'triennial', module: 'ASC' },
+  { code: 'FAC.200', name: 'Operations and Purity Testing (Medical Gas)',                     tier: 'TIER_4', category: 'Facilities', frequency: 'annual',    module: 'ASC' },
+
+  // ── VOL 4 — FIRE SAFETY ──────────────────────────────────────────────────
+
+  // TIER 1 — Recurring logs
+  { code: 'SAF.010', name: 'Quarterly Fire Drill Schedule and Critiques',                     tier: 'TIER_1', category: 'Fire Safety', frequency: 'quarterly', module: 'ASC' },
+  { code: 'SAF.020', name: 'Weekly Fire Pump Inspection',                                     tier: 'TIER_1', category: 'Fire Safety', frequency: 'weekly',    module: 'ASC' },
+  { code: 'SAF.030', name: 'Monthly Electric Fire Pump Test Log',                             tier: 'TIER_1', category: 'Fire Safety', frequency: 'monthly',   module: 'ASC' },
+  { code: 'SAF.040', name: 'Monthly Fire Sprinkler Control Valve Inspections',                tier: 'TIER_1', category: 'Fire Safety', frequency: 'monthly',   module: 'ASC' },
+  { code: 'SAF.050', name: 'Monthly Fire Suppression Pressure Gauge Inspections',             tier: 'TIER_1', category: 'Fire Safety', frequency: 'monthly',   module: 'ASC' },
+  { code: 'SAF.060', name: 'Quarterly Water Supply Connection Inspections',                   tier: 'TIER_1', category: 'Fire Safety', frequency: 'quarterly', module: 'ASC' },
+  { code: 'SAF.070', name: 'Quarterly Fire Department Connection Inspections',                tier: 'TIER_1', category: 'Fire Safety', frequency: 'quarterly', module: 'ASC' },
+  { code: 'SAF.080', name: 'Quarterly Hydraulic Nameplate Inspections',                       tier: 'TIER_1', category: 'Fire Safety', frequency: 'quarterly', module: 'ASC' },
+  { code: 'SAF.090', name: 'Quarterly Fire Water Tank Inspections',                           tier: 'TIER_1', category: 'Fire Safety', frequency: 'quarterly', module: 'ASC' },
+  { code: 'SAF.100', name: 'Quarterly Main Drain Testing',                                    tier: 'TIER_1', category: 'Fire Safety', frequency: 'quarterly', module: 'ASC' },
+  { code: 'SAF.110', name: 'Quarterly Dry / Pre-Action Priming Tests',                        tier: 'TIER_1', category: 'Fire Safety', frequency: 'quarterly', module: 'ASC' },
+  { code: 'SAF.120', name: 'Semiannual Water Tank Water Level Alarm Tests',                   tier: 'TIER_1', category: 'Fire Safety', frequency: 'semiannual', module: 'ASC' },
+  { code: 'SAF.130', name: 'Semiannual Valve Tamper Switch Tests',                            tier: 'TIER_1', category: 'Fire Safety', frequency: 'semiannual', module: 'ASC' },
+  { code: 'SAF.140', name: 'Monthly Portable Fire Extinguisher Inspections',                  tier: 'TIER_1', category: 'Fire Safety', frequency: 'monthly',   module: 'ASC' },
+
+  // TIER 2 — Document vault
+  { code: 'SAF.150', name: 'Fire Drill Policy',                                               tier: 'TIER_2', category: 'Fire Safety', frequency: 'annual',    module: 'ASC' },
+  { code: 'SAF.160', name: 'Written Plan for Fire Safety Management',                         tier: 'TIER_2', category: 'Fire Safety', frequency: 'annual',    module: 'ASC' },
+  { code: 'SAF.170', name: 'Smoking Policy',                                                  tier: 'TIER_2', category: 'Fire Safety', frequency: 'annual',    module: 'ASC' },
+  { code: 'SAF.180', name: 'Fire Alarm Operations and Maintenance Manual',                    tier: 'TIER_2', category: 'Fire Safety', frequency: 'as_needed', module: 'ASC' },
+  { code: 'SAF.190', name: 'Fire Alarm As-Built Drawings',                                    tier: 'TIER_2', category: 'Fire Safety', frequency: 'as_needed', module: 'ASC' },
+  { code: 'SAF.200', name: 'Fire Alarm Sequence of Operation',                                tier: 'TIER_2', category: 'Fire Safety', frequency: 'as_needed', module: 'ASC' },
+  { code: 'SAF.210', name: 'Emergency Evacuation Route Maps (all exits)',                     tier: 'TIER_2', category: 'Fire Safety', frequency: 'annual',    module: 'ASC' },
+  { code: 'SAF.220', name: 'Fire Safety Response Procedures (RACE / PASS)',                   tier: 'TIER_2', category: 'Fire Safety', frequency: 'annual',    module: 'ASC' },
+
+  // TIER 4 — Third party managed
+  { code: 'SAF.230', name: 'Qualifications for Fire Alarm Personnel',                         tier: 'TIER_4', category: 'Fire Safety', frequency: 'as_needed', module: 'ASC' },
+  { code: 'SAF.240', name: 'Annual Detector Tests by Certified Vendor',                       tier: 'TIER_4', category: 'Fire Safety', frequency: 'annual',    module: 'ASC' },
+  { code: 'SAF.250', name: 'Semiannual Visual Inspection by Vendor',                          tier: 'TIER_4', category: 'Fire Safety', frequency: 'semiannual', module: 'ASC' },
+  { code: 'SAF.260', name: 'Annual Full Flow Pump Test by Vendor',                            tier: 'TIER_4', category: 'Fire Safety', frequency: 'annual',    module: 'ASC' },
+  { code: 'SAF.270', name: 'Annual Extinguisher Service by Vendor',                           tier: 'TIER_4', category: 'Fire Safety', frequency: 'annual',    module: 'ASC' },
+  { code: 'SAF.280', name: 'Annual Fire Alarm System Test by Vendor',                         tier: 'TIER_4', category: 'Fire Safety', frequency: 'annual',    module: 'ASC' },
+  { code: 'SAF.290', name: '5-Year Fire Sprinkler Internal Obstruction Investigation',        tier: 'TIER_4', category: 'Fire Safety', frequency: 'every_5_years', module: 'ASC' },
+  { code: 'SAF.300', name: 'Annual Suppression System Service by Vendor',                     tier: 'TIER_4', category: 'Fire Safety', frequency: 'annual',    module: 'ASC' },
+
+  // ── VOL 5 — INFECTION PREVENTION & CONTROL ───────────────────────────────
+
+  // TIER 1 — Recurring logs
+  { code: 'IPC.020', name: 'Sterilization Biological Indicator Log (every cycle)',            tier: 'TIER_1', category: 'Infection Prevention', frequency: 'per_cycle', module: 'ASC' },
+  { code: 'IPC.030', name: 'Sterilization Chemical Indicator Log',                            tier: 'TIER_1', category: 'Infection Prevention', frequency: 'per_cycle', module: 'ASC' },
+  { code: 'IPC.040', name: 'High-Level Disinfection Log',                                     tier: 'TIER_1', category: 'Infection Prevention', frequency: 'per_use',   module: 'ASC' },
+  { code: 'IPC.050', name: 'ATP Environmental Cleaning Validation Log (OR / SPD)',            tier: 'TIER_1', category: 'Infection Prevention', frequency: 'monthly',   module: 'ASC' },
+  { code: 'IPC.060', name: 'Sterilizer Maintenance and Repair Log',                           tier: 'TIER_1', category: 'Infection Prevention', frequency: 'as_needed', module: 'ASC' },
+  { code: 'IPC.070', name: 'Sterile Supply Expiration Date Audit',                            tier: 'TIER_1', category: 'Infection Prevention', frequency: 'monthly',   module: 'ASC' },
+  { code: 'IPC.080', name: 'Hand Hygiene Compliance Audit',                                   tier: 'TIER_1', category: 'Infection Prevention', frequency: 'quarterly', module: 'ASC' },
+  { code: 'IPC.090', name: 'Surgical Site Infection Surveillance Log',                        tier: 'TIER_1', category: 'Infection Prevention', frequency: 'monthly',   module: 'ASC' },
+  { code: 'IPC.100', name: 'Sharps and Biohazard Waste Disposal Log',                         tier: 'TIER_1', category: 'Infection Prevention', frequency: 'monthly',   module: 'ASC' },
+
+  // TIER 2 — Document vault
+  { code: 'IPC.110', name: 'Infection Prevention and Control Plan',                           tier: 'TIER_2', category: 'Infection Prevention', frequency: 'annual',    module: 'ASC' },
+  { code: 'IPC.120', name: 'Sterilization Policies and Procedures (AAMI ST79)',               tier: 'TIER_2', category: 'Infection Prevention', frequency: 'annual',    module: 'ASC' },
+  { code: 'IPC.130', name: 'High-Level Disinfection Policy',                                  tier: 'TIER_2', category: 'Infection Prevention', frequency: 'annual',    module: 'ASC' },
+  { code: 'IPC.140', name: 'Staff Bloodborne Pathogen Training Records',                      tier: 'TIER_2', category: 'Infection Prevention', frequency: 'annual',    module: 'ASC' },
+  { code: 'IPC.150', name: 'Occupational Exposure Plan and Follow-Up Records',                tier: 'TIER_2', category: 'Infection Prevention', frequency: 'annual',    module: 'ASC' },
+  { code: 'IPC.160', name: 'PPE Policy and Availability Documentation',                       tier: 'TIER_2', category: 'Infection Prevention', frequency: 'annual',    module: 'ASC' },
+  { code: 'IPC.170', name: 'HVAC and Air Handling Verification for OR',                       tier: 'TIER_2', category: 'Infection Prevention', frequency: 'annual',    module: 'ASC' },
+  { code: 'IPC.180', name: 'Instrument Recall and Rapid Response Policy',                     tier: 'TIER_2', category: 'Infection Prevention', frequency: 'annual',    module: 'ASC' },
+
+  // TIER 4 — Third party managed
+  { code: 'IPC.190', name: 'Annual Sterilizer Calibration by Vendor',                         tier: 'TIER_4', category: 'Infection Prevention', frequency: 'annual',    module: 'ASC' },
+  { code: 'IPC.200', name: 'Water Quality Testing (where applicable)',                        tier: 'TIER_4', category: 'Infection Prevention', frequency: 'annual',    module: 'ASC' },
+
+  // ── VOL 6 — QUALITY IMPROVEMENT & PATIENT SAFETY ─────────────────────────
+
+  // TIER 1 — Recurring logs
+  { code: 'QUA.010', name: 'Adverse Event and Incident Log',                                  tier: 'TIER_1', category: 'Quality', frequency: 'ongoing',    module: 'ASC' },
+  { code: 'QUA.020', name: 'Patient Satisfaction Survey Results',                             tier: 'TIER_1', category: 'Quality', frequency: 'quarterly', module: 'ASC' },
+  { code: 'QUA.030', name: 'Unplanned Transfer to Hospital Log',                              tier: 'TIER_1', category: 'Quality', frequency: 'ongoing',    module: 'ASC' },
+  { code: 'QUA.040', name: 'Cancellation and Delay Log',                                      tier: 'TIER_1', category: 'Quality', frequency: 'monthly',   module: 'ASC' },
+  { code: 'QUA.050', name: 'Wrong Site Surgery Prevention Checklist (Universal Protocol)',    tier: 'TIER_1', category: 'Quality', frequency: 'per_case',   module: 'ASC' },
+  { code: 'QUA.060', name: 'Time-Out Documentation Log',                                      tier: 'TIER_1', category: 'Quality', frequency: 'per_case',   module: 'ASC' },
+  { code: 'QUA.070', name: 'Medication Error Log',                                            tier: 'TIER_1', category: 'Quality', frequency: 'ongoing',    module: 'ASC' },
+  { code: 'QUA.080', name: 'Anesthesia Adverse Event Log',                                    tier: 'TIER_1', category: 'Quality', frequency: 'ongoing',    module: 'ASC' },
+
+  // TIER 2 — Document vault
+  { code: 'QUA.090', name: 'Quality Improvement Plan',                                        tier: 'TIER_2', category: 'Quality', frequency: 'annual',    module: 'ASC' },
+  { code: 'QUA.100', name: 'Annual QI Summary Report',                                        tier: 'TIER_2', category: 'Quality', frequency: 'annual',    module: 'ASC' },
+  { code: 'QUA.110', name: 'Peer Review Policy and Completed Reviews',                        tier: 'TIER_2', category: 'Quality', frequency: 'annual',    module: 'ASC' },
+  { code: 'QUA.120', name: 'Patient Rights and Responsibilities Policy',                      tier: 'TIER_2', category: 'Quality', frequency: 'annual',    module: 'ASC' },
+  { code: 'QUA.130', name: 'Advance Directive Policy and Patient Notification',               tier: 'TIER_2', category: 'Quality', frequency: 'annual',    module: 'ASC' },
+  { code: 'QUA.140', name: 'Informed Consent Policy and Sample Forms',                        tier: 'TIER_2', category: 'Quality', frequency: 'annual',    module: 'ASC' },
+  { code: 'QUA.150', name: 'Anesthesia Policy and Procedure Manual',                          tier: 'TIER_2', category: 'Quality', frequency: 'annual',    module: 'ASC' },
+  { code: 'QUA.160', name: 'Moderate Sedation Policy',                                        tier: 'TIER_2', category: 'Quality', frequency: 'annual',    module: 'ASC' },
+  { code: 'QUA.170', name: 'Post-Procedure Follow-Up Call Documentation Policy',              tier: 'TIER_2', category: 'Quality', frequency: 'annual',    module: 'ASC' },
+  { code: 'QUA.180', name: 'Controlled Substance Policy and DEA Registration',                tier: 'TIER_2', category: 'Quality', frequency: 'annual',    module: 'ASC' },
+  { code: 'QUA.190', name: 'Drug Diversion Policy and Audit Trail',                           tier: 'TIER_2', category: 'Quality', frequency: 'annual',    module: 'ASC' },
+];
+
+async function seed() {
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
+
+    // Step 1: confirm table structure
+    // Adjust column names below if your schema uses different names
+    const checkTable = await client.query(`
+      SELECT column_name
+      FROM information_schema.columns
+      WHERE table_name = 'compliance_items'
+    `);
+    console.log('compliance_items columns:', checkTable.rows.map(r => r.column_name).join(', '));
+
+    // Step 2: delete existing ASC items to avoid duplicates
+    const deleted = await client.query(`
+      DELETE FROM compliance_items WHERE module = 'ASC'
+    `);
+    console.log(`Deleted ${deleted.rowCount} existing ASC compliance items`);
+
+    // Step 3: insert all items
+    let inserted = 0;
+    for (const item of items) {
+      await client.query(`
+        INSERT INTO compliance_items
+          (code, name, tier, category, frequency, module, created_at, updated_at)
+        VALUES
+          ($1, $2, $3, $4, $5, $6, NOW(), NOW())
+        ON CONFLICT (code, name) DO UPDATE SET
+          tier = EXCLUDED.tier,
+          category = EXCLUDED.category,
+          frequency = EXCLUDED.frequency,
+          module = EXCLUDED.module,
+          updated_at = NOW()
+      `, [item.code, item.name, item.tier, item.category, item.frequency, item.module]);
+      inserted++;
+    }
+
+    await client.query('COMMIT');
+    console.log(`\n✅ Successfully seeded ${inserted} ASC compliance items`);
+    console.log('\nBreakdown by tier:');
+    const tier1 = items.filter(i => i.tier === 'TIER_1').length;
+    const tier2 = items.filter(i => i.tier === 'TIER_2').length;
+    const tier3 = items.filter(i => i.tier === 'TIER_3').length;
+    const tier4 = items.filter(i => i.tier === 'TIER_4').length;
+    console.log(`  TIER_1 (recurring logs):     ${tier1}`);
+    console.log(`  TIER_2 (document vault):     ${tier2}`);
+    console.log(`  TIER_3 (wall postings):      ${tier3}`);
+    console.log(`  TIER_4 (third-party certs):  ${tier4}`);
+    console.log(`  TOTAL:                       ${items.length}`);
+
+    // Step 4: verify
+    const count = await client.query(`SELECT COUNT(*) FROM compliance_items WHERE module = 'ASC'`);
+    console.log(`\nDatabase verification: ${count.rows[0].count} ASC items now in compliance_items table`);
+
+  } catch (err) {
+    await client.query('ROLLBACK');
+    console.error('❌ Seed failed — rolled back:', err.message);
+    console.error('\nIf column names are wrong, check the column list printed above');
+    console.error('and update the INSERT statement to match your schema.');
+  } finally {
+    client.release();
+    await pool.end();
+  }
+}
+
+seed();
