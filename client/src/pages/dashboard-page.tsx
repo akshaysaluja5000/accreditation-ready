@@ -21,15 +21,6 @@ import { ascHandbook, ASC_HANDBOOK_CATEGORY_ORDER, type AscHandbookChapter } fro
 import { MODULE_LABELS, type ModuleId } from "@shared/schema";
 import { getRoleConfig } from "@shared/roles";
 import { TopicQuizModal, type SearchEntry } from "@/components/topic-quiz-modal";
-import wallchart1 from "@assets/IMG_5138_1778809817331.jpeg";
-import wallchart2 from "@assets/IMG_5139_1778809821358.jpeg";
-import wallchart3 from "@assets/IMG_5140_1778809824135.jpeg";
-
-const WALLCHARTS = [
-  { id: "eoc-utilities", label: "Environment of Care & Utilities", subtitle: "Vols. 1–3 · Building, Emergency Preparedness, Utility Systems", src: wallchart1 },
-  { id: "fire-safety", label: "Fire Safety", subtitle: "Vols. 4–5 · Fire Risks, Drills, Alarm & Suppression", src: wallchart2 },
-  { id: "medical-infection", label: "Medical Equipment & Infection Control", subtitle: "Vol. 6 · Equipment Testing, Sterilization, IPC Program", src: wallchart3 },
-];
 
 const PATHWAY_HEADERS: Record<ModuleId, string> = {
   hospital: "Hospital Standards",
@@ -430,8 +421,6 @@ export default function DashboardPage() {
   const [feedbackOpen, setFeedbackOpen] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState("");
   const [feedbackSent, setFeedbackSent] = useState(false);
-  const [wallchartSrc, setWallchartSrc] = useState<string | null>(null);
-  const [wallchartLabel, setWallchartLabel] = useState<string>("");
 
   function toggleDark() {
     const next = !isDark;
@@ -556,31 +545,7 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-screen pb-28">
-      {/* Wallchart lightbox */}
       <AnimatePresence>
-        {wallchartSrc && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/90 flex flex-col"
-            onClick={() => setWallchartSrc(null)}
-          >
-            <div className="flex items-center justify-between px-4 py-3 flex-shrink-0" onClick={(e) => e.stopPropagation()}>
-              <span className="text-white font-bold text-sm">{wallchartLabel}</span>
-              <button
-                className="text-white hover:bg-white/20 rounded-lg p-2"
-                onClick={() => setWallchartSrc(null)}
-                data-testid="button-close-wallchart"
-              >
-                <XIcon size={22} />
-              </button>
-            </div>
-            <div className="flex-1 overflow-auto p-2 flex items-start justify-center" onClick={(e) => e.stopPropagation()}>
-              <img src={wallchartSrc} alt={wallchartLabel} className="max-w-full rounded-lg shadow-2xl" data-testid="img-wallchart-view" />
-            </div>
-          </motion.div>
-        )}
       </AnimatePresence>
       {/* Sub-header */}
       <div className="sticky top-[58px] z-40 border-b border-border bg-background/95 backdrop-blur-md">
@@ -1126,29 +1091,27 @@ export default function DashboardPage() {
                     </div>
                   ))}
 
-                  {/* Visual Wall Charts */}
-                  <div className="flex flex-col gap-3" data-testid="group-dashboard-wall-charts">
-                    <div className="flex items-baseline justify-between px-1">
-                      <h3 className="font-black text-sm uppercase tracking-wide text-primary">Wall Charts</h3>
-                      <span className="text-xs text-muted-foreground">Tap to enlarge</span>
+                  {/* Compliance Checklist link */}
+                  <motion.button
+                    className="rounded-2xl border-2 p-4 flex items-center gap-3 transition-colors text-left bg-muted/30 border-border hover:bg-muted/50 hover:border-border/80"
+                    onClick={() => setLocation("/asc-checklist")}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    whileTap={{ scale: 0.98 }}
+                    data-testid="button-asc-checklist"
+                  >
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 bg-muted border border-border">
+                      <FileText size={20} className="text-muted-foreground" />
                     </div>
-                    <div className="grid grid-cols-3 gap-3">
-                      {WALLCHARTS.map((wc) => (
-                        <button
-                          key={wc.id}
-                          onClick={() => { setWallchartSrc(wc.src); setWallchartLabel(wc.label); }}
-                          data-testid={`button-wallchart-${wc.id}`}
-                          className="rounded-xl overflow-hidden border border-border bg-muted/30 flex flex-col text-left hover:border-primary/40 hover:shadow-md transition-all active:scale-95"
-                        >
-                          <img src={wc.src} alt={wc.label} className="w-full aspect-[3/4] object-cover object-top" />
-                          <div className="px-2 py-2">
-                            <p className="text-[11px] font-bold leading-tight">{wc.label}</p>
-                            <p className="text-[10px] text-muted-foreground mt-0.5 leading-tight">{wc.subtitle}</p>
-                          </div>
-                        </button>
-                      ))}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2">
+                        <h3 className="font-bold text-sm">2026 ASC Compliance Checklist</h3>
+                        <span className="px-1.5 py-0.5 rounded text-[10px] font-black bg-muted border border-border text-muted-foreground uppercase tracking-wider">6 Volumes</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground mt-0.5">All AAAHC required items · searchable by code or frequency</p>
                     </div>
-                  </div>
+                    <ChevronRight size={16} className="text-muted-foreground flex-shrink-0" />
+                  </motion.button>
                 </div>
               ) : isDnv ? (
                 <div className="flex flex-col gap-3">

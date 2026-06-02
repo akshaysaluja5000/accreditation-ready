@@ -1,0 +1,231 @@
+2026 AMBULATORY SURGERY CENTER COMPLIANCE CHECKLIST
+Columns: Number | Chapter | Frequency | JAN | FEB | MAR | APR | MAY | JUN | JUL | AUG | SEP | OCT | NOV | DEC
+
+================================================================================
+Vol. 1 - Environment of Care Book 1
+================================================================================
+
+--- Building Information ---
+
+FAC.100 | Current and Accurate Life Safety Drawings | Annually
+FAC.100 | Documentation of Compliance with Applicable Building Codes and Regulations | Annually
+FAC.100 | Authorities Having Jurisdiction (AHJ) Inspection Reports (e.g., Local, State, etc.) | Annually
+
+--- Construction Projects ---
+
+SAF.290, 300, PEC CON 190 | Alternate Life Safety Measures Policy | Annually
+SAF.290, 300, PEC CON 190 | ALSM - Alternate Life Safety Measures / Fire Watch | Annually
+SAF.290, 300 | Daily Egress Inspections | Daily
+SAF.290, 300 | Preconstruction Risk Assessment | Annually
+
+--- Hazardous Materials ---
+
+SAF.170 | Hazardous Materials and Waste Management Plan | Annually
+SAF.170 | Inventory of Hazardous Materials and Waste | Annually
+SAF.170 | Reports of Hazardous Materials and Waste Spills or Exposures | Annually
+SAF.170 | Hazardous Materials and Waste Permits, Licenses, and Safety Data Sheets | Annually
+SAF.170 | DOT Training Certificates | Annually
+SAF.170 | Hazardous Waste Manifests | Annually
+SAF.170 | Written Procedure for Hazardous Materials and Waste Spills or Exposures | Annually
+ANSI Z358.1-2014 | Emergency Eyewash Equipment Risk Assessment and Inventory | Annually
+ANSI Z358.1-2014 | Emergency Eyewash Annual Inspections and Tests | Annually
+ANSI Z358.1-2014 | Emergency Eyewash Weekly Tests | Weekly
+
+================================================================================
+Vol. 2 - Environment of Care Book 2
+================================================================================
+
+--- Emergency Preparedness, Safety, and Security ---
+
+QUA.210 | Written Quality Improvement Program | Quarterly
+FAC.110 | Written Plan for Environmental Safety | Annually
+FAC.110 | Written Plan for Security | Annually
+FAC.130-140 | Safety Rounds | Annually
+FAC.150.60 | AHJ Waivers | Annually
+FAC.150.60 | Sprinkler Shutdown and Fire Watch Policy and Procedures | Annually
+EMG.100 | Emergency Medical Care Transfer Procedure | Biennially
+EMG.100 | Documentation for Hospital Notification Letter of Update of Services | Annually
+EMG.140.10.20.30 | Documentation of Basic Life Support (BLS) Policy and Training | Annually
+EMG.170.10.20 | Emergency Preparedness Scenario-Based Drill | Quarterly
+EMG.170.30 | Annual CPR Technique Drill | Annually
+EMG.170.40 | Disaster Preparedness-Based Drill | Annually
+EMG.170.50-60 | Emergency Preparedness Risk Assessment and Participant List | Annually
+EMG.170.70 | Emergency Preparedness Response Critiques | Annually
+EMG.210 | Documentation of Current Advanced Cardiac Life Support (ACLS) Training Is Present | Annually
+EMG.220 | Documentation of Malignant Hyperthermia Policy, Training, and Drill | Annually
+EMG.230 | Documentation of Pediatric Advanced Life Support (PALS) Policy and Training | Annually
+EMG.160.10.20.30 | Emergency Operations Plan and HVA | Biennially
+EMG.270.40 | Emergency and Disaster Preparedness Policies, Procedures, and Communication Plans | Annually
+EMG.100 | 1135 Waiver Procedure | Annually
+EMG.170.10.20.30, 40.50.60.70 | Documentation of Initial / Annual Emergency and Disaster Preparedness Training | Annually
+EMG170.50.60.70 | Emergency and Disaster Preparedness Drill Critiques and Exercises | Annually
+
+================================================================================
+Vol. 3 - Environment of Care Book 3
+================================================================================
+
+--- Utility Systems ---
+
+FAC.250 | Medical Gas and Vacuum Systems Installer Performance Testing and Documentation before System Verification Testing | Annually
+FAC.250 | Medical Gas and Vacuum Systems Verification Testing and Documentation by a Third Party | Annually
+FAC.250 | Medical Gas and Vacuum Systems Component Testing | Annually
+FAC.250 | Medical Gas and Vacuum Systems Operations and Purity Testing | Annually
+FAC.250 | Routine Maintenance Program for Piped Medical Gas and Vacuum Systems | Annually
+FAC.250 | Monthly Audio and Visual Indicator Line Isolation Monitor (LIM) Testing | Monthly
+FAC.250 | Annual Line-to-Ground Fault and Calibration LIM Testing | Annually
+FAC.250 | Documentation of Receptacle Testing | Annually
+FAC.260 | Weekly Emergency Power Supply Systems (EPSS) Testing | Weekly
+FAC.260 | EPSS Service Records | Annually
+FAC.260 | Monthly Generator Tests | Monthly
+FAC.260 | Annual Generator Load Tests | Annually
+FAC.260 | Monthly Automatic Transfer Switch Tests | Monthly
+FAC.260 | Annual Fuel Quality Tests | Annually
+FAC.260 | 3-Year 4-Hour Generator Load and Exhaust Gas Temperature Tests | Triennially
+IPC.230.70 | Air Exchange, Pressure Relationship, Temperature, and Humidity Testing | Annually
+
+================================================================================
+Vol. 4 - Fire Book 1
+================================================================================
+
+--- Fire Risks and Drills ---
+
+SAF.240.10.20 | Fire Drill Policy | Annually
+SAF.240.10.20 | Quarterly Fire Drill Schedule | Quarterly
+SAF.240.10.20 | Fire Drill Critiques | Annually
+SAF.240 | Written Plan for Fire Safety Management | Annually
+FAC.120.30 | Smoking Policy | Annually
+
+--- Fire Alarm Documents ---
+
+FAC.150.60 | Record of Completion Documents | Annually
+FAC.150.60 | Fire Alarm O&M | Annually
+FAC.150.60 | Fire Alarm As-Built Drawings | Annually
+FAC.150.60 | Fire Alarm Sequence of Operation | Annually
+FAC.150.60 | Documentation of Qualifications and Certifications for Personnel Conducting Inspection, Testing, and Maintenance of the Fire Alarm Systems | Annually
+FAC.150.60 | Annual Duct Detector, Heat Detector, Manual Fire Alarm Box, and Smoke Detector Tests | Annually
+FAC.150.60 | Semiannual Duct Detector, Heat Detector, Manual Fire Alarm Box, and Smoke Detector Visual Inspections | Semiannually
+FAC.150.60 | Annual Door Release and Safety Functions Tests | Annually
+FAC.150.60 | Semiannual Fire Alarm Battery Load Tests | Semiannually
+FAC.150.60 | Annual Audible-Visual Device Tests | Annually
+
+================================================================================
+Vol. 5 - Fire Book 2
+================================================================================
+
+--- Fire Safety Inspections and Testing ---
+
+FAC.150.60 | Annual Offsite Responder Notifications | Annually
+FAC.150.60 | Fire Alarm Systems Inspection, Testing, and Maintenance Records | Annually
+FAC.150.60 | Weekly Fire Pump Inspection | Weekly
+FAC.150.60 | Monthly Electric Fire Pump Test Log | Monthly
+FAC.150.60 | Monthly Fire Sprinkler Control Valve Inspections | Monthly
+FAC.150.60 | Monthly Fire Suppression Pressure Gauge Inspections | Monthly
+FAC.150.60 | Quarterly Water Supply Connection Inspections | Quarterly
+FAC.150.60 | Quarterly Fire Department Connection Inspections | Quarterly
+FAC.150.60 | Quarterly Hydraulic Nameplate Inspections | Quarterly
+FAC.150.60 | Quarterly Fire Water Tank Inspections | Quarterly
+FAC.150.60 | Standpipe Flow Tests (Every 5 Years) | Quinquennially
+FAC.150.60 | Quarterly Main Drain Testing Downstream of Backflow Preventer | Quarterly
+FAC.150.60 | Quarterly Dry / Pre-Action Priming and Low Air Tests | Quarterly
+FAC.150.60 | Semiannual Water Tank Water Level Alarm Tests | Semiannually
+FAC.150.60 | Semiannual Valve Tamper Switch and Waterflow Device Tests | Semiannually
+FAC.150.60 | Annual Fire Sprinkler Main Drain Tests | Annually
+FAC.150.60 | Annual Fire Pump Flow Tests | Annually
+FAC.150.60 | Annual Gaseous Fire Extinguishing Systems Tests | Annually
+FAC.150.60 | Fire Sprinkler Obstruction Inspection | Quinquennially
+FAC.150.60 | Fire Sprinkler Gauge Replacement and Calibration | Quinquennially
+FAC.150.60 | Fire Equipment Hydrostatic Tests (Every 5 Years) | Quinquennially
+FAC.150.60 | Monthly Elevator Firefighters' Emergency Operations Tests | Monthly
+FAC.150.50 | Annual 1.5-Hour Egress and Exit Battery-Powered Light Tests | Annually
+FAC.150.50 | Monthly 30-Second Egress and Task and Exit Sign Battery-Powered Light Tests | Monthly
+FAC.160 | Annual Sliding and Rolling Fire Door Closure Tests | Annually
+FAC.160 | Annual Swinging Fire Door Inspections and Tests | Annually
+FAC.150.20 | Monthly Portable Fire Extinguisher Inspections | Monthly
+FAC.150.30 | Annual Portable Fire Extinguisher Maintenance | Annually
+FAC.150.60 | Annual Air-Handling Smoke Detection Equipment Tests | Annually
+FAC.150.60 | Fire and Smoke Damper Tests (One Year after Installation and Every 4 Years Thereafter) | Quadrennially
+FAC.140 | NFPA 99 Utilities Risk Assessment | Annually
+
+================================================================================
+Vol. 6 - Medical Equipment and Infection Control
+================================================================================
+
+--- Medical Equipment ---
+
+FAC.340 | Operating Room Wet Area Risk Assessment | Annually
+FAC.250.10 | Medical Equipment Maintenance Policies and Procedures | Annually
+FAC.250.20.2 FAC.250.30 | Medical Equipment Test and Inspection Matrix; Reports of Periodic Calibration and Preventative Maintenance | Annually
+FAC.260.30 | CT Radiation Dose Testing | Annually
+FAC.280 | CT Performance Evaluation Testing | Annually
+FAC.280 | MRI Performance Evaluation Testing | Annually
+FAC.280 | Nuclear Imaging Performance Evaluation Testing | Annually
+FAC.280 | PET Imaging Performance Evaluation Testing | Annually
+FAC.280 | Radiology Staff Radiation Exposure Checks | Annually
+
+--- Infection Control ---
+
+IPC.100.10.20.30.40.50 | Infection Control and Prevention Program | Annually
+IPC.190 | Protection against Cross-Infection, Policies, and Procedures | Annually
+IPC.210 | Policy Addressing Cleaning of Patient Treatment and Care Areas | Annually
+IPC.220.30 | Staff Education and Certification Documentation | Annually
+IPC.190 | Written Safety Program | Annually
+IPC.190 | Infection Control Risk Assessment | Annually
+IPC.190 | Documentation of Instructions to Patients Regarding the Use of Medical Devices | Annually
+IPC.190 | Documentation of Work Injuries and Illnesses | Annually
+IPC.100 | Vendor Education Documentation | Annually
+IPC.130 | Patient Isolation or Transfer Policy | Annually
+IPC.190 | Appointment, Competency, and Training of the Designated Infection Prevention and Control Professionals | Annually
+IPC.170 | Medical Equipment Cleaning, Sterilization, and Disinfection Policy and Process | Annually
+IPC.170 | Policy and Documentation of Pre-Cleaning, Transport, and Handling of Medical Devices Intended for External Vendor Reprocessing, Inspection, or Repair | Annually
+IPC.170 | Documentation That Reprocessed Single-Use Devices Have Been Approved for Reprocessing | Annually
+IPC.170 | Documentation That Third-Party Reprocessor Is FDA-Registered | Annually
+IPC.170 | If Reprocessing Is Done In-House, Documentation That Organization Is FDA-Registered | Annually
+IPC.180 | Sharps Injury Prevention Program | Annually
+IPC.190 | Written Exposure Control Plan | Annually
+IPC.190 | Communicable Disease Reporting Policy | Annually
+IPC.210 | Written Policies Addressing the Cleaning of Patient Treatment Care Areas and Devices | Annually
+IPC.220 | Surgical Environment Safeguards to Protect Patients and Others from Cross-Infection | Annually
+IPC.330.70 | Temperature and Humidity Monitoring Documentation | Annually
+
+================================================================================
+TESTING FREQUENCY DEFINITIONS
+================================================================================
+
+Annually / Every 12 Months / Once a Year / Every Year
+  = 1 year from the last event, plus or minus 30 days
+
+Semiannually / Every 6 Months
+  = 6 months from the last event, plus or minus 20 days
+
+Biennially / Every 2 Years
+  = 2 years from the last event, plus or minus 30 days
+
+Triennially / Every 3 Years
+  = 3 years from the last event, plus or minus 30 days
+
+Quadrennially / Every 4 Years
+  = 4 years from the last event, plus or minus 30 days
+
+Every 36 Months / Every 3 Years
+  = 36 months from the last event, plus or minus 45 days
+
+Quinquennially / Every 5 Years
+  = 5 years from the last event, plus or minus 30 days
+
+Sexennially / Every 6 Years
+  = 6 years from the last event, plus or minus 30 days
+
+Quarterly / Every Quarter
+  = every three months, plus or minus 10 days
+
+Monthly / 30-Day Intervals / Every Month
+  = 12 times a year, once per calendar month
+
+Weekly / Every Week
+  = once per calendar week
+
+Per Policy
+  = interval defined by facility policy
+
+Per Occurrence
+  = after every event
