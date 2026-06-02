@@ -5,6 +5,7 @@ import {
   ArrowLeft, BarChart3, TrendingUp, GraduationCap, BrainCircuit,
   Users, Building2, Stethoscope, ChevronRight, ShieldCheck,
   ClipboardList, FileText, Lock, AlertTriangle, ShieldAlert, Bot, Globe, Briefcase, Zap,
+  FolderOpen,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/lib/auth";
@@ -40,6 +41,7 @@ interface ConsoleCard {
   href: string;
   minRole: string;
   badge?: string;
+  ascOnly?: boolean;
 }
 
 function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
@@ -161,6 +163,18 @@ function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
     href: "/admin",
     minRole: "director",
     badge: "AI",
+  },
+  {
+    id: "document-vault",
+    title: "Document Vault",
+    description: "Track all 68 AAAHC-required policies, plans, and vendor certifications. Upload document references, set expiry dates, and see Missing/Current/Expiring/Expired status at a glance.",
+    icon: FolderOpen,
+    iconBg: "bg-violet-500/10",
+    iconColor: "text-violet-600",
+    href: "/asc-document-vault",
+    minRole: "director",
+    badge: "ASC",
+    ascOnly: true,
   },
 ];}
 
@@ -552,7 +566,7 @@ export default function LeadershipHubPage() {
             Leadership Tools
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {getConsoleCards(activeStandardsBody).filter(card => showComplianceCards || !COMPLIANCE_CARD_IDS.has(card.id)).map((card, i) => {
+            {getConsoleCards(activeStandardsBody).filter(card => (showComplianceCards || !COMPLIANCE_CARD_IDS.has(card.id)) && (!card.ascOnly || isAsc)).map((card, i) => {
               const accessible = canAccess(card);
               const Icon = card.icon;
               return (

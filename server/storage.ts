@@ -927,6 +927,8 @@ export interface IStorage {
   getComplianceItems(organizationType?: string): Promise<ComplianceItem[]>;
   getFacilityLogsItems(): Promise<ComplianceItem[]>;
   getDocumentVaultItems(): Promise<ComplianceItem[]>;
+  getDocumentVaultWithStatus(facilityId: number): Promise<{ item: ComplianceItem; doc: ComplianceDocument | null }[]>;
+  upsertDocumentUpload(data: { facilityId: number; itemId: number; documentName: string; uploadedBy: string; expirationDate?: string; effectiveDate?: string }): Promise<ComplianceDocument>;
   getWallChartItems(): Promise<ComplianceItem[]>;
   markWallChartItemPosted(itemId: number, postedBy: string, nextDueDate: string): Promise<ComplianceItem>;
   logChecklistCompletion(data: { itemId: number; itemCode: string; itemName: string; completedBy: string; notes?: string; facilityId: string; volume: number; frequency: string }): Promise<ComplianceCompletionLog>;
@@ -1648,6 +1650,53 @@ export class DatabaseStorage implements IStorage {
     return db.select().from(complianceItems)
       .where(eq(complianceItems.surface, "document_vault"))
       .orderBy(complianceItems.tier, complianceItems.category, complianceItems.standardCode);
+  }
+
+  async getDocumentVaultWithStatus(facilityId: number): Promise<{ item: ComplianceItem; doc: ComplianceDocument | null }[]> {
+    const [items, docs] = await Promise.all([
+      db.select().from(complianceItems)
+        .where(eq(complianceItems.surface, "document_vault"))
+        .orderBy(complianceItems.tier, complianceItems.category, complianceItems.standardCode),
+      db.select().from(complianceDocuments)
+        .where(eq(complianceDocuments.facilityId, facilityId))
+        .orderBy(desc(complianceDocuments.uploadedAt)),
+    ]);
+    const docsByItem = new Map<number, ComplianceDocument>();
+    for (const doc of docs) {
+      if (!docsByItem.has(doc.itemId)) docsByItem.set(doc.itemId, doc);
+    }
+    return items.map(item => ({ item, doc: docsByItem.get(item.id) ?? null }));
+  }
+
+  async upsertDocumentUpload(data: { facilityId: number; itemId: number; documentName: string; uploadedBy: string; expirationDate?: string; effectiveDate?: string }): Promise<ComplianceDocument> {
+    const existing = await db.select().from(complianceDocuments)
+      .where(and(eq(complianceDocuments.facilityId, data.facilityId), eq(complianceDocuments.itemId, data.itemId)))
+      .orderBy(desc(complianceDocuments.uploadedAt))
+      .limit(1);
+    if (existing.length > 0) {
+      const [row] = await db.update(complianceDocuments)
+        .set({
+          documentName: data.documentName,
+          uploadedBy: data.uploadedBy,
+          uploadedAt: new Date(),
+          expirationDate: data.expirationDate ?? null,
+          effectiveDate: data.effectiveDate ?? null,
+          status: "current",
+        })
+        .where(eq(complianceDocuments.id, existing[0].id))
+        .returning();
+      return row;
+    }
+    const [row] = await db.insert(complianceDocuments).values({
+      facilityId: data.facilityId,
+      itemId: data.itemId,
+      documentName: data.documentName,
+      uploadedBy: data.uploadedBy,
+      expirationDate: data.expirationDate ?? null,
+      effectiveDate: data.effectiveDate ?? null,
+      status: "current",
+    }).returning();
+    return row;
   }
 
   async getWallChartItems(): Promise<ComplianceItem[]> {

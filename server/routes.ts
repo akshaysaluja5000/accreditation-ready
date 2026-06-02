@@ -4027,6 +4027,65 @@ Rules:
     }
   });
 
+  // ── Document Vault (upload tracking) ─────────────────────────────────────
+  app.get("/api/document-vault", requireAuth, requireLeadershipRole("director"), async (req: Request, res: Response) => {
+    try {
+      const user = req.user as any;
+      const facilityId: number = user.facilityId ?? 0;
+      const entries = await storage.getDocumentVaultWithStatus(facilityId);
+      res.json(entries);
+    } catch (err) {
+      console.error("document-vault list error:", err);
+      res.status(500).json({ error: "Failed to fetch document vault." });
+    }
+  });
+
+  app.get("/api/document-vault/summary", requireAuth, requireLeadershipRole("director"), async (req: Request, res: Response) => {
+    try {
+      const user = req.user as any;
+      const facilityId: number = user.facilityId ?? 0;
+      const entries = await storage.getDocumentVaultWithStatus(facilityId);
+      const now = new Date(); now.setHours(0, 0, 0, 0);
+      const soon = new Date(now.getTime() + 30 * 86400000);
+      let missing = 0, current = 0, expiring = 0, expired = 0;
+      for (const { doc } of entries) {
+        if (!doc) { missing++; continue; }
+        if (!doc.expirationDate) { current++; continue; }
+        const exp = new Date(doc.expirationDate + "T00:00:00");
+        if (exp < now) expired++;
+        else if (exp <= soon) expiring++;
+        else current++;
+      }
+      res.json({ missing, current, expiring, expired, total: entries.length });
+    } catch (err) {
+      res.status(500).json({ error: "Failed to fetch summary." });
+    }
+  });
+
+  app.post("/api/document-vault/:id/upload", requireAuth, requireLeadershipRole("director"), async (req: Request, res: Response) => {
+    try {
+      const user = req.user as any;
+      const facilityId: number = user.facilityId ?? 0;
+      if (!facilityId) return res.status(400).json({ error: "No facility assigned to your account." });
+      const itemId = parseInt(req.params.id);
+      if (isNaN(itemId)) return res.status(400).json({ error: "Invalid item id." });
+      const { documentName, expirationDate, effectiveDate } =
+        req.body as { documentName: string; expirationDate?: string; effectiveDate?: string };
+      if (!documentName?.trim()) return res.status(400).json({ error: "Document name is required." });
+      const doc = await storage.upsertDocumentUpload({
+        facilityId, itemId,
+        documentName: documentName.trim(),
+        uploadedBy: (user as any).username ?? "Compliance Officer",
+        expirationDate: expirationDate || undefined,
+        effectiveDate: effectiveDate || undefined,
+      });
+      res.json(doc);
+    } catch (err) {
+      console.error("document-vault upload error:", err);
+      res.status(500).json({ error: "Failed to save document." });
+    }
+  });
+
   app.get("/api/compliance/document-vault", requireAuth, requireLeadershipRole("director"), async (req: Request, res: Response) => {
     try {
       const items = await storage.getDocumentVaultItems();
