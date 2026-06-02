@@ -1,0 +1,112 @@
+// ── RUN SEED ─────────────────────────────────────────────────────────────────
+
+async function seed() {
+  const client = await pool.connect();
+  try {
+    // Print column names so we can verify schema match
+    const cols = await client.query(`
+      SELECT column_name FROM information_schema.columns
+      WHERE table_name = 'compliance_items' ORDER BY ordinal_position
+    `);
+    console.log('\n📋 compliance_items columns:', cols.rows.map(r => r.column_name).join(', '));
+
+    await client.query('BEGIN');
+
+    // Delete existing ASC items to avoid duplicates
+    const deleted = await client.query(`DELETE FROM compliance_items WHERE module = 'ASC'`);
+    console.log(`🗑  Deleted ${deleted.rowCount} existing ASC items\n`);
+
+    // Insert all items
+    let inserted = 0;
+    for (const item of items) {
+      await client.query(`
+        INSERT INTO compliance_items
+          (code, name, tier, category, frequency, surface, owner_role, module, created_at, updated_at)
+        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,NOW(),NOW())
+        ON CONFLICT (code, name) DO UPDATE SET
+          tier        = EXCLUDED.tier,
+          category    = EXCLUDED.category,
+          frequency   = EXCLUDED.frequency,
+          surface     = EXCLUDED.surface,
+          owner_role  = EXCLUDED.owner_role,
+          module      = EXCLUDED.module,
+          updated_at  = NOW()
+      `, [item.code, item.name, item.tier, item.category,
+          item.frequency, item.surface, item.owner_role, item.module]);
+      inserted++;
+    }
+
+    await client.query('COMMIT');
+
+    // Verification report
+    const counts = await client.query(`
+      SELECT surface, owner_role, COUNT(*) as count
+      FROM compliance_items WHERE module = 'ASC'
+      GROUP BY surface, owner_role
+      ORDER BY surface, owner_role
+    `);
+
+    console.log('✅ Seed complete!\n');
+    console.log('SURFACE              OWNER          COUNT');
+    console.log('─────────────────────────────────────────');
+    counts.rows.forEach(r => {
+      console.log(`${r.surface.padEnd(20)} ${r.owner_role.padEnd(14)} ${r.count}`);
+    });
+
+    const total = await client.query(`SELECT COUNT(*) FROM compliance_items WHERE module = 'ASC'`);
+    console.log(`─────────────────────────────────────────`);
+    console.log(`TOTAL                               ${total.rows[0].count}`);
+    console.log(`\nExpected: 101 items across 3 surfaces`);
+
+    const wallChart = items.filter(i => i.surface === 'wall_chart').length;
+    const facilityLogs = items.filter(i => i.surface === 'facility_logs').length;
+    const docVault = items.filter(i => i.surface === 'document_vault').length;
+    console.log(`\nIn-script count:`);
+    console.log(`  wall_chart:     ${wallChart}`);
+    console.log(`  facility_logs:  ${facilityLogs}`);
+    console.log(`  document_vault: ${docVault}`);
+    console.log(`  TOTAL:          ${items.length}`);
+
+  } catch (err) {
+    await client.query('ROLLBACK');
+    console.error('\n❌ Seed failed — rolled back');
+    console.error('Error:', err.message);
+    console.error('\nCommon fixes:');
+    console.error('  - If "column does not exist": run Step 1 migration first');
+    console.error('  - If "relation does not exist": table name may differ, check schema');
+    console.error('  - If "ON CONFLICT": table may not have unique constraint on (code, name)');
+    console.error('    Fix: change ON CONFLICT line to just: ) ON CONFLICT DO NOTHING');
+  } finally {
+    client.release();
+    await pool.end();
+  }
+}
+
+seed();
+
+# Wall Chart Restoration — Complete Package for Akshay
+
+# Run everything in this exact order. Do not skip steps.
+
+# Estimated total time: 2-3 hours
+
+## STEP 1 — Database Migration (5 minutes)
+
+## Run this in the Replit Database console (not the shell)
+
+```sql
+ALTER TABLE compliance_items
+ADD COLUMN IF NOT EXISTS surface VARCHAR(20) DEFAULT 'tasks',
+ADD COLUMN IF NOT EXISTS owner_role VARCHAR(30) DEFAULT 'administrator';
+```
+
+Confirm it worked:
+
+```sql
+SELECT column_name FROM information_schema.columns
+WHERE table_name = 'compliance_items';
+```
+
+You should see surface and owner_role in the list.
+
+-----

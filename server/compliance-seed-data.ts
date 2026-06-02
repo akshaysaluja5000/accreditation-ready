@@ -280,7 +280,7 @@ export const HOSPITAL_COMPLIANCE_ITEMS: {
   { volume: "EC", standardCode: "EC.02.06.01", itemName: "Water System Testing and Remediation Records", frequency: "Monthly", tier: 1, category: "Utility Systems", surveyorPriority: 1, moduleScope: "Hospital" },
 ];
 
-// AAAHC Required Postings — documents that must be physically posted in an accredited ASC
+// AAAHC Wall Chart — physical posting requirements for an accredited ASC (TIER_3)
 export const ASC_POSTING_REQUIREMENTS: {
   volume: string;
   standardCode: string;
@@ -290,17 +290,17 @@ export const ASC_POSTING_REQUIREMENTS: {
   category: string;
   surveyorPriority: number;
   moduleScope: string;
+  surface: string;
+  ownerRole: string;
 }[] = [
-  { volume: "POST", standardCode: "RGT.010", itemName: "AAAHC Accreditation Certificate",                 frequency: "Annually", tier: 2, category: "Posting Requirements", surveyorPriority: 1, moduleScope: "ASC" },
-  { volume: "POST", standardCode: "ADM.010", itemName: "State Facility License / Permit to Operate",       frequency: "Annually", tier: 2, category: "Posting Requirements", surveyorPriority: 1, moduleScope: "ASC" },
-  { volume: "POST", standardCode: "ADM.020", itemName: "Medicare / Medicaid Certification",                frequency: "Annually", tier: 2, category: "Posting Requirements", surveyorPriority: 2, moduleScope: "ASC" },
-  { volume: "POST", standardCode: "RGT.010", itemName: "Patient Bill of Rights",                           frequency: "Annually", tier: 2, category: "Posting Requirements", surveyorPriority: 1, moduleScope: "ASC" },
-  { volume: "POST", standardCode: "ADM.030", itemName: "Non-Discrimination Notice (ADA / Section 1557)",   frequency: "Annually", tier: 2, category: "Posting Requirements", surveyorPriority: 1, moduleScope: "ASC" },
-  { volume: "POST", standardCode: "ADM.040", itemName: "HIPAA Notice of Privacy Practices",                frequency: "Annually", tier: 2, category: "Posting Requirements", surveyorPriority: 1, moduleScope: "ASC" },
-  { volume: "POST", standardCode: "RGT.030", itemName: "Patient Grievance Process and Contact Information", frequency: "Annually", tier: 2, category: "Posting Requirements", surveyorPriority: 1, moduleScope: "ASC" },
-  { volume: "POST", standardCode: "SAF.240", itemName: "Emergency Evacuation Route Maps (all exits)",       frequency: "Annually", tier: 2, category: "Posting Requirements", surveyorPriority: 1, moduleScope: "ASC" },
-  { volume: "POST", standardCode: "SAF.240", itemName: "Fire Safety Response Procedures (RACE / PASS)",     frequency: "Annually", tier: 2, category: "Posting Requirements", surveyorPriority: 1, moduleScope: "ASC" },
-  { volume: "POST", standardCode: "ADM.050", itemName: "Workers' Compensation Notice",                      frequency: "Annually", tier: 2, category: "Posting Requirements", surveyorPriority: 2, moduleScope: "ASC" },
-  { volume: "POST", standardCode: "ADM.060", itemName: "OSHA Workers' Rights Poster",                       frequency: "Annually", tier: 2, category: "Posting Requirements", surveyorPriority: 1, moduleScope: "ASC" },
-  { volume: "POST", standardCode: "IPC.010", itemName: "Infection Prevention Contact Information",           frequency: "Annually", tier: 2, category: "Posting Requirements", surveyorPriority: 2, moduleScope: "ASC" },
+  { volume: "POST", standardCode: "ADM.010", itemName: "State Facility License / Permit to Operate",           frequency: "Annually",    tier: 3, category: "Administration",       surveyorPriority: 1, moduleScope: "ASC", surface: "wall_chart", ownerRole: "administrator" },
+  { volume: "POST", standardCode: "ADM.020", itemName: "Medicare / Medicaid Certification",                     frequency: "Annually",    tier: 3, category: "Administration",       surveyorPriority: 1, moduleScope: "ASC", surface: "wall_chart", ownerRole: "administrator" },
+  { volume: "POST", standardCode: "ADM.030", itemName: "Non-Discrimination Notice (ADA / Section 1557)",        frequency: "Annually",    tier: 3, category: "Administration",       surveyorPriority: 1, moduleScope: "ASC", surface: "wall_chart", ownerRole: "administrator" },
+  { volume: "POST", standardCode: "ADM.040", itemName: "HIPAA Notice of Privacy Practices",                     frequency: "Annually",    tier: 3, category: "Administration",       surveyorPriority: 1, moduleScope: "ASC", surface: "wall_chart", ownerRole: "administrator" },
+  { volume: "POST", standardCode: "ADM.050", itemName: "Workers' Compensation Notice",                           frequency: "Annually",    tier: 3, category: "Administration",       surveyorPriority: 2, moduleScope: "ASC", surface: "wall_chart", ownerRole: "administrator" },
+  { volume: "POST", standardCode: "ADM.060", itemName: "OSHA Workers' Rights Poster",                            frequency: "Annually",    tier: 3, category: "Administration",       surveyorPriority: 1, moduleScope: "ASC", surface: "wall_chart", ownerRole: "administrator" },
+  { volume: "POST", standardCode: "RGT.010", itemName: "AAAHC Accreditation Certificate",                        frequency: "Triennially", tier: 3, category: "Governance",           surveyorPriority: 1, moduleScope: "ASC", surface: "wall_chart", ownerRole: "administrator" },
+  { volume: "POST", standardCode: "RGT.020", itemName: "Patient Bill of Rights",                                 frequency: "Annually",    tier: 3, category: "Governance",           surveyorPriority: 1, moduleScope: "ASC", surface: "wall_chart", ownerRole: "administrator" },
+  { volume: "POST", standardCode: "RGT.030", itemName: "Patient Grievance Process and Contact Information",      frequency: "Annually",    tier: 3, category: "Governance",           surveyorPriority: 1, moduleScope: "ASC", surface: "wall_chart", ownerRole: "administrator" },
+  { volume: "POST", standardCode: "IPC.010", itemName: "Infection Prevention Contact Information",                frequency: "Annually",    tier: 3, category: "Infection Prevention", surveyorPriority: 2, moduleScope: "ASC", surface: "wall_chart", ownerRole: "administrator" },
 ];

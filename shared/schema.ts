@@ -541,6 +541,8 @@ export const complianceItems = pgTable("compliance_items", {
   category: text("category").notNull(),
   surveyorPriority: integer("surveyor_priority").notNull().default(2),
   agentWatch: boolean("agent_watch").notNull().default(true),
+  surface: text("surface").notNull().default("tasks"),
+  ownerRole: text("owner_role").notNull().default("administrator"),
 });
 
 export type ComplianceItem = typeof complianceItems.$inferSelect;

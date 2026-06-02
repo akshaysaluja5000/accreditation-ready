@@ -1,0 +1,41 @@
+// ============================================================
+// AccreditationReady — ASC Wall Chart Complete Seed Script v2
+// Includes surface and owner_role routing fields
+//
+// HOW TO RUN:
+//   1. Make sure Step 1 migration has been run first
+//   2. Copy this file to Replit project root
+//   3. In Replit shell: node seed_wall_charts_v2.js
+//
+// SURFACE VALUES:
+//   wall_chart     → Wall Chart Tracker (TIER_3 posting items)
+//   facility_logs  → Facility Logs / Compliance Tasks (TIER_1 recurring)
+//   document_vault → Document Vault (TIER_2 policies + TIER_4 vendor certs)
+//
+// OWNER_ROLE VALUES:
+//   administrator  → office manager / compliance officer
+//   facilities     → maintenance person / facilities contractor
+//   nursing        → charge nurse / DON / IPC coordinator
+//   vendor         → third-party contractor (stores their certificate)
+// ============================================================
+
+const { Pool } = require('pg');
+const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+
+const items = [
+
+  // ══════════════════════════════════════════════════════════
+  // WALL CHART TRACKER — Physical posting requirements only
+  // surface: wall_chart | owner_role: administrator
+  // ══════════════════════════════════════════════════════════
+
+  { code: 'ADM.010', name: 'State Facility License / Permit to Operate',                       tier: 'TIER_3', category: 'Administration',       frequency: 'annual',       surface: 'wall_chart',     owner_role: 'administrator', module: 'ASC' },
+  { code: 'ADM.020', name: 'Medicare / Medicaid Certification',                                 tier: 'TIER_3', category: 'Administration',       frequency: 'annual',       surface: 'wall_chart',     owner_role: 'administrator', module: 'ASC' },
+  { code: 'ADM.030', name: 'Non-Discrimination Notice (ADA / Section 1557)',                    tier: 'TIER_3', category: 'Administration',       frequency: 'annual',       surface: 'wall_chart',     owner_role: 'administrator', module: 'ASC' },
+  { code: 'ADM.040', name: 'HIPAA Notice of Privacy Practices',                                 tier: 'TIER_3', category: 'Administration',       frequency: 'annual',       surface: 'wall_chart',     owner_role: 'administrator', module: 'ASC' },
+  { code: 'ADM.050', name: "Workers' Compensation Notice",                                      tier: 'TIER_3', category: 'Administration',       frequency: 'annual',       surface: 'wall_chart',     owner_role: 'administrator', module: 'ASC' },
+  { code: 'ADM.060', name: "OSHA Workers' Rights Poster",                                       tier: 'TIER_3', category: 'Administration',       frequency: 'annual',       surface: 'wall_chart',     owner_role: 'administrator', module: 'ASC' },
+  { code: 'RGT.010', name: 'AAAHC Accreditation Certificate',                                   tier: 'TIER_3', category: 'Governance',           frequency: 'triennial',    surface: 'wall_chart',     owner_role: 'administrator', module: 'ASC' },
+  { code: 'RGT.020', name: 'Patient Bill of Rights',                                            tier: 'TIER_3', category: 'Governance',           frequency: 'annual',       surface: 'wall_chart',     owner_role: 'administrator', module: 'ASC' },
+  { code: 'RGT.030', name: 'Patient Grievance Process and Contact Information',                  tier: 'TIER_3', category: 'Governance',           frequency: 'annual',       surface: 'wall_chart',     owner_role: 'administrator', module: 'ASC' },
+  { code: 'IPC.010', name: 'Infection Prevention Contact Information',                           tier: 'TIER_3', category: 'Infection Prevention', frequency: 'annual',       surface: 'wall_chart',     owner_role: 'administrator', module: 'ASC' },

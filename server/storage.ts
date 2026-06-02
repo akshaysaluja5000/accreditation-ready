@@ -646,8 +646,10 @@ const LEADERSHIP_CODES_BY_FACILITY: Record<string, string[]> = {
 };
 
 async function seedComplianceItems(client: pg.PoolClient) {
-  // Ensure module_scope column exists on pre-migration DBs
+  // Ensure module_scope, surface, and owner_role columns exist on pre-migration DBs
   await client.query(`ALTER TABLE compliance_items ADD COLUMN IF NOT EXISTS module_scope TEXT NOT NULL DEFAULT 'ASC'`);
+  await client.query(`ALTER TABLE compliance_items ADD COLUMN IF NOT EXISTS surface TEXT NOT NULL DEFAULT 'tasks'`);
+  await client.query(`ALTER TABLE compliance_items ADD COLUMN IF NOT EXISTS owner_role TEXT NOT NULL DEFAULT 'administrator'`);
 
   const { ASC_COMPLIANCE_ITEMS, HOSPITAL_COMPLIANCE_ITEMS } = await import("./compliance-seed-data.js");
 
@@ -668,18 +670,20 @@ async function seedComplianceItems(client: pg.PoolClient) {
     console.log(`Seeded ${ASC_COMPLIANCE_ITEMS.length} ASC compliance items`);
   }
 
-  // Seed AAAHC posting requirement items (runs on existing DBs too — idempotent check by category)
-  const { rows: postingRows } = await client.query("SELECT COUNT(*) FROM compliance_items WHERE category = 'Posting Requirements'");
-  if (parseInt(postingRows[0].count) === 0) {
+  // Seed AAAHC wall chart posting items — idempotent check by surface; migrate old category-based rows
+  const { rows: wallChartRows } = await client.query("SELECT COUNT(*) FROM compliance_items WHERE surface = 'wall_chart'");
+  if (parseInt(wallChartRows[0].count) === 0) {
+    // Remove old schema posting requirement rows (category-based) before re-seeding
+    await client.query("DELETE FROM compliance_items WHERE category = 'Posting Requirements'");
     const { ASC_POSTING_REQUIREMENTS } = await import("./compliance-seed-data.js");
     for (const item of ASC_POSTING_REQUIREMENTS) {
       await client.query(
-        `INSERT INTO compliance_items (module, module_scope, volume, standard_code, item_name, frequency, tier, category, surveyor_priority, agent_watch)
-         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
-        ["asc", "ASC", item.volume, item.standardCode, item.itemName, item.frequency, item.tier, item.category, item.surveyorPriority, true]
+        `INSERT INTO compliance_items (module, module_scope, volume, standard_code, item_name, frequency, tier, category, surveyor_priority, agent_watch, surface, owner_role)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`,
+        ["asc", "ASC", item.volume, item.standardCode, item.itemName, item.frequency, item.tier, item.category, item.surveyorPriority, true, item.surface, item.ownerRole]
       );
     }
-    console.log(`Seeded ${ASC_POSTING_REQUIREMENTS.length} ASC posting requirement items`);
+    console.log(`Seeded ${ASC_POSTING_REQUIREMENTS.length} ASC wall chart posting items`);
   }
 
   const { rows: hospRows } = await client.query("SELECT COUNT(*) FROM compliance_items WHERE module_scope = 'Hospital'");
@@ -1706,7 +1710,7 @@ export class DatabaseStorage implements IStorage {
   async getWallChartData(facilityId: number): Promise<{ item: ComplianceItem; task: ComplianceTask | null }[]> {
     const [items, allTasks] = await Promise.all([
       db.select().from(complianceItems)
-        .where(eq(complianceItems.category, "Posting Requirements"))
+        .where(eq(complianceItems.surface, "wall_chart"))
         .orderBy(complianceItems.surveyorPriority, complianceItems.itemName),
       db.select().from(complianceTasks)
         .where(eq(complianceTasks.facilityId, facilityId)),
