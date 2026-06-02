@@ -120,3 +120,21 @@ id = "OGr-yjkiC6ShLVunW7_LS"
 uri = "file://export-4-config.zip"
 type = "unspecified"
 title = "Config (package.json, tsconfig, tailwind, etc.)"
+
+[[outputs]]
+id = "BpR5cu5rKIJBOUi8kVYmS"
+uri = "file://attached_assets/IMG_5138_1778809817331.jpeg"
+type = "image"
+title = "Wall Chart 1 — Environment of Care & Utilities"
+
+[[outputs]]
+id = "Z0yKWfJkjlQKy1-NrrWfJ"
+uri = "file://attached_assets/IMG_5139_1778809821358.jpeg"
+type = "image"
+title = "Wall Chart 2 — Fire Safety"
+
+[[outputs]]
+id = "-VdPSTNcR8jnOeBn2inqW"
+uri = "file://attached_assets/IMG_5140_1778809824135.jpeg"
+type = "image"
+title = "Wall Chart 3 — Medical Equipment & Infection Control"
