@@ -397,6 +397,33 @@ export const ASC_DOCUMENT_VAULT: {
   { volume: "QUA", standardCode: "QUA.190", itemName: "Drug Diversion Policy and Audit Trail",                               frequency: "Annually",   tier: 2, category: "Quality",              surveyorPriority: 1, moduleScope: "ASC", surface: "document_vault", ownerRole: "administrator" },
 ];
 
+// AAAHC Document Vault — vendor-owned certifications and service records (TIER_4, surface: document_vault)
+export const ASC_DOCUMENT_VAULT_VENDOR: {
+  volume: string; standardCode: string; itemName: string; frequency: string;
+  tier: number; category: string; surveyorPriority: number; moduleScope: string;
+  surface: string; ownerRole: string;
+}[] = [
+  { volume: "FAC", standardCode: "FAC.120", itemName: "Medical Gas and Vacuum Systems Installer Performance Testing", frequency: "As Needed",    tier: 4, category: "Facilities",           surveyorPriority: 1, moduleScope: "ASC", surface: "document_vault", ownerRole: "vendor" },
+  { volume: "FAC", standardCode: "FAC.130", itemName: "Verification Testing by Third Party (Medical Gas)",           frequency: "As Needed",    tier: 4, category: "Facilities",           surveyorPriority: 1, moduleScope: "ASC", surface: "document_vault", ownerRole: "vendor" },
+  { volume: "FAC", standardCode: "FAC.140", itemName: "Annual LIM Testing by Vendor",                                frequency: "Annually",     tier: 4, category: "Facilities",           surveyorPriority: 1, moduleScope: "ASC", surface: "document_vault", ownerRole: "vendor" },
+  { volume: "FAC", standardCode: "FAC.150", itemName: "Documentation of Receptacle Testing",                         frequency: "Annually",     tier: 4, category: "Facilities",           surveyorPriority: 1, moduleScope: "ASC", surface: "document_vault", ownerRole: "vendor" },
+  { volume: "FAC", standardCode: "FAC.160", itemName: "EPSS Service Records",                                        frequency: "Annually",     tier: 4, category: "Facilities",           surveyorPriority: 1, moduleScope: "ASC", surface: "document_vault", ownerRole: "vendor" },
+  { volume: "FAC", standardCode: "FAC.170", itemName: "Annual Generator Load Tests",                                  frequency: "Annually",     tier: 4, category: "Facilities",           surveyorPriority: 1, moduleScope: "ASC", surface: "document_vault", ownerRole: "vendor" },
+  { volume: "FAC", standardCode: "FAC.180", itemName: "Annual Fuel Quality Tests",                                   frequency: "Annually",     tier: 4, category: "Facilities",           surveyorPriority: 2, moduleScope: "ASC", surface: "document_vault", ownerRole: "vendor" },
+  { volume: "FAC", standardCode: "FAC.190", itemName: "3-Year Generator Load and Exhaust Gas Temperature Tests",     frequency: "Triennially",  tier: 4, category: "Facilities",           surveyorPriority: 1, moduleScope: "ASC", surface: "document_vault", ownerRole: "vendor" },
+  { volume: "FAC", standardCode: "FAC.200", itemName: "Operations and Purity Testing (Medical Gas)",                 frequency: "Annually",     tier: 4, category: "Facilities",           surveyorPriority: 1, moduleScope: "ASC", surface: "document_vault", ownerRole: "vendor" },
+  { volume: "SAF", standardCode: "SAF.230", itemName: "Qualifications for Fire Alarm Personnel",                     frequency: "As Needed",    tier: 4, category: "Fire Safety",          surveyorPriority: 2, moduleScope: "ASC", surface: "document_vault", ownerRole: "vendor" },
+  { volume: "SAF", standardCode: "SAF.240", itemName: "Annual Detector Tests by Certified Vendor",                   frequency: "Annually",     tier: 4, category: "Fire Safety",          surveyorPriority: 1, moduleScope: "ASC", surface: "document_vault", ownerRole: "vendor" },
+  { volume: "SAF", standardCode: "SAF.250", itemName: "Semiannual Visual Inspection by Vendor",                      frequency: "Semiannually", tier: 4, category: "Fire Safety",          surveyorPriority: 1, moduleScope: "ASC", surface: "document_vault", ownerRole: "vendor" },
+  { volume: "SAF", standardCode: "SAF.260", itemName: "Annual Full Flow Pump Test by Vendor",                        frequency: "Annually",     tier: 4, category: "Fire Safety",          surveyorPriority: 1, moduleScope: "ASC", surface: "document_vault", ownerRole: "vendor" },
+  { volume: "SAF", standardCode: "SAF.270", itemName: "Annual Extinguisher Service by Vendor",                       frequency: "Annually",     tier: 4, category: "Fire Safety",          surveyorPriority: 1, moduleScope: "ASC", surface: "document_vault", ownerRole: "vendor" },
+  { volume: "SAF", standardCode: "SAF.280", itemName: "Annual Fire Alarm System Test by Vendor",                     frequency: "Annually",     tier: 4, category: "Fire Safety",          surveyorPriority: 1, moduleScope: "ASC", surface: "document_vault", ownerRole: "vendor" },
+  { volume: "SAF", standardCode: "SAF.290", itemName: "5-Year Fire Sprinkler Internal Obstruction Investigation",    frequency: "Every 5 Years",tier: 4, category: "Fire Safety",          surveyorPriority: 1, moduleScope: "ASC", surface: "document_vault", ownerRole: "vendor" },
+  { volume: "SAF", standardCode: "SAF.300", itemName: "Annual Suppression System Service by Vendor",                 frequency: "Annually",     tier: 4, category: "Fire Safety",          surveyorPriority: 1, moduleScope: "ASC", surface: "document_vault", ownerRole: "vendor" },
+  { volume: "IPC", standardCode: "IPC.190", itemName: "Annual Sterilizer Calibration by Vendor",                     frequency: "Annually",     tier: 4, category: "Infection Prevention", surveyorPriority: 1, moduleScope: "ASC", surface: "document_vault", ownerRole: "vendor" },
+  { volume: "IPC", standardCode: "IPC.200", itemName: "Water Quality Testing (where applicable)",                    frequency: "Annually",     tier: 4, category: "Infection Prevention", surveyorPriority: 2, moduleScope: "ASC", surface: "document_vault", ownerRole: "vendor" },
+];
+
 // AAAHC Wall Chart — physical posting requirements for an accredited ASC (TIER_3)
 export const ASC_POSTING_REQUIREMENTS: {
   volume: string;

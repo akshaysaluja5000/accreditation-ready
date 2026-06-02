@@ -670,8 +670,22 @@ async function seedComplianceItems(client: pg.PoolClient) {
     console.log(`Seeded ${ASC_COMPLIANCE_ITEMS.length} ASC compliance items`);
   }
 
+  // Seed AAAHC document vault — vendor-owned service records (TIER_4)
+  const { rows: docVaultVendorRows } = await client.query("SELECT COUNT(*) FROM compliance_items WHERE surface = 'document_vault' AND owner_role = 'vendor'");
+  if (parseInt(docVaultVendorRows[0].count) === 0) {
+    const { ASC_DOCUMENT_VAULT_VENDOR } = await import("./compliance-seed-data.js");
+    for (const item of ASC_DOCUMENT_VAULT_VENDOR) {
+      await client.query(
+        `INSERT INTO compliance_items (module, module_scope, volume, standard_code, item_name, frequency, tier, category, surveyor_priority, agent_watch, surface, owner_role)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`,
+        ["asc", "ASC", item.volume, item.standardCode, item.itemName, item.frequency, item.tier, item.category, item.surveyorPriority, true, item.surface, item.ownerRole]
+      );
+    }
+    console.log(`Seeded ${ASC_DOCUMENT_VAULT_VENDOR.length} ASC document vault vendor items`);
+  }
+
   // Seed AAAHC document vault — policies, plans, certifications (TIER_2)
-  const { rows: docVaultRows } = await client.query("SELECT COUNT(*) FROM compliance_items WHERE surface = 'document_vault'");
+  const { rows: docVaultRows } = await client.query("SELECT COUNT(*) FROM compliance_items WHERE surface = 'document_vault' AND owner_role = 'administrator'");
   if (parseInt(docVaultRows[0].count) === 0) {
     const { ASC_DOCUMENT_VAULT } = await import("./compliance-seed-data.js");
     for (const item of ASC_DOCUMENT_VAULT) {
