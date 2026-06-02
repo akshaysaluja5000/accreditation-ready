@@ -47,6 +47,7 @@ import ComplianceTasksPage from "@/pages/compliance-tasks-page";
 import ContentIntelligencePage from "@/pages/content-intelligence-page";
 import AscWallChartPage from "@/pages/asc-wall-chart-page";
 import AscChecklistPage from "@/pages/asc-checklist-page";
+import AscDocumentVaultPage from "@/pages/asc-document-vault-page";
 import { Loader2 } from "lucide-react";
 
 function ScrollToTop() {
@@ -393,6 +394,9 @@ function Router() {
       </Route>
       <Route path="/asc-checklist">
         {() => <ProtectedRoute component={AscChecklistPage} />}
+      </Route>
+      <Route path="/asc-document-vault">
+        {() => <ProtectedRoute component={AscDocumentVaultPage} />}
       </Route>
       <Route path="/mfa-setup" component={MfaSetupPage} />
       <Route path="/mfa-verify" component={MfaVerifyPage} />

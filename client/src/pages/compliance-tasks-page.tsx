@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowLeft, ClipboardList, Plus, RefreshCw, AlertCircle,
   CheckCircle2, Clock, Play, RotateCcw, Bot, User, Calendar,
-  ChevronDown, ChevronRight, Search, ClipboardCheck, FileText,
+  ChevronDown, ChevronRight, Search, ClipboardCheck, FileText, FolderOpen,
 } from "lucide-react";
 import { useAuth } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
@@ -147,8 +147,9 @@ export default function ComplianceTasksPage() {
   const [showItemPicker, setShowItemPicker] = useState(false);
 
   const { data: tasks = [], isLoading } = useQuery<Task[]>({ queryKey: ["/api/compliance/tasks"] });
+  const itemsQueryKey = isAsc ? "/api/compliance/facility-logs" : "/api/compliance/items";
   const { data: complianceItems = [] } = useQuery<ComplianceItem[]>({
-    queryKey: ["/api/compliance/items"],
+    queryKey: [itemsQueryKey],
     enabled: showCreate,
   });
 
@@ -221,7 +222,9 @@ export default function ComplianceTasksPage() {
             <div className="w-px h-5 bg-border" />
             <div className="flex items-center gap-2">
               <ClipboardList className="w-5 h-5 text-primary" />
-              <h1 className="text-xl font-bold text-foreground">Compliance Tasks</h1>
+              <h1 className="text-xl font-bold text-foreground">
+                {isAsc ? "Facility Logs" : "Compliance Tasks"}
+              </h1>
             </div>
           </div>
           <Button onClick={() => setShowCreate(true)} data-testid="btn-create-task"
@@ -234,36 +237,48 @@ export default function ComplianceTasksPage() {
         {isAsc && (
           <div className="space-y-2">
             <p className="text-[11px] font-black uppercase tracking-wider text-muted-foreground px-1">ASC Reference Tools</p>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-3 gap-2">
               <motion.button
-                className="rounded-2xl border p-3.5 flex items-center gap-3 text-left bg-card hover:bg-muted/40 transition-colors"
+                className="rounded-2xl border p-3 flex flex-col items-start gap-2 text-left bg-card hover:bg-muted/40 transition-colors"
                 onClick={() => setLocation("/asc-wall-chart")}
                 whileTap={{ scale: 0.98 }}
                 data-testid="btn-asc-wall-chart-shortcut"
               >
-                <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 bg-primary/10">
-                  <ClipboardCheck size={18} className="text-primary" />
+                <div className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 bg-primary/10">
+                  <ClipboardCheck size={16} className="text-primary" />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <p className="font-bold text-xs leading-snug">Wall Chart Tracker</p>
-                  <p className="text-[10px] text-muted-foreground mt-0.5">Required postings</p>
+                <div>
+                  <p className="font-bold text-xs leading-snug">Wall Chart</p>
+                  <p className="text-[10px] text-muted-foreground mt-0.5">10 postings</p>
                 </div>
-                <ChevronRight size={14} className="text-muted-foreground shrink-0" />
               </motion.button>
               <motion.button
-                className="rounded-2xl border p-3.5 flex items-center gap-3 text-left bg-card hover:bg-muted/40 transition-colors"
+                className="rounded-2xl border p-3 flex flex-col items-start gap-2 text-left bg-card hover:bg-muted/40 transition-colors"
+                onClick={() => setLocation("/asc-document-vault")}
+                whileTap={{ scale: 0.98 }}
+                data-testid="btn-asc-document-vault-shortcut"
+              >
+                <div className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 bg-violet-100">
+                  <FolderOpen size={16} className="text-violet-600" />
+                </div>
+                <div>
+                  <p className="font-bold text-xs leading-snug">Document Vault</p>
+                  <p className="text-[10px] text-muted-foreground mt-0.5">68 policies</p>
+                </div>
+              </motion.button>
+              <motion.button
+                className="rounded-2xl border p-3 flex flex-col items-start gap-2 text-left bg-card hover:bg-muted/40 transition-colors"
                 onClick={() => setLocation("/asc-checklist")}
                 whileTap={{ scale: 0.98 }}
                 data-testid="btn-asc-checklist-shortcut"
               >
-                <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 bg-muted">
-                  <FileText size={18} className="text-muted-foreground" />
+                <div className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 bg-muted">
+                  <FileText size={16} className="text-muted-foreground" />
                 </div>
-                <div className="flex-1 min-w-0">
+                <div>
                   <p className="font-bold text-xs leading-snug">2026 Checklist</p>
-                  <p className="text-[10px] text-muted-foreground mt-0.5">6 volumes · AAAHC</p>
+                  <p className="text-[10px] text-muted-foreground mt-0.5">6 volumes</p>
                 </div>
-                <ChevronRight size={14} className="text-muted-foreground shrink-0" />
               </motion.button>
             </div>
           </div>

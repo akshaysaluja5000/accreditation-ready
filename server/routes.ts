@@ -4014,6 +4014,32 @@ Rules:
     }
   });
 
+  app.get("/api/compliance/facility-logs", requireAuth, requireLeadershipRole("director"), async (req: Request, res: Response) => {
+    try {
+      const items = await storage.getFacilityLogsItems();
+      res.json(items.map(i => ({
+        id: i.id, itemName: i.itemName, standardCode: i.standardCode,
+        tier: i.tier, category: i.category, frequency: i.frequency,
+        ownerRole: i.ownerRole,
+      })));
+    } catch (err) {
+      res.status(500).json({ error: "Failed to fetch facility log items." });
+    }
+  });
+
+  app.get("/api/compliance/document-vault", requireAuth, requireLeadershipRole("director"), async (req: Request, res: Response) => {
+    try {
+      const items = await storage.getDocumentVaultItems();
+      res.json(items.map(i => ({
+        id: i.id, itemName: i.itemName, standardCode: i.standardCode,
+        tier: i.tier, category: i.category, frequency: i.frequency,
+        ownerRole: i.ownerRole,
+      })));
+    } catch (err) {
+      res.status(500).json({ error: "Failed to fetch document vault items." });
+    }
+  });
+
   app.get("/api/compliance/wall-chart", requireAuth, async (req: Request, res: Response) => {
     try {
       const user = req.user as any;

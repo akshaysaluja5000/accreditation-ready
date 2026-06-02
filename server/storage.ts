@@ -906,6 +906,8 @@ export interface IStorage {
 
   // Compliance
   getComplianceItems(organizationType?: string): Promise<ComplianceItem[]>;
+  getFacilityLogsItems(): Promise<ComplianceItem[]>;
+  getDocumentVaultItems(): Promise<ComplianceItem[]>;
   getComplianceLogs(facilityId: number): Promise<ComplianceLog[]>;
   createComplianceLog(data: { facilityId: number; itemId: number; completedBy: string; notes?: string; nextDue?: string }): Promise<ComplianceLog>;
   getComplianceDocuments(facilityId: number): Promise<ComplianceDocument[]>;
@@ -1610,6 +1612,18 @@ export class DatabaseStorage implements IStorage {
     return db.select().from(complianceItems)
       .where(inArray(complianceItems.moduleScope, scopes))
       .orderBy(complianceItems.volume, complianceItems.surveyorPriority);
+  }
+
+  async getFacilityLogsItems(): Promise<ComplianceItem[]> {
+    return db.select().from(complianceItems)
+      .where(eq(complianceItems.surface, "facility_logs"))
+      .orderBy(complianceItems.ownerRole, complianceItems.category, complianceItems.standardCode);
+  }
+
+  async getDocumentVaultItems(): Promise<ComplianceItem[]> {
+    return db.select().from(complianceItems)
+      .where(eq(complianceItems.surface, "document_vault"))
+      .orderBy(complianceItems.tier, complianceItems.category, complianceItems.standardCode);
   }
 
   async getComplianceLogs(facilityId: number): Promise<ComplianceLog[]> {
