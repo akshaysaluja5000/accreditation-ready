@@ -543,6 +543,10 @@ export const complianceItems = pgTable("compliance_items", {
   agentWatch: boolean("agent_watch").notNull().default(true),
   surface: text("surface").notNull().default("tasks"),
   ownerRole: text("owner_role").notNull().default("administrator"),
+  status: varchar("status", { length: 20 }).default("missing"),
+  postedDate: timestamp("posted_date"),
+  nextDueDate: timestamp("next_due_date"),
+  postedBy: varchar("posted_by", { length: 100 }),
 });
 
 export type ComplianceItem = typeof complianceItems.$inferSelect;

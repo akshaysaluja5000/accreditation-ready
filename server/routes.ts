@@ -4040,6 +4040,55 @@ Rules:
     }
   });
 
+  // ── Wall Chart (item-level status, no task join) ──────────────────────────
+  app.get("/api/wall-chart/items", requireAuth, async (_req: Request, res: Response) => {
+    try {
+      const items = await storage.getWallChartItems();
+      res.json(items);
+    } catch (err) {
+      console.error("Wall chart items error:", err);
+      res.status(500).json({ error: "Failed to fetch wall chart items." });
+    }
+  });
+
+  app.get("/api/wall-chart/summary", requireAuth, async (_req: Request, res: Response) => {
+    try {
+      const items = await storage.getWallChartItems();
+      const now = new Date(); now.setHours(0, 0, 0, 0);
+      const soon = new Date(now.getTime() + 30 * 86400000);
+      let current = 0, expiring = 0, expired = 0, missing = 0;
+      for (const item of items) {
+        if (item.status !== "current") { missing++; continue; }
+        if (!item.nextDueDate) { current++; continue; }
+        const due = new Date(item.nextDueDate);
+        if (due < now) expired++;
+        else if (due <= soon) expiring++;
+        else current++;
+      }
+      res.json({ current, expiring, expired, missing, total: items.length });
+    } catch (err) {
+      res.status(500).json({ error: "Failed to fetch wall chart summary." });
+    }
+  });
+
+  app.post("/api/wall-chart/:id/mark-posted", requireAuth, async (req: Request, res: Response) => {
+    try {
+      const itemId = parseInt(req.params.id);
+      if (isNaN(itemId)) return res.status(400).json({ error: "Invalid item id." });
+      const { postedBy, nextDueDate } = req.body as { postedBy?: string; nextDueDate?: string };
+      const defaultDue = new Date(Date.now() + 365 * 86400000).toISOString().slice(0, 10);
+      const item = await storage.markWallChartItemPosted(
+        itemId,
+        postedBy?.trim() || "Compliance Officer",
+        nextDueDate || defaultDue,
+      );
+      res.json(item);
+    } catch (err) {
+      console.error("mark-posted error:", err);
+      res.status(500).json({ error: "Failed to update posting." });
+    }
+  });
+
   app.get("/api/compliance/wall-chart", requireAuth, async (req: Request, res: Response) => {
     try {
       const user = req.user as any;

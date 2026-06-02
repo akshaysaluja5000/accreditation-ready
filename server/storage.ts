@@ -650,6 +650,10 @@ async function seedComplianceItems(client: pg.PoolClient) {
   await client.query(`ALTER TABLE compliance_items ADD COLUMN IF NOT EXISTS module_scope TEXT NOT NULL DEFAULT 'ASC'`);
   await client.query(`ALTER TABLE compliance_items ADD COLUMN IF NOT EXISTS surface TEXT NOT NULL DEFAULT 'tasks'`);
   await client.query(`ALTER TABLE compliance_items ADD COLUMN IF NOT EXISTS owner_role TEXT NOT NULL DEFAULT 'administrator'`);
+  await client.query(`ALTER TABLE compliance_items ADD COLUMN IF NOT EXISTS status VARCHAR(20) DEFAULT 'missing'`);
+  await client.query(`ALTER TABLE compliance_items ADD COLUMN IF NOT EXISTS posted_date TIMESTAMPTZ DEFAULT NULL`);
+  await client.query(`ALTER TABLE compliance_items ADD COLUMN IF NOT EXISTS next_due_date TIMESTAMPTZ DEFAULT NULL`);
+  await client.query(`ALTER TABLE compliance_items ADD COLUMN IF NOT EXISTS posted_by VARCHAR(100) DEFAULT NULL`);
 
   const { ASC_COMPLIANCE_ITEMS, HOSPITAL_COMPLIANCE_ITEMS } = await import("./compliance-seed-data.js");
 
@@ -908,6 +912,8 @@ export interface IStorage {
   getComplianceItems(organizationType?: string): Promise<ComplianceItem[]>;
   getFacilityLogsItems(): Promise<ComplianceItem[]>;
   getDocumentVaultItems(): Promise<ComplianceItem[]>;
+  getWallChartItems(): Promise<ComplianceItem[]>;
+  markWallChartItemPosted(itemId: number, postedBy: string, nextDueDate: string): Promise<ComplianceItem>;
   getComplianceLogs(facilityId: number): Promise<ComplianceLog[]>;
   createComplianceLog(data: { facilityId: number; itemId: number; completedBy: string; notes?: string; nextDue?: string }): Promise<ComplianceLog>;
   getComplianceDocuments(facilityId: number): Promise<ComplianceDocument[]>;
@@ -1624,6 +1630,25 @@ export class DatabaseStorage implements IStorage {
     return db.select().from(complianceItems)
       .where(eq(complianceItems.surface, "document_vault"))
       .orderBy(complianceItems.tier, complianceItems.category, complianceItems.standardCode);
+  }
+
+  async getWallChartItems(): Promise<ComplianceItem[]> {
+    return db.select().from(complianceItems)
+      .where(eq(complianceItems.surface, "wall_chart"))
+      .orderBy(complianceItems.surveyorPriority, complianceItems.itemName);
+  }
+
+  async markWallChartItemPosted(itemId: number, postedBy: string, nextDueDate: string): Promise<ComplianceItem> {
+    const [row] = await db.update(complianceItems)
+      .set({
+        status: "current",
+        postedDate: new Date(),
+        nextDueDate: new Date(nextDueDate + "T00:00:00"),
+        postedBy,
+      })
+      .where(eq(complianceItems.id, itemId))
+      .returning();
+    return row;
   }
 
   async getComplianceLogs(facilityId: number): Promise<ComplianceLog[]> {
