@@ -670,6 +670,20 @@ async function seedComplianceItems(client: pg.PoolClient) {
     console.log(`Seeded ${ASC_COMPLIANCE_ITEMS.length} ASC compliance items`);
   }
 
+  // Seed AAAHC document vault — policies, plans, certifications (TIER_2)
+  const { rows: docVaultRows } = await client.query("SELECT COUNT(*) FROM compliance_items WHERE surface = 'document_vault'");
+  if (parseInt(docVaultRows[0].count) === 0) {
+    const { ASC_DOCUMENT_VAULT } = await import("./compliance-seed-data.js");
+    for (const item of ASC_DOCUMENT_VAULT) {
+      await client.query(
+        `INSERT INTO compliance_items (module, module_scope, volume, standard_code, item_name, frequency, tier, category, surveyor_priority, agent_watch, surface, owner_role)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`,
+        ["asc", "ASC", item.volume, item.standardCode, item.itemName, item.frequency, item.tier, item.category, item.surveyorPriority, true, item.surface, item.ownerRole]
+      );
+    }
+    console.log(`Seeded ${ASC_DOCUMENT_VAULT.length} ASC document vault items`);
+  }
+
   // Seed AAAHC facility logs — recurring operational checklists (TIER_1)
   const { rows: facilityLogRows } = await client.query("SELECT COUNT(*) FROM compliance_items WHERE surface = 'facility_logs'");
   if (parseInt(facilityLogRows[0].count) === 0) {
