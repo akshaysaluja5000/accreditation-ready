@@ -792,6 +792,33 @@ export default function RoleSelectPage() {
               SPD techs who also cover OR duties, or staff who float across departments, should use this.
             </p>
           </div>
+
+          {/* Inline continue — always visible regardless of viewport */}
+          <div className="mt-10 mb-4 flex flex-col items-center gap-3">
+            {showError && selectedIds.length === 0 && (
+              <p className="text-sm text-destructive font-medium flex items-center gap-1.5">
+                <AlertCircle size={15} />
+                Select at least one role to continue.
+              </p>
+            )}
+            <Button
+              size="lg"
+              className="w-full max-w-xs gap-2"
+              data-testid="button-confirm-role-inline"
+              disabled={setRoleMutation.isPending}
+              onClick={handleContinue}
+            >
+              {setRoleMutation.isPending ? (
+                <>
+                  <Loader2 className="animate-spin" size={16} /> Saving...
+                </>
+              ) : (
+                <>
+                  Continue <ArrowRight size={16} />
+                </>
+              )}
+            </Button>
+          </div>
           </>
           )}
         </div>
