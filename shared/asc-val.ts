@@ -30,39 +30,39 @@ export const ascValLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "VAL Overview - What the Validation Category Covers",
+      title: "What is the purpose of the Validation category in accreditation?",
       content:
-        "The VAL category is unique among AAAHC categories: it validates profile/application information rather than standards of care. Its purpose is to ensure that the information organizations provide to AAAHC in their application accurately reflects their actual operations. All VAL standards are selective (not universal) - they apply when the organization has self-identified certain characteristics in its profile. Most VAL standards are specific to state regulatory requirements: California outpatient surgery settings and New York office-based surgery centers. Standards verify that state-required reports were made, that the organization meets state definitions, and that profile information is accurate.",
+        "The Validation standards are different from other accreditation standards. They check whether the information your facility provided on its accreditation application is accurate and matches what actually happens in practice. If your services or structure have changed, your application must be updated.",
       keyPoint:
-        "VAL validates that your AAAHC application is accurate. If your services or structure changed, your application must be updated. VAL findings typically arise when the profile says one thing and practice reflects another.",
+        "Validation findings happen when the application says one thing but the facility does something different. Keeping the application current is the main obligation.",
     },
     {
-      title: "California VAL Standards - Outpatient Surgery Anesthesia Requirements",
+      title: "When do California anesthesia requirements apply to your facility?",
       content:
-        "California Business and Professions Code §2216 prohibits physicians from performing procedures in outpatient settings using anesthesia (beyond local/peripheral nerve block) in doses that have the probability of placing patients at risk for loss of protective reflexes - unless the setting meets specific requirements and is accredited. VAL.190 verifies that if the organization performs such procedures, this is accurately reflected in the AAAHC profile. VAL.200 verifies that the organization meets California HSC §1248's definition of an 'outpatient setting.'",
+        "In California, special requirements apply when a facility uses anesthesia beyond a simple numbing injection at a level that could cause a patient to lose protective reflexes, such as the ability to swallow or cough. If your facility uses moderate sedation, deep sedation, or general anesthesia, this must be accurately reported on your accreditation profile.",
       keyPoint:
-        "California VAL standards apply when anesthesia beyond local/peripheral nerve block creates loss-of-protective-reflex risk. If you perform procedures with moderate/deep sedation or general anesthesia in California, your profile must accurately reflect this.",
+        "California requirements apply when sedation or anesthesia puts the patient at risk for losing protective reflexes. This must be accurately reflected in the accreditation profile.",
     },
     {
-      title: "California Adverse Event and Death Reporting Requirements",
+      title: "What reporting is required for California outpatient surgery settings?",
       content:
-        "For California outpatient surgery settings providing anesthesia at loss-of-protective-reflex levels, specific reporting requirements apply: VAL.430 - adverse events per HSC §1279.1 must be reported to the Medical Board of California within five days (or 24 hours for ongoing urgent threats) per BPC §2216.3. VAL.440 - deaths or transfers per BPC §2240 must be reported using required forms. VAL.450 - patient deaths require the Outpatient Surgery Patient Death Reporting Form submitted to the Medical Board within 15 days. VAL.460 - transfers exceeding 24 hours require Parts A&B filed in the patient's medical record and Part B submitted to OSHPD within 15 days.",
+        "California facilities that use deeper levels of anesthesia must report certain adverse events to the Medical Board of California within five days, or within 24 hours if there is an ongoing risk. Patient deaths must be reported using a specific state form within 15 days. Transfers that last more than 24 hours must also be filed with the state health department within 15 days.",
       keyPoint:
-        "California has four distinct reporting requirements for outpatient surgery adverse events, deaths, and transfers - each with specific forms, recipients, and timeframes. All four must be tracked and complied with.",
+        "California has four separate reporting requirements for adverse events, deaths, and transfers, each with its own form, recipient, and deadline.",
     },
     {
-      title: "New York Office-Based Surgery VAL Standards",
+      title: "What does New York require for office-based surgery centers to report?",
       content:
-        "New York Public Health Law (NYS PHL) 230-d establishes requirements for office-based surgery centers. The VAL standards for New York verify that the AAAHC profile accurately reflects: the types of healthcare professionals employed (VAL.210); whether the practice has a separate billing entity (VAL.220); whether a billing and collection service is used for all accounts receivable (VAL.230); ownership and financial interest structure (VAL.240-250); physical address and state certification (VAL.260, VAL.280); procedural record maintenance (VAL.290); infection control plan and required incident reporting (VAL.300, VAL.310); and adherence to NYSDOH certificate of need requirements (VAL.320).",
+        "New York office-based surgery centers must have accurate information on file about the types of healthcare providers employed, billing arrangements, ownership interests, and the physical address of the facility. These details must match what is reported on the accreditation profile. Changes to any of these must be updated promptly.",
       keyPoint:
-        "New York office-based surgery VAL standards verify that the practice's profile accurately reflects its billing structure, ownership, address, certifications, and compliance with NYS PHL 230-d requirements.",
+        "New York standards check that the accreditation profile accurately reflects billing structure, ownership, staff types, and facility address.",
     },
     {
-      title: "Profile Accuracy - The Core VAL Obligation",
+      title: "What is the main obligation every facility has under Validation standards?",
       content:
-        "The underlying obligation across all VAL standards is that the information in the AAAHC application and profile is accurate and current. VAL.180 (the parent standard for the Validation category) requires that organizations ensure their profile information is complete and accurate. When operational changes occur - new services, new locations, change in anesthesia level offered, change in billing structure, addition or departure of key personnel - the AAAHC profile must be updated promptly. Profile inaccuracies discovered during survey result in VAL findings - and may affect accreditation status if significant.",
+        "Every facility must keep its accreditation application and profile accurate and current. If services change, if ownership changes, if new staff are added, or if the billing structure changes, the accreditation profile must be updated right away. Waiting until the next accreditation cycle to report a major change is a compliance failure.",
       keyPoint:
-        "The organization is responsible for maintaining an accurate AAAHC profile. Changes in services, locations, personnel, or ownership must be promptly reported to AAAHC. Waiting until the next accreditation cycle to update a material change is a VAL compliance failure.",
+        "A facility is responsible for keeping its accreditation profile up to date. Changes must be reported promptly, not just at renewal.",
     },
   ],
   questions: [

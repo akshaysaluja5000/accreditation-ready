@@ -30,46 +30,46 @@ export const ascFacLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "FAC.100 / FAC.110 - Building Code Compliance and Safe, Secure Operations",
+      title: "What documentation shows that a facility meets building safety standards?",
       content:
-        "FAC.100 requires documentation demonstrating that the facility complies with applicable building codes and regulations - examples include an occupancy permit, a report or letter from a relevant fire authority, or documentation from a building approval authority. FAC.110 requires that the facility is operated in a safe and secure manner: written policies addressing safety and security practices must be present, and observation and interviews during survey must confirm that security practices are actually followed. These two standards establish the foundational physical environment requirements - the facility must be legally permitted, code-compliant, and actively managed to maintain safety and security.",
+        "The facility must have documentation showing it complies with applicable building codes. Acceptable proof includes an occupancy permit, a letter from the local fire authority, or written confirmation from a building approval agency. The facility must also have written policies on safety and security practices, and staff must visibly follow those practices.",
       keyPoint:
-        "FAC.100: building code compliance must be documented (occupancy permit, fire authority letter). FAC.110: written security policies must exist AND be observed in practice. Both documentary evidence and observed behavior are evaluated.",
+        "Building code compliance must be documented with a permit or official letter. Security policies must also be observed in practice, not just written down.",
     },
     {
-      title: "FAC.120 - Physical Environment Supporting Patient Comfort and Privacy",
+      title: "What physical features must a facility have to protect patient privacy and comfort?",
       content:
-        "FAC.120 requires that the physical environment supports patient comfort and privacy. Specific requirements include: reception areas and restroom facilities appropriate for patient/visitor volume; examination rooms, dressing rooms, and reception areas constructed and maintained to ensure patient privacy during interviews, examinations, treatment, and consultation; smoking prohibited within the facility; provisions to reasonably accommodate disabled individuals; adequate lighting and ventilation in all areas; and confirmation through observation and interviews that space allocated for each function is adequate for the activities performed. For telehealth settings, clinical staff must ensure visual, auditory, and electronic privacy are maintained.",
+        "Waiting areas and restrooms must be large enough for the number of patients and visitors typically present. Exam rooms, dressing rooms, and consultation areas must provide privacy during conversations and examinations. The facility must also prohibit smoking inside, provide accommodations for people with disabilities, and ensure adequate lighting and ventilation throughout.",
       keyPoint:
-        "FAC.120 evaluates six elements of patient-centered environment: volume-appropriate reception/restrooms, privacy during exams and consultations, smoking prohibition, disability accommodation, adequate lighting/ventilation, and space adequacy verified through observation.",
+        "Patient privacy, disability accommodations, adequate lighting and ventilation, and smoking prohibition are all required physical environment features.",
     },
     {
-      title: "FAC.130 / FAC.140 - Clean and Maintained Facilities; No Visible Hazards",
+      title: "What must staff look for during routine facility checks?",
       content:
-        "FAC.130 requires that facilities are clean and properly maintained. Elements of compliance include: surfaces free of dust and visible soil; smooth, uniform, easy-to-clean wall finishes; absence of mold and rust; functioning plumbing, hardware, and HVAC systems; and no visible damage or wear on electrical receptacles and switches. FAC.140 requires that there are no visible hazards that might lead to slipping, falling, electrical shock, burns, poisoning, or other trauma. These standards are evaluated primarily through physical observation of the facility during survey - surveyors walk every patient care area and look for hazards, cleanliness issues, and maintenance deficiencies.",
+        "Facility rounds must check that all surfaces are clean and free of visible soil, rust, or mold. Walls, plumbing, and electrical systems must be in good working order. Staff must also watch for anything that could cause a patient or staff member to slip, fall, get a shock, or be burned.",
       keyPoint:
-        "FAC.130/140 are observation-based standards. Surveyors physically walk the facility looking for: cleanliness failures (dust, soil, mold), maintenance deficiencies (damaged electrical outlets, non-functioning HVAC), and visible safety hazards (tripping hazards, unlabeled chemicals, exposed wiring).",
+        "Cleanliness, maintenance, and absence of safety hazards are all evaluated through direct observation during both routine rounds and accreditation surveys.",
     },
     {
-      title: "FAC.150 / FAC.160 - Fire Protection and Safe Emergency Exiting",
+      title: "What is required for fire extinguisher maintenance at your facility?",
       content:
-        "FAC.150 requires that the facility is equipped to protect occupants from fire. This includes: fire extinguishers at visually obvious locations (the nearest 2A or larger extinguisher within 75 feet walking distance from any location); monthly inspections of extinguishers documented; and annual maintenance performed and documented per manufacturer recommendations and fire authority requirements. FAC.160 requires that the facility is designed to provide safe exiting in an emergency: prominently displayed illuminated exit signs with emergency power capability at all exits including exits from each floor or hallway; and if stairwells are part of required exiting, they must be enclosed in fire walls with fire-rated doors.",
+        "Fire extinguishers must be placed so that any point in the building is within 75 feet walking distance of one. Staff must check each extinguisher monthly and document those checks. Full maintenance inspections must be performed and documented annually.",
       keyPoint:
-        "FAC.150: fire extinguishers within 75 feet of any location, monthly inspection documentation, annual maintenance. FAC.160: illuminated exit signs with emergency power at all exits, fire-rated stairwell enclosures where applicable.",
+        "Fire extinguishers must be within 75 feet of any location, checked monthly with documentation, and inspected annually.",
     },
     {
-      title: "FAC.250 - Medical Equipment Maintenance",
+      title: "What must be kept up to date for medical equipment used in patient care?",
       content:
-        "FAC.250 requires that medical equipment is appropriately maintained. Written policies and procedures for equipment maintenance must be present and must address: standardized use of the equipment; requirements for periodic calibration according to manufacturer's specifications (if applicable); and requirements for periodic testing and preventive maintenance according to manufacturer specifications. Documentation must confirm that calibration has been performed per manufacturer specifications (for equipment requiring calibration) and that preventive maintenance has been performed per manufacturer instructions. Equipment maintenance records are reviewed during surveys as evidence of compliance.",
+        "Medical equipment must be regularly maintained following the manufacturer's instructions for calibration and preventive maintenance. Records must show when maintenance was last performed and that it was completed per the manufacturer's schedule. Written policies must also outline the steps for using each type of equipment correctly.",
       keyPoint:
-        "FAC.250 requires written policies AND documentation: (1) calibration records per manufacturer specs (if calibration is required), and (2) preventive maintenance records per manufacturer specs. Both written policy and maintenance evidence must be present.",
+        "Both written maintenance policies and actual maintenance records are required. Calibration and preventive maintenance must follow the manufacturer's schedule.",
     },
     {
-      title: "FAC.260 - Alternate Power for Operative and Recovery Areas",
+      title: "What backup power requirements apply when anesthesia is used at the facility?",
       content:
-        "FAC.260 is a selective standard requiring that alternate power adequate for the types of surgery and procedures performed is available in operative and recovery areas. This standard applies to organizations that administer moderate sedation/analgesia, regional anesthesia, deep sedation/analgesia, or general anesthesia. Two specific requirements must be met: (1) alternate power is available in operative and recovery areas, and (2) the alternate power is adequate for the types of surgery/procedures performed. The standard evaluates both the presence and the adequacy of backup power - a generator that cannot power all critical OR equipment does not satisfy FAC.260.",
+        "If the facility administers moderate sedation, deep sedation, or general anesthesia, it must have backup power available in both the operating area and the recovery area. The backup power must be adequate to support all critical equipment used during procedures. Having a generator alone is not enough if it cannot power all necessary OR equipment.",
       keyPoint:
-        "FAC.260 applies when the ASC uses moderate sedation or deeper. Two requirements: alternate power must be present AND adequate for the procedures performed. Document testing results to demonstrate adequacy.",
+        "Backup power must be both present and adequate for the types of procedures performed. Documented testing is needed to prove it works.",
     },
   ],
   questions: [

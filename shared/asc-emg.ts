@@ -30,39 +30,39 @@ export const ascEmgLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "EMG.100 - Medical Emergency and Unplanned Transfer Procedures",
+      title: "What written procedures must be in place for a patient medical emergency?",
       content:
-        "EMG.100 requires written procedures for managing medical emergencies and unplanned outcomes that require transfer to a higher level of care. The procedures must specifically address four elements: (1) decision-making authority for transferring a patient - who has the authority to order a transfer; (2) the process for transferring a patient - including which hospital, how transport is arranged, and who accompanies the patient; (3) provisions for caring for the patient until the transfer occurs - maintaining safety and stability during the transfer preparation period; and (4) documentation that must accompany the patient - which records, consent forms, and clinical summaries go with the patient. Importantly, staff must be trained on these procedures, and documentation of that training must be present.",
+        "The facility must have written procedures that address who has the authority to decide when a patient needs to be transferred to a hospital, how the transfer is arranged, how to care for the patient while waiting for the transfer, and which records and documents must accompany the patient. Staff must be trained on these procedures, and training must be documented.",
       keyPoint:
-        "EMG.100 is the medical emergency response standard. It requires procedures covering four elements: transfer decision authority, transfer process, care during transfer preparation, and accompanying documentation. Staff training on these procedures must be documented.",
+        "Emergency transfer procedures must address four things: who decides, how to arrange the transfer, care during the wait, and which documents go with the patient.",
     },
     {
-      title: "EMG.140 - BLS-Trained Personnel and Emergency Equipment",
+      title: "What CPR and emergency training is required for all staff?",
       content:
-        "EMG.140 requires that personnel trained in basic life support (BLS) and in the use of cardiac and all other emergency equipment and supplies are present in the facility whenever patients are present. Three documentation requirements apply: (1) personnel files must include documentation of current BLS certification; (2) documentation of training in the use of cardiac and all other emergency equipment and supplies must be present; and (3) a written policy must require the presence of trained and currently certified personnel whenever patients are present. This standard ensures that when a cardiac or medical emergency occurs, someone qualified to respond is always in the building.",
+        "At least one person trained in basic life support must be present in the building at all times when patients are being cared for. Personnel files must include documentation of current BLS certification for all required staff. Staff must also have documented training on how to use the crash cart and all other emergency equipment.",
       keyPoint:
-        "EMG.140 has three requirements: current BLS certifications in personnel files, documented training on emergency equipment, and a written policy requiring trained personnel on-site whenever patients are present. All three must be satisfied.",
+        "BLS-certified personnel must be in the building whenever patients are present. Both BLS cards and emergency equipment training must be documented in personnel files.",
     },
     {
-      title: "EMG.160 - Comprehensive Written Emergency and Disaster Preparedness Plan",
+      title: "What must an emergency and disaster plan address beyond a simple fire drill?",
       content:
-        "EMG.160 requires a comprehensive written emergency and disaster preparedness plan addressing both internal and external emergencies. The plan must include: (1) a provision for safe evacuation of individuals during an emergency - with specific attention to individuals at greater risk (patients under anesthesia, patients with limited mobility, pediatric patients); and (2) participation in community health emergency or disaster preparedness, if applicable. The plan must address internal emergencies (fires, medical crises, utility failures, security incidents) and external disasters (natural disasters, mass casualty events, community infrastructure failures). The 'at-risk populations' requirement is particularly important for surgery centers where patients may be sedated or in recovery and unable to self-evacuate.",
+        "The emergency plan must cover both internal emergencies like fires, medical crises, and power failures, and external disasters like severe weather or mass casualty events. The plan must include specific steps for evacuating patients who cannot move on their own, such as patients who are sedated or recovering from anesthesia.",
       keyPoint:
-        "EMG.160's plan must address both internal and external emergencies and must specifically include evacuation provisions for individuals at greater risk - sedated surgical patients, patients with mobility limitations, and others who cannot self-evacuate.",
+        "The emergency plan must address internal and external emergencies and must specifically account for patients who cannot self-evacuate.",
     },
     {
-      title: "EMG.170 - Scenario-Based Drills: Quarterly Frequency and Written Evaluation",
+      title: "How often must emergency drills be conducted and what must be documented?",
       content:
-        "EMG.170 requires scenario-based drills of the emergency and disaster preparedness plan, with specific frequency and documentation requirements. All drills must be scenario-based (not just walkthroughs). Specific frequencies are required: (1) at least one drill each calendar quarter - four drills per year minimum; (2) at least one CPR technique drill annually; and (3) at least one drill based on the full emergency/disaster plan annually. Documentation requirements include: documentation of drill participants, a written evaluation of each drill, and prompt implementation of any needed corrections or modifications to the emergency plan identified during the drill evaluation.",
+        "The facility must conduct at least one scenario-based emergency drill every quarter, for a minimum of four drills per year. At least one drill each year must be a CPR scenario, and at least one must test the full emergency and disaster plan. After every drill, a written evaluation must document who participated, what happened, and what needs to be improved.",
       keyPoint:
-        "EMG.170 minimum frequency: one drill per quarter (4/year), plus a CPR drill annually, plus a full disaster plan drill annually. Each drill requires a written evaluation. Corrections identified in the evaluation must be implemented promptly.",
+        "Minimum drill frequency is once per quarter. Each drill must have a written evaluation, and identified problems must be corrected promptly.",
     },
     {
-      title: "EMG.180 - Emergency Equipment and Supplies: Maintained and Accessible",
+      title: "What must be true about emergency equipment in patient care areas?",
       content:
-        "EMG.180 requires that appropriate emergency equipment and supplies are maintained and readily accessible to all areas of each patient care service site. 'Readily accessible' means staff can reach emergency equipment quickly without having to search - equipment must be in defined, known locations. 'Maintained' means equipment is checked regularly to confirm it is functional, supplies are not expired, and any deficiencies are corrected promptly. Documentation of equipment checks must be present. Crash carts, AEDs, oxygen, emergency medications, and other emergency supplies are typical items covered by this standard.",
+        "Emergency equipment including crash carts, AEDs, and emergency medications must be stored in defined locations that all staff know. The equipment must be checked regularly to confirm it is functional, fully stocked, and that nothing is expired. Documentation of these checks must be kept.",
       keyPoint:
-        "EMG.180 requires emergency equipment to be both maintained (functional, checked, stocked, not expired) and readily accessible (in defined locations known to all staff). Inaccessible or unmaintained emergency equipment is a direct patient safety failure.",
+        "Emergency equipment must be accessible, in known locations, regularly checked, and fully stocked. Documentation of checks is required.",
     },
   ],
   questions: [

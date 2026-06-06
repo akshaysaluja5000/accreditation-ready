@@ -30,39 +30,39 @@ export const ascIpcLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "IPC.100 - The Written IPC Program",
+      title: "What makes up a good infection prevention program?",
       content:
-        "Standard IPC.100 requires a written infection prevention and control program that is (1) approved by the governing body, (2) validated by an annual formal infection prevention risk assessment, (3) based on nationally recognized guidelines selected by the governing body, (4) integrated into the quality improvement program, and (5) compliant with all applicable state, federal, and OSHA requirements. For Medicare Deemed Status organizations, failure to follow nationally recognized infection control guidelines can result in a condition-level citation.",
+        "The facility must have a written infection prevention program that is approved by leadership. The program must be updated every year based on a formal review of what infection risks actually exist at your site. It must follow nationally recognized guidelines from sources like the CDC.",
       keyPoint:
-        "Five compliance elements: governing body approval, annual risk assessment, nationally recognized guidelines, QI integration, and OSHA/regulatory compliance.",
+        "A written program is not enough on its own. It must be reviewed and updated every year to stay relevant.",
     },
     {
-      title: "IPC.130 - Hand Hygiene and Safe Injection Practice Surveillance",
+      title: "How do you prove that hand hygiene is actually being done correctly?",
       content:
-        "The written IPC program must require active surveillance of hand hygiene consistent with WHO, CDC, or other nationally recognized guidelines (IPC.130.30), and active surveillance of safe injection practices consistent with CDC or other nationally recognized guidelines (IPC.130.40). Active surveillance means ongoing, documented observation - not just a policy statement. IPC.130.20 requires a written hand hygiene policy specifying appropriate products per manufacturer's instructions for use.",
+        "Someone must observe and record how well staff follow hand hygiene steps on an ongoing basis. The same goes for safe injection practices. Watching what actually happens and writing it down is required. Assuming that staff wash their hands does not count as surveillance.",
       keyPoint:
-        "Active surveillance of both hand hygiene AND safe injection practices must be documented. A policy alone does not satisfy IPC.130.30 or IPC.130.40.",
+        "Active observation and documentation of hand hygiene are required. Assuming compliance does not count.",
     },
     {
-      title: "IPC.170 - Sterilization: The Three-Indicator Requirement",
+      title: "What three indicators are required every time instruments are sterilized?",
       content:
-        "IPC.170 governs the cleaning, decontamination, high-level disinfection, and sterilization of instruments, equipment, supplies, and implants. Critically, IPC.170.30 requires that internal AND external indicators, including biological indicators, are used with items undergoing sterilization. Biological indicators (e.g., Geobacillus stearothermophilus spore strips) provide the highest level of sterilization assurance. All processes must adhere to nationally recognized guidelines, manufacturer's instructions, and state/federal requirements.",
+        "Every sterilization load must have an external indicator on the outside of the pack, a chemical indicator placed inside the pack, and a biological indicator that confirms living organisms were actually killed. All three are required. Using only two out of three is a deficiency.",
       keyPoint:
-        "Sterilization requires three types of indicators: external (tape/label changes), internal (chemical integrators inside packs), AND biological (spore tests). Missing any one of the three is a deficiency.",
+        "External, internal chemical, and biological indicators are all required for sterilization. Skipping any one of the three is a problem.",
     },
     {
-      title: "IPC.180 - Sharps Injury Prevention Program",
+      title: "When should you replace a sharps container?",
       content:
-        "IPC.180 requires a written sharps injury prevention program covering: disposal of intact needles and syringes into appropriate puncture-resistant sharps containers; placement of containers in appropriate care areas secured from tampering; replacement when the fill line is reached; and proper handling, storage, and disposal of filled containers in accordance with applicable regulations. Containers must not be overfilled - replacement at the fill line is a specific, enforceable requirement.",
+        "A sharps container must be replaced when the fill line on the container is reached. Waiting until the container is overflowing increases the risk of a needlestick injury. Containers must also be secured so that patients cannot reach into them.",
       keyPoint:
-        "Four elements: proper disposal, proper placement (secured from tampering), replacement at fill line (not when overflowing), and compliant disposal of full containers. All must be in written policy.",
+        "Replace sharps containers at the fill line, not when they are packed full.",
     },
     {
-      title: "IPC.230 - Surgical Environment Safeguards",
+      title: "What rules apply to staff entering the operating room?",
       content:
-        "Selective standard IPC.230 applies to facilities with operating or procedure rooms. It requires written policies for: proper attire for all persons entering ORs/procedure rooms; acceptable aseptic techniques; removal or covering of patient clothing prior to OR entry; freshly laundered attire donned inside the facility before entering restricted areas; surgical hand antisepsis using antimicrobial soap or alcohol-based hand rub; pre-procedure site antisepsis; and environmental controls (temperature, humidity, air pressure) following nationally recognized guidelines. Note: NA may be applied if only non-sterile procedures are conducted.",
+        "Anyone entering the OR must follow written attire rules, like wearing a surgical cap, mask, and shoe covers. Staff must use the proper hand scrub technique before procedures. The OR temperature, humidity, and airflow must also be monitored and kept within the ranges required by national guidelines.",
       keyPoint:
-        "IPC.230 covers seven elements of surgical environment control. Environmental controls for temperature, humidity, and air pressure must align with nationally recognized guidelines - not just be set to comfortable levels.",
+        "OR attire requirements, surgical hand scrub, and environmental controls like temperature and airflow must all be in policy and followed consistently.",
     },
   ],
   questions: [

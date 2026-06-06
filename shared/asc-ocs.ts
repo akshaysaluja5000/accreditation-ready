@@ -30,39 +30,39 @@ export const ascOcsLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "OCS.100 - Dental Services",
+      title: "What extra requirements apply when dental services are provided?",
       content:
-        "When dental services are provided, they must be directed by a qualified dental director. All dentists and dental hygienists must hold current state licensure verified through primary source verification. Dental radiography must be performed by appropriately licensed/certified personnel. Dental records must include: dental/medical history, examination findings, dental charting, treatment plans, informed consent, and procedure notes. Infection prevention practices specific to dentistry (instrument sterilization, dental unit water line management) must be addressed in the IPC program.",
+        "Dental services must have a qualified dentist leading them, and all dentists and hygienists must hold a current state license. Only staff who are licensed to take X-rays may perform dental radiography. Dental records must include the patient's dental and medical history, examination findings, treatment plans, consent, and procedure notes.",
       keyPoint:
-        "Dental services require a dental director, licensed dentists and hygienists, licensed dental radiographers, dental-specific clinical records, and dental infection prevention protocols - all verified and documented separately from general medical credentialing.",
+        "Dental services require a designated director, licensed staff for all tasks, and dental-specific clinical records separate from general medical records.",
     },
     {
-      title: "OCS.110 - Medical Oncology / Chemotherapy",
+      title: "What safety precautions are required when preparing or handling chemotherapy drugs?",
       content:
-        "Organizations providing chemotherapy must have specific safety protocols for hazardous drug handling: chemotherapy agents must be prepared in a biological safety cabinet (BSC) in a negative pressure room; staff handling chemotherapy must use appropriate personal protective equipment (chemotherapy gloves, gowns, eye protection); spill kits must be immediately available; waste must be disposed of as hazardous waste. Chemotherapy administration protocols must define: patient eligibility criteria, dose verification (independent double-check), pre-medication requirements, monitoring during infusion, and management of adverse reactions.",
+        "Chemotherapy drugs must be prepared inside a biological safety cabinet in a room with negative air pressure to protect staff from exposure. Staff handling these drugs must wear chemotherapy gloves, gowns, and eye protection. Spill kits must be immediately available, and all chemotherapy waste must be disposed of as hazardous waste.",
       keyPoint:
-        "Chemotherapy is a high-alert medication with unique hazardous drug handling requirements: BSC preparation, negative pressure room, PPE, spill kits, hazardous waste disposal - all must be documented. Dose verification requires an independent double-check process.",
+        "Chemotherapy preparation requires a safety cabinet, a negative pressure room, full protective gear, spill kits, and hazardous waste disposal. All must be documented.",
     },
     {
-      title: "OCS.120 - Reproductive Health Services",
+      title: "What does a reproductive health provider need to offer patients?",
       content:
-        "Reproductive health services (including abortion services, sterilization, contraception) must comply with applicable state and federal laws. Non-directive counseling must be available - patients must receive information about all options and make autonomous decisions without coercion. Informed consent must be comprehensive and include all relevant options, risks, and alternatives. Confidentiality protections are particularly important in reproductive health - minors' rights to confidential services vary by state and type of service. Staff must be educated on applicable legal requirements.",
+        "Reproductive health providers must offer non-directive counseling, which means giving patients information about all of their options without pressuring them toward a specific choice. Consent must cover all relevant options, risks, and alternatives. Privacy protections are especially important, and staff must understand what the law requires for minors in your state.",
       keyPoint:
-        "Reproductive health services require non-directive counseling, comprehensive informed consent addressing all options, state/federal legal compliance, and heightened confidentiality protections - especially for minors.",
+        "Non-directive counseling, full informed consent, and strong confidentiality protections are all required for reproductive health services.",
     },
     {
-      title: "OCS.130 - In Vitro Fertilization (IVF) Services",
+      title: "What is the most important safety concern in IVF procedures?",
       content:
-        "IVF facilities must meet specific requirements: laboratory standards for embryo culture and storage; gamete and embryo tracking and identification systems to prevent mix-ups; cryopreservation protocols and emergency backup for stored materials; patient disclosure of cumulative success rates; counseling on the disposition of surplus embryos; and qualified embryologists and reproductive endocrinologists. The laboratory director must have specific qualifications in reproductive endocrinology or clinical embryology. Embryo mix-up prevention is the highest-priority patient safety concern in IVF.",
+        "The biggest risk in IVF is mixing up a patient's eggs or embryos with someone else's. To prevent this, a double-identification verification must happen at every step of the process, from egg retrieval through embryo transfer. Each handoff of a specimen requires documented verification by two people.",
       keyPoint:
-        "IVF safety centers on gamete and embryo identification - preventing mix-ups requires a robust verification system at every step of the process. Cumulative success rate disclosure (not just per-cycle rates) is required.",
+        "Embryo mix-ups are the top safety concern in IVF. A two-person verification check is required at every step of the process.",
     },
     {
-      title: "OCS.150 - Quality Monitoring in Specialty Services",
+      title: "How are specialty clinical services included in quality monitoring?",
       content:
-        "Each specialty clinical service must be included in the organization's quality improvement program. Specialty-specific quality metrics must be monitored - for example, chemotherapy: adverse reaction rates, dose calculation errors, extravasation events; for dental: post-procedure infection rates, retreatment rates; for IVF: clinical pregnancy rates, multiple gestation rates, cryopreservation success rates. Specialty-specific incidents must be reviewed through both the quality and peer review programs. Benchmarking against national or specialty-specific data is particularly important in specialty services where local volume may be insufficient for statistical analysis.",
+        "Every specialty service, such as dental, chemotherapy, or IVF, must be included in the quality improvement program with its own specific metrics. For example, chemotherapy programs track error rates and adverse reactions, while IVF programs track clinical pregnancy rates. These results must also be reviewed through the peer review process.",
       keyPoint:
-        "Specialty services are not exempt from QI requirements - they require service-specific metrics, benchmarking against specialty databases, and inclusion in the peer review program.",
+        "Specialty services each need their own quality metrics. General quality measures alone do not satisfy the requirement.",
     },
   ],
   questions: [

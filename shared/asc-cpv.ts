@@ -30,60 +30,60 @@ export const ascCpvLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "CPV.100 - Governing Body Accountability for Credentialing and Privileging",
+      title: "Who is responsible for verifying a provider's credentials before they can work at your ASC?",
       content:
-        "The medical and dental staff are accountable to the governing body through a credentialing, privileging, and reappointment process for which the governing body is ultimately responsible. CPV.100 requires that the governing body: (1) has defined specific criteria for initial appointment and reappointment, (2) applies those criteria uniformly to all applicants, (3) processes applications according to timeframes specified in bylaws or policies, and (4) maintains its own independent credentialing and privileging process. Privileges may not be approved solely because another organization - such as a hospital - has already approved them. That other organization's status may be considered, but it does not substitute for the ASC's own independent verification.",
+        "The governing body is ultimately responsible for verifying credentials and granting clinical privileges to all providers who work at the facility. Having privileges at a hospital does not automatically give a provider privileges at your ASC. The ASC must run its own independent verification process for every provider.",
       keyPoint:
-        "The governing body is responsible for credentialing and privileging - not the administrator, medical director, or an outside organization. Hospital privileges do not automatically transfer. The ASC must have its own independent process.",
+        "Hospital privileges do not transfer. The ASC must run its own separate credentialing process for every provider.",
     },
     {
-      title: "CPV.130 - Approved Processes for Credentialing, Privileging, and Reappointment",
+      title: "What written processes must be in place for credentialing?",
       content:
-        "CPV.130 requires the governing body to have formally approved written processes covering: (1) credentialing, (2) initial appointment, (3) reappointment, (4) granting of clinical privileges, (5) suspension or termination of clinical privileges, and (6) appeals of decisions to suspend or terminate privileges. All these processes must be consistent with applicable state law. These are not informal understandings - they must be documented in bylaws, policies, or procedures that the governing body has reviewed and approved.",
+        "The facility must have governing-body-approved written processes for every stage of the credentialing cycle, including initial appointment, reappointment, granting privileges, suspending or ending privileges, and how providers can appeal a decision. Informal understandings are not enough. All processes must be in writing and consistent with state law.",
       keyPoint:
-        "Every phase of the credentialing and privileging cycle must have a governing body-approved written process: initial credentialing, appointment, reappointment, granting privileges, suspending privileges, and the appeal process.",
+        "Every step of the credentialing cycle must have a formal written process approved by the governing body.",
     },
     {
-      title: "CPV.140 - Initial Application: Evidence of Competence, License, NPDB, and DEA",
+      title: "What information must a provider submit when applying for clinical privileges?",
       content:
-        "A formal application for initial staff privileges must require the applicant to provide sufficient evidence of: training, experience, and current documented competence for the procedures requested; peer references documenting current competence; a current state license; NPDB information; DEA registration information (if applicable); and proof of current medical liability coverage meeting governing body requirements (if applicable). 'Current documented competence' is key - training completed years ago without evidence of ongoing practice is not sufficient. Peer references confirm that individuals who have observed the applicant's practice can attest to their current ability.",
+        "A provider applying for privileges must submit evidence of their training, experience, and current clinical competence. They must also provide a current state license, a National Practitioner Data Bank report, and their DEA registration if they prescribe controlled substances. Peer references are also required to confirm that someone who has seen the provider practice can vouch for their current skills.",
       keyPoint:
-        "The initial application must capture five categories: (1) training/experience/competence, (2) peer references for current competence, (3) current state license, (4) NPDB, (5) DEA (if applicable). All five must be addressed.",
+        "Initial applications must include training evidence, peer references, a current license, an NPDB report, and DEA registration if applicable.",
     },
     {
-      title: "CPV.150 / CPV.160 - Written Attestation and Application Accuracy",
+      title: "What must a provider disclose on their credentialing application?",
       content:
-        "Beyond credentials, the initial application requires written attestation from the applicant addressing: professional liability claims history and any refusal or cancellation of coverage; any licensure revocation, suspension, voluntary relinquishment, probationary status, or limitations; complaints or adverse action reports with professional societies or licensure boards; any denial, suspension, limitation, termination, or nonrenewal of privileges at any healthcare entity; federal actions or sanctions including DEA and Medicare/Medicaid; conviction of any criminal offense (other than minor traffic violations); and any physical, behavioral health, or chemical dependency problems that would interfere with providing high-quality care. The application must also include a formal liability release, an attestation to accuracy and completeness, and a dated signature. An incomplete or unsigned application may not be processed.",
+        "Providers must answer questions about their history of malpractice claims, any past license suspensions or restrictions, any loss or limitation of privileges at other facilities, any federal sanctions, any criminal history, and any health conditions that could affect their ability to provide safe care. The application must be signed and dated by the provider before it can be processed.",
       keyPoint:
-        "The attestation section requires the applicant to self-disclose seven categories of adverse history. The application must have a liability release, an accuracy attestation, and a dated signature - all three must be present before processing begins.",
+        "Providers must disclose adverse history in multiple categories. An unsigned application cannot be processed.",
     },
     {
-      title: "CPV.170 - Primary and Secondary Source Verification",
+      title: "What does primary source verification mean?",
       content:
-        "Upon receipt of a completed and signed application, primary or secondary source verification of credentials must be conducted according to the organization's written procedures. 'Primary source verification' means confirming information directly with the source that issued the credential - for example, verifying licensure through the state licensing board's online portal, not by accepting a copy of the license from the applicant. Organizations may use a Credentials Verification Organization (CVO) that is accredited or certified by a nationally recognized accreditation body; if so, the CVO must perform primary source verification. The same items required on the initial application (license, training, competence, NPDB, DEA) are the items that must be verified through primary or secondary sources.",
+        "Primary source verification means confirming a provider's credentials directly with the organization that issued them. For example, you verify a license by checking the state licensing board directly, not by accepting a copy from the provider. Your facility can use an accredited credentialing verification organization to do this work, but that organization must also perform primary source checks.",
       keyPoint:
-        "Primary source verification means going to the issuing authority directly - state licensing board for licensure, NPDB for adverse actions, specialty board for board certification. Copies provided by the applicant are not primary source verification.",
+        "Primary source verification means going directly to the issuing authority. A copy provided by the provider does not count.",
     },
     {
-      title: "CPV.180 / CPV.190 - Reappointment Every Three Years",
+      title: "How often must providers reapply for clinical privileges?",
       content:
-        "Members of the medical and dental staff must apply for reappointment at least every three years (or more frequently if required by state law or organizational policy). The reappointment application must include at minimum: updated personal information, completed attestation questions (the same attestation categories as initial appointment - covering adverse actions, licensure changes, health status, etc.), and a dated signature. Upon receipt of the completed reappointment application, primary or secondary source verification must again be conducted - the same elements that were verified at initial appointment must be re-verified. Reappointment is not a rubber stamp - it is a full credentialing review of current status.",
+        "Providers must go through a full reappointment process at least every three years, or more often if required by state law. The reappointment process includes a new application, updated disclosures, and a fresh round of primary source verification. Reappointment is not a rubber stamp of the previous review.",
       keyPoint:
-        "Reappointment is required at least every three years and includes a formal application with attestation plus primary/secondary source re-verification. Everything verified at initial appointment must be re-verified at reappointment.",
+        "Reappointment must happen at least every three years and requires the same level of verification as initial credentialing.",
     },
     {
-      title: "CPV.200 - Governing Body Decision-Making with Peer Review Integration",
+      title: "How are peer review results connected to credentialing decisions?",
       content:
-        "The governing body makes final appointment and reappointment decisions following review of the applications or based on recommendations from an internal delegate (such as a Medical Director or Credentials Committee). If the governing body delegates initial review, documentation of the delegation must be present. Critically, peer references and/or peer review activities and results - completed in accordance with AAAHC quality standards - must be incorporated into the appointment and reappointment decision process. At initial appointment, peer references provide this function. At reappointment, the organization's own peer review data (case reviews, quality monitoring results) serve this role. All governing body appointment and reappointment decisions must be documented.",
+        "When the governing body makes a decision about renewing a provider's clinical privileges, it must consider peer review data, quality monitoring results, and any complaint or incident information. A credentialing process that never looks at clinical performance data is missing a required connection between quality and privileging.",
       keyPoint:
-        "The governing body makes the final appointment and reappointment decisions. Peer review data MUST be incorporated - at initial appointment through peer references, at reappointment through the organization's internal peer review results. This is the QUA-CPV linkage.",
+        "Credentialing decisions must incorporate peer review and quality monitoring results. The two processes must connect.",
     },
     {
-      title: "CPV.210 - Ongoing Monitoring of Date-Sensitive Credentialing Information",
+      title: "How do you keep track of licenses and certifications between reappointments?",
       content:
-        "Between formal reappointment cycles, the organization must monitor and document the currency of date-sensitive credentialing and privileging information on an ongoing basis - at minimum at expiration, appointment, and reappointment. This ongoing monitoring applies to: state licensure (which may expire before the three-year reappointment cycle), DEA registration (which has its own renewal cycle), and board certifications (which may require Maintenance of Certification activities or periodic renewal). If a licensure or DEA expiration passes without renewal and the practitioner continues to practice, both the practitioner and the organization are in violation. Organizations may use NPDB Continuous Query as an acceptable option for ongoing monitoring.",
+        "License expiration dates, DEA registration renewals, and board certification deadlines must be tracked on an ongoing basis between reappointment cycles. A license that expires between reappointments must be caught and renewed before the provider continues to practice. Waiting until the three-year reappointment to check these dates is not sufficient.",
       keyPoint:
-        "Reappointment every three years is not enough - licensure, DEA, and board certifications must be tracked on an ongoing basis between cycles. An expired license that is not caught before the next reappointment is a failure of CPV.210.",
+        "Licenses and DEA registrations expire on their own schedule. They must be tracked and renewed continuously, not just at the three-year reappointment.",
     },
   ],
   questions: [

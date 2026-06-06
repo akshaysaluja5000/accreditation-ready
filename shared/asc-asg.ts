@@ -30,39 +30,39 @@ export const ascAsgLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "ASG.100 / ASG.110 - Pre-Operative Assessment and Informed Consent",
+      title: "What must be completed and documented before a procedure begins?",
       content:
-        "Before any surgical or procedural intervention, the patient must receive a complete pre-operative assessment that includes: medical history and physical examination (H&P), review of prior anesthesia records, assessment of the airway, review of current medications, and identification of any conditions that may affect anesthesia or the surgical outcome. The H&P must be completed within the organization's defined timeframe. Informed consent for both the procedure and anesthesia must be documented in the clinical record before the procedure begins.",
+        "Before any surgical procedure, the patient must have a completed history and physical in the chart. The anesthesia provider must also review the patient's airway, current medications, and prior anesthesia history. Signed consent for both the procedure and anesthesia must be in the chart before the patient goes back to the operating room.",
       keyPoint:
-        "Pre-op assessment includes an H&P, anesthesia evaluation (airway, medications, prior anesthesia history), and verified informed consent - all documented BEFORE the procedure begins.",
+        "The history and physical, anesthesia evaluation, and signed consents must all be documented in the chart before the procedure starts.",
     },
     {
-      title: "ASG.120 / ASG.130 - Patient Identification and Surgical Site Marking",
+      title: "Who is responsible for marking the surgical site, and when?",
       content:
-        "Two patient identifiers (name + date of birth, or name + medical record number) must be used to verify patient identity before any procedure, medication administration, or specimen collection. For procedures involving laterality (left vs. right), level (spinal), or a specific site among multiple possible sites, the surgical site must be marked - with patient or representative involvement when possible. The operating practitioner performing the procedure is responsible for the site marking. An exception exists for procedures where the marking would be clinically inappropriate (oral procedures, superficial/single-site procedures per organizational policy).",
+        "The surgeon or provider who will perform the procedure is responsible for marking the surgical site, not the nurse. The mark must be made before the patient enters the OR whenever possible, so it can be confirmed during the time-out. Patients should be involved in the marking process when it is appropriate.",
       keyPoint:
-        "Two identifiers before every procedure. Site marking is performed by the operating practitioner (not a nurse) with patient involvement whenever possible. Document both in the clinical record.",
+        "The operating surgeon marks the site, not nursing staff. The mark must be visible during the time-out.",
     },
     {
-      title: "ASG.140 - The Pre-Procedural Time-Out",
+      title: "What happens during a surgical time-out and when does it occur?",
       content:
-        "A formal pre-procedural time-out (surgical pause) must be conducted immediately before the incision/procedure begins - not before the patient enters the room, and not while team members are still preparing. The time-out must involve all members of the procedural team and must verify: correct patient identity, correct procedure, correct surgical site and side (if applicable), correct patient positioning, and any relevant implants, special equipment, or special requirements. The time-out must be documented in the clinical record.",
+        "The time-out is a formal pause that happens immediately before the first incision or the start of the procedure. Every member of the team must actively participate, not just listen. The team confirms the right patient, the right procedure, the right site and side, the patient's position, and any special equipment needed.",
       keyPoint:
-        "Time-out occurs IMMEDIATELY before incision/procedure begins, with ALL team members actively participating. Documentation of the time-out must appear in the clinical record. Passive listening without active participation does not satisfy this requirement.",
+        "The time-out happens right before the incision, with all team members actively involved. It must be documented in the chart.",
     },
     {
-      title: "ASG.150 / ASG.160 - Anesthesia Monitoring and Management",
+      title: "What does the anesthesia team monitor during a procedure?",
       content:
-        "During any procedure where sedation or anesthesia is administered, monitoring must meet the requirements of nationally recognized guidelines. Standard monitoring for anesthesia includes: pulse oximetry, end-tidal CO2 monitoring (for patients receiving general anesthesia or deep sedation), continuous ECG, blood pressure monitoring at defined intervals, and temperature monitoring when indicated. The anesthesia record must document the continuous monitoring data, medications administered (agent, dose, time), any complications, and the condition of the patient throughout the procedure.",
+        "During any procedure with sedation or anesthesia, the patient must be continuously monitored for oxygen levels, heart rhythm, blood pressure, and end-tidal carbon dioxide when deeply sedated or under general anesthesia. The anesthesia record must document all monitoring data, medications given, and the patient's condition throughout the case.",
       keyPoint:
-        "Anesthesia monitoring documentation must be continuous and complete - not just a start and end note. Monitoring standard is determined by the level of anesthesia administered.",
+        "Continuous monitoring is required during anesthesia. The anesthesia record must be complete, not just a start-and-finish note.",
     },
     {
-      title: "ASG.170 / ASG.180 - Post-Anesthesia Recovery and Discharge Criteria",
+      title: "What must happen before a patient can leave the recovery area?",
       content:
-        "After anesthesia, patients must be continuously monitored in a designated post-anesthesia care area until they meet defined discharge criteria. Monitoring in recovery includes: vital signs, level of consciousness, pain assessment, nausea/vomiting, bleeding, and any complications. Discharge from the recovery area must be based on written criteria that have been approved by the governing body. The most common scoring system is the Modified Aldrete Score, but the criteria must be defined in policy and consistently applied. Discharge criteria must be met and documented before the patient leaves recovery.",
+        "Patients must be continuously monitored in the recovery area until they meet written discharge criteria that have been approved by facility leadership. The criteria must be consistently applied to every patient. Common scoring tools track vital signs, consciousness, pain, and other recovery measures, and the score must be documented before discharge.",
       keyPoint:
-        "Written discharge criteria must be governing-body-approved, consistently applied, and documented as met before the patient is discharged from the recovery area.",
+        "Written discharge criteria must be met and documented before a patient leaves recovery. The criteria must be governing-body-approved.",
     },
   ],
   questions: [

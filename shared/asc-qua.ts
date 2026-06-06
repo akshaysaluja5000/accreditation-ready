@@ -30,39 +30,39 @@ export const ascQuaLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "QUA.100 / QUA.120 - Peer Review: Who Reviews Whom",
+      title: "Who reviews the care that providers give at your facility?",
       content:
-        "Under QUA.100, each physician, dentist, or health care professional must be reviewed by at least one similarly privileged and/or similarly licensed peer. For solo practitioners, an outside peer must provide the review (QUA.110). QUA.120 requires that privileged health care professionals actively participate in peer review: they help develop and apply review criteria for the care they provide, care is selected for ongoing review, the selection process covers all similarly privileged professionals, all clinical incidents are reviewed, and each provider is reviewed at least annually.",
+        "Each provider must be reviewed by at least one peer who holds a similar clinical license or privileges. A surgeon must be reviewed by another surgeon, for example, not just by an administrator. For facilities where a single provider is the only one in their specialty, an outside peer reviewer must be arranged.",
       keyPoint:
-        "Peer review must be by peers (similarly privileged/licensed), cover all providers, include incidents, and occur at minimum annually. Documentation must prove this happened.",
+        "Peer review must be performed by a similarly qualified peer. Administrators, quality consultants, or unrelated specialists do not qualify as peers.",
     },
     {
-      title: "QUA.130 - Ongoing Monitoring: Data → Evaluation → Action",
+      title: "How does the facility use clinical data to identify and fix problems?",
       content:
-        "QUA.130 requires ongoing monitoring of important aspects of care provided by physicians, dentists, and other health care professionals. The standard has three sequential elements: (1) data are collected in an ongoing manner; (2) data are periodically evaluated to identify trends or occurrences that affect patient outcomes; and (3) when data analysis identifies a problem and/or improvement opportunity, action is taken. The AAAHC guidance notes that benchmarking (comparing against external norms) is part of this process.",
+        "The quality program must collect ongoing clinical data, review that data on a regular schedule to look for patterns or problems, and take action when a problem is identified. Collecting data without analyzing it or acting on findings is not a complete quality process. Benchmarking against national averages or similar facilities is also part of this process.",
       keyPoint:
-        "QUA.130 is a three-step sequence: collect → evaluate for trends → act when problems are found. Documentation must show all three steps, not just data collection.",
+        "Quality monitoring is a three-step process: collect data, evaluate for trends, and act when problems are found. All three steps must be documented.",
     },
     {
-      title: "QUA.140 / QUA.150 - Governing Body Reporting and Privileging Connection",
+      title: "How are peer review results connected to a provider's continued privileges?",
       content:
-        "The results of peer review activities must be reported to the governing body at least annually (QUA.140). This creates accountability at the governance level. QUA.150 requires that peer review results are used as part of the process for granting continuation of clinical privileges - closing the loop between quality data and credentialing decisions. Facilities that maintain these as completely separate systems have a structural QUA deficiency.",
+        "Peer review results must be presented to the governing body at least once a year. They must also be used as part of the process for deciding whether a provider keeps their clinical privileges. Facilities that run peer review and credentialing as completely separate processes with no connection to each other have a structural quality problem.",
       keyPoint:
-        "Peer review results must go to the governing body AND be used in privilege continuation decisions. Two separate governance linkage requirements.",
+        "Peer review results must go to the governing body annually and must be used in privilege continuation decisions.",
     },
     {
-      title: "QUA.160 - Quality Improvement Studies",
+      title: "What makes a quality improvement study complete?",
       content:
-        "QUA.160 requires that the quality improvement program include studies that systematically assess, improve, and document the quality of clinical care. A compliant QI study must include: a topic relevant to clinical care; a measurable goal; baseline data collection; an intervention designed to improve performance; re-measurement after the intervention; and documentation of outcomes. Studies may address clinical care processes, outcomes, access, patient safety, or efficiency.",
+        "A complete quality improvement study must have a specific clinical topic, a measurable goal, baseline data, an improvement action, and a follow-up measurement to see if the action worked. A study that only collects data without a baseline, a goal, or a re-measurement phase does not meet the full requirement.",
       keyPoint:
-        "A QI study without a baseline, a measurable goal, an intervention, and re-measurement is not a compliant study under QUA.160 - it is just data collection.",
+        "A quality study requires a baseline, a measurable goal, an intervention, and a re-measurement. Data collection alone is not a complete study.",
     },
     {
-      title: "QUA.220 - Integrating QI, IPC, Safety, and Risk Management",
+      title: "How should infection prevention and safety data be connected to the quality program?",
       content:
-        "QUA.220 requires that the quality management program links peer review, quality improvement activities, infection prevention and control, safety, and risk management in an organized, systematic way. This means that IPC surveillance data, safety event reports, and risk management findings all feed into the QI program - and that the governing body receives an integrated view of organizational performance, not siloed reports.",
+        "Infection prevention data, safety event reports, and risk management findings must all feed into the quality improvement program. The governing body should receive one integrated view of how the facility is performing, not separate unconnected reports from each program. When these programs work in silos, important patterns are missed.",
       keyPoint:
-        "QUA.220 is the integration standard - IPC, safety, risk management, and peer review all connect through the QI program. Separate reports that never inform each other fail QUA.220.",
+        "Infection prevention, safety, risk management, and peer review must all connect through the quality program. Separate reports that never inform each other are not integrated.",
     },
   ],
   questions: [

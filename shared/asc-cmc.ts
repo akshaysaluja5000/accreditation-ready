@@ -30,40 +30,39 @@ export const ascCmcLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "CMC.100 - Clinical Record Requirements",
+      title: "What must be in every patient chart at an ambulatory surgery center?",
       content:
-        "Each patient must have a clinical record that serves as the primary documentation of care provided. Required elements include: patient identification; relevant medical history; physical examination findings; diagnostic test orders and results; diagnoses; evidence of informed consent; anesthesia record (where applicable); operative or procedure note; medication orders and administration records; nursing assessments and notes; discharge instructions; and documentation of follow-up arrangements. Records must be legible, complete, accurate, and authenticated (signed) by the responsible health care professional.",
+        "Every patient must have a chart that includes their medical history and physical exam, diagnostic test results, documentation of informed consent, the anesthesia record when applicable, the operative or procedure note, medication orders and administration records, nursing notes, discharge instructions, and follow-up arrangements. Every entry must be legible and signed by the responsible provider.",
       keyPoint:
-        "Authentication matters: an unsigned or unauthenticated record is not complete. Timely completion of operative notes and discharge documentation is a specific compliance requirement.",
+        "An unsigned or incomplete operative note means the record is not finished. Timely authentication by the responsible provider is required.",
     },
     {
-      title: "CMC.110 - Diagnostic Testing and Pre-Operative Evaluation",
+      title: "What must happen with pre-operative lab or diagnostic results before a procedure?",
       content:
-        "Diagnostic testing ordered in preparation for a procedure must be clinically indicated, ordered by an appropriate provider, and results must be reviewed before the procedure. Abnormal results must be addressed - either resolved, evaluated for clinical significance, or the procedure decision must reflect the known abnormality. Routine pre-operative testing without clinical indication is not required by AAAHC standards and may not be appropriate. The clinical record must document the ordering provider's review of test results relevant to the planned procedure.",
+        "Any test ordered before a procedure must be reviewed by the provider before the case proceeds. If a result is abnormal, the provider must address it, either by treating the problem, deciding it is not clinically significant, or documenting why the procedure should go forward despite the finding. A result filed in the chart without evidence of review does not meet the requirement.",
       keyPoint:
-        "Testing should be clinically driven - not reflexively ordered. When results are abnormal, there must be documented evidence that the provider reviewed and addressed the finding before proceeding.",
+        "Pre-operative test results must be reviewed and any abnormal findings must be addressed and documented before the procedure begins.",
     },
     {
-      title: "CMC.120 - Care Planning and Goal Setting",
+      title: "What must a care plan address beyond the procedure itself?",
       content:
-        "The plan of care must be based on the patient's individual assessment findings. Care planning in the ambulatory surgery context includes: the plan for the procedure (technique, anesthesia type), anticipated post-operative management, patient education plan, and discharge planning. In settings where ongoing care is required (e.g., wound management, medication changes post-procedure), documented care goals and instructions must be communicated to the patient and any other providers involved in follow-up care.",
+        "The care plan must cover not just what procedure will be done, but also the expected post-operative care, what the patient needs to be taught before going home, and how follow-up care will be arranged. For patients who will need ongoing wound care or medication changes after discharge, the plan and instructions must be clearly documented and communicated.",
       keyPoint:
-        "Care planning is not just the operative plan - it includes post-operative management goals, patient education, and transition/follow-up planning. All must be documented.",
+        "Care planning includes post-operative management, patient education, and discharge transition planning, all of which must be documented.",
     },
     {
-      title: "CMC.130 - Discharge Planning and Instructions",
+      title: "What must written discharge instructions include?",
       content:
-        "Written discharge instructions must be provided to the patient before or at the time of discharge. Instructions must be appropriate to the patient's procedure and condition and must address: activity restrictions, diet instructions, wound care (if applicable), medications prescribed (with instructions for use), signs and symptoms requiring immediate medical attention, and follow-up appointment information. Instructions must be in a language and literacy level the patient can understand (PRR.440). Instructions must be documented in the clinical record.",
-      xpReward: 15,
+        "Discharge instructions must be in writing and must address activity restrictions, diet, wound care if applicable, new medications with instructions for use, warning signs that require immediate medical attention, and the follow-up appointment. Instructions must be written at a level the patient can understand. A generic instruction sheet that does not reflect the specific procedure does not meet the requirement.",
       keyPoint:
-        "Written discharge instructions - not verbal - are required and must be documented in the clinical record. Generic instructions that don't reflect the specific procedure and patient needs fail CMC.130.",
+        "Written discharge instructions must be specific to the patient and procedure and must be documented in the chart.",
     },
     {
-      title: "CMC.140 / CMC.190 - Coordination of Care",
+      title: "What must be documented when multiple providers are involved in a patient's care?",
       content:
-        "When a patient's care involves multiple health care providers (referring physician, specialist, primary care provider), coordination must be documented. This includes: communication of relevant clinical findings to the referring or primary care provider; documentation of referrals sent and received; follow-up arrangements confirmed before the patient leaves; and - when the patient requires transfer to a higher level of care - documentation of the clinical status, receiving facility, and communication with the accepting provider. Coordination of care is particularly important for patients with complex comorbidities or when post-operative complications occur.",
+        "When a patient is referred by or followed by another provider, the clinical record must document what information was shared with that provider and when. If the patient is transferred to a higher level of care, the chart must show the patient's clinical status at the time of transfer, where they went, and what communication happened with the accepting provider. Documentation of care coordination is required, not optional.",
       keyPoint:
-        "Coordination of care is a clinical record requirement, not just a professional courtesy. The record must document what information was communicated to which providers, when, and how.",
+        "Coordination of care must be documented in the record, including what was communicated, to whom, and when.",
     },
   ],
   questions: [

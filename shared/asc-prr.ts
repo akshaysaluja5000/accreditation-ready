@@ -30,39 +30,39 @@ export const ascPrrLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "PRR.100 - Dignity, Privacy, and Shared Decision-Making",
+      title: "How should you treat patients from different backgrounds?",
       content:
-        "AAAHC Standard PRR.100 requires that patients be treated in a manner respectful of personal, cultural, and religious beliefs; that patients have the right to personal privacy at check-in and in evaluation and treatment areas; and that patients are given the opportunity to participate in decisions involving their health care unless participation is contraindicated for medical reasons. In telehealth settings, staff must ensure visual, auditory, and electronic privacy on the clinical side, and should encourage patients to secure privacy on their end as well.",
+        "Every patient deserves to be treated with respect for their personal, cultural, and religious beliefs. Patients have the right to privacy during check-in and while being examined or treated. Patients should also have the chance to take part in decisions about their own care.",
       keyPoint:
-        "Respect for beliefs, privacy at check-in and in care areas, and shared decision-making are the three non-negotiable pillars of PRR.100.",
+        "Respect for a patient's beliefs, privacy during care, and involvement in their own decisions are all basic patient rights.",
     },
     {
-      title: "PRR.180 / PRR.190 - Communicating Rights and Responsibilities Before Care",
+      title: "What do patients need to know before their care starts?",
       content:
-        "Before care begins, both patients and staff must be informed of patient rights - including how to voice grievances, how to provide feedback, the right to change providers if alternatives are available, and advance directive rights as required by law. Separately, patients must be informed of their responsibilities: providing complete and accurate health information (including OTC products, supplements, and allergies), following the agreed-upon treatment plan, arranging a responsible adult for transportation, accepting financial responsibility for uncovered charges, and behaving respectfully toward health care professionals and others.",
+        "Before care begins, patients must be told about their rights, including how to file a complaint if something goes wrong. They also need to know their responsibilities, such as sharing accurate health information, following the treatment plan, and arranging a ride home. Staff also need to know patient rights and the complaint process.",
       keyPoint:
-        "PRR.180 = rights before care; PRR.190 = responsibilities before care. Both must be communicated to patients AND staff.",
+        "Rights and responsibilities must be communicated before care begins, to both the patient and the staff.",
     },
     {
-      title: "PRR.200 - Organizational Information Accessible to Patients",
+      title: "What information about your facility should patients be able to find on their own?",
       content:
-        "Standard PRR.200 requires that information about the organization is available to patients without them having to ask: the services provided, provisions for after-hours and emergency care, fees for services, payment policies, the credentials of health care professionals, and - if applicable - the absence of malpractice coverage. For telehealth organizations, an accurate fee schedule should be accessible and after-hours emergency access information should include how to reach clinicians remotely.",
+        "Patients should be able to find out about the services offered, hours, fees, payment policies, and staff credentials without having to ask. This information should be in a brochure, on a website, or posted in the facility. Patients should not need to request it.",
       keyPoint:
-        "Patients should not need to chase down basic organizational information. PRR.200 is an availability standard - not a 'on request' standard.",
+        "Basic facility information must be available to patients without them having to ask for it.",
     },
     {
-      title: "PRR.250 - Informed Consent for Procedures",
+      title: "What must be in the chart before a procedure takes place?",
       content:
-        "PRR.250 requires that before a surgical or procedural intervention, the clinical record demonstrates that the necessity or appropriateness of the proposed procedure and the available alternative treatment techniques were discussed with the patient. The patient's written consent (or that of their representative) must appear in the clinical record before the procedure is performed. A separate standard, PRR.240, requires documented consent for anesthesia. One consent form may satisfy both standards.",
+        "The chart must show that the provider discussed the procedure, why it is needed, and any other options with the patient. The patient must sign a written consent form before the procedure begins. Consent for anesthesia must also be documented, and one form can cover both.",
       keyPoint:
-        "Two elements must be documented: (1) the discussion of necessity, appropriateness, and alternatives; and (2) the written consent before the procedure - not after.",
+        "Two things must be in the chart before the procedure: documentation that the discussion happened, and a signed consent form.",
     },
     {
-      title: "PRR.440 - Communication in a Language and Manner the Patient Understands",
+      title: "How do you communicate with a patient who does not speak English?",
       content:
-        "Standard PRR.440 requires that providers and staff communicate in a manner that the individual and/or the caregiver understands. This means interpretive services must be available for language differences, services must be available for patients with hearing or visual impairments, and information must be provided in a plain and easy-to-understand manner. Organizations should assume patients and caregivers may have difficulty comprehending health information and communicate proactively at an appropriate literacy level.",
+        "Staff must arrange interpreter services when a patient does not speak the same language. Using a family member to interpret is not an acceptable substitute, especially for consent or rights discussions. Services must also be available for patients with hearing or vision problems.",
       keyPoint:
-        "Communication accessibility is a requirement, not a courtesy - interpretive services, impairment accommodations, and plain language are all independently required by PRR.440.",
+        "Interpreter services must be available to all patients who need them. Family members cannot be used as a substitute.",
     },
   ],
   questions: [

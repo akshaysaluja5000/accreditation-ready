@@ -30,39 +30,39 @@ export const ascBehLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "BEH.100 - Behavioral Health Settings and Therapeutic Environment",
+      title: "What makes a therapy room appropriate for behavioral health services?",
       content:
-        "Behavioral health services must be provided in settings appropriate for the type and intensity of services offered. Settings must ensure: adequate privacy during individual therapy sessions (visual and auditory privacy); appropriate group therapy spaces that maintain patient confidentiality from non-participants; safe physical environments that do not pose ligature or self-harm risks for at-risk populations; and access to emergency support appropriate to the behavioral health conditions treated. For telehealth delivery, the therapeutic environment requires that the platform is HIPAA-compliant, staff are in a private location, and patients are informed of and encouraged to secure their own privacy.",
+        "A room used for individual therapy must provide both visual and sound privacy so that conversations cannot be overheard by people in nearby rooms or hallways. Group therapy spaces must also protect what participants share from being heard outside the group. Rooms must be free from physical hazards that could be used for self-harm.",
       keyPoint:
-        "Behavioral health settings must provide true privacy - not just visual privacy but auditory privacy. Group therapy rooms must not allow other patients to overhear individual disclosures.",
+        "Behavioral health settings require true privacy, meaning both visual and sound privacy. Thin walls or open doors that allow conversations to be overheard are not acceptable.",
     },
     {
-      title: "BEH.110 - Patient Rights in Behavioral Health",
+      title: "What extra privacy protections apply to substance use disorder records?",
       content:
-        "Patients receiving behavioral health services retain all rights described in the PRR category plus additional rights specific to behavioral health: freedom from inappropriate use of restraint or seclusion; the right to participate in treatment planning; the right to refuse specific treatments (with documentation of informed refusal); the right to have an advocate present; and specific protections related to confidentiality under 42 CFR Part 2 for substance use disorder records. SUD records have more stringent confidentiality protections than standard HIPAA - they generally cannot be disclosed without explicit patient consent, even to other treating providers.",
+        "Records for patients being treated for substance use disorders have stronger privacy protections than regular medical records. Most disclosures require the patient's specific written consent, even to share information with other treating providers. This applies in addition to HIPAA, not instead of it.",
       keyPoint:
-        "SUD records under 42 CFR Part 2 have stricter confidentiality protections than standard HIPAA records - they require specific patient consent for most disclosures, including disclosures to other healthcare providers.",
+        "Substance use disorder records cannot be shared with most people, including other providers, without the patient's specific written consent.",
     },
     {
-      title: "BEH.120 - Assessment and Individualized Treatment Planning",
+      title: "What should a behavioral health treatment plan include?",
       content:
-        "Each behavioral health patient must receive a comprehensive assessment appropriate to the presenting condition, which forms the basis for an individualized treatment plan. The treatment plan must include: presenting problems and diagnoses (using current DSM criteria); measurable treatment goals with target timelines; specific interventions planned; the disciplines/providers involved; a discharge or transition planning component; and documentation of the patient's involvement in treatment planning. Treatment plans must be reviewed and updated at defined intervals based on the patient's progress and changing needs.",
+        "Each patient must have an individualized treatment plan based on their specific assessment. The plan must include measurable goals with target dates, the specific treatment methods that will be used, which providers are involved, and a discharge planning component. Generic plans that look the same for every patient do not meet the standard.",
       keyPoint:
-        "Treatment plans must be individualized, measurable, and updated based on progress. 'Routine counseling' is not a treatment plan - specific goals (e.g., 'patient will develop and practice two coping strategies for anxiety within 30 days') with specific interventions are required.",
+        "Treatment plans must be specific to the individual patient and include measurable goals. A general plan that applies to everyone does not qualify.",
     },
     {
-      title: "BEH.130 - Staff Qualifications in Behavioral Health",
+      title: "What credentials must staff have to provide behavioral health services?",
       content:
-        "Staff providing behavioral health services must hold the qualifications required by their state for their scope of practice - licensure as appropriate (licensed professional counselor, licensed clinical social worker, psychologist, psychiatrist, certified alcohol and drug counselor, etc.). The organization must verify these credentials through primary source verification and ensure that staff practice within their licensed scope. Supervision requirements for associate-licensed or license-eligible staff must be documented, with the supervising licensed clinician's credentials on file. Clinical staff must receive training appropriate to the specific behavioral health conditions treated.",
+        "Staff providing behavioral health services must hold the license required by their state for the type of services they provide. A licensed counselor and a licensed psychologist have different scopes of practice and cannot perform the same tasks. Staff who are not yet fully licensed must be formally supervised by someone who is.",
       keyPoint:
-        "Behavioral health licensure is state-specific and scope-specific. An LPC may not perform the same services as a licensed psychologist. Supervision arrangements for associate-licensed staff must be formally documented.",
+        "Behavioral health licenses are state-specific and scope-specific. Supervision arrangements for associate-licensed staff must be formally documented.",
     },
     {
-      title: "BEH.150 - Continuity of Care and Discharge Planning",
+      title: "When does discharge planning begin for a behavioral health patient?",
       content:
-        "Continuity of care is particularly important in behavioral health, where abrupt interruption of treatment can have serious consequences including relapse or mental health crisis. The organization must have processes for: referring patients to higher or lower levels of care as clinically indicated (using established criteria such as ASAM criteria for SUD); ensuring warm handoffs when patients transition between providers or levels of care; communicating clinical information to receiving providers; and following up with patients who disengage from treatment prematurely. Discharge planning begins at admission and is updated throughout treatment.",
+        "Discharge planning must begin at the time of admission, not when the patient is about to leave. If a patient needs a different level of care, there must be a process for connecting them with the right services. If a patient stops coming to treatment without completing the program, the facility must document attempts to follow up with that person.",
       keyPoint:
-        "Discharge planning begins at admission in behavioral health - not when discharge is imminent. ASAM criteria guide level-of-care transitions for SUD. Premature disengagement requires documented follow-up attempts.",
+        "Discharge planning starts at admission. Patients who disengage early require documented follow-up attempts.",
     },
   ],
   questions: [

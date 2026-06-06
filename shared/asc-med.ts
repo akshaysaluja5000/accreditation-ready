@@ -30,39 +30,39 @@ export const ascMedLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "MED.100 - Pharmaceutical Services Oversight",
+      title: "What do staff need to know and have available related to medications?",
       content:
-        "MED.100 requires pharmaceutical services to be provided in accordance with standards of care and prevailing laws. Specific requirements include: a written policy defining safe handling and administration per nationally recognized guidelines; posting of current pharmacy state license if required; maintenance of current DEA certification onsite (when controlled substances are present); staff demonstration of knowledge of prevailing pharmaceutical laws; and direct access to current drug information and decision support resources for all relevant staff. If services are provided by telehealth or telemedicine, the standard still applies.",
+        "All staff who handle medications must have access to current drug reference information at the point of care. A current DEA certificate must be kept on site when controlled substances are used. There must also be a written policy on safe medication handling that follows nationally recognized guidelines.",
       keyPoint:
-        "Four staff-facing requirements: written policy on safe handling, DEA certification on site, demonstrated knowledge of pharma laws, and direct access to current drug information for all relevant staff.",
+        "Staff need drug reference access, a DEA certificate on site for controlled substances, and a written safe handling policy.",
     },
     {
-      title: "MED.140 / MED.150 / MED.160 - High-Alert and LASA Medications",
+      title: "What extra steps are required for high-alert medications?",
       content:
-        "MED.140 requires monitoring the medication inventory to track high-alert medications and medications with confused drug names (LASA), with a written policy, documented staff training, and documented monitoring activities. MED.150 requires maintaining a list of currently stocked high-alert medications, implementing error-prevention processes per nationally recognized guidelines, and - critically - co-stocking antidotes, rescue agents, or reversal agents in the same area as the high-alert medication. MED.160 requires a LASA list and processes to prevent LASA administration errors.",
+        "High-alert medications are drugs that can cause serious harm if given incorrectly. Your facility must keep a list of which high-alert medications you stock and have processes to reduce the chance of errors. If a reversal agent or antidote exists for a high-alert drug, it must be stored in the same location as that medication.",
       keyPoint:
-        "High-alert: list it, prevent errors, and co-stock the antidote. LASA: list it and prevent mix-ups. Both require documented monitoring. MED.150.30 on antidote co-stocking is a frequent survey finding.",
+        "High-alert medications require a list, error-prevention steps, and co-storage of the reversal agent at the same location.",
     },
     {
-      title: "MED.170 / MED.180 - Drug Security and Storage",
+      title: "What rules apply to how medications are stored and secured?",
       content:
-        "MED.170 addresses drug security and diversion prevention: pre-signed and post-dated prescriptions are prohibited by written policy (MED.170.10); if prescription pads are used, they must be controlled and secured from unauthorized access; if electronic prescribing is used, systems must be controlled and secured. MED.180 requires drug storage (including samples) to maintain medication safety: medications must be segregated into organized, labeled storage areas designed to minimize drug selection errors; and medications must be stored per manufacturer requirements, state guidelines, and CDC guidelines.",
+        "Medications must be stored in organized, labeled areas that are designed to reduce the chance of grabbing the wrong drug. They must be kept at the temperature and conditions required by the manufacturer. Pre-signed or post-dated prescriptions are never allowed.",
       keyPoint:
-        "Pre-signed and post-dated prescriptions are a hard prohibition - not just a strong recommendation. Drug storage segregation into labeled areas and temperature/condition compliance are the key MED.180 elements.",
+        "Medications must be labeled, organized, stored at proper conditions, and prescription pads must be secured. Pre-signed prescriptions are prohibited.",
     },
     {
-      title: "MED.200 - Medication Labeling Outside the Original Container",
+      title: "What must be written on a label when a medication is taken out of its original container?",
       content:
-        "When a medication is removed from its original container or packaging and not immediately administered, it must be labeled in a standard format. MED.200 requires labels to include at minimum: drug name(s), drug strength(s), amount(s) or volume(s) if not apparent from the container, expiration date and time, and the name or initials of the person transferring the drug. 'Immediate administration' means the person who prepares the medication administers it completely without any break in the process - if there is any gap, labeling is required.",
+        "If a medication is drawn up or poured but not given right away, a label must be attached. The label must include the drug name, the strength, the amount or volume, the expiration date and time, and the name or initials of the person who prepared it. If even a few minutes pass before it is given, a label is required.",
       keyPoint:
-        "Five required label elements: name, strength, amount/volume (if not obvious), expiration date/time, and preparer's name or initials. Any gap between preparation and administration triggers the labeling requirement.",
+        "Five things on every medication label: name, strength, amount, expiration date and time, and the preparer's name or initials.",
     },
     {
-      title: "MED.240 - Vaccine Storage and Handling",
+      title: "What is required for vaccines stored at your facility?",
       content:
-        "MED.240 requires that nationally recognized guidelines for vaccine storage and handling are followed and adopted by the governing body. Written policies must address routine storage and handling, AND emergency storage/handling (equipment failure, power outage, disaster). Staff who receive, handle, or administer vaccines must be trained on these policies. The vaccine storage unit must be equipped with a temperature monitoring device per adopted guidelines. Staff must demonstrate knowledge of procedures when vaccines are exposed to temperature excursions.",
+        "Vaccines must be stored and handled following nationally recognized guidelines approved by facility leadership. A temperature monitoring device must be in the storage unit. Staff who handle vaccines must be trained on routine storage procedures and what to do if the temperature goes out of range.",
       keyPoint:
-        "Six MED.240 elements: governing body adoption of guidelines, routine policies, emergency policies, staff training, temperature monitoring device, and temperature excursion response knowledge - all six must be present.",
+        "Vaccine storage requires a temperature monitoring device, written policies for routine and emergency situations, and documented staff training.",
     },
   ],
   questions: [

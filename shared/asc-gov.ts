@@ -30,39 +30,39 @@ export const ascGovLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "GOV.160 / GOV.170 - Strategic Direction and Operational Accountability",
+      title: "Who is responsible for the overall direction and legal accountability of the facility?",
       content:
-        "The governing body is responsible for setting strategic direction (mission, goals, long-range plans) and ensuring they are pursued - GOV.160. Under GOV.170, the governing body bears full legal responsibility for organizational operations either directly or through professional delegation. This includes establishing organizational structure, adopting bylaws, implementing financial management, ensuring compliance with all applicable laws (ADA, HIPAA, fraud/abuse, NPDB reporting), and overseeing compliance with AAAHC Standards. Product sales to patients and telehealth services must also be reviewed and approved.",
+        "The governing body, such as a board of directors or owner-group, is responsible for setting the mission and goals of the facility and making sure they are followed. The governing body also carries the legal responsibility for all operations, including clinical care, financial management, and compliance with laws. This accountability cannot be fully passed off to an administrator or medical director.",
       keyPoint:
-        "GOV.160 = direction; GOV.170 = accountability. Both are Universal/Tier 1 standards - failures here carry the highest survey weight.",
+        "The governing body sets the direction and is legally accountable for everything that happens at the facility. This responsibility cannot be delegated away entirely.",
     },
     {
-      title: "GOV.180 - Defining the Scope of Services",
+      title: "What must be written down about the services your facility provides?",
       content:
-        "The governing body must formally define the scope of services (GOV.180), documenting: the treatments, procedures, and services the organization provides; the population served; and the hours of operation. If telehealth or telemedicine services are offered, they must be referenced, defined, and approved in the scope of services. The governing body must review the scope of services at least annually (GOV.240.60) and revise as needed.",
+        "The governing body must formally document what services the facility offers, which patient populations it serves, and what its hours of operation are. This document must be approved by the governing body and reviewed at least once a year. If telehealth services are offered, those must also be included.",
       keyPoint:
-        "Scope of services = what you do + who you serve + when you are open. All three elements must be in writing and governing-body-approved.",
+        "The scope of services must describe what is done, who is served, and when the facility is open. All three elements must be written and approved.",
     },
     {
-      title: "GOV.200 - Contract and Arrangement Oversight",
+      title: "What oversight is required for contracts and outside service arrangements?",
       content:
-        "GOV.200 requires governing body approval and compliance oversight for all major contracts affecting clinical care - including external service contracts (radiology, pathology, lab, housekeeping), education contracts for students and trainees, after-hours telephone triage contracts, and delegated activity arrangements. GOV.200.50 further requires that services provided under all major contracts are rendered in a safe and effective manner, meaning ongoing monitoring - not just initial approval - is expected.",
+        "The governing body must approve all major contracts that affect patient care, such as contracts for radiology reading, laboratory services, or housekeeping. Approval at the time of signing is not enough. The governing body must also confirm on an ongoing basis that contracted services are being provided safely and effectively.",
       keyPoint:
-        "Governing body approval must extend to ongoing compliance monitoring - signed contracts alone are not sufficient. Add quarterly or annual contract performance review to governing body minutes.",
+        "Governing body approval of major contracts must include ongoing monitoring, not just a one-time signature.",
     },
     {
-      title: "GOV.230 / GOV.240 - Meeting Frequency and Annual Review Requirements",
+      title: "What must the governing body review at least once a year?",
       content:
-        "The governing body must meet at least annually (GOV.230), with minutes or records kept for each meeting. At least annually (GOV.240), the governing body must review: patient rights and responsibilities, delegated administrative responsibilities, the QI program, the IPC program, the safety program, the emergency and disaster preparedness plan, the risk management program, the organization's policies and procedures, appointment/reappointment processes, and the scope of services. Revisions must be made as needed following each review.",
+        "Every year, the governing body must formally review a specific list of topics, including patient rights, the quality improvement program, the infection prevention program, the safety program, emergency preparedness, and the scope of services. Meeting minutes must show that each topic was actually reviewed, not just listed on the agenda.",
       keyPoint:
-        "GOV.240 is the annual review mandate. Surveyors look at board minutes to confirm each item was reviewed - a generic 'annual review conducted' statement is not sufficient.",
+        "Annual governing body review must cover a defined set of topics. Meeting minutes must document that each topic was reviewed, not just mentioned.",
     },
     {
-      title: "GOV.270 / GOV.290 - Governing Body Oversight of Anesthesia and Surgery",
+      title: "Who decides which procedures and types of anesthesia can be performed at your facility?",
       content:
-        "Anesthesia techniques used in the organization must be limited to those approved by the governing body upon the recommendation of qualified professional personnel (GOV.270). Similarly, surgical procedures must be limited to those approved by the governing body upon the recommendation of qualified medical staff (GOV.290). For organizations using energy-emitting devices (lasers, light-based technologies), each provider must receive governing body-granted privileges for each specific device they use (GOV.310).",
+        "The governing body must formally approve which surgical procedures and which types of anesthesia are permitted at the facility. This approval must be based on recommendations from qualified clinical staff. The approved list must exist in writing and must match what is actually being performed.",
       keyPoint:
-        "Governing body approval of anesthesia techniques and surgical procedures is not a formality - the approved list must exist in writing and be tied to the actual procedures performed.",
+        "The governing body must approve both the surgical procedures and the anesthesia techniques used. An approved list must be in writing.",
     },
   ],
   questions: [

@@ -30,46 +30,46 @@ export const ascAdmLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "ADM.100 - Notifying AAAHC of Significant Events Within 15 Days",
+      title: "What must be documented when your facility notifies the accreditation body of a significant change?",
       content:
-        "ADM.100 requires the organization to notify AAAHC in writing within 15 calendar days of significant organizational, ownership, operational, or quality of care events. Examples of reportable events include changes in ownership, changes in the governing body, significant changes in services offered, patient deaths that may reflect a quality of care concern, and other events specified in AAAHC policies and procedures. This notification requirement ensures that AAAHC can determine whether an interim survey or other follow-up action is needed. Failure to notify AAAHC of a reportable event is itself a compliance deficiency and may affect accreditation status.",
+        "The facility must send written notification to AAAHC within 15 calendar days when significant events occur, such as changes in ownership, major changes in services offered, or a patient death that raises a quality concern. If you are not sure whether something needs to be reported, report it and let AAAHC decide. Missing a required notification is itself a compliance problem.",
       keyPoint:
-        "15 calendar days from the significant event - not 15 business days. When in doubt whether an event is reportable, notify AAAHC and let them determine whether it requires further action.",
+        "Notification must be in writing and sent within 15 calendar days of the significant event. When in doubt, report it.",
     },
     {
-      title: "ADM.110 - Accurate Public Representation of Accreditation",
+      title: "What can you say publicly about your facility's accreditation?",
       content:
-        "ADM.110 requires that the organization's representation of its accreditation to the public accurately reflects the AAAHC-accredited entity. This means the organization may only state that it is AAAHC-accredited if the specific site, service line, and entity are covered by a current AAAHC accreditation. Organizations may not imply broader accreditation coverage than actually exists - for example, representing that a non-accredited satellite location is covered by the accreditation of the main site, or advertising as accredited after accreditation has lapsed.",
+        "A facility can only claim to be accredited if the specific site and services are covered by a current, active accreditation. You cannot advertise one location as accredited if a different location holds the accreditation. You also cannot continue to claim accreditation after the accreditation period has ended.",
       keyPoint:
-        "Public accreditation claims must match reality. Only the specific entity with an active AAAHC accreditation may represent itself as accredited. Misrepresentation is an ADM.110 deficiency and a potential legal matter.",
+        "Public claims about accreditation must exactly match what is covered by the current active accreditation. Overstating coverage is a compliance violation.",
     },
     {
-      title: "ADM.120 - Administrative Policies, Procedures, and Controls",
+      title: "What must a facility's administrative policies and personnel files include?",
       content:
-        "ADM.120 requires that administrative policies, procedures, and controls adopted by the governing body are implemented to ensure orderly and efficient management. Key sub-elements include: (1) all policies adopted by the governing body are appropriate for the organization's services and patient population; (2) personnel files demonstrate that all staff possess at least the minimum qualifications, experience, competencies, and licensure/certification required for their positions; (3) written job descriptions define and delineate functional responsibilities, authority, and required qualifications; (4) written policies and documentation show reasonable steps to comply with applicable laws and regulations; and (5) official organizational documents - including governing body meeting minutes, corporate documents, and bylaws - are properly filed, secured, and safeguarded.",
+        "Written policies must govern how the organization operates, and personnel files must show that every staff member has the qualifications, experience, and current licenses required for their job. Every position must have a written job description. Important organizational documents like governing body meeting minutes and corporate records must be securely stored.",
       keyPoint:
-        "ADM.120 is the administrative infrastructure standard: policies govern operations, job descriptions define roles, personnel files prove qualifications, and official documents are secured. Surveyors will ask to see personnel files, job descriptions, and organizational records.",
+        "Administrative policies, written job descriptions, documented qualifications in personnel files, and secured organizational records are all required.",
     },
     {
-      title: "ADM.130 - Fiscal Controls",
+      title: "What financial controls must the facility have in writing?",
       content:
-        "ADM.130 requires that fiscal controls are in place to protect the assets of the organization. Written policies and procedures must address: (1) accounting controls over assets, liabilities, revenues, and expenses; (2) controlling accounts receivable and accounts payable; (3) controlling cash payments and credit arrangements; (4) managing unpaid accounts and accounts being considered for transfer to a collection agency; and (5) managing the purchase, receipt, distribution, maintenance, and security of supplies, equipment, and facilities. The fiscal controls standard ensures financial integrity and protection of organizational assets - a governing body responsibility that is evaluated during AAAHC surveys.",
+        "Written policies must cover how the facility tracks its assets, manages accounts receivable and payable, handles cash, manages unpaid accounts, and controls supplies and equipment. These financial controls protect the organization and must be in writing. Verbal financial practices are not sufficient.",
       keyPoint:
-        "ADM.130 requires written fiscal control policies covering five areas: accounting controls, accounts receivable/payable, cash/credit, unpaid accounts/collections, and supply/equipment management. Verbal financial controls are not sufficient.",
+        "Five areas of financial controls must be covered in writing: accounting, receivables and payables, cash handling, collections, and supply management.",
     },
     {
-      title: "ADM.140 / ADM.150 / ADM.160 - Personnel Policies, Orientation Content, and Completion",
+      title: "What topics must be covered during staff orientation?",
       content:
-        "ADM.140 requires written personnel policies to be established and implemented, covering: communication of policies to employees at hire, any incentive programs, employee privileges and responsibilities (including incident/adverse event reporting), workplace violence and aggression handling, periodic performance appraisals (including current competence), and I-9 (employment eligibility) compliance. ADM.150 requires that orientation and training content addresses the organization's key programs - specifically: patient rights and responsibilities, workplace violence, safety (including fire and sharps injury prevention), emergency and disaster preparedness, infection prevention (including OSHA bloodborne pathogen training), risk management and incident reporting, and confidentiality/privacy (HIPAA). ADM.160 requires that orientation and training are actually completed: personnel files must document orientation within 30 days of employment, completion of annual training, and training provided when an identified need arises.",
+        "Every new employee must receive orientation that covers patient rights, workplace violence, safety including fire and sharps injury prevention, emergency preparedness, infection prevention including bloodborne pathogens, incident reporting, and patient privacy. This orientation must be completed and documented within 30 days of the employee's start date. Annual training on these same topics must also be documented.",
       keyPoint:
-        "ADM.140: written personnel policies communicated at hire. ADM.150: seven specific orientation topics required. ADM.160: orientation documented within 30 days of hire, annual training documented, and training when a need is identified. All three are linked - the policy (140) defines what training is required (150) and the records prove it happened (160).",
+        "Seven specific topics must be covered in orientation. Completion must be documented within 30 days of hire, and annual refreshers must also be documented.",
     },
     {
-      title: "ADM.170 / ADM.180 - Professional Development and Personnel Sufficiency",
+      title: "What does the facility need to do to ensure it has enough qualified staff?",
       content:
-        "ADM.170 requires that ongoing professional development and improvement of staff performance are supported. This includes providing convenient access to reliable, up-to-date clinical and educational information, and encouraging healthcare professionals to participate in internal or external educational programs consistent with the organization's mission. ADM.180 requires that all personnel assisting in the provision of healthcare services are (1) appropriately qualified, (2) appropriately supervised, and (3) available in sufficient numbers for the care provided. Both qualification and supervision must be evidenced in personnel records; sufficient numbers must be confirmed through interviews and observation. This standard applies to all clinical support personnel - not only licensed independent practitioners.",
+        "All staff who provide patient care must be appropriately qualified for their role and have documented supervision when required. The facility must also confirm through observation and interviews that there are enough trained staff to safely handle the number and complexity of patients being cared for. Documentation must support both the qualifications and the supervision arrangements.",
       keyPoint:
-        "ADM.170: professional development is supported (education access, participation encouraged). ADM.180: three requirements for all healthcare personnel - appropriately qualified, appropriately supervised, and sufficient in number. All three must be demonstrated with evidence.",
+        "Three things must be demonstrated for all clinical staff: appropriate qualifications, appropriate supervision, and sufficient numbers confirmed through observation.",
     },
   ],
   questions: [

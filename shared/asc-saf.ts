@@ -30,39 +30,39 @@ export const ascSafLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "SAF.100 / SAF.110 - Risk Management Program: Written Policies Required",
+      title: "What written policies does your safety program need to cover?",
       content:
-        "The risk management program must include written policies addressing: methods for dismissing or refusing care to patients, managing incapacitated health care professionals during procedures, addressing impaired health care professionals, documentation of after-hours coverage responsibility, documentation of after-hours clinical advice provided, and restrictions on observers in patient care areas (with consent requirements). Additionally, policies must address: near-miss reporting encouragement, reportable event communication, periodic litigation review, patient complaint review with defined response times, notification to the liability carrier of adverse events, and periodic clinical record review.",
+        "Your facility must have written policies covering how to handle a provider who becomes impaired or incapacitated during a procedure, how patients can be dismissed from care, and how after-hours coverage is documented. The program must also include policies on encouraging staff to report near misses and on reviewing patient complaints within a set timeframe.",
       keyPoint:
-        "SAF.100 and SAF.110 together require written risk management policies covering both patient safety and organizational risk topics. Six elements in SAF.100, seven in SAF.110.",
+        "Safety policies must address both clinical situations, like an impaired provider, and organizational risks, like complaint timelines.",
     },
     {
-      title: "SAF.120 / SAF.130 - Defining and Acting on Incidents and Adverse Events",
+      title: "What is the difference between an incident and an adverse event?",
       content:
-        "SAF.120 requires the risk management program to formally define 'incident' and 'adverse event.' An incident includes any clinical or non-clinical occurrence not consistent with routine care, including near-miss events. An adverse event includes unexpected occurrences causing death or serious injury not related to the patient's natural disease course, process variations with risk of serious adverse outcome, breaches in medical/administrative care, and drug/material reactions. SAF.130 requires that all incidents and adverse events are reviewed, acted upon when appropriate, analyzed to identify underlying causes, and that improvements are implemented when indicated.",
+        "An incident is anything that happens during care that is not part of the normal process, including near misses where no harm occurred. An adverse event is more serious, such as an unexpected death, a serious injury, or a significant breakdown in care. Both must be reported and reviewed.",
       keyPoint:
-        "SAF.120 = definitions; SAF.130 = action. All incidents must be reviewed, near-misses must be analyzed for systemic factors, and improvements must be implemented when root cause analysis indicates they are needed.",
+        "Near misses are incidents. Unexpected serious harm is an adverse event. Both require review and documentation.",
     },
     {
-      title: "SAF.140 - The Written Safety Program",
+      title: "What must your written safety program include?",
       content:
-        "SAF.140 requires a written safety program that addresses the environment of care and meets or exceeds local, state, and federal safety requirements. The program must include processes for: managing identified hazards and near misses (SAF.140.10); reducing and avoiding medication errors (SAF.140.20); preventing falls and other physical injuries (SAF.140.30); preventing skin and tissue injury from chemicals, cleaning solutions, and hazardous exposure (SAF.140.40); and ensuring food and drink for patient use is handled in compliance with local, state, and federal guidelines (SAF.140.50, NA if not applicable).",
+        "Your safety program must cover how to manage hazards, how to reduce medication errors, how to prevent falls and other physical injuries, and how to protect staff and patients from harmful chemicals. Each of these areas needs a defined process, not just a general statement about safety.",
       keyPoint:
-        "SAF.140's five program elements span hazard management, medication errors, falls, chemical injury, and food safety. All five must be present in the written safety program.",
+        "Five areas must be covered in the written safety program: hazard management, medication errors, fall prevention, chemical injury prevention, and food safety if applicable.",
     },
     {
-      title: "SAF.150 / SAF.160 - Product Recall and Expiration Date Programs",
+      title: "What must happen when a product recall notice is received?",
       content:
-        "SAF.150 requires a written recall policy covering: sources of recall information (FDA, CDC, manufacturers); how staff are notified; how the organization determines if a recalled product is present or was given to patients; response to recalled products; disposition/return; and patient notification as appropriate. SAF.160 requires a written policy for monitoring and disposing of products with manufacturer expiration dates - covering all products, reagents, medications, and supplies - with a process for ensuring currency and compliant disposal of expired items.",
+        "When you receive a recall notice, you must check your current supplies to see if the recalled item is present. You also need to check patient records to find out if the recalled product was given to any patients. Staff must be notified, and the recalled item must be removed and handled according to the recall instructions.",
       keyPoint:
-        "Recalls require six policy elements (source, staff notification, product search, response, disposition, patient notification). Expiration monitoring requires a written policy AND documented monitoring activities.",
+        "A recall response must include checking inventory, checking patient records, notifying staff, and documenting every step.",
     },
     {
-      title: "SAF.250 / SAF.260 - Protecting Healthcare Workers from Biologic Hazards",
+      title: "What must be in place to protect staff from bloodborne pathogen exposure?",
       content:
-        "SAF.250 requires governing-body-approved occupational health and safety policies, an annually updated written exposure control plan, an immunization program covering agents of risk to staff and patients per the IPC risk assessment, and a TB detection and protection plan following applicable regulatory requirements or nationally recognized guidelines. SAF.260 specifically addresses bloodborne pathogen procedures: a hepatitis B immunization program; post-exposure evaluation and treatment; appropriate training on hazards; and appropriate recordkeeping. Personnel health records must document acceptance or declination of the hepatitis B vaccination.",
+        "Every employee must be offered the hepatitis B vaccine and either accept it or sign a declination form. The facility must also have a plan for what to do if someone is exposed to blood or body fluids. Staff must be trained on bloodborne pathogen hazards, and the exposure control plan must be reviewed and updated every year.",
       keyPoint:
-        "SAF.250 = biologic hazard framework (exposure control plan, immunizations, TB program); SAF.260 = bloodborne pathogen specifics (hep B program, post-exposure, training, recordkeeping). Both are Universal/Tier 2 standards.",
+        "Three things must be documented for bloodborne pathogen protection: hepatitis B vaccine status, post-exposure procedures, and completed staff training.",
     },
   ],
   questions: [

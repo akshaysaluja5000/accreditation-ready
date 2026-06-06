@@ -30,39 +30,39 @@ export const ascLrdLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "LRD.130 / LRD.140 - CLIA Certificate and State Laboratory License",
+      title: "What certificate is required before performing any laboratory testing?",
       content:
-        "LRD.130 requires that a current, appropriate CLIA certificate is present for the laboratory services performed: a CLIA Certificate of Waiver for waived tests (blood glucose, urine dipstick, rapid strep, etc.), a Certificate for Provider Performed Microscopy (PPMP) for those specific tests, or a Certificate of Registration, Compliance, or Accreditation for higher-complexity testing. LRD.140 additionally requires a current state medical laboratory license or certificate appropriate for the level of testing performed (where state licensure programs are separate from CLIA). Both certificates must be current - an expired CLIA waiver means the laboratory is operating outside its authorized complexity level. Note: if the state is exempt from CLIA program requirements, NA may apply.",
+        "Any laboratory testing performed at the facility, including simple tests done at the bedside like blood glucose checks or urine dipsticks, requires a current CLIA certificate. The type of certificate must match the complexity of tests being performed. A certificate for simple waived tests does not cover more complex testing.",
       keyPoint:
-        "CLIA applies to ALL laboratory testing including point-of-care testing. The CLIA certificate type must match the complexity of tests performed. State lab licensure (LRD.140) is a separate requirement. Both must be current.",
+        "CLIA certificates are required for all laboratory testing, including point-of-care tests. The certificate type must match the test complexity.",
     },
     {
-      title: "LRD.150 - Qualified Laboratory Personnel",
+      title: "What training and documentation is required for staff who perform lab tests?",
       content:
-        "LRD.150 requires that laboratory services are conducted by qualified personnel. Staff with laboratory responsibilities must be appropriately trained for their roles, as demonstrated by documented competency tests. Additionally, interviews and observation must confirm that a sufficient number of trained and experienced personnel are available to supervise and conduct the work of the laboratory. This applies to all testing personnel - including nurses and medical assistants who perform point-of-care testing. The competency documentation must be task-specific: a nurse documented as competent for blood glucose POCT needs separate competency documentation if they also perform urine dipstick testing.",
+        "Every staff member who performs a laboratory test must have documented competency for each specific test they run. A nurse who is trained to do blood glucose testing needs separate documentation if she also runs urine dipstick tests. The facility must also have enough trained staff to supervise and perform all laboratory work.",
       keyPoint:
-        "LRD.150 requires two things for laboratory personnel: (1) documented competency for each specific test performed, and (2) sufficient numbers of trained staff confirmed through observation and interviews. Competency is test-specific - not a blanket laboratory credential.",
+        "Competency documentation is test-specific. Being trained for one test does not cover other tests. Sufficient numbers of trained staff must also be confirmed.",
     },
     {
-      title: "LRD.160 / LRD.170 - Pathology Services Support Clinical Capabilities; Provider Review of Results",
+      title: "What must happen with a laboratory result after it is completed?",
       content:
-        "LRD.160 requires that pathology and medical laboratory services adequately support the organization's clinical capabilities: tests are performed in a timely manner per organizational policy, results are made available to the ordering provider, and results are documented in the patient's medical record per policy. LRD.170 is a separate, distinct requirement: laboratory test results must be reviewed and acknowledged in writing (manually or electronically) by the ordering provider or a qualified designee. This acknowledgment requirement is frequently missed - an EHR result that was 'received' but not actively reviewed and signed/initialed by the ordering provider does not satisfy LRD.170.",
+        "Laboratory results must be reported to the ordering provider in a timely manner and documented in the patient's chart. The ordering provider must actively review each result and acknowledge it in writing, by signing, initialing, or electronically authenticating it. A result that shows up in the chart but was never actively reviewed does not meet the requirement.",
       keyPoint:
-        "LRD.160: timely results, reported to ordering provider, documented in record. LRD.170: each lab result must be reviewed AND acknowledged in writing by the ordering provider or qualified designee. 'Received' is not the same as 'reviewed and acknowledged.'",
+        "Receiving a result is not the same as reviewing and acknowledging it. The provider must actively sign off on each lab result.",
     },
     {
-      title: "LRD.180 - Laboratory Quality Control Procedures",
+      title: "What documentation is required for laboratory quality control?",
       content:
-        "LRD.180 requires that laboratory quality control (QC) procedures are performed and documented. Four elements must be satisfied: (1) quality controls are performed in accordance with manufacturer instructions; (2) the results of quality control procedures are documented; (3) equipment is calibrated in accordance with manufacturer instructions (NA may apply for moderate/high complexity testing performed under different calibration standards); and (4) validation tests for new equipment are performed in accordance with manufacturer instructions. QC documentation must include dates, control values, acceptable ranges, and pass/fail determinations. New laboratory equipment may not be placed into patient service until validation testing is completed and documented.",
+        "Quality control tests must be performed according to the manufacturer's instructions and the results must be written down. If a quality control test fails, the problem must be investigated and fixed before the device is used on patients again. All equipment must also be calibrated per manufacturer instructions, and new equipment must be validated before it is used on patients.",
       keyPoint:
-        "LRD.180 requires four things: QC performed per manufacturer instructions, QC results documented, equipment calibrated per manufacturer, and new equipment validated before patient use. QC logs must have dates, results, and pass/fail - not just 'QC done.'",
+        "QC results must be documented with dates and pass or fail status. A failed QC test means patient testing stops until the problem is found and fixed.",
     },
     {
-      title: "LRD.190 / LRD.200 - Established Procedures and Written Test Descriptions",
+      title: "What must staff know about how specimens are handled at your facility?",
       content:
-        "LRD.190 requires that established laboratory procedures are followed. At minimum, written procedures must address: obtaining, identifying, storing, and transporting specimens; and staff must be able to demonstrate understanding of the established procedures through interview. Additionally, procedures must be in place to obtain routine and emergency laboratory services outside the organization's capabilities from a hospital or licensed laboratory. LRD.200 requires that complete written descriptions of each test procedure performed are available to staff with laboratory responsibilities. These procedure descriptions should include (as applicable): patient preparation, specimen requirements and rejection criteria, reagents, calibration, QC, step-by-step test performance, result reporting, critical value reporting, and reference ranges.",
+        "Written procedures must describe how specimens are collected, identified, stored, and transported. Staff must be able to explain these procedures during a survey. The facility must also have a plan for getting laboratory tests done at a hospital or reference lab when a test cannot be done on site.",
       keyPoint:
-        "LRD.190: written specimen handling procedures, staff can demonstrate knowledge, and backup laboratory arrangements are documented. LRD.200: written procedure for each specific test performed - covering specimen handling through result reporting including critical values.",
+        "Staff must know and be able to demonstrate specimen handling procedures. A backup arrangement for tests that cannot be done in-house must also be documented.",
     },
   ],
   questions: [

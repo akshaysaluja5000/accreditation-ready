@@ -30,60 +30,60 @@ export const ascCrdLevel: Level = {
   },
   studyMaterial: [
     {
-      title: "CRD.120 - Clinical Records System: Collection, Processing, and Maintenance",
+      title: "Who is responsible for managing patient records at the facility?",
       content:
-        "CRD.120 requires the organization to maintain a system for the accurate collection, processing, maintenance, storage, retrieval, and distribution of clinical records. Two designated persons are required: one in charge of clinical records overall, and one in charge of the health information system. The system must include measures to ensure adherence to written policies and procedures, and it must be monitored on a regular basis. This standard establishes the infrastructure on which all other CRD standards depend - without a defined, monitored system, the organization cannot consistently satisfy record content and security requirements.",
+        "The facility must designate a specific person to oversee the clinical records system and a separate person responsible for the health information technology system. The records system must have written policies and procedures, and someone must actively monitor that those policies are being followed. Just having a system in place is not enough.",
       keyPoint:
-        "CRD.120 requires two designated roles (clinical records oversight + health information system) and a monitored system with written procedures. The system must be actively overseen - not simply exist.",
+        "Two designated roles are required: one for clinical records oversight and one for the health information system. Both must be formally assigned.",
     },
     {
-      title: "CRD.130 - Written Policies for Clinical Records",
+      title: "What written policies must cover how patient records are managed?",
       content:
-        "Written policies for clinical records must address seven specific areas: (1) security of information - including accountability for editing, deletion, and access of record content; (2) release of patient records - including patient authorization requirements; (3) protection of records from damage or loss - including backup systems for electronic records; (4) methods to deter unauthorized access; (5) ensuring timely access to individual records for authorized personnel; (6) retention of active records; and (7) retirement of inactive records. The retention policy must be consistent with applicable state and federal law. Backup systems for electronic records are explicitly required.",
+        "Written policies must address how records are secured, how they are released with patient authorization, how they are protected from damage or loss including backup systems for electronic records, how unauthorized access is prevented, how long records are kept, and when inactive records are retired. All of these areas must be covered in writing.",
       keyPoint:
-        "CRD.130 requires seven specific policy topics. Electronic record backup systems are explicitly mentioned - organizations using EHRs must have a documented backup and recovery procedure as part of their written records policies.",
+        "Multiple specific topics must be in the written records policies. Electronic backup systems are explicitly required for facilities using electronic health records.",
     },
     {
-      title: "CRD.140 - Records Maintained to Facilitate Safe Care",
+      title: "What makes a patient record easy and safe to use?",
       content:
-        "Clinical records must be maintained in a manner that facilitates the provision of safe care. This means: (1) consistent content and format - organized in the same sequence across records except where law requires otherwise; (2) legibility - all entries must be legible, including items scanned into an electronic record; (3) accessibility - entries must be easily accessible within the record by authorized personnel; (4) availability - all clinical information relevant to a patient must be readily available to authorized personnel any time the organization is open to patients; and (5) patient control of release - patients must be given the opportunity to approve or refuse release of their records, except when release is permitted or required by law.",
+        "Records must be organized in a consistent format so that anyone can find information quickly. Every entry must be legible, including any documents that have been scanned in. All relevant records must be available to authorized staff any time the facility is open to patients.",
       keyPoint:
-        "CRD.140 has five elements: consistent format, legible entries, easy accessibility, availability during all operating hours, and patient authorization for release. A scanned document that is illegible violates CRD.140 just as a handwritten illegible entry does.",
+        "Records must be consistent, legible, and accessible during all hours of operation. A scanned document that cannot be read is just as non-compliant as illegible handwriting.",
     },
     {
-      title: "CRD.160 - Strict Confidentiality of Clinical Records",
+      title: "What does strict confidentiality of patient records mean for your daily work?",
       content:
-        "Any record containing clinical, social, financial, or other data about a patient must be treated as strictly confidential - except when release is required by law. Written policies must require strict confidentiality, and interviews and observation during survey must confirm that patient data is handled confidentially in practice. This standard applies across all forms of records - paper, electronic, verbal discussions, and any other medium in which patient data is communicated. If the organization provides telehealth or telemedicine services, compliance with the HITECH Act must be included in the confidentiality policies.",
+        "All patient information must be kept confidential, whether it is in paper form, in an electronic system, or in a conversation. Policies must require confidentiality, but observed staff behavior must also demonstrate it. Talking about a patient in a hallway where others can hear is a confidentiality failure even if all the written policies are in place.",
       keyPoint:
-        "Confidentiality covers all patient data - clinical, social, and financial - in all formats. The standard requires both written policies AND observed practice. A staff member discussing a patient case in a public area violates CRD.160 even if no written policies were violated.",
+        "Confidentiality applies to all formats of patient information. Written policies must be backed up by actual staff behavior.",
     },
     {
-      title: "CRD.180 / CRD.190 - Individual Record Requirements and Consistent Visit Entries",
+      title: "What must be documented in every patient visit entry in the chart?",
       content:
-        "CRD.180 requires that an individual clinical record is established for each person receiving care. The record must include the patient's name, identification number (if used in the organization's system), date of birth, gender, and responsible party. CRD.190 requires that entries for each visit are consistent across records and include: (1) date and department (if departmentalized); (2) chief complaint or purpose of visit and history; (3) clinical findings and studies ordered (labs, imaging); (4) care rendered and therapies administered; (5) any changes in prescription or non-prescription medications with name, dosage, and frequency when available; (6) discharge diagnosis or impression and disposition, recommendations, and instructions given to the patient; and (7) signature or authentication by the healthcare professional.",
+        "Each visit entry must include the date, the reason the patient came in, clinical findings, any tests ordered, what care was provided, any medication changes, the discharge diagnosis or plan, and the provider's signature. All of these elements must be consistent across records and present for every encounter.",
       keyPoint:
-        "CRD.180/190 together define the minimum record content: patient identifiers plus seven required entry elements per visit. Provider authentication (signature or electronic equivalent) on each entry is a non-negotiable requirement.",
+        "Multiple elements are required in every visit entry, ending with the provider's signature. An unsigned entry is not complete.",
     },
     {
-      title: "CRD.210 - Allergy and Sensitivity Documentation",
+      title: "What are the rules for documenting allergies in a patient chart?",
       content:
-        "CRD.210 is a Tier 1 patient safety standard requiring that the presence or absence of allergies, sensitivities, and other reactions to drugs, materials, food, and environmental factors is recorded in a prominent and consistently defined location in all clinical records. Four specific requirements apply: (1) patients are asked about allergies and sensitivities at each encounter - not just at registration; (2) patients reporting allergies or sensitivities must be asked to describe their specific reaction (rash, anaphylaxis, GI symptoms, etc.) - not just list the allergen; (3) allergy and sensitivity information is recorded in a prominent and consistently defined location - not buried in free-text notes; and (4) the information is verified at each encounter and updated when changes are reported.",
+        "Every patient must be asked about allergies and sensitivities at every visit, not just at the time they first registered. If a patient reports an allergy, staff must ask what reaction they had, not just the name of the substance. Allergy information must be recorded in the same prominent location in every chart and updated whenever changes are reported.",
       keyPoint:
-        "CRD.210 has four requirements: ask at EACH encounter (not just at intake), document the REACTION (not just the allergen), record in a PROMINENT/CONSISTENT location, and VERIFY and UPDATE at every encounter. Missing any one of these four is a deficiency.",
+        "Allergy documentation requires asking at every visit, recording the reaction, using a consistent location in the chart, and updating at every encounter.",
     },
     {
-      title: "CRD.220 / CRD.230 - Incorporating Reports and Documenting Informed Consent Discussions",
+      title: "What must be documented when patients are told about their procedure?",
       content:
-        "CRD.220 requires that reports, histories and physicals, progress notes, and other patient information - including laboratory reports, x-ray readings, operative reports, and consultations - are reviewed and incorporated into the record as required by the organization's written policies. Evidence that each item was reviewed prior to incorporation must be present (e.g., a provider's initials or signature with date). CRD.230 requires that clinical records document discussions with the patient about the necessity, appropriateness, and risks of proposed care, surgery, or procedures, as well as discussions of treatment alternatives as applicable. The informed consent discussion must be documented - a signed consent form alone may not capture the substance of the discussion.",
+        "The chart must show that the provider discussed the need for the procedure and any available alternatives with the patient. A signed consent form alone is not enough. There must also be a note documenting that the discussion actually happened. A signature is not the same as documented evidence of a conversation.",
       keyPoint:
-        "CRD.220: reports must be reviewed (evidenced) and incorporated per policy. CRD.230: the informed consent DISCUSSION must be documented in the record - not just the existence of a signed form.",
+        "The consent discussion must be documented separately from the consent form itself. The chart must show that a conversation happened, not just that a form was signed.",
     },
     {
-      title: "CRD.250 - Continuity of Care Documentation",
+      title: "What must the chart show to support continuity of care?",
       content:
-        "CRD.250 requires that clinical records demonstrate the organization ensures continuity of care. Three specific elements are required: (1) documentation of missed and canceled appointments (if any occur) - allowing the organization to identify patients who may need follow-up; (2) documentation of medical advice given to a patient by text, email, or telephone - including after-hours medical advice, with the content of the advice documented, not just that a call occurred; and (3) for patients who have had three or more visits or admissions, or who have a complex and lengthy record, a summary of past and current diagnoses, problems, and past procedures must be present in the record to facilitate continuity. This summary may take the form of a problem list, a cumulative medication list, or a structured summary note.",
+        "If a patient misses or cancels an appointment, that must be documented. If a provider gives medical advice by phone, text, or email, the content of that advice must be written in the chart, not just a note that a call happened. For patients who have been seen three or more times or who have a complex history, a summary of past diagnoses and procedures must be in the record.",
       keyPoint:
-        "CRD.250 has three continuity elements: document missed/canceled appointments, document telephone/text/email medical advice (including after-hours), and maintain a problem summary for patients with 3+ visits or complex records.",
+        "Continuity documentation requires recording missed appointments, documenting the content of all remote medical advice, and maintaining a problem summary for patients with complex or repeated care.",
     },
   ],
   questions: [
