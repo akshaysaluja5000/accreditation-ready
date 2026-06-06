@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -330,6 +330,10 @@ export default function FlashcardReviewPage() {
   const [sessionDone, setSessionDone] = useState(false);
   const [ratings, setRatings] = useState<Record<number, SRRating>>({});
 
+  // AI-generated card questions (keyed by concept title)
+  const [aiQuestions, setAiQuestions] = useState<Record<string, string>>({});
+  const aiPending = useRef<Set<string>>(new Set());
+
   useEffect(() => {
     if (reviewCards.length > 0 && queue.length === 0) {
       setQueue(Array.from({ length: reviewCards.length }, (_, i) => i));
@@ -339,6 +343,36 @@ export default function FlashcardReviewPage() {
   useEffect(() => {
     setFlipped(false);
   }, [queueIndex]);
+
+  // Fetch AI-generated question for the current card (and prefetch next)
+  useEffect(() => {
+    if (!queue.length || !reviewCards.length) return;
+    const fetchFor = (slotIdx: number) => {
+      const card = reviewCards[queue[slotIdx]];
+      if (!card) return;
+      const level = findLevelById(card.levelId);
+      const concept = level?.studyMaterial?.[card.cardIndex];
+      if (!concept) return;
+      const key = concept.title;
+      if (aiPending.current.has(key)) return;
+      aiPending.current.add(key);
+      fetch("/api/ai/flashcard-question", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ content: concept.content, keyPoint: concept.keyPoint }),
+      })
+        .then(r => r.ok ? r.json() : null)
+        .then(data => {
+          if (data?.question) {
+            setAiQuestions(prev => ({ ...prev, [key]: data.question }));
+          }
+        })
+        .catch(() => {});
+    };
+    fetchFor(queueIndex);
+    if (queueIndex + 1 < queue.length) fetchFor(queueIndex + 1);
+  }, [queueIndex, queue, reviewCards]);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -532,7 +566,7 @@ export default function FlashcardReviewPage() {
                     </div>
                     <div className="flex-1 flex flex-col justify-center gap-4">
                       <p className="text-xl font-black leading-snug" data-testid="text-concept-question">
-                        {getQuestionPrompt(currentConcept.category, currentConcept.title)}
+                        {aiQuestions[currentConcept.title] || getQuestionPrompt(currentConcept.category, currentConcept.title)}
                       </p>
                       {getCodeLabel(currentConcept.title) ? (
                         <p className="text-xs font-bold text-muted-foreground/60 uppercase tracking-widest" data-testid="text-concept-title">

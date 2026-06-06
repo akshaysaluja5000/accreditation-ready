@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useRoute, useLocation, useSearch } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -334,6 +334,10 @@ export default function StudyPage() {
   // Last rating per original card index
   const [ratings, setRatings] = useState<Record<number, SRRating>>({});
 
+  // AI-generated card questions (keyed by concept title)
+  const [aiQuestions, setAiQuestions] = useState<Record<string, string>>({});
+  const aiPending = useRef<Set<string>>(new Set());
+
   // ── Persistence: fetch existing review schedule for this level ─────────────
   const { data: existingReviews } = useQuery<FlashcardReview[]>({
     queryKey: ["/api/flashcards", levelId],
@@ -381,6 +385,33 @@ export default function StudyPage() {
   useEffect(() => {
     setFlipped(false);
   }, [queueIndex]);
+
+  // Fetch AI-generated question for the current card (and prefetch next)
+  useEffect(() => {
+    if (!level?.studyMaterial || !queue.length) return;
+    const fetchFor = (cardIdx: number) => {
+      const concept = level.studyMaterial[cardIdx];
+      if (!concept) return;
+      const key = concept.title;
+      if (aiPending.current.has(key)) return;
+      aiPending.current.add(key);
+      fetch("/api/ai/flashcard-question", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ content: concept.content, keyPoint: concept.keyPoint }),
+      })
+        .then(r => r.ok ? r.json() : null)
+        .then(data => {
+          if (data?.question) {
+            setAiQuestions(prev => ({ ...prev, [key]: data.question }));
+          }
+        })
+        .catch(() => {});
+    };
+    fetchFor(queue[queueIndex]);
+    if (queueIndex + 1 < queue.length) fetchFor(queue[queueIndex + 1]);
+  }, [queueIndex, queue, level]);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -732,7 +763,7 @@ export default function StudyPage() {
 
                     <div className="flex-1 flex flex-col justify-center gap-4">
                       <p className="text-xl font-black leading-snug" data-testid="text-concept-question">
-                        {getQuestionPrompt(currentConcept.category, currentConcept.title)}
+                        {aiQuestions[currentConcept.title] || getQuestionPrompt(currentConcept.category, currentConcept.title)}
                       </p>
                       {getCodeLabel(currentConcept.title) ? (
                         <p className="text-xs font-bold text-muted-foreground/60 uppercase tracking-widest" data-testid="text-concept-title">

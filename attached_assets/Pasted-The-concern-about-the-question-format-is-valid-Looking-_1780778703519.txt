@@ -1,0 +1,58 @@
+The concern about the question format is valid. Looking at the cards, I see the issue clearly:
+
+The question phrasing is awkward and redundant. Examples from your screenshots:
+
+        •       “What must be documented and demonstrated for ‘What makes up a good infection prevention program?’”
+        •       “What must the ‘What must a facility’s administrative policies and personnel files include?’ include and document for accreditation compliance?”
+
+These are meta-questions — questions about questions — which reads like the AI was given a chapter section title and wrapped it in another question instead of writing a clean, direct prompt.
+
+What it should be instead:
+
+The front of the card should be a clean, direct question that a staff member could naturally encounter in a survey or test:
+
+        •       “How often must a facility’s infection prevention program be formally reviewed and updated?”
+        •       “What must personnel files document regarding emergency equipment training?”
+        •       “What is the timeframe for notifying AAAHC of a significant event?”
+
+The answer (back of card) content itself looks good — the answers are clear and well-explained. The problem is purely in how the question side is being generated.
+
+The fix: The prompt Akshay is using to generate flashcard questions is likely passing the section header as the source and generating questions about the section rather than from the content. The fix is to instruct the AI to generate questions directly from the answer content, not from the section title.
+
+Want me to draft a revised prompt for that generation step?
+
+Here’s a prompt Akshay can drop into the flashcard generation logic:
+
+SYSTEM PROMPT FOR FLASHCARD QUESTION GENERATION
+
+You are generating flashcard questions for healthcare staff preparing
+for accreditation surveys (AAAHC, Joint Commission, CMS, DNV).
+
+Given the ANSWER content below, write a single flashcard question for
+the front of the card.
+
+RULES:
+- Write the question directly from the answer content — not from any
+  section title or header
+- The question must stand completely alone, with no reference to any
+  chapter name, section title, or category label
+- Write as if a surveyor or trainer is quizzing a staff member
+- Use plain, direct language a frontline healthcare worker would
+  understand
+- Never use the phrase "What must be documented and demonstrated for..."
+- Never wrap a section title inside a question
+- The question should have one clear, testable answer
+- Aim for 10-20 words
+
+ANSWER CONTENT:
+[insert answer text here]
+
+Return only the question. No preamble, no explanation.
+
+Example of the transformation:
+
+Old (broken): “What must be documented and demonstrated for ‘What CPR and emergency training is required for all staff?’”
+
+New (correct): “What two things must appear in a staff member’s personnel file regarding emergency preparedness?”
+
+The key instruction is “write the question from the answer content, not from the section title.” That one constraint eliminates the nested question problem entirely.
