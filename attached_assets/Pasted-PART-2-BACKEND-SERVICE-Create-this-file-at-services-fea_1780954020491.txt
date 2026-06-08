@@ -1,0 +1,104 @@
+PART 2 — BACKEND SERVICE
+Create this file at services/features.service.js
+
+// services/features.service.js
+
+/**
+ * Default feature flags — most restrictive setting
+ * All features off unless explicitly enabled per facility
+ */
+const DEFAULT_FEATURES = {
+  education:                    false,
+  compliance:                   false,
+  survey_readiness_agent:       false,
+  content_intelligence_agent:   false,
+  compliance_task_manager:      false,
+  executive_readiness_agent:    false,
+  wall_chart_tracker:           false,
+  regulatory_watch_agent:       false,
+};
+
+/**
+ * Default role visibility — all roles visible unless explicitly hidden
+ * Exception: facilities_maintenance defaults to false
+ */
+const DEFAULT_ROLE_VISIBILITY = {
+  or_circulating_nurse:          true,
+  or_manager_charge_nurse:       true,
+  scrub_tech_surgical_tech:      true,
+  surgical_orthopedic_assistant: true,
+  anesthesia_assistant_crna:     true,
+  spd_technician:                true,
+  pacu_floor_nurse:              true,
+  environmental_services:        true,
+  facilities_maintenance:        false,  // hidden by default — enterprise only
+  compliance_officer_cno:        true,
+  nurse_educator_staff_dev:      true,
+};
+
+/**
+ * Get feature flags for a facility
+ * Merges facility-specific flags with defaults
+ */
+async function getFacilityFeatures(db, facilityId) {
+  const result = await db.query(
+    'SELECT features, role_visibility FROM facilities WHERE id = $1',
+    [facilityId]
+  );
+
+  if (!result.rows.length) {
+    return {
+      features:        DEFAULT_FEATURES,
+      role_visibility: DEFAULT_ROLE_VISIBILITY,
+    };
+  }
+
+  const { features, role_visibility } = result.rows[0];
+
+  return {
+    features: {
+      ...DEFAULT_FEATURES,
+      ...(features || {}),
+    },
+    role_visibility: {
+      ...DEFAULT_ROLE_VISIBILITY,
+      ...(role_visibility || {}),
+    },
+  };
+}
+
+/**
+ * Check if a specific feature is enabled for a facility
+ */
+async function isFeatureEnabled(db, facilityId, featureKey) {
+  const { features } = await getFacilityFeatures(db, facilityId);
+  return features[featureKey] === true;
+}
+
+/**
+ * Check if a specific role is visible for a facility
+ */
+async function isRoleVisible(db, facilityId, roleKey) {
+  const { role_visibility } = await getFacilityFeatures(db, facilityId);
+  return role_visibility[roleKey] === true;
+}
+
+/**
+ * Get all visible roles for a facility
+ * Returns array of role keys that are enabled
+ */
+async function getVisibleRoles(db, facilityId) {
+  const { role_visibility } = await getFacilityFeatures(db, facilityId);
+  return Object.entries(role_visibility)
+    .filter(([, visible]) => visible === true)
+    .map(([roleKey]) => roleKey);
+}
+
+module.exports = {
+  getFacilityFeatures,
+  isFeatureEnabled,
+  isRoleVisible,
+  getVisibleRoles,
+  DEFAULT_FEATURES,
+  DEFAULT_ROLE_VISIBILITY,
+};

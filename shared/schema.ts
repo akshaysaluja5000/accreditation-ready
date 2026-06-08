@@ -21,11 +21,60 @@ export type InsertContentChangelog = typeof contentChangelog.$inferInsert;
 export const COMPLIANCE_MODES = ["off", "education_only", "full_platform"] as const;
 export type ComplianceMode = (typeof COMPLIANCE_MODES)[number];
 
+export interface FacilityFeatures {
+  education: boolean;
+  compliance: boolean;
+  survey_readiness_agent: boolean;
+  content_intelligence_agent: boolean;
+  compliance_task_manager: boolean;
+  executive_readiness_agent: boolean;
+  wall_chart_tracker: boolean;
+  regulatory_watch_agent: boolean;
+}
+
+export interface FacilityRoleVisibility {
+  or_circulating_nurse: boolean;
+  or_manager_charge_nurse: boolean;
+  scrub_tech_surgical_tech: boolean;
+  surgical_orthopedic_assistant: boolean;
+  anesthesia_assistant_crna: boolean;
+  spd_technician: boolean;
+  pacu_floor_nurse: boolean;
+  environmental_services: boolean;
+  facilities_maintenance: boolean;
+  compliance_officer_cno: boolean;
+  nurse_educator_staff_dev: boolean;
+}
+
+export const DEFAULT_FACILITY_FEATURES: FacilityFeatures = {
+  education: true,
+  compliance: false,
+  survey_readiness_agent: false,
+  content_intelligence_agent: false,
+  compliance_task_manager: false,
+  executive_readiness_agent: false,
+  wall_chart_tracker: false,
+  regulatory_watch_agent: false,
+};
+
+export const FULL_PLATFORM_FEATURES: FacilityFeatures = {
+  education: true,
+  compliance: true,
+  survey_readiness_agent: true,
+  content_intelligence_agent: true,
+  compliance_task_manager: true,
+  executive_readiness_agent: true,
+  wall_chart_tracker: true,
+  regulatory_watch_agent: true,
+};
+
 export const facilities = pgTable("facilities", {
   id: serial("id").primaryKey(),
   name: text("name").notNull(),
   code: text("code").notNull().unique(),
   complianceMode: text("compliance_mode").notNull().default("education_only"),
+  features: jsonb("features").$type<FacilityFeatures>().default(sql`'{}'::jsonb`),
+  roleVisibility: jsonb("role_visibility").$type<FacilityRoleVisibility>().default(sql`'{}'::jsonb`),
   createdAt: timestamp("created_at").notNull().defaultNow(),
 });
 

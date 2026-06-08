@@ -1,0 +1,94 @@
+PART 1 — DATABASE
+1A. Add feature flags to facilities table
+-- Add features column if it doesn't exist
+ALTER TABLE facilities 
+ADD COLUMN IF NOT EXISTS features JSONB DEFAULT '{}';
+
+-- Add role_visibility column if it doesn't exist  
+ALTER TABLE facilities
+ADD COLUMN IF NOT EXISTS role_visibility JSONB DEFAULT '{}';
+1B. Set MOSH — education only, no facilities role
+UPDATE facilities
+SET 
+  features = '{
+    "education":                    true,
+    "compliance":                   false,
+    "survey_readiness_agent":       false,
+    "content_intelligence_agent":   false,
+    "compliance_task_manager":      false,
+    "executive_readiness_agent":    false,
+    "wall_chart_tracker":           false,
+    "regulatory_watch_agent":       false
+  }',
+  role_visibility = '{
+    "or_circulating_nurse":         true,
+    "or_manager_charge_nurse":      true,
+    "scrub_tech_surgical_tech":     true,
+    "surgical_orthopedic_assistant": true,
+    "anesthesia_assistant_crna":    true,
+    "spd_technician":               true,
+    "pacu_floor_nurse":             true,
+    "environmental_services":       true,
+    "facilities_maintenance":       false,
+    "compliance_officer_cno":       true,
+    "nurse_educator_staff_dev":     true
+  }'
+WHERE name = 'Ministry of Health Services'
+-- OR: WHERE id = '<MOSH_FACILITY_ID>';
+1C. Set TSC — full platform, no facilities role
+UPDATE facilities
+SET
+  features = '{
+    "education":                    true,
+    "compliance":                   true,
+    "survey_readiness_agent":       true,
+    "content_intelligence_agent":   true,
+    "compliance_task_manager":      true,
+    "executive_readiness_agent":    true,
+    "wall_chart_tracker":           true,
+    "regulatory_watch_agent":       true
+  }',
+  role_visibility = '{
+    "or_circulating_nurse":         true,
+    "or_manager_charge_nurse":      true,
+    "scrub_tech_surgical_tech":     true,
+    "surgical_orthopedic_assistant": true,
+    "anesthesia_assistant_crna":    true,
+    "spd_technician":               true,
+    "pacu_floor_nurse":             true,
+    "environmental_services":       true,
+    "facilities_maintenance":       false,
+    "compliance_officer_cno":       true,
+    "nurse_educator_staff_dev":     true
+  }'
+WHERE name = 'The Surgery Center'
+-- OR: WHERE id = '<TSC_FACILITY_ID>';
+1D. Future enterprise hospital template
+Use this when onboarding Surgery Partners or large hospital systems
+-- Template for full-platform enterprise hospital with all roles
+UPDATE facilities
+SET
+  features = '{
+    "education":                    true,
+    "compliance":                   true,
+    "survey_readiness_agent":       true,
+    "content_intelligence_agent":   true,
+    "compliance_task_manager":      true,
+    "executive_readiness_agent":    true,
+    "wall_chart_tracker":           true,
+    "regulatory_watch_agent":       true
+  }',
+  role_visibility = '{
+    "or_circulating_nurse":         true,
+    "or_manager_charge_nurse":      true,
+    "scrub_tech_surgical_tech":     true,
+    "surgical_orthopedic_assistant": true,
+    "anesthesia_assistant_crna":    true,
+    "spd_technician":               true,
+    "pacu_floor_nurse":             true,
+    "environmental_services":       true,
+    "facilities_maintenance":       true,
+    "compliance_officer_cno":       true,
+    "nurse_educator_staff_dev":     true
+  }'
+WHERE id = '<NEW_FACILITY_ID>';

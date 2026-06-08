@@ -1,0 +1,209 @@
+PART 5 — FRONTEND UTILITY
+Create this file at utils/features.js
+
+// utils/features.js
+// Import this wherever feature flag checks are needed
+
+/**
+ * Fetch feature flags and visible roles for the current facility
+ * Call once on app load and store in your global state/context
+ */
+export async function loadFacilityFeatures() {
+  try {
+    const response = await fetch('/api/features', {
+      credentials: 'include',
+    });
+    const data = await response.json();
+    return data;
+    // Returns: { features, role_visibility, visible_roles }
+  } catch (err) {
+    console.error('Error loading features:', err);
+    return null;
+  }
+}
+
+/**
+ * Check if a feature is enabled
+ * Pass the features object from loadFacilityFeatures()
+ */
+export function isEnabled(features, featureKey) {
+  return features?.[featureKey] === true;
+}
+
+/**
+ * Check if a role should be shown on the role selection screen
+ * Pass the role_visibility object from loadFacilityFeatures()
+ */
+export function isRoleVisible(roleVisibility, roleKey) {
+  return roleVisibility?.[roleKey] === true;
+}
+PART 6 — WIRE UP EXISTING COMPONENTS
+6A. Load features on app startup
+In your main App component or auth context, load features immediately after the user authenticates:
+
+import { loadFacilityFeatures } from '../utils/features';
+
+// In your auth/app initialization
+useEffect(() => {
+  if (user) {
+    loadFacilityFeatures().then(featureData => {
+      setFeatures(featureData.features);
+      setRoleVisibility(featureData.role_visibility);
+    });
+  }
+}, [user]);
+6B. Leadership Console — hide compliance tools for education-only
+Find wherever the Leadership Console tool cards are rendered. Wrap each compliance tool in a feature check:
+
+import { isEnabled } from '../utils/features';
+
+// In your Leadership Console component:
+{isEnabled(features, 'survey_readiness_agent') && (
+  <LeadershipToolCard
+    title="Survey Readiness Agent"
+    badge="LIVE"
+    description="Live compliance score across all standards..."
+  />
+)}
+
+{isEnabled(features, 'content_intelligence_agent') && (
+  <LeadershipToolCard
+    title="Content Intelligence Agent"
+    badge="AI"
+    description="Upload a policy document and AI reads it..."
+  />
+)}
+
+{isEnabled(features, 'compliance_task_manager') && (
+  <LeadershipToolCard
+    title="Compliance Task Manager"
+    badge="TOOL"
+    description="View, assign, and track compliance tasks..."
+  />
+)}
+
+{isEnabled(features, 'executive_readiness_agent') && (
+  <LeadershipToolCard
+    title="Executive Readiness Agent"
+    badge="AGENT"
+    description="Generates a weekly plain-English compliance brief..."
+  />
+)}
+
+{isEnabled(features, 'wall_chart_tracker') && (
+  <LeadershipToolCard
+    title="Wall Chart Tracker"
+    badge="TOOL"
+    description="Track required wall chart postings..."
+  />
+)}
+
+{isEnabled(features, 'regulatory_watch_agent') && (
+  <LeadershipToolCard
+    title="Regulatory Watch Agent"
+    badge="LIVE"
+    description="Monitors CMS, Joint Commission, and AAAHC..."
+  />
+)}
+
+{/* These tools always show regardless of platform mode */}
+<LeadershipToolCard title="Staff Training Dashboard" ... />
+<LeadershipToolCard title="AI Leadership Coach" ... />
+<LeadershipToolCard title="Guided Education Oversight" ... />
+<LeadershipToolCard title="User Management" ... />
+6C. Role selection screen — hide facilities role conditionally
+Find the role selection screen component (the "What's your role?" screen). Filter the displayed roles using role_visibility:
+
+import { isRoleVisible } from '../utils/features';
+
+// Full role list — all possible roles
+const ALL_ROLES = [
+  {
+    key:        'or_circulating_nurse',
+    name:       'OR Circulating Nurse',
+    desc:       'OR safety, time-outs, patient care documentation',
+    dept:       'Operating Room',
+    access:     'DEPT. ACCESS',
+  },
+  {
+    key:        'or_manager_charge_nurse',
+    name:       'OR Manager / Charge Nurse',
+    desc:       'OR operations leadership across all chapters',
+    dept:       'Operating Room',
+    access:     'DEPT + ALL',
+  },
+  {
+    key:        'scrub_tech_surgical_tech',
+    name:       'Scrub Tech / Surgical Tech',
+    desc:       'Sterile field, instruments, OR protocol',
+    dept:       'Operating Room',
+    access:     'DEPT. ACCESS',
+  },
+  {
+    key:        'surgical_orthopedic_assistant',
+    name:       'Surgical / Orthopedic Assistant',
+    desc:       'Patient positioning, room flow, instruments, perioperative support',
+    dept:       'Operating Room',
+    access:     'DEPT. ACCESS',
+  },
+  {
+    key:        'anesthesia_assistant_crna',
+    name:       'Anesthesia Assistant / CRNA',
+    desc:       'Anesthesia services, sedation levels, monitoring, regional techniques',
+    dept:       'Operating Room',
+    access:     'DEPT. ACCESS',
+  },
+  {
+    key:        'spd_technician',
+    name:       'SPD Technician',
+    desc:       'Decontamination, sterilization, instrument processing',
+    dept:       'Sterile Processing',
+    access:     'DEPT. ACCESS',
+  },
+  {
+    key:        'pacu_floor_nurse',
+    name:       'PACU / Floor Nurse',
+    desc:       'Recovery care, monitoring, patient documentation',
+    dept:       'PACU & Floor',
+    access:     'DEPT. ACCESS',
+  },
+  {
+    key:        'environmental_services',
+    name:       'Environmental Services',
+    desc:       'Environmental cleaning, waste segregation, EOC safety',
+    dept:       'Environmental Services',
+    access:     'DEPT. ACCESS',
+  },
+  {
+    key:        'facilities_maintenance',
+    name:       'Facilities / Maintenance',
+    desc:       'Building systems, life safety, environment of care',
+    dept:       'Facilities & Maintenance',
+    access:     'DEPT. ACCESS',
+  },
+  {
+    key:        'compliance_officer_cno',
+    name:       'Compliance Officer / CNO',
+    desc:       'Full survey readiness across every standard',
+    dept:       'Leadership & Compliance',
+    access:     'FULL ACCESS',
+    leadership: true,
+  },
+  {
+    key:        'nurse_educator_staff_dev',
+    name:       'Nurse Educator / Staff Development',
+    desc:       'Staff training and competency across all areas',
+    dept:       'Leadership & Compliance',
+    access:     'DEPT + ALL',
+    leadership: true,
+  },
+];
+
+// In your role selection component:
+// Filter to only show roles enabled for this facility
+const visibleRoles = ALL_ROLES.filter(role =>
+  isRoleVisible(roleVisibility, role.key)
+);
+
+// Then render visibleRoles instead of ALL_ROLES
+// Everything else in the component stays the same

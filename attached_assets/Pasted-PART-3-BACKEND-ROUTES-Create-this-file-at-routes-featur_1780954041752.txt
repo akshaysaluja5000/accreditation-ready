@@ -1,0 +1,114 @@
+PART 3 — BACKEND ROUTES
+Create this file at routes/features.routes.js
+
+// routes/features.routes.js
+
+const express = require('express');
+const router = express.Router();
+const featuresService = require('../services/features.service');
+const { requireAuth, requireRole } = require('../middleware/auth');
+
+/**
+ * GET /api/features
+ * Returns feature flags and visible roles for the current user's facility
+ * Called on app load — frontend uses this to show/hide UI elements
+ */
+router.get('/', requireAuth, async (req, res) => {
+  try {
+    const { facilityId } = req.user;
+
+    const { features, role_visibility } =
+      await featuresService.getFacilityFeatures(req.db, facilityId);
+
+    // Build list of visible roles for role selection screen
+    const visibleRoles = Object.entries(role_visibility)
+      .filter(([, visible]) => visible === true)
+      .map(([roleKey]) => roleKey);
+
+    res.json({
+      features,
+      role_visibility,
+      visible_roles: visibleRoles,
+    });
+  } catch (err) {
+    console.error('Error fetching features:', err);
+    res.status(500).json({ error: 'Failed to fetch feature flags' });
+  }
+});
+
+/**
+ * GET /api/features/roles
+ * Returns only the visible roles for this facility
+ * Used by the role selection screen during onboarding
+ */
+router.get('/roles', requireAuth, async (req, res) => {
+  try {
+    const { facilityId } = req.user;
+    const visibleRoles = await featuresService.getVisibleRoles(
+      req.db,
+      facilityId
+    );
+    res.json({ visible_roles: visibleRoles });
+  } catch (err) {
+    console.error('Error fetching visible roles:', err);
+    res.status(500).json({ error: 'Failed to fetch roles' });
+  }
+});
+
+/**
+ * PATCH /api/features — Admin only
+ * Update feature flags for a facility
+ * Body: { features?: {}, role_visibility?: {} }
+ */
+router.patch('/',
+  requireAuth,
+  requireRole(['admin', 'super_admin']),
+  async (req, res) => {
+    try {
+      const { facilityId } = req.user;
+      const { features, role_visibility } = req.body;
+
+      // Get current flags
+      const current = await featuresService.getFacilityFeatures(
+        req.db,
+        facilityId
+      );
+
+      // Merge updates
+      const updatedFeatures = features
+        ? { ...current.features, ...features }
+        : current.features;
+
+      const updatedRoleVisibility = role_visibility
+        ? { ...current.role_visibility, ...role_visibility }
+        : current.role_visibility;
+
+      await req.db.query(
+        `UPDATE facilities
+         SET features = $1, role_visibility = $2
+         WHERE id = $3`,
+        [
+          JSON.stringify(updatedFeatures),
+          JSON.stringify(updatedRoleVisibility),
+          facilityId,
+        ]
+      );
+
+      res.json({
+        success:         true,
+        features:        updatedFeatures,
+        role_visibility: updatedRoleVisibility,
+      });
+    } catch (err) {
+      console.error('Error updating features:', err);
+      res.status(500).json({ error: 'Failed to update features' });
+    }
+  }
+);
+
+module.exports = router;
+PART 4 — REGISTER ROUTES
+In your main app.js or server.js, add these two lines where other routes are registered:
+
+const featuresRoutes = require('./routes/features.routes');
+app.use('/api/features', featuresRoutes);

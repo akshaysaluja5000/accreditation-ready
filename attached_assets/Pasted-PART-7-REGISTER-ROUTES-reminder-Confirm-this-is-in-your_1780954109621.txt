@@ -1,0 +1,71 @@
+PART 7 — REGISTER ROUTES (reminder)
+Confirm this is in your app.js / server.js:
+
+const featuresRoutes = require('./routes/features.routes');
+app.use('/api/features', featuresRoutes);
+PART 8 — VERIFICATION CHECKLIST
+□ 1. MOSH facility has features.compliance = false
+      → Leadership Console shows NO compliance tool cards
+      → Education tools (AI Coach, Training Dashboard, 
+        Guided Education Oversight) still visible
+
+□ 2. MOSH facility has role_visibility.facilities_maintenance = false
+      → "Facilities / Maintenance" does NOT appear on the
+        role selection screen for MOSH users
+      → All other 10 roles appear normally
+
+□ 3. TSC facility has features.compliance = true
+      → All Leadership Console tool cards visible
+
+□ 4. TSC facility has role_visibility.facilities_maintenance = false
+      → "Facilities / Maintenance" does NOT appear for TSC either
+      → All other 10 roles appear normally
+
+□ 5. GET /api/features returns correct flags for each facility
+      → Test with a MOSH user: compliance features all false
+      → Test with a TSC user: compliance features all true
+
+□ 6. GET /api/features/roles returns correct visible role list
+      → MOSH: 10 roles (no facilities_maintenance)
+      → TSC: 10 roles (no facilities_maintenance)
+
+□ 7. PATCH /api/features updates flags correctly
+      → Admin only — regular staff get 403
+      → Changes persist after page refresh
+
+□ 8. Future enterprise facility can be given
+      role_visibility.facilities_maintenance = true
+      → Facilities / Maintenance appears on their
+        role selection screen
+      → Does not affect MOSH or TSC
+SUMMARY
+Files to create (new):
+
+
+File	Purpose
+services/features.service.js	Feature flag logic and database queries
+routes/features.routes.js	Three API endpoints
+utils/features.js	Frontend helper functions
+Files to modify (existing):
+
+
+File	Change
+app.js or server.js	Register features routes (2 lines)
+Leadership Console component	Wrap compliance cards in feature checks
+Role selection component	Filter roles using role_visibility
+App/auth initialization	Load features on login
+Database changes:
+
+
+Table	Change
+facilities	Add features JSONB column
+facilities	Add role_visibility JSONB column
+MOSH row	Set education-only flags + hide facilities role
+TSC row	Set full-platform flags + hide facilities role
+Current pilot configuration:
+
+
+Facility	Mode	Facilities Role
+MOSH	Education only	Hidden
+TSC	Full platform	Hidden
+Future enterprise hospital	Full platform	Visible

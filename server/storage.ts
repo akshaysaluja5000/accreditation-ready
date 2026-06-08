@@ -45,6 +45,8 @@ export async function ensureTablesExist() {
         code TEXT NOT NULL UNIQUE,
         created_at TIMESTAMP NOT NULL DEFAULT NOW()
       );
+      ALTER TABLE facilities ADD COLUMN IF NOT EXISTS features JSONB DEFAULT '{}';
+      ALTER TABLE facilities ADD COLUMN IF NOT EXISTS role_visibility JSONB DEFAULT '{}';
       CREATE TABLE IF NOT EXISTS roles (
         id SERIAL PRIMARY KEY,
         name TEXT NOT NULL,
@@ -655,9 +657,67 @@ const ROLE_SEED: { name: string; slug: string; department: string; scope: "stand
     chapters: r.chapters,
   }));
 
-const KNOWN_FACILITIES: { code: string; name: string }[] = [
-  { code: "TSC001", name: "The Surgery Center" },
-  { code: "SITE486045", name: "Midwest Orthopedic Specialty Hospital" },
+const MOSH_FEATURES = {
+  education: true,
+  compliance: false,
+  survey_readiness_agent: false,
+  content_intelligence_agent: false,
+  compliance_task_manager: false,
+  executive_readiness_agent: false,
+  wall_chart_tracker: false,
+  regulatory_watch_agent: false,
+};
+
+const FULL_FEATURES = {
+  education: true,
+  compliance: true,
+  survey_readiness_agent: true,
+  content_intelligence_agent: true,
+  compliance_task_manager: true,
+  executive_readiness_agent: true,
+  wall_chart_tracker: true,
+  regulatory_watch_agent: true,
+};
+
+const STANDARD_ROLE_VISIBILITY = {
+  or_circulating_nurse: true,
+  or_manager_charge_nurse: true,
+  scrub_tech_surgical_tech: true,
+  surgical_orthopedic_assistant: true,
+  anesthesia_assistant_crna: true,
+  spd_technician: true,
+  pacu_floor_nurse: true,
+  environmental_services: true,
+  facilities_maintenance: false,
+  compliance_officer_cno: true,
+  nurse_educator_staff_dev: true,
+};
+
+const ENTERPRISE_ROLE_VISIBILITY = {
+  ...STANDARD_ROLE_VISIBILITY,
+  facilities_maintenance: true,
+};
+
+interface KnownFacility {
+  code: string;
+  name: string;
+  features: Record<string, boolean>;
+  roleVisibility: Record<string, boolean>;
+}
+
+const KNOWN_FACILITIES: KnownFacility[] = [
+  {
+    code: "TSC001",
+    name: "The Surgery Center",
+    features: FULL_FEATURES,
+    roleVisibility: STANDARD_ROLE_VISIBILITY,
+  },
+  {
+    code: "SITE486045",
+    name: "Midwest Orthopedic Specialty Hospital",
+    features: MOSH_FEATURES,
+    roleVisibility: STANDARD_ROLE_VISIBILITY,
+  },
 ];
 
 const LEADERSHIP_CODES_BY_FACILITY: Record<string, string[]> = {
@@ -811,10 +871,16 @@ async function seedFacilities(client: pg.PoolClient) {
   for (const f of KNOWN_FACILITIES) {
     const existing = await client.query("SELECT id FROM facilities WHERE code = $1", [f.code]);
     if (existing.rows.length === 0) {
-      await client.query("INSERT INTO facilities (code, name) VALUES ($1, $2)", [f.code, f.name]);
+      await client.query(
+        "INSERT INTO facilities (code, name, features, role_visibility) VALUES ($1, $2, $3, $4)",
+        [f.code, f.name, JSON.stringify(f.features), JSON.stringify(f.roleVisibility)],
+      );
       console.log(`Seeded facility: ${f.name} (${f.code})`);
     } else {
-      await client.query("UPDATE facilities SET name = $1 WHERE code = $2", [f.name, f.code]);
+      await client.query(
+        "UPDATE facilities SET name = $1, features = $2, role_visibility = $3 WHERE code = $4",
+        [f.name, JSON.stringify(f.features), JSON.stringify(f.roleVisibility), f.code],
+      );
     }
   }
   console.log("Seeded known facilities");
