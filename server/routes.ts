@@ -13,6 +13,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { LEADERSHIP_RANK } from "@shared/schema";
 import type { User, DailyActivity, UserProgress } from "@shared/schema";
 import { POINT_VALUES, PASSING_THRESHOLD } from "@shared/scoring-constants";
+import { getFacilityFeatures, getVisibleRoles, pool as featPool } from "./features.service";
 import { generateSecret as totpGenerateSecret, verifyToken as totpVerify, totpUri } from "./totp";
 import QRCode from "qrcode";
 import multer from "multer";
@@ -3094,6 +3095,67 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
       res.json({ complianceMode: facility.complianceMode });
     } catch {
       res.status(500).json({ error: "Failed to update compliance mode" });
+    }
+  });
+
+  // ── Feature Flags ───────────────────────────────────────────────────────────
+
+  app.get("/api/features", requireAuth, async (req: Request, res: Response) => {
+    try {
+      const facilityId = (req.user as any).facilityId as number | null ?? null;
+      if (!facilityId) {
+        return res.json({ features: {}, roleVisibility: {}, visibleRoles: [] });
+      }
+      const { features, roleVisibility } = await getFacilityFeatures(facilityId);
+      const visibleRoles = (Object.entries(roleVisibility) as [string, boolean][])
+        .filter(([, v]) => v === true)
+        .map(([k]) => k);
+      res.json({ features, roleVisibility, visibleRoles });
+    } catch (err) {
+      console.error("GET /api/features:", err);
+      res.status(500).json({ error: "Failed to fetch feature flags" });
+    }
+  });
+
+  app.get("/api/features/roles", requireAuth, async (req: Request, res: Response) => {
+    try {
+      const facilityId = (req.user as any).facilityId as number | null ?? null;
+      if (!facilityId) return res.json({ visibleRoles: [] });
+      const visibleRoles = await getVisibleRoles(facilityId);
+      res.json({ visibleRoles });
+    } catch (err) {
+      console.error("GET /api/features/roles:", err);
+      res.status(500).json({ error: "Failed to fetch visible roles" });
+    }
+  });
+
+  app.patch("/api/features", requireAuth, requireLeadershipRole("admin"), async (req: Request, res: Response) => {
+    try {
+      const facilityId = (req.user as any).facilityId as number | null ?? null;
+      if (!facilityId) return res.status(400).json({ error: "No facility context" });
+
+      const { features: featuresUpdate, roleVisibility: roleVisibilityUpdate } = req.body as {
+        features?: Record<string, boolean>;
+        roleVisibility?: Record<string, boolean>;
+      };
+
+      const current = await getFacilityFeatures(facilityId);
+      const updatedFeatures = featuresUpdate
+        ? { ...current.features, ...featuresUpdate }
+        : current.features;
+      const updatedRoleVisibility = roleVisibilityUpdate
+        ? { ...current.roleVisibility, ...roleVisibilityUpdate }
+        : current.roleVisibility;
+
+      await featPool.query(
+        "UPDATE facilities SET features = $1, role_visibility = $2 WHERE id = $3",
+        [JSON.stringify(updatedFeatures), JSON.stringify(updatedRoleVisibility), facilityId],
+      );
+
+      res.json({ success: true, features: updatedFeatures, roleVisibility: updatedRoleVisibility });
+    } catch (err) {
+      console.error("PATCH /api/features:", err);
+      res.status(500).json({ error: "Failed to update feature flags" });
     }
   });
 

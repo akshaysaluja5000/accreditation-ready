@@ -1,4 +1,5 @@
 import { pool } from "./storage.js";
+export { pool };
 import type { FacilityFeatures, FacilityRoleVisibility } from "@shared/schema";
 
 export const DEFAULT_FEATURES: FacilityFeatures = {
