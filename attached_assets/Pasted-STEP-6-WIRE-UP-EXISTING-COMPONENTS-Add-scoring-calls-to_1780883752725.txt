@@ -1,0 +1,95 @@
+STEP 6 — WIRE UP EXISTING COMPONENTS
+Add scoring calls to these four places in the existing codebase. Do not change any existing logic — only ADD the scoring calls alongside it.
+
+A. Question Answer Handler
+Find the function that handles answer submission in your quiz components. Add scoring ONLY when the answer is correct — no call for incorrect answers:
+
+import { recordActivity } from '../utils/scoring';
+
+async function handleAnswerSubmit(questionId, moduleId, isCorrect) {
+
+  // --- YOUR EXISTING LOGIC STAYS HERE UNCHANGED ---
+
+  // ADD: Only award points for correct answers
+  // Incorrect answers earn nothing — do not call recordActivity for them
+  if (isCorrect) {
+    recordActivity('question_correct', { questionId, moduleId })
+      .then(result => {
+        if (result?.totalScore !== undefined) {
+          updateScoreDisplay(result.totalScore); // refresh score in UI
+        }
+        if (result?.dailyBonusAwarded) {
+          showToast('🌟 Daily bonus! +15 pts'); // optional notification
+        }
+      });
+  }
+}
+B. Flashcard Rating Handler
+Find the function called when staff rates a flashcard Again/Hard/Good:
+
+import { recordActivity } from '../utils/scoring';
+
+async function handleFlashcardRating(cardId, moduleId, rating) {
+
+  // --- YOUR EXISTING FLASHCARD LOGIC STAYS HERE UNCHANGED ---
+
+  // ADD: All three ratings earn points — amounts differ by rating
+  const eventMap = {
+    again: 'flashcard_again',  // +5 pts
+    hard:  'flashcard_hard',   // +8 pts
+    good:  'flashcard_good',   // +10 pts
+  };
+
+  recordActivity(eventMap[rating], {
+    questionId: cardId,
+    moduleId,
+  }).then(result => {
+    if (result?.totalScore !== undefined) {
+      updateScoreDisplay(result.totalScore);
+    }
+  });
+}
+C. Diagnostic Completion Handler
+Find the function called when the 25-question diagnostic is submitted. No points are awarded — diagnostic is mandatory, not an achievement. No scoring call needed here at all:
+
+async function handleDiagnosticComplete(moduleId) {
+
+  // --- YOUR EXISTING DIAGNOSTIC COMPLETION LOGIC STAYS HERE UNCHANGED ---
+
+  // No scoring call — diagnostic completion earns no points
+  // The correct answers within the diagnostic DO earn points
+  // via the question answer handler above (handleAnswerSubmit)
+}
+D. Final Exam Completion Handler
+Find the function called when the final exam is submitted. This is the most important handler — calculates pass/fail and awards the largest bonuses:
+
+import { recordActivity, calculateFinalExamResult } from '../utils/scoring';
+
+async function handleFinalExamComplete(
+  moduleId,
+  correctAnswers,
+  totalQuestions,
+  attemptNumber
+) {
+
+  // --- YOUR EXISTING EXAM COMPLETION LOGIC STAYS HERE UNCHANGED ---
+
+  // ADD: Calculate pass/fail using 75% threshold
+  const { passed, score } = calculateFinalExamResult(
+    correctAnswers,
+    totalQuestions
+  );
+  const isFirstAttempt = attemptNumber === 1;
+
+  // Award flat completion bonus to everyone who finishes
+  await recordActivity('final_complete', { moduleId });
+
+  // Award first-attempt pass bonus if applicable
+  if (passed && isFirstAttempt) {
+    recordActivity('final_passed_first_attempt', { moduleId });
+    showToast('🏆 First attempt pass! +50 pts bonus');
+  }
+
+  // Return result for your existing pass/fail display logic
+  return { passed, score };
+}

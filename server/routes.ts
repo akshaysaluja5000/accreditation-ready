@@ -12,6 +12,7 @@ import { z } from "zod";
 import Anthropic from "@anthropic-ai/sdk";
 import { LEADERSHIP_RANK } from "@shared/schema";
 import type { User, DailyActivity, UserProgress } from "@shared/schema";
+import { POINT_VALUES, PASSING_THRESHOLD } from "@shared/scoring-constants";
 import { generateSecret as totpGenerateSecret, verifyToken as totpVerify, totpUri } from "./totp";
 import QRCode from "qrcode";
 import multer from "multer";
@@ -995,6 +996,19 @@ export async function registerRoutes(
 
       if (deltaQ > 0) {
         await storage.upsertDailyActivity(userId, today, deltaQ, deltaC, deltaXp);
+      }
+
+      // Points: fire-and-forget (non-blocking)
+      if (deltaC > 0) {
+        const facilityId = (req.user! as any).facilityId as number | null ?? null;
+        void (async () => {
+          try {
+            await storage.addPointsEvent(userId, facilityId, "question_correct", deltaC * POINT_VALUES.question_correct, { levelId });
+            await storage.tryAwardDailyLogin(userId, facilityId, today);
+          } catch (err) {
+            console.error("[Points] quiz session:", err);
+          }
+        })();
       }
 
       let streak = await storage.getStreak(userId);
@@ -2909,10 +2923,31 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
       if (d.correct) sectionScores[d.sectionId].correct++;
     }
     const storedPayload = { version: 2, detailedResults, sectionScores };
+
+    // Check first-attempt before creating result
+    const priorMasteryResults = await storage.getMasteryResults(req.user!.id);
+    const isFirstMasteryAttempt = priorMasteryResults.length === 0;
+
     const result = await storage.createMasteryResult(
       req.user!.id, score, totalAnswered, storedPayload
     );
     await storage.deleteMasterySession(req.user!.id);
+
+    // Points: fire-and-forget (non-blocking)
+    const _mFacilityId = (req.user! as any).facilityId as number | null ?? null;
+    const _mPct = totalAnswered > 0 ? (score / totalAnswered) * 100 : 0;
+    const _mPassed = _mPct >= PASSING_THRESHOLD;
+    void (async () => {
+      try {
+        await storage.addPointsEvent(req.user!.id, _mFacilityId, "final_complete", POINT_VALUES.final_complete);
+        if (_mPassed && isFirstMasteryAttempt) {
+          await storage.addPointsEvent(req.user!.id, _mFacilityId, "final_passed_first_attempt", POINT_VALUES.final_passed_first_attempt);
+        }
+      } catch (err) {
+        console.error("[Points] mastery submit:", err);
+      }
+    })();
+
     res.json({ score, totalQuestions: totalAnswered, resultId: result.id, detailedResults, sectionScores });
   });
 
@@ -2984,6 +3019,18 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
       const review = await storage.upsertFlashcardReview(
         req.user!.id, levelId, cardIndex, nextReviewAt, intervalMinutes, rating
       );
+
+      // Points: fire-and-forget (non-blocking)
+      const _fcFacilityId = (req.user! as any).facilityId as number | null ?? null;
+      void (async () => {
+        try {
+          const eventKey = `flashcard_${rating}` as keyof typeof POINT_VALUES;
+          await storage.addPointsEvent(req.user!.id, _fcFacilityId, eventKey, POINT_VALUES[eventKey], { levelId, cardIndex });
+        } catch (err) {
+          console.error("[Points] flashcard review:", err);
+        }
+      })();
+
       res.json(review);
     } catch (err) {
       console.error("Error saving flashcard review:", err);
@@ -4805,6 +4852,106 @@ Return ONLY valid JSON, no other text:
     } catch (err) {
       console.error("Update regulatory finding status error:", err);
       res.status(500).json({ error: "Failed to update status." });
+    }
+  });
+
+  // ── Points Ledger API ─────────────────────────────────────────────────────
+
+  app.get("/api/points/me", requireAuth, async (req: Request, res: Response) => {
+    try {
+      const userId = req.user!.id;
+      const facilityId = (req.user as any).facilityId as number | null ?? null;
+
+      // Respect active pilot window if configured
+      let startDate: Date | undefined;
+      let endDate: Date | undefined;
+      if (facilityId) {
+        const pilot = await storage.getActivePilotConfig(facilityId);
+        if (pilot) {
+          startDate = pilot.startDate instanceof Date ? pilot.startDate : new Date(pilot.startDate);
+          endDate   = pilot.endDate   instanceof Date ? pilot.endDate   : new Date(pilot.endDate);
+        }
+      }
+
+      const totalPoints = await storage.getUserTotalPoints(userId, startDate, endDate);
+
+      let rank: number | null = null;
+      if (facilityId) {
+        const lb = await storage.getFacilityLeaderboard(facilityId, 200, startDate, endDate);
+        const entry = lb.find(e => e.userId === userId);
+        rank = entry ? entry.rank : null;
+      }
+
+      res.json({ totalPoints, rank });
+    } catch (err) {
+      console.error("GET /api/points/me:", err);
+      res.status(500).json({ error: "Failed to fetch points" });
+    }
+  });
+
+  app.get("/api/points/leaderboard", requireAuth, async (req: Request, res: Response) => {
+    try {
+      const facilityId = (req.user as any).facilityId as number | null ?? null;
+      if (!facilityId) return res.json([]);
+
+      let startDate: Date | undefined;
+      let endDate: Date | undefined;
+      const pilot = await storage.getActivePilotConfig(facilityId);
+      if (pilot) {
+        startDate = pilot.startDate instanceof Date ? pilot.startDate : new Date(pilot.startDate);
+        endDate   = pilot.endDate   instanceof Date ? pilot.endDate   : new Date(pilot.endDate);
+      }
+
+      // Optional manual override via query params
+      if (req.query.start) startDate = new Date(req.query.start as string);
+      if (req.query.end)   endDate   = new Date(req.query.end   as string);
+
+      const lb = await storage.getFacilityLeaderboard(facilityId, 50, startDate, endDate);
+      res.json(lb);
+    } catch (err) {
+      console.error("GET /api/points/leaderboard:", err);
+      res.status(500).json({ error: "Failed to fetch leaderboard" });
+    }
+  });
+
+  app.get("/api/points/staff-engagement", requireAuth, requireLeadershipRole("director"), async (req: Request, res: Response) => {
+    try {
+      const facilityId = (req.user as any).facilityId as number | null ?? null;
+      if (!facilityId) return res.json([]);
+
+      let startDate: Date | undefined;
+      let endDate: Date | undefined;
+      const pilot = await storage.getActivePilotConfig(facilityId);
+      if (pilot) {
+        startDate = pilot.startDate instanceof Date ? pilot.startDate : new Date(pilot.startDate);
+        endDate   = pilot.endDate   instanceof Date ? pilot.endDate   : new Date(pilot.endDate);
+      }
+      if (req.query.start) startDate = new Date(req.query.start as string);
+      if (req.query.end)   endDate   = new Date(req.query.end   as string);
+
+      const engagement = await storage.getStaffEngagement(facilityId, startDate, endDate);
+      res.json(engagement);
+    } catch (err) {
+      console.error("GET /api/points/staff-engagement:", err);
+      res.status(500).json({ error: "Failed to fetch engagement" });
+    }
+  });
+
+  app.get("/api/points/breakdown/:userId", requireAuth, requireLeadershipRole("admin"), async (req: Request, res: Response) => {
+    try {
+      const targetUserId = parseInt(req.params.userId);
+      if (isNaN(targetUserId)) return res.status(400).json({ error: "Invalid user ID" });
+
+      let startDate: Date | undefined;
+      let endDate: Date | undefined;
+      if (req.query.start) startDate = new Date(req.query.start as string);
+      if (req.query.end)   endDate   = new Date(req.query.end   as string);
+
+      const breakdown = await storage.getUserPointsBreakdown(targetUserId, startDate, endDate);
+      res.json(breakdown);
+    } catch (err) {
+      console.error("GET /api/points/breakdown/:userId:", err);
+      res.status(500).json({ error: "Failed to fetch breakdown" });
     }
   });
 

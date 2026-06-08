@@ -1,0 +1,286 @@
+STEP 2 — BACKEND SERVICE
+Create this file at services/points.service.js
+
+// services/points.service.js
+
+const { POINT_VALUES, PASSING_THRESHOLD } = require('../constants/scoring.constants');
+
+/**
+ * Award points for a single event
+ * Only called for events that earn points — incorrect answers
+ * and diagnostic completion are never passed here
+ */
+async function awardPoints(db, {
+  userId,
+  facilityId,
+  eventType,
+  moduleId   = null,
+  questionId = null,
+  metadata   = {}
+}) {
+  const points = POINT_VALUES[eventType];
+
+  // Skip silently if event type earns zero points
+  if (points === undefined || points === 0) {
+    return null;
+  }
+
+  const result = await db.query(
+    `INSERT INTO points_ledger
+      (user_id, facility_id, event_type, points_awarded,
+       module_id, question_id, metadata)
+     VALUES ($1, $2, $3, $4, $5, $6, $7)
+     RETURNING *`,
+    [
+      userId,
+      facilityId,
+      eventType,
+      points,
+      moduleId,
+      questionId,
+      JSON.stringify(metadata)
+    ]
+  );
+
+  return result.rows[0];
+}
+
+/**
+ * Calculate whether a final exam score passes the 75% threshold
+ * Returns: { passed: boolean, score: number (percentage, rounded) }
+ */
+function isPassing(correctAnswers, totalQuestions) {
+  const score = Math.round((correctAnswers / totalQuestions) * 100);
+  return {
+    passed: score >= PASSING_THRESHOLD,
+    score,
+  };
+}
+
+/**
+ * Get total score for a user
+ * Optionally filtered to a date range for pilot leaderboard
+ */
+async function getUserScore(db, {
+  userId,
+  facilityId,
+  startDate = null,
+  endDate   = null
+}) {
+  let query = `
+    SELECT COALESCE(SUM(points_awarded), 0) AS total_points
+    FROM points_ledger
+    WHERE user_id = $1 AND facility_id = $2
+  `;
+  const params = [userId, facilityId];
+
+  if (startDate) {
+    params.push(startDate);
+    query += ` AND created_at >= $${params.length}`;
+  }
+  if (endDate) {
+    params.push(endDate);
+    query += ` AND created_at <= $${params.length}`;
+  }
+
+  const result = await db.query(query, params);
+  return parseInt(result.rows[0].total_points);
+}
+
+/**
+ * Get facility leaderboard
+ * Powers both staff-facing leaderboard and leadership dashboard
+ */
+async function getFacilityLeaderboard(db, {
+  facilityId,
+  startDate = null,
+  endDate   = null,
+  limit     = 50
+}) {
+  let dateFilter = '';
+  const params = [facilityId];
+
+  if (startDate) {
+    params.push(startDate);
+    dateFilter += ` AND pl.created_at >= $${params.length}`;
+  }
+  if (endDate) {
+    params.push(endDate);
+    dateFilter += ` AND pl.created_at <= $${params.length}`;
+  }
+
+  const result = await db.query(`
+    SELECT
+      u.id                                                           AS user_id,
+      u.name,
+      u.role,
+      u.department,
+      COALESCE(SUM(pl.points_awarded), 0)                           AS total_points,
+
+      -- Correct answer count (each correct answer = one ledger row)
+      COUNT(CASE WHEN pl.event_type = 'question_correct'
+            THEN 1 END)                                             AS questions_correct,
+
+      -- Flashcard activity
+      COUNT(CASE WHEN pl.event_type IN (
+            'flashcard_again','flashcard_hard','flashcard_good')
+            THEN 1 END)                                             AS flashcards_reviewed,
+
+      -- Final exam completion
+      COUNT(CASE WHEN pl.event_type = 'final_complete'
+            THEN 1 END)                                             AS finals_completed,
+
+      -- Last active timestamp
+      MAX(pl.created_at)                                            AS last_active,
+
+      -- Engagement level for leadership dashboard
+      CASE
+        WHEN MAX(pl.created_at) >= NOW() - INTERVAL '1 day'  THEN 'High'
+        WHEN MAX(pl.created_at) >= NOW() - INTERVAL '7 days' THEN 'Medium'
+        ELSE 'Low'
+      END                                                           AS engagement_level
+
+    FROM users u
+    LEFT JOIN points_ledger pl
+      ON u.id = pl.user_id
+      AND pl.facility_id = $1
+      ${dateFilter}
+    WHERE u.facility_id = $1
+    GROUP BY u.id, u.name, u.role, u.department
+    ORDER BY total_points DESC
+    LIMIT ${limit}
+  `, params);
+
+  return result.rows.map((row, index) => ({
+    ...row,
+    rank:               index + 1,
+    total_points:       parseInt(row.total_points),
+    questions_correct:  parseInt(row.questions_correct),
+    flashcards_reviewed: parseInt(row.flashcards_reviewed),
+    finals_completed:   parseInt(row.finals_completed),
+  }));
+}
+
+/**
+ * Get full activity drill-down for a single staff member
+ * Powers the CEO/admin detail view
+ */
+async function getStaffDrillDown(db, {
+  userId,
+  facilityId,
+  startDate = null,
+  endDate   = null
+}) {
+  let dateFilter = '';
+  const params = [userId, facilityId];
+
+  if (startDate) {
+    params.push(startDate);
+    dateFilter += ` AND created_at >= $${params.length}`;
+  }
+  if (endDate) {
+    params.push(endDate);
+    dateFilter += ` AND created_at <= $${params.length}`;
+  }
+
+  // Points breakdown by event type
+  const breakdown = await db.query(`
+    SELECT
+      event_type,
+      COUNT(*)            AS event_count,
+      SUM(points_awarded) AS points_earned
+    FROM points_ledger
+    WHERE user_id = $1 AND facility_id = $2
+    ${dateFilter}
+    GROUP BY event_type
+    ORDER BY points_earned DESC
+  `, params);
+
+  // Points broken down by module
+  const byModule = await db.query(`
+    SELECT
+      m.title                                                        AS module_name,
+      COUNT(CASE WHEN pl.event_type = 'question_correct'
+            THEN 1 END)                                             AS questions_correct,
+      COUNT(CASE WHEN pl.event_type IN (
+            'flashcard_again','flashcard_hard','flashcard_good')
+            THEN 1 END)                                             AS flashcards_reviewed,
+      SUM(pl.points_awarded)                                        AS module_points
+    FROM points_ledger pl
+    LEFT JOIN modules m ON pl.module_id = m.id
+    WHERE pl.user_id = $1 AND pl.facility_id = $2
+    ${dateFilter}
+    AND pl.module_id IS NOT NULL
+    GROUP BY m.id, m.title
+    ORDER BY module_points DESC
+  `, params);
+
+  // Daily activity for streak and calendar display
+  const dailyActivity = await db.query(`
+    SELECT
+      DATE(created_at)                                              AS activity_date,
+      SUM(points_awarded)                                           AS daily_points,
+      COUNT(CASE WHEN event_type = 'question_correct'
+            THEN 1 END)                                            AS daily_correct
+    FROM points_ledger
+    WHERE user_id = $1 AND facility_id = $2
+    ${dateFilter}
+    GROUP BY DATE(created_at)
+    ORDER BY activity_date DESC
+  `, params);
+
+  // Total score
+  const total = await db.query(`
+    SELECT COALESCE(SUM(points_awarded), 0) AS total_points
+    FROM points_ledger
+    WHERE user_id = $1 AND facility_id = $2
+    ${dateFilter}
+  `, params);
+
+  return {
+    total_points:    parseInt(total.rows[0].total_points),
+    breakdown:       breakdown.rows,
+    by_module:       byModule.rows,
+    daily_activity:  dailyActivity.rows,
+  };
+}
+
+/**
+ * Check and award daily login bonus
+ * Called on first correct answer of each day
+ * Awards 15 pts once per day per user
+ */
+async function checkAndAwardDailyBonus(db, { userId, facilityId }) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  // Check if already awarded today
+  const existing = await db.query(`
+    SELECT id FROM points_ledger
+    WHERE user_id = $1
+    AND facility_id = $2
+    AND event_type = 'daily_login'
+    AND created_at >= $3
+  `, [userId, facilityId, today]);
+
+  if (existing.rows.length === 0) {
+    await awardPoints(db, {
+      userId,
+      facilityId,
+      eventType: 'daily_login',
+    });
+    return true;  // bonus awarded
+  }
+  return false;   // already awarded today
+}
+
+module.exports = {
+  awardPoints,
+  isPassing,
+  getUserScore,
+  getFacilityLeaderboard,
+  getStaffDrillDown,
+  checkAndAwardDailyBonus,
+  POINT_VALUES,
+  PASSING_THRESHOLD,
+};

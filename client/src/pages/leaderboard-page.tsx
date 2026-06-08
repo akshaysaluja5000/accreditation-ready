@@ -2,12 +2,12 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
-import { ArrowLeft, Trophy, Zap, Flame, Target, TrendingUp, Medal, Crown, Calendar, CalendarDays, Sun } from "lucide-react";
+import { ArrowLeft, Trophy, Zap, Flame, Target, TrendingUp, Medal, Crown, Calendar, CalendarDays, Sun, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useAuth } from "@/lib/auth";
 import { getVisibleLevelsForModule } from "@shared/all-levels";
-import type { ModuleId } from "@shared/schema";
+import type { ModuleId, PointsLeaderboardEntry } from "@shared/schema";
 
 interface LeaderboardEntry {
   id: number;
@@ -47,15 +47,23 @@ function initials(entry: LeaderboardEntry): string {
   return entry.username.charAt(0).toUpperCase();
 }
 
+type Mode = "xp" | "points";
+
 export default function LeaderboardPage() {
   const { user } = useAuth();
   const [, setLocation] = useLocation();
   const [period, setPeriod] = useState<Period>("all");
+  const [mode, setMode] = useState<Mode>("xp");
 
   const { data: leaderboard, isLoading } = useQuery<LeaderboardEntry[]>({
     queryKey: ["/api/game/leaderboard", period],
     queryFn: () =>
       fetch(`/api/game/leaderboard?period=${period}`, { credentials: "include" }).then((r) => r.json()),
+  });
+
+  const { data: pointsLeaderboard, isLoading: pointsLoading } = useQuery<PointsLeaderboardEntry[]>({
+    queryKey: ["/api/points/leaderboard"],
+    enabled: mode === "points",
   });
 
   if (isLoading) {
@@ -96,30 +104,132 @@ export default function LeaderboardPage() {
             <p className="text-xs text-muted-foreground">See how you compare with your team</p>
           </div>
         </div>
-        {/* Period tabs */}
-        <div className="max-w-2xl mx-auto px-4 pb-3">
+
+        {/* Mode toggle */}
+        <div className="max-w-2xl mx-auto px-4 pb-2">
           <div className="flex gap-1.5 bg-muted/40 rounded-xl p-1">
-            {PERIODS.map((p) => (
-              <button
-                key={p.value}
-                onClick={() => setPeriod(p.value)}
-                data-testid={`tab-period-${p.value}`}
-                className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-lg text-xs font-bold transition-all ${
-                  period === p.value
-                    ? "bg-white dark:bg-card shadow text-primary"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {p.icon}
-                {p.label}
-              </button>
-            ))}
+            <button
+              onClick={() => setMode("xp")}
+              data-testid="tab-mode-xp"
+              className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-lg text-xs font-bold transition-all ${
+                mode === "xp" ? "bg-white dark:bg-card shadow text-primary" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              <Zap size={12} fill="currentColor" />
+              XP Ranking
+            </button>
+            <button
+              onClick={() => setMode("points")}
+              data-testid="tab-mode-points"
+              className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-lg text-xs font-bold transition-all ${
+                mode === "points" ? "bg-white dark:bg-card shadow text-amber-600" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              <Star size={12} fill="currentColor" />
+              Points
+            </button>
           </div>
         </div>
+
+        {/* Period tabs — XP mode only */}
+        {mode === "xp" && (
+          <div className="max-w-2xl mx-auto px-4 pb-3">
+            <div className="flex gap-1.5 bg-muted/40 rounded-xl p-1">
+              {PERIODS.map((p) => (
+                <button
+                  key={p.value}
+                  onClick={() => setPeriod(p.value)}
+                  data-testid={`tab-period-${p.value}`}
+                  className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-lg text-xs font-bold transition-all ${
+                    period === p.value
+                      ? "bg-white dark:bg-card shadow text-primary"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {p.icon}
+                  {p.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="max-w-2xl mx-auto px-4 pt-6 flex flex-col gap-6">
-        {myEntry && myRank !== undefined && (
+
+        {/* ── Points Leaderboard ── */}
+        {mode === "points" && (
+          <>
+            {pointsLoading ? (
+              <Skeleton className="h-64 rounded-2xl" />
+            ) : (
+              <div className="rounded-2xl bg-card border border-card-border overflow-hidden">
+                <div className="p-4 border-b border-card-border flex items-center justify-between">
+                  <h3 className="font-bold text-sm flex items-center gap-2">
+                    <Star size={16} className="text-amber-500" fill="currentColor" />
+                    Points Leaderboard
+                  </h3>
+                  <span className="text-xs text-muted-foreground font-semibold">All Time</span>
+                </div>
+                <div className="divide-y divide-card-border/50">
+                  {(pointsLeaderboard ?? []).map((entry, i) => {
+                    const isMe = entry.userId === user?.id;
+                    const initials2 = (entry.firstName && entry.lastName)
+                      ? `${entry.firstName.charAt(0)}${entry.lastName.charAt(0)}`.toUpperCase()
+                      : entry.username.charAt(0).toUpperCase();
+                    const name = (entry.firstName && entry.lastName)
+                      ? `${entry.firstName} ${entry.lastName}`
+                      : entry.username;
+                    return (
+                      <motion.div
+                        key={entry.userId}
+                        className={`flex items-center gap-3 px-4 py-3 ${isMe ? "bg-amber-500/5" : ""}`}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.15 }}
+                        data-testid={`row-points-leaderboard-${entry.userId}`}
+                      >
+                        <div className="w-8 text-center flex-shrink-0">
+                          {i === 0 ? (
+                            <Crown size={18} className="text-orange-400 mx-auto" />
+                          ) : i === 1 ? (
+                            <Medal size={18} className="text-gray-400 mx-auto" />
+                          ) : i === 2 ? (
+                            <Medal size={18} className="text-orange-600 mx-auto" />
+                          ) : (
+                            <span className="font-black text-sm text-muted-foreground">{i + 1}</span>
+                          )}
+                        </div>
+                        <div className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 ${isMe ? "bg-amber-500 text-white" : "bg-amber-500/10 text-amber-600"}`}>
+                          <span className="text-xs font-bold">{initials2}</span>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className={`text-sm font-bold truncate ${isMe ? "text-amber-600 dark:text-amber-400" : ""}`}>
+                            {name}{isMe && <span className="text-xs font-normal text-muted-foreground ml-1">(you)</span>}
+                          </p>
+                        </div>
+                        <div className="flex items-center gap-1 flex-shrink-0">
+                          <Star size={14} className="text-amber-500" fill="currentColor" />
+                          <span className="text-sm font-black" data-testid={`text-points-${entry.userId}`}>{entry.totalPoints.toLocaleString()}</span>
+                        </div>
+                      </motion.div>
+                    );
+                  })}
+                  {(pointsLeaderboard ?? []).length === 0 && (
+                    <div className="p-8 text-center text-muted-foreground">
+                      <Star size={32} className="mx-auto mb-3 opacity-30" />
+                      <p className="font-medium">No points yet</p>
+                      <p className="text-xs mt-1">Complete quizzes and flashcards to earn points!</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+          </>
+        )}
+
+        {/* ── XP Leaderboard (existing) ── */}
+        {mode === "xp" && myEntry && myRank !== undefined && (
           <motion.div
             className="rounded-2xl bg-primary/5 border border-primary/20 p-4"
             initial={{ opacity: 0, y: 10 }}
@@ -148,7 +258,7 @@ export default function LeaderboardPage() {
           </motion.div>
         )}
 
-        {topThree.length > 0 && (
+        {mode === "xp" && topThree.length > 0 && (
           <div className="flex items-end justify-center gap-3 pt-4 pb-2">
             {topThree.length > 1 && (
               <motion.div
@@ -198,7 +308,7 @@ export default function LeaderboardPage() {
           </div>
         )}
 
-        <div className="rounded-2xl bg-card border border-card-border overflow-hidden">
+        {mode === "xp" && <div className="rounded-2xl bg-card border border-card-border overflow-hidden">
           <div className="p-4 border-b border-card-border flex items-center justify-between">
             <h3 className="font-bold text-sm flex items-center gap-2">
               <Trophy size={16} className="text-primary" />
@@ -274,9 +384,9 @@ export default function LeaderboardPage() {
               </div>
             )}
           </div>
-        </div>
+        </div>}
 
-        {leaderboard && leaderboard.length > 0 && (
+        {mode === "xp" && leaderboard && leaderboard.length > 0 && (
           <motion.div
             className="rounded-2xl bg-card border border-card-border p-4"
             initial={{ opacity: 0, y: 10 }}

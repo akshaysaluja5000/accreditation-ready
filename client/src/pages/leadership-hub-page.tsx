@@ -5,7 +5,7 @@ import {
   ArrowLeft, BarChart3, TrendingUp, GraduationCap, BrainCircuit,
   Users, Building2, Stethoscope, ChevronRight, ShieldCheck,
   ClipboardList, FileText, Lock, AlertTriangle, ShieldAlert, Bot, Globe, Briefcase, Zap,
-  FolderOpen,
+  FolderOpen, Star, Brain, BookOpen,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/lib/auth";
@@ -375,6 +375,11 @@ export default function LeadershipHubPage() {
     enabled: needsMfa,
   });
 
+  const { data: staffEngagement } = useQuery<import("@shared/schema").StaffEngagementEntry[]>({
+    queryKey: ["/api/points/staff-engagement"],
+    enabled: effectiveRank >= LEADERSHIP_RANK["director"],
+  });
+
   const { data: facilitySettings, isLoading: settingsLoading } = useQuery<{ complianceMode: string }>({
     queryKey: ["/api/facility/settings"],
     enabled: !!user && effectiveRank >= LEADERSHIP_RANK["director"],
@@ -622,6 +627,81 @@ export default function LeadershipHubPage() {
             })}
           </div>
         </div>
+
+        {/* Staff Engagement (director+) */}
+        {effectiveRank >= LEADERSHIP_RANK["director"] && (
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="rounded-2xl border border-border bg-card overflow-hidden"
+            data-testid="card-staff-engagement"
+          >
+            <div className="p-5 border-b border-border flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+                <Star size={20} className="text-amber-500" fill="currentColor" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <h2 className="font-bold text-sm">Staff Engagement</h2>
+                <p className="text-xs text-muted-foreground">Points earned across your facility</p>
+              </div>
+            </div>
+
+            {!staffEngagement ? (
+              <div className="p-5 flex flex-col gap-3">
+                {[1,2,3].map(i => <div key={i} className="h-10 rounded-xl bg-muted/40 animate-pulse" />)}
+              </div>
+            ) : staffEngagement.length === 0 ? (
+              <div className="p-8 text-center text-muted-foreground">
+                <Brain size={28} className="mx-auto mb-2 opacity-30" />
+                <p className="text-sm font-semibold">No activity yet</p>
+                <p className="text-xs mt-1">Points appear here once staff start quizzes or flashcard reviews.</p>
+              </div>
+            ) : (
+              <div className="divide-y divide-border/60">
+                {staffEngagement.map((member, i) => {
+                  const name = (member.firstName || member.lastName)
+                    ? `${member.firstName} ${member.lastName}`.trim()
+                    : member.username;
+                  const initial = name.charAt(0).toUpperCase();
+                  return (
+                    <div
+                      key={member.userId}
+                      className="px-5 py-3.5 flex items-center gap-3"
+                      data-testid={`row-engagement-${member.userId}`}
+                    >
+                      <div className="w-6 text-center flex-shrink-0">
+                        <span className="text-xs font-black text-muted-foreground">{i + 1}</span>
+                      </div>
+                      <div className="w-8 h-8 rounded-full bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+                        <span className="text-xs font-bold text-amber-600">{initial}</span>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-bold truncate">{name}</p>
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          {member.department && <span>{member.department}</span>}
+                          <span className="flex items-center gap-1">
+                            <BookOpen size={10} />
+                            {member.questionsCorrect} correct
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <Brain size={10} />
+                            {member.flashcardsReviewed} cards
+                          </span>
+                        </div>
+                      </div>
+                      <div className="flex-shrink-0 flex items-center gap-1">
+                        <Star size={13} className="text-amber-500" fill="currentColor" />
+                        <span className="font-black text-sm" data-testid={`text-engagement-points-${member.userId}`}>
+                          {member.totalPoints.toLocaleString()}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </motion.div>
+        )}
 
         {/* Team Risk Summary */}
         <TeamRiskSummary module={isAsc ? "asc" : isDnv ? "dnv" : "hospital"} />

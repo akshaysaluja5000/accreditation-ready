@@ -578,6 +578,34 @@ export async function ensureTablesExist() {
         display_order INTEGER NOT NULL DEFAULT 0
       );
       CREATE INDEX IF NOT EXISTS idx_content_assessment_type ON content_assessment_questions(assessment_type);
+
+      -- Points Ledger
+      CREATE TABLE IF NOT EXISTS points_ledger (
+        id SERIAL PRIMARY KEY,
+        user_id INTEGER NOT NULL REFERENCES users(id),
+        facility_id INTEGER REFERENCES facilities(id),
+        event_type VARCHAR(50) NOT NULL,
+        points_awarded INTEGER NOT NULL,
+        level_id TEXT,
+        question_id TEXT,
+        metadata JSONB DEFAULT '{}',
+        created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+      );
+      CREATE INDEX IF NOT EXISTS idx_points_ledger_user_id ON points_ledger(user_id);
+      CREATE INDEX IF NOT EXISTS idx_points_ledger_facility_id ON points_ledger(facility_id);
+      CREATE INDEX IF NOT EXISTS idx_points_ledger_created_at ON points_ledger(created_at);
+      CREATE INDEX IF NOT EXISTS idx_points_ledger_event_type ON points_ledger(event_type);
+
+      -- Pilot Config
+      CREATE TABLE IF NOT EXISTS pilot_config (
+        id SERIAL PRIMARY KEY,
+        facility_id INTEGER NOT NULL REFERENCES facilities(id),
+        pilot_name TEXT,
+        start_date TIMESTAMP WITH TIME ZONE NOT NULL,
+        end_date TIMESTAMP WITH TIME ZONE NOT NULL,
+        is_active BOOLEAN DEFAULT true,
+        created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+      );
     `);
     console.log("Ensured all database tables exist");
     await seedFacilities(client);
@@ -986,6 +1014,15 @@ export interface IStorage {
   getAscPosttestQuestions(): Promise<AscPretestQuestion[]>;
   getDnvPretestQuestions(): Promise<DnvTestQuestion[]>;
   getDnvPosttestQuestions(): Promise<DnvTestQuestion[]>;
+
+  // Points Ledger
+  addPointsEvent(userId: number, facilityId: number | null, eventType: string, pointsAwarded: number, meta?: Record<string, unknown>): Promise<void>;
+  tryAwardDailyLogin(userId: number, facilityId: number | null, today: string): Promise<boolean>;
+  getUserTotalPoints(userId: number, startDate?: Date, endDate?: Date): Promise<number>;
+  getFacilityLeaderboard(facilityId: number, limit?: number, startDate?: Date, endDate?: Date): Promise<import("@shared/schema").PointsLeaderboardEntry[]>;
+  getStaffEngagement(facilityId: number, startDate?: Date, endDate?: Date): Promise<import("@shared/schema").StaffEngagementEntry[]>;
+  getUserPointsBreakdown(userId: number, startDate?: Date, endDate?: Date): Promise<import("@shared/schema").PointsBreakdownEntry[]>;
+  getActivePilotConfig(facilityId: number): Promise<import("@shared/schema").PilotConfig | null>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -2327,6 +2364,170 @@ export class DatabaseStorage implements IStorage {
   async getDnvPosttestQuestions(): Promise<DnvTestQuestion[]> {
     const { dnvPosttestQuestions } = await import("@shared/dnv-posttest");
     return dnvPosttestQuestions as DnvTestQuestion[];
+  }
+
+  // ── Points Ledger ───────────────────────────────────────────────────────────
+
+  async addPointsEvent(
+    userId: number,
+    facilityId: number | null,
+    eventType: string,
+    pointsAwarded: number,
+    meta: Record<string, unknown> = {},
+  ): Promise<void> {
+    await pool.query(
+      `INSERT INTO points_ledger (user_id, facility_id, event_type, points_awarded, metadata)
+       VALUES ($1, $2, $3, $4, $5)`,
+      [userId, facilityId, eventType, pointsAwarded, JSON.stringify(meta)],
+    );
+  }
+
+  async tryAwardDailyLogin(
+    userId: number,
+    facilityId: number | null,
+    today: string,
+  ): Promise<boolean> {
+    const { rows } = await pool.query(
+      `INSERT INTO points_ledger (user_id, facility_id, event_type, points_awarded, metadata)
+       SELECT $1, $2, 'daily_login', $3, $4
+       WHERE NOT EXISTS (
+         SELECT 1 FROM points_ledger
+         WHERE user_id = $1
+           AND event_type = 'daily_login'
+           AND created_at::date = $5::date
+       )
+       RETURNING id`,
+      [userId, facilityId, 15, JSON.stringify({ date: today }), today],
+    );
+    return rows.length > 0;
+  }
+
+  async getUserTotalPoints(
+    userId: number,
+    startDate?: Date,
+    endDate?: Date,
+  ): Promise<number> {
+    const params: unknown[] = [userId];
+    let clause = "";
+    if (startDate) { params.push(startDate); clause += ` AND created_at >= $${params.length}`; }
+    if (endDate)   { params.push(endDate);   clause += ` AND created_at <= $${params.length}`; }
+    const { rows } = await pool.query(
+      `SELECT COALESCE(SUM(points_awarded), 0) AS total
+       FROM points_ledger WHERE user_id = $1${clause}`,
+      params,
+    );
+    return parseInt(rows[0].total, 10);
+  }
+
+  async getFacilityLeaderboard(
+    facilityId: number,
+    limit = 50,
+    startDate?: Date,
+    endDate?: Date,
+  ): Promise<import("@shared/schema").PointsLeaderboardEntry[]> {
+    const params: unknown[] = [facilityId, startDate ?? null, endDate ?? null, limit];
+    const { rows } = await pool.query(
+      `SELECT u.id AS user_id, u.username, u.first_name, u.last_name,
+              COALESCE((
+                SELECT SUM(pl.points_awarded)
+                FROM points_ledger pl
+                WHERE pl.user_id = u.id
+                  AND ($2::timestamptz IS NULL OR pl.created_at >= $2)
+                  AND ($3::timestamptz IS NULL OR pl.created_at <= $3)
+              ), 0) AS total_points
+       FROM users u
+       WHERE u.facility_id = $1
+       ORDER BY total_points DESC
+       LIMIT $4`,
+      params,
+    );
+    return rows.map((r: any, i: number) => ({
+      userId: r.user_id,
+      username: r.username,
+      firstName: r.first_name,
+      lastName: r.last_name,
+      totalPoints: parseInt(r.total_points, 10),
+      rank: i + 1,
+    }));
+  }
+
+  async getStaffEngagement(
+    facilityId: number,
+    startDate?: Date,
+    endDate?: Date,
+  ): Promise<import("@shared/schema").StaffEngagementEntry[]> {
+    const params: unknown[] = [facilityId, startDate ?? null, endDate ?? null];
+    const { rows } = await pool.query(
+      `SELECT u.id AS user_id, u.username, u.first_name, u.last_name, u.department,
+              COALESCE(SUM(pl.points_awarded), 0) AS total_points,
+              COUNT(CASE WHEN pl.event_type = 'question_correct' THEN 1 END) AS questions_correct,
+              COUNT(CASE WHEN pl.event_type IN ('flashcard_again','flashcard_hard','flashcard_good') THEN 1 END) AS flashcards_reviewed,
+              MAX(pl.created_at) AS last_active
+       FROM users u
+       LEFT JOIN points_ledger pl ON pl.user_id = u.id
+         AND ($2::timestamptz IS NULL OR pl.created_at >= $2)
+         AND ($3::timestamptz IS NULL OR pl.created_at <= $3)
+       WHERE u.facility_id = $1
+       GROUP BY u.id, u.username, u.first_name, u.last_name, u.department
+       ORDER BY total_points DESC`,
+      params,
+    );
+    return rows.map((r: any) => ({
+      userId: r.user_id,
+      username: r.username,
+      firstName: r.first_name,
+      lastName: r.last_name,
+      department: r.department,
+      totalPoints: parseInt(r.total_points, 10),
+      questionsCorrect: parseInt(r.questions_correct, 10),
+      flashcardsReviewed: parseInt(r.flashcards_reviewed, 10),
+      lastActive: r.last_active ? new Date(r.last_active).toISOString() : null,
+    }));
+  }
+
+  async getUserPointsBreakdown(
+    userId: number,
+    startDate?: Date,
+    endDate?: Date,
+  ): Promise<import("@shared/schema").PointsBreakdownEntry[]> {
+    const params: unknown[] = [userId, startDate ?? null, endDate ?? null];
+    const { rows } = await pool.query(
+      `SELECT event_type, points_awarded, level_id, metadata, created_at
+       FROM points_ledger
+       WHERE user_id = $1
+         AND ($2::timestamptz IS NULL OR created_at >= $2)
+         AND ($3::timestamptz IS NULL OR created_at <= $3)
+       ORDER BY created_at DESC
+       LIMIT 200`,
+      params,
+    );
+    return rows.map((r: any) => ({
+      eventType: r.event_type,
+      pointsAwarded: r.points_awarded,
+      levelId: r.level_id,
+      metadata: r.metadata ?? {},
+      createdAt: new Date(r.created_at).toISOString(),
+    }));
+  }
+
+  async getActivePilotConfig(
+    facilityId: number,
+  ): Promise<import("@shared/schema").PilotConfig | null> {
+    const { rows } = await pool.query(
+      `SELECT * FROM pilot_config WHERE facility_id = $1 AND is_active = true AND NOW() BETWEEN start_date AND end_date LIMIT 1`,
+      [facilityId],
+    );
+    if (!rows[0]) return null;
+    const r = rows[0];
+    return {
+      id: r.id,
+      facilityId: r.facility_id,
+      pilotName: r.pilot_name,
+      startDate: r.start_date,
+      endDate: r.end_date,
+      isActive: r.is_active,
+      createdAt: r.created_at,
+    };
   }
 }
 

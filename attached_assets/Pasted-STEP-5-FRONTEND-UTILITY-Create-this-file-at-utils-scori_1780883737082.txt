@@ -1,0 +1,94 @@
+STEP 5 — FRONTEND UTILITY
+Create this file at utils/scoring.js
+
+// utils/scoring.js
+// Import this wherever scoring calls are needed in the frontend
+
+import { PASSING_THRESHOLD } from '../constants/scoring.constants';
+
+const BASE_URL = '/api/points';
+
+/**
+ * Record a scoreable activity
+ * Always non-blocking — never throws, never interrupts learning flow
+ * Only call this for events that earn points:
+ *   question_correct, flashcard_again, flashcard_hard, flashcard_good,
+ *   final_complete, final_passed_first_attempt
+ * Do NOT call for incorrect answers or diagnostic completion
+ */
+export async function recordActivity(eventType, options = {}) {
+  try {
+    const response = await fetch(`${BASE_URL}/award`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({
+        eventType,
+        moduleId:   options.moduleId   || null,
+        questionId: options.questionId || null,
+        metadata:   options.metadata   || {},
+      }),
+    });
+
+    const data = await response.json();
+    return data; // { pointsAwarded, dailyBonusAwarded, totalScore }
+  } catch (err) {
+    // Fail silently — scoring must never break the learning experience
+    console.error('Scoring error (non-blocking):', err);
+    return null;
+  }
+}
+
+/**
+ * Calculate whether a final exam score is a pass
+ * Uses the 75% threshold defined in constants
+ * Returns: { passed: boolean, score: number (percentage) }
+ */
+export function calculateFinalExamResult(correctAnswers, totalQuestions) {
+  const score = Math.round((correctAnswers / totalQuestions) * 100);
+  const passed = score >= PASSING_THRESHOLD;
+  return { passed, score };
+}
+
+/**
+ * Fetch the current user's score and rank
+ * Call after activity to refresh the score display
+ */
+export async function getMyScore(startDate = null, endDate = null) {
+  try {
+    const params = new URLSearchParams();
+    if (startDate) params.append('startDate', startDate);
+    if (endDate)   params.append('endDate',   endDate);
+
+    const response = await fetch(
+      `${BASE_URL}/my-score?${params.toString()}`,
+      { credentials: 'include' }
+    );
+    return await response.json(); // { totalScore, rank, totalParticipants }
+  } catch (err) {
+    console.error('Error fetching score:', err);
+    return null;
+  }
+}
+
+/**
+ * Fetch the facility leaderboard
+ * Used for staff leaderboard display and leadership dashboard
+ */
+export async function getLeaderboard(startDate = null, endDate = null) {
+  try {
+    const params = new URLSearchParams();
+    if (startDate) params.append('startDate', startDate);
+    if (endDate)   params.append('endDate',   endDate);
+
+    const response = await fetch(
+      `${BASE_URL}/leaderboard?${params.toString()}`,
+      { credentials: 'include' }
+    );
+    const data = await response.json();
+    return data.leaderboard;
+  } catch (err) {
+    console.error('Error fetching leaderboard:', err);
+    return [];
+  }
+}

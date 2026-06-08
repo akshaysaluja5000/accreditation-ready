@@ -812,6 +812,81 @@ export const complianceCompletionLog = pgTable("compliance_completion_log", {
 
 export type ComplianceCompletionLog = typeof complianceCompletionLog.$inferSelect;
 
+// ── Points Ledger ─────────────────────────────────────────────────────────────
+
+export const POINT_EVENT_TYPES = [
+  "question_correct",
+  "flashcard_again",
+  "flashcard_hard",
+  "flashcard_good",
+  "daily_login",
+  "final_complete",
+  "final_passed_first_attempt",
+] as const;
+
+export type PointEventType = typeof POINT_EVENT_TYPES[number];
+
+export const pointsLedger = pgTable("points_ledger", {
+  id: serial("id").primaryKey(),
+  userId: integer("user_id").notNull().references(() => users.id),
+  facilityId: integer("facility_id").references(() => facilities.id),
+  eventType: text("event_type").notNull(),
+  pointsAwarded: integer("points_awarded").notNull(),
+  levelId: text("level_id"),
+  questionId: text("question_id"),
+  metadata: jsonb("metadata").notNull().default(sql`'{}'::jsonb`),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+}, (t) => [
+  index("idx_points_ledger_user_id").on(t.userId),
+  index("idx_points_ledger_facility_id").on(t.facilityId),
+  index("idx_points_ledger_created_at").on(t.createdAt),
+  index("idx_points_ledger_event_type").on(t.eventType),
+]);
+
+export type PointsLedgerEntry = typeof pointsLedger.$inferSelect;
+
+export const pilotConfig = pgTable("pilot_config", {
+  id: serial("id").primaryKey(),
+  facilityId: integer("facility_id").notNull().references(() => facilities.id),
+  pilotName: text("pilot_name"),
+  startDate: timestamp("start_date", { withTimezone: true }).notNull(),
+  endDate: timestamp("end_date", { withTimezone: true }).notNull(),
+  isActive: boolean("is_active").notNull().default(true),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+});
+
+export type PilotConfig = typeof pilotConfig.$inferSelect;
+
+// Points query result shapes (not DB tables — just TS interfaces)
+export interface PointsLeaderboardEntry {
+  userId: number;
+  username: string;
+  firstName: string;
+  lastName: string;
+  totalPoints: number;
+  rank: number;
+}
+
+export interface StaffEngagementEntry {
+  userId: number;
+  username: string;
+  firstName: string;
+  lastName: string;
+  department: string | null;
+  totalPoints: number;
+  questionsCorrect: number;
+  flashcardsReviewed: number;
+  lastActive: string | null;
+}
+
+export interface PointsBreakdownEntry {
+  eventType: string;
+  pointsAwarded: number;
+  levelId: string | null;
+  metadata: Record<string, unknown>;
+  createdAt: string;
+}
+
 export interface DeepDiveGameState {
   currentQuestion: number;
   totalQuestions: number;

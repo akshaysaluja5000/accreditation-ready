@@ -1,0 +1,152 @@
+STEP 3 — BACKEND ROUTES
+Create this file at routes/points.routes.js
+
+// routes/points.routes.js
+
+const express = require('express');
+const router = express.Router();
+const pointsService = require('../services/points.service');
+const { requireAuth, requireRole } = require('../middleware/auth');
+
+/**
+ * POST /api/points/award
+ * Called by frontend after a correct answer or flashcard rating
+ * Body: { eventType, moduleId?, questionId?, metadata? }
+ */
+router.post('/award', requireAuth, async (req, res) => {
+  try {
+    const { eventType, moduleId, questionId, metadata } = req.body;
+    const { userId, facilityId } = req.user;
+
+    // Award points for this event
+    const record = await pointsService.awardPoints(req.db, {
+      userId,
+      facilityId,
+      eventType,
+      moduleId,
+      questionId,
+      metadata,
+    });
+
+    // Check and award daily login bonus on first correct answer of the day
+    // Only fires if eventType is question_correct
+    let bonusAwarded = false;
+    if (eventType === 'question_correct') {
+      bonusAwarded = await pointsService.checkAndAwardDailyBonus(req.db, {
+        userId,
+        facilityId,
+      });
+    }
+
+    // Return updated total score for frontend display refresh
+    const totalScore = await pointsService.getUserScore(req.db, {
+      userId,
+      facilityId,
+    });
+
+    res.json({
+      success:           true,
+      pointsAwarded:     record ? record.points_awarded : 0,
+      dailyBonusAwarded: bonusAwarded,
+      totalScore,
+    });
+  } catch (err) {
+    console.error('Error awarding points:', err);
+    res.status(500).json({ error: 'Failed to award points' });
+  }
+});
+
+/**
+ * GET /api/points/leaderboard
+ * Staff-facing and leadership leaderboard
+ * Query params: startDate?, endDate?
+ */
+router.get('/leaderboard', requireAuth, async (req, res) => {
+  try {
+    const { facilityId } = req.user;
+    const { startDate, endDate } = req.query;
+
+    const leaderboard = await pointsService.getFacilityLeaderboard(req.db, {
+      facilityId,
+      startDate: startDate || null,
+      endDate:   endDate   || null,
+    });
+
+    res.json({ leaderboard });
+  } catch (err) {
+    console.error('Error fetching leaderboard:', err);
+    res.status(500).json({ error: 'Failed to fetch leaderboard' });
+  }
+});
+
+/**
+ * GET /api/points/my-score
+ * Staff member's own score and rank
+ * Query params: startDate?, endDate?
+ */
+router.get('/my-score', requireAuth, async (req, res) => {
+  try {
+    const { userId, facilityId } = req.user;
+    const { startDate, endDate } = req.query;
+
+    const totalScore = await pointsService.getUserScore(req.db, {
+      userId,
+      facilityId,
+      startDate: startDate || null,
+      endDate:   endDate   || null,
+    });
+
+    const leaderboard = await pointsService.getFacilityLeaderboard(req.db, {
+      facilityId,
+      startDate: startDate || null,
+      endDate:   endDate   || null,
+    });
+
+    const rank = leaderboard.findIndex(u => u.user_id === userId) + 1;
+
+    res.json({
+      totalScore,
+      rank,
+      totalParticipants: leaderboard.length,
+    });
+  } catch (err) {
+    console.error('Error fetching score:', err);
+    res.status(500).json({ error: 'Failed to fetch score' });
+  }
+});
+
+/**
+ * GET /api/points/staff/:staffId/drilldown
+ * CEO/Admin only — full activity breakdown for one staff member
+ * Query params: startDate?, endDate?
+ */
+router.get('/staff/:staffId/drilldown',
+  requireAuth,
+  requireRole(['admin', 'leadership']),
+  async (req, res) => {
+    try {
+      const { facilityId } = req.user;
+      const { staffId } = req.params;
+      const { startDate, endDate } = req.query;
+
+      const drilldown = await pointsService.getStaffDrillDown(req.db, {
+        userId:    staffId,
+        facilityId,
+        startDate: startDate || null,
+        endDate:   endDate   || null,
+      });
+
+      res.json(drilldown);
+    } catch (err) {
+      console.error('Error fetching drilldown:', err);
+      res.status(500).json({ error: 'Failed to fetch staff detail' });
+    }
+  }
+);
+
+module.exports = router;
+STEP 4 — REGISTER THE ROUTES
+In your main app.js or server.js, add these two lines where the other routes are already registered:
+
+const pointsRoutes = require('./routes/points.routes');
+app.use('/api/points', pointsRoutes);

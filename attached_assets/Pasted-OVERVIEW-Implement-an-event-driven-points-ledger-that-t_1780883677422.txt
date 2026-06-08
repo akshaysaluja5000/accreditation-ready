@@ -1,0 +1,101 @@
+OVERVIEW
+Implement an event-driven points ledger that tracks all user activity across the platform and powers three things:
+
+A staff-facing score and leaderboard (gamification / pilot competition)
+A leadership dashboard showing engagement per staff member
+A drill-down view for CEO/admin showing full activity breakdown
+Core Rules
+Points are awarded for correct answers only — incorrect answers earn nothing
+Diagnostic completion earns no bonus — it is mandatory, not an achievement
+Flashcard reviews earn points regardless of rating (Again/Hard/Good)
+Final exam completion and first-attempt pass earn bonus points
+Daily login bonus awarded once per day on first activity
+All scoring calls must be non-blocking — never interrupt the learning flow
+If the scoring API fails for any reason, fail silently, log to console only
+Passing score is 75% across all modules — both hospital and ASC sides
+SCORING TABLE
+
+
+Activity	Points	Notes
+Question correct	+20 pts	Only fires if answer is correct
+Question incorrect	0 pts	No points — accuracy must mean something
+Flashcard Again	+5 pts	Returning to a hard card is good behavior
+Flashcard Hard	+8 pts	Engaging with difficult material
+Flashcard Good	+10 pts	Highest flashcard reward
+Daily login with activity	+15 pts	Once per day, requires ≥1 correct answer
+Diagnostic completed	0 pts	Mandatory — not an achievement
+Final exam completed	+100 pts	Flat bonus for everyone who finishes
+Final exam passed first attempt	+50 pts	Bonus for clean first-attempt pass
+CONSTANTS
+Single source of truth for all scoring and pass/fail logic. Change values here and they apply everywhere automatically.
+
+// constants/scoring.constants.js
+
+const POINT_VALUES = {
+  question_correct:            20,  // correct answers only — no points for incorrect
+  flashcard_again:              5,
+  flashcard_hard:               8,
+  flashcard_good:              10,
+  daily_login:                 15,  // once per day on first correct answer
+  diagnostic_complete:          0,  // mandatory — no bonus awarded
+  final_complete:             100,  // flat bonus when final exam submitted
+  final_passed_first_attempt:  50,  // bonus for passing on first attempt
+};
+
+// Passing threshold — applies to all modules, both hospital and ASC
+const PASSING_THRESHOLD = 75; // percent correct required to pass final exam
+
+module.exports = { POINT_VALUES, PASSING_THRESHOLD };
+STEP 1 — DATABASE
+Run this SQL to create the two required tables.
+
+-- Table 1: Points ledger
+-- Every scoreable action writes one row here
+-- Never delete rows — always sum to get current score
+
+CREATE TABLE points_ledger (
+  id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id         UUID NOT NULL REFERENCES users(id),
+  facility_id     UUID NOT NULL REFERENCES facilities(id),
+  event_type      VARCHAR(50) NOT NULL CHECK (event_type IN (
+                    'question_correct',
+                    'flashcard_again',
+                    'flashcard_hard',
+                    'flashcard_good',
+                    'daily_login',
+                    'final_complete',
+                    'final_passed_first_attempt'
+                  )),
+  points_awarded  INTEGER NOT NULL,
+  module_id       UUID REFERENCES modules(id),
+  question_id     UUID REFERENCES questions(id),
+  metadata        JSONB DEFAULT '{}',
+  created_at      TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Indexes for fast leaderboard and drill-down queries
+CREATE INDEX idx_points_ledger_user_id     ON points_ledger(user_id);
+CREATE INDEX idx_points_ledger_facility_id ON points_ledger(facility_id);
+CREATE INDEX idx_points_ledger_created_at  ON points_ledger(created_at);
+CREATE INDEX idx_points_ledger_event_type  ON points_ledger(event_type);
+
+
+-- Table 2: Pilot config
+-- Controls the date range for leaderboard competition
+-- One row per facility per pilot
+
+CREATE TABLE pilot_config (
+  id           UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  facility_id  UUID NOT NULL REFERENCES facilities(id),
+  pilot_name   VARCHAR(255),
+  start_date   TIMESTAMP WITH TIME ZONE NOT NULL,
+  end_date     TIMESTAMP WITH TIME ZONE NOT NULL,
+  is_active    BOOLEAN DEFAULT true,
+  created_at   TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Insert pilot records — replace with actual facility IDs
+INSERT INTO pilot_config (facility_id, pilot_name, start_date, end_date)
+VALUES
+  ('<MOSH_FACILITY_ID>', 'MOSH Pilot June 2026', '2026-06-01', '2026-07-31'),
+  ('<TSC_FACILITY_ID>',  'TSC Pilot June 2026',  '2026-06-01', '2026-07-31');

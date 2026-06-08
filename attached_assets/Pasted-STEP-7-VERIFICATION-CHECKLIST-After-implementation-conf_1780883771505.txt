@@ -1,0 +1,89 @@
+STEP 7 — VERIFICATION CHECKLIST
+After implementation confirm all of these before closing the task:
+
+□ 1. Test user answers a question CORRECTLY
+      → points_ledger shows ONE row: question_correct (+20 pts)
+      → Total awarded: 20 pts
+
+□ 2. Test user answers a question INCORRECTLY
+      → points_ledger shows NO new rows
+      → Total awarded: 0 pts
+
+□ 3. Test user rates a flashcard "Again"
+      → points_ledger shows ONE row: flashcard_again (+5 pts)
+
+□ 4. Test user rates a flashcard "Hard"
+      → points_ledger shows ONE row: flashcard_hard (+8 pts)
+
+□ 5. Test user rates a flashcard "Good"
+      → points_ledger shows ONE row: flashcard_good (+10 pts)
+
+□ 6. Test user completes diagnostic
+      → points_ledger shows NO row for diagnostic_complete
+      → Correct answers within the diagnostic DO appear as
+        question_correct rows (+20 pts each)
+
+□ 7. Test user completes final exam with 15/20 correct (75%)
+      on FIRST attempt
+      → score = 75% → passed = true
+      → points_ledger shows: final_complete (+100)
+        AND final_passed_first_attempt (+50)
+      → Total from final completion: 150 pts
+      → Plus 20 pts per correct answer already recorded
+        via question handler during the exam
+
+□ 8. Test user completes final exam with 14/20 correct (70%)
+      → score = 70% → passed = false
+      → points_ledger shows: final_complete (+100) only
+      → No first-attempt pass bonus
+
+□ 9. Daily login bonus (+15 pts) fires on first correct answer
+      of the day — second correct answer same day does NOT
+      award it again
+
+□ 10. GET /api/points/leaderboard returns staff ranked by
+       total_points descending with engagement_level assigned
+
+□ 11. GET /api/points/my-score returns totalScore and rank
+       for the authenticated user
+
+□ 12. GET /api/points/staff/:staffId/drilldown returns full
+       breakdown by event type and by module — accessible
+       only to admin and leadership roles, returns 403 for
+       regular staff
+FILE SUMMARY
+New files to create:
+
+
+File	Purpose
+constants/scoring.constants.js	Point values and 75% passing threshold
+services/points.service.js	All scoring logic and database queries
+routes/points.routes.js	Four API endpoints
+utils/scoring.js	Frontend helper functions
+Existing files to modify:
+
+
+File	Change
+app.js or server.js	Register points routes (2 lines)
+Question answer component	Add recordActivity for correct answers only
+Flashcard rating component	Add recordActivity for all three ratings
+Diagnostic completion handler	No change needed — no scoring call required
+Final exam completion handler	Add pass/fail logic and bonus scoring calls
+Database changes:
+
+
+Table	Purpose
+points_ledger	Records every scoreable event permanently
+pilot_config	Controls pilot competition date ranges
+SCORING LOGIC SUMMARY FOR REFERENCE
+Correct answer anywhere (diagnostic, module, final)  = +20 pts
+Incorrect answer anywhere                            =   0 pts
+Flashcard Again                                      =  +5 pts
+Flashcard Hard                                       =  +8 pts
+Flashcard Good                                       = +10 pts
+First correct answer of each day (daily bonus)       = +15 pts
+Final exam submitted (everyone)                      = +100 pts
+Final exam passed on first attempt                   = +50 pts
+Diagnostic completed                                 =   0 pts
+
+Passing score:  75%  (hospital and ASC, all modules)
