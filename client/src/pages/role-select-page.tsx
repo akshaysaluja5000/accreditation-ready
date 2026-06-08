@@ -18,6 +18,7 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import { useAuth } from "@/lib/auth";
+import { useFacilityFeatures } from "@/lib/features";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import {
@@ -150,9 +151,18 @@ export default function RoleSelectPage() {
   const [codeLoading, setCodeLoading] = useState(false);
 
   const isSuperAdmin = user?.leadershipRole === "super_admin";
+  const { data: facilityFlags } = useFacilityFeatures();
 
   const facilityType: FacilityType = (user?.organizationType as FacilityType) || "hospital";
-  const visibleRoles = useMemo(() => rolesForFacility(facilityType), [facilityType]);
+  const visibleRoles = useMemo(() => {
+    const all = rolesForFacility(facilityType);
+    const rv = facilityFlags?.roleVisibility;
+    if (!rv) return all;
+    return all.filter((r) => {
+      if (r.id === "facilities_maint") return rv.facilities_maintenance !== false;
+      return true;
+    });
+  }, [facilityType, facilityFlags]);
   const visibleIds = useMemo(() => new Set(visibleRoles.map((r) => r.id)), [visibleRoles]);
 
   const [step, setStep] = useState<1 | 2>(() => user?.roleId ? 2 : 1);

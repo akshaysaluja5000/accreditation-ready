@@ -11,19 +11,12 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/lib/auth";
 import { useQuery } from "@tanstack/react-query";
 import { LEADERSHIP_LABELS } from "@shared/schema";
+import { useFacilityFeatures, isEnabled } from "@/lib/features";
+import type { FacilityFeatures } from "@/lib/features";
 
 const LEADERSHIP_RANK: Record<string, number> = {
   learner: 0, educator: 1, director: 2, ceo: 3, admin: 4, super_admin: 5,
 };
-
-const COMPLIANCE_CARD_IDS = new Set([
-  "survey-readiness",
-  "compliance-tasks",
-  "executive-brief",
-  "regulatory-watch",
-  "content-intelligence",
-  "staff-learning",
-]);
 
 function getEffectiveRole(user: { isAdmin: boolean; leadershipRole?: string | null }) {
   const lr = (user.leadershipRole as string) || "learner";
@@ -42,6 +35,7 @@ interface ConsoleCard {
   minRole: string;
   badge?: string;
   ascOnly?: boolean;
+  featureKey?: keyof FacilityFeatures;
 }
 
 function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
@@ -55,6 +49,7 @@ function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
     href: "/survey-readiness",
     minRole: "director",
     badge: "Live",
+    featureKey: "survey_readiness_agent",
   },
   {
     id: "content-intelligence",
@@ -66,6 +61,7 @@ function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
     href: "/content-intelligence",
     minRole: "director",
     badge: "AI",
+    featureKey: "content_intelligence_agent",
   },
   {
     id: "compliance-tasks",
@@ -77,6 +73,7 @@ function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
     href: "/compliance-tasks",
     minRole: "director",
     badge: "Tool",
+    featureKey: "compliance_task_manager",
   },
   {
     id: "executive-brief",
@@ -88,6 +85,7 @@ function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
     href: "/executive-brief",
     minRole: "ceo",
     badge: "Agent",
+    featureKey: "executive_readiness_agent",
   },
   {
     id: "regulatory-watch",
@@ -99,6 +97,7 @@ function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
     href: "/regulatory-watch",
     minRole: "director",
     badge: "Agent",
+    featureKey: "regulatory_watch_agent",
   },
   {
     id: "staff-learning",
@@ -110,6 +109,7 @@ function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
     href: "/staff-learning",
     minRole: "director",
     badge: "Agent",
+    featureKey: "education",
   },
   {
     id: "executive-report",
@@ -385,8 +385,9 @@ export default function LeadershipHubPage() {
     enabled: !!user && effectiveRank >= LEADERSHIP_RANK["director"],
   });
 
+  const { data: facilityFlags } = useFacilityFeatures();
+
   const complianceMode = facilitySettings?.complianceMode ?? "education_only";
-  const showComplianceCards = complianceMode === "full_platform";
   const showOnboardingBanner = !settingsLoading && complianceMode !== "full_platform" && !onboardingDismissed && effectiveRank >= LEADERSHIP_RANK["director"];
 
   function dismissOnboarding(enableFull: boolean) {
@@ -571,7 +572,10 @@ export default function LeadershipHubPage() {
             Leadership Tools
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {getConsoleCards(activeStandardsBody).filter(card => (showComplianceCards || !COMPLIANCE_CARD_IDS.has(card.id)) && (!card.ascOnly || isAsc)).map((card, i) => {
+            {getConsoleCards(activeStandardsBody).filter(card =>
+              (!card.ascOnly || isAsc) &&
+              (!card.featureKey || isEnabled(facilityFlags?.features, card.featureKey))
+            ).map((card, i) => {
               const accessible = canAccess(card);
               const Icon = card.icon;
               return (
