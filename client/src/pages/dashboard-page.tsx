@@ -273,7 +273,7 @@ export default function DashboardPage() {
     queryKey: ["/api/flashcards/due/count"],
   });
 
-  const { data: pointsData } = useQuery<{ totalPoints: number; rank: number | null }>({
+  const { data: pointsData } = useQuery<{ totalPoints: number; rank: number | null; totalParticipants: number }>({
     queryKey: ["/api/points/me"],
   });
 
@@ -1391,6 +1391,9 @@ export default function DashboardPage() {
                   <div className="flex-shrink-0 text-right">
                     <p className="text-[10px] uppercase tracking-wider text-muted-foreground font-bold leading-none mb-1">Rank</p>
                     <p className="font-black text-lg leading-none text-amber-600 dark:text-amber-400" data-testid="text-points-rank">#{pointsData.rank}</p>
+                    {pointsData.totalParticipants > 0 && (
+                      <p className="text-[10px] text-muted-foreground leading-none mt-0.5">of {pointsData.totalParticipants}</p>
+                    )}
                   </div>
                 )}
               </motion.div>

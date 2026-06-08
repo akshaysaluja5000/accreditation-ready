@@ -4876,13 +4876,15 @@ Return ONLY valid JSON, no other text:
       const totalPoints = await storage.getUserTotalPoints(userId, startDate, endDate);
 
       let rank: number | null = null;
+      let totalParticipants = 0;
       if (facilityId) {
         const lb = await storage.getFacilityLeaderboard(facilityId, 200, startDate, endDate);
+        totalParticipants = lb.length;
         const entry = lb.find(e => e.userId === userId);
         rank = entry ? entry.rank : null;
       }
 
-      res.json({ totalPoints, rank });
+      res.json({ totalPoints, rank, totalParticipants });
     } catch (err) {
       console.error("GET /api/points/me:", err);
       res.status(500).json({ error: "Failed to fetch points" });
