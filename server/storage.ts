@@ -1021,7 +1021,7 @@ export interface IStorage {
   getUserTotalPoints(userId: number, startDate?: Date, endDate?: Date): Promise<number>;
   getFacilityLeaderboard(facilityId: number, limit?: number, startDate?: Date, endDate?: Date): Promise<import("@shared/schema").PointsLeaderboardEntry[]>;
   getStaffEngagement(facilityId: number, startDate?: Date, endDate?: Date): Promise<import("@shared/schema").StaffEngagementEntry[]>;
-  getUserPointsBreakdown(userId: number, startDate?: Date, endDate?: Date): Promise<import("@shared/schema").PointsBreakdownEntry[]>;
+  getUserDrillDown(userId: number, facilityId: number, startDate?: Date, endDate?: Date): Promise<import("@shared/schema").UserDrillDown>;
   getActivePilotConfig(facilityId: number): Promise<import("@shared/schema").PilotConfig | null>;
 }
 
@@ -2462,7 +2462,13 @@ export class DatabaseStorage implements IStorage {
               COALESCE(SUM(pl.points_awarded), 0) AS total_points,
               COUNT(CASE WHEN pl.event_type = 'question_correct' THEN 1 END) AS questions_correct,
               COUNT(CASE WHEN pl.event_type IN ('flashcard_again','flashcard_hard','flashcard_good') THEN 1 END) AS flashcards_reviewed,
-              MAX(pl.created_at) AS last_active
+              COUNT(CASE WHEN pl.event_type = 'final_complete' THEN 1 END) AS finals_completed,
+              MAX(pl.created_at) AS last_active,
+              CASE
+                WHEN MAX(pl.created_at) >= NOW() - INTERVAL '1 day'  THEN 'High'
+                WHEN MAX(pl.created_at) >= NOW() - INTERVAL '7 days' THEN 'Medium'
+                ELSE 'Low'
+              END AS engagement_level
        FROM users u
        LEFT JOIN points_ledger pl ON pl.user_id = u.id
          AND ($2::timestamptz IS NULL OR pl.created_at >= $2)
@@ -2481,33 +2487,82 @@ export class DatabaseStorage implements IStorage {
       totalPoints: parseInt(r.total_points, 10),
       questionsCorrect: parseInt(r.questions_correct, 10),
       flashcardsReviewed: parseInt(r.flashcards_reviewed, 10),
+      finalsCompleted: parseInt(r.finals_completed, 10),
       lastActive: r.last_active ? new Date(r.last_active).toISOString() : null,
+      engagementLevel: (r.engagement_level as "High" | "Medium" | "Low") ?? "Low",
     }));
   }
 
-  async getUserPointsBreakdown(
+  async getUserDrillDown(
     userId: number,
+    facilityId: number,
     startDate?: Date,
     endDate?: Date,
-  ): Promise<import("@shared/schema").PointsBreakdownEntry[]> {
-    const params: unknown[] = [userId, startDate ?? null, endDate ?? null];
-    const { rows } = await pool.query(
-      `SELECT event_type, points_awarded, level_id, metadata, created_at
-       FROM points_ledger
-       WHERE user_id = $1
-         AND ($2::timestamptz IS NULL OR created_at >= $2)
-         AND ($3::timestamptz IS NULL OR created_at <= $3)
-       ORDER BY created_at DESC
-       LIMIT 200`,
-      params,
-    );
-    return rows.map((r: any) => ({
-      eventType: r.event_type,
-      pointsAwarded: r.points_awarded,
-      levelId: r.level_id,
-      metadata: r.metadata ?? {},
-      createdAt: new Date(r.created_at).toISOString(),
-    }));
+  ): Promise<import("@shared/schema").UserDrillDown> {
+    const dateParams: unknown[] = [userId, facilityId, startDate ?? null, endDate ?? null];
+    const dateWhere = `user_id = $1 AND facility_id = $2
+      AND ($3::timestamptz IS NULL OR created_at >= $3)
+      AND ($4::timestamptz IS NULL OR created_at <= $4)`;
+
+    const [totalRes, breakdownRes, levelRes, dailyRes] = await Promise.all([
+      pool.query(
+        `SELECT COALESCE(SUM(points_awarded), 0) AS total_points
+         FROM points_ledger WHERE ${dateWhere}`,
+        dateParams,
+      ),
+      pool.query(
+        `SELECT event_type,
+                COUNT(*)::int            AS event_count,
+                SUM(points_awarded)::int AS points_earned
+         FROM points_ledger WHERE ${dateWhere}
+         GROUP BY event_type
+         ORDER BY points_earned DESC`,
+        dateParams,
+      ),
+      pool.query(
+        `SELECT level_id,
+                COUNT(CASE WHEN event_type = 'question_correct' THEN 1 END)::int AS questions_correct,
+                COUNT(CASE WHEN event_type IN ('flashcard_again','flashcard_hard','flashcard_good') THEN 1 END)::int AS flashcards_reviewed,
+                SUM(points_awarded)::int AS level_points
+         FROM points_ledger
+         WHERE ${dateWhere} AND level_id IS NOT NULL
+         GROUP BY level_id
+         ORDER BY level_points DESC`,
+        dateParams,
+      ),
+      pool.query(
+        `SELECT DATE(created_at)              AS activity_date,
+                SUM(points_awarded)::int       AS daily_points,
+                COUNT(CASE WHEN event_type = 'question_correct' THEN 1 END)::int AS daily_correct
+         FROM points_ledger WHERE ${dateWhere}
+         GROUP BY DATE(created_at)
+         ORDER BY activity_date DESC
+         LIMIT 90`,
+        dateParams,
+      ),
+    ]);
+
+    return {
+      totalPoints: parseInt(totalRes.rows[0]?.total_points ?? 0, 10),
+      breakdown: breakdownRes.rows.map((r: any) => ({
+        eventType: r.event_type,
+        eventCount: r.event_count,
+        pointsEarned: r.points_earned,
+      })),
+      byLevel: levelRes.rows.map((r: any) => ({
+        levelId: r.level_id,
+        questionsCorrect: r.questions_correct,
+        flashcardsReviewed: r.flashcards_reviewed,
+        levelPoints: r.level_points,
+      })),
+      dailyActivity: dailyRes.rows.map((r: any) => ({
+        activityDate: r.activity_date instanceof Date
+          ? r.activity_date.toISOString().split("T")[0]
+          : String(r.activity_date),
+        dailyPoints: r.daily_points,
+        dailyCorrect: r.daily_correct,
+      })),
+    };
   }
 
   async getActivePilotConfig(

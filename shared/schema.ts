@@ -876,15 +876,35 @@ export interface StaffEngagementEntry {
   totalPoints: number;
   questionsCorrect: number;
   flashcardsReviewed: number;
+  finalsCompleted: number;
   lastActive: string | null;
+  engagementLevel: "High" | "Medium" | "Low";
 }
 
-export interface PointsBreakdownEntry {
+export interface UserDrillDownEventRow {
   eventType: string;
-  pointsAwarded: number;
-  levelId: string | null;
-  metadata: Record<string, unknown>;
-  createdAt: string;
+  eventCount: number;
+  pointsEarned: number;
+}
+
+export interface UserDrillDownLevelRow {
+  levelId: string;
+  questionsCorrect: number;
+  flashcardsReviewed: number;
+  levelPoints: number;
+}
+
+export interface UserDrillDownDayRow {
+  activityDate: string;
+  dailyPoints: number;
+  dailyCorrect: number;
+}
+
+export interface UserDrillDown {
+  totalPoints: number;
+  breakdown: UserDrillDownEventRow[];
+  byLevel: UserDrillDownLevelRow[];
+  dailyActivity: UserDrillDownDayRow[];
 }
 
 export interface DeepDiveGameState {

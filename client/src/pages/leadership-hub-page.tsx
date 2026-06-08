@@ -676,8 +676,19 @@ export default function LeadershipHubPage() {
                         <span className="text-xs font-bold text-amber-600">{initial}</span>
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-bold truncate">{name}</p>
-                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <p className="text-sm font-bold truncate">{name}</p>
+                          <span className={`flex-shrink-0 text-[10px] font-bold px-1.5 py-0.5 rounded-full ${
+                            member.engagementLevel === "High"
+                              ? "bg-emerald-500/15 text-emerald-600"
+                              : member.engagementLevel === "Medium"
+                              ? "bg-amber-500/15 text-amber-600"
+                              : "bg-muted text-muted-foreground"
+                          }`} data-testid={`badge-engagement-level-${member.userId}`}>
+                            {member.engagementLevel}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground mt-0.5">
                           {member.department && <span>{member.department}</span>}
                           <span className="flex items-center gap-1">
                             <BookOpen size={10} />
@@ -687,6 +698,12 @@ export default function LeadershipHubPage() {
                             <Brain size={10} />
                             {member.flashcardsReviewed} cards
                           </span>
+                          {member.finalsCompleted > 0 && (
+                            <span className="flex items-center gap-1 text-primary font-semibold">
+                              <GraduationCap size={10} />
+                              {member.finalsCompleted} exam{member.finalsCompleted !== 1 ? "s" : ""}
+                            </span>
+                          )}
                         </div>
                       </div>
                       <div className="flex-shrink-0 flex items-center gap-1">

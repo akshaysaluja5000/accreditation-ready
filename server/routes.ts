@@ -4942,13 +4942,16 @@ Return ONLY valid JSON, no other text:
       const targetUserId = parseInt(req.params.userId);
       if (isNaN(targetUserId)) return res.status(400).json({ error: "Invalid user ID" });
 
+      const facilityId = (req.user as any)?.facilityId ?? null;
+      if (!facilityId) return res.status(400).json({ error: "No facility context" });
+
       let startDate: Date | undefined;
       let endDate: Date | undefined;
       if (req.query.start) startDate = new Date(req.query.start as string);
       if (req.query.end)   endDate   = new Date(req.query.end   as string);
 
-      const breakdown = await storage.getUserPointsBreakdown(targetUserId, startDate, endDate);
-      res.json(breakdown);
+      const drillDown = await storage.getUserDrillDown(targetUserId, facilityId, startDate, endDate);
+      res.json(drillDown);
     } catch (err) {
       console.error("GET /api/points/breakdown/:userId:", err);
       res.status(500).json({ error: "Failed to fetch breakdown" });
