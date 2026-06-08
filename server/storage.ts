@@ -29,7 +29,7 @@ import type { MasteryQuestion } from "@shared/mastery-questions";
 import type { AscPretestQuestion } from "@shared/asc-pretest";
 import type { DnvTestQuestion } from "@shared/dnv-pretest";
 
-const pool = new pg.Pool({
+export const pool = new pg.Pool({
   connectionString: process.env.DATABASE_URL,
 });
 
