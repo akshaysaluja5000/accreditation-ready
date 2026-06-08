@@ -3103,9 +3103,6 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
   app.get("/api/features", requireAuth, async (req: Request, res: Response) => {
     try {
       const facilityId = (req.user as any).facilityId as number | null ?? null;
-      if (!facilityId) {
-        return res.json({ features: {}, roleVisibility: {}, visibleRoles: [] });
-      }
       const { features, roleVisibility } = await getFacilityFeatures(facilityId);
       const visibleRoles = (Object.entries(roleVisibility) as [string, boolean][])
         .filter(([, v]) => v === true)
@@ -3120,7 +3117,6 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
   app.get("/api/features/roles", requireAuth, async (req: Request, res: Response) => {
     try {
       const facilityId = (req.user as any).facilityId as number | null ?? null;
-      if (!facilityId) return res.json({ visibleRoles: [] });
       const visibleRoles = await getVisibleRoles(facilityId);
       res.json({ visibleRoles });
     } catch (err) {

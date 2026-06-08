@@ -32,35 +32,35 @@ export interface FacilityFlagsResult {
   roleVisibility: FacilityRoleVisibility;
 }
 
-export async function getFacilityFeatures(facilityId: number): Promise<FacilityFlagsResult> {
-  const { rows } = await pool.query<{ features: Partial<FacilityFeatures> | null; role_visibility: Partial<FacilityRoleVisibility> | null }>(
-    "SELECT features, role_visibility FROM facilities WHERE id = $1",
-    [facilityId],
-  );
-
-  if (!rows.length) {
-    return { features: { ...DEFAULT_FEATURES }, roleVisibility: { ...DEFAULT_ROLE_VISIBILITY } };
+export async function getFacilityFeatures(facilityId: number | null): Promise<FacilityFlagsResult> {
+  if (facilityId !== null) {
+    const { rows } = await pool.query<{ features: Partial<FacilityFeatures> | null; role_visibility: Partial<FacilityRoleVisibility> | null }>(
+      "SELECT features, role_visibility FROM facilities WHERE id = $1",
+      [facilityId],
+    );
+    if (rows.length) {
+      const { features, role_visibility } = rows[0];
+      return {
+        features: { ...DEFAULT_FEATURES, ...(features ?? {}) },
+        roleVisibility: { ...DEFAULT_ROLE_VISIBILITY, ...(role_visibility ?? {}) },
+      };
+    }
   }
-
-  const { features, role_visibility } = rows[0];
-
-  return {
-    features: { ...DEFAULT_FEATURES, ...(features ?? {}) },
-    roleVisibility: { ...DEFAULT_ROLE_VISIBILITY, ...(role_visibility ?? {}) },
-  };
+  // No facility or facility not found — return safe defaults
+  return { features: { ...DEFAULT_FEATURES }, roleVisibility: { ...DEFAULT_ROLE_VISIBILITY } };
 }
 
-export async function isFeatureEnabled(facilityId: number, featureKey: keyof FacilityFeatures): Promise<boolean> {
+export async function isFeatureEnabled(facilityId: number | null, featureKey: keyof FacilityFeatures): Promise<boolean> {
   const { features } = await getFacilityFeatures(facilityId);
   return features[featureKey] === true;
 }
 
-export async function isRoleVisible(facilityId: number, roleKey: keyof FacilityRoleVisibility): Promise<boolean> {
+export async function isRoleVisible(facilityId: number | null, roleKey: keyof FacilityRoleVisibility): Promise<boolean> {
   const { roleVisibility } = await getFacilityFeatures(facilityId);
   return roleVisibility[roleKey] === true;
 }
 
-export async function getVisibleRoles(facilityId: number): Promise<(keyof FacilityRoleVisibility)[]> {
+export async function getVisibleRoles(facilityId: number | null): Promise<(keyof FacilityRoleVisibility)[]> {
   const { roleVisibility } = await getFacilityFeatures(facilityId);
   return (Object.entries(roleVisibility) as [keyof FacilityRoleVisibility, boolean][])
     .filter(([, visible]) => visible === true)
