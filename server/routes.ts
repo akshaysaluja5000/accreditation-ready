@@ -999,11 +999,14 @@ export async function registerRoutes(
       }
 
       // Points: fire-and-forget (non-blocking)
+      // Write ONE row per correct answer so COUNT(*) = actual questions_correct
       if (deltaC > 0) {
         const facilityId = (req.user! as any).facilityId as number | null ?? null;
         void (async () => {
           try {
-            await storage.addPointsEvent(userId, facilityId, "question_correct", deltaC * POINT_VALUES.question_correct, { levelId });
+            for (let i = 0; i < deltaC; i++) {
+              await storage.addPointsEvent(userId, facilityId, "question_correct", POINT_VALUES.question_correct, { levelId });
+            }
             await storage.tryAwardDailyLogin(userId, facilityId, today);
           } catch (err) {
             console.error("[Points] quiz session:", err);
@@ -2952,14 +2955,21 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
     await storage.deleteMasterySession(req.user!.id);
 
     // Points: fire-and-forget (non-blocking)
+    // One row per correct answer + completion bonus + optional first-attempt pass bonus
     const _mFacilityId = (req.user! as any).facilityId as number | null ?? null;
+    const _mUserId = req.user!.id;
     const _mPct = totalAnswered > 0 ? (score / totalAnswered) * 100 : 0;
     const _mPassed = _mPct >= PASSING_THRESHOLD;
+    const _mToday = toCentralDate(new Date());
     void (async () => {
       try {
-        await storage.addPointsEvent(req.user!.id, _mFacilityId, "final_complete", POINT_VALUES.final_complete);
+        for (let i = 0; i < score; i++) {
+          await storage.addPointsEvent(_mUserId, _mFacilityId, "question_correct", POINT_VALUES.question_correct);
+        }
+        await storage.tryAwardDailyLogin(_mUserId, _mFacilityId, _mToday);
+        await storage.addPointsEvent(_mUserId, _mFacilityId, "final_complete", POINT_VALUES.final_complete);
         if (_mPassed && isFirstMasteryAttempt) {
-          await storage.addPointsEvent(req.user!.id, _mFacilityId, "final_passed_first_attempt", POINT_VALUES.final_passed_first_attempt);
+          await storage.addPointsEvent(_mUserId, _mFacilityId, "final_passed_first_attempt", POINT_VALUES.final_passed_first_attempt);
         }
       } catch (err) {
         console.error("[Points] mastery submit:", err);
