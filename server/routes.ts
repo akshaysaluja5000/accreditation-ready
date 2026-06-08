@@ -2416,6 +2416,24 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
       req.user!.id, score, totalAnswered, storedPayload
     );
     await storage.deleteDiagnosticSession(req.user!.id);
+
+    // Points: award question_correct for each correct diagnostic answer (fire-and-forget)
+    if (score > 0) {
+      const _dFacilityId = (req.user! as any).facilityId as number | null ?? null;
+      const _dUserId = req.user!.id;
+      const _dToday = new Date().toISOString().split("T")[0];
+      void (async () => {
+        try {
+          for (let i = 0; i < score; i++) {
+            await storage.addPointsEvent(_dUserId, _dFacilityId, "question_correct", POINT_VALUES.question_correct);
+          }
+          await storage.tryAwardDailyLogin(_dUserId, _dFacilityId, _dToday);
+        } catch (err) {
+          console.error("[Points] diagnostic submit:", err);
+        }
+      })();
+    }
+
     res.json({ score, totalQuestions: totalAnswered, resultId: result.id, detailedResults, sectionScores });
   });
 
