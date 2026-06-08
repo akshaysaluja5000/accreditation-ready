@@ -12,3 +12,16 @@ export const POINT_VALUES = {
 export type PointEventType = keyof typeof POINT_VALUES;
 
 export const PASSING_THRESHOLD = 75;
+
+/**
+ * Calculate whether a final exam score passes the threshold.
+ * Pure function — safe to call on both client and server.
+ * Returns { passed, score } where score is a rounded percentage (0-100).
+ */
+export function calculateFinalExamResult(
+  correctAnswers: number,
+  totalQuestions: number,
+): { passed: boolean; score: number } {
+  const score = Math.round((correctAnswers / totalQuestions) * 100);
+  return { passed: score >= PASSING_THRESHOLD, score };
+}
