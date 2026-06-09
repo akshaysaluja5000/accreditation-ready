@@ -20,7 +20,7 @@ export const DEMO_REMEDIATION_PLANS: RemediationPlan[] = [
     category: "Instrument Integrity",
     assessmentType: "final",
     quizScore: 58,
-    passingThreshold: 70,
+    passingThreshold: 75,
     // 58% → 50–59% → 2 steps
     remediationSteps: [
       lib["Instrument Integrity"][0],
@@ -42,7 +42,7 @@ export const DEMO_REMEDIATION_PLANS: RemediationPlan[] = [
     category: "Sterile Storage",
     assessmentType: "final",
     quizScore: 64,
-    passingThreshold: 70,
+    passingThreshold: 75,
     // 64% → 60–69% → 1 step
     remediationSteps: [
       lib["Sterile Storage"][0],
@@ -63,7 +63,7 @@ export const DEMO_REMEDIATION_PLANS: RemediationPlan[] = [
     category: "EOC & Safety Compliance",
     assessmentType: "final",
     quizScore: 49,
-    passingThreshold: 70,
+    passingThreshold: 75,
     // 49% → below 50% → 2 steps + reassessmentRequired
     remediationSteps: [
       lib["EOC & Safety Compliance"][0],
@@ -88,7 +88,7 @@ export const DEMO_REMEDIATION_PLANS: RemediationPlan[] = [
     category: "Infection Prevention and Control and Safety",
     assessmentType: "final",
     quizScore: 61,
-    passingThreshold: 70,
+    passingThreshold: 75,
     // 61% → 60–69% → 1 step
     remediationSteps: [
       lib["ASC: Infection Prevention and Control and Safety"][0],
@@ -109,7 +109,7 @@ export const DEMO_REMEDIATION_PLANS: RemediationPlan[] = [
     category: "Governance",
     assessmentType: "final",
     quizScore: 54,
-    passingThreshold: 70,
+    passingThreshold: 75,
     // 54% → 50–59% → 2 steps
     remediationSteps: [
       lib["ASC: Governance"][0],
@@ -131,7 +131,7 @@ export const DEMO_REMEDIATION_PLANS: RemediationPlan[] = [
     category: "Surgical and Related Services",
     assessmentType: "final",
     quizScore: 66,
-    passingThreshold: 70,
+    passingThreshold: 75,
     // 66% → 60–69% → 1 step
     remediationSteps: [
       lib["ASC: Surgical and Related Services"][0],

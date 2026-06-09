@@ -6,8 +6,8 @@
 //   getRemediationPlan() - levelId + score % → assigned steps + reassessment flag
 //
 // SCORE THRESHOLDS (final/post-test only):
-//   ≥ 70%     : no remediation
-//   60 – 69%  : 1 plan assigned (primary review)
+//   ≥ 75%     : no remediation
+//   60 – 74%  : 1 plan assigned (primary review)
 //   50 – 59%  : 2 plans assigned (review + reinforcement)
 //   < 50%     : 2 plans assigned + reassessmentRequired flag
 //
@@ -62,7 +62,7 @@ export const REMEDIATION_LIBRARY: Record<string, [LibraryStep, LibraryStep, Libr
     {
       title: "Equipment Compliance Reinforcement Quiz",
       description:
-        "Retake the Facilities & Equipment quiz after your review. If you score 70% or higher, you are ready to move on. If not, schedule a brief check-in with your manager before your next attempt.",
+        "Retake the Facilities & Equipment quiz after your review. If you score 75% or higher, you are ready to move on. If not, schedule a brief check-in with your manager before your next attempt.",
     },
   ],
 
@@ -116,7 +116,7 @@ export const REMEDIATION_LIBRARY: Record<string, [LibraryStep, LibraryStep, Libr
     {
       title: "Transport Compliance Retest",
       description:
-        "After completing your review and observation, retake the quiz. Aim for 70% or above to confirm readiness. If needed, consult the study cards one more time before your attempt.",
+        "After completing your review and observation, retake the quiz. Aim for 75% or above to confirm readiness. If needed, consult the study cards one more time before your attempt.",
     },
   ],
 
@@ -670,7 +670,7 @@ export const LEVEL_TO_CATEGORY: Record<string, string> = {
 
 // ── Assignment function ────────────────────────────────────────────────────
 //
-// Returns null if no remediation is warranted (score ≥ 70%).
+// Returns null if no remediation is warranted (score ≥ 75%).
 // Otherwise returns the category label, the assigned plan steps,
 // and a flag indicating whether a supervisor reassessment is required.
 // This function applies ONLY to final/post-test scores.
@@ -679,7 +679,7 @@ export function getRemediationPlan(
   levelId: string,
   percentage: number
 ): RemediationResult | null {
-  if (percentage >= 70) return null;
+  if (percentage >= 75) return null;
 
   const category = LEVEL_TO_CATEGORY[levelId];
   if (!category) return null;

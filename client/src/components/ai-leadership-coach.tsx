@@ -28,7 +28,7 @@ const DEMO_INSIGHTS = `UNIT READINESS SUMMARY - MIDWEST ORTHOPEDIC SPECIALTY HOS
 Overall unit readiness stands at 77% average accuracy across 10 active learners, placing the team in a Moderate Risk preparedness band. Seven staff members were active today, indicating strong daily engagement momentum.
 
 PRIORITY FOCUS AREAS
-▸ Medication Management (68%). Performance is below the 70% threshold. Recommend targeted review of high-alert medication protocols and two-patient ID verification workflows before the next practice survey.
+▸ Medication Management (68%). Performance is below the 75% threshold. Recommend targeted review of high-alert medication protocols and two-patient ID verification workflows before the next practice survey.
 ▸ Infection Control (74%). Hand hygiene compliance questions are the most frequently missed. Focus review on WHO 5 Moments and contact precaution entry/exit procedures.
 ▸ Emergency Management (71%). Fire response (RACE/PASS) and code procedures show the highest miss rates. Consider a tabletop drill exercise this quarter.
 
@@ -39,7 +39,7 @@ STRENGTHS
 
 RECOMMENDED NEXT STEPS
 1. Schedule a focused 20-minute Medication Management review session this week.
-2. Assign the Infection Control refresher module to the 3 learners below 70% accuracy.
+2. Assign the Infection Control refresher module to the 3 learners below 75% accuracy.
 3. Recognize top performers at next huddle to reinforce engagement momentum.
 
 Survey readiness window: 6–8 weeks with current trajectory.`;

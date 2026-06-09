@@ -59,7 +59,7 @@ const EXEC_MOCK_PLANS: ExecPlan[] = [
     category: "OR & Sterile Technique", facilityType: "Hospital",
     learner: "OR Circulating Nurse",
     facility: "Midwest Orthopedic Specialty Hospital", facilityId: "facility_mosh",
-    quizScore: 62, passingThreshold: 70,
+    quizScore: 62, passingThreshold: 75,
     status: "Assigned",
     assignedDate: d(-21), dueDate: d(-4), daysActive: 21, daysOverdue: 4,
   },
@@ -68,7 +68,7 @@ const EXEC_MOCK_PLANS: ExecPlan[] = [
     category: "Instrument Integrity", facilityType: "Hospital",
     learner: "OR Scrub Tech",
     facility: "Midwest Orthopedic Specialty Hospital", facilityId: "facility_mosh",
-    quizScore: 48, passingThreshold: 70,
+    quizScore: 48, passingThreshold: 75,
     status: "In Progress",
     assignedDate: d(-14), dueDate: d(-2), daysActive: 14, daysOverdue: 2,
   },
@@ -77,7 +77,7 @@ const EXEC_MOCK_PLANS: ExecPlan[] = [
     category: "EOC & Safety Compliance", facilityType: "Hospital",
     learner: "RN Pre/Post",
     facility: "Midwest Orthopedic Specialty Hospital", facilityId: "facility_mosh",
-    quizScore: 52, passingThreshold: 70,
+    quizScore: 52, passingThreshold: 75,
     status: "Verified",
     assignedDate: d(-30), dueDate: d(-5), completedAt: d(-1),
     daysActive: 29, daysOverdue: 0,
@@ -87,7 +87,7 @@ const EXEC_MOCK_PLANS: ExecPlan[] = [
     category: "Anesthesia and Surgical Services", facilityType: "ASC",
     learner: "CRNA",
     facility: "Midwest Orthopedic Specialty Hospital", facilityId: "facility_mosh",
-    quizScore: 55, passingThreshold: 70,
+    quizScore: 55, passingThreshold: 75,
     status: "Assigned",
     assignedDate: d(-12), dueDate: d(-1), daysActive: 12, daysOverdue: 1,
   },
@@ -96,7 +96,7 @@ const EXEC_MOCK_PLANS: ExecPlan[] = [
     category: "Surgical Safety & Consent", facilityType: "Hospital",
     learner: "Quality Coordinator",
     facility: "Midwest Orthopedic Specialty Hospital", facilityId: "facility_mosh",
-    quizScore: 67, passingThreshold: 70,
+    quizScore: 67, passingThreshold: 75,
     status: "Completed",
     assignedDate: d(-18), dueDate: d(7), daysActive: 18, daysOverdue: 0,
   },
@@ -106,7 +106,7 @@ const EXEC_MOCK_PLANS: ExecPlan[] = [
     category: "SPD & Decontamination", facilityType: "Hospital",
     learner: "SPD Technician",
     facility: "Orthopedic Hospital of Wisconsin", facilityId: "facility_ohw",
-    quizScore: 55, passingThreshold: 70,
+    quizScore: 55, passingThreshold: 75,
     status: "Assigned",
     assignedDate: d(-10), dueDate: d(4), daysActive: 10, daysOverdue: 0,
   },
@@ -115,7 +115,7 @@ const EXEC_MOCK_PLANS: ExecPlan[] = [
     category: "Environment & Surfaces", facilityType: "Hospital",
     learner: "Charge RN",
     facility: "Orthopedic Hospital of Wisconsin", facilityId: "facility_ohw",
-    quizScore: 62, passingThreshold: 70,
+    quizScore: 62, passingThreshold: 75,
     status: "Assigned",
     assignedDate: d(-7), dueDate: d(17), daysActive: 7, daysOverdue: 0,
   },
@@ -124,7 +124,7 @@ const EXEC_MOCK_PLANS: ExecPlan[] = [
     category: "Clean vs. Dirty", facilityType: "Hospital",
     learner: "OR Scrub Tech",
     facility: "Orthopedic Hospital of Wisconsin", facilityId: "facility_ohw",
-    quizScore: 44, passingThreshold: 70,
+    quizScore: 44, passingThreshold: 75,
     status: "In Progress",
     assignedDate: d(-9), dueDate: d(5), daysActive: 9, daysOverdue: 0,
   },
@@ -133,7 +133,7 @@ const EXEC_MOCK_PLANS: ExecPlan[] = [
     category: "Patient Care & Documentation", facilityType: "Hospital",
     learner: "Infection Preventionist",
     facility: "Orthopedic Hospital of Wisconsin", facilityId: "facility_ohw",
-    quizScore: 65, passingThreshold: 70,
+    quizScore: 65, passingThreshold: 75,
     status: "Verified",
     assignedDate: d(-38), dueDate: d(-10), completedAt: d(-12),
     daysActive: 26, daysOverdue: 0,
@@ -144,7 +144,7 @@ const EXEC_MOCK_PLANS: ExecPlan[] = [
     category: "Facilities & Equipment", facilityType: "Hospital",
     learner: "Biomedical Technician",
     facility: "Ascension SE Wisconsin", facilityId: "facility_ascension",
-    quizScore: 67, passingThreshold: 70,
+    quizScore: 67, passingThreshold: 75,
     status: "Completed",
     assignedDate: d(-18), dueDate: d(7), daysActive: 18, daysOverdue: 0,
   },
@@ -153,7 +153,7 @@ const EXEC_MOCK_PLANS: ExecPlan[] = [
     category: "Transport of Instruments", facilityType: "Hospital",
     learner: "SPD Technician",
     facility: "Ascension SE Wisconsin", facilityId: "facility_ascension",
-    quizScore: 60, passingThreshold: 70,
+    quizScore: 60, passingThreshold: 75,
     status: "Verified",
     assignedDate: d(-45), dueDate: d(-18), completedAt: d(-20),
     daysActive: 25, daysOverdue: 0,
@@ -163,7 +163,7 @@ const EXEC_MOCK_PLANS: ExecPlan[] = [
     category: "Infection Prevention and Control and Safety", facilityType: "ASC",
     learner: "ASC Circulating RN",
     facility: "Ascension SE Wisconsin", facilityId: "facility_ascension",
-    quizScore: 58, passingThreshold: 70,
+    quizScore: 58, passingThreshold: 75,
     status: "Assigned",
     assignedDate: d(-5), dueDate: d(1), daysActive: 5, daysOverdue: 0,
   },
@@ -172,7 +172,7 @@ const EXEC_MOCK_PLANS: ExecPlan[] = [
     category: "Pharmaceutical Services", facilityType: "ASC",
     learner: "ASC Charge RN",
     facility: "Ascension SE Wisconsin", facilityId: "facility_ascension",
-    quizScore: 62, passingThreshold: 70,
+    quizScore: 62, passingThreshold: 75,
     status: "Verified",
     assignedDate: d(-28), dueDate: d(-7), completedAt: d(-2),
     daysActive: 26, daysOverdue: 0,
@@ -183,7 +183,7 @@ const EXEC_MOCK_PLANS: ExecPlan[] = [
     category: "OR & Sterile Technique", facilityType: "Hospital",
     learner: "OR Director",
     facility: "Demo Regional Medical Center", facilityId: "facility_demo_hospital",
-    quizScore: 55, passingThreshold: 70,
+    quizScore: 55, passingThreshold: 75,
     status: "Assigned",
     assignedDate: d(-8), dueDate: d(3), daysActive: 8, daysOverdue: 0,
   },
@@ -192,7 +192,7 @@ const EXEC_MOCK_PLANS: ExecPlan[] = [
     category: "Instrument Integrity", facilityType: "Hospital",
     learner: "SPD Technician",
     facility: "Demo Regional Medical Center", facilityId: "facility_demo_hospital",
-    quizScore: 44, passingThreshold: 70,
+    quizScore: 44, passingThreshold: 75,
     status: "In Progress",
     assignedDate: d(-4), dueDate: d(10), daysActive: 4, daysOverdue: 0,
   },
@@ -201,7 +201,7 @@ const EXEC_MOCK_PLANS: ExecPlan[] = [
     category: "Patient Care & Documentation", facilityType: "Hospital",
     learner: "Charge RN",
     facility: "Demo Regional Medical Center", facilityId: "facility_demo_hospital",
-    quizScore: 62, passingThreshold: 70,
+    quizScore: 62, passingThreshold: 75,
     status: "Completed",
     assignedDate: d(-16), dueDate: d(-3), daysActive: 16, daysOverdue: 3,
   },
@@ -210,7 +210,7 @@ const EXEC_MOCK_PLANS: ExecPlan[] = [
     category: "EOC & Safety Compliance", facilityType: "Hospital",
     learner: "Quality Coordinator",
     facility: "Demo Regional Medical Center", facilityId: "facility_demo_hospital",
-    quizScore: 65, passingThreshold: 70,
+    quizScore: 65, passingThreshold: 75,
     status: "Assigned",
     assignedDate: d(-11), dueDate: d(-2), daysActive: 11, daysOverdue: 2,
   },
@@ -219,7 +219,7 @@ const EXEC_MOCK_PLANS: ExecPlan[] = [
     category: "Anesthesia and Surgical Services", facilityType: "ASC",
     learner: "CRNA",
     facility: "Demo Regional Medical Center", facilityId: "facility_demo_hospital",
-    quizScore: 52, passingThreshold: 70,
+    quizScore: 52, passingThreshold: 75,
     status: "Verified",
     assignedDate: d(-28), dueDate: d(-7), completedAt: d(-2),
     daysActive: 26, daysOverdue: 0,
@@ -315,7 +315,7 @@ function generateNarrative(
   const trendImproving = recentCompleted >= recentAssigned;
 
   let text = `As of ${format(TODAY, "MMMM d, yyyy")}, there are ${kpis.active} active guided education plan${kpis.active !== 1 ? "s" : ""} ${scopeLabel}.`;
-  text += " All plans were triggered by final test scores below the 70% passing threshold.";
+  text += " All plans were triggered by final test scores below the 75% passing threshold.";
 
   if (kpis.overdue > 0) {
     text += ` ${kpis.overdue} plan${kpis.overdue !== 1 ? "s are" : " is"} past the due date and require learner follow-up.`;
@@ -681,7 +681,7 @@ export default function ExecutiveReportPage() {
             <div className="max-w-md">
               <h3 className="text-lg font-bold mb-1" data-testid="text-exec-empty-title">No guided education plans yet.</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Plans appear here automatically when a learner scores below the 70% passing threshold on a final test. Switch to Demo mode to explore a sample report.
+                Plans appear here automatically when a learner scores below the 75% passing threshold on a final test. Switch to Demo mode to explore a sample report.
               </p>
             </div>
             <Button variant="outline" onClick={() => setDataMode("demo")} data-testid="button-exec-switch-demo">

@@ -144,7 +144,7 @@ const ASC_CATEGORIES = [
 ];
 
 const ALL_STATUSES: PlanStatus[] = ["Assigned", "In Progress", "Completed", "Verified"];
-const PASSING_THRESHOLD = 70;
+const PASSING_THRESHOLD = 75;
 
 // ── Library Helpers ────────────────────────────────────────────────────────
 
@@ -467,7 +467,7 @@ function CreatePlanDialog({
   const previewSteps = getStepsForScore(facilityType as "Hospital" | "ASC" | "", category, scoreNum);
   const reassessment = needsReassessment(scoreNum);
 
-  const canGeneratePlan = !!(facilityType && category && learner && dueDate && !isNaN(scoreNum) && scoreNum > 0 && scoreNum < 70 && previewSteps.length > 0);
+  const canGeneratePlan = !!(facilityType && category && learner && dueDate && !isNaN(scoreNum) && scoreNum > 0 && scoreNum < 75 && previewSteps.length > 0);
 
   async function handleGeneratePlan() {
     if (!canGeneratePlan) return;
@@ -601,14 +601,14 @@ function CreatePlanDialog({
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-bold">Final Test Score (%)</label>
               <input
-                type="number" min={1} max={69}
-                {...register("quizScore", { required: true, min: { value: 1, message: "Min 1" }, max: { value: 69, message: "Must be below 70%" } })}
+                type="number" min={1} max={74}
+                {...register("quizScore", { required: true, min: { value: 1, message: "Min 1" }, max: { value: 74, message: "Must be below 75%" } })}
                 placeholder="e.g. 58"
                 className="w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
                 data-testid="input-quiz-score"
               />
               {errors.quizScore && <span className="text-xs text-destructive">{errors.quizScore.message || "Required"}</span>}
-              {!isNaN(scoreNum) && scoreNum > 0 && scoreNum < 70 && (
+              {!isNaN(scoreNum) && scoreNum > 0 && scoreNum < 75 && (
                 <p className="text-[11px] text-muted-foreground">
                   {scoreNum >= 60 ? "1 step assigned" : "2 steps assigned"}
                   {scoreNum < 50 ? " + reassessment required" : ""}
@@ -1187,7 +1187,7 @@ function WeakLearnersSection({ onCreatePlan }: {
       <div className="rounded-2xl border border-border bg-card p-6 text-center" data-testid="container-weak-learners-empty">
         <CheckCircle2 size={28} className="mx-auto text-emerald-400 mb-3" />
         <p className="text-base font-bold mb-1">All learners are on track</p>
-        <p className="text-sm text-muted-foreground">No learners with scores below 70% were found in your facility.</p>
+        <p className="text-sm text-muted-foreground">No learners with scores below 75% were found in your facility.</p>
       </div>
     );
   }

@@ -1707,7 +1707,7 @@ export async function registerRoutes(
         const hasDiag = diagUsers.has(u.id);
         const mastery = masteryByUser.get(u.id);
         const finalScore = mastery ? pct(mastery.score, mastery.total_questions) : null;
-        const finalPassed = finalScore !== null && finalScore >= 70;
+        const finalPassed = finalScore !== null && finalScore >= 75;
         if (hasDiag) diagCount++;
         if (mastery && finalScore !== null) finalScores.push(finalScore);
         const role = u.role_name || "Staff";
@@ -1764,7 +1764,7 @@ export async function registerRoutes(
       for (const u of allStaff) {
         const mastery = masteryByUser.get(u.id);
         const finalScore = mastery ? pct(mastery.score, mastery.total_questions) : null;
-        if (finalScore === null || finalScore < 70) {
+        if (finalScore === null || finalScore < 75) {
           totalNotCompleted++;
           const role = u.role_name || "Staff";
           const m = role.match(/^(.*?)\s*\(([A-Z]+)\)$/);
@@ -2461,7 +2461,7 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
             const mapped = LEVEL_TO_CATEGORY[p.levelId];
             return { levelId: p.levelId, accuracy, mapped };
           })
-          .filter((p) => p.accuracy < 70 && p.mapped);
+          .filter((p) => p.accuracy < 75 && p.mapped);
 
         if (!levelAccuracies.length) continue;
 
