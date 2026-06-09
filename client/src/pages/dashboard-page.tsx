@@ -2,7 +2,7 @@ import { useState, useMemo, useRef, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocation, Link } from "wouter";
-import { Flame, Zap, Target, TrendingUp, ChevronRight, ChevronDown, ChevronUp, LogOut, BarChart3, Calendar as CalendarIcon, Settings, BookOpen, Trophy, Shuffle, Microscope, BrainCircuit, Stethoscope, Crown, Briefcase, Play, FileText, ClipboardCheck, ClipboardList, ShieldAlert, Brain, Layers, GraduationCap, Search, X as XIcon, ZoomIn, HelpCircle, MessageSquare, MoreHorizontal, Moon, Sun, AlertCircle, Star } from "lucide-react"; // eslint-disable-line @typescript-eslint/no-unused-vars
+import { Flame, Zap, Target, TrendingUp, ChevronRight, ChevronDown, ChevronUp, LogOut, BarChart3, Calendar as CalendarIcon, Settings, BookOpen, Trophy, Shuffle, Microscope, BrainCircuit, Stethoscope, Crown, Briefcase, Play, FileText, ClipboardCheck, ClipboardList, ShieldAlert, Brain, Layers, GraduationCap, Search, X as XIcon, ZoomIn, HelpCircle, MessageSquare, MoreHorizontal, AlertCircle, Star } from "lucide-react"; // eslint-disable-line @typescript-eslint/no-unused-vars
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -421,22 +421,10 @@ export default function DashboardPage() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [quizEntry, setQuizEntry] = useState<SearchEntry | null>(null);
   const [quizOpen, setQuizOpen] = useState(false);
-  const [isDark, setIsDark] = useState(() => localStorage.getItem("ar_night_mode") === "1");
   const [feedbackOpen, setFeedbackOpen] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState("");
   const [feedbackSent, setFeedbackSent] = useState(false);
 
-  function toggleDark() {
-    const next = !isDark;
-    setIsDark(next);
-    if (next) {
-      localStorage.setItem("ar_night_mode", "1");
-      document.documentElement.classList.add("dark");
-    } else {
-      localStorage.removeItem("ar_night_mode");
-      document.documentElement.classList.remove("dark");
-    }
-  }
   const searchRef = useRef<HTMLDivElement>(null);
 
   const searchResults = useMemo<Array<SearchEntry & { snippet?: string }>>(() => {
@@ -622,11 +610,6 @@ export default function DashboardPage() {
             <Button variant="outline" size="sm" onClick={() => setLocation("/profile")} data-testid="button-profile" className="hidden sm:flex gap-1.5">
               <Settings size={16} /><span>Settings</span>
             </Button>
-            {/* Dark mode toggle - always visible */}
-            <Button variant="outline" size="sm" onClick={toggleDark} data-testid="button-toggle-dark" className="gap-1.5">
-              {isDark ? <><Sun size={16} /><span>Light</span></> : <><Moon size={16} /><span>Dark</span></>}
-            </Button>
-
             <Button variant="outline" size="sm" onClick={async () => { await logout(); setLocation("/auth"); }} data-testid="button-logout" className="hidden sm:flex gap-1.5">
               <LogOut size={16} /><span>Sign Out</span>
             </Button>

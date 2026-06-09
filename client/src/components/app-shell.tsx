@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { ReactNode } from "react";
 import { AppLogoMark } from "./app-logo-mark";
 import { useAuth } from "@/lib/auth";
 import { useLocation } from "wouter";
-import { LayoutDashboard, Search, Trophy, Settings } from "lucide-react";
+import { LayoutDashboard, Search, Trophy, Settings, Moon, Sun } from "lucide-react";
 
 interface AppShellProps {
   children: ReactNode;
@@ -17,6 +18,19 @@ const HIDE_TABBAR_PREFIXES = [
 export function AppShell({ children }: AppShellProps) {
   const { user } = useAuth();
   const [location, setLocation] = useLocation();
+  const [isDark, setIsDark] = useState(() => localStorage.getItem("ar_night_mode") === "1");
+
+  function toggleDark() {
+    const next = !isDark;
+    setIsDark(next);
+    if (next) {
+      localStorage.setItem("ar_night_mode", "1");
+      document.documentElement.classList.add("dark");
+    } else {
+      localStorage.removeItem("ar_night_mode");
+      document.documentElement.classList.remove("dark");
+    }
+  }
 
   const showTabBar = !!user && !HIDE_TABBAR_PREFIXES.some(p => location.startsWith(p));
 
@@ -44,11 +58,21 @@ export function AppShell({ children }: AppShellProps) {
   return (
     <div className="min-h-screen flex flex-col relative bg-background">
       <header className="sticky top-0 z-50 border-b border-border flex-shrink-0 bg-background/95 backdrop-blur-md">
-        <div className="px-4 h-[58px] flex items-center justify-center gap-2.5">
-          <AppLogoMark variant="sm" />
-          <span className="text-foreground text-sm tracking-tight">
-            <span className="font-semibold">Accreditation</span><span className="font-bold italic"> Ready</span>
-          </span>
+        <div className="px-4 h-[58px] flex items-center gap-2.5">
+          <div className="flex-1 flex items-center justify-center gap-2.5">
+            <AppLogoMark variant="sm" />
+            <span className="text-foreground text-sm tracking-tight">
+              <span className="font-semibold">Accreditation</span><span className="font-bold italic"> Ready</span>
+            </span>
+          </div>
+          <button
+            onClick={toggleDark}
+            data-testid="button-toggle-dark"
+            aria-label="Toggle dark mode"
+            className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors"
+          >
+            {isDark ? <Sun size={16} /> : <Moon size={16} />}
+          </button>
         </div>
       </header>
 
