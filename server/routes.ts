@@ -3204,7 +3204,8 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
         missingSections.push(level.id);
       }
     }
-    res.json({ eligible: missingSections.length === 0, completedSections, missingSections, isAdmin: false });
+    const LEVELS_REQUIRED = 5;
+    res.json({ eligible: completedSections.length >= LEVELS_REQUIRED, completedSections, missingSections, completedCount: completedSections.length, levelsRequired: LEVELS_REQUIRED, isAdmin: false });
   });
 
   app.post("/api/mastery/submit", requireAuth, async (req, res) => {

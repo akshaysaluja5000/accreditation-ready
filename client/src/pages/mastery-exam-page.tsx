@@ -27,6 +27,8 @@ interface Eligibility {
   eligible: boolean;
   completedSections: string[];
   missingSections: string[];
+  completedCount: number;
+  levelsRequired: number;
   isAdmin: boolean;
 }
 
@@ -304,12 +306,10 @@ export default function MasteryExamPage() {
           {!isEligible && !hasSession && (
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.15 }} className="rounded-2xl bg-primary/5 dark:bg-primary/10 border border-primary/30 p-5 mb-6">
               <div className="flex items-center gap-2 mb-3"><Lock size={18} className="text-primary" /><span className="font-bold text-sm text-primary">Not quite there yet</span></div>
-              <p className="text-sm text-muted-foreground mb-3">Complete at least 10 questions in each section to unlock the Final Assessment. You still need:</p>
-              <div className="flex flex-wrap gap-2">
-                {missingNames.map((name, i) => (
-                  <span key={i} className="px-2.5 py-1 rounded-full text-xs font-semibold bg-primary/10 dark:bg-primary/20 text-primary border border-primary/20">{name}</span>
-                ))}
-              </div>
+              <p className="text-sm text-muted-foreground mb-3">
+                Complete at least 5 levels to unlock the Final Assessment.
+                You have completed {eligibility?.completedCount ?? 0} of 5 required levels.
+              </p>
             </motion.div>
           )}
 

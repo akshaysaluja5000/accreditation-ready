@@ -24,7 +24,9 @@ export default function MfaVerifyPage() {
     try {
       await apiRequest("POST", "/api/mfa/verify", { token });
       queryClient.invalidateQueries({ queryKey: ["/api/mfa/status"] });
-      setLocation("/leadership");
+      const returnTo = sessionStorage.getItem("ar_mfa_return_to") || "/leadership";
+      sessionStorage.removeItem("ar_mfa_return_to");
+      setLocation(returnTo);
     } catch (err: any) {
       toast({ title: "Verification failed", description: err.message, variant: "destructive" });
       setToken("");

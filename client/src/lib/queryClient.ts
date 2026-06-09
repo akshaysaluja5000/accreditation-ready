@@ -2,10 +2,12 @@ import { QueryClient, QueryFunction } from "@tanstack/react-query";
 
 function redirectForMfa(json: Record<string, unknown>) {
   if (json.mfaRequired) {
+    sessionStorage.setItem("ar_mfa_return_to", window.location.pathname + window.location.search);
     window.location.href = "/mfa-verify";
     return true;
   }
   if (json.mfaSetupRequired) {
+    sessionStorage.setItem("ar_mfa_return_to", window.location.pathname + window.location.search);
     window.location.href = "/mfa-setup";
     return true;
   }

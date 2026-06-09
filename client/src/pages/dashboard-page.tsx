@@ -277,7 +277,7 @@ export default function DashboardPage() {
     queryKey: ["/api/points/me"],
   });
 
-  const { data: masteryEligibility } = useQuery<{ eligible: boolean; missingSections: string[] }>({
+  const { data: masteryEligibility } = useQuery<{ eligible: boolean; completedCount: number; levelsRequired: number; missingSections: string[] }>({
     queryKey: ["/api/mastery/eligibility"],
   });
 
