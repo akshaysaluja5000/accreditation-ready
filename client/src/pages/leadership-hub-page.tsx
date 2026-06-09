@@ -157,6 +157,7 @@ function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
     href: "/educator",
     minRole: "ceo",
     badge: "New",
+    featureKey: "show_teams",
   },
   {
     id: "user-management",

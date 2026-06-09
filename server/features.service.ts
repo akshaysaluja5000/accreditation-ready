@@ -11,6 +11,7 @@ export const DEFAULT_FEATURES: FacilityFeatures = {
   executive_readiness_agent: false,
   wall_chart_tracker: false,
   regulatory_watch_agent: false,
+  show_teams: false,
 };
 
 export const DEFAULT_ROLE_VISIBILITY: FacilityRoleVisibility = {

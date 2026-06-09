@@ -14,6 +14,7 @@ import { Label } from "@/components/ui/label";
 import { useAuth } from "@/lib/auth";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { useFacilityFeatures, isEnabled } from "@/lib/features";
 
 interface TeamMember {
   id: number;
@@ -55,11 +56,11 @@ export default function EducatorHubPage() {
   const { user } = useAuth();
   const [, setLocation] = useLocation();
   const { toast } = useToast();
+  const { data: facilityFlags } = useFacilityFeatures();
+  const showTeams = isEnabled(facilityFlags?.features, "show_teams");
+
   const [activeTab, setActiveTab] = useState<"department" | "teams">(
-    LEADERSHIP_RANK[(user as any)?.leadershipRole ?? "learner"] >= LEADERSHIP_RANK["ceo"] ||
-    (user as any)?.isAdmin
-      ? "teams"
-      : "department"
+    "department"
   );
 
   const effectiveRole = (user as any)?.leadershipRole ?? "learner";
@@ -107,10 +108,10 @@ export default function EducatorHubPage() {
         </div>
 
         <div className="max-w-4xl mx-auto px-4 pb-0 flex gap-0">
-          {(["department", "teams"] as const).map((tab) => (
+          {(["department", ...(showTeams ? ["teams"] : [])] as const).map((tab) => (
             <button
               key={tab}
-              onClick={() => setActiveTab(tab)}
+              onClick={() => setActiveTab(tab as "department" | "teams")}
               data-testid={`tab-${tab}`}
               className={`px-5 py-2.5 text-sm font-semibold border-b-2 transition-colors ${
                 activeTab === tab
@@ -126,7 +127,7 @@ export default function EducatorHubPage() {
 
       <div className="max-w-4xl mx-auto px-4 pt-6">
         <AnimatePresence mode="wait">
-          {activeTab === "department" ? (
+          {activeTab === "department" || !showTeams ? (
             <motion.div
               key="department"
               initial={{ opacity: 0, y: 8 }}
