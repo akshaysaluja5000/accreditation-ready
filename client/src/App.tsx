@@ -44,6 +44,7 @@ import RegulatoryWatchPage from "@/pages/regulatory-watch-page";
 import ExecutiveBriefPage from "@/pages/executive-brief-page";
 import MyLogEntriesPage from "@/pages/my-log-entries-page";
 import HospitalDashboardPage from "@/pages/hospital-dashboard-page";
+import AscDashboardPage from "@/pages/asc-dashboard-page";
 import ComplianceTasksPage from "@/pages/compliance-tasks-page";
 import ContentIntelligencePage from "@/pages/content-intelligence-page";
 import AscWallChartPage from "@/pages/asc-wall-chart-page";
@@ -380,6 +381,9 @@ function Router() {
       </Route>
       <Route path="/hospital-dashboard">
         {() => <LeadershipRoute component={HospitalDashboardPage} minRole="director" />}
+      </Route>
+      <Route path="/asc-dashboard">
+        {() => <LeadershipRoute component={AscDashboardPage} minRole="director" />}
       </Route>
       <Route path="/admin">
         {() => <LeadershipRoute component={AdminPage} minRole="director" />}

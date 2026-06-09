@@ -1655,6 +1655,174 @@ export async function registerRoutes(
     }
   });
 
+  app.get("/api/admin/asc-dashboard", requireLeadershipRole("director"), requireMfa, async (req, res) => {
+    try {
+      const adminUser = req.user as User;
+      const facilityId = (adminUser as any).facilityId as number | null;
+      if (!facilityId) return res.status(400).json({ error: "No facility associated with your account." });
+
+      const surveyTarget = new Date("2026-10-01T00:00:00");
+      const nowDate = new Date();
+      const daysUntilWindow = Math.max(0, Math.ceil((surveyTarget.getTime() - nowDate.getTime()) / 86400000));
+
+      const [usersRes, diagRes, masteryRes, complianceRes, facilityRes, activityRes] = await Promise.all([
+        featPool.query(
+          `SELECT u.id, u.first_name, u.last_name, r.name as role_name FROM users u LEFT JOIN roles r ON u.role_id = r.id WHERE u.facility_id = $1 AND u.is_admin = false ORDER BY u.id`,
+          [facilityId]
+        ),
+        featPool.query(
+          `SELECT DISTINCT ON (dr.user_id) dr.user_id FROM diagnostic_results dr JOIN users u ON dr.user_id = u.id WHERE u.facility_id = $1 ORDER BY dr.user_id, dr.completed_at ASC`,
+          [facilityId]
+        ),
+        featPool.query(
+          `SELECT DISTINCT ON (mr.user_id) mr.user_id, mr.score, mr.total_questions FROM mastery_results mr JOIN users u ON mr.user_id = u.id WHERE u.facility_id = $1 ORDER BY mr.user_id, mr.completed_at DESC`,
+          [facilityId]
+        ),
+        featPool.query(
+          `SELECT item_name, standard_code, next_due_date, frequency, volume FROM compliance_items WHERE module = 'asc' ORDER BY COALESCE(next_due_date, '2099-01-01'::timestamp) ASC LIMIT 12`
+        ),
+        featPool.query(`SELECT name FROM facilities WHERE id = $1`, [facilityId]),
+        featPool.query(
+          `SELECT da.date, r.name as role_name, COUNT(da.user_id)::int as user_count, SUM(da.questions_answered)::int as total_questions, SUM(da.correct_answers)::int as total_correct FROM daily_activity da JOIN users u ON da.user_id = u.id LEFT JOIN roles r ON u.role_id = r.id WHERE u.facility_id = $1 AND da.date >= (CURRENT_DATE - INTERVAL '6 days') GROUP BY da.date, r.name ORDER BY da.date DESC, total_questions DESC LIMIT 8`,
+          [facilityId]
+        ),
+      ]);
+
+      const allStaff: any[] = usersRes.rows;
+      const facilityName: string = facilityRes.rows[0]?.name || "Your Surgery Center";
+      const totalStaff = allStaff.length;
+
+      const diagUsers = new Set<number>((diagRes.rows as any[]).map((r: any) => r.user_id));
+      const masteryByUser = new Map<number, any>();
+      for (const r of masteryRes.rows as any[]) masteryByUser.set(r.user_id, r);
+
+      const pct = (n: number, total: number) => total > 0 ? Math.round((n / total) * 100) : 0;
+      const avg = (arr: number[]) => arr.length > 0 ? Math.round(arr.reduce((a: number, b: number) => a + b, 0) / arr.length) : 0;
+
+      let diagCount = 0;
+      const finalScores: number[] = [];
+      const roleMap = new Map<string, { count: number; completed: number; diagCount: number }>();
+
+      for (const u of allStaff) {
+        const hasDiag = diagUsers.has(u.id);
+        const mastery = masteryByUser.get(u.id);
+        const finalScore = mastery ? pct(mastery.score, mastery.total_questions) : null;
+        const finalPassed = finalScore !== null && finalScore >= 70;
+        if (hasDiag) diagCount++;
+        if (mastery && finalScore !== null) finalScores.push(finalScore);
+        const role = u.role_name || "Staff";
+        if (!roleMap.has(role)) roleMap.set(role, { count: 0, completed: 0, diagCount: 0 });
+        const rm = roleMap.get(role)!;
+        rm.count++;
+        if (hasDiag) rm.diagCount++;
+        if (finalPassed) rm.completed++;
+      }
+
+      const diagRate = pct(diagCount, totalStaff);
+      const avgFinal = avg(finalScores);
+      const staffTraining = totalStaff > 0 ? Math.round(diagRate * 0.3 + avgFinal * 0.7) : 0;
+
+      const nowMs = Date.now();
+      const policyItems = (complianceRes.rows as any[]).map((r: any) => {
+        const due = r.next_due_date ? new Date(r.next_due_date).getTime() : null;
+        let status: "overdue" | "due_soon" | "current" = "current";
+        let detail = "No due date set";
+        if (due !== null) {
+          const diffDays = Math.ceil((due - nowMs) / 86400000);
+          if (diffDays < 0) {
+            status = "overdue";
+            detail = `${Math.abs(diffDays)} day${Math.abs(diffDays) !== 1 ? "s" : ""} overdue`;
+          } else if (diffDays <= 60) {
+            status = "due_soon";
+            detail = `Due in ${diffDays} day${diffDays !== 1 ? "s" : ""}`;
+          } else {
+            const dueDate = new Date(due);
+            detail = `Due ${dueDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`;
+          }
+        }
+        return { name: r.item_name, standard: r.standard_code, detail, status };
+      });
+
+      const overdueItems = policyItems.filter((p: any) => p.status === "overdue");
+      const policiesScore = policyItems.length > 0
+        ? pct(policyItems.filter((p: any) => p.status === "current").length, policyItems.length)
+        : null;
+      const overall = policiesScore !== null
+        ? Math.round(staffTraining * 0.6 + policiesScore * 0.4)
+        : staffTraining;
+      const statusLabel = overall >= 85 ? "On Track" : overall >= 70 ? "Needs Attention" : "At Risk";
+
+      const roleTraining = Array.from(roleMap.entries()).map(([roleName, data]) => {
+        const m = roleName.match(/^(.*?)\s*\(([A-Z]+)\)$/);
+        const title = m ? m[1].trim() : roleName;
+        const code = m ? m[2] : "";
+        return { roleName: title, code, staffCount: data.count, completionPct: pct(data.completed, data.count), staffBehind: data.count - data.completed };
+      }).sort((a, b) => a.completionPct - b.completionPct);
+
+      const notCompletedByRole = new Map<string, number>();
+      let totalNotCompleted = 0;
+      for (const u of allStaff) {
+        const mastery = masteryByUser.get(u.id);
+        const finalScore = mastery ? pct(mastery.score, mastery.total_questions) : null;
+        if (finalScore === null || finalScore < 70) {
+          totalNotCompleted++;
+          const role = u.role_name || "Staff";
+          const m = role.match(/^(.*?)\s*\(([A-Z]+)\)$/);
+          const title = m ? m[1].trim() : role;
+          notCompletedByRole.set(title, (notCompletedByRole.get(title) || 0) + 1);
+        }
+      }
+      const incompleteItems = Array.from(notCompletedByRole.entries())
+        .sort((a, b) => b[1] - a[1]).slice(0, 3)
+        .map(([dept, behind]) => ({ dept, behind }));
+
+      const priorities: { text: string; detail: string }[] = [];
+      if (overdueItems.length > 0) {
+        const first = overdueItems[0] as any;
+        priorities.push({ text: `Review and approve the ${first.name} policy`, detail: `${first.detail} · takes ~10 min` });
+      }
+      const worstRole = roleTraining.find((r: any) => r.completionPct < 60 && r.staffBehind > 0);
+      if (worstRole) {
+        priorities.push({ text: `Follow up with ${worstRole.roleName} team on training`, detail: `${worstRole.staffBehind} of ${worstRole.staffCount} staff not yet completed` });
+      }
+      if (totalNotCompleted > 0) {
+        priorities.push({ text: `Review outstanding training completions`, detail: `${totalNotCompleted} staff member${totalNotCompleted !== 1 ? "s" : ""} have not finished their module` });
+      }
+      priorities.push({ text: `Review QAPI meeting minutes and documentation`, detail: `Required documentation for AAAHC surveyor` });
+
+      const recentActivity = (activityRes.rows as any[]).slice(0, 5).map((r: any) => {
+        const roleShort = (r.role_name || "Staff").replace(/\s*\([A-Z]+\)$/, "").trim();
+        const count = r.user_count || 0;
+        const questions = r.total_questions || 0;
+        const correct = r.total_correct || 0;
+        const correctPct = questions > 0 ? Math.round((correct / questions) * 100) : 0;
+        const text = `${count} ${roleShort} staff completed ${questions} quiz question${questions !== 1 ? "s" : ""} — ${correctPct}% correct`;
+        const d = new Date(r.date);
+        const daysAgo = Math.floor((nowMs - d.getTime()) / 86400000);
+        const timeStr = daysAgo === 0 ? "Today" : daysAgo === 1 ? "Yesterday" : `${daysAgo} days ago`;
+        return { color: questions >= 10 ? "green" : questions >= 3 ? "amber" : "red", text, time: timeStr };
+      });
+
+      res.json({
+        facilityName, updatedAt: new Date().toISOString(),
+        readiness: { overall, staffTraining, policiesScore, statusLabel },
+        survey: { daysUntilWindow, windowDesc: "Oct–Dec 2026", expiresDesc: "Feb 2027", body: "AAAHC" },
+        priorities: priorities.slice(0, 4),
+        attention: {
+          overdueCompliance: { count: overdueItems.length, items: overdueItems.slice(0, 3).map((p: any) => ({ name: p.name, detail: p.detail })) },
+          expiringCerts: { count: 0, items: [] },
+          incompleteTraining: { count: totalNotCompleted, items: incompleteItems },
+        },
+        roleTraining,
+        policyStatus: policyItems.slice(0, 8),
+        recentActivity,
+      });
+    } catch (err: any) {
+      console.error("[AscDashboard]", err?.message);
+      res.status(500).json({ message: "Failed to load ASC dashboard data." });
+    }
+  });
+
   try {
     let facility = await storage.getFacilityByCode("SITE486045");
     if (!facility) {

@@ -51,6 +51,17 @@ function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
     badge: "Live",
   },
   {
+    id: "asc-dashboard",
+    title: "ASC Executive Dashboard",
+    description: "Survey readiness score, AAAHC policy review status, staff training completion by track, and compliance alerts — purpose-built for ambulatory surgery centers.",
+    icon: Stethoscope,
+    iconBg: "bg-teal-500/10",
+    iconColor: "text-teal-600",
+    href: "/asc-dashboard",
+    minRole: "director",
+    badge: "Live",
+  },
+  {
     id: "survey-readiness",
     title: "Survey Readiness Agent",
     description: `Live compliance score across all ${activeStandardsBody} standards, color-coded by surveyor risk. Green above 90%, amber 75–90%, red below 75%.`,
