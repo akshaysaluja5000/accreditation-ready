@@ -1333,7 +1333,7 @@ export default function CorrectiveActionPage() {
       leadershipRole: (facilityAuth.user as any)?.leadershipRole ?? "learner",
       facilityId: scopedFacilityId,
       facilityName: scopedFacilityName,
-      action: "remediation_plan_created",
+      action: "education_plan_created",
       meta: { planId: plan.id, category: plan.category, score: plan.quizScore },
     });
   }

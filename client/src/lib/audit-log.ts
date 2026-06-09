@@ -8,9 +8,9 @@ export type AuditAction =
   | "executive_report_viewed"
   | "executive_report_csv_export"
   | "executive_report_pdf_export"
-  | "remediation_plan_viewed"
-  | "remediation_plan_created"
-  | "remediation_plan_status_changed"
+  | "education_plan_viewed"
+  | "education_plan_created"
+  | "education_plan_status_changed"
   | "user_management_viewed"
   | "leadership_coach_viewed";
 

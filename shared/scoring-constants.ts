@@ -1,8 +1,8 @@
 export const POINT_VALUES = {
   question_correct:            20,
   flashcard_again:              5,
-  flashcard_hard:               8,
-  flashcard_good:              10,
+  flashcard_hard:               5,
+  flashcard_good:               5,
   daily_login:                 15,
   diagnostic_complete:          0,
   final_complete:             100,
