@@ -565,7 +565,6 @@ export default function DashboardPage() {
               <h1 className="font-bold text-sm sm:text-base text-foreground truncate max-w-[120px] sm:max-w-none" data-testid="text-username">
                 {user?.username}
               </h1>
-              <p className="text-xs text-muted-foreground hidden sm:block">Welcome back!</p>
             </div>
           </div>
 
