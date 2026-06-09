@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowLeft, BarChart3, TrendingUp, GraduationCap, BrainCircuit,
   Users, Building2, Stethoscope, ChevronRight, ShieldCheck,
-  ClipboardList, FileText, Lock, AlertTriangle, ShieldAlert, Bot, Globe, Briefcase, Zap,
+  ClipboardList, FileText, Lock, AlertTriangle, Bot, Globe, Briefcase, Zap,
   FolderOpen, Star, Brain, BookOpen,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -203,174 +203,6 @@ function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
     ascOnly: true,
   },
 ];}
-
-interface TeamRiskEntry {
-  id: number;
-  userId: number;
-  username: string;
-  firstName: string;
-  lastName: string;
-  department: string | null;
-  riskAreas: string;
-  notes: string;
-  updatedAt: string;
-}
-
-function TeamRiskSummary({ module }: { module: string }) {
-  const { data, isLoading } = useQuery<{ assessments: TeamRiskEntry[] }>({
-    queryKey: ["/api/risk-assessment/team", module],
-    queryFn: () => fetch(`/api/risk-assessment/team?module=${module}`, { credentials: "include" }).then(r => r.json()),
-  });
-
-  const [expanded, setExpanded] = useState(false);
-
-  const assessments = data?.assessments ?? [];
-
-  const riskFrequency = (() => {
-    const freq: Record<string, number> = {};
-    for (const a of assessments) {
-      try {
-        const areas = JSON.parse(a.riskAreas) as string[];
-        for (const area of areas) {
-          freq[area] = (freq[area] || 0) + 1;
-        }
-      } catch {}
-    }
-    return Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, 8);
-  })();
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="rounded-2xl border border-border bg-card overflow-hidden"
-      data-testid="card-team-risk-summary"
-    >
-      <button
-        className="w-full flex items-center gap-3 px-5 py-4 text-left hover:bg-muted/20 transition-colors"
-        onClick={() => setExpanded(v => !v)}
-        data-testid="button-toggle-team-risks"
-      >
-        <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center flex-shrink-0">
-          <ShieldAlert size={18} className="text-orange-500" />
-        </div>
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 flex-wrap">
-            <h2 className="font-bold text-sm">Team Risk Self-Assessments</h2>
-            {assessments.length > 0 && (
-              <span className="px-1.5 py-0.5 rounded-full text-xs font-black bg-orange-500/15 text-orange-500 border border-orange-500/20">
-                {assessments.length} submitted
-              </span>
-            )}
-          </div>
-          <p className="text-sm text-muted-foreground mt-0.5">Staff-identified risk areas across your facility</p>
-        </div>
-        {expanded
-          ? <ChevronRight size={16} className="text-muted-foreground rotate-90 transition-transform" />
-          : <ChevronRight size={16} className="text-muted-foreground transition-transform" />}
-      </button>
-
-      <AnimatePresence initial={false}>
-        {expanded && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="overflow-hidden"
-          >
-            <div className="border-t border-border/40 px-5 pb-5 pt-4 flex flex-col gap-5">
-              {isLoading ? (
-                <div className="flex items-center justify-center py-8">
-                  <div className="w-5 h-5 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-                </div>
-              ) : assessments.length === 0 ? (
-                <div className="rounded-xl border border-dashed border-border bg-muted/20 p-5 text-center">
-                  <ShieldAlert size={20} className="text-muted-foreground mx-auto mb-2" />
-                  <p className="text-sm font-semibold text-muted-foreground">No assessments submitted yet</p>
-                  <p className="text-xs text-muted-foreground mt-1">Staff can complete their self-assessment from their training dashboard.</p>
-                </div>
-              ) : (
-                <>
-                  {/* Most common risk areas */}
-                  {riskFrequency.length > 0 && (
-                    <div className="flex flex-col gap-2">
-                      <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Most flagged risk areas</p>
-                      <div className="flex flex-col gap-2">
-                        {riskFrequency.map(([area, count], i) => {
-                          const pct = Math.round((count / assessments.length) * 100);
-                          return (
-                            <div key={area} className="flex items-center gap-2" data-testid={`row-risk-freq-${i}`}>
-                              <div className="flex-1 min-w-0">
-                                <div className="flex items-center justify-between gap-2 mb-0.5">
-                                  <span className="text-xs font-semibold truncate">{area}</span>
-                                  <span className="text-xs font-bold text-orange-500 flex-shrink-0">{count} staff</span>
-                                </div>
-                                <div className="h-1.5 rounded-full bg-muted overflow-hidden">
-                                  <div
-                                    className="h-full rounded-full bg-orange-500/70"
-                                    style={{ width: `${pct}%` }}
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Individual submissions */}
-                  <div className="flex flex-col gap-2">
-                    <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Individual submissions</p>
-                    <div className="flex flex-col gap-2">
-                      {assessments.map((a) => {
-                        let areas: string[] = [];
-                        try { areas = JSON.parse(a.riskAreas) as string[]; } catch {}
-                        const displayName = (a.firstName || a.lastName)
-                          ? `${a.firstName} ${a.lastName}`.trim()
-                          : a.username;
-                        return (
-                          <div
-                            key={a.id}
-                            className="rounded-xl border border-border bg-background p-3 flex flex-col gap-1.5"
-                            data-testid={`row-team-risk-${a.userId}`}
-                          >
-                            <div className="flex items-center gap-2">
-                              <div className="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                                <span className="text-[10px] font-black text-primary">
-                                  {displayName.charAt(0).toUpperCase()}
-                                </span>
-                              </div>
-                              <span className="text-xs font-bold">{displayName}</span>
-                              {a.department && (
-                                <span className="text-[10px] text-muted-foreground font-semibold">{a.department}</span>
-                              )}
-                            </div>
-                            <div className="flex flex-wrap gap-1.5">
-                              {areas.map((area, i) => (
-                                <span
-                                  key={i}
-                                  className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-orange-500/8 text-orange-600 dark:text-orange-400 border border-orange-500/20"
-                                >
-                                  {area}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </>
-              )}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
-  );
-}
 
 export default function LeadershipHubPage() {
   const { user } = useAuth();
@@ -750,9 +582,6 @@ export default function LeadershipHubPage() {
             )}
           </motion.div>
         )}
-
-        {/* Team Risk Summary */}
-        <TeamRiskSummary module={isAsc ? "asc" : isDnv ? "dnv" : "hospital"} />
 
         {/* Permission summary */}
         <motion.div
