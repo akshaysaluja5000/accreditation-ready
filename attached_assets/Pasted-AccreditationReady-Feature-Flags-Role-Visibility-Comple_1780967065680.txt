@@ -1,0 +1,604 @@
+AccreditationReady — Feature Flags & Role Visibility
+Complete Implementation Spec
+For: Akshay | From: Rajit | Date: June 2026
+OVERVIEW
+This document covers two related builds:
+
+Feature flags system — controls which platform features are visible per facility (education-only vs full platform, facilities role visibility)
+
+Role visibility flags — controls which job roles appear on the role selection screen per facility
+
+Both use the same database pattern — a JSONB features column on the facilities table. All flags default to the most restrictive setting (false) and must be explicitly enabled per facility.
+
+PART 1 — DATABASE
+1A. Add feature flags to facilities table
+-- Add features column if it doesn't exist
+ALTER TABLE facilities 
+ADD COLUMN IF NOT EXISTS features JSONB DEFAULT '{}';
+
+-- Add role_visibility column if it doesn't exist  
+ALTER TABLE facilities
+ADD COLUMN IF NOT EXISTS role_visibility JSONB DEFAULT '{}';
+1B. Set MOSH — education only, no facilities role
+UPDATE facilities
+SET 
+  features = '{
+    "education":                    true,
+    "compliance":                   false,
+    "survey_readiness_agent":       false,
+    "content_intelligence_agent":   false,
+    "compliance_task_manager":      false,
+    "executive_readiness_agent":    false,
+    "wall_chart_tracker":           false,
+    "regulatory_watch_agent":       false
+  }',
+  role_visibility = '{
+    "or_circulating_nurse":         true,
+    "or_manager_charge_nurse":      true,
+    "scrub_tech_surgical_tech":     true,
+    "surgical_orthopedic_assistant": true,
+    "anesthesia_assistant_crna":    true,
+    "spd_technician":               true,
+    "pacu_floor_nurse":             true,
+    "environmental_services":       true,
+    "facilities_maintenance":       false,
+    "compliance_officer_cno":       true,
+    "nurse_educator_staff_dev":     true
+  }'
+WHERE name = 'Ministry of Health Services'
+-- OR: WHERE id = '<MOSH_FACILITY_ID>';
+1C. Set TSC — full platform, no facilities role
+UPDATE facilities
+SET
+  features = '{
+    "education":                    true,
+    "compliance":                   true,
+    "survey_readiness_agent":       true,
+    "content_intelligence_agent":   true,
+    "compliance_task_manager":      true,
+    "executive_readiness_agent":    true,
+    "wall_chart_tracker":           true,
+    "regulatory_watch_agent":       true
+  }',
+  role_visibility = '{
+    "or_circulating_nurse":         true,
+    "or_manager_charge_nurse":      true,
+    "scrub_tech_surgical_tech":     true,
+    "surgical_orthopedic_assistant": true,
+    "anesthesia_assistant_crna":    true,
+    "spd_technician":               true,
+    "pacu_floor_nurse":             true,
+    "environmental_services":       true,
+    "facilities_maintenance":       false,
+    "compliance_officer_cno":       true,
+    "nurse_educator_staff_dev":     true
+  }'
+WHERE name = 'The Surgery Center'
+-- OR: WHERE id = '<TSC_FACILITY_ID>';
+1D. Future enterprise hospital template
+Use this when onboarding Surgery Partners or large hospital systems
+-- Template for full-platform enterprise hospital with all roles
+UPDATE facilities
+SET
+  features = '{
+    "education":                    true,
+    "compliance":                   true,
+    "survey_readiness_agent":       true,
+    "content_intelligence_agent":   true,
+    "compliance_task_manager":      true,
+    "executive_readiness_agent":    true,
+    "wall_chart_tracker":           true,
+    "regulatory_watch_agent":       true
+  }',
+  role_visibility = '{
+    "or_circulating_nurse":         true,
+    "or_manager_charge_nurse":      true,
+    "scrub_tech_surgical_tech":     true,
+    "surgical_orthopedic_assistant": true,
+    "anesthesia_assistant_crna":    true,
+    "spd_technician":               true,
+    "pacu_floor_nurse":             true,
+    "environmental_services":       true,
+    "facilities_maintenance":       true,
+    "compliance_officer_cno":       true,
+    "nurse_educator_staff_dev":     true
+  }'
+WHERE id = '<NEW_FACILITY_ID>';
+PART 2 — BACKEND SERVICE
+Create this file at services/features.service.js
+
+// services/features.service.js
+
+/**
+ * Default feature flags — most restrictive setting
+ * All features off unless explicitly enabled per facility
+ */
+const DEFAULT_FEATURES = {
+  education:                    false,
+  compliance:                   false,
+  survey_readiness_agent:       false,
+  content_intelligence_agent:   false,
+  compliance_task_manager:      false,
+  executive_readiness_agent:    false,
+  wall_chart_tracker:           false,
+  regulatory_watch_agent:       false,
+};
+
+/**
+ * Default role visibility — all roles visible unless explicitly hidden
+ * Exception: facilities_maintenance defaults to false
+ */
+const DEFAULT_ROLE_VISIBILITY = {
+  or_circulating_nurse:          true,
+  or_manager_charge_nurse:       true,
+  scrub_tech_surgical_tech:      true,
+  surgical_orthopedic_assistant: true,
+  anesthesia_assistant_crna:     true,
+  spd_technician:                true,
+  pacu_floor_nurse:              true,
+  environmental_services:        true,
+  facilities_maintenance:        false,  // hidden by default — enterprise only
+  compliance_officer_cno:        true,
+  nurse_educator_staff_dev:      true,
+};
+
+/**
+ * Get feature flags for a facility
+ * Merges facility-specific flags with defaults
+ */
+async function getFacilityFeatures(db, facilityId) {
+  const result = await db.query(
+    'SELECT features, role_visibility FROM facilities WHERE id = $1',
+    [facilityId]
+  );
+
+  if (!result.rows.length) {
+    return {
+      features:        DEFAULT_FEATURES,
+      role_visibility: DEFAULT_ROLE_VISIBILITY,
+    };
+  }
+
+  const { features, role_visibility } = result.rows[0];
+
+  return {
+    features: {
+      ...DEFAULT_FEATURES,
+      ...(features || {}),
+    },
+    role_visibility: {
+      ...DEFAULT_ROLE_VISIBILITY,
+      ...(role_visibility || {}),
+    },
+  };
+}
+
+/**
+ * Check if a specific feature is enabled for a facility
+ */
+async function isFeatureEnabled(db, facilityId, featureKey) {
+  const { features } = await getFacilityFeatures(db, facilityId);
+  return features[featureKey] === true;
+}
+
+/**
+ * Check if a specific role is visible for a facility
+ */
+async function isRoleVisible(db, facilityId, roleKey) {
+  const { role_visibility } = await getFacilityFeatures(db, facilityId);
+  return role_visibility[roleKey] === true;
+}
+
+/**
+ * Get all visible roles for a facility
+ * Returns array of role keys that are enabled
+ */
+async function getVisibleRoles(db, facilityId) {
+  const { role_visibility } = await getFacilityFeatures(db, facilityId);
+  return Object.entries(role_visibility)
+    .filter(([, visible]) => visible === true)
+    .map(([roleKey]) => roleKey);
+}
+
+module.exports = {
+  getFacilityFeatures,
+  isFeatureEnabled,
+  isRoleVisible,
+  getVisibleRoles,
+  DEFAULT_FEATURES,
+  DEFAULT_ROLE_VISIBILITY,
+};
+PART 3 — BACKEND ROUTES
+Create this file at routes/features.routes.js
+
+// routes/features.routes.js
+
+const express = require('express');
+const router = express.Router();
+const featuresService = require('../services/features.service');
+const { requireAuth, requireRole } = require('../middleware/auth');
+
+/**
+ * GET /api/features
+ * Returns feature flags and visible roles for the current user's facility
+ * Called on app load — frontend uses this to show/hide UI elements
+ */
+router.get('/', requireAuth, async (req, res) => {
+  try {
+    const { facilityId } = req.user;
+
+    const { features, role_visibility } =
+      await featuresService.getFacilityFeatures(req.db, facilityId);
+
+    // Build list of visible roles for role selection screen
+    const visibleRoles = Object.entries(role_visibility)
+      .filter(([, visible]) => visible === true)
+      .map(([roleKey]) => roleKey);
+
+    res.json({
+      features,
+      role_visibility,
+      visible_roles: visibleRoles,
+    });
+  } catch (err) {
+    console.error('Error fetching features:', err);
+    res.status(500).json({ error: 'Failed to fetch feature flags' });
+  }
+});
+
+/**
+ * GET /api/features/roles
+ * Returns only the visible roles for this facility
+ * Used by the role selection screen during onboarding
+ */
+router.get('/roles', requireAuth, async (req, res) => {
+  try {
+    const { facilityId } = req.user;
+    const visibleRoles = await featuresService.getVisibleRoles(
+      req.db,
+      facilityId
+    );
+    res.json({ visible_roles: visibleRoles });
+  } catch (err) {
+    console.error('Error fetching visible roles:', err);
+    res.status(500).json({ error: 'Failed to fetch roles' });
+  }
+});
+
+/**
+ * PATCH /api/features — Admin only
+ * Update feature flags for a facility
+ * Body: { features?: {}, role_visibility?: {} }
+ */
+router.patch('/',
+  requireAuth,
+  requireRole(['admin', 'super_admin']),
+  async (req, res) => {
+    try {
+      const { facilityId } = req.user;
+      const { features, role_visibility } = req.body;
+
+      // Get current flags
+      const current = await featuresService.getFacilityFeatures(
+        req.db,
+        facilityId
+      );
+
+      // Merge updates
+      const updatedFeatures = features
+        ? { ...current.features, ...features }
+        : current.features;
+
+      const updatedRoleVisibility = role_visibility
+        ? { ...current.role_visibility, ...role_visibility }
+        : current.role_visibility;
+
+      await req.db.query(
+        `UPDATE facilities
+         SET features = $1, role_visibility = $2
+         WHERE id = $3`,
+        [
+          JSON.stringify(updatedFeatures),
+          JSON.stringify(updatedRoleVisibility),
+          facilityId,
+        ]
+      );
+
+      res.json({
+        success:         true,
+        features:        updatedFeatures,
+        role_visibility: updatedRoleVisibility,
+      });
+    } catch (err) {
+      console.error('Error updating features:', err);
+      res.status(500).json({ error: 'Failed to update features' });
+    }
+  }
+);
+
+module.exports = router;
+PART 4 — REGISTER ROUTES
+In your main app.js or server.js, add these two lines where other routes are registered:
+
+const featuresRoutes = require('./routes/features.routes');
+app.use('/api/features', featuresRoutes);
+PART 5 — FRONTEND UTILITY
+Create this file at utils/features.js
+
+// utils/features.js
+// Import this wherever feature flag checks are needed
+
+/**
+ * Fetch feature flags and visible roles for the current facility
+ * Call once on app load and store in your global state/context
+ */
+export async function loadFacilityFeatures() {
+  try {
+    const response = await fetch('/api/features', {
+      credentials: 'include',
+    });
+    const data = await response.json();
+    return data;
+    // Returns: { features, role_visibility, visible_roles }
+  } catch (err) {
+    console.error('Error loading features:', err);
+    return null;
+  }
+}
+
+/**
+ * Check if a feature is enabled
+ * Pass the features object from loadFacilityFeatures()
+ */
+export function isEnabled(features, featureKey) {
+  return features?.[featureKey] === true;
+}
+
+/**
+ * Check if a role should be shown on the role selection screen
+ * Pass the role_visibility object from loadFacilityFeatures()
+ */
+export function isRoleVisible(roleVisibility, roleKey) {
+  return roleVisibility?.[roleKey] === true;
+}
+PART 6 — WIRE UP EXISTING COMPONENTS
+6A. Load features on app startup
+In your main App component or auth context, load features immediately after the user authenticates:
+
+import { loadFacilityFeatures } from '../utils/features';
+
+// In your auth/app initialization
+useEffect(() => {
+  if (user) {
+    loadFacilityFeatures().then(featureData => {
+      setFeatures(featureData.features);
+      setRoleVisibility(featureData.role_visibility);
+    });
+  }
+}, [user]);
+6B. Leadership Console — hide compliance tools for education-only
+Find wherever the Leadership Console tool cards are rendered. Wrap each compliance tool in a feature check:
+
+import { isEnabled } from '../utils/features';
+
+// In your Leadership Console component:
+{isEnabled(features, 'survey_readiness_agent') && (
+  <LeadershipToolCard
+    title="Survey Readiness Agent"
+    badge="LIVE"
+    description="Live compliance score across all standards..."
+  />
+)}
+
+{isEnabled(features, 'content_intelligence_agent') && (
+  <LeadershipToolCard
+    title="Content Intelligence Agent"
+    badge="AI"
+    description="Upload a policy document and AI reads it..."
+  />
+)}
+
+{isEnabled(features, 'compliance_task_manager') && (
+  <LeadershipToolCard
+    title="Compliance Task Manager"
+    badge="TOOL"
+    description="View, assign, and track compliance tasks..."
+  />
+)}
+
+{isEnabled(features, 'executive_readiness_agent') && (
+  <LeadershipToolCard
+    title="Executive Readiness Agent"
+    badge="AGENT"
+    description="Generates a weekly plain-English compliance brief..."
+  />
+)}
+
+{isEnabled(features, 'wall_chart_tracker') && (
+  <LeadershipToolCard
+    title="Wall Chart Tracker"
+    badge="TOOL"
+    description="Track required wall chart postings..."
+  />
+)}
+
+{isEnabled(features, 'regulatory_watch_agent') && (
+  <LeadershipToolCard
+    title="Regulatory Watch Agent"
+    badge="LIVE"
+    description="Monitors CMS, Joint Commission, and AAAHC..."
+  />
+)}
+
+{/* These tools always show regardless of platform mode */}
+<LeadershipToolCard title="Staff Training Dashboard" ... />
+<LeadershipToolCard title="AI Leadership Coach" ... />
+<LeadershipToolCard title="Guided Education Oversight" ... />
+<LeadershipToolCard title="User Management" ... />
+6C. Role selection screen — hide facilities role conditionally
+Find the role selection screen component (the "What's your role?" screen). Filter the displayed roles using role_visibility:
+
+import { isRoleVisible } from '../utils/features';
+
+// Full role list — all possible roles
+const ALL_ROLES = [
+  {
+    key:        'or_circulating_nurse',
+    name:       'OR Circulating Nurse',
+    desc:       'OR safety, time-outs, patient care documentation',
+    dept:       'Operating Room',
+    access:     'DEPT. ACCESS',
+  },
+  {
+    key:        'or_manager_charge_nurse',
+    name:       'OR Manager / Charge Nurse',
+    desc:       'OR operations leadership across all chapters',
+    dept:       'Operating Room',
+    access:     'DEPT + ALL',
+  },
+  {
+    key:        'scrub_tech_surgical_tech',
+    name:       'Scrub Tech / Surgical Tech',
+    desc:       'Sterile field, instruments, OR protocol',
+    dept:       'Operating Room',
+    access:     'DEPT. ACCESS',
+  },
+  {
+    key:        'surgical_orthopedic_assistant',
+    name:       'Surgical / Orthopedic Assistant',
+    desc:       'Patient positioning, room flow, instruments, perioperative support',
+    dept:       'Operating Room',
+    access:     'DEPT. ACCESS',
+  },
+  {
+    key:        'anesthesia_assistant_crna',
+    name:       'Anesthesia Assistant / CRNA',
+    desc:       'Anesthesia services, sedation levels, monitoring, regional techniques',
+    dept:       'Operating Room',
+    access:     'DEPT. ACCESS',
+  },
+  {
+    key:        'spd_technician',
+    name:       'SPD Technician',
+    desc:       'Decontamination, sterilization, instrument processing',
+    dept:       'Sterile Processing',
+    access:     'DEPT. ACCESS',
+  },
+  {
+    key:        'pacu_floor_nurse',
+    name:       'PACU / Floor Nurse',
+    desc:       'Recovery care, monitoring, patient documentation',
+    dept:       'PACU & Floor',
+    access:     'DEPT. ACCESS',
+  },
+  {
+    key:        'environmental_services',
+    name:       'Environmental Services',
+    desc:       'Environmental cleaning, waste segregation, EOC safety',
+    dept:       'Environmental Services',
+    access:     'DEPT. ACCESS',
+  },
+  {
+    key:        'facilities_maintenance',
+    name:       'Facilities / Maintenance',
+    desc:       'Building systems, life safety, environment of care',
+    dept:       'Facilities & Maintenance',
+    access:     'DEPT. ACCESS',
+  },
+  {
+    key:        'compliance_officer_cno',
+    name:       'Compliance Officer / CNO',
+    desc:       'Full survey readiness across every standard',
+    dept:       'Leadership & Compliance',
+    access:     'FULL ACCESS',
+    leadership: true,
+  },
+  {
+    key:        'nurse_educator_staff_dev',
+    name:       'Nurse Educator / Staff Development',
+    desc:       'Staff training and competency across all areas',
+    dept:       'Leadership & Compliance',
+    access:     'DEPT + ALL',
+    leadership: true,
+  },
+];
+
+// In your role selection component:
+// Filter to only show roles enabled for this facility
+const visibleRoles = ALL_ROLES.filter(role =>
+  isRoleVisible(roleVisibility, role.key)
+);
+
+// Then render visibleRoles instead of ALL_ROLES
+// Everything else in the component stays the same
+PART 7 — REGISTER ROUTES (reminder)
+Confirm this is in your app.js / server.js:
+
+const featuresRoutes = require('./routes/features.routes');
+app.use('/api/features', featuresRoutes);
+PART 8 — VERIFICATION CHECKLIST
+□ 1. MOSH facility has features.compliance = false
+      → Leadership Console shows NO compliance tool cards
+      → Education tools (AI Coach, Training Dashboard, 
+        Guided Education Oversight) still visible
+
+□ 2. MOSH facility has role_visibility.facilities_maintenance = false
+      → "Facilities / Maintenance" does NOT appear on the
+        role selection screen for MOSH users
+      → All other 10 roles appear normally
+
+□ 3. TSC facility has features.compliance = true
+      → All Leadership Console tool cards visible
+
+□ 4. TSC facility has role_visibility.facilities_maintenance = false
+      → "Facilities / Maintenance" does NOT appear for TSC either
+      → All other 10 roles appear normally
+
+□ 5. GET /api/features returns correct flags for each facility
+      → Test with a MOSH user: compliance features all false
+      → Test with a TSC user: compliance features all true
+
+□ 6. GET /api/features/roles returns correct visible role list
+      → MOSH: 10 roles (no facilities_maintenance)
+      → TSC: 10 roles (no facilities_maintenance)
+
+□ 7. PATCH /api/features updates flags correctly
+      → Admin only — regular staff get 403
+      → Changes persist after page refresh
+
+□ 8. Future enterprise facility can be given
+      role_visibility.facilities_maintenance = true
+      → Facilities / Maintenance appears on their
+        role selection screen
+      → Does not affect MOSH or TSC
+SUMMARY
+Files to create (new):
+
+
+File	Purpose
+services/features.service.js	Feature flag logic and database queries
+routes/features.routes.js	Three API endpoints
+utils/features.js	Frontend helper functions
+Files to modify (existing):
+
+
+File	Change
+app.js or server.js	Register features routes (2 lines)
+Leadership Console component	Wrap compliance cards in feature checks
+Role selection component	Filter roles using role_visibility
+App/auth initialization	Load features on login
+Database changes:
+
+
+Table	Change
+facilities	Add features JSONB column
+facilities	Add role_visibility JSONB column
+MOSH row	Set education-only flags + hide facilities role
+TSC row	Set full-platform flags + hide facilities role
+Current pilot configuration:
+
+
+Facility	Mode	Facilities Role
+MOSH	Education only	Hidden
+TSC	Full platform	Hidden
+Future enterprise hospital	Full platform	Visible
