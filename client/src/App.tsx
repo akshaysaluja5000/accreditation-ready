@@ -43,6 +43,7 @@ import StaffLearningPage from "@/pages/staff-learning-page";
 import RegulatoryWatchPage from "@/pages/regulatory-watch-page";
 import ExecutiveBriefPage from "@/pages/executive-brief-page";
 import MyLogEntriesPage from "@/pages/my-log-entries-page";
+import HospitalDashboardPage from "@/pages/hospital-dashboard-page";
 import ComplianceTasksPage from "@/pages/compliance-tasks-page";
 import ContentIntelligencePage from "@/pages/content-intelligence-page";
 import AscWallChartPage from "@/pages/asc-wall-chart-page";
@@ -376,6 +377,9 @@ function Router() {
       </Route>
       <Route path="/leadership">
         {() => <LeadershipRoute component={LeadershipHubPage} minRole="director" />}
+      </Route>
+      <Route path="/hospital-dashboard">
+        {() => <LeadershipRoute component={HospitalDashboardPage} minRole="director" />}
       </Route>
       <Route path="/admin">
         {() => <LeadershipRoute component={AdminPage} minRole="director" />}

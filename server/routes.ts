@@ -1501,6 +1501,160 @@ export async function registerRoutes(
     }
   });
 
+  app.get("/api/admin/hospital-dashboard", requireLeadershipRole("director"), requireMfa, async (req, res) => {
+    try {
+      const adminUser = req.user as User;
+      const facilityId = (adminUser as any).facilityId as number | null;
+      if (!facilityId) return res.status(400).json({ error: "No facility associated with your account." });
+      const today = toCentralDate(new Date());
+
+      const [
+        usersRes, diagRes, masteryRes, lastActiveRes, quizUserRes,
+        qCorrectRes, flashcardRes, dauRes, qSparkRes, fcSparkRes,
+        dauSparkRes, topPerfRes, facilityRes,
+      ] = await Promise.all([
+        featPool.query(`SELECT u.id, u.first_name, u.last_name, u.leadership_role, r.name as role_name, r.department as role_dept FROM users u LEFT JOIN roles r ON u.role_id = r.id WHERE u.facility_id = $1 AND u.is_admin = false ORDER BY u.id`, [facilityId]),
+        featPool.query(`SELECT DISTINCT ON (dr.user_id) dr.user_id, dr.score, dr.total_questions FROM diagnostic_results dr JOIN users u ON dr.user_id = u.id WHERE u.facility_id = $1 ORDER BY dr.user_id, dr.completed_at ASC`, [facilityId]),
+        featPool.query(`SELECT mr.user_id, mr.score, mr.total_questions, ROW_NUMBER() OVER (PARTITION BY mr.user_id ORDER BY mr.completed_at ASC) as attempt_num FROM mastery_results mr JOIN users u ON mr.user_id = u.id WHERE u.facility_id = $1 ORDER BY mr.user_id, mr.completed_at`, [facilityId]),
+        featPool.query(`SELECT da.user_id, MAX(da.date) as last_active FROM daily_activity da JOIN users u ON da.user_id = u.id WHERE u.facility_id = $1 GROUP BY da.user_id`, [facilityId]),
+        featPool.query(`SELECT DISTINCT qs.user_id FROM quiz_sessions qs JOIN users u ON qs.user_id = u.id WHERE u.facility_id = $1`, [facilityId]),
+        featPool.query(`SELECT COUNT(*)::int as total FROM points_ledger WHERE facility_id = $1 AND event_type = 'question_correct'`, [facilityId]),
+        featPool.query(`SELECT COUNT(*)::int as total FROM flashcard_reviews fr JOIN users u ON fr.user_id = u.id WHERE u.facility_id = $1`, [facilityId]),
+        featPool.query(`SELECT COUNT(DISTINCT da.user_id)::int as dau FROM daily_activity da JOIN users u ON da.user_id = u.id WHERE u.facility_id = $1 AND da.date = $2`, [facilityId, today]),
+        featPool.query(`SELECT (pl.created_at AT TIME ZONE 'America/Chicago')::date::text as day, COUNT(*)::int as cnt FROM points_ledger pl WHERE pl.facility_id = $1 AND pl.event_type = 'question_correct' AND pl.created_at >= NOW() - INTERVAL '7 days' GROUP BY 1 ORDER BY 1`, [facilityId]),
+        featPool.query(`SELECT (fr.updated_at AT TIME ZONE 'America/Chicago')::date::text as day, COUNT(*)::int as cnt FROM flashcard_reviews fr JOIN users u ON fr.user_id = u.id WHERE u.facility_id = $1 AND fr.updated_at >= NOW() - INTERVAL '7 days' GROUP BY 1 ORDER BY 1`, [facilityId]),
+        featPool.query(`SELECT da.date, COUNT(DISTINCT da.user_id)::int as dau FROM daily_activity da JOIN users u ON da.user_id = u.id WHERE u.facility_id = $1 AND da.date::date >= CURRENT_DATE - INTERVAL '6 days' GROUP BY da.date ORDER BY da.date`, [facilityId]),
+        featPool.query(`SELECT pl.user_id, SUM(pl.points_awarded)::int as week_points FROM points_ledger pl WHERE pl.facility_id = $1 AND pl.created_at >= NOW() - INTERVAL '7 days' GROUP BY pl.user_id ORDER BY week_points DESC LIMIT 3`, [facilityId]),
+        featPool.query(`SELECT name FROM facilities WHERE id = $1`, [facilityId]),
+      ]);
+
+      const allStaff: any[] = usersRes.rows;
+      const facilityName: string = facilityRes.rows[0]?.name || "Your Facility";
+      const totalStaff = allStaff.length;
+
+      const diagByUser = new Map<number, any>();
+      for (const r of diagRes.rows as any[]) diagByUser.set(r.user_id, r);
+
+      const masteryByUser = new Map<number, any[]>();
+      for (const r of masteryRes.rows as any[]) {
+        if (!masteryByUser.has(r.user_id)) masteryByUser.set(r.user_id, []);
+        masteryByUser.get(r.user_id)!.push(r);
+      }
+      const lastActiveByUser = new Map<number, string>();
+      for (const r of lastActiveRes.rows as any[]) lastActiveByUser.set(r.user_id, r.last_active);
+      const quizUsers = new Set<number>((quizUserRes.rows as any[]).map((r: any) => r.user_id));
+
+      const daysSince = (d: string | null | undefined): number => {
+        if (!d) return 9999;
+        return Math.floor((Date.now() - new Date(d).getTime()) / 86400000);
+      };
+      const pct = (n: number, total: number) => total > 0 ? Math.round((n / total) * 100) : 0;
+
+      let diagCount = 0, masteryPassedCount = 0, masteryAttemptedCount = 0;
+      let inProgressCount = 0, notStartedCount = 0;
+      let haventStartedCount = 0, failedFinalCount = 0, lowEngagementCount = 0, diagnosticOnlyCount = 0;
+      const diagScores: number[] = [], finalScores: number[] = [];
+      const fullCycleUsers: any[] = [];
+      const staffList: any[] = [];
+      const deptRoleMap = new Map<string, Map<string, { count: number; diagCount: number; finalScores: number[] }>>();
+
+      for (const u of allStaff) {
+        const diag = diagByUser.get(u.id);
+        const masteries = masteryByUser.get(u.id) || [];
+        const lastActive = lastActiveByUser.get(u.id) || null;
+        const diagDone = !!diag;
+        if (diagDone) { diagCount++; diagScores.push(pct(diag.score, diag.total_questions)); }
+        const latestMastery = masteries.length > 0 ? masteries[masteries.length - 1] : null;
+        const latestScore = latestMastery ? pct(latestMastery.score, latestMastery.total_questions) : null;
+        const finalPassed = latestScore !== null && latestScore >= 75;
+        if (masteries.length > 0) masteryAttemptedCount++;
+        if (finalPassed) masteryPassedCount++;
+        if (latestScore !== null) finalScores.push(latestScore);
+        const days = daysSince(lastActive);
+        if (!diagDone && !quizUsers.has(u.id)) { notStartedCount++; haventStartedCount++; }
+        if ((diagDone || quizUsers.has(u.id)) && !finalPassed) inProgressCount++;
+        if (latestScore !== null && !finalPassed) failedFinalCount++;
+        if (diagDone && !finalPassed && days >= 7) lowEngagementCount++;
+        if (diagDone && latestScore === null) diagnosticOnlyCount++;
+        if (diagDone && finalPassed && latestScore !== null) {
+          const dp = pct(diag.score, diag.total_questions);
+          const fp = latestScore;
+          fullCycleUsers.push({ name: `${u.first_name ? u.first_name[0] + '.' : ''} ${u.last_name}`.trim(), role: u.role_name || 'Staff', diagScore: dp, finalScore: fp, delta: fp - dp });
+        }
+        let engagement: 'green' | 'amber' | 'red' = days <= 3 ? 'green' : days <= 14 ? 'amber' : 'red';
+        let priority = 5;
+        if (!diagDone && !quizUsers.has(u.id)) priority = 0;
+        else if (latestScore !== null && !finalPassed) priority = 1;
+        else if (diagDone && latestScore === null && days >= 7) priority = 2;
+        else if (diagDone && latestScore === null) priority = 3;
+        else if (finalPassed) priority = 4;
+        const name = [u.first_name ? u.first_name[0] + '.' : '', u.last_name].filter(Boolean).join(' ') || 'Staff';
+        staffList.push({ id: u.id, name, role: u.role_name || 'Staff', diagDone, finalDone: latestScore !== null, finalScore: latestScore, engagement, priority });
+        const dept = u.role_dept || 'Other';
+        const role = u.role_name || 'Staff';
+        if (!deptRoleMap.has(dept)) deptRoleMap.set(dept, new Map());
+        const rm = deptRoleMap.get(dept)!;
+        if (!rm.has(role)) rm.set(role, { count: 0, diagCount: 0, finalScores: [] });
+        const e = rm.get(role)!;
+        e.count++;
+        if (diagDone) e.diagCount++;
+        if (latestScore !== null) e.finalScores.push(latestScore);
+      }
+
+      staffList.sort((a: any, b: any) => a.priority - b.priority || a.name.localeCompare(b.name));
+      fullCycleUsers.sort((a: any, b: any) => b.delta - a.delta);
+
+      const avg = (arr: number[]) => arr.length > 0 ? Math.round(arr.reduce((a, b) => a + b, 0) / arr.length) : 0;
+      const diagCompletionRate = pct(diagCount, totalStaff);
+      const finalPassRate = masteryAttemptedCount > 0 ? pct(masteryPassedCount, masteryAttemptedCount) : 0;
+      const avgFinalScore = avg(finalScores);
+      const overall = Math.round(diagCompletionRate * 0.25 + avgFinalScore * 0.75);
+
+      const DEPT_ORDER = ['Operating Room', 'Sterile Processing', 'PACU & Floor', 'Environmental Services', 'Leadership & Compliance'];
+      const DEPT_ICONS: Record<string, string> = { 'Operating Room': '⚕', 'Sterile Processing': '🔬', 'PACU & Floor': '🛏', 'Environmental Services': '🧹', 'Leadership & Compliance': '👔' };
+      const orderedDepts = [...DEPT_ORDER, ...Array.from(deptRoleMap.keys()).filter(d => !DEPT_ORDER.includes(d))];
+      const deptBreakdown = orderedDepts.filter(d => deptRoleMap.has(d)).map(dept => ({
+        department: dept, deptIcon: DEPT_ICONS[dept] || '📋',
+        roles: Array.from(deptRoleMap.get(dept)!.entries()).map(([title, data]) => ({
+          title, staffCount: data.count, diagPct: pct(data.diagCount, data.count),
+          avgFinalScore: data.finalScores.length > 0 ? avg(data.finalScores) : null,
+        })),
+      }));
+
+      const buildSparkline = (rows: any[], valueKey = 'cnt'): number[] => {
+        const map = new Map<string, number>();
+        for (const r of rows) map.set(r.day || r.date, r[valueKey] ?? r.dau ?? 0);
+        const result: number[] = [];
+        for (let i = 6; i >= 0; i--) {
+          const d = new Date(); d.setDate(d.getDate() - i);
+          result.push(map.get(d.toISOString().split('T')[0]) || 0);
+        }
+        return result;
+      };
+
+      const topPerformers = (topPerfRes.rows as any[]).map((r: any) => {
+        const u = allStaff.find((s: any) => s.id === r.user_id);
+        const masteries = masteryByUser.get(r.user_id) || [];
+        const lm = masteries.length > 0 ? masteries[masteries.length - 1] : null;
+        return { name: u ? `${u.first_name ? u.first_name[0] + '.' : ''} ${u.last_name}`.trim() : 'Staff', role: u?.role_name || 'Staff', weekPoints: r.week_points, finalScore: lm ? pct(lm.score, lm.total_questions) : null };
+      });
+
+      res.json({
+        facilityName, updatedAt: new Date().toISOString(),
+        score: { overall, diagCompletionRate, finalPassRate, avgFinalScore },
+        journey: { totalStaff, completedFullCycle: fullCycleUsers.length, diagnosticTaken: diagCount, inProgress: inProgressCount, finalPassed: masteryPassedCount, notStarted: notStartedCount, avgDiagScore: diagScores.length > 0 ? avg(diagScores) : null, avgFinalScore: finalScores.length > 0 ? avgFinalScore : null },
+        snapshot: fullCycleUsers.slice(0, 4),
+        attention: { haventStarted: haventStartedCount, failedFinal: failedFinalCount, lowEngagement: lowEngagementCount, diagnosticOnly: diagnosticOnlyCount },
+        deptBreakdown,
+        staffList,
+        bottomStats: { questionsCorrect: (qCorrectRes.rows[0] as any)?.total || 0, flashcardsReviewed: (flashcardRes.rows[0] as any)?.total || 0, dailyActiveUsers: (dauRes.rows[0] as any)?.dau || 0, totalStaff, questionsSparkline: buildSparkline(qSparkRes.rows as any[]), flashcardsSparkline: buildSparkline(fcSparkRes.rows as any[]), dauSparkline: buildSparkline(dauSparkRes.rows as any[], 'dau'), topPerformers },
+      });
+    } catch (err: any) {
+      console.error("[HospitalDashboard]", err?.message);
+      res.status(500).json({ message: "Failed to load dashboard data." });
+    }
+  });
+
   try {
     let facility = await storage.getFacilityByCode("SITE486045");
     if (!facility) {

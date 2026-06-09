@@ -40,6 +40,17 @@ interface ConsoleCard {
 
 function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
   {
+    id: "hospital-dashboard",
+    title: "Hospital Learning Dashboard",
+    description: "Staff knowledge score, learning journey progress, department breakdown, and individual status — all in one view. Updated in real time from quiz and assessment data.",
+    icon: BarChart3,
+    iconBg: "bg-blue-500/10",
+    iconColor: "text-blue-600",
+    href: "/hospital-dashboard",
+    minRole: "director",
+    badge: "Live",
+  },
+  {
     id: "survey-readiness",
     title: "Survey Readiness Agent",
     description: `Live compliance score across all ${activeStandardsBody} standards, color-coded by surveyor risk. Green above 90%, amber 75–90%, red below 75%.`,
