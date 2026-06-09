@@ -188,18 +188,7 @@ function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
     minRole: "director",
     badge: "AI",
   },
-  {
-    id: "document-vault",
-    title: "Document Vault",
-    description: "Track all 68 AAAHC-required policies, plans, and vendor certifications. Upload document references, set expiry dates, and see Missing/Current/Expiring/Expired status at a glance.",
-    icon: FolderOpen,
-    iconBg: "bg-violet-500/10",
-    iconColor: "text-violet-600",
-    href: "/asc-document-vault",
-    minRole: "director",
-    badge: "ASC",
-    ascOnly: true,
-  },
+
 ];}
 
 export default function LeadershipHubPage() {
