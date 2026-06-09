@@ -1,0 +1,82 @@
+NEW BUILDS (feature flags and role visibility)
+
+### 4. Feature flags system
+
+This controls which platform features are visible per facility.
+Full code and SQL already provided in the feature-flags-spec.md document.
+
+Summary of what needs to be built:
+
+- Add `features` JSONB column to facilities table
+- Add `role_visibility` JSONB column to facilities table
+- Create `services/features.service.js`
+- Create `routes/features.routes.js`
+- Create `utils/features.js`
+- Register routes in `app.js`
+- Wire up Leadership Console to hide compliance cards for education-only facilities
+- Wire up role selection screen to filter roles by facility
+
+MOSH configuration (education only):
+
+- compliance: false
+- survey_readiness_agent: false
+- content_intelligence_agent: false
+- compliance_task_manager: false
+- executive_readiness_agent: false
+- wall_chart_tracker: false
+- regulatory_watch_agent: false
+- facilities_maintenance role: hidden
+
+TSC configuration (full platform):
+
+- All features: true
+- facilities_maintenance role: hidden
+
+Both MOSH and TSC hide the Facilities/Maintenance role for now.
+It remains in the codebase for future enterprise clients but should
+not appear on the role selection screen for current pilots.
+
+-----
+
+### 5. Flashcard question generation fix
+
+The flashcard questions are currently being generated FROM section titles
+rather than FROM the answer content. This produces broken questions like:
+“What must be documented and demonstrated for ‘What makes up a good
+infection prevention program?’”
+
+Find the Anthropic API call that generates flashcard questions.
+Search the codebase for “anthropic”, “claude”, or any prompt string
+containing “flashcard” or “question”.
+
+Replace the existing prompt with this one:
+
+-----
+
+SYSTEM PROMPT:
+You are generating flashcard questions for healthcare staff preparing
+for accreditation surveys (AAAHC, Joint Commission, CMS, DNV).
+
+Given the ANSWER content below, write a single flashcard question for
+the front of the card.
+
+RULES:
+
+- Write the question directly from the answer content — not from any
+  section title or header
+- The question must stand completely alone, with no reference to any
+  chapter name, section title, or category label
+- Write as if a surveyor or trainer is quizzing a staff member
+- Use plain, direct language a frontline healthcare worker would understand
+- Never use the phrase “What must be documented and demonstrated for…”
+- Never wrap a section title inside a question
+- The question should have one clear, testable answer
+- Aim for 10-20 words
+
+ANSWER CONTENT:
+[insert answer text here]
+
+## Return only the question. No preamble, no explanation.
+
+Make sure the answer text — not the section title — is what gets passed
+as the source content for question generation.

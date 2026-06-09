@@ -1,0 +1,50 @@
+### 1. Fix scoring table in Leadership Guide tutorial
+
+The points table in the Leadership Guide shows incorrect values.
+Replace the entire scoring table with these exact values:
+
+|Activity              |Points  |When It Applies                                                                                  |
+|----------------------|--------|-------------------------------------------------------------------------------------------------|
+|✅ Correct answer      |+20 pts |Practice quizzes, diagnostics, and final exam                                                    |
+|❌ Incorrect answer    |0 pts   |Accuracy counts, not just attempts                                                               |
+|🔄 Flashcard Again     |+5 pts  |Returning to a card you marked too hard                                                          |
+|📖 Flashcard Hard      |+8 pts  |Working through difficult material                                                               |
+|📚 Flashcard Good      |+10 pts |Highest flashcard reward                                                                         |
+|🔥 Daily login         |+15 pts |First correct answer of the day, resets at midnight                                              |
+|🎯 Final exam submitted|+100 pts|Everyone who completes the final                                                                 |
+|⭐ First-attempt pass  |+50 pts |Scoring 75% or above on the first attempt                                                        |
+|📋 Diagnostic Quiz     |0 pts   |No completion bonus. Correct answers within it earn +20 pts through the standard question handler|
+
+-----
+
+### 2. Remove supervisor language from Employee Guide tutorial
+
+In the Final Assessment section of the Employee Guide, there is a red callout
+box that references a supervisor being able to see and sign off on plans.
+Remove all supervisor sign-off language entirely.
+
+The only language that should appear is:
+“A Guided Education Plan will be assigned to help you focus on the areas
+where you scored lowest.”
+
+No mention of supervisors, sign-offs, or notifications to management.
+
+-----
+
+### 3. Remove “My Risk Assessment” from the staff dashboard sidebar
+
+The “My Risk Assessment — AI · Identify your gaps · get a personalized plan”
+card in the staff sidebar needs to be removed entirely.
+
+The Diagnostic Quiz already handles gap identification. Having a second
+feature with “Risk” in the name creates confusion and the word “risk”
+has the wrong connotation for clinical staff — they associate it with
+patient safety risk or liability, not a learning tool.
+
+Before removing: please tell Rajit what this feature actually does
+technically. If it is genuinely different from the diagnostic quiz
+(for example, if it updates continuously as staff answer questions
+rather than being a one-time 25-question test), it should be renamed
+rather than removed. If it duplicates the diagnostic, remove it.
+
+-----

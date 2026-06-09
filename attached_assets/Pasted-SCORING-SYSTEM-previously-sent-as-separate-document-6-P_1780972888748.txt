@@ -1,0 +1,60 @@
+SCORING SYSTEM (previously sent as separate document)
+
+### 6. Points ledger implementation
+
+Full code already provided in scoring-system-final.md document.
+
+Summary of what needs to be built:
+
+- Create `constants/scoring.constants.js` (point values + 75% passing threshold)
+- Create `services/points.service.js`
+- Create `routes/points.routes.js`
+- Create `utils/scoring.js`
+- Register points routes in `app.js`
+- Wire up question answer handler (correct answers only — no points for incorrect)
+- Wire up flashcard rating handler (Again/Hard/Good)
+- Wire up diagnostic completion handler (no scoring call needed)
+- Wire up final exam completion handler (pass/fail logic + bonuses)
+
+Key rules to confirm are implemented correctly:
+
+- Correct answer = +20 pts (one ledger row per correct answer)
+- Incorrect answer = 0 pts (no ledger row at all)
+- Diagnostic completion = 0 pts (no bonus row)
+- Daily login bonus = +15 pts (once per day on first correct answer)
+- Final exam completed = +100 pts flat bonus
+- First attempt pass = +50 pts additional bonus
+- Passing score = 75% on all modules, hospital and ASC
+
+-----
+
+## PRIORITY 4 — DASHBOARDS (designs already completed, need implementation)
+
+### 7. MOSH Leadership Dashboard (education-only)
+
+Design file: mosh-dashboard-v3.html (already delivered)
+
+Key metrics to display:
+
+- Staff Knowledge Score with range bar (below 75% / 75-85% / 85%+)
+- Learning Journey Progress card (progressive — shows milestone counts,
+  builds to improvement delta as more staff complete full cycle)
+- Interim Improvement Snapshot (shows diagnostic vs final for staff
+  who have completed both, with stacked bars per person)
+- Attention cards: Haven’t Started / Failed Final / Low Engagement /
+  Diagnostic Only
+- Department breakdown by actual role (not generic department):
+  OR Circulating Nurse, OR Manager, Scrub Tech, Surgical/Ortho Assistant,
+  Anesthesia/CRNA, SPD Technician, PACU/Floor Nurse, Environmental Services,
+  Compliance Officer/CNO, Nurse Educator/Staff Dev
+- Individual staff table sorted by priority
+- Bottom row: Questions Correct / Flashcards Reviewed /
+  Daily Active Users / Top Performers
+
+This replaces the current Leadership Console view for MOSH.
+Compliance tools are hidden via the feature flags built in Priority 2.
+
+### 8. ASC Leadership Dashboard (Fawn/TSC)
+
+Similar structure to MOSH dashboard but includes compliance metrics.
+Design to be confirmed — pending role matrix completion for ASC side.
