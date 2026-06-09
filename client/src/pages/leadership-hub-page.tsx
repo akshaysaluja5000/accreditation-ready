@@ -125,7 +125,7 @@ function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
   {
     id: "staff-learning",
     title: "Staff Learning Agent",
-    description: `Maps quiz completions to ${activeStandardsBody} compliance items. Identifies staff with training gaps, fires targeted reminders, and escalates to managers when anyone is 14+ days overdue.`,
+    description: `Maps quiz completions to ${activeStandardsBody} compliance items. Identifies staff with training gaps and recommends targeted focus areas.`,
     icon: GraduationCap,
     iconBg: "bg-blue-500/10",
     iconColor: "text-blue-600",
@@ -170,7 +170,7 @@ function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
   {
     id: "guided-education",
     title: "Guided Education Oversight",
-    description: "Monitor active guided education plans, track overdue assignments, and verify supervisor sign-offs.",
+    description: "Monitor active guided education plans and track overdue assignments.",
     icon: GraduationCap,
     iconBg: "bg-violet-500/10",
     iconColor: "text-violet-600",

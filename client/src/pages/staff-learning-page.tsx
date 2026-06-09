@@ -159,7 +159,7 @@ function AlertCard({ alert }: { alert: EnrichedAlert }) {
             ? <ShieldAlert className="w-4 h-4 text-red-600 shrink-0" />
             : <BellRing className="w-4 h-4 text-amber-600 shrink-0" />}
           <span className={`text-xs font-bold uppercase tracking-wide ${isEscalation ? "text-red-700" : "text-amber-700"}`}>
-            {isEscalation ? "Manager Escalation" : "Staff Reminder"}
+            {isEscalation ? "High Priority" : "Training Gap"}
           </span>
         </div>
         {alert.daysOverdue > 0 && (
@@ -193,7 +193,7 @@ export default function StaffLearningPage() {
   const moduleTag = user?.organizationType === "asc" ? "ASC" : user?.organizationType === "dnv" ? "DNV" : "Hospital";
   const [agentResult, setAgentResult] = useState<AgentRunResult | null>(null);
   const [lastRunAt, setLastRunAt] = useState<string | null>(null);
-  const [alertTab, setAlertTab] = useState<"escalations" | "reminders">("escalations");
+  const [alertTab, setAlertTab] = useState<"high-priority" | "reminders">("high-priority");
 
   const { data: dashboard, isLoading, refetch: refetchDashboard } = useQuery<DashboardData>({
     queryKey: ["/api/compliance/staff-learning-dashboard"],
@@ -223,9 +223,9 @@ export default function StaffLearningPage() {
   });
 
   const summary = dashboard?.summary;
-  const escalations = (dashboard?.alerts ?? []).filter(a => a.alertType === "escalation");
+  const highPriority = (dashboard?.alerts ?? []).filter(a => a.alertType === "escalation");
   const reminders = (dashboard?.alerts ?? []).filter(a => a.alertType === "reminder");
-  const shownAlerts = alertTab === "escalations" ? escalations : reminders;
+  const shownAlerts = alertTab === "high-priority" ? highPriority : reminders;
 
   return (
     <div className="min-h-screen bg-background">
@@ -277,11 +277,6 @@ export default function StaffLearningPage() {
                 <span><b className="text-foreground">{agentResult.staffAnalyzed}</b> staff analyzed</span>
                 <span><b className="text-foreground">{agentResult.alertsCreated}</b> alerts created</span>
                 <span><b className="text-foreground">{agentResult.tasksCreated}</b> tasks assigned</span>
-                {agentResult.escalationCount > 0 && (
-                  <span className="text-red-600 font-semibold">
-                    <b>{agentResult.escalationCount}</b> escalation{agentResult.escalationCount !== 1 ? "s" : ""}
-                  </span>
-                )}
               </div>
             </motion.div>
           )}
@@ -374,7 +369,7 @@ export default function StaffLearningPage() {
 
                 {/* Tab bar */}
                 <div className="flex rounded-lg border bg-muted/30 p-0.5">
-                  {(["escalations", "reminders"] as const).map(tab => (
+                  {(["high-priority", "reminders"] as const).map(tab => (
                     <button key={tab} onClick={() => setAlertTab(tab)}
                       data-testid={`tab-${tab}`}
                       className={`flex-1 text-xs font-medium py-1.5 rounded-md transition-colors flex items-center justify-center gap-1.5 ${
@@ -382,9 +377,9 @@ export default function StaffLearningPage() {
                           ? "bg-background shadow-sm text-foreground"
                           : "text-muted-foreground hover:text-foreground"
                       }`}>
-                      {tab === "escalations"
-                        ? <><ShieldAlert className="w-3 h-3 text-red-500" />Escalations ({escalations.length})</>
-                        : <><BellRing className="w-3 h-3 text-amber-500" />Reminders ({reminders.length})</>}
+                      {tab === "high-priority"
+                        ? <><ShieldAlert className="w-3 h-3 text-red-500" />High Priority ({highPriority.length})</>
+                        : <><BellRing className="w-3 h-3 text-amber-500" />Training Gaps ({reminders.length})</>}
                     </button>
                   ))}
                 </div>
@@ -398,7 +393,7 @@ export default function StaffLearningPage() {
                   <div className="bg-card rounded-xl border p-6 text-center space-y-2">
                     <CheckCircle2 className="w-8 h-8 text-emerald-500 mx-auto" />
                     <p className="text-xs text-muted-foreground">
-                      No {alertTab} at this time.
+                      No {alertTab === "high-priority" ? "high priority items" : "training gaps"} at this time.
                     </p>
                   </div>
                 ) : (
