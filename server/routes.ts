@@ -4943,6 +4943,36 @@ Return ONLY valid JSON, no other text:
 
   // ── Points Ledger API ─────────────────────────────────────────────────────
 
+  app.post("/api/points/award", requireAuth, async (req: Request, res: Response) => {
+    try {
+      const { eventType, moduleId, questionId, metadata } = req.body;
+      const userId = req.user!.id;
+      const facilityId = (req.user as any).facilityId as number | null ?? null;
+
+      const validEvents = ["question_correct","flashcard_again","flashcard_hard","flashcard_good","final_complete","final_passed_first_attempt"];
+      if (!validEvents.includes(eventType)) {
+        return res.status(400).json({ error: "Invalid event type" });
+      }
+
+      const pointsAwarded = POINT_VALUES[eventType as keyof typeof POINT_VALUES] ?? 0;
+      if (pointsAwarded === 0) return res.json({ pointsAwarded: 0, dailyBonusAwarded: false, totalPoints: await storage.getUserTotalPoints(userId) });
+
+      await storage.addPointsEvent(userId, facilityId, eventType, pointsAwarded, { moduleId, questionId, ...metadata });
+
+      let dailyBonusAwarded = false;
+      if (eventType === "question_correct") {
+        const today = toCentralDate(new Date());
+        dailyBonusAwarded = await storage.tryAwardDailyLogin(userId, facilityId, today);
+      }
+
+      const totalPoints = await storage.getUserTotalPoints(userId);
+      res.json({ pointsAwarded, dailyBonusAwarded, totalPoints });
+    } catch (err) {
+      console.error("POST /api/points/award:", err);
+      res.status(500).json({ error: "Failed to award points" });
+    }
+  });
+
   app.get("/api/points/me", requireAuth, async (req: Request, res: Response) => {
     try {
       const userId = req.user!.id;
