@@ -328,6 +328,14 @@
     .header-back span { display: none; }
     .logo { display: none; }
   }
+  .score-table { width: 100%; border-collapse: collapse; font-size: .875rem; margin: 1rem 0; }
+  .score-table th { text-align: left; font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding: .5rem .75rem; border-bottom: 2px solid var(--border); }
+  .score-table td { padding: .6rem .75rem; border-bottom: 1px solid var(--border); vertical-align: middle; line-height: 1.4; }
+  .score-table tr:last-child td { border-bottom: none; }
+  .score-table .pts { font-weight: 700; color: var(--teal); white-space: nowrap; }
+  .score-table .pts-zero { font-weight: 600; color: var(--muted); white-space: nowrap; }
+  html.dark .score-table th { border-color: var(--border); }
+  html.dark .score-table td { border-color: var(--border); }
 </style>
 <script>if(localStorage.getItem('ar_night_mode')==='1')document.documentElement.classList.add('dark');</script>
 </head>
@@ -533,42 +541,23 @@
         <div class="step-left"><div class="step-num">11</div></div>
         <div class="step-body">
           <div class="step-title">How staff earn points</div>
-          <div class="step-desc">Every training activity automatically earns points — no setup required. Points are awarded server-side the moment staff complete an action, so the leaderboard always reflects real engagement. Here is the full scoring table your staff are working against:</div>
-          <div class="feature-grid">
-            <div class="feature-item">
-              <div class="feature-label">✅ Correct answer</div>
-              <div class="feature-detail">+20 pts — practice quizzes, diagnostics, and final exam</div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-label">❌ Incorrect answer</div>
-              <div class="feature-detail">0 pts — accuracy is rewarded, not just activity</div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-label">🃏 Flashcard — Again</div>
-              <div class="feature-detail">+5 pts — returning to a hard card</div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-label">🃏 Flashcard — Hard</div>
-              <div class="feature-detail">+8 pts — engaging with difficult material</div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-label">🃏 Flashcard — Good</div>
-              <div class="feature-detail">+10 pts — highest flashcard reward</div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-label">🌟 Daily login bonus</div>
-              <div class="feature-detail">+15 pts — once per day on first correct answer (resets midnight)</div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-label">🏁 Final exam completed</div>
-              <div class="feature-detail">+100 pts — flat bonus for every staff member who finishes</div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-label">🏆 First-attempt pass</div>
-              <div class="feature-detail">+50 pts bonus — passing 75%+ on the very first try</div>
-            </div>
-          </div>
-          <div class="note">Diagnostic Quiz completion earns no bonus — it is mandatory onboarding, not an achievement. Correct answers <em>within</em> the diagnostic do earn +20 pts each via the standard question handler.</div>
+          <div class="step-desc">Points are awarded automatically the moment staff complete any activity. The leaderboard always reflects real engagement. Full scoring table:</div>
+          <table class="score-table">
+            <thead>
+              <tr><th>Activity</th><th>Points</th><th>When it applies</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>✅ Correct answer</td><td class="pts">+20</td><td>Practice quizzes, diagnostics, and final exam</td></tr>
+              <tr><td>❌ Incorrect answer</td><td class="pts-zero">0</td><td>Accuracy counts, not just attempts</td></tr>
+              <tr><td>🔄 Flashcard: Again</td><td class="pts">+5</td><td>Returning to a card marked too hard</td></tr>
+              <tr><td>💪 Flashcard: Hard</td><td class="pts">+8</td><td>Working through difficult material</td></tr>
+              <tr><td>⭐ Flashcard: Good</td><td class="pts">+10</td><td>Highest flashcard reward</td></tr>
+              <tr><td>🌟 Daily login</td><td class="pts">+15</td><td>First correct answer of the day, resets at midnight</td></tr>
+              <tr><td>🏁 Final exam submitted</td><td class="pts">+100</td><td>Everyone who completes the final</td></tr>
+              <tr><td>🏆 First-attempt pass</td><td class="pts">+50</td><td>Scoring 75% or above on the first attempt</td></tr>
+            </tbody>
+          </table>
+          <div class="note">The Diagnostic Quiz has no completion bonus. Correct answers within it each earn +20 pts through the standard question handler.</div>
         </div>
       </div>
 
@@ -576,21 +565,19 @@
         <div class="step-left"><div class="step-num">12</div></div>
         <div class="step-body">
           <div class="step-title">Leaderboard, pilot windows, and engagement views</div>
-          <div class="step-desc">The <strong>Leaderboard</strong> (visible to all staff) ranks everyone at your facility by total points. As a leader you also have access to the <strong>Staff Engagement</strong> view inside the Leadership Console — it shows each staff member's total points, questions answered correctly, flashcards reviewed, finals completed, last active date, and an engagement level (High / Medium / Low) based on recency. Admin and Super Admin can drill into any individual's full activity breakdown by event type and by module.</div>
-          <div class="feature-grid">
-            <div class="feature-item">
-              <div class="feature-label">Passing threshold</div>
-              <div class="feature-detail">75% on Final Assessment — Hospital (JC), ASC, and DNV</div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-label">Pilot competition window</div>
-              <div class="feature-detail">Date-range filter applied to leaderboard for focused competitions</div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-label">Engagement levels</div>
-              <div class="feature-detail">High = active within 24 h · Medium = within 7 days · Low = over 7 days</div>
-            </div>
-          </div>
+          <div class="step-desc">The <strong>Leaderboard</strong> (visible to all staff) ranks everyone at your facility by total points. As a leader you have access to the <strong>Staff Engagement</strong> view in the Leadership Console. It shows each staff member's total points, correct answers, flashcards reviewed, finals completed, last active date, and an engagement level based on recency. Admin and Super Admin can drill into any individual's full activity breakdown by event type and by module.</div>
+          <table class="score-table">
+            <thead>
+              <tr><th>Setting</th><th>Detail</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Passing threshold</td><td>75% on Final Assessment — Hospital (JC), ASC, and DNV</td></tr>
+              <tr><td>Pilot competition window</td><td>Date-range filter applied to the leaderboard for focused competitions</td></tr>
+              <tr><td>Engagement: High</td><td>Active within the last 24 hours</td></tr>
+              <tr><td>Engagement: Medium</td><td>Active within the last 7 days</td></tr>
+              <tr><td>Engagement: Low</td><td>No activity in over 7 days</td></tr>
+            </tbody>
+          </table>
           <div class="tags">
             <span class="tag tag-teal">Director+ sees Staff Engagement view</span>
             <span class="tag tag-blue">Admin+ sees individual drill-down</span>

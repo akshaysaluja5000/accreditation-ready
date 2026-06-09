@@ -349,6 +349,14 @@
     .header-back span { display: none; }
     .logo { display: none; }
   }
+  .score-table { width: 100%; border-collapse: collapse; font-size: .875rem; margin: 1rem 0; }
+  .score-table th { text-align: left; font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding: .5rem .75rem; border-bottom: 2px solid var(--border); }
+  .score-table td { padding: .6rem .75rem; border-bottom: 1px solid var(--border); vertical-align: middle; line-height: 1.4; }
+  .score-table tr:last-child td { border-bottom: none; }
+  .score-table .pts { font-weight: 700; color: var(--teal); white-space: nowrap; }
+  .score-table .pts-zero { font-weight: 600; color: var(--muted); white-space: nowrap; }
+  html.dark .score-table th { border-color: var(--border); }
+  html.dark .score-table td { border-color: var(--border); }
 </style>
 <script>if(localStorage.getItem('ar_night_mode')==='1')document.documentElement.classList.add('dark');</script>
 </head>
@@ -574,42 +582,23 @@
         <div class="step-left"><div class="step-num">12</div></div>
         <div class="step-body">
           <div class="step-title">How you earn points</div>
-          <div class="step-desc">Every training activity earns points that count toward the facility leaderboard. Points are awarded <strong>for correct answers only</strong> — incorrect answers earn nothing, so accuracy matters. Here is exactly what each activity is worth:</div>
-          <div class="feature-grid">
-            <div class="feature-item">
-              <div class="feature-label">✅ Correct answer</div>
-              <div class="feature-detail">+20 pts — practice quizzes, diagnostics, and final exam</div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-label">❌ Incorrect answer</div>
-              <div class="feature-detail">0 pts — accuracy must mean something</div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-label">🃏 Flashcard — Again</div>
-              <div class="feature-detail">+5 pts — returning to a hard card is good behavior</div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-label">🃏 Flashcard — Hard</div>
-              <div class="feature-detail">+8 pts — engaging with difficult material</div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-label">🃏 Flashcard — Good</div>
-              <div class="feature-detail">+10 pts — highest flashcard reward</div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-label">🌟 Daily login bonus</div>
-              <div class="feature-detail">+15 pts — once per day on your first correct answer</div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-label">🏁 Final exam completed</div>
-              <div class="feature-detail">+100 pts — flat bonus for everyone who finishes</div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-label">🏆 First-attempt pass</div>
-              <div class="feature-detail">+50 pts bonus — passing 75%+ on your very first try</div>
-            </div>
-          </div>
-          <div class="note">The Diagnostic Quiz earns no completion bonus — it is mandatory, not an achievement. Correct answers <em>within</em> the diagnostic do earn +20 pts each.</div>
+          <div class="step-desc">Every activity earns points toward the facility leaderboard. Only correct answers count toward your score.</div>
+          <table class="score-table">
+            <thead>
+              <tr><th>Activity</th><th>Points</th><th>When it applies</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>✅ Correct answer</td><td class="pts">+20</td><td>Practice quizzes, diagnostics, and final exam</td></tr>
+              <tr><td>❌ Incorrect answer</td><td class="pts-zero">0</td><td>Accuracy counts, not just attempts</td></tr>
+              <tr><td>🔄 Flashcard: Again</td><td class="pts">+5</td><td>Returning to a card you marked too hard</td></tr>
+              <tr><td>💪 Flashcard: Hard</td><td class="pts">+8</td><td>Working through difficult material</td></tr>
+              <tr><td>⭐ Flashcard: Good</td><td class="pts">+10</td><td>Highest flashcard reward</td></tr>
+              <tr><td>🌟 Daily login</td><td class="pts">+15</td><td>First correct answer of the day, resets at midnight</td></tr>
+              <tr><td>🏁 Final exam submitted</td><td class="pts">+100</td><td>Everyone who completes the final</td></tr>
+              <tr><td>🏆 First-attempt pass</td><td class="pts">+50</td><td>Scoring 75% or above on your first attempt</td></tr>
+            </tbody>
+          </table>
+          <div class="note">The Diagnostic Quiz has no completion bonus. Correct answers within it each earn +20 pts through the standard question handler.</div>
         </div>
       </div>
 
