@@ -680,7 +680,7 @@ export default function StudyPage() {
                 </div>
                 <div className="rounded-xl border border-orange-500/30 bg-orange-500/8 p-2.5 text-center">
                   <p className="font-black text-orange-400">Hard</p>
-                  <p className="text-muted-foreground mt-0.5 leading-tight">Struggled - comes back in ~15 min</p>
+                  <p className="text-muted-foreground mt-0.5 leading-tight">Struggled - comes back in ~7 min</p>
                 </div>
                 <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/8 p-2.5 text-center">
                   <p className="font-black text-emerald-400">Good</p>
