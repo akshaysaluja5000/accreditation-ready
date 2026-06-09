@@ -345,30 +345,24 @@ export default function LeadershipHubPage() {
         )}
 
         {/* Scope banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="rounded-2xl border border-border bg-card p-5 flex items-start gap-4"
-          data-testid="card-scope-info"
-        >
-          <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-            <BarChart3 size={20} className="text-primary" />
-          </div>
-          <div className="min-w-0">
-            <h2 className="font-bold text-sm mb-1">Your data scope</h2>
-            <p className="text-sm text-muted-foreground leading-relaxed" data-testid="text-scope-description">
-              {effectiveRole === "super_admin" || effectiveRole === "admin"
-                ? "You have platform-wide access. All facilities and modules are visible."
-                : effectiveRole === "ceo"
-                  ? `You are viewing ${moduleLabel} data for your assigned facility with executive-level access including data exports and audit logs.`
-                  : effectiveRole === "director"
-                    ? `You are viewing ${moduleLabel} data for your assigned facility. Contact a system admin to request multi-site access.`
-                    : effectiveRole === "educator"
-                      ? `You can review completion and manage Guided Education Plans for learners in your department (${moduleLabel}).`
-                      : "Your access level does not include leadership tools."}
-            </p>
-          </div>
-        </motion.div>
+        {effectiveRole === "super_admin" && (
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="rounded-2xl border border-border bg-card p-5 flex items-start gap-4"
+            data-testid="card-scope-info"
+          >
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <BarChart3 size={20} className="text-primary" />
+            </div>
+            <div className="min-w-0">
+              <h2 className="font-bold text-sm mb-1">Your data scope</h2>
+              <p className="text-sm text-muted-foreground leading-relaxed" data-testid="text-scope-description">
+                You have platform-wide access. All facilities and modules are visible.
+              </p>
+            </div>
+          </motion.div>
+        )}
 
         {/* Facility scoping note for hospital/ASC separation */}
         {effectiveRole === "super_admin" && (
