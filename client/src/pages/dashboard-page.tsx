@@ -602,8 +602,8 @@ export default function DashboardPage() {
             )}
 
             {/* Desktop-only secondary actions */}
-            <Button variant="outline" size="sm" onClick={() => setLocation("/leaderboard")} data-testid="button-leaderboard" className="hidden sm:flex">
-              <Trophy size={16} />
+            <Button variant="outline" size="sm" onClick={() => setLocation("/leaderboard")} data-testid="button-leaderboard" className="hidden sm:flex gap-1.5">
+              <Trophy size={16} /><span>Leaderboard</span>
             </Button>
             <a
               href={
@@ -616,20 +616,20 @@ export default function DashboardPage() {
               data-testid="link-tutorial-help"
               className="hidden sm:block"
             >
-              <Button variant="outline" size="sm" title="How-to guide">
-                <BookOpen size={16} />
+              <Button variant="outline" size="sm" className="gap-1.5">
+                <BookOpen size={16} /><span>Tutorial</span>
               </Button>
             </a>
-            <Button variant="outline" size="sm" onClick={() => setLocation("/profile")} data-testid="button-profile" className="hidden sm:flex">
-              <Settings size={16} />
+            <Button variant="outline" size="sm" onClick={() => setLocation("/profile")} data-testid="button-profile" className="hidden sm:flex gap-1.5">
+              <Settings size={16} /><span>Settings</span>
             </Button>
             {/* Dark mode toggle - always visible */}
-            <Button variant="outline" size="sm" onClick={toggleDark} data-testid="button-toggle-dark" title={isDark ? "Switch to light mode" : "Switch to night mode"}>
-              {isDark ? <Sun size={16} /> : <Moon size={16} />}
+            <Button variant="outline" size="sm" onClick={toggleDark} data-testid="button-toggle-dark" className="gap-1.5">
+              {isDark ? <><Sun size={16} /><span>Light</span></> : <><Moon size={16} /><span>Dark</span></>}
             </Button>
 
-            <Button variant="outline" size="sm" onClick={async () => { await logout(); setLocation("/auth"); }} data-testid="button-logout" className="hidden sm:flex">
-              <LogOut size={16} />
+            <Button variant="outline" size="sm" onClick={async () => { await logout(); setLocation("/auth"); }} data-testid="button-logout" className="hidden sm:flex gap-1.5">
+              <LogOut size={16} /><span>Sign Out</span>
             </Button>
 
             {/* Mobile overflow menu - replaces Trophy / Help / Settings / Logout */}
