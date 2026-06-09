@@ -146,7 +146,7 @@ function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
   {
     id: "guided-education",
     title: "Guided Education Oversight",
-    description: "Monitor active remediation plans, track overdue assignments, and verify supervisor sign-offs.",
+    description: "Monitor active guided education plans, track overdue assignments, and verify supervisor sign-offs.",
     icon: GraduationCap,
     iconBg: "bg-violet-500/10",
     iconColor: "text-violet-600",

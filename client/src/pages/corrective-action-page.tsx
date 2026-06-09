@@ -872,7 +872,7 @@ function PlanCard({
         {/* ── Assigned Steps ── */}
         <div className="flex flex-col gap-3 pt-3 border-t border-border/40">
           <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/55">
-            Assigned Plan{plan.remediationSteps.length > 1 ? "s" : ""} ({plan.remediationSteps.length} step{plan.remediationSteps.length > 1 ? "s" : ""})
+            Education Plan{plan.remediationSteps.length > 1 ? "s" : ""} ({plan.remediationSteps.length} step{plan.remediationSteps.length > 1 ? "s" : ""})
           </p>
           {plan.remediationSteps.map((step, i) => (
             <div key={i} className="flex gap-3" data-testid={`container-step-${plan.id}-${i}`}>
