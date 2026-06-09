@@ -617,7 +617,7 @@ export default function DashboardPage() {
               className="hidden sm:block"
             >
               <Button variant="outline" size="sm" title="How-to guide">
-                <HelpCircle size={16} />
+                <BookOpen size={16} />
               </Button>
             </a>
             <Button variant="outline" size="sm" onClick={() => setLocation("/profile")} data-testid="button-profile" className="hidden sm:flex">
@@ -658,7 +658,7 @@ export default function DashboardPage() {
                     data-testid="menu-item-tutorial"
                     className="flex items-center"
                   >
-                    <HelpCircle size={14} className="mr-2 text-muted-foreground" /> How-to Guide
+                    <BookOpen size={14} className="mr-2 text-muted-foreground" /> How-to Guide
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setLocation("/profile")} data-testid="menu-item-profile">
