@@ -371,7 +371,7 @@ export default function LeadershipHubPage() {
         </motion.div>
 
         {/* Facility scoping note for hospital/ASC separation */}
-        {(effectiveRole === "admin" || effectiveRole === "super_admin") && (
+        {effectiveRole === "super_admin" && (
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
