@@ -31,6 +31,8 @@ export interface FacilityFeatures {
   wall_chart_tracker: boolean;
   regulatory_watch_agent: boolean;
   show_teams: boolean;
+  show_hospital_dashboard: boolean;
+  show_asc_dashboard: boolean;
 }
 
 export interface FacilityRoleVisibility {
@@ -57,6 +59,8 @@ export const DEFAULT_FACILITY_FEATURES: FacilityFeatures = {
   wall_chart_tracker: false,
   regulatory_watch_agent: false,
   show_teams: false,
+  show_hospital_dashboard: true,
+  show_asc_dashboard: false,
 };
 
 export const FULL_PLATFORM_FEATURES: FacilityFeatures = {
@@ -69,6 +73,8 @@ export const FULL_PLATFORM_FEATURES: FacilityFeatures = {
   wall_chart_tracker: true,
   regulatory_watch_agent: true,
   show_teams: false,
+  show_hospital_dashboard: true,
+  show_asc_dashboard: false,
 };
 
 export const facilities = pgTable("facilities", {

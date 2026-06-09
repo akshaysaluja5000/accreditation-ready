@@ -12,6 +12,8 @@ export const DEFAULT_FEATURES: FacilityFeatures = {
   wall_chart_tracker: false,
   regulatory_watch_agent: false,
   show_teams: false,
+  show_hospital_dashboard: true,
+  show_asc_dashboard: false,
 };
 
 export const DEFAULT_ROLE_VISIBILITY: FacilityRoleVisibility = {

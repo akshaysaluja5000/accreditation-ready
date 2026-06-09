@@ -34,8 +34,6 @@ interface ConsoleCard {
   href: string;
   minRole: string;
   badge?: string;
-  ascOnly?: boolean;
-  hospitalOnly?: boolean;
   featureKey?: keyof FacilityFeatures;
 }
 
@@ -50,7 +48,7 @@ function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
     href: "/hospital-dashboard",
     minRole: "director",
     badge: "Live",
-    hospitalOnly: true,
+    featureKey: "show_hospital_dashboard",
   },
   {
     id: "asc-dashboard",
@@ -62,7 +60,7 @@ function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
     href: "/asc-dashboard",
     minRole: "director",
     badge: "Live",
-    ascOnly: true,
+    featureKey: "show_asc_dashboard",
   },
   {
     id: "survey-readiness",
@@ -431,8 +429,6 @@ export default function LeadershipHubPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {getConsoleCards(activeStandardsBody).filter(card =>
-              (!card.ascOnly || isAsc) &&
-              (!card.hospitalOnly || !isAsc) &&
               (!card.featureKey || isEnabled(facilityFlags?.features, card.featureKey))
             ).map((card, i) => {
               const accessible = canAccess(card);
