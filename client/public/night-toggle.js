@@ -17,9 +17,19 @@
   }
 
   function init() {
-    var btn = document.getElementById('night-btn');
-    if (btn) btn.addEventListener('click', toggleNight);
+    // Dark mode toggle
+    var nightBtn = document.getElementById('night-btn');
+    if (nightBtn) nightBtn.addEventListener('click', toggleNight);
     syncBtn();
+
+    // Back to app — close this tab so the app tab isn't duplicated
+    var backBtn = document.querySelector('.header-back');
+    if (backBtn) {
+      backBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.close();
+      });
+    }
   }
 
   if (document.readyState === 'loading') {
