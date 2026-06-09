@@ -676,7 +676,7 @@ export default function StudyPage() {
               <div className="grid grid-cols-3 gap-2 text-xs">
                 <div className="rounded-xl border border-red-500/30 bg-red-500/8 p-2.5 text-center">
                   <p className="font-black text-red-400">Again</p>
-                  <p className="text-muted-foreground mt-0.5 leading-tight">Forgot it - shows again right away</p>
+                  <p className="text-muted-foreground mt-0.5 leading-tight">Forgot it - shows again within 2 minutes</p>
                 </div>
                 <div className="rounded-xl border border-orange-500/30 bg-orange-500/8 p-2.5 text-center">
                   <p className="font-black text-orange-400">Hard</p>
