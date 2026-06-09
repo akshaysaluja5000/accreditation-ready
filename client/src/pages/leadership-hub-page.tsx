@@ -132,7 +132,7 @@ function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
     href: "/staff-learning",
     minRole: "director",
     badge: "Agent",
-    featureKey: "education",
+    featureKey: "show_staff_learning_agent",
   },
   {
     id: "executive-report",
