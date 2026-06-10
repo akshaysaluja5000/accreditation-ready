@@ -264,7 +264,8 @@ function requireMfa(req: Request, res: Response, next: NextFunction) {
     return res.status(401).json({ message: "Not authenticated" });
   }
   const rank = LEADERSHIP_RANK[getEffectiveLeadershipRole(req.user!)] ?? 0;
-  if (rank >= LEADERSHIP_RANK["ceo"]) {
+  // admin+ (rank >= 4) bypass MFA — they are app administrators, consistent with requireWallChartAccess
+  if (rank >= LEADERSHIP_RANK["ceo"] && rank < LEADERSHIP_RANK["admin"]) {
     if (!req.user!.mfaEnabled) {
       return res.status(403).json({ mfaSetupRequired: true, message: "MFA setup is required for your role." });
     }
