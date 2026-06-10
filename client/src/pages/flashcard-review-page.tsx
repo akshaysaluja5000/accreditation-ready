@@ -3,10 +3,11 @@ import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowLeft, Brain, CheckCircle2, Timer, Clock,
-  Trophy, RefreshCw, ChevronRight, RotateCcw,
+  Trophy, RefreshCw, ChevronRight, RotateCcw, LogOut,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogDescription } from "@/components/ui/dialog";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import { findLevelById } from "@shared/all-levels";
@@ -329,6 +330,18 @@ export default function FlashcardReviewPage() {
   const [flipped, setFlipped] = useState(false);
   const [sessionDone, setSessionDone] = useState(false);
   const [ratings, setRatings] = useState<Record<number, SRRating>>({});
+  const [showLeaveDialog, setShowLeaveDialog] = useState(false);
+
+  const ratedCount = Object.keys(ratings).length;
+  const sessionStarted = ratedCount > 0 || queueIndex > 0;
+
+  const handleBack = () => {
+    if (!sessionDone && sessionStarted) {
+      setShowLeaveDialog(true);
+    } else {
+      setLocation("/");
+    }
+  };
 
   // AI-generated card questions (keyed by concept title)
   const [aiQuestions, setAiQuestions] = useState<Record<string, string>>({});
@@ -473,7 +486,7 @@ export default function FlashcardReviewPage() {
       {/* Header */}
       <div className="sticky top-[58px] z-40 border-b border-border bg-background/95 backdrop-blur-md">
         <div className="max-w-lg mx-auto px-4 py-3 flex items-center justify-between gap-3">
-          <Button variant="ghost" size="icon" onClick={() => setLocation("/")} data-testid="button-back">
+          <Button variant="ghost" size="icon" onClick={handleBack} data-testid="button-back">
             <ArrowLeft size={20} />
           </Button>
           <div className="flex-1 text-center">
@@ -484,7 +497,18 @@ export default function FlashcardReviewPage() {
               </h2>
             </div>
           </div>
-          <div className="w-10" />
+          {!sessionDone && sessionStarted ? (
+            <button
+              onClick={() => setShowLeaveDialog(true)}
+              className="flex items-center gap-1 text-[11px] font-semibold text-muted-foreground/60 hover:text-muted-foreground transition-colors px-1"
+              data-testid="button-end-session"
+            >
+              <LogOut size={14} />
+              <span className="hidden sm:inline">End</span>
+            </button>
+          ) : (
+            <div className="w-10" />
+          )}
         </div>
 
         {/* Progress bar */}
@@ -697,6 +721,45 @@ export default function FlashcardReviewPage() {
           </p>
         </div>
       )}
+
+      {/* Leave Session Dialog */}
+      <Dialog open={showLeaveDialog} onOpenChange={setShowLeaveDialog}>
+        <DialogContent className="max-w-sm rounded-2xl" data-testid="dialog-leave-session">
+          <DialogHeader>
+            <DialogTitle className="text-lg font-black">Leave Flashcard Session?</DialogTitle>
+            <DialogDescription className="text-sm text-muted-foreground">
+              {ratedCount > 0
+                ? `You've reviewed ${ratedCount} card${ratedCount !== 1 ? "s" : ""} so far. Your progress is automatically saved.`
+                : "You haven't rated any cards yet. Your session hasn't been saved."}
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter className="flex flex-col gap-2 sm:flex-col mt-2">
+            <Button
+              className="w-full"
+              onClick={() => { setShowLeaveDialog(false); setLocation("/"); }}
+              data-testid="button-save-and-leave"
+            >
+              Save Progress &amp; Leave
+            </Button>
+            <Button
+              variant="outline"
+              className="w-full"
+              onClick={() => { setShowLeaveDialog(false); setLocation("/"); }}
+              data-testid="button-leave-anyway"
+            >
+              Leave Without Saving
+            </Button>
+            <Button
+              variant="ghost"
+              className="w-full text-muted-foreground"
+              onClick={() => setShowLeaveDialog(false)}
+              data-testid="button-cancel-leave"
+            >
+              Cancel — Keep Studying
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
 
       {/* Session Complete */}
       {sessionDone && (
