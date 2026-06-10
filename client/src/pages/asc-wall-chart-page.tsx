@@ -131,7 +131,7 @@ export default function AscWallChartPage() {
 
         {/* Header */}
         <div className="flex items-center gap-3">
-          <Button variant="ghost" size="sm" onClick={() => setLocation("/compliance-tasks")}
+          <Button variant="ghost" size="sm" onClick={() => window.history.back()}
             data-testid="btn-back-wall-chart" className="gap-1.5">
             <ArrowLeft className="w-4 h-4" />Back
           </Button>
