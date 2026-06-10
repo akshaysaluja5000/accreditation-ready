@@ -239,6 +239,7 @@ export async function ensureTablesExist() {
         message TEXT NOT NULL,
         created_at TIMESTAMP NOT NULL DEFAULT NOW()
       );
+      ALTER TABLE feedback ADD COLUMN IF NOT EXISTS attachments JSONB;
       CREATE TABLE IF NOT EXISTS leadership_role_codes (
         id SERIAL PRIMARY KEY,
         code TEXT NOT NULL UNIQUE,
@@ -1010,7 +1011,7 @@ export interface IStorage {
   deleteRiskAssessment(userId: number, module: string): Promise<void>;
   getRiskAssessmentsByFacility(facilityId: number | null, module: string): Promise<(RiskAssessment & { username: string; firstName: string; lastName: string; department: string | null })[]>;
 
-  createFeedback(data: { userId?: number; username?: string; firstName?: string; lastName?: string; facilityId?: number; message: string }): Promise<Feedback>;
+  createFeedback(data: { userId?: number; username?: string; firstName?: string; lastName?: string; facilityId?: number; message: string; attachments?: { name: string; type: string; data: string }[] }): Promise<Feedback>;
   getAllFeedback(): Promise<Feedback[]>;
 
   getDailyActivitySince(startDate: string): Promise<DailyActivity[]>;
@@ -1664,7 +1665,7 @@ export class DatabaseStorage implements IStorage {
     );
   }
 
-  async createFeedback(data: { userId?: number; username?: string; firstName?: string; lastName?: string; facilityId?: number; message: string }): Promise<Feedback> {
+  async createFeedback(data: { userId?: number; username?: string; firstName?: string; lastName?: string; facilityId?: number; message: string; attachments?: { name: string; type: string; data: string }[] }): Promise<Feedback> {
     const [row] = await db.insert(feedback).values({
       userId: data.userId ?? null,
       username: data.username ?? null,
@@ -1672,6 +1673,7 @@ export class DatabaseStorage implements IStorage {
       lastName: data.lastName ?? null,
       facilityId: data.facilityId ?? null,
       message: data.message,
+      attachments: data.attachments && data.attachments.length > 0 ? (data.attachments as any) : null,
     }).returning();
     return row;
   }

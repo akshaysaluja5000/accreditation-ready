@@ -2,7 +2,7 @@ import { useState, useMemo, useRef, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocation, Link } from "wouter";
-import { Flame, Zap, Target, TrendingUp, ChevronRight, ChevronDown, ChevronUp, LogOut, BarChart3, Calendar as CalendarIcon, Settings, BookOpen, Trophy, Shuffle, Microscope, BrainCircuit, Stethoscope, Crown, Briefcase, Play, FileText, ClipboardCheck, ClipboardList, ShieldAlert, Brain, Layers, GraduationCap, Search, X as XIcon, ZoomIn, HelpCircle, MessageSquare, MoreHorizontal, AlertCircle, Star } from "lucide-react"; // eslint-disable-line @typescript-eslint/no-unused-vars
+import { Flame, Zap, Target, TrendingUp, ChevronRight, ChevronDown, ChevronUp, LogOut, BarChart3, Calendar as CalendarIcon, Settings, BookOpen, Trophy, Shuffle, Microscope, BrainCircuit, Stethoscope, Crown, Briefcase, Play, FileText, ClipboardCheck, ClipboardList, ShieldAlert, Brain, Layers, GraduationCap, Search, X as XIcon, ZoomIn, HelpCircle, MessageSquare, MoreHorizontal, AlertCircle, Star, Paperclip, Image as ImageIcon } from "lucide-react"; // eslint-disable-line @typescript-eslint/no-unused-vars
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -424,6 +424,9 @@ export default function DashboardPage() {
   const [feedbackOpen, setFeedbackOpen] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState("");
   const [feedbackSent, setFeedbackSent] = useState(false);
+  const [feedbackFiles, setFeedbackFiles] = useState<{ name: string; type: string; data: string; size: number }[]>([]);
+  const [feedbackFileError, setFeedbackFileError] = useState<string | null>(null);
+  const feedbackFileInputRef = useRef<HTMLInputElement>(null);
 
   const searchRef = useRef<HTMLDivElement>(null);
 
@@ -625,7 +628,7 @@ export default function DashboardPage() {
                 <DropdownMenuItem onClick={() => setLocation("/leaderboard")} data-testid="menu-item-leaderboard">
                   <Trophy size={14} className="mr-2 text-muted-foreground" /> Leaderboard
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => { setFeedbackOpen(true); setFeedbackSent(false); setFeedbackMessage(""); }} data-testid="menu-item-feedback">
+                <DropdownMenuItem onClick={() => { setFeedbackOpen(true); setFeedbackSent(false); setFeedbackMessage(""); setFeedbackFiles([]); setFeedbackFileError(null); }} data-testid="menu-item-feedback">
                   <MessageSquare size={14} className="mr-2 text-muted-foreground" /> Send Feedback
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
@@ -1560,13 +1563,47 @@ export default function DashboardPage() {
 
       {/* Floating Feedback Button */}
       <button
-        onClick={() => { setFeedbackOpen(true); setFeedbackSent(false); setFeedbackMessage(""); }}
+        onClick={() => { setFeedbackOpen(true); setFeedbackSent(false); setFeedbackMessage(""); setFeedbackFiles([]); setFeedbackFileError(null); }}
         data-testid="button-open-feedback"
         className="fixed bottom-20 right-4 z-50 flex items-center gap-2 px-4 py-2.5 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all text-sm font-bold"
       >
         <MessageSquare size={16} />
         Feedback
       </button>
+
+      {/* Hidden file input */}
+      <input
+        ref={feedbackFileInputRef}
+        type="file"
+        accept="image/*,.pdf,.doc,.docx"
+        multiple
+        className="hidden"
+        data-testid="input-feedback-file"
+        onChange={async (e) => {
+          setFeedbackFileError(null);
+          const chosen = Array.from(e.target.files || []);
+          const remaining = 3 - feedbackFiles.length;
+          if (chosen.length > remaining) {
+            setFeedbackFileError(`You can attach up to 3 files total.`);
+            e.target.value = "";
+            return;
+          }
+          const tooBig = chosen.filter(f => f.size > 5 * 1024 * 1024);
+          if (tooBig.length > 0) {
+            setFeedbackFileError(`Each file must be under 5 MB.`);
+            e.target.value = "";
+            return;
+          }
+          const readers = chosen.map(file => new Promise<{ name: string; type: string; data: string; size: number }>((resolve) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve({ name: file.name, type: file.type, data: reader.result as string, size: file.size });
+            reader.readAsDataURL(file);
+          }));
+          const results = await Promise.all(readers);
+          setFeedbackFiles(prev => [...prev, ...results]);
+          e.target.value = "";
+        }}
+      />
 
       {/* Feedback Modal */}
       {feedbackOpen && (
@@ -1593,16 +1630,66 @@ export default function DashboardPage() {
               <>
                 <div>
                   <h2 className="text-lg font-black">Send Feedback</h2>
-                  <p className="text-sm text-muted-foreground mt-1">Questions, concerns, or suggestions - we want to hear it all.</p>
+                  <p className="text-sm text-muted-foreground mt-1">Questions, concerns, or suggestions — we want to hear it all.</p>
                 </div>
                 <textarea
-                  className="w-full min-h-[140px] rounded-xl border border-border bg-background px-4 py-3 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-primary/40 placeholder:text-muted-foreground"
+                  className="w-full min-h-[120px] rounded-xl border border-border bg-background px-4 py-3 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-primary/40 placeholder:text-muted-foreground"
                   placeholder="Type your message here… no character limit."
                   value={feedbackMessage}
                   onChange={e => setFeedbackMessage(e.target.value)}
                   autoFocus
                   data-testid="textarea-feedback"
                 />
+                {/* File attachments */}
+                <div className="flex flex-col gap-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-semibold text-muted-foreground">Attachments (optional)</span>
+                    {feedbackFiles.length < 3 && (
+                      <button
+                        type="button"
+                        onClick={() => feedbackFileInputRef.current?.click()}
+                        className="flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-primary/80 transition-colors"
+                        data-testid="button-add-feedback-attachment"
+                      >
+                        <Paperclip size={13} />
+                        Add file
+                      </button>
+                    )}
+                  </div>
+                  {feedbackFiles.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                      {feedbackFiles.map((f, i) => (
+                        <div key={i} className="flex items-center gap-1.5 bg-muted/60 border border-border rounded-lg px-2.5 py-1.5 text-xs max-w-full" data-testid={`chip-feedback-file-${i}`}>
+                          {f.type.startsWith("image/") ? <ImageIcon size={12} className="text-primary flex-shrink-0" /> : <FileText size={12} className="text-primary flex-shrink-0" />}
+                          <span className="truncate max-w-[160px] font-medium">{f.name}</span>
+                          <span className="text-muted-foreground flex-shrink-0">({(f.size / 1024).toFixed(0)} KB)</span>
+                          <button
+                            type="button"
+                            onClick={() => setFeedbackFiles(prev => prev.filter((_, j) => j !== i))}
+                            className="ml-1 text-muted-foreground hover:text-destructive transition-colors flex-shrink-0"
+                            data-testid={`button-remove-feedback-file-${i}`}
+                          >
+                            <XIcon size={12} />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {feedbackFiles.length === 0 && (
+                    <button
+                      type="button"
+                      onClick={() => feedbackFileInputRef.current?.click()}
+                      className="flex items-center justify-center gap-2 w-full rounded-xl border border-dashed border-border bg-muted/30 hover:bg-muted/50 py-3 text-xs text-muted-foreground hover:text-foreground transition-colors"
+                      data-testid="button-feedback-dropzone"
+                    >
+                      <Paperclip size={14} />
+                      Click to attach a screenshot or file (up to 3, max 5 MB each)
+                    </button>
+                  )}
+                  {feedbackFileError && (
+                    <p className="text-xs text-destructive font-medium" data-testid="text-feedback-file-error">{feedbackFileError}</p>
+                  )}
+                </div>
                 <div className="flex gap-3">
                   <Button variant="outline" className="flex-1 rounded-xl font-bold" onClick={() => setFeedbackOpen(false)} data-testid="button-cancel-feedback">
                     Cancel
@@ -1618,11 +1705,13 @@ export default function DashboardPage() {
                           method: "POST",
                           headers: { "Content-Type": "application/json" },
                           credentials: "include",
-                          body: JSON.stringify({ message: feedbackMessage.trim() }),
+                          body: JSON.stringify({
+                            message: feedbackMessage.trim(),
+                            attachments: feedbackFiles.map(f => ({ name: f.name, type: f.type, data: f.data })),
+                          }),
                         });
                         setFeedbackSent(true);
                       } catch {
-                        // still show success to not confuse user
                         setFeedbackSent(true);
                       }
                     }}

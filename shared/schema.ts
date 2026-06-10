@@ -538,6 +538,7 @@ export const feedback = pgTable("feedback", {
   lastName: text("last_name"),
   facilityId: integer("facility_id"),
   message: text("message").notNull(),
+  attachments: jsonb("attachments"),
   createdAt: timestamp("created_at").notNull().defaultNow(),
 });
 

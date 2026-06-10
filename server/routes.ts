@@ -1348,9 +1348,17 @@ export async function registerRoutes(
 
   // ── Feedback routes ──────────────────────────────────────────────────────────
   app.post("/api/feedback", requireAuth, async (req, res) => {
-    const { message } = req.body;
+    const { message, attachments } = req.body;
     if (!message || typeof message !== "string" || message.trim().length === 0) {
       return res.status(400).json({ message: "Message is required" });
+    }
+    const validAttachments: { name: string; type: string; data: string }[] = [];
+    if (Array.isArray(attachments)) {
+      for (const a of attachments) {
+        if (a && typeof a.name === "string" && typeof a.type === "string" && typeof a.data === "string") {
+          validAttachments.push({ name: a.name, type: a.type, data: a.data });
+        }
+      }
     }
     const u = req.user as User;
     const entry = await storage.createFeedback({
@@ -1360,24 +1368,35 @@ export async function registerRoutes(
       lastName: u.lastName,
       facilityId: u.facilityId ?? undefined,
       message: message.trim(),
+      attachments: validAttachments.length > 0 ? validAttachments : undefined,
     });
 
     // Attempt email delivery via Resend if API key is configured
     if (process.env.RESEND_API_KEY) {
       try {
         const displayName = (u.firstName || u.lastName) ? `${u.firstName} ${u.lastName}`.trim() : u.username;
+        const attachmentLine = validAttachments.length > 0
+          ? `\n\nAttachments (${validAttachments.length}): ${validAttachments.map(a => a.name).join(", ")}`
+          : "";
+        const emailBody: any = {
+          from: "AccreditationReady Feedback <feedback@innovans.ai>",
+          to: (process.env.FEEDBACK_RECIPIENTS || "").split(",").map(e => e.trim()).filter(Boolean),
+          subject: `New Feedback from ${displayName}`,
+          text: `From: ${displayName} (@${u.username})\nFacility ID: ${u.facilityId || "N/A"}\n\n${message.trim()}${attachmentLine}`,
+        };
+        if (validAttachments.length > 0) {
+          emailBody.attachments = validAttachments.map(a => ({
+            filename: a.name,
+            content: a.data.split(",")[1] || a.data,
+          }));
+        }
         await fetch("https://api.resend.com/emails", {
           method: "POST",
           headers: {
             "Authorization": `Bearer ${process.env.RESEND_API_KEY}`,
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({
-            from: "AccreditationReady Feedback <feedback@innovans.ai>",
-            to: (process.env.FEEDBACK_RECIPIENTS || "").split(",").map(e => e.trim()).filter(Boolean),
-            subject: `New Feedback from ${displayName}`,
-            text: `From: ${displayName} (@${u.username})\nFacility ID: ${u.facilityId || "N/A"}\n\n${message.trim()}`,
-          }),
+          body: JSON.stringify(emailBody),
         });
       } catch (emailErr) {
         console.error("[Feedback] Email delivery failed:", emailErr);
