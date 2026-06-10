@@ -1,0 +1,45 @@
+Node.js v20.20.2
+render@srv-d6os5dv5gffc73dp5nsg-d8d5468c4-gzhl5:~/project/src$ psql $DATABASE_URL -c "SELECT id, username, first_name, last_name, leadership_role, organization_type, facility_id, created_at FROM users ORDER BY created_at DESC;"
+ id |            username             | first_name |    last_name    | leadership_role | organization_type | facility_id |         created_
+at         
+----+---------------------------------+------------+-----------------+-----------------+-------------------+-------------+-----------------
+-----------
+ 19 | cstrangberg                     | Courtney   | Strangberg      | learner         | hospital          |           3 | 2026-06-10 17:01
+:28.004121
+ 18 | w83156                          | Krista     | Schwingle       | learner         | hospital          |           3 | 2026-06-10 16:35
+:21.126819
+ 17 | dmassey                         | Deanna     | Massey          | learner         | hospital          |           3 | 2026-06-10 16:33
+:01.330157
+ 16 | ericakomorowski                 | Erica      | Komorowski      | learner         | hospital          |           4 | 2026-06-10 16:32
+:01.332321
+ 15 | testuser                        | test       | user            | learner         | hospital          |           3 | 2026-06-10 16:27
+:28.832564
+ 14 | rossayy19                       | Ashlie     | Vojvodich-Rossi | learner         | hospital          |           3 | 2026-06-10 15:57
+:30.654889
+ 13 | tiabia90                        | Shantia    | Spicer          | learner         | hospital          |           3 | 2026-06-10 15:43
+:35.030785
+ 12 | becks7580                       | Rebecca    | Mielke          | learner         | hospital          |           3 | 2026-06-10 15:14
+:09.34568
+ 11 | vanzeelandcj                    | Chris      | Van Zeeland     | learner         | hospital          |           3 | 2026-06-10 15:10
+:15.838585
+ 10 | vg5413                          | Vicki      | Gessner         | learner         | hospital          |           3 | 2026-06-10 15:10
+:03.328945
+  9 | keya1102                        | Takeya     | McGlaston       | learner         | hospital          |           3 | 2026-06-10 15:08
+:27.636173
+  8 | ecbolinski                      | Ellyn      | Bolinski        | director        | hospital          |           3 | 2026-06-10 15:07
+:30.118072
+  7 | danielle.barriere@ascension.org | Danielle   | Eaton           | learner         | hospital          |           3 | 2026-05-12 15:51
+:17.290475
+  6 | Cassi                           | Cassi      | Scaife          | learner         | hospital          |           3 | 2026-05-12 14:51
+:40.625122
+  5 | blskajdegngt                    | blskaj     | degngt          | learner         | hospital          |           3 | 2026-05-12 13:53
+:38.332174
+  4 | Patti                           | Patricia   | Paulus          | learner         | hospital          |           1 | 2026-04-02 13:30
+:12.661686
+  3 | Sheilagans                      | Sheila     | Gansemer        | learner         | hospital          |           1 | 2026-03-20 00:19
+:58.818744
+  2 | rsaluja                         | Rajit      | Saluja          | learner         | hospital          |           1 | 2026-03-12 16:30
+:12.90534
+  1 | akshaysaluja                    | Akshay     | Saluja          | director        | hospital          |           1 | 2026-03-11 21:01
+:08.874176
+(19 rows)
