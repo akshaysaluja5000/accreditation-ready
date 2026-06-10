@@ -94,7 +94,7 @@ function getAnthropicClient() {
   const baseURL = process.env.AI_INTEGRATIONS_ANTHROPIC_BASE_URL;
   const opts: ConstructorParameters<typeof Anthropic>[0] = {
     apiKey,
-    maxRetries: 3,
+    maxRetries: 0,
     timeout: 30000,
   };
   if (baseURL) {
@@ -2602,7 +2602,7 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
         setTimeout(() => reject(new Error("AI_TIMEOUT")), AI_TIMEOUT_MS)
       );
       const message = await Promise.race([
-        callAnthropicWithRetry({ model: "claude-haiku-4-5", max_tokens: 4000, messages: [{ role: "user", content: prompt }] }, 1),
+        callAnthropicWithRetry({ model: "claude-haiku-4-5", max_tokens: 8000, messages: [{ role: "user", content: prompt }] }, 1),
         timeoutPromise,
       ]);
       const raw = message.content[0]?.type === "text" ? message.content[0].text.trim() : "[]";
