@@ -211,7 +211,7 @@ export default function LandingPage() {
                   <ShieldCheck size={20} className="text-primary" />
                 </div>
                 <h2 className="text-2xl md:text-3xl font-black tracking-tight text-foreground" data-testid="text-solution-heading">
-                  Continuous readiness, built into the workday.
+                  Continuous readiness built into the workday.
                 </h2>
               </div>
               <p className="text-base text-muted-foreground leading-relaxed max-w-3xl" data-testid="text-solution-body">
