@@ -74,7 +74,7 @@ export const ascValLevel: Level = {
         "To assess the clinical quality of care provided by the organization",
         "To verify that the information in the organization's AAAHC application and profile is accurate and complete",
         "To validate that the organization has passed all Universal standards",
-        "To review the organization's financial statements for accuracy",
+        "To review the organization's financial statements for accuracy"
       ],
       correctIndex: 1,
       explanation:
@@ -101,7 +101,7 @@ export const ascValLevel: Level = {
         "For all outpatient procedures regardless of anesthesia type",
         "When anesthesia (beyond local/peripheral nerve block) is used in doses that have the probability of placing patients at risk for loss of protective reflexes",
         "Only for procedures requiring intubation",
-        "Only for facilities billing under a physician's name",
+        "Only for facilities billing under a physician's name"
       ],
       correctIndex: 1,
       explanation:
@@ -128,7 +128,7 @@ export const ascValLevel: Level = {
         "Within 30 days of detection",
         "Within five days of detection - or within 24 hours if the event is an ongoing urgent threat to the welfare, health, or safety of patients, personnel, or visitors",
         "Within 15 days of detection",
-        "At the annual quality report submission",
+        "At the annual quality report submission"
       ],
       correctIndex: 1,
       explanation:
@@ -155,7 +155,7 @@ export const ascValLevel: Level = {
         "A standard death certificate submitted to the county recorder",
         "The Outpatient Surgery Patient Death Reporting Form submitted by the physician to the Medical Board of California, Central Complaint Unit, within 15 days of the occurrence",
         "A hospital incident report submitted to the state Department of Health",
-        "No specific form is required - the death is documented in the medical record only",
+        "No specific form is required - the death is documented in the medical record only"
       ],
       correctIndex: 1,
       explanation:
@@ -182,7 +182,7 @@ export const ascValLevel: Level = {
         "Verbal notification to the receiving hospital is sufficient",
         "Parts A and B of the Patient Transfer Reporting Form must be filed in the patient's medical record, AND Part B must be submitted to the Office of Statewide Health Planning and Development (OSHPD) within 15 days",
         "The transfer is reported to the Medical Board of California using the death reporting form",
-        "Only the admitting diagnosis at the receiving hospital needs to be documented",
+        "Only the admitting diagnosis at the receiving hospital needs to be documented"
       ],
       correctIndex: 1,
       explanation:
@@ -209,7 +209,7 @@ export const ascValLevel: Level = {
         "The definition of a 'hospital' under California Health and Safety Code §1250",
         "The definition of an 'outpatient setting' under California Health and Safety Code §1248(b)",
         "The definition of a 'clinic' under California BPC §2216",
-        "No specific California statutory definition applies to AAAHC accreditation",
+        "No specific California statutory definition applies to AAAHC accreditation"
       ],
       correctIndex: 1,
       explanation:
@@ -236,7 +236,7 @@ export const ascValLevel: Level = {
         "No action is needed - billing changes are administrative, not clinical",
         "The AAAHC profile must be updated to accurately reflect that the practice now has a separate entity for billing purposes, as required by NYS PHL 230-d(1)(a)",
         "A new accreditation application must be filed",
-        "The state DOH must approve the billing change before it can be reflected in the AAAHC profile",
+        "The state DOH must approve the billing change before it can be reflected in the AAAHC profile"
       ],
       correctIndex: 1,
       explanation:
@@ -263,7 +263,7 @@ export const ascValLevel: Level = {
         "Not Applicable - the standard does not apply to this organization based on its profile information or characteristics",
         "Non-Adherent - the organization has failed to meet the standard",
         "Not Available - the required documentation was not provided",
-        "Near Adherence - the organization has minor gaps in compliance",
+        "Near Adherence - the organization has minor gaps in compliance"
       ],
       correctIndex: 0,
       explanation:
@@ -290,7 +290,7 @@ export const ascValLevel: Level = {
         "The practice's malpractice insurance carrier names",
         "The types of health care professionals employed by the practice",
         "The surgical procedures performed in the past 12 months",
-        "The practice's annual revenue",
+        "The practice's annual revenue"
       ],
       correctIndex: 1,
       explanation:
@@ -317,7 +317,7 @@ export const ascValLevel: Level = {
         "No VAL obligation - services can be expanded without notifying AAAHC until the next survey",
         "The AAAHC profile must be updated to accurately reflect the new services provided - the profile must remain current",
         "A new accreditation application must be submitted for bariatric services",
-        "Bariatric services do not require profile updates because they fall under 'surgical services' already listed",
+        "Bariatric services do not require profile updates because they fall under 'surgical services' already listed"
       ],
       correctIndex: 1,
       explanation:
@@ -344,7 +344,7 @@ export const ascValLevel: Level = {
         "The AAAHC surveyor reviewed the forms during the survey",
         "The organization reviewed its own compliance with the reporting requirement and has documentation available to demonstrate that required forms were available and used when applicable events occurred",
         "The Medical Board of California reviewed and confirmed receipt of the forms",
-        "Documentation review is not part of the VAL standard - only form availability is assessed",
+        "Documentation review is not part of the VAL standard - only form availability is assessed"
       ],
       correctIndex: 1,
       explanation:
@@ -371,7 +371,7 @@ export const ascValLevel: Level = {
         "The name and contact information of its largest insurance payer",
         "Whether the practice uses a billing and collection service for all accounts receivable",
         "The percentage of revenue from each payer type",
-        "Whether the practice offers self-pay options",
+        "Whether the practice offers self-pay options"
       ],
       correctIndex: 1,
       explanation:
@@ -398,7 +398,7 @@ export const ascValLevel: Level = {
         "VAL standards override other AAAHC standards when conflicts exist",
         "VAL standards are supplementary - they validate profile information and state-specific requirements without replacing the Universal and clinical Selective standards that all organizations must meet",
         "Organizations that meet all VAL standards are exempt from inspection under other standard categories",
-        "VAL is the first category assessed - organizations with VAL deficiencies are not assessed on other standards",
+        "VAL is the first category assessed - organizations with VAL deficiencies are not assessed on other standards"
       ],
       correctIndex: 1,
       explanation:
@@ -425,7 +425,7 @@ export const ascValLevel: Level = {
         "No finding - incident reports are equivalent to California-required forms",
         "NC (Non-Compliant) - the California-required reporting form was not submitted within 15 days as required by BPC §2240",
         "PC (Partial Compliance) - the incident report partially satisfies the California requirement",
-        "The finding depends on whether the patient's family was notified",
+        "The finding depends on whether the patient's family was notified"
       ],
       correctIndex: 1,
       explanation:
@@ -452,7 +452,7 @@ export const ascValLevel: Level = {
         "A minor administrative error with no compliance implications",
         "An inaccuracy in the AAAHC profile that must be corrected - ongoing profile accuracy is a VAL obligation",
         "Only a credentialing concern - not a VAL issue",
-        "The profile may list retired physicians as long as they are marked as inactive",
+        "The profile may list retired physicians as long as they are marked as inactive"
       ],
       correctIndex: 1,
       explanation:
@@ -479,7 +479,7 @@ export const ascValLevel: Level = {
         "Ambulatory surgery centers with fewer than five ORs",
         "Settings where anxiolytics and analgesics are administered in doses that do not place the patient at risk for loss of protective reflexes",
         "Solo physician offices performing any surgical procedures",
-        "All settings that are not part of a general acute care hospital",
+        "All settings that are not part of a general acute care hospital"
       ],
       correctIndex: 1,
       explanation:
@@ -506,7 +506,7 @@ export const ascValLevel: Level = {
         "Within five days of detection",
         "Within 24 hours of detection",
         "Within 15 days of detection",
-        "Before the end of the business day on which the event was detected",
+        "Before the end of the business day on which the event was detected"
       ],
       correctIndex: 1,
       explanation:
@@ -533,7 +533,7 @@ export const ascValLevel: Level = {
         "A financial agreement with the receiving hospital must be in place",
         "Patients can be transferred safely and without delay to a hospital capable of treating the patient's condition - with clear protocols for initiating the transfer",
         "Only patients with government insurance require transfer protocols",
-        "Transfer policies are optional if the ASC has a physician on duty at all times",
+        "Transfer policies are optional if the ASC has a physician on duty at all times"
       ],
       correctIndex: 1,
       explanation:
@@ -560,7 +560,7 @@ export const ascValLevel: Level = {
         "Emergency equipment must be available at all times and inspected per the organization's written inspection schedule",
         "Emergency equipment is only required if the facility has an ICU",
         "Emergency equipment must be new - equipment purchased more than five years ago must be replaced",
-        "Emergency equipment documentation is maintained by the anesthesiologist only",
+        "Emergency equipment documentation is maintained by the anesthesiologist only"
       ],
       correctIndex: 0,
       explanation:
@@ -587,7 +587,7 @@ export const ascValLevel: Level = {
         "Only California standards apply - New York standards are less stringent",
         "The organization must comply with all applicable VAL standards from both states - each state's requirements apply to operations in that state",
         "The organization may choose which state's standards to follow",
-        "Multi-state ASC operators are automatically exempt from VAL requirements",
+        "Multi-state ASC operators are automatically exempt from VAL requirements"
       ],
       correctIndex: 1,
       explanation:

@@ -81,7 +81,7 @@ export const ascAdmLevel: Level = {
         "There is no compliance issue - verbal understanding meets ADM requirements",
         "The organizational structure must be defined and documented in writing",
         "Only organizations with more than 25 employees need organizational charts",
-        "Organizational charts are only required if the governing body has more than five members",
+        "Organizational charts are only required if the governing body has more than five members"
       ],
       correctIndex: 1,
       explanation:
@@ -108,7 +108,7 @@ export const ascAdmLevel: Level = {
         "Only the date of hire and department assignment",
         "Orientation to the organization, job duties, emergency procedures, and applicable policies - before independent practice",
         "Only the proof of RN licensure",
-        "A 90-day probationary performance evaluation",
+        "A 90-day probationary performance evaluation"
       ],
       correctIndex: 1,
       explanation:
@@ -135,7 +135,7 @@ export const ascAdmLevel: Level = {
         "Staff may practice on expired licenses for up to 90 days while renewal is pending",
         "Personnel files must contain current licensure, and the organization must track expiration dates to prevent lapsed licenses",
         "Only physicians are required to maintain current licensure under ADM standards",
-        "License tracking is a state board responsibility, not an organizational requirement",
+        "License tracking is a state board responsibility, not an organizational requirement"
       ],
       correctIndex: 1,
       explanation:
@@ -162,7 +162,7 @@ export const ascAdmLevel: Level = {
         "Annual competencies are optional if the employee has been with the organization for more than three years",
         "This is a deficiency - ADM requires documented ongoing competency verification at defined intervals",
         "Only new employees need competency verification; experienced staff are exempt",
-        "This is only a finding if the employee made a clinical error in the past year",
+        "This is only a finding if the employee made a clinical error in the past year"
       ],
       correctIndex: 1,
       explanation:
@@ -189,7 +189,7 @@ export const ascAdmLevel: Level = {
         "A minor documentation gap that can be resolved after the survey",
         "A compliance deficiency - policies must be reviewed at the interval defined by the organization's own policy management system",
         "Acceptable - AAAHC only requires policy review every 3 years",
-        "Only clinical policies require annual review; administrative policies may be reviewed less frequently",
+        "Only clinical policies require annual review; administrative policies may be reviewed less frequently"
       ],
       correctIndex: 1,
       explanation:
@@ -216,7 +216,7 @@ export const ascAdmLevel: Level = {
         "Only the pre-employment physical examination results",
         "Health screening records relevant to the employee's role, including immunization status and any required baseline testing",
         "Full medical histories including all past diagnoses",
-        "Health records are an employee's private information and may not be kept by the employer",
+        "Health records are an employee's private information and may not be kept by the employer"
       ],
       correctIndex: 1,
       explanation:
@@ -243,7 +243,7 @@ export const ascAdmLevel: Level = {
         "The profitability of the new service line",
         "Whether personnel are sufficient in number and qualifications to support the new endoscopy service safely",
         "Whether the physical space meets architectural standards only",
-        "Staffing for new service lines is assessed only after the first six months of operation",
+        "Staffing for new service lines is assessed only after the first six months of operation"
       ],
       correctIndex: 1,
       explanation:
@@ -270,7 +270,7 @@ export const ascAdmLevel: Level = {
         "Fire safety knowledge is optional for administrative staff",
         "ADM orientation requirements include emergency procedures, and staff must demonstrate knowledge of those procedures",
         "Fire safety training is only required for facilities with an inpatient component",
-        "The surveyor cannot test emergency knowledge - only observe drills",
+        "The surveyor cannot test emergency knowledge - only observe drills"
       ],
       correctIndex: 1,
       explanation:
@@ -297,7 +297,7 @@ export const ascAdmLevel: Level = {
         "Equipment can be put into service immediately based on manufacturer instructions",
         "Training on the new equipment must be provided to all intended operators before it is used in patient care",
         "Only the medical director needs equipment training - other staff learn on the job",
-        "Training is only required for equipment with specific FDA-required training programs",
+        "Training is only required for equipment with specific FDA-required training programs"
       ],
       correctIndex: 1,
       explanation:
@@ -324,7 +324,7 @@ export const ascAdmLevel: Level = {
         "No documentation is needed for temporary staff if they are from a staffing agency",
         "The temporary manager's authority, responsibilities, and qualifications must be documented, including any required licensure or certification",
         "Temporary managers are exempt from ADM documentation requirements for the first 90 days",
-        "Only clinical staff require documentation - administrative temporary staff are exempt",
+        "Only clinical staff require documentation - administrative temporary staff are exempt"
       ],
       correctIndex: 1,
       explanation:
@@ -351,7 +351,7 @@ export const ascAdmLevel: Level = {
         "She can learn sterile processing techniques from observing an experienced colleague without formal documentation",
         "She must receive documented training and demonstrate competency in sterile processing before performing these tasks independently",
         "Sterile processing training only applies to employees with the specific job title of 'sterile processing technician'",
-        "ADM competency requirements do not apply to cross-trained staff",
+        "ADM competency requirements do not apply to cross-trained staff"
       ],
       correctIndex: 1,
       explanation:
@@ -378,7 +378,7 @@ export const ascAdmLevel: Level = {
         "Patients accept inherent limitations of outpatient care - no after-hours coverage is required",
         "Documentation of how clinical coverage or advice is provided after normal working hours, as required by the organization's policies",
         "A contracted hospital must accept all after-hours calls from ASC patients",
-        "After-hours care is only required for facilities that use general anesthesia",
+        "After-hours care is only required for facilities that use general anesthesia"
       ],
       correctIndex: 1,
       explanation:
@@ -405,7 +405,7 @@ export const ascAdmLevel: Level = {
         "Performance evaluations are optional under AAAHC standards",
         "Failing to complete evaluations at the organization's own required interval is an ADM deficiency",
         "Evaluations are only required for employees in their first year",
-        "Annual evaluations are only required for clinical staff, not administrative employees",
+        "Annual evaluations are only required for clinical staff, not administrative employees"
       ],
       correctIndex: 1,
       explanation:
@@ -432,7 +432,7 @@ export const ascAdmLevel: Level = {
         "The patient registration form",
         "The organization's written policies for after-hours coverage, including call schedules",
         "The facility's architectural plans",
-        "The governing body meeting minutes alone",
+        "The governing body meeting minutes alone"
       ],
       correctIndex: 1,
       explanation:
@@ -459,7 +459,7 @@ export const ascAdmLevel: Level = {
         "It means accepting a photocopy of the license provided by the employee",
         "It means verifying the license directly with the issuing state licensing board, not solely relying on the employee's representation",
         "Primary source verification is only required for physicians, not nurses or technicians",
-        "Primary source verification is optional if the employee has worked at the facility for more than five years",
+        "Primary source verification is optional if the employee has worked at the facility for more than five years"
       ],
       correctIndex: 1,
       explanation:
@@ -486,7 +486,7 @@ export const ascAdmLevel: Level = {
         "No - ADM only requires clinical policies; administrative policies are optional",
         "Yes - ADM requires written policies covering all aspects of operations, including administrative functions",
         "Only billing policies are required for Medicare-participating ASCs",
-        "Administrative policies must only be in place if the organization has received a patient complaint about those issues",
+        "Administrative policies must only be in place if the organization has received a patient complaint about those issues"
       ],
       correctIndex: 1,
       explanation:
@@ -513,7 +513,7 @@ export const ascAdmLevel: Level = {
         "Only the anesthesiologist's training matters for equipment compliance",
         "SAF.230 and ADM training requirements are at risk - vendor representatives cannot be the sole source of training, and all intended operators must be trained",
         "Equipment training is the vendor's responsibility, not the organization's",
-        "Training documentation is only required after the first patient is treated with the equipment",
+        "Training documentation is only required after the first patient is treated with the equipment"
       ],
       correctIndex: 1,
       explanation:
@@ -540,7 +540,7 @@ export const ascAdmLevel: Level = {
         "Wait until the next annual review cycle to update the policy",
         "Update the policy promptly to reflect the regulatory change and ensure staff are notified of the revision",
         "Regulations supersede policies automatically - no policy update is needed",
-        "The governing body must vote on all regulatory-driven policy changes at their next meeting",
+        "The governing body must vote on all regulatory-driven policy changes at their next meeting"
       ],
       correctIndex: 1,
       explanation:
@@ -567,7 +567,7 @@ export const ascAdmLevel: Level = {
         "The organization's posted patient rights notice in the waiting room",
         "Signed acknowledgments in personnel files confirming receipt and review of patient rights policies, plus training records",
         "A verbal statement from the administrator that all staff were trained at orientation",
-        "The date stamp on the most recently updated patient rights policy document",
+        "The date stamp on the most recently updated patient rights policy document"
       ],
       correctIndex: 1,
       explanation:
@@ -594,7 +594,7 @@ export const ascAdmLevel: Level = {
         "No risk - a capable administrator can manage all these functions without documented delegation",
         "Lack of documented delegation creates a governance and continuity risk - if the administrator is unavailable, no one has clear authority to act",
         "Only large ASCs need documented delegation of authority",
-        "Delegation documentation is only required when the administrator is away on leave",
+        "Delegation documentation is only required when the administrator is away on leave"
       ],
       correctIndex: 1,
       explanation:

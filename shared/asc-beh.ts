@@ -74,7 +74,7 @@ export const ascBehLevel: Level = {
         "Visual privacy is met - auditory privacy is not required in outpatient settings",
         "BEH.100 requires both visual and auditory privacy in individual therapy settings - overheard conversations violate patient confidentiality and therapeutic privacy",
         "Acoustic privacy is the patient's responsibility - they should speak quietly",
-        "Partitions are acceptable if patients sign a confidentiality waiver",
+        "Partitions are acceptable if patients sign a confidentiality waiver"
       ],
       correctIndex: 1,
       explanation:
@@ -101,7 +101,7 @@ export const ascBehLevel: Level = {
         "The standard HIPAA treatment, payment, and operations exception allows SUD information to be shared with the primary care physician",
         "42 CFR Part 2 requires specific patient consent for most disclosures of SUD records - the patient's request must be respected unless a legally defined exception applies",
         "The primary care physician may always access SUD records through a HIE",
-        "SUD records are subject to the same disclosure rules as all other health records under HIPAA",
+        "SUD records are subject to the same disclosure rules as all other health records under HIPAA"
       ],
       correctIndex: 1,
       explanation:
@@ -128,7 +128,7 @@ export const ascBehLevel: Level = {
         "Yes - coping skills improvement is a universally appropriate behavioral health goal",
         "No - treatment goals must be specific, measurable, and individualized to the patient's presenting problems and diagnosis",
         "Yes - the goal is appropriate as long as a specific intervention type is listed",
-        "Treatment plan specificity is left to the clinician's discretion - AAAHC does not prescribe goal format",
+        "Treatment plan specificity is left to the clinician's discretion - AAAHC does not prescribe goal format"
       ],
       correctIndex: 1,
       explanation:
@@ -155,7 +155,7 @@ export const ascBehLevel: Level = {
         "The associate license is sufficient - no additional documentation is required",
         "A documented supervision arrangement with a fully licensed clinician, including the supervisor's credentials and the frequency and format of supervision",
         "Only the supervising clinician's credentials need to be on file - the associate's credential is assumed from employment",
-        "Associate-licensed staff may not provide services in AAAHC-accredited settings",
+        "Associate-licensed staff may not provide services in AAAHC-accredited settings"
       ],
       correctIndex: 1,
       explanation:
@@ -182,7 +182,7 @@ export const ascBehLevel: Level = {
         "Close the case after 30 days of no contact - no further action is required",
         "Attempt documented follow-up with the patient who disengaged prematurely - the organization must have a policy for following up with patients who leave treatment early",
         "Immediately refer the case to the emergency crisis line",
-        "Send the patient's file to their primary care physician automatically",
+        "Send the patient's file to their primary care physician automatically"
       ],
       correctIndex: 1,
       explanation:
@@ -209,7 +209,7 @@ export const ascBehLevel: Level = {
         "DSM-5 severity specifiers alone",
         "American Society of Addiction Medicine (ASAM) Patient Placement Criteria",
         "GAF (Global Assessment of Functioning) score",
-        "Beck Anxiety Inventory scores",
+        "Beck Anxiety Inventory scores"
       ],
       correctIndex: 1,
       explanation:
@@ -236,7 +236,7 @@ export const ascBehLevel: Level = {
         "The patient's insurance eligibility and co-pay amount",
         "That the patient is in a private location that ensures their auditory and visual privacy during the session",
         "That the patient has a stable internet connection",
-        "Telehealth sessions have no specific privacy requirements beyond HIPAA",
+        "Telehealth sessions have no specific privacy requirements beyond HIPAA"
       ],
       correctIndex: 1,
       explanation:
@@ -263,7 +263,7 @@ export const ascBehLevel: Level = {
         "Whenever the patient becomes disruptive to the therapeutic group process",
         "Only as a last resort when there is an immediate safety risk and less restrictive interventions have been ineffective or are not appropriate - and only in compliance with applicable state and federal regulations",
         "Restraint may be used at the clinical team's discretion for non-compliant patients",
-        "Seclusion is always prohibited in ambulatory behavioral health settings under any circumstances",
+        "Seclusion is always prohibited in ambulatory behavioral health settings under any circumstances"
       ],
       correctIndex: 1,
       explanation:
@@ -290,7 +290,7 @@ export const ascBehLevel: Level = {
         "SUD records must be stored in a separate physical file cabinet",
         "42 CFR Part 2 requires SUD records to be kept confidential and not disclosed without explicit patient consent, even to treating providers - with limited exceptions",
         "SUD records must be destroyed after five years regardless of state law",
-        "Only the patient's psychiatrist may access SUD records",
+        "Only the patient's psychiatrist may access SUD records"
       ],
       correctIndex: 1,
       explanation:
@@ -317,7 +317,7 @@ export const ascBehLevel: Level = {
         "Patient signature on any form is sufficient to demonstrate involvement",
         "Documentation of the patient's input into goals and preferences, their agreement (or documented disagreement) with the treatment plan, and any modifications made based on their feedback",
         "Patient involvement is assumed unless the patient specifically objects",
-        "Patient involvement only needs to be documented at the initial treatment plan - updates can be clinician-directed",
+        "Patient involvement only needs to be documented at the initial treatment plan - updates can be clinician-directed"
       ],
       correctIndex: 1,
       explanation:
@@ -344,7 +344,7 @@ export const ascBehLevel: Level = {
         "Level of care only matters for billing purposes - all patients receive equivalent intensity of services",
         "Level of care determines the intensity of services a patient receives, matching clinical need to treatment intensity using criteria such as ASAM for SUD or equivalent criteria for mental health",
         "Level of care is determined solely by the patient's insurance plan",
-        "All ambulatory behavioral health patients receive the same level of care by definition",
+        "All ambulatory behavioral health patients receive the same level of care by definition"
       ],
       correctIndex: 1,
       explanation:
@@ -371,7 +371,7 @@ export const ascBehLevel: Level = {
         "Yes - master's-level counselors may prescribe medications if supervised by a psychiatrist",
         "No - prescribing psychotropic medications requires licensure as a prescribing provider (psychiatrist, psychiatric APRN, or as authorized by state law) - master's-level counselors are not authorized to prescribe",
         "Prescribing is permitted if the counselor has completed a medication management training course",
-        "BEH.130 does not address prescribing authority",
+        "BEH.130 does not address prescribing authority"
       ],
       correctIndex: 1,
       explanation:
@@ -398,7 +398,7 @@ export const ascBehLevel: Level = {
         "Each condition requires a separate treatment plan managed by different providers without coordination",
         "The integrated treatment plan should address both diagnoses with specific goals and interventions for each - recognizing their interaction and the need for coordinated treatment",
         "Only the primary diagnosis (whichever is more severe) needs to be addressed in the treatment plan",
-        "Alcohol use disorder requires a separate program - it cannot be addressed in a mental health treatment plan",
+        "Alcohol use disorder requires a separate program - it cannot be addressed in a mental health treatment plan"
       ],
       correctIndex: 1,
       explanation:
@@ -425,7 +425,7 @@ export const ascBehLevel: Level = {
         "Nothing - patient autonomy means refusal requires no documentation",
         "The refusal must be documented along with the clinician's explanation of the recommendation, the risks of refusal communicated to the patient, and any alternative plan discussed",
         "A refusal terminates the treatment relationship automatically",
-        "Only the patient's signature on a refusal form is needed",
+        "Only the patient's signature on a refusal form is needed"
       ],
       correctIndex: 1,
       explanation:
@@ -452,7 +452,7 @@ export const ascBehLevel: Level = {
         "They are the same - any transition out of a program is called a discharge",
         "Discharge is the completion of a treatment episode; a warm handoff is an active, supported transition to another provider or level of care with direct communication between the referring and receiving clinicians",
         "Warm handoffs are only required for SUD patients transitioning to residential care",
-        "Warm handoffs require a formal transfer agreement between organizations",
+        "Warm handoffs require a formal transfer agreement between organizations"
       ],
       correctIndex: 1,
       explanation:
@@ -479,7 +479,7 @@ export const ascBehLevel: Level = {
         "Group size is a therapeutic preference - space requirements do not apply",
         "The therapeutic setting must be appropriate for the service provided - an overcrowded group therapy space compromises both confidentiality and therapeutic environment",
         "Patients in the hallway maintain confidentiality as long as the hallway is not public space",
-        "Only individual therapy rooms have specific space requirements under BEH standards",
+        "Only individual therapy rooms have specific space requirements under BEH standards"
       ],
       correctIndex: 1,
       explanation:
@@ -506,7 +506,7 @@ export const ascBehLevel: Level = {
         "Document the lack of progress and continue the current treatment plan for another six weeks",
         "Revise the treatment plan based on the updated assessment - changing goals, interventions, or level of care as clinically indicated",
         "Discharge the patient for non-compliance with the treatment plan",
-        "BEH.120 review cycles are not triggered by lack of progress - only by time intervals",
+        "BEH.120 review cycles are not triggered by lack of progress - only by time intervals"
       ],
       correctIndex: 1,
       explanation:
@@ -533,7 +533,7 @@ export const ascBehLevel: Level = {
         "Standard informed consent is sufficient - telehealth does not require additional elements",
         "Informed consent for telehealth must include: the nature of telehealth and its limitations, confidentiality in the telehealth context, the technology platform to be used, what happens in case of technical failure, and emergency contact protocols if the patient experiences a crisis during a session",
         "Only the patient's agreement to pay the telehealth copay is required",
-        "Telehealth consent requires notarization",
+        "Telehealth consent requires notarization"
       ],
       correctIndex: 1,
       explanation:
@@ -560,7 +560,7 @@ export const ascBehLevel: Level = {
         "Yes - LCSWs may conduct any type of assessment if supervised by a psychologist",
         "It depends on state law - in many states psychological testing is restricted to licensed psychologists, and the organization must verify state scope of practice before authorizing this service",
         "LCSWs are always authorized to conduct psychological testing in behavioral health settings",
-        "Psychological testing scope of practice is determined by the employer, not state law",
+        "Psychological testing scope of practice is determined by the employer, not state law"
       ],
       correctIndex: 1,
       explanation:
@@ -587,7 +587,7 @@ export const ascBehLevel: Level = {
         "When the patient requests discharge",
         "At admission - discharge planning begins from the first day of treatment",
         "When the patient has met all treatment plan goals",
-        "When the clinical team determines discharge is imminent",
+        "When the clinical team determines discharge is imminent"
       ],
       correctIndex: 1,
       explanation:

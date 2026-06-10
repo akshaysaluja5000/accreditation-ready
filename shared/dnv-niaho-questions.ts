@@ -71,7 +71,7 @@ export const dnvLevels: Level[] = [
         question: "Under NIAHO QM.1, who holds OVERALL ACCOUNTABILITY for the Quality Management System?",
         options: [
           "Management Representative — coordinates QMS activities.",
-          "CEO — responsible for day-to-day implementation.",
+          "Governing body — holds ultimate accountability for QMS performance.",
           "Governing body — holds ultimate accountability for QMS performance.",
           "Chief Quality Officer — leads quality improvement initiatives."
         ],

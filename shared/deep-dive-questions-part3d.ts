@@ -159,9 +159,9 @@ export const ddEocLevel: DeepDiveLevel = {
       id: "dd-eoc4",
       baseQuestion: "A Joint Commission surveyor asks a nurse on a med-surg unit where the Safety Data Sheets (SDS) for chemicals used in the department are located. What is the BEST response that demonstrates compliance?",
       baseOptions: [
-        "We do not use any hazardous chemicals on this unit so SDS are not required",
+        "SDS information is available electronically through our hospital intranet and can be accessed 24/7 by any staff member during their shift",
         "The SDS sheets are filed in the pharmacy department since they manage all chemicals",
-        "The SDS binder is kept locked in the charge nurse's office for security",
+        "The SDS binder is kept locked in the charge nurse's office for security purposes",
         "SDS information is available electronically through our hospital intranet and can be"
       ],
       baseCorrectIndex: 3,
@@ -208,10 +208,10 @@ export const ddEocLevel: DeepDiveLevel = {
       id: "dd-eoc5",
       baseQuestion: "Your facility's Emergency Management Committee is reviewing the annual drill schedule. Per Joint Commission requirements, how many emergency management exercises must a hospital conduct per year?",
       baseOptions: [
-        "Two full-scale exercises per year involving all departments",
-        "Four exercises per year, one per quarter",
+        "Two full-scale exercises per year involving all departments and community partners",
+        "Four exercises per year, one per quarter, to ensure comprehensive hazard coverage",
         "Two per year, with one being a community-wide or",
-        "One tabletop exercise per year is sufficient"
+        "One tabletop exercise per year is sufficient if it addresses all identified hazard vulnerabilities"
       ],
       baseCorrectIndex: 2,
       baseExplanation: "Joint Commission standard EM.03.01.03 requires hospitals to conduct two emergency management exercises per year. These exercises must be spaced appropriately and should test various aspects of the Emergency Operations Plan. At least one should be a community-based exercise or a functional exercise that includes an influx of simulated patients. If the organization activates its EOP in response to a real emergency, that activation may substitute for one of the required exercises.",
@@ -260,7 +260,7 @@ export const ddEocLevel: DeepDiveLevel = {
         "Once per shift per quarter, totaling 12 total drills per year across all shifts",
         "Monthly on each shift, for a total of 12 drills per shift per year",
         "Quarterly per shift, totaling 4 drills per shift per year",
-        "Semi-annually per shift with at least one unannounced"
+        "Semi-annually per shift with at least one unannounced drill per shift"
       ],
       baseCorrectIndex: 0,
       baseExplanation: "Per NFPA 101 and JC standards (EC.02.03.03 EP 3 for ambulatory; PE.03.01.01 EP 3 for hospitals), fire drills must be conducted at least quarterly on each shift - a minimum of 12 drills per year across three shifts. All drills must be unannounced, held at unexpected times, and conducted under varying conditions. As of March 1, 2026, two formerly required scheduling restrictions were eliminated: the rule that drills must be spaced at least one hour apart within the same quarter, and the rule requiring each quarterly drill to fall within plus or minus ten days of the last. These restrictions no longer apply. Documentation must include date, time, shift, participants, scenario, and any identified deficiencies with corrective actions.",
@@ -602,8 +602,8 @@ export const ddEocLevel: DeepDiveLevel = {
       baseOptions: [
         "Smoking is prohibited on all hospital property without exception per Joint Commission",
         "Secondhand smoke can enter the building through the air intake",
-        "The patient is violating the facility's no-smoking policy",
-        "The smoking area must be at least 50 feet from any structure per federal law"
+        "The smoking area must be at least 50 feet from any structure per federal law",
+        "The patient lacks capacity to consent to the smoking restriction"
       ],
       baseCorrectIndex: 1,
       baseExplanation: "While Joint Commission standard EC.02.06.01 addresses smoking risks and many facilities are smoke-free campuses, the primary concern here is the proximity to the air intake vent. Secondhand smoke entering the HVAC system affects indoor air quality and poses health risks to patients and staff inside the building. Most codes and standards require smoking areas to be a minimum of 25 feet from air intakes, operable windows, and building entrances.",

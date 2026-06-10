@@ -471,9 +471,9 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
       id: "dd-ssc10",
       baseQuestion: "What is the most common root cause of wrong-site surgery events reported to The Joint Commission?",
       baseOptions: [
+        "Failure in the pre-operative verification process and communication breakdown",
         "Inadequate staffing levels",
         "Equipment malfunction",
-        "Surgeon inexperience",
         "Failure in the pre-operative verification process and communication breakdown"
       ],
       baseCorrectIndex: 3,
@@ -624,7 +624,7 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
       id: "dd-ssc13",
       baseQuestion: "What is the purpose of surgical count reconciliation?",
       baseOptions: [
-        "To determine how many staff members were in the OR",
+        "To ensure all sponges, sharps, instruments, and miscellaneous items are accounted for before wound closure",
         "To ensure all sponges, sharps, instruments",
         "To track inventory for ordering supplies",
         "To calculate the cost of the procedure"
@@ -677,7 +677,7 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
       baseOptions: [
         "Two qualified individuals must independently verify the",
         "The anesthesiologist verbally confirms the blood type",
-        "The blood bank's phone confirmation is sufficient",
+        "The blood bank's phone confirmation is sufficient verification",
         "One nurse checks the blood label against the patient's wristband"
       ],
       baseCorrectIndex: 0,
@@ -726,8 +726,8 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
       id: "dd-ssc15",
       baseQuestion: "A Joint Commission surveyor asks when pre-procedure verification should begin. What is the correct answer?",
       baseOptions: [
-        "Only in the operating room",
-        "After the patient is anesthetized",
+        "At the time the procedure is scheduled and continues through all transitions of care until the procedure begins",
+        "Only in the operating room immediately before incision",
         "At the time the procedure is scheduled and",
         "Only when the patient arrives in the pre-operative holding area"
       ],
@@ -779,8 +779,8 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
       baseOptions: [
         "A felt-tip marker in the facility's designated color",
         "A permanent/indelible marker that will remain visible",
-        "Any pen available at the nursing station",
-        "A water-soluble marker that washes off with prep solution"
+        "A water-soluble marker that washes off with prep solution",
+        "Any pen available at the nursing station"
       ],
       baseCorrectIndex: 1,
       baseExplanation: "The site mark must be made with a permanent, indelible marker so it remains visible after skin preparation with antiseptic solutions and after draping. A mark that washes off defeats the purpose of site verification.",
@@ -829,8 +829,8 @@ export const ddSurgicalSafetyLevel: DeepDiveLevel = {
       baseQuestion: "In the WHO Surgical Safety Checklist, what occurs during the 'Sign Out' phase?",
       baseOptions: [
         "The surgeon signs the operative note",
-        "The patient signs a post-operative consent form",
         "The anesthesiologist signs out the controlled substances",
+        "The patient signs a post-operative consent form",
         "The team confirms the procedure performed"
       ],
       baseCorrectIndex: 3,

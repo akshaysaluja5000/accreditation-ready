@@ -74,7 +74,7 @@ export const ascOcsLevel: Level = {
         "Chemotherapy may be prepared anywhere with appropriate gloves",
         "Chemotherapy agents must be prepared in a biological safety cabinet in a negative pressure area to protect both staff and the environment from hazardous drug exposure",
         "BSC use is required only for intravenous chemotherapy - not oral agents",
-        "A BSC is required only if the facility dispenses more than 100 doses per day",
+        "A BSC is required only if the facility dispenses more than 100 doses per day"
       ],
       correctIndex: 1,
       explanation:
@@ -101,7 +101,7 @@ export const ascOcsLevel: Level = {
         "A documentation error only - IVF is inherently unpredictable",
         "Failure of the gamete/embryo identification and verification system - a double-identification verification process at every step of the IVF procedure is required to prevent such events",
         "IVF mix-up prevention is the patient's responsibility - patients should verify their own embryo labels",
-        "This is a CLIA issue, not an OCS issue",
+        "This is a CLIA issue, not an OCS issue"
       ],
       correctIndex: 1,
       explanation:
@@ -128,7 +128,7 @@ export const ascOcsLevel: Level = {
         "The pharmacist prepares the dose and the nurse verifies it verbally before administration",
         "Two qualified, independent clinicians separately verify the chemotherapy dose calculation, patient identification, and drug against the order - without sharing their calculation with each other before comparison",
         "The oncologist enters the dose and the pharmacist fills it - this constitutes a double-check",
-        "Double-checks are only required for pediatric chemotherapy doses",
+        "Double-checks are only required for pediatric chemotherapy doses"
       ],
       correctIndex: 1,
       explanation:
@@ -155,7 +155,7 @@ export const ascOcsLevel: Level = {
         "Only the most recent cycle success rate for the patient's specific diagnosis",
         "Cumulative success rate information - not just per-cycle rates - must be disclosed to patients",
         "Success rates are proprietary and need not be disclosed",
-        "Only the national average success rates need be discussed - facility-specific rates are optional",
+        "Only the national average success rates need be discussed - facility-specific rates are optional"
       ],
       correctIndex: 1,
       explanation:
@@ -182,7 +182,7 @@ export const ascOcsLevel: Level = {
         "Only the supervising dentist's credentials need to be verified - dental hygienist licensing is assumed from employment",
         "Each dental hygienist's state dental hygienist license must be verified through primary source verification before they provide patient care",
         "Dental hygienists are not credentialed - they work under the dentist's license",
-        "Credential verification for dental hygienists is conducted by the state dental board, not the organization",
+        "Credential verification for dental hygienists is conducted by the state dental board, not the organization"
       ],
       correctIndex: 1,
       explanation:
@@ -209,7 +209,7 @@ export const ascOcsLevel: Level = {
         "Directive counseling that advises patients on the best option for their situation",
         "Non-directive counseling that provides information about all options without influencing the patient's decision",
         "Counseling is optional - informed consent forms satisfy the counseling requirement",
-        "Counseling must be conducted by a licensed social worker or psychologist only",
+        "Counseling must be conducted by a licensed social worker or psychologist only"
       ],
       correctIndex: 1,
       explanation:
@@ -236,7 +236,7 @@ export const ascOcsLevel: Level = {
         "The nurse should stop the infusion and call 911",
         "A written extravasation management protocol must exist, including the specific antidote or management steps for each chemotherapy agent used, along with an immediately accessible extravasation kit",
         "Extravasation is documented in the chart but no specific protocol is required",
-        "Extravasation is managed the same way for all chemotherapy agents - one protocol is sufficient",
+        "Extravasation is managed the same way for all chemotherapy agents - one protocol is sufficient"
       ],
       correctIndex: 1,
       explanation:
@@ -263,7 +263,7 @@ export const ascOcsLevel: Level = {
         "Unused embryos are automatically donated to research when storage fees lapse",
         "Patients must receive counseling about and provide documented consent for the disposition of unused/surplus cryopreserved embryos",
         "Embryo disposition decisions are made by the IVF facility without patient input",
-        "Cryopreservation agreements automatically determine embryo disposition - no additional counseling is required",
+        "Cryopreservation agreements automatically determine embryo disposition - no additional counseling is required"
       ],
       correctIndex: 1,
       explanation:
@@ -290,7 +290,7 @@ export const ascOcsLevel: Level = {
         "No additional certification beyond AAAHC accreditation is required",
         "FDA certification under the Mammography Quality Standards Act (MQSA) is required for facilities that perform mammography",
         "Joint Commission certification for women's services is required",
-        "State health department mammography certification supersedes federal requirements",
+        "State health department mammography certification supersedes federal requirements"
       ],
       correctIndex: 1,
       explanation:
@@ -317,7 +317,7 @@ export const ascOcsLevel: Level = {
         "Specialty services are exempt from QI monitoring as long as they meet national licensing standards",
         "Specialty-specific quality metrics must be defined, monitored, and benchmarked against specialty-specific databases - and included in the overall QI and peer review programs",
         "General quality metrics (patient satisfaction, wait times) are sufficient for all specialty services",
-        "Quality monitoring for specialty services is the responsibility of the national specialty board, not the ASC",
+        "Quality monitoring for specialty services is the responsibility of the national specialty board, not the ASC"
       ],
       correctIndex: 1,
       explanation:
@@ -344,7 +344,7 @@ export const ascOcsLevel: Level = {
         "Dental waterlines use municipal water - no additional treatment is required",
         "Dental unit water quality must meet potable water standards (≤500 CFU/mL), and the IPC program must include written policies for DUWL monitoring and treatment",
         "DUWL contamination is a patient comfort issue - it has no infection control significance",
-        "Water quality testing is required only if a patient reports taste concerns",
+        "Water quality testing is required only if a patient reports taste concerns"
       ],
       correctIndex: 1,
       explanation:
@@ -371,7 +371,7 @@ export const ascOcsLevel: Level = {
         "Patient selection is entirely at the oncologist's discretion - written criteria are not required",
         "Written criteria defining patient eligibility for each chemotherapy protocol - including performance status, organ function thresholds, and contraindications",
         "Only the tumor type and stage are required as selection criteria",
-        "Selection criteria only apply to clinical trial patients, not standard-of-care patients",
+        "Selection criteria only apply to clinical trial patients, not standard-of-care patients"
       ],
       correctIndex: 1,
       explanation:
@@ -398,7 +398,7 @@ export const ascOcsLevel: Level = {
         "Only the treatment note from the dental procedure",
         "A transfer documentation note including: patient clinical status at transfer, reason for transfer, receiving facility and provider, information communicated to the receiving provider, and the transport method",
         "The transfer is documented in the billing system only - clinical documentation is the hospital's responsibility",
-        "A dental transfer requires the state dental board to be notified within 24 hours",
+        "A dental transfer requires the state dental board to be notified within 24 hours"
       ],
       correctIndex: 1,
       explanation:
@@ -425,7 +425,7 @@ export const ascOcsLevel: Level = {
         "Bone density results are self-interpreting - T-scores require no professional interpretation",
         "DEXA results must be interpreted by a qualified physician who has been granted radiology interpretation privileges for bone density scanning at the organization",
         "Any clinician may interpret DEXA results without specific privileges",
-        "DEXA scanning is exempt from radiology interpretation requirements because it is a quantitative measurement",
+        "DEXA scanning is exempt from radiology interpretation requirements because it is a quantitative measurement"
       ],
       correctIndex: 1,
       explanation:
@@ -452,7 +452,7 @@ export const ascOcsLevel: Level = {
         "Standard housekeeping spill procedures are sufficient for all chemical spills",
         "A chemotherapy spill kit must be immediately available, and staff must be trained in its use - including proper PPE for spill cleanup and appropriate waste disposal",
         "Chemotherapy spills are reported to the pharmacy only - no immediate staff response is required",
-        "Spill kits are required only in pharmacy preparation areas, not in infusion rooms",
+        "Spill kits are required only in pharmacy preparation areas, not in infusion rooms"
       ],
       correctIndex: 1,
       explanation:
@@ -479,7 +479,7 @@ export const ascOcsLevel: Level = {
         "Any physician may direct oncology services if they are licensed",
         "A qualified physician director with specific training and experience in medical oncology must oversee oncology services",
         "Oncology services may be directed by a non-physician clinical director",
-        "The specialty director role is optional for small oncology practices",
+        "The specialty director role is optional for small oncology practices"
       ],
       correctIndex: 1,
       explanation:
@@ -506,7 +506,7 @@ export const ascOcsLevel: Level = {
         "Embryo photographs only",
         "A chain of custody documentation system tracking embryo identification, location in storage, and any changes in status",
         "Only financial records for storage fees",
-        "IVF storage documentation is the patient's responsibility",
+        "IVF storage documentation is the patient's responsibility"
       ],
       correctIndex: 1,
       explanation:
@@ -533,7 +533,7 @@ export const ascOcsLevel: Level = {
         "Dental offices are exempt from IPC requirements because patient contact time is short",
         "Dental unit waterline management and instrument sterilization using dental-specific protocols must be included in the IPC program",
         "Dental infection prevention is regulated only by the state dental board",
-        "Standard surgical instrument sterilization protocols apply equally to dental instruments",
+        "Standard surgical instrument sterilization protocols apply equally to dental instruments"
       ],
       correctIndex: 1,
       explanation:
@@ -560,7 +560,7 @@ export const ascOcsLevel: Level = {
         "Hormonal therapies are not high-alert medications - standard medication management applies",
         "Tamoxifen should be on the facility's high-alert medication list with appropriate error-prevention processes",
         "Tamoxifen management is exclusively the oncologist's responsibility - nursing has no role",
-        "MED.150 applies only to intravenous medications",
+        "MED.150 applies only to intravenous medications"
       ],
       correctIndex: 1,
       explanation:
@@ -587,7 +587,7 @@ export const ascOcsLevel: Level = {
         "Multiple gestation risk is standard - patients should expect twins or triplets",
         "Patients must receive counseling about the risk of multiple gestation associated with IVF and the number of embryos transferred, and this counseling must be documented",
         "Multiple gestation is the patient's choice - no counseling is required",
-        "Multiple gestation risk is only disclosed if the patient directly asks",
+        "Multiple gestation risk is only disclosed if the patient directly asks"
       ],
       correctIndex: 1,
       explanation:

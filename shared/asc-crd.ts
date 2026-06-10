@@ -95,7 +95,7 @@ export const ascCrdLevel: Level = {
         "An annual review policy for the EHR vendor contract",
         "A backup system policy to protect records from damage or loss - explicitly including backup systems for electronic records",
         "A policy designating the EHR as the legal medical record",
-        "A policy requiring paper copies of all electronic records",
+        "A policy requiring paper copies of all electronic records"
       ],
       correctIndex: 1,
       explanation:
@@ -122,7 +122,7 @@ export const ascCrdLevel: Level = {
         "CRD.120 - the clinical records system is not adequately monitored",
         "CRD.210 - allergy information must be recorded in a prominent and consistently defined location in all records",
         "CRD.140 - records must be organized in a consistent format",
-        "CRD.160 - confidentiality of allergy information is not maintained",
+        "CRD.160 - confidentiality of allergy information is not maintained"
       ],
       correctIndex: 1,
       explanation:
@@ -149,7 +149,7 @@ export const ascCrdLevel: Level = {
         "The year the allergy was first identified",
         "The patient's specific reaction to penicillin (e.g., rash, hives, anaphylaxis, GI symptoms)",
         "Whether the patient has taken penicillin within the past two years",
-        "The name of the prescribing physician who gave penicillin to the patient",
+        "The name of the prescribing physician who gave penicillin to the patient"
       ],
       correctIndex: 1,
       explanation:
@@ -176,7 +176,7 @@ export const ascCrdLevel: Level = {
         "Yes - if allergy information is already documented, re-asking at each visit is redundant",
         "No - CRD.210 requires patients to be asked about allergies and sensitivities at each encounter, and the information must be verified and updated at each encounter",
         "Yes - for established patients with multiple prior visits, annual allergy verification is sufficient",
-        "Only if the existing allergy documentation was verified at the previous visit",
+        "Only if the existing allergy documentation was verified at the previous visit"
       ],
       correctIndex: 1,
       explanation:
@@ -203,7 +203,7 @@ export const ascCrdLevel: Level = {
         "The report may be filed as received - no additional action is required",
         "The report must be reviewed by the ordering or performing provider before incorporation, with evidence that the review occurred",
         "The report must be reviewed by the medical records director",
-        "The report must be co-signed by the anesthesiologist before filing",
+        "The report must be co-signed by the anesthesiologist before filing"
       ],
       correctIndex: 1,
       explanation:
@@ -230,7 +230,7 @@ export const ascCrdLevel: Level = {
         "The patient's insurance authorization number",
         "The signature or authentication by the healthcare professional",
         "The time the patient arrived and was discharged",
-        "The patient's vital signs from the prior visit",
+        "The patient's vital signs from the prior visit"
       ],
       correctIndex: 1,
       explanation:
@@ -257,7 +257,7 @@ export const ascCrdLevel: Level = {
         "Only that a call was made - the content of instructions given by phone is not a documentation requirement",
         "The medical advice given by telephone must be documented in the patient's clinical record",
         "Phone calls to patients are documented in the nurse's personal call log, not the clinical record",
-        "Telephone medical advice is only documented if the patient calls back with a complaint",
+        "Telephone medical advice is only documented if the patient calls back with a complaint"
       ],
       correctIndex: 1,
       explanation:
@@ -284,7 +284,7 @@ export const ascCrdLevel: Level = {
         "No documentation is required for patient-initiated cancellations",
         "The missed or canceled appointment must be documented in the clinical record",
         "Only no-shows (not cancellations) require documentation under CRD.250",
-        "Documentation of canceled appointments is required only for patients with known medical complications",
+        "Documentation of canceled appointments is required only for patients with known medical complications"
       ],
       correctIndex: 1,
       explanation:
@@ -311,7 +311,7 @@ export const ascCrdLevel: Level = {
         "A copy of every visit note from all prior treating providers",
         "A summary of past and current diagnoses, problems, and past procedures to facilitate continuity of care",
         "An independent second opinion from a specialist",
-        "A medication reconciliation form signed by a pharmacist",
+        "A medication reconciliation form signed by a pharmacist"
       ],
       correctIndex: 1,
       explanation:
@@ -338,7 +338,7 @@ export const ascCrdLevel: Level = {
         "Only HIPAA governs patient record release - a separate organizational policy is not required",
         "CRD.130 requires written policies addressing the release of patient records, including patient authorization requirements",
         "Record release is governed only by CRD.140's patient approval requirement - a separate written policy is not needed",
-        "Only records from the past two years must be released upon patient request",
+        "Only records from the past two years must be released upon patient request"
       ],
       correctIndex: 1,
       explanation:
@@ -365,7 +365,7 @@ export const ascCrdLevel: Level = {
         "No standard - legibility requirements only apply to handwritten entries, not scanned documents",
         "CRD.140 - clinical records must be legible, including items scanned into an electronic record",
         "CRD.220 - reports must be reviewed before incorporation, and a legible copy should have been obtained",
-        "CRD.180 - the individual record must be complete",
+        "CRD.180 - the individual record must be complete"
       ],
       correctIndex: 1,
       explanation:
@@ -392,7 +392,7 @@ export const ascCrdLevel: Level = {
         "No CRD standard - verbal discussions are not covered by clinical records standards",
         "CRD.160 - any record containing patient data must be treated as strictly confidential, and observed practice must confirm confidential handling",
         "CRD.130 - written policies addressing security of information were not followed",
-        "CRD.140 - patient data must be accessible only to authorized personnel",
+        "CRD.140 - patient data must be accessible only to authorized personnel"
       ],
       correctIndex: 1,
       explanation:
@@ -419,7 +419,7 @@ export const ascCrdLevel: Level = {
         "The patient's emergency contact phone number",
         "Patient date of birth",
         "The patient's insurance group number",
-        "The patient's primary care physician's name",
+        "The patient's primary care physician's name"
       ],
       correctIndex: 1,
       explanation:
@@ -446,7 +446,7 @@ export const ascCrdLevel: Level = {
         "A signed surgical consent form is sufficient documentation of the discussion",
         "Documentation of the discussion of treatment alternatives (in this case, physical therapy as an alternative to surgery) in the clinical record",
         "Documentation is only required if the patient chooses the alternative treatment",
-        "The discussion of alternatives is only required to be documented in the informed consent form, not the clinical record",
+        "The discussion of alternatives is only required to be documented in the informed consent form, not the clinical record"
       ],
       correctIndex: 1,
       explanation:
@@ -473,7 +473,7 @@ export const ascCrdLevel: Level = {
         "No - CRD.120 requires two separate individuals",
         "Yes - the same person may fill both roles as long as the dual responsibility is documented",
         "Only if the person is a licensed health information manager (RHIA or RHIT)",
-        "Only for ASCs with fewer than 500 patient encounters per year",
+        "Only for ASCs with fewer than 500 patient encounters per year"
       ],
       correctIndex: 1,
       explanation:

@@ -74,7 +74,7 @@ export const ascLrdLevel: Level = {
         "No CLIA certificate is needed for glucose monitoring - it is a nursing skill, not a laboratory test",
         "The ASC must hold a current CLIA Certificate of Waiver that covers blood glucose testing",
         "A CLIA certificate is only required if a laboratory technician performs the test",
-        "CLIA only applies to facilities with dedicated laboratory departments",
+        "CLIA only applies to facilities with dedicated laboratory departments"
       ],
       correctIndex: 1,
       explanation:
@@ -101,7 +101,7 @@ export const ascLrdLevel: Level = {
         "QC failure with an out-of-range control may be repeated and if the second attempt passes, patient testing may continue",
         "QC failures must be investigated and resolved before patient testing resumes - continuing to use the device after a QC failure is not compliant",
         "QC failures only require documentation - they do not require suspension of patient testing",
-        "Out-of-range controls are common and do not indicate a problem with the device",
+        "Out-of-range controls are common and do not indicate a problem with the device"
       ],
       correctIndex: 1,
       explanation:
@@ -128,7 +128,7 @@ export const ascLrdLevel: Level = {
         "Yes - surgeons are licensed physicians who may interpret any imaging study",
         "Only if the surgeon has specific radiology/imaging interpretation privileges at the organization",
         "Yes - interpretation privileges are not required for simple chest x-rays",
-        "Surgeons may interpret their own patients' imaging studies without privileges",
+        "Surgeons may interpret their own patients' imaging studies without privileges"
       ],
       correctIndex: 1,
       explanation:
@@ -155,7 +155,7 @@ export const ascLrdLevel: Level = {
         "The certificate must be filed with the laboratory records - posting is optional",
         "The CLIA certificate must be posted in the laboratory area where testing is performed",
         "The certificate only needs to be accessible upon request",
-        "Posting is required only for high-complexity laboratory certificates",
+        "Posting is required only for high-complexity laboratory certificates"
       ],
       correctIndex: 1,
       explanation:
@@ -182,7 +182,7 @@ export const ascLrdLevel: Level = {
         "The ASC has no LRD responsibilities when laboratory testing is contracted out",
         "The ASC must ensure the contracted laboratory is appropriately accredited/certified and results are communicated to ordering providers in a timely manner",
         "Only the contracted laboratory's CLIA certificate needs to be verified - the ASC needs no certificate",
-        "The ASC only needs to verify the contracted laboratory at initial contract signing",
+        "The ASC only needs to verify the contracted laboratory at initial contract signing"
       ],
       correctIndex: 1,
       explanation:
@@ -209,7 +209,7 @@ export const ascLrdLevel: Level = {
         "QC ensures laboratory personnel are following proper safety procedures",
         "QC verifies that the test system is performing accurately and precisely - producing reliable results for patient care",
         "QC is a regulatory documentation requirement with no direct clinical benefit",
-        "QC applies only to high-complexity laboratory tests",
+        "QC applies only to high-complexity laboratory tests"
       ],
       correctIndex: 1,
       explanation:
@@ -236,7 +236,7 @@ export const ascLrdLevel: Level = {
         "A critical value is any result outside the normal range - it requires documentation only",
         "A critical value is a significantly abnormal result requiring immediate clinical action - the protocol must address immediate notification to the ordering provider with documentation of who was notified, when, and the provider's response",
         "Critical values are reported in the next routine lab report - immediate notification is not required",
-        "Critical values are defined by the laboratory reference range - no separate organizational policy is required",
+        "Critical values are defined by the laboratory reference range - no separate organizational policy is required"
       ],
       correctIndex: 1,
       explanation:
@@ -263,7 +263,7 @@ export const ascLrdLevel: Level = {
         "No verification is needed if it is FDA-approved for over-the-counter use",
         "The test must be listed under the ASC's CLIA waiver or appropriate CLIA certificate, and QC procedures per manufacturer instructions must be established before patient use",
         "Rapid antigen tests are exempt from CLIA requirements",
-        "The test may be used immediately - CLIA registration can occur after the first 30 days of use",
+        "The test may be used immediately - CLIA registration can occur after the first 30 days of use"
       ],
       correctIndex: 1,
       explanation:
@@ -290,7 +290,7 @@ export const ascLrdLevel: Level = {
         "A current CPR certification and hospital-issued clinical privileges",
         "State licensure as required by state law and/or ARRT certification appropriate to the imaging modality",
         "Only a high school diploma and on-the-job training",
-        "Radiology technologist qualifications are self-regulated - no specific credentials are required",
+        "Radiology technologist qualifications are self-regulated - no specific credentials are required"
       ],
       correctIndex: 1,
       explanation:
@@ -317,7 +317,7 @@ export const ascLrdLevel: Level = {
         "The facility administrator",
         "The qualified laboratory director",
         "Individual clinical staff who perform the testing",
-        "The CLIA inspection team at their last survey visit",
+        "The CLIA inspection team at their last survey visit"
       ],
       correctIndex: 1,
       explanation:
@@ -344,7 +344,7 @@ export const ascLrdLevel: Level = {
         "A 90-day grace period exists for CLIA renewal - testing may continue",
         "Testing with an expired CLIA certificate is unauthorized - a serious CLIA and LRD compliance violation",
         "The expired certificate remains valid until CMS sends a violation notice",
-        "Only the annual renewal fee needs to be paid - testing may continue during the renewal process",
+        "Only the annual renewal fee needs to be paid - testing may continue during the renewal process"
       ],
       correctIndex: 1,
       explanation:
@@ -371,7 +371,7 @@ export const ascLrdLevel: Level = {
         "Routine results do not have a timeliness requirement - only critical values do",
         "The organization must have a written policy defining expected turnaround times for routine results, and monitoring of compliance with those timelines",
         "Routine results are communicated at the next scheduled clinic visit",
-        "Electronic delivery to the ordering provider's inbox satisfies all timeliness requirements automatically",
+        "Electronic delivery to the ordering provider's inbox satisfies all timeliness requirements automatically"
       ],
       correctIndex: 1,
       explanation:
@@ -398,7 +398,7 @@ export const ascLrdLevel: Level = {
         "No change - the CLIA waiver covers all laboratory tests",
         "The ASC must obtain a CLIA Certificate of Compliance or Accreditation appropriate to moderate complexity testing - the waiver only covers waived tests",
         "Moderate complexity tests may be added to the CLIA waiver by notifying CMS",
-        "A physician order is sufficient to perform moderate complexity tests without additional CLIA authorization",
+        "A physician order is sufficient to perform moderate complexity tests without additional CLIA authorization"
       ],
       correctIndex: 1,
       explanation:
@@ -425,7 +425,7 @@ export const ascLrdLevel: Level = {
         "Verbal attestation from the laboratory director",
         "A QC log showing: date performed, test/device, control lot number, control result, acceptable range, pass/fail determination, and operator initials",
         "Only the manufacturer's QC instructions need to be on file",
-        "QC documentation is only required when a QC failure occurs",
+        "QC documentation is only required when a QC failure occurs"
       ],
       correctIndex: 1,
       explanation:
@@ -452,7 +452,7 @@ export const ascLrdLevel: Level = {
         "Any medical assistant with clinical experience may operate fluoroscopy",
         "State-specific fluoroscopy licensing, operator requirements, and training per applicable regulations - in addition to general radiologic technologist credentials",
         "Fluoroscopy operators only need ARRT radiography certification",
-        "Physician supervision eliminates the need for technologist-specific fluoroscopy qualifications",
+        "Physician supervision eliminates the need for technologist-specific fluoroscopy qualifications"
       ],
       correctIndex: 1,
       explanation:
@@ -479,7 +479,7 @@ export const ascLrdLevel: Level = {
         "QC only needs to be performed once per year for urine pregnancy tests",
         "QC must be performed per manufacturer's instructions - including with each new lot - and the failure to do so when lot numbers changed is a CLIA and LRD deficiency",
         "Urine pregnancy tests are exempt from QC requirements because they are qualitative",
-        "QC is only required when a test result is unexpected",
+        "QC is only required when a test result is unexpected"
       ],
       correctIndex: 1,
       explanation:
@@ -506,7 +506,7 @@ export const ascLrdLevel: Level = {
         "Laboratory contractor performance is self-monitored by the contractor - no ASC oversight is needed",
         "The ASC must monitor contractor performance including result turnaround times, accuracy of results, and critical value notification compliance, as part of GOV.200 contract oversight",
         "Only the CLIA inspection team monitors laboratory performance",
-        "Contract monitoring is only required if the laboratory has been cited for deficiencies",
+        "Contract monitoring is only required if the laboratory has been cited for deficiencies"
       ],
       correctIndex: 1,
       explanation:
@@ -533,7 +533,7 @@ export const ascLrdLevel: Level = {
         "The cost - waivers are more expensive than compliance certificates",
         "Waivers authorize only FDA-approved waived tests; compliance certificates authorize moderate and high complexity testing and require periodic CMS inspections",
         "Compliance certificates authorize waived tests at multiple sites; waivers are single-site",
-        "There is no difference - both authorize the same tests",
+        "There is no difference - both authorize the same tests"
       ],
       correctIndex: 1,
       explanation:
@@ -560,7 +560,7 @@ export const ascLrdLevel: Level = {
         "Only the fee schedule in the professional services agreement",
         "The radiologist's qualifications, current licensure, and that they have been granted imaging interpretation privileges at the ASC",
         "Only the hospital's accreditation status",
-        "Radiologists contracted through a hospital automatically have interpretation authority at any affiliated ASC",
+        "Radiologists contracted through a hospital automatically have interpretation authority at any affiliated ASC"
       ],
       correctIndex: 1,
       explanation:
@@ -587,7 +587,7 @@ export const ascLrdLevel: Level = {
         "Turnaround time monitoring is a billing efficiency measure only",
         "Delayed results can lead to delayed clinical decisions - monitoring ensures that actionable laboratory information reaches providers within the defined timeframes needed for safe care",
         "Monitoring is required only for contracted laboratory services",
-        "Turnaround time monitoring is optional if the laboratory is CAP-accredited",
+        "Turnaround time monitoring is optional if the laboratory is CAP-accredited"
       ],
       correctIndex: 1,
       explanation:

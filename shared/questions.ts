@@ -1667,8 +1667,8 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "Yes. You have confirmed all six required integrity criteria before opening.",
           "No. You must also confirm the biological indicator for that sterilizer load was negative before using any pack from the load.",
-          "No. The pack must also show the technician's initials who assembled and loaded the instrument.",
-          "No. Peel packs also need an external chemical indicator strip on the outside of the package."
+          "No. Peel packs also need an external chemical indicator strip on the outside of the package.",
+          "No. The pack must also show the technician's initials who assembled and loaded the instrument."
         ],
         correctIndex: 1,
         explanation: "All six integrity criteria are met, and this pack is ready for use. The pack label (sterilizer, load number, date) confirms traceability, and your point-of-use inspection confirms packaging integrity.",
@@ -1680,7 +1680,7 @@ const hospitalLevelsRaw: Level[] = [
         question: "You find brown discoloration only in the box lock area of a hemostat. The rest looks clean. What should you do?",
         options: [
           "Return it to service. Box lock discoloration is expected friction wear from repeated use.",
-          "Return it to service. Localized hinge discoloration from heat exposure is not a sterility concern.",
+          "Remove it. Brown discoloration in the box lock likely indicates trapped bioburden or early corrosion.",
           "Remove it. Brown discoloration in the box lock likely indicates trapped bioburden or early corrosion.",
           "Return it to service as long as the instrument opens and closes smoothly."
         ],
@@ -2107,7 +2107,7 @@ const hospitalLevelsRaw: Level[] = [
         question: "You clean a glucometer with Yellow Top Bleach Wipes. After 2 minutes you wipe it dry and begin using it. Is this adequate?",
         options: [
           "No. Yellow Top Bleach Wipes require a full 4-minute dwell time on glucometers.",
-          "Yes. Two minutes of wet contact meets the standard when you maintain visible wetness throughout.",
+          "No. Yellow Top Bleach Wipes require a full 4-minute dwell time on glucometers.",
           "No. Yellow Top Bleach Wipes require a 10-minute dwell on any blood-contacting device.",
           "Yes. Two minutes is sufficient for bleach-based disinfectants on non-critical devices."
         ],
@@ -2357,7 +2357,7 @@ const hospitalLevelsRaw: Level[] = [
         id: "spd1",
         question: "A surveyor holds a tissue at the bottom of the decon room door. It pushes outward. What does this indicate?",
         options: [
-          "Inconclusive. You should perform the tissue test at the top of the door frame for accurate measurement.",
+          "A problem. Your room has positive pressure — contaminated air is escaping into clean areas.",
           "A problem. Your room has positive pressure — contaminated air is escaping into clean areas.",
           "Correct negative pressure. Outward movement confirms air is cycling through the HEPA exhaust system.",
           "Correct negative pressure. Tissue movement in any direction confirms your ventilation is functioning."
@@ -2952,7 +2952,7 @@ const hospitalLevelsRaw: Level[] = [
         id: "or17",
         question: "Your back table has labeled syringes but one unlabeled medicine cup with clear fluid. Your scrub tech says 'it's just irrigation saline.' What is the finding?",
         options: [
-          "No finding. Irrigation saline is a supply item exempt from sterile field labeling requirements.",
+          "One finding. ALL solutions on your sterile field must be labeled with name and concentration, no exceptions.",
           "One finding. ALL solutions on your sterile field must be labeled with name and concentration, no exceptions.",
           "No finding. Your scrub tech verbally announces contents at case start, which is an acceptable alternative.",
           "No finding. Since the other syringes are labeled, the remaining cup can be identified by process of elimination."
@@ -3499,9 +3499,9 @@ const hospitalLevelsRaw: Level[] = [
         question: "You apply an ice pack for pain. When should you reassess the patient's pain level?",
         options: [
           "Within 3 hours.",
-          "Within 2 hours.",
+          "Within 1 hour.",
           "Within 4 hours.",
-          "Within 1 hour."
+          "Within 2 hours."
         ],
         correctIndex: 2,
         explanation: "Non-pharmacologic interventions typically have a 4-hour reassessment window, longer than IV (1 hour) or oral medications (2 hours), because they take longer to produce measurable effects. Your specific timeframe is set by facility policy.",
@@ -3652,7 +3652,7 @@ const hospitalLevelsRaw: Level[] = [
         id: "pc14",
         question: "Your tissue supplier's FDA registration was verified 15 months ago. You are still receiving tissue from them. Is this acceptable?",
         options: [
-          "Yes. FDA registration verification is required every 2 years, so 15 months is within the acceptable window.",
+          "No. Your facility must verify that tissue suppliers are FDA-registered on an annual basis.",
           "No. Your facility must verify that tissue suppliers are FDA-registered on an annual basis.",
           "Yes. If the supplier provides a current FDA certificate with each shipment, independent verification is not required.",
           "Yes. FDA registration only needs verification at initial contracting and during contract renewal."
@@ -3667,8 +3667,8 @@ const hospitalLevelsRaw: Level[] = [
         question: "You give IV Dilaudid at 2:00 PM. At 2:45 PM you document the pain score but not sedation level. At 3:00 PM you document LOC. How many documentation deficiencies are present?",
         options: [
           "None. The 2:45 PM pain score implicitly includes sedation since you must observe the patient to document it.",
-          "One. The only deficiency is the delayed LOC at 3:00 PM; pre-administration assessment is not required for subsequent doses.",
           "None. LOC was documented within an hour and pain was assessed at an appropriate interval.",
+          "One. The only deficiency is the delayed LOC at 3:00 PM; pre-administration assessment is not required for subsequent doses.",
           "One. Your pre-administration sedation and LOC assessment is missing. Both pre- and post-dose assessments must be documented."
         ],
         correctIndex: 3,
@@ -3724,8 +3724,8 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "None. A positive screen with 1:1 observation is the maximum required intervention until psychiatric consultation.",
           "SAFE-T risk assessment, suicide precaution orders matched to risk level, documented safety checks, and providing the 988 Crisis Lifeline number.",
-          "None. One-to-one observation is the highest precaution and encompasses all required safety measures.",
-          "Only a psychiatric consultation referral. The 1:1 observation and documented screen satisfy all other requirements."
+          "Only a psychiatric consultation referral. The 1:1 observation and documented screen satisfy all other requirements.",
+          "None. One-to-one observation is the highest precaution and encompasses all required safety measures."
         ],
         correctIndex: 1,
         explanation: "A positive C-SSRS screen triggers required next steps: SAFE-T risk assessment, matched precaution orders, documented safety checks, ligature-resistant garments for high-risk patients, and providing the 988 Crisis Lifeline information to the patient.",
@@ -3911,7 +3911,7 @@ const hospitalLevelsRaw: Level[] = [
         id: "eoc6",
         question: "Your OR positive-pressure air exchange runs 20 exchanges per hour. The standard requires a minimum of 20. Compliant?",
         options: [
-          "No. Your OR must exceed the minimum of 20 exchanges — meeting the exact minimum is not sufficient.",
+          "Yes. Meeting the minimum of 20 exchanges per hour satisfies the OR ventilation requirement.",
           "Yes. Meeting the minimum of 20 exchanges per hour satisfies the OR ventilation requirement.",
           "No. Your OR requires a minimum of 25 air exchanges per hour; 20 is the standard for procedure rooms.",
           "No. Your ventilation must be validated quarterly, regardless of the current exchange rate."
@@ -3925,8 +3925,8 @@ const hospitalLevelsRaw: Level[] = [
         id: "eoc7",
         question: "Your clean supply room has a mop and bucket stored in the corner after the morning cleaning. Is this a finding?",
         options: [
+          "Yes. Your clean supply room must not contain cleaning equipment. Mops belong in the soiled utility or janitor's closet.",
           "No. Cleaning equipment may be stored in clean supply rooms when not actively in use and not near supplies.",
-          "No. Mops are only a finding when stored wet; a dry mop in a clean room does not represent a contamination risk.",
           "Yes. Your clean supply room must not contain cleaning equipment. Mops belong in the soiled utility or janitor's closet.",
           "No. Your clean supply room must only exclude hazardous materials; mops are not classified as hazardous."
         ],
@@ -3939,9 +3939,9 @@ const hospitalLevelsRaw: Level[] = [
         id: "eoc8",
         question: "Your patient room computer screen is unlocked, visible to the door, and displaying the patient's name and diagnosis. The door is open. Is this a concern?",
         options: [
+          "Yes. Your computer must be locked or positioned so PHI is not visible to unauthorized persons passing the doorway.",
           "No. Your patient room is semi-private and shared information in this space is permitted.",
           "No. Displaying PHI on a screen in a patient's own room is not a privacy violation.",
-          "No. The attending and charge nurse regularly pass by the room, so the information is only visible to authorized staff.",
           "Yes. Your computer must be locked or positioned so PHI is not visible to unauthorized persons passing the doorway."
         ],
         correctIndex: 3,
@@ -4993,7 +4993,7 @@ const hospitalLevelsRaw: Level[] = [
         question: "You remove gloves after patient care and immediately touch the door handle without performing hand hygiene. Which WHO moment was missed?",
         options: [
           "Moment 1 — Before patient contact.",
-          "Moment 3 — After body fluid exposure.",
+          "Moment 4 — After patient contact (including after glove removal).",
           "Moment 4 — After patient contact (including after glove removal).",
           "Moment 5 — After contact with patient surroundings."
         ],
@@ -5401,7 +5401,7 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "The catheter should remain in place for at least 7 days post-surgery as standard protocol.",
           "The catheter must be removed when the clinical indication no longer exists. Spontaneous voiding indicates the indication has resolved.",
-          "Only a physician order can authorize urinary catheter removal — nursing cannot independently initiate removal.",
+          "The catheter must be removed when the clinical indication no longer exists. Spontaneous voiding indicates the indication has resolved.",
           "The catheter may remain for monitoring urine output even after spontaneous voiding."
         ],
         correctIndex: 1,
@@ -5668,8 +5668,8 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "Yes. The patient's signature on the form constitutes valid informed consent regardless of who explained it.",
           "No. Informed consent for surgery must be obtained by a licensed practitioner qualified to explain the procedure and answer clinical questions.",
-          "Yes. Medical assistants may obtain consent when the physician is available for follow-up questions.",
-          "No. But only if the patient later reports not understanding the procedure."
+          "No. But only if the patient later reports not understanding the procedure.",
+          "Yes. Medical assistants may obtain consent when the physician is available for follow-up questions."
         ],
         correctIndex: 1,
         explanation: "Informed consent must be obtained by a licensed practitioner qualified to explain the procedure and answer clinical questions. A medical assistant cannot obtain surgical consent. The physician's failure to discuss the procedure makes this consent invalid regardless of the patient's signature.",
@@ -5682,8 +5682,8 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "None. The advance directive was in the chart and accessible to staff.",
           "The advance directive must be in the active, readily accessible section of the medical record to be effectively honored in emergencies.",
-          "DNR orders from advance directives are automatically converted to active physician orders upon admission.",
-          "The failure was the physician's — only an active physician DNR order can prevent resuscitation."
+          "The failure was the physician's — only an active physician DNR order can prevent resuscitation.",
+          "DNR orders from advance directives are automatically converted to active physician orders upon admission."
         ],
         correctIndex: 1,
         explanation: "An advance directive buried in the history section may not be seen in an emergency. JC requires it to be in a prominent, accessible location in the active chart. More importantly, an advance directive should prompt the physician to enter an active DNR/DNAR order in the orders section — the directive alone may not be visible to emergency responders.",
@@ -5696,8 +5696,8 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "Nursing may continue the restraint for up to 2 additional hours pending physician renewal.",
           "The restraint must be removed immediately. Patients cannot remain restrained on an expired order.",
-          "The charge nurse may verbally extend the restraint until the physician can be reached.",
-          "The restraint continues if the nurse documents that the patient is still displaying the behavior that prompted the original order."
+          "The restraint continues if the nurse documents that the patient is still displaying the behavior that prompted the original order.",
+          "The charge nurse may verbally extend the restraint until the physician can be reached."
         ],
         correctIndex: 1,
         explanation: "Patients cannot remain in restraints on an expired order under any circumstances. The restraint must be removed immediately when the order expires. To prevent this, nursing must proactively contact the physician for renewal before the order expires if continued restraint is clinically necessary.",
@@ -5710,8 +5710,8 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "Yes. Family members are the preferred interpreters for clinical discussions per patient rights standards.",
           "No. Professional interpreter services must be offered first. The patient may choose to use a family member only after professional services are offered and declined.",
-          "Yes. The patient's right to use family members supersedes any professional interpreter requirement.",
-          "No. Family members may never be used as interpreters for clinical conversations under any circumstances."
+          "No. Family members may never be used as interpreters for clinical conversations under any circumstances.",
+          "Yes. The patient's right to use family members supersedes any professional interpreter requirement."
         ],
         correctIndex: 1,
         explanation: "JC requires that professional interpreter services be offered to patients with limited English proficiency first. Only after professional services are offered may a patient choose a family member. For informed consent discussions specifically, professional interpreters are strongly preferred because family members may filter information and conflicts of interest can affect accuracy.",
@@ -5724,8 +5724,8 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "Yes. All patient complaints must be formally logged and investigated as grievances.",
           "No. A complaint resolved satisfactorily at the time it is made does not require formal grievance processing.",
-          "Yes. Verbal complaints require written acknowledgment within 7 days regardless of immediate resolution.",
-          "No. Only written complaints require the formal grievance process."
+          "No. Only written complaints require the formal grievance process.",
+          "Yes. Verbal complaints require written acknowledgment within 7 days regardless of immediate resolution."
         ],
         correctIndex: 1,
         explanation: "JC distinguishes between complaints (resolved at the point of care immediately) and grievances (unresolved complaints or any written complaint). A meal complaint resolved immediately by the nurse does not require the formal grievance process. If the patient were unsatisfied with the resolution, it would escalate to a grievance requiring the full process.",
@@ -5752,8 +5752,8 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "None. Family involvement in care implies consent to information sharing.",
           "Patient health information cannot be shared with family members without the patient's explicit authorization.",
-          "None. Sharing medication information with family is standard of care and does not require consent.",
-          "The issue only exists if the patient has documented in the chart that they do not want information shared."
+          "The issue only exists if the patient has documented in the chart that they do not want information shared.",
+          "None. Sharing medication information with family is standard of care and does not require consent."
         ],
         correctIndex: 1,
         explanation: "A competent adult's health information — including medication list — is protected and cannot be shared with family members without the patient's explicit authorization. 'Family involvement' is not consent. This applies even to close relatives. Your nurse must obtain the patient's permission before sharing any health information with family.",
@@ -5794,8 +5794,8 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "Document the finding and notify the physician at the end of the shift.",
           "Remove or adjust the restraint immediately, assess the injury, provide wound care, notify the physician, and document all actions.",
-          "Apply padding over the restraint and continue the monitoring schedule.",
-          "Contact the charge nurse for guidance before taking any independent action."
+          "Contact the charge nurse for guidance before taking any independent action.",
+          "Apply padding over the restraint and continue the monitoring schedule."
         ],
         correctIndex: 1,
         explanation: "Monitoring restrained patients for circulation, sensation, and skin integrity at defined intervals exists specifically to prevent this type of harm. Skin breakdown from a restraint requires immediate action: remove or reposition the restraint, assess and treat the injury, notify the physician, and document thoroughly. This is both a patient rights and patient safety issue.",
@@ -5808,8 +5808,8 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "Proceed. The surgeon has indicated the patient is ready and the nurse should follow the order.",
           "Refuse. Consent obtained after administering a sedating benzodiazepine is presumptively invalid due to impaired decision-making capacity.",
-          "Have a second nurse witness the signing to validate the consent.",
-          "Ask the patient if they feel capable of consenting and proceed if they say yes."
+          "Ask the patient if they feel capable of consenting and proceed if they say yes.",
+          "Have a second nurse witness the signing to validate the consent."
         ],
         correctIndex: 1,
         explanation: "Lorazepam is a sedating benzodiazepine that impairs cognitive function and decision-making capacity. Informed consent obtained while a patient is under the influence of sedating medication is presumptively invalid. Consent must be obtained before sedating medications are administered.",
@@ -5822,8 +5822,8 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "The name of the unit manager is sufficient — that is the appropriate complaint recipient for hospital patients.",
           "Written information about the right to file a grievance, the grievance process, and contact information for the state health agency if the hospital cannot resolve the issue.",
-          "Patients must be redirected to the quality department. Bedside staff cannot answer questions about complaint processes.",
-          "The hospital only needs to provide complaint information if the patient has already expressed a specific concern."
+          "The hospital only needs to provide complaint information if the patient has already expressed a specific concern.",
+          "Patients must be redirected to the quality department. Bedside staff cannot answer questions about complaint processes."
         ],
         correctIndex: 1,
         explanation: "JC requires hospitals to inform patients of their grievance rights — typically at admission through a patient rights document. This must include: the right to file a grievance, how to do so, the hospital's response timeline, and contact information for the state health department or accrediting body if the grievance is not resolved internally. This information must be proactively provided.",
@@ -6076,7 +6076,7 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "The nurse should have said 'push' not 'pull' for the pin.",
           "The nurse should aim at the BASE of the fire, not at the flames. Aiming at the base removes the fuel source.",
-          "The nurse omitted the fifth step: 'Stand back 10 feet before discharging the extinguisher.'",
+          "The nurse should aim at the BASE of the fire, not at the flames. Aiming at the base removes the fuel source.",
           "The description is complete and correct — aiming at the flames is the appropriate target."
         ],
         correctIndex: 1,
@@ -6450,10 +6450,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "em5",
         question: "Your hospital in Arizona has an HVA that lists hurricanes as a high-probability, high-impact threat. A surveyor reviews this. What is the concern?",
         options: [
-          "None. Hurricanes in the southwest U.S. are more common than most people realize.",
           "Your HVA is not facility-specific — it appears to be a generic template not based on actual local conditions.",
-          "The concern is the impact rating. Hurricanes should be rated medium impact in inland regions.",
-          "None. JC requires all natural disasters be listed regardless of local probability."
+          "Your HVA is not facility-specific — it appears to be a generic template not based on actual local conditions.",
+          "None. JC requires all natural disasters be listed regardless of local probability.",
+          "None. Hurricanes in the southwest U.S. are more common than most people realize."
         ],
         correctIndex: 1,
         explanation: "Arizona has extremely low hurricane risk. Listing hurricanes as high-probability in an Arizona HVA is a clear indicator your facility used a non-specific template rather than conducting a genuine local hazard analysis. EM.02.01.01 requires your HVA to reflect actual local and regional conditions.",
@@ -6521,9 +6521,9 @@ const hospitalLevelsRaw: Level[] = [
         question: "What is the Joint Commission minimum requirement for emergency exercises per year?",
         options: [
           "One drill per year, which may be an internal tabletop exercise.",
-          "Four drills per year, one per quarter, with at least two involving community agencies.",
+          "Three exercises per year, all of which must be full-scale functional drills.",
           "Two exercises per year, with at least one being a community-based exercise.",
-          "Three exercises per year, all of which must be full-scale functional drills."
+          "Four drills per year, one per quarter, with at least two involving community agencies."
         ],
         correctIndex: 2,
         explanation: "EM.03.01.01 requires a minimum of two emergency exercises per year. At least one must be a community-based exercise involving external agencies — EMS, fire, public health, or neighboring hospitals. Both must be documented with participation records, critiques, and corrective action tracking.",
@@ -6549,9 +6549,9 @@ const hospitalLevelsRaw: Level[] = [
         question: "What is the primary purpose of requiring at least one community-based emergency exercise per year?",
         options: [
           "To allow the Joint Commission to observe your hospital's emergency capabilities directly.",
-          "To satisfy OSHA requirements for workplace emergency training.",
+          "To reduce malpractice insurance premiums by demonstrating disaster preparedness.",
           "To test coordination with external agencies your hospital would rely on during a real community disaster.",
-          "To reduce malpractice insurance premiums by demonstrating disaster preparedness."
+          "To satisfy OSHA requirements for workplace emergency training."
         ],
         correctIndex: 2,
         explanation: "Real community disasters require your hospital to work alongside EMS, fire departments, public health agencies, and neighboring hospitals. Community-based exercises test those inter-agency relationships and communication systems before an actual event. A hospital that only drills internally has never tested whether their communication with the emergency command center actually works under pressure.",
@@ -6564,8 +6564,8 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "No finding. Attendance documentation is sufficient to prove the exercises occurred.",
           "Finding. Incomplete drill documentation — critique and corrective action tracking are required elements.",
-          "Finding. Sign-in sheets are not an accepted form of participation documentation.",
-          "No finding. Critiques are only required after full-scale exercises, not tabletop drills."
+          "No finding. Critiques are only required after full-scale exercises, not tabletop drills.",
+          "Finding. Sign-in sheets are not an accepted form of participation documentation."
         ],
         correctIndex: 1,
         explanation: "Drill documentation must include more than attendance records. EM.03.01.01 requires documentation of the exercise critique — what worked, what failed, and corrective actions identified for improvement. Without these elements, the exercise record is incomplete even if staff actually participated.",
@@ -6592,8 +6592,8 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "Why didn't the drill test all six critical areas simultaneously?",
           "Were all three corrective actions completed, and can you show evidence of completion?",
-          "Who conducted the AAR, and were they certified in emergency management?",
-          "Did the drill scenario accurately predict the type of mass casualty event most likely in your region?"
+          "Did the drill scenario accurately predict the type of mass casualty event most likely in your region?",
+          "Who conducted the AAR, and were they certified in emergency management?"
         ],
         correctIndex: 1,
         explanation: "The purpose of the AAR is to drive improvement. EM.04.01.01 requires corrective actions to be tracked to completion, not just identified. Surveyors will look for evidence that the loop was closed — the updated protocols and revised procedures should all be verifiable in current documentation.",

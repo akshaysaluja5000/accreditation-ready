@@ -74,7 +74,7 @@ export const ascSafLevel: Level = {
         "Situations where a health care professional requests additional training",
         "Managing a situation where a health care professional becomes incapacitated during a medical or surgical procedure",
         "Health care professional scheduling conflicts on weekends",
-        "When a health care professional is absent for more than three consecutive days",
+        "When a health care professional is absent for more than three consecutive days"
       ],
       correctIndex: 1,
       explanation:
@@ -101,7 +101,7 @@ export const ascSafLevel: Level = {
         "A patient who arrives late for their scheduled procedure",
         "An unexpected death during a health care encounter not related to the patient's natural disease course",
         "A scheduling error that requires rescheduling the patient's procedure",
-        "A staff member calling in sick on a busy surgery day",
+        "A staff member calling in sick on a busy surgery day"
       ],
       correctIndex: 1,
       explanation:
@@ -128,7 +128,7 @@ export const ascSafLevel: Level = {
         "The staff member most responsible for the event",
         "Underlying basic or causal factors and potential improvements in processes or systems",
         "The patient's financial responsibility for any resulting complications",
-        "Whether the event meets the legal definition of malpractice",
+        "Whether the event meets the legal definition of malpractice"
       ],
       correctIndex: 1,
       explanation:
@@ -155,7 +155,7 @@ export const ascSafLevel: Level = {
         "Fire events",
         "Medication errors",
         "Workplace violence",
-        "Equipment theft",
+        "Equipment theft"
       ],
       correctIndex: 1,
       explanation:
@@ -182,7 +182,7 @@ export const ascSafLevel: Level = {
         "A list of all recalled products in the past five years",
         "How the organization determines if a recalled product is present or has been given or administered to patients",
         "The governing body's personal liability for recalled product injuries",
-        "A contract with a recall monitoring service",
+        "A contract with a recall monitoring service"
       ],
       correctIndex: 1,
       explanation:
@@ -209,7 +209,7 @@ export const ascSafLevel: Level = {
         "Verbal confirmation from staff that they checked dates is sufficient",
         "A written policy must describe the monitoring process AND monitoring activities must be documented",
         "Expiration monitoring is documented only when expired products are found",
-        "Expiration monitoring applies only to medications, not to reagents, solutions, or supplies",
+        "Expiration monitoring applies only to medications, not to reagents, solutions, or supplies"
       ],
       correctIndex: 1,
       explanation:
@@ -236,7 +236,7 @@ export const ascSafLevel: Level = {
         "A verbal safety briefing for new employees about chemical hazards",
         "A system for proper identification, management, handling, transport, and disposal of hazardous materials and wastes, with staff demonstrating knowledge of applicable laws",
         "A list of hazardous chemicals posted only in the storage area",
-        "Hazardous waste management is delegated entirely to the contracted waste disposal company",
+        "Hazardous waste management is delegated entirely to the contracted waste disposal company"
       ],
       correctIndex: 1,
       explanation:
@@ -263,7 +263,7 @@ export const ascSafLevel: Level = {
         "Monthly fire extinguisher inspections and quarterly fire drills",
         "Policies to educate staff in fire prevention and fire hazard reduction, AND requiring fire safety in safety surveillance activities",
         "Annual fire marshal inspections and a posted evacuation map",
-        "Automatic sprinkler systems and smoke detectors in all rooms",
+        "Automatic sprinkler systems and smoke detectors in all rooms"
       ],
       correctIndex: 1,
       explanation:
@@ -290,7 +290,7 @@ export const ascSafLevel: Level = {
         "Penalizing staff who cause near-miss events to deter future occurrences",
         "Encouraging the reporting of near-miss events",
         "Reporting all near-miss events to the state health department within 24 hours",
-        "Near-miss events are confidential and should not be documented",
+        "Near-miss events are confidential and should not be documented"
       ],
       correctIndex: 1,
       explanation:
@@ -317,7 +317,7 @@ export const ascSafLevel: Level = {
         "Every three years or when a significant change occurs",
         "At least annually, including an evaluation of safer medical devices and technology changes",
         "Only after a documented bloodborne pathogen exposure incident",
-        "When OSHA issues new bloodborne pathogen standards",
+        "When OSHA issues new bloodborne pathogen standards"
       ],
       correctIndex: 1,
       explanation:
@@ -344,7 +344,7 @@ export const ascSafLevel: Level = {
         "Only the date of the first dose of the vaccine series",
         "Evidence of employee acceptance or declination of the immunization program",
         "Only documentation if the employee declined vaccination",
-        "The specific lot number of each hepatitis B vaccine administered",
+        "The specific lot number of each hepatitis B vaccine administered"
       ],
       correctIndex: 1,
       explanation:
@@ -371,7 +371,7 @@ export const ascSafLevel: Level = {
         "Monthly chemical purchasing audits",
         "An annual hazard assessment of chemicals used in the workplace, conducted at least annually and as new products are added",
         "Elimination of all cleaning chemicals from the facility",
-        "Chemical safety is governed only by OSHA - no organizational policy is needed",
+        "Chemical safety is governed only by OSHA - no organizational policy is needed"
       ],
       correctIndex: 1,
       explanation:
@@ -398,7 +398,7 @@ export const ascSafLevel: Level = {
         "JCAHO recordkeeping standards",
         "State and federal reporting requirements including OSHA",
         "The organization's internal HR policy alone",
-        "Workers' compensation insurance requirements alone",
+        "Workers' compensation insurance requirements alone"
       ],
       correctIndex: 1,
       explanation:
@@ -425,7 +425,7 @@ export const ascSafLevel: Level = {
         "Only the cost of the renovation project",
         "Potential risks to occupant health and safety, actions to eliminate/mitigate those risks, and provisions for ongoing monitoring",
         "The architectural firm's license number",
-        "Risk assessment for construction is the responsibility of the contractor, not the facility",
+        "Risk assessment for construction is the responsibility of the contractor, not the facility"
       ],
       correctIndex: 1,
       explanation:
@@ -452,7 +452,7 @@ export const ascSafLevel: Level = {
         "A no-fall guarantee for all patients",
         "Processes to ensure the accurate and timely reporting of fall events",
         "A dedicated fall coordinator position for all facilities",
-        "Electronic fall risk assessment tools for all patient encounters",
+        "Electronic fall risk assessment tools for all patient encounters"
       ],
       correctIndex: 1,
       explanation:
@@ -479,7 +479,7 @@ export const ascSafLevel: Level = {
         "Observers are never permitted in patient care areas under any circumstances",
         "Written policies define restrictions on observers AND require patient consent for non-authorized persons in patient care areas",
         "Only family members who are medical professionals may observe procedures",
-        "Observer consent is required only from the provider, not the patient",
+        "Observer consent is required only from the provider, not the patient"
       ],
       correctIndex: 1,
       explanation:
@@ -506,7 +506,7 @@ export const ascSafLevel: Level = {
         "All improvements must be implemented within 30 days of the adverse event",
         "Improvements must be implemented 'when indicated' by the analysis",
         "Improvements are required only for adverse events resulting in patient death",
-        "The governing body must approve every improvement before implementation",
+        "The governing body must approve every improvement before implementation"
       ],
       correctIndex: 1,
       explanation:
@@ -533,7 +533,7 @@ export const ascSafLevel: Level = {
         "A standard list of required vaccines defined by AAAHC",
         "Vaccinations for infectious agents of risk to staff and patients as indicated by the infection prevention risk assessment",
         "Only hepatitis B and influenza - all other vaccines are optional",
-        "The state health department's employee immunization requirements",
+        "The state health department's employee immunization requirements"
       ],
       correctIndex: 1,
       explanation:
@@ -560,7 +560,7 @@ export const ascSafLevel: Level = {
         "The device's purchase price and warranty information",
         "Instructions to patients regarding use of the devices",
         "The device's FDA 510(k) clearance number",
-        "The technician's name who prepared the device for the patient",
+        "The technician's name who prepared the device for the patient"
       ],
       correctIndex: 1,
       explanation:
@@ -587,7 +587,7 @@ export const ascSafLevel: Level = {
         "Designated complaint reviewer and annual complaint summary report",
         "Ongoing review of patient complaints and grievances, AND defined response times as required by law and regulation",
         "Monthly complaint meetings and external ombudsman involvement",
-        "Only written complaints require defined response times - verbal complaints are exempt",
+        "Only written complaints require defined response times - verbal complaints are exempt"
       ],
       correctIndex: 1,
       explanation:

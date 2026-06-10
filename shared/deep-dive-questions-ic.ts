@@ -176,8 +176,8 @@ export const ddInfectionControlLevel: DeepDiveLevel = {
       baseQuestion: "A surgical site infection rate for colon procedures is 8.2% - more than double the NHSN risk-adjusted benchmark of 3.7%. The surgical team confirms that pre-operative antibiotics are consistently given within the 60-minute window and glucose is controlled perioperatively. What other SSI bundle element is most likely being omitted?",
       baseOptions: [
         "Post-operative wound culture - all SSIs should be cultured to identify responsible organisms",
+        "Both B and C are commonly omitted elements that independently increase SSI risk and would each be worth investigating",
         "Appropriate hair removal technique - razor shaving versus clipping significantly increases SSI risk, and is a commonly overlooked bundle element even when antibiotic timing is optimized",
-        "Intraoperative normothermia maintenance - hypothermia impairs neutrophil function and significantly increases SSI risk, and is often not monitored unless specifically tracked",
         "Both B and C are commonly omitted elements that independently increase SSI risk and would each be worth investigating"
       ],
       baseCorrectIndex: 3,

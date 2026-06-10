@@ -74,7 +74,7 @@ export const ascIpcLevel: Level = {
         "A staff survey about hand hygiene habits",
         "A formal, documented infection prevention risk assessment completed annually",
         "An annual audit of sterilization logs by an external contractor",
-        "Submission of infection rates to the CDC's National Healthcare Safety Network",
+        "Submission of infection rates to the CDC's National Healthcare Safety Network"
       ],
       correctIndex: 1,
       explanation:
@@ -101,7 +101,7 @@ export const ascIpcLevel: Level = {
         "The governing body chair",
         "A designated qualified health care professional with training and current competence in IPC",
         "An outside consultant hired only for accreditation surveys",
-        "The facility's medical director by default",
+        "The facility's medical director by default"
       ],
       correctIndex: 1,
       explanation:
@@ -128,7 +128,7 @@ export const ascIpcLevel: Level = {
         "The IPC program must include annual hand hygiene retraining",
         "Active surveillance of hand hygiene must be conducted and documented - assumption is not surveillance",
         "Hand hygiene compliance only needs to be measured if there is an outbreak",
-        "IPC.130 only requires a hand hygiene policy, not active observation",
+        "IPC.130 only requires a hand hygiene policy, not active observation"
       ],
       correctIndex: 1,
       explanation:
@@ -155,7 +155,7 @@ export const ascIpcLevel: Level = {
         "Two types of indicators are sufficient - biological indicators are optional for low-risk loads",
         "IPC.170.30 requires internal AND external indicators including biological indicators - all three types are required for items undergoing sterilization",
         "Biological indicators are only required for implants, not for general surgical instrument sets",
-        "External indicators alone are sufficient for Class 4 chemical indicators",
+        "External indicators alone are sufficient for Class 4 chemical indicators"
       ],
       correctIndex: 1,
       explanation:
@@ -182,7 +182,7 @@ export const ascIpcLevel: Level = {
         "IPC.180 allows containers to be filled completely before replacement",
         "IPC.180.30 requires replacement when the fill line is reached, not when the container is completely full",
         "Sharps containers must be replaced daily regardless of fill level",
-        "Sharps containers only need to be replaced when a needlestick injury occurs",
+        "Sharps containers only need to be replaced when a needlestick injury occurs"
       ],
       correctIndex: 1,
       explanation:
@@ -209,7 +209,7 @@ export const ascIpcLevel: Level = {
         "Only when a patient dies from a healthcare-associated infection",
         "When reportable conditions are identified among patients or staff",
         "When the IPC risk assessment identifies a new infection risk",
-        "Only for respiratory diseases with pandemic potential",
+        "Only for respiratory diseases with pandemic potential"
       ],
       correctIndex: 1,
       explanation:
@@ -236,7 +236,7 @@ export const ascIpcLevel: Level = {
         "Only personnel numbers matter - equipment and supplies are secondary",
         "Space, equipment, supplies, AND personnel must all be assessed as sufficient",
         "Cross-infection protection is assessed only during outbreak investigations",
-        "IPC.200 only applies to facilities that perform invasive procedures",
+        "IPC.200 only applies to facilities that perform invasive procedures"
       ],
       correctIndex: 1,
       explanation:
@@ -263,7 +263,7 @@ export const ascIpcLevel: Level = {
         "Daily end-of-day terminal cleaning only",
         "Cleaning before use, between patients, and terminal cleaning frequency based on use of the area",
         "Monthly deep cleaning by a certified environmental services contractor",
-        "Cleaning is required only after procedures involving blood or body fluids",
+        "Cleaning is required only after procedures involving blood or body fluids"
       ],
       correctIndex: 1,
       explanation:
@@ -290,7 +290,7 @@ export const ascIpcLevel: Level = {
         "The organization's preference based on historical practice",
         "The manufacturer's instructions or nationally recognized guidelines, whichever are more stringent",
         "Only the manufacturer's instructions apply - guidelines are advisory",
-        "Only nationally recognized guidelines apply - manufacturer instructions are secondary",
+        "Only nationally recognized guidelines apply - manufacturer instructions are secondary"
       ],
       correctIndex: 1,
       explanation:
@@ -317,7 +317,7 @@ export const ascIpcLevel: Level = {
         "Written policies requiring patients to shower the morning of surgery",
         "Environmental controls for temperature, humidity, and air pressure in OR/procedure areas following nationally recognized guidelines",
         "A minimum of six air exchanges per hour regardless of room type",
-        "Negative pressure rooms for all surgical procedures",
+        "Negative pressure rooms for all surgical procedures"
       ],
       correctIndex: 1,
       explanation:
@@ -344,7 +344,7 @@ export const ascIpcLevel: Level = {
         "Contracted laundry is prohibited - all contaminated attire must be laundered on-site",
         "The laundry must adhere to nationally recognized guidelines AND be approved by the organization",
         "Only the laundry's state license needs to be verified",
-        "Contaminated attire can be laundered at a commercial laundromat if cost-effective",
+        "Contaminated attire can be laundered at a commercial laundromat if cost-effective"
       ],
       correctIndex: 1,
       explanation:
@@ -371,7 +371,7 @@ export const ascIpcLevel: Level = {
         "IPC programs do not require annual review once initially approved",
         "The annual infection prevention risk assessment has not been conducted, and the program has not been maintained based on current risks",
         "The governing body only needs to review the IPC program every three years",
-        "IPC program updates are triggered only by infection outbreaks, not by routine annual review",
+        "IPC program updates are triggered only by infection outbreaks, not by routine annual review"
       ],
       correctIndex: 1,
       explanation:
@@ -398,7 +398,7 @@ export const ascIpcLevel: Level = {
         "Only alcohol-based hand rubs are compliant - soap and water is insufficient",
         "A written hand hygiene policy must address appropriate products and their use according to the manufacturer's instructions for use",
         "Hand hygiene products must be approved by the FDA before use",
-        "Soap and water must be used between all patients; hand rubs are supplementary only",
+        "Soap and water must be used between all patients; hand rubs are supplementary only"
       ],
       correctIndex: 1,
       explanation:
@@ -425,7 +425,7 @@ export const ascIpcLevel: Level = {
         "The load may still be released if the external and internal chemical indicators passed",
         "Items from the load must be recalled and re-sterilized, and the sterilizer must be taken out of service and inspected",
         "Positive biological indicators are expected occasionally and do not require action",
-        "The load may be released after 48 hours to allow re-test confirmation",
+        "The load may be released after 48 hours to allow re-test confirmation"
       ],
       correctIndex: 1,
       explanation:
@@ -452,7 +452,7 @@ export const ascIpcLevel: Level = {
         "Betadine scrub and chlorhexidine rinse",
         "Antimicrobial soap (traditional scrub) or alcohol-based hand rub, according to product manufacturer's recommended guidelines",
         "Any hand hygiene product for 2 minutes minimum",
-        "Only traditional brush-and-soap scrub meets surgical hand antisepsis standards",
+        "Only traditional brush-and-soap scrub meets surgical hand antisepsis standards"
       ],
       correctIndex: 1,
       explanation:
@@ -479,7 +479,7 @@ export const ascIpcLevel: Level = {
         "IPC programs do not need to be linked to QI programs",
         "IPC.100.40 requires the IPC program to be an integral part of the organization's quality improvement program",
         "IPC and QI integration is only required for hospitals with more than 200 beds",
-        "Integration with QI is optional if the organization has a low infection rate",
+        "Integration with QI is optional if the organization has a low infection rate"
       ],
       correctIndex: 1,
       explanation:
@@ -506,7 +506,7 @@ export const ascIpcLevel: Level = {
         "How to dispose of single-use items that have been accidentally contaminated",
         "The identification and processing of medical equipment and instruments that fail to meet high-level disinfection or sterilization parameters",
         "How to handle equipment returned from repair by an outside vendor",
-        "The process for ordering replacement equipment when current equipment is too old",
+        "The process for ordering replacement equipment when current equipment is too old"
       ],
       correctIndex: 1,
       explanation:
@@ -533,7 +533,7 @@ export const ascIpcLevel: Level = {
         "Only in facilities that have had previous injection-related infection events",
         "Active surveillance of safe injection practices consistent with CDC or other nationally recognized guidelines must be ongoing",
         "Safe injection surveillance is only required for facilities offering IV sedation",
-        "IPC.130.40 only applies when multi-dose vials are used",
+        "IPC.130.40 only applies when multi-dose vials are used"
       ],
       correctIndex: 1,
       explanation:
@@ -560,7 +560,7 @@ export const ascIpcLevel: Level = {
         "It is a security measure only, not related to infection prevention",
         "Unauthorized personnel in patient care areas are an infection prevention and cross-contamination risk",
         "IPC.190.40 only applies to facilities caring for immunocompromised patients",
-        "The requirement is administrative only and has no clinical significance",
+        "The requirement is administrative only and has no clinical significance"
       ],
       correctIndex: 1,
       explanation:
@@ -587,7 +587,7 @@ export const ascIpcLevel: Level = {
         "The pack may be used if the internal chemical indicator passed",
         "The sterility of the pack cannot be assumed - it must be reprocessed before use",
         "The pack may be used if the breach is less than 1 cm in size",
-        "A torn wrapper is a minor defect - the surgeon decides whether to use the item",
+        "A torn wrapper is a minor defect - the surgeon decides whether to use the item"
       ],
       correctIndex: 1,
       explanation:

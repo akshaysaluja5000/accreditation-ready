@@ -39,7 +39,7 @@ export const ddPatientRightsLevel: DeepDiveLevel = {
       id: "dd-pr2",
       baseQuestion: "An elderly patient with dementia becomes agitated at night and attempts to climb out of bed. The nurse applies wrist restraints citing fall risk. No physician order has been obtained. The nurse calls the physician 2 hours later to report. What is the compliance status of this sequence?",
       baseOptions: [
-        "Compliant - nursing judgment in an immediate safety emergency permits restraint application prior to physician notification",
+        "Non-compliant - nursing judgment in an immediate safety emergency permits restraint application prior to physician notification",
         "Non-compliant - behavioral restraints require a physician order before application; emergency restraint application without an order requires immediate physician notification and order within a defined timeframe (typically 1 hour), not 2 hours later",
         "Compliant - the 2-hour window for physician notification is within acceptable limits for behavioral restraints in geriatric patients",
         "Non-compliant - dementia patients cannot be restrained under any circumstances without ethics committee approval"

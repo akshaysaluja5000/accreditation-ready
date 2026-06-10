@@ -13,8 +13,8 @@ export const ddOrLevel: DeepDiveLevel = {
       baseQuestion: "During a Joint Commission tracer, the surveyor observes the scrub technologist setting up the back table. Which practice demonstrates correct sterile field setup?",
       baseOptions: [
         "Opening both sides of the drape simultaneously",
-        "Opening the sterile drape toward yourself first, then away",
         "Having the circulator open the drape while the scrub tech holds the edges",
+        "Opening the sterile drape toward yourself first, then away",
         "Opening the sterile drape away from yourself first, then toward yourself"
       ],
       baseCorrectIndex: 3,
@@ -165,10 +165,10 @@ export const ddOrLevel: DeepDiveLevel = {
       id: "dd-or4",
       baseQuestion: "During a tracer round, the surveyor asks about surgical draping. A circulator is preparing to drape a patient for an abdominal procedure. What is the correct draping principle?",
       baseOptions: [
+        "Drape from the operative site outward to the periphery (clean to dirty principle)",
         "Have the surgeon place all drapes since only surgeons can drape",
-        "Drape from the non-sterile area toward the sterile area (far to near)",
         "Drape from the operative site outward to the periphery (near to",
-        "Drape from head to toe in a single motion"
+        "Drape the periphery first, then work inward toward the operative site"
       ],
       baseCorrectIndex: 2,
       baseExplanation: "Surgical draping is performed from the operative site (cleanest area) outward to the periphery. This 'clean to dirty' principle prevents contamination of the surgical site by avoiding passing materials over the prepared incision area. Drapes are placed by any sterile team member, not exclusively the surgeon.",
@@ -218,8 +218,8 @@ export const ddOrLevel: DeepDiveLevel = {
       baseOptions: [
         "The biological indicator results from the sterilization load must",
         "Biological indicators are checked only once per week for implant loads",
-        "Biological indicator results are not required for implants",
-        "Only chemical indicator results need to be checked"
+        "Biological indicator results are not required for implants since chemical indicators suffice",
+        "Only chemical indicator results need to be checked before implant release"
       ],
       baseCorrectIndex: 0,
       baseExplanation: "Per Joint Commission standards and AAMI guidelines, biological indicator (BI) results must show no growth before implantable devices are released for patient use. A biological indicator containing Geobacillus stearothermophilus spores must be included in every load containing implants, and results must be available before the implant is used.",
@@ -318,9 +318,9 @@ export const ddOrLevel: DeepDiveLevel = {
       id: "dd-or7",
       baseQuestion: "During a perioperative tracer, the surveyor asks a scrub technologist about surgical attire requirements. Which statement about surgical caps/hoods is compliant with Joint Commission and AORN standards?",
       baseOptions: [
+        "All head and facial hair must be completely covered by a surgical cap or hood",
         "Surgical caps are only required for the surgeon and scrub tech",
         "Cloth skull caps that leave the sides and back of the head exposed are acceptable",
-        "Caps are optional if the staff member will not be near the sterile field",
         "All head and facial hair must be completely covered by a surgical cap or hood"
       ],
       baseCorrectIndex: 3,
@@ -471,10 +471,10 @@ export const ddOrLevel: DeepDiveLevel = {
       id: "dd-or10",
       baseQuestion: "The circulator needs to open a sterile instrument tray onto the back table. Which technique is correct per AORN standards?",
       baseOptions: [
-        "Have the scrub tech open the tray since only scrubbed personnel can handle sterile items",
-        "Remove the tray from the wrapper and place it on the table bare",
         "Open the far flap first, then the side flaps, and the near flap last",
-        "Open the wrapper toward yourself first, then open the far side"
+        "Have the scrub tech open the tray since only scrubbed personnel can handle sterile items",
+        "Open the far flap first, then the side flaps, and the near flap last",
+        "Open all flaps simultaneously to minimize time spent over the sterile field"
       ],
       baseCorrectIndex: 2,
       baseExplanation: "When opening a wrapped sterile package, the circulator opens the far flap first (away from body), then each side flap, and finally the near flap (toward body) last. This sequence prevents the circulator from reaching over the sterile contents at any point, maintaining sterility. The outer wrapper serves as the sterile table cover.",
@@ -624,9 +624,9 @@ export const ddOrLevel: DeepDiveLevel = {
       id: "dd-or13",
       baseQuestion: "A Joint Commission surveyor checks the OR thermostat during a procedure. The room temperature reads 78 degrees F. What is the compliance concern?",
       baseOptions: [
-        "There is no concern; OR temperature has no regulatory standard",
-        "The temperature is only a concern if the patient complains",
-        "The temperature is too low for patient comfort",
+        "The facility's policy should include a defined process for temperature adjustments outside the standard range for specific patient populations (neonates, burn patients)",
+        "Deny the request because OR temperature must always remain within 68-75°F without exception",
+        "Use only warming blankets and overhead warmers instead of adjusting room temperature, since the HVAC range cannot be modified",
         "The temperature exceeds the recommended OR range of 68-75"
       ],
       baseCorrectIndex: 3,
@@ -675,10 +675,10 @@ export const ddOrLevel: DeepDiveLevel = {
       id: "dd-or14",
       baseQuestion: "A surveyor observes a surgical technologist who has been scrubbed and is standing at the sterile field. The tech steps away from the table to answer a question from the circulator across the room. What is the concern?",
       baseOptions: [
-        "This is acceptable if the tech keeps hands above waist level",
-        "There is no concern as long as the tech does not touch anything unsterile",
+        "They should pass back to back or front to front (sterile to sterile)",
+        "One person should step out of the sterile area to let the other pass",
         "The scrubbed person should remain within the sterile field",
-        "The tech should remove gloves before walking away"
+        "They should pass as quickly as possible in any orientation"
       ],
       baseCorrectIndex: 2,
       baseExplanation: "Scrubbed personnel must remain within the sterile field throughout the procedure. Stepping away from the sterile area increases the risk of inadvertent contamination of the gown and gloves by contact with unsterile surfaces or objects. If a scrubbed person must leave the sterile field, they should re-gown and re-glove upon return.",
@@ -726,9 +726,9 @@ export const ddOrLevel: DeepDiveLevel = {
       id: "dd-or15",
       baseQuestion: "During a tracer, the surveyor asks the circulator about shoe cover requirements in the OR. Which statement reflects current evidence-based practice?",
       baseOptions: [
+        "Shoe covers are not required by AORN for infection prevention but may be used as personal protective equipment when gross contamination is anticipated",
         "Shoe covers are mandatory for all personnel entering the OR at all times",
         "Shoe covers are only needed during orthopedic procedures",
-        "Shoe covers must be changed between every case",
         "Shoe covers are not required by AORN for infection prevention but"
       ],
       baseCorrectIndex: 3,
@@ -882,7 +882,7 @@ export const ddOrLevel: DeepDiveLevel = {
         "Finish holding the retractor and change gloves at the next convenient opportunity",
         "Alert the team, step back from the field",
         "Apply skin adhesive over the hole and continue",
-        "Apply a second glove over the compromised one"
+        "Apply a second glove over the compromised one and continue"
       ],
       baseCorrectIndex: 1,
       baseExplanation: "A glove perforation is an immediate break in the sterile barrier and must be corrected as soon as it is identified. The scrubbed person must alert the team, step back from the sterile field, and have the contaminated glove removed and replaced with a new sterile glove. If the gown cuff is potentially contaminated, the gown must also be changed. Double gloving is recommended to reduce perforation exposure risk.",
@@ -930,8 +930,8 @@ export const ddOrLevel: DeepDiveLevel = {
       id: "dd-or19",
       baseQuestion: "A Joint Commission surveyor reviews the OR schedule and notes that a room is being turned over for the next case. The environmental services (EVS) staff has completed terminal cleaning. What temperature should the OR be brought to before the next patient enters?",
       baseOptions: [
+        "Between 68-75 degrees F (20-24 degrees C) per ASHRAE and Joint Commission standards",
         "The room should be as cold as possible to reduce bacterial growth",
-        "Any temperature the surgeon prefers",
         "Between 68-75 degrees F (20-24 degrees C) per ASHRAE and",
         "Temperature only matters during the procedure, not during setup"
       ],

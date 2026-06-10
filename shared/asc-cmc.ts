@@ -74,7 +74,7 @@ export const ascCmcLevel: Level = {
         "Dictated but unsigned notes are acceptable for up to 90 days",
         "An unsigned operative note is not authenticated - the clinical record is incomplete until authenticated",
         "Authentication is only required for records that will be sent to other providers",
-        "The dictated text satisfies the requirement - signature is a formality",
+        "The dictated text satisfies the requirement - signature is a formality"
       ],
       correctIndex: 1,
       explanation:
@@ -101,7 +101,7 @@ export const ascCmcLevel: Level = {
         "Lab results are the anesthesiologist's responsibility - not the surgeon's",
         "The ordering provider must review pre-operative test results - especially abnormal ones - and document their clinical decision relative to those results before proceeding",
         "Pre-operative labs are optional - proceeding without review is acceptable if the patient appears well",
-        "Lab values outside the normal range require an automatic procedure cancellation",
+        "Lab values outside the normal range require an automatic procedure cancellation"
       ],
       correctIndex: 1,
       explanation:
@@ -128,7 +128,7 @@ export const ascCmcLevel: Level = {
         "The instructions are adequate - wound care is the primary concern after this procedure",
         "CMC.130 requires comprehensive written discharge instructions covering all relevant aspects: activity, diet, wound care, medications, warning signs, and follow-up",
         "Verbal instructions are sufficient if they cover all topics",
-        "Discharge instructions are required only for patients receiving general anesthesia",
+        "Discharge instructions are required only for patients receiving general anesthesia"
       ],
       correctIndex: 1,
       explanation:
@@ -155,7 +155,7 @@ export const ascCmcLevel: Level = {
         "Only the patient's name and the receiving hospital's name",
         "The patient's clinical status at transfer, the receiving facility, and documentation of communication with the accepting provider",
         "A signed transfer agreement form from the hospital only",
-        "Transfer documentation is the receiving hospital's responsibility - the ASC has no documentation obligation",
+        "Transfer documentation is the receiving hospital's responsibility - the ASC has no documentation obligation"
       ],
       correctIndex: 1,
       explanation:
@@ -182,7 +182,7 @@ export const ascCmcLevel: Level = {
         "The patient is responsible for scheduling their own follow-up - the ASC has no obligation",
         "Follow-up appointment information must be provided in the discharge instructions before or at the time of discharge",
         "Follow-up is only required for patients who had complications during their procedure",
-        "A written referral to a provider is sufficient - the appointment does not need to be arranged before discharge",
+        "A written referral to a provider is sufficient - the appointment does not need to be arranged before discharge"
       ],
       correctIndex: 1,
       explanation:
@@ -209,7 +209,7 @@ export const ascCmcLevel: Level = {
         "The nursing assessment is sufficient documentation for pre-operative evaluation",
         "Both a nursing pre-operative assessment and a separate anesthesia pre-operative evaluation are required elements of the clinical record",
         "Anesthesia evaluation is only required if the procedure uses general anesthesia",
-        "The anesthesia evaluation may be replaced by a verbal discussion between the nurse and anesthesiologist",
+        "The anesthesia evaluation may be replaced by a verbal discussion between the nurse and anesthesiologist"
       ],
       correctIndex: 1,
       explanation:
@@ -236,7 +236,7 @@ export const ascCmcLevel: Level = {
         "Verbal explanation is sufficient - written medication instructions are optional",
         "Written discharge instructions including medication name, dose, frequency, purpose, and instructions for use must be provided",
         "The prescription alone serves as the discharge medication instruction",
-        "Only controlled substances require written discharge instructions",
+        "Only controlled substances require written discharge instructions"
       ],
       correctIndex: 1,
       explanation:
@@ -263,7 +263,7 @@ export const ascCmcLevel: Level = {
         "It is only relevant for billing purposes",
         "The documented diagnosis must be consistent with the clinical findings and procedures performed - it drives care coordination, follow-up, and continuity of care with other providers",
         "Diagnosis documentation is optional if the procedure was elective",
-        "Only the primary surgical diagnosis is required - secondary diagnoses are optional",
+        "Only the primary surgical diagnosis is required - secondary diagnoses are optional"
       ],
       correctIndex: 1,
       explanation:
@@ -290,7 +290,7 @@ export const ascCmcLevel: Level = {
         "Records must be maintained for two years minimum",
         "Records must be maintained in accordance with applicable state and federal law and regulations",
         "Records may be destroyed when the patient is no longer active",
-        "Electronic records do not have retention requirements under AAAHC",
+        "Electronic records do not have retention requirements under AAAHC"
       ],
       correctIndex: 1,
       explanation:
@@ -317,7 +317,7 @@ export const ascCmcLevel: Level = {
         "Within 30 days of the procedure",
         "According to the organization's defined timeline for clinical record completion - typically immediately or within 24 hours",
         "The operative note is optional if the procedure was uncomplicated",
-        "Within the same calendar year as the procedure",
+        "Within the same calendar year as the procedure"
       ],
       correctIndex: 1,
       explanation:
@@ -344,7 +344,7 @@ export const ascCmcLevel: Level = {
         "English-only discharge instructions are acceptable if the patient signed the instructions",
         "CMC.130 and PRR.440 together require that discharge instructions be provided in a language the patient can understand",
         "Translation of discharge instructions is only required if the patient is a Medicare beneficiary",
-        "The gastroenterologist will provide translated instructions at the follow-up appointment",
+        "The gastroenterologist will provide translated instructions at the follow-up appointment"
       ],
       correctIndex: 1,
       explanation:
@@ -371,7 +371,7 @@ export const ascCmcLevel: Level = {
         "All patients must have a complete metabolic panel and CBC prior to surgery",
         "Diagnostic testing is ordered based on the patient's clinical condition, history, and the planned procedure - not reflexively for all surgical patients",
         "No pre-operative testing is required for procedures under two hours",
-        "Only patients over 65 require pre-operative laboratory testing",
+        "Only patients over 65 require pre-operative laboratory testing"
       ],
       correctIndex: 1,
       explanation:
@@ -398,7 +398,7 @@ export const ascCmcLevel: Level = {
         "Patient satisfaction survey",
         "Medical history, physical examination findings, and diagnosis - which form the clinical basis for the procedure",
         "Insurance pre-authorization documentation",
-        "The surgeon's educational credentials",
+        "The surgeon's educational credentials"
       ],
       correctIndex: 1,
       explanation:
@@ -425,7 +425,7 @@ export const ascCmcLevel: Level = {
         "General wound care instructions - diabetes management is not part of surgical discharge",
         "Instructions about managing blood glucose during recovery - including medication adjustments if NPO status or reduced oral intake continues, and when to monitor glucose",
         "Only the standard discharge checklist - diabetes management is the primary care doctor's responsibility",
-        "A referral to an endocrinologist before discharge",
+        "A referral to an endocrinologist before discharge"
       ],
       correctIndex: 1,
       explanation:
@@ -452,7 +452,7 @@ export const ascCmcLevel: Level = {
         "Records may always be released to physicians who request them",
         "Records may be released only in accordance with applicable state and federal privacy laws (HIPAA) and the organization's record release policies",
         "Legal proceedings automatically grant access to all clinical records",
-        "The patient's verbal consent is sufficient for record release",
+        "The patient's verbal consent is sufficient for record release"
       ],
       correctIndex: 1,
       explanation:
@@ -479,7 +479,7 @@ export const ascCmcLevel: Level = {
         "Telehealth records are not subject to CMC requirements",
         "The same required clinical record elements as in-person assessments - including the nature of the encounter (telehealth), the provider's identity, and appropriate assessment documentation",
         "Only the date of the encounter and the patient's name",
-        "Telehealth records are maintained separately from the ASC's main clinical records system",
+        "Telehealth records are maintained separately from the ASC's main clinical records system"
       ],
       correctIndex: 1,
       explanation:
@@ -506,7 +506,7 @@ export const ascCmcLevel: Level = {
         "The patient demographics section",
         "The evidence of informed consent",
         "The discharge instructions",
-        "The operative note",
+        "The operative note"
       ],
       correctIndex: 1,
       explanation:
@@ -533,7 +533,7 @@ export const ascCmcLevel: Level = {
         "It is required for billing verification purposes only",
         "It establishes the baseline for post-operative monitoring, provides a reference if complications arise after discharge, and supports coordination with follow-up providers",
         "Discharge condition documentation is optional if the patient meets discharge criteria",
-        "It is only required for patients who received general anesthesia",
+        "It is only required for patients who received general anesthesia"
       ],
       correctIndex: 1,
       explanation:
@@ -560,7 +560,7 @@ export const ascCmcLevel: Level = {
         "Medication reconciliation is a pharmacy function - it is not a clinical record requirement",
         "Current medications must be documented in the clinical record as part of the pre-operative assessment, and medications prescribed at discharge must be reconciled with existing medications to prevent dangerous interactions",
         "Only new medications prescribed at discharge require documentation",
-        "Medication reconciliation is required only for patients with chronic conditions",
+        "Medication reconciliation is required only for patients with chronic conditions"
       ],
       correctIndex: 1,
       explanation:
@@ -587,7 +587,7 @@ export const ascCmcLevel: Level = {
         "Nothing - the patient's refusal eliminates the organization's documentation obligation",
         "The clinical record must document that follow-up was recommended, the patient declined, the reason given if provided, and any patient education provided about the importance of follow-up",
         "The patient must be prevented from leaving until they agree to a follow-up appointment",
-        "Only the surgeon's note about the recommendation is required - patient refusal is a personal decision",
+        "Only the surgeon's note about the recommendation is required - patient refusal is a personal decision"
       ],
       correctIndex: 1,
       explanation:

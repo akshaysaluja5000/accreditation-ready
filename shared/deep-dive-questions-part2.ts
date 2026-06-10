@@ -2329,7 +2329,7 @@ export const deepDiveLevelsPart2: DeepDiveLevel[] = [
         id: "dd-spd9",
         baseQuestion: "The SPD uses a multi-enzyme detergent. A tech mixes the solution in the morning and continues using the same solution throughout the 12-hour shift. The manufacturer's IFU states the solution should be changed every 4 hours or when visibly soiled. Is the tech's practice compliant?",
         baseOptions: [
-        "The solution only needs changing when it becomes visibly turbid or discolored from bioburden loading",
+        "The manufacturer's IFU requires solution changes at minimum every 4 hours regardless of appearance; enzymatic activity diminishes over time",
         "The manufacturer's IFU requires solution changes at minimum every 4 hours regardless of appearance; enzymatic activity diminishes over time",
         "But the 4-hour rule applies only to high-bioburden cases; routine instruments allow 8-hour intervals",
         "Enzymatic solutions remain effective for a full 12-hour shift if maintained at the proper temperature"
@@ -2376,7 +2376,7 @@ export const deepDiveLevelsPart2: DeepDiveLevel[] = [
         id: "dd-spd10",
         baseQuestion: "An instrument tracking system shows that a specific surgical tray was decontaminated but has no record of being inspected or assembled before sterilization. The tray was sterilized and is on the sterile storage shelf. Is this a concern?",
         baseOptions: [
-        "But only if the tray contains complex lumened instruments requiring additional verification steps",
+        "Sterilization does not clean instruments; if the inspection and assembly steps were bypassed, instruments may have residual bioburden, be incorrectly assembled, or have unidentified defects",
         "Sterilization does not clean instruments; if the inspection and assembly steps were bypassed, instruments may have residual bioburden, be incorrectly assembled, or have unidentified defects",
         "Validated steam sterilization compensates for any upstream process gaps in documentation",
         "The tracking gap is a documentation issue only and does not affect the tray's sterility status"
@@ -2423,10 +2423,10 @@ export const deepDiveLevelsPart2: DeepDiveLevel[] = [
         id: "dd-spd11",
         baseQuestion: "A tech is performing manual cleaning on a complex instrument with multiple channels and lumens. She submerges it in detergent and uses a syringe to flush the channels. Is syringe flushing alone adequate?",
         baseOptions: [
+        "Syringe flushing at adequate pressure meets manufacturer requirements for most channel types",
         "Syringe flushing pushes detergent through the channels effectively",
-        "The washer-disinfector automated cycle completes channel cleaning after initial manual flush",
         "Syringe flushing alone may not generate sufficient pressure or contact to",
-        "Syringe flushing at adequate pressure meets manufacturer requirements for most channel types"
+        "The washer-disinfector automated cycle completes channel cleaning after initial manual flush"
       ],
       baseCorrectIndex: 2,
         baseExplanation: "Syringe flushing may not generate adequate mechanical action to remove adherent bioburden from channel walls. Manufacturer IFU for complex instruments typically specify brushing with appropriately sized brushes, specific flush volumes and pressures, and defined cleaning sequences. Each step is validated to achieve adequate cleaning.",
@@ -2495,8 +2495,8 @@ export const deepDiveLevelsPart2: DeepDiveLevel[] = [
         id: "dd-spd13",
         baseQuestion: "The washer-disinfector validation was last performed 14 months ago. The facility's policy requires annual validation. Daily cycle monitoring has been normal. Is the overdue validation a concern?",
         baseOptions: [
-        "But only for the thermal disinfection parameters; cleaning efficacy validation can be deferred",
         "Daily cycle monitoring demonstrates adequate performance",
+        "But only for the thermal disinfection parameters; cleaning efficacy validation can be deferred",
         "A two-month delay is acceptable if the machine has had no cycle failures in that period",
         "Validation and daily monitoring serve different purposes"
       ],
@@ -2730,7 +2730,7 @@ export const deepDiveLevelsPart2: DeepDiveLevel[] = [
         id: "dd-spd18",
         baseQuestion: "The SPD has implemented an instrument tracking system that scans each tray at decontamination, assembly, and sterilization. A tech notices the system is down and begins processing trays without scanning. Is this acceptable?",
         baseOptions: [
-        "The tracking system is supplemental and processing has no documentation requirement during outages",
+        "Processing should continue with a documented manual backup tracking",
         "Processing should continue with a documented manual backup tracking",
         "All processing must halt until the tracking system is restored to prevent traceability gaps",
         "Processing cannot stop when the tracking system is down"
@@ -2778,7 +2778,7 @@ export const deepDiveLevelsPart2: DeepDiveLevel[] = [
         baseQuestion: "A tech is cleaning instruments in the decontamination sink and notices that the water temperature is 110 degrees F. The facility policy and IFU for the enzymatic detergent recommend a water temperature of 95-110 degrees F for optimal enzyme activity. Is the temperature acceptable?",
         baseOptions: [
         "The temperature is technically within range but at the upper boundary",
-        "110 degrees F is at the upper limit of the recommended range",
+        "110 degrees F is at the upper limit of the recommended range and acceptable for routine use",
         "110 degrees F exceeds the safe range and will denature enzymes immediately upon contact",
         "The upper limit is the ideal temperature for maximum enzyme activity and cleaning performance"
       ],
@@ -2825,9 +2825,9 @@ export const deepDiveLevelsPart2: DeepDiveLevel[] = [
         baseQuestion: "The SPD department has no written policy for bioburden removal verification. The manager states that 'if instruments look clean after the washer-disinfector, they are clean.' Is this an adequate quality assurance approach?",
         baseOptions: [
         "Trained technicians with proper lighting detect all clinically significant bioburden visually",
-        "Visual inspection by trained SPD techs is a reliable method",
+        "Visual inspection by trained SPD techs is a reliable and sufficient verification method",
         "Visual inspection alone cannot detect microscopic bioburden",
-        "But only for lumened and complex instruments; visual inspection is adequate for standard items"
+        "Visual inspection is adequate for all instruments except those with complex or lumened anatomy"
       ],
       baseCorrectIndex: 2,
         baseExplanation: "Visual inspection is an important step but cannot detect microscopic organic residue. Studies have shown that instruments passing visual inspection can still have significant protein and hemoglobin residue. A comprehensive quality program must include objective verification methods such as cleaning indicators, protein residue tests, or ATP bioluminescence testing.",

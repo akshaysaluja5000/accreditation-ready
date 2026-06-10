@@ -12,7 +12,7 @@ export const ddTransportLevel: DeepDiveLevel = {
       id: "dd-tr1",
       baseQuestion: "A scrub tech applies enzymatic spray to instruments, places them in a closed container, and transports via the soiled corridor. Is this correct?",
       baseOptions: [
-        "Correct only if the transport distance is under 500 feet total",
+        "Correct - proper point-of-use treatment and closed container transport",
         "Incorrect - enzymatic spray requires a full soak before transport",
         "Incorrect - instruments should be dry-transported without spray",
         "Correct - proper point-of-use treatment and transport"
@@ -167,8 +167,8 @@ export const ddTransportLevel: DeepDiveLevel = {
       baseOptions: [
         "Document the receiving condition and notify the OR for corrective action",
         "Nothing - just open the hemostat and proceed with normal cleaning",
-        "Return the entire tray to the OR and refuse to process it",
-        "Open the hemostat and clean it but no documentation is needed"
+        "Open the hemostat and clean it but no documentation is needed",
+        "Return the entire tray to the OR and refuse to process it"
       ],
       baseCorrectIndex: 0,
       baseExplanation: "Instruments received in the locked/closed position represent a process deviation that should be documented and communicated back to the OR for corrective action.",
@@ -318,8 +318,8 @@ export const ddTransportLevel: DeepDiveLevel = {
       id: "dd-tr7",
       baseQuestion: "The decontamination area has a single sink used for both manual cleaning and hand washing. Is this acceptable?",
       baseOptions: [
+        "Instrument decontamination sinks and hand washing sinks must be separate",
         "As long as the sink is disinfected between instrument and hand use",
-        "But only if the decontamination sink lacks a hands-free faucet",
         "Instrument decontamination sinks and hand washing sinks must be separate",
         "A sink is a sink regardless of its designated use"
       ],
@@ -369,10 +369,10 @@ export const ddTransportLevel: DeepDiveLevel = {
       id: "dd-tr8",
       baseQuestion: "An automated washer/disinfector in the decontamination area completes its cycle but the printout shows the final rinse temperature reached only 160°F instead of the required 180°F. The tech is busy and plans to run the instruments through again later. What should happen immediately?",
       baseOptions: [
-        "The tech's plan to re-run the cycle later is an adequate response",
+        "Document the variance and release the instruments for assembly and sterilization",
         "The instruments must not be released from decontamination until investigated",
         "The instruments can proceed if the temperature was within five degrees",
-        "Document the variance and release the instruments for assembly and sterilization"
+        "The tech's plan to re-run the cycle later is an adequate response"
       ],
       baseCorrectIndex: 1,
       baseExplanation: "A cycle that fails to reach required parameters means thermal disinfection was not achieved. The instruments must be held, the failure documented, and the washer investigated immediately - not after more loads are run through a potentially malfunctioning machine.",
@@ -471,7 +471,7 @@ export const ddTransportLevel: DeepDiveLevel = {
       id: "dd-tr10",
       baseQuestion: "The water temperature in the decontamination sink for manual instrument cleaning is set to 110°F. Is this within the acceptable range?",
       baseOptions: [
-        "Manual cleaning requires cold water to prevent protein fixation",
+        "Water temperature for manual instrument cleaning should follow IFU",
         "Water temperature for manual instrument cleaning should follow IFU",
         "Lukewarm water is acceptable for all manual cleaning tasks",
         "Any temperature between 90°F and 140°F is universally acceptable"
@@ -777,7 +777,7 @@ export const ddTransportLevel: DeepDiveLevel = {
       id: "dd-tr16",
       baseQuestion: "A new SPD tech is told to prepare the enzymatic detergent solution for the manual cleaning sink. She fills the sink with water and adds double the recommended concentration of enzymatic detergent, thinking 'more is better.' Is this acceptable?",
       baseOptions: [
-        "But only because extra detergent wastes product and increases cost",
+        "Enzymatic detergent must be used at the manufacturer's concentration",
         "Enzymatic detergent must be used at the manufacturer's concentration",
         "Double concentration is acceptable for heavily soiled instruments",
         "More detergent always means better cleaning performance"
@@ -829,7 +829,7 @@ export const ddTransportLevel: DeepDiveLevel = {
       baseQuestion: "A surveyor asks the decontamination staff how they verify that ultrasonic cleaners are working effectively. The staff shows daily Cavitation Verification Tests (aluminum foil test). Is this sufficient quality monitoring?",
       baseOptions: [
         "But only if the aluminum foil test shows uniform erosion pattern",
-        "Daily cavitation testing is the only required quality check",
+        "Daily cavitation testing is the only required quality check for ultrasonic cleaners",
         "Cavitation testing is unnecessary if the unit is under warranty",
         "Ultrasonic cleaners also require periodic efficacy verification testing"
       ],
@@ -879,7 +879,7 @@ export const ddTransportLevel: DeepDiveLevel = {
       id: "dd-tr18",
       baseQuestion: "A tech in the decontamination room removes her face shield to answer a phone call while instruments are soaking in the sink beside her. She is still wearing gloves and a gown. Is this acceptable?",
       baseOptions: [
-        "But she may remove the face shield if she steps back five feet",
+        "But she may remove the face shield if she steps back five feet from the sink",
         "She's not actively cleaning, just answering the phone briefly",
         "Full PPE must be worn at all times in the decontamination area",
         "PPE requirements only apply during active instrument handling"
@@ -932,8 +932,8 @@ export const ddTransportLevel: DeepDiveLevel = {
       baseOptions: [
         "As long as separate sinks are used for each device type",
         "It depends - the facility must demonstrate proper workflow separation",
-        "All contaminated devices can be processed together without restriction",
-        "Endoscopes and surgical instruments must always be in separate rooms"
+        "Endoscopes and surgical instruments must always be in separate rooms",
+        "All contaminated devices can be processed together without restriction"
       ],
       baseCorrectIndex: 1,
       baseExplanation: "Processing different device types in the same decontamination area is possible but requires careful workflow design. Flexible endoscope reprocessing has specific requirements that must be met, and cross-contamination between device types must be prevented through physical separation, dedicated sinks/equipment, and staff training.",

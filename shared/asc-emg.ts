@@ -74,7 +74,7 @@ export const ascEmgLevel: Level = {
         "A plan alone demonstrates preparedness - drills are optional",
         "Emergency drills must be conducted and documented at defined intervals - no drill records represents a significant preparedness deficiency",
         "Drills are only required after a real emergency has occurred",
-        "Drills are required only for facilities in disaster-prone geographic areas",
+        "Drills are required only for facilities in disaster-prone geographic areas"
       ],
       correctIndex: 1,
       explanation:
@@ -101,7 +101,7 @@ export const ascEmgLevel: Level = {
         "The HVA is a regulatory report submitted to the state health department",
         "The HVA identifies the types of emergencies most likely to affect the organization, which determines what scenarios the emergency plan must address",
         "The HVA replaces the written emergency plan for small ASCs",
-        "HVAs are only required for ASCs within 10 miles of a nuclear power plant",
+        "HVAs are only required for ASCs within 10 miles of a nuclear power plant"
       ],
       correctIndex: 1,
       explanation:
@@ -128,7 +128,7 @@ export const ascEmgLevel: Level = {
         "The nurse should have used a cell phone to call 911 first",
         "The emergency communication system - internal alerting to all occupied areas - appears to have failed or is inadequate",
         "Only OR staff need to be notified of OR-proximate fires",
-        "Waiting room staff are responsible for monitoring for emergencies independently",
+        "Waiting room staff are responsible for monitoring for emergencies independently"
       ],
       correctIndex: 1,
       explanation:
@@ -155,7 +155,7 @@ export const ascEmgLevel: Level = {
         "The debrief observation is noted but no action is required since no real emergency occurred",
         "A corrective action must be developed to relocate the assembly point - debrief findings must result in documented improvements",
         "The assembly point is fine - emergency vehicles use a different access route",
-        "Changing the assembly point requires governing body approval before any modification is made",
+        "Changing the assembly point requires governing body approval before any modification is made"
       ],
       correctIndex: 1,
       explanation:
@@ -182,7 +182,7 @@ export const ascEmgLevel: Level = {
         "The ASC has a 7-day supply of critical medications on hand at all times",
         "The ASC's emergency plan identifies a backup generator but the generator has only enough fuel for four hours of operation",
         "The ASC has a mutual aid agreement with a neighboring surgical center",
-        "Emergency supply inventory levels are reviewed quarterly",
+        "Emergency supply inventory levels are reviewed quarterly"
       ],
       correctIndex: 1,
       explanation:
@@ -209,7 +209,7 @@ export const ascEmgLevel: Level = {
         "The agreement is still valid - signed agreements do not expire unless explicitly stated",
         "Contact information, operational capacity, and agreement terms may have changed - agreements should be reviewed and updated periodically",
         "Mutual aid agreements require annual state approval to remain valid",
-        "The neighboring hospital's participation supersedes the need for an ASC-level emergency plan",
+        "The neighboring hospital's participation supersedes the need for an ASC-level emergency plan"
       ],
       correctIndex: 1,
       explanation:
@@ -236,7 +236,7 @@ export const ascEmgLevel: Level = {
         "Only a physician needs to know emergency codes - nursing knowledge is not assessed",
         "EMG.160 requires that staff receive training and be able to demonstrate knowledge of emergency procedures, including response codes",
         "Emergency code knowledge is the responsibility of the emergency response team only",
-        "Not knowing an emergency code is acceptable if the staff member knows where to find the information",
+        "Not knowing an emergency code is acceptable if the staff member knows where to find the information"
       ],
       correctIndex: 1,
       explanation:
@@ -263,7 +263,7 @@ export const ascEmgLevel: Level = {
         "Only ambulatory patients need evacuation plans - sedated patients are sheltered in place",
         "The emergency plan must address how non-ambulatory or anesthetized patients will be evacuated safely",
         "Sedated patients are the anesthesiologist's responsibility - the plan does not need to address them",
-        "This gap is acceptable as long as a transfer agreement with a nearby hospital exists",
+        "This gap is acceptable as long as a transfer agreement with a nearby hospital exists"
       ],
       correctIndex: 1,
       explanation:
@@ -290,7 +290,7 @@ export const ascEmgLevel: Level = {
         "Only when a real emergency occurs",
         "At least annually - or sooner if significant changes occur in the facility, community risks, or following a drill or real event that identifies needed revisions",
         "Every five years, in alignment with major building codes",
-        "Only when the governing body requests a review",
+        "Only when the governing body requests a review"
       ],
       correctIndex: 1,
       explanation:
@@ -317,7 +317,7 @@ export const ascEmgLevel: Level = {
         "A list of local emergency services phone numbers posted at the front desk",
         "Documented relationships with community emergency management organizations - including signed mutual aid agreements, participation in community planning, and verified current contact information",
         "The local fire department's contact number in the emergency plan",
-        "A letter from the local emergency management office acknowledging the ASC exists",
+        "A letter from the local emergency management office acknowledging the ASC exists"
       ],
       correctIndex: 1,
       explanation:
@@ -344,7 +344,7 @@ export const ascEmgLevel: Level = {
         "Nothing additional - the emergency was handled successfully",
         "The real emergency event must be reviewed and used to update the emergency plan, similar to a post-drill debrief",
         "A full new HVA must be completed before resuming normal operations",
-        "Only incidents involving patient harm require post-event review",
+        "Only incidents involving patient harm require post-event review"
       ],
       correctIndex: 1,
       explanation:
@@ -371,7 +371,7 @@ export const ascEmgLevel: Level = {
         "Within 90 days of hire",
         "At orientation - before or immediately upon starting their role",
         "At their first annual performance review",
-        "Only if they will be the first responder to an emergency",
+        "Only if they will be the first responder to an emergency"
       ],
       correctIndex: 1,
       explanation:
@@ -398,7 +398,7 @@ export const ascEmgLevel: Level = {
         "Pandemic response is a government function - the ASC plan need not address it",
         "The plan should address: patient surge management, staff absenteeism protocols, supply chain disruption, isolation and infection control measures, and coordination with public health authorities",
         "Only the IPC program needs to address pandemic - the emergency plan is not applicable",
-        "The emergency plan should only address natural disasters, not biologic threats",
+        "The emergency plan should only address natural disasters, not biologic threats"
       ],
       correctIndex: 1,
       explanation:
@@ -425,7 +425,7 @@ export const ascEmgLevel: Level = {
         "Only the date and type of drill",
         "Date, drill type/scenario, participants, observations during the drill, debrief findings, corrective actions, owners, and completion timelines",
         "Only the sign-in sheet for participants",
-        "A brief narrative summary is sufficient - specific action items are not required",
+        "A brief narrative summary is sufficient - specific action items are not required"
       ],
       correctIndex: 1,
       explanation:
@@ -452,7 +452,7 @@ export const ascEmgLevel: Level = {
         "No finding - hurricanes are unforeseeable events that organizations cannot be expected to plan for",
         "The HVA failed to identify a clearly relevant regional hazard - a gap that resulted in an unaddressed risk in the emergency plan",
         "This finding would be addressed by the governing body, not in the emergency plan",
-        "The only requirement is that the facility have insurance coverage for natural disasters",
+        "The only requirement is that the facility have insurance coverage for natural disasters"
       ],
       correctIndex: 1,
       explanation:
@@ -479,7 +479,7 @@ export const ascEmgLevel: Level = {
         "Maintaining the same surgical schedule regardless of the emergency",
         "Ensuring the organization can continue essential functions and patient care during and after an emergency",
         "Transferring all operations to an offsite facility whenever an emergency occurs",
-        "Continuity of operations only applies to administrative functions, not clinical care",
+        "Continuity of operations only applies to administrative functions, not clinical care"
       ],
       correctIndex: 1,
       explanation:
@@ -506,7 +506,7 @@ export const ascEmgLevel: Level = {
         "No gap - the administrator can coordinate remotely",
         "The plan lacks a defined chain of command and designated backup for emergency coordination when the primary coordinator is unavailable",
         "Emergency response is the anesthesiologist's responsibility when the administrator is absent",
-        "Emergency response may be postponed until the administrator returns",
+        "Emergency response may be postponed until the administrator returns"
       ],
       correctIndex: 1,
       explanation:
@@ -533,7 +533,7 @@ export const ascEmgLevel: Level = {
         "Insurance card and patient demographics only",
         "Clinical summary including: patient identity, procedure performed, current medications, vital signs, clinical status, and contact information for the originating ASC",
         "Only the patient's name and the procedure they underwent",
-        "Emergency patient transfers require no documentation - the receiving facility will assess from scratch",
+        "Emergency patient transfers require no documentation - the receiving facility will assess from scratch"
       ],
       correctIndex: 1,
       explanation:
@@ -560,7 +560,7 @@ export const ascEmgLevel: Level = {
         "Staff injury is covered under workers' compensation - no emergency plan provision is needed",
         "The plan should address staff safety during emergency response - including protocols for when a responder is injured and how to ensure a replacement assumes their role",
         "Only OSHA regulations govern staff injury response - not the emergency plan",
-        "Staff injuries during emergencies are handled by the emergency response team on the fly",
+        "Staff injuries during emergencies are handled by the emergency response team on the fly"
       ],
       correctIndex: 1,
       explanation:
@@ -587,7 +587,7 @@ export const ascEmgLevel: Level = {
         "Emergency plans are reviewed by the medical director - not the governing body",
         "At least annually as part of the GOV.240 governing body annual review of AAAHC accreditation requirements",
         "Only when a real emergency has occurred at the facility",
-        "Every three years, in alignment with the accreditation survey cycle",
+        "Every three years, in alignment with the accreditation survey cycle"
       ],
       correctIndex: 1,
       explanation:

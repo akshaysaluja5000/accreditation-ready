@@ -16,7 +16,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "VRI attempts are sufficient effort",
       "The ASC must provide effective communication; if VRI is unreliable, an in-person interpreter must be arranged before consent and the case may need to be rescheduled",
       "Family members can sign for the patient",
-      "Written notes are an acceptable substitute",
+      "Written notes are an acceptable substitute"
     ],
     correctIndex: 1,
     explanation:
@@ -46,7 +46,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "Yes - billing is separate from patient care",
       "No - written complaints about any aspect of care or service are grievances and must be processed through the grievance procedure with written response",
       "Yes if the bill was correct",
-      "No - but only if the patient threatens legal action",
+      "No - but only if the patient threatens legal action"
     ],
     correctIndex: 1,
     explanation:
@@ -76,7 +76,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "No issue - patient privacy preferences are absolute",
       "OR team needs information necessary for safe care; the patient's privacy preference cannot override clinical safety needs, though access can be limited to those who require it",
       "No issue if standard precautions are used",
-      "Issue only if a needlestick occurs",
+      "Issue only if a needlestick occurs"
     ],
     correctIndex: 1,
     explanation:
@@ -106,7 +106,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "Both parents sign - both should be involved",
       "The mother signs as the legal medical decision-maker per the custody order; father can be present but not the signing authority",
       "The grandparent on file signs",
-      "The case is canceled if both parents disagree",
+      "The case is canceled if both parents disagree"
     ],
     correctIndex: 1,
     explanation:
@@ -136,7 +136,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "No gap - the policy and forms exist",
       "A COI program is the policy plus active use of the disclosures: review by the chair, identification of conflicts, documented recusals, and recorded decisions; collection without use is paper compliance",
       "Gap only if a regulator notices",
-      "No gap because owner physicians are inherently trusted",
+      "No gap because owner physicians are inherently trusted"
     ],
     correctIndex: 1,
     explanation:
@@ -166,7 +166,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "Yes - the medical director is qualified to approve clinical equipment",
       "No - the bylaws set the approval threshold, and bypassing it undermines internal controls and governance oversight",
       "Yes if the equipment is needed",
-      "Yes if the sterilizer is FDA-approved",
+      "Yes if the sterilizer is FDA-approved"
     ],
     correctIndex: 1,
     explanation:
@@ -196,7 +196,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "No action needed - bylaws are aspirational",
       "Bylaws are the operating charter; an unrevised bylaws document misaligned with actual governance creates ambiguity about decision authority and must be formally revised and re-adopted",
       "Action only when a dispute arises",
-      "Update only the section currently in use",
+      "Update only the section currently in use"
     ],
     correctIndex: 1,
     explanation:
@@ -226,7 +226,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "No defect - the administrator filters appropriately",
       "Risk data must reach the governing body on a defined, regular cadence so the body can act on its accountability for safety; an annual filtered summary is too thin and removes governance from real-time oversight",
       "Defect only if a serious event is missed",
-      "No defect because the medical director sees the data",
+      "No defect because the medical director sees the data"
     ],
     correctIndex: 1,
     explanation:
@@ -256,7 +256,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "No defect - the check-box is enough",
       "Discharge instructions must be documented as the specific instructions provided, evidence of patient/escort understanding (such as teach-back or signed acknowledgment), and a copy retained in the record",
       "Defect only if the patient returns with a complication",
-      "No defect - procedure-specific instructions are implied",
+      "No defect - procedure-specific instructions are implied"
     ],
     correctIndex: 1,
     explanation:
@@ -286,7 +286,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "ASC policy controls",
       "The longer of state or federal retention period applies; 10 years controls and the policy must be amended",
       "HIPAA's 6-year retention controls",
-      "Destroy at 7 and notify the state",
+      "Destroy at 7 and notify the state"
     ],
     correctIndex: 1,
     explanation:
@@ -316,7 +316,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "Edit the original dictation and re-sign",
       "Add a dated, signed addendum that identifies the error and provides the correction; do not alter the signed original",
       "Have the transcriptionist correct it",
-      "Leave it - minor errors don't matter",
+      "Leave it - minor errors don't matter"
     ],
     correctIndex: 1,
     explanation:
@@ -346,7 +346,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "No defect - the charge nurse is authorized",
       "Each entry must be authenticated by the individual who actually performed or witnessed the action; signing for someone else misrepresents authorship and breaks the chain of accountability",
       "Defect only if the assessment is later disputed",
-      "No defect because the assessment was performed",
+      "No defect because the assessment was performed"
     ],
     correctIndex: 1,
     explanation:
@@ -376,7 +376,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "No issue - drying restores sterility",
       "Wet packs are considered non-sterile and must be reprocessed; drying does not restore sterility",
       "Issue only with cloth wraps",
-      "Issue only with implants",
+      "Issue only with implants"
     ],
     correctIndex: 1,
     explanation:
@@ -406,7 +406,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "No gap - wiping is universal",
       "Vascular-access probes contact non-intact tissue and require high-level disinfection per IFU; wiping with low-level disinfectant is non-compliant",
       "Gap only for invasive surgery probes",
-      "Gap only if a CRBSI occurs",
+      "Gap only if a CRBSI occurs"
     ],
     correctIndex: 1,
     explanation:
@@ -436,7 +436,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "No issue - scrubs are clean enough",
       "Scrub attire that has left the controlled environment is considered contaminated and should be changed before re-entry to semi-restricted/restricted areas",
       "No issue if the jacket is removed",
-      "Issue only with bloodborne exposure",
+      "Issue only with bloodborne exposure"
     ],
     correctIndex: 1,
     explanation:
@@ -466,7 +466,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "Skip observation - it's optional",
       "Develop a structured observation methodology (defined observers, defined observation times, sample size, data tracking) at a sustainable cadence and report results to QAPI",
       "Self-report by clinicians is sufficient",
-      "Camera surveillance only",
+      "Camera surveillance only"
     ],
     correctIndex: 1,
     explanation:
@@ -496,7 +496,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "Skip credentialing for short engagements",
       "Locum credentialing can be expedited (often via credentialing-by-proxy with a vetted agency under written agreement) but cannot be skipped; the governing body must grant temporary privileges",
       "License verification only",
-      "Medical director vouching is sufficient",
+      "Medical director vouching is sufficient"
     ],
     correctIndex: 1,
     explanation:
@@ -526,7 +526,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "No issue - the committee can approve subject to follow-up",
       "Voting to approve an incomplete file substitutes intent for evidence; the committee should defer the decision until the file is complete and only then act on the recommendation",
       "Issue only if the missing items reveal concerns",
-      "No issue if the medical director endorses the applicant",
+      "No issue if the medical director endorses the applicant"
     ],
     correctIndex: 1,
     explanation:
@@ -556,7 +556,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "Allow it because the surgeon supervises her",
       "Privileges define what a clinician may do at the facility; activity outside the privilege list must stop until the privilege list is formally amended through the credentialing committee and governing body",
       "Allow it for cases under a defined dollar threshold",
-      "Allow it as long as outcomes are good",
+      "Allow it as long as outcomes are good"
     ],
     correctIndex: 1,
     explanation:
@@ -586,7 +586,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "Allow the anesthesiologist to keep working while staff confirm renewal by phone",
       "Suspend privileges that depend on the lapsed credential immediately, prevent further controlled-substance ordering, and require documented proof of renewal before reinstating",
       "Wait 30 days for grace period processing, then act if still lapsed",
-      "Refer the matter to the next quarterly credentialing committee meeting",
+      "Refer the matter to the next quarterly credentialing committee meeting"
     ],
     correctIndex: 1,
     explanation:
@@ -616,7 +616,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "No issue - the project topic is appropriate",
       "A PIP charter must specify an owner accountable for the work, a measurement frequency, and explicit criteria for what constitutes success or closeout, otherwise the project cannot be evaluated or closed",
       "Issue only if the project takes longer than expected",
-      "No issue if the medical director is informally responsible",
+      "No issue if the medical director is informally responsible"
     ],
     correctIndex: 1,
     explanation:
@@ -646,7 +646,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "No failure - discussion occurred and a conclusion was reached",
       "Decisions made on data the committee believes is incorrect are unsound; QAPI must validate the data, document the validation, and only then act on the result",
       "Failure only if the conclusion turns out to be wrong",
-      "No failure if the discussion was thorough",
+      "No failure if the discussion was thorough"
     ],
     correctIndex: 1,
     explanation:
@@ -676,7 +676,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "No limitation - internal trends are what matter",
       "Without external benchmarks the committee cannot tell whether 'stable' performance is actually acceptable; QAPI should compare to peer or national rates wherever published benchmarks exist",
       "External benchmarks are optional for ASCs",
-      "Limitation only if a regulator requests benchmarks",
+      "Limitation only if a regulator requests benchmarks"
     ],
     correctIndex: 1,
     explanation:
@@ -706,7 +706,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "No effect - fewer events means safer care",
       "A punitive culture suppresses reporting and produces a falsely clean event log; the QAPI program is operating without its primary data source and the suppression itself is a top-priority QAPI finding",
       "Effect only if a sentinel event is missed",
-      "No effect because the medical director sets the tone appropriately",
+      "No effect because the medical director sets the tone appropriately"
     ],
     correctIndex: 1,
     explanation:
@@ -736,7 +736,7 @@ export const ascPosttestQuestions: AscPosttestQuestion[] = [
       "Acceptable - peer review is a confidential credentialing activity, separate from QAPI",
       "Peer review findings should feed both individual provider evaluation and the QAPI program; aggregate trends, recurring case types, and specialty-level signals belong in QAPI analysis with appropriate confidentiality protections",
       "Acceptable as long as every surgeon gets one chart reviewed per year",
-      "Acceptable if the medical director signs off on each score",
+      "Acceptable if the medical director signs off on each score before filing in the credentialing folder"
     ],
     correctIndex: 1,
     explanation:

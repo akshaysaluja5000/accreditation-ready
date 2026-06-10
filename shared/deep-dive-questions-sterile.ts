@@ -165,10 +165,10 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
       id: "dd-ss4",
       baseQuestion: "A sterile processing tech notices that event-related sterile packages in storage show no signs of damage, moisture, or contamination but have no expiration dates printed on them. Should she pull them from service?",
       baseOptions: [
-        "Items without dates violate Joint Commission labeling rules",
-        "All sterile items must have an expiration date printed",
+        "Event-related sterility means packages remain sterile until an event (moisture, tears, soil) compromises integrity—no expiration date is required",
+        "Items without dates violate Joint Commission labeling rules and must be discarded immediately",
         "Event-related sterility means packages remain sterile",
-        "But only if a visual inspection log is documented daily"
+        "But only if a visual inspection log is documented daily for each package"
       ],
       baseCorrectIndex: 2,
       baseExplanation: "Under event-related sterility, items remain sterile until an event compromises package integrity (moisture, tears, soil, etc.). No expiration date is needed - the package integrity is what matters.",
@@ -216,9 +216,9 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
       id: "dd-ss5",
       baseQuestion: "Sterile storage room temperature reads 76°F and humidity is 55%. Are these within acceptable parameters?",
       baseOptions: [
-        "Humidity is too high - must be below 50%",
-        "Both are acceptable",
-        "Temperature is too high and humidity is acceptable",
+        "Humidity is too high—must be below 50% per accreditation standards",
+        "Both temperature and humidity are acceptable within AAMI ST79 ranges",
+        "Temperature is acceptable but humidity is too low—must be above 60%",
         "Temperature is too high - must be 68-75°F"
       ],
       baseCorrectIndex: 3,
@@ -267,9 +267,10 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
       id: "dd-ss6",
       baseQuestion: "A Bowie-Dick test was not performed this morning before the first sterilization load. The first load has already been run and is sitting in the sterile storage area. What should happen?",
       baseOptions: [
-        "Bowie-Dick tests are only required weekly",
-        "Run the Bowie-Dick test now and if it passes, the load is fine",
-        "The load must be recalled"
+        "Bowie-Dick tests are only required weekly, not daily, so the load may still be used",
+        "Run the Bowie-Dick test now and if it passes, the load can be released since the test confirms sterilization",
+        "The load must be recalled",
+        "The load can be conditionally released pending completion of a Bowie-Dick test within 24 hours"
       ],
       baseCorrectIndex: 2,
       baseExplanation: "Bowie-Dick tests must be run daily before the first sterilization load. They verify proper air removal and steam penetration in prevacuum sterilizers. A load run without a prior passing Bowie-Dick must be recalled.",
@@ -317,7 +318,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
       id: "dd-ss7",
       baseQuestion: "Blue-wrapped instrument trays are stored on open wire shelving in the sterile storage room. The wrapping is intact and there are dust covers on the shelves. Is this acceptable?",
       baseOptions: [
-        "Not acceptable - wrapped trays must be in closed cabinets",
+        "Acceptable - dust covers protect the wrapping",
         "Acceptable - dust covers protect the wrapping",
         "Not acceptable - open shelving violates AAMI ST79 guidance",
         "Acceptable - but only if trays are double-wrapped underneath"
@@ -422,7 +423,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
         "Chemical indicators only confirm exposure to sterilization",
         "Chemical indicators are unreliable and should not be used",
         "Chemical indicator color change confirms sterility",
-        "If both internal and external indicators pass together"
+        "If both internal and external indicators pass together, sterility is confirmed"
       ],
       baseCorrectIndex: 0,
       baseExplanation: "Chemical indicators only verify that items were exposed to one or more sterilization parameters (time, temperature, steam). They do NOT confirm sterility. Biological indicators are the gold standard for confirming sterilization effectiveness.",
@@ -524,7 +525,7 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
         "But the instrument can be flash sterilized for immediate use",
         "As long as the pinhole is away from the sterile seal area",
         "Any breach in packaging integrity means the item is no",
-        "The pinhole is too small to allow contamination"
+        "The pinhole is too small to allow contamination entry"
       ],
       baseCorrectIndex: 2,
       baseExplanation: "Under event-related sterility, any compromise to packaging integrity - no matter how small - renders the item non-sterile. A pinhole is a breach that allows microorganism entry.",
@@ -624,9 +625,9 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
       baseQuestion: "A tech removes a sterilized tray from the autoclave and notices a wet spot on the outside of the wrap. The chemical indicator inside has changed color appropriately. Can the tray be stored as sterile?",
       baseOptions: [
         "A wet pack is considered contaminated and must be re-processed",
+        "The chemical indicator confirms successful sterilization regardless of moisture",
         "But it may be used if dried under a laminar flow hood first",
-        "If the moisture is limited to the outer layer of wrapping only",
-        "The chemical indicator confirms successful sterilization"
+        "If the moisture is limited to the outer layer of wrapping only"
       ],
       baseCorrectIndex: 0,
       baseExplanation: "A wet pack is considered contaminated because moisture wicks bacteria through packaging material. Wet packs must be re-processed regardless of chemical indicator results. The cause of the wet pack (overloading, improper loading, sterilizer malfunction) must also be investigated.",
@@ -676,8 +677,8 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
       baseOptions: [
         "FIFO (first in, first out) rotation is a best practice for sterile storage",
         "Color-coded rotation implies time-related sterility, which contradicts event-related sterility principles",
-        "Color coding adds a visual management layer that supports organized and efficient stock retrieval",
-        "Color-coded labels may cause staff to confuse sterile items with non-sterile items on the shelf"
+        "Color-coded labels may cause staff to confuse sterile items with non-sterile items on the shelf",
+        "Color-coded labels help staff quickly identify which day items were sterilized for compliance documentation"
       ],
       baseCorrectIndex: 1,
       baseExplanation: "Under event-related sterility, items remain sterile based on packaging integrity, not age. Color-coded day-of-week rotation implies items have a shelf life, which contradicts event-related sterility. Stock rotation based on time is unnecessary and can create confusion.",
@@ -776,9 +777,9 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
       id: "dd-ss16",
       baseQuestion: "A biological indicator (BI) from this morning's first sterilizer load comes back positive (showing microbial growth). What is the immediate action?",
       baseOptions: [
+        "Recall all items from that load and remove",
         "Re-run the BI test to confirm the result",
         "Log the result and continue distributing items",
-        "Quarantine the load pending a repeat BI test",
         "Recall all items from that load and remove"
       ],
       baseCorrectIndex: 3,
@@ -929,10 +930,10 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
       id: "dd-ss19",
       baseQuestion: "A sterile processing department uses a commercial tracking system that scans and logs every sterilized tray from processing through distribution and return. A surveyor asks if manual log books are still needed. What is the correct answer?",
       baseOptions: [
-        "Electronic systems alone are not accepted by surveyors",
-        "Manual logs are always required as a backup",
+        "An electronic tracking system that captures all required data elements can replace manual logs if it reliably documents sterilizer number, cycle number, load contents, date, operator, and BI results",
+        "Electronic systems alone are not accepted by surveyors without manual backup documentation",
         "An electronic tracking system that captures all",
-        "But the system must print a daily summary for review"
+        "The system must print a daily summary for review and attestation"
       ],
       baseCorrectIndex: 2,
       baseExplanation: "Electronic tracking systems can replace manual logs if they capture all required data elements (sterilizer number, cycle number, load contents, date, operator, BI results, etc.) and provide reliable data retrieval. A backup/disaster recovery plan should exist.",
@@ -980,10 +981,10 @@ export const ddSterileStorageLevel: DeepDiveLevel = {
       id: "dd-ss20",
       baseQuestion: "A facility has a satellite sterile storage area in the OR suite that is restocked daily from the main SPD. The satellite area has no independent temperature or humidity monitoring - it relies on the OR suite's general HVAC system. Is this compliant?",
       baseOptions: [
-        "Satellite areas also need their own sterilization equipment",
+        "Satellite sterile storage areas must have independent environmental monitoring with documented temperature and humidity readings specific to that space",
         "Satellite sterile storage areas must have independent",
-        "Brief storage times make monitoring unnecessary here",
-        "The OR HVAC system maintains the same conditions"
+        "Brief storage times in satellite areas make independent monitoring unnecessary",
+        "The OR HVAC system automatically maintains the same monitored conditions throughout the entire suite"
       ],
       baseCorrectIndex: 1,
       baseExplanation: "Satellite sterile storage areas must have their own environmental monitoring (temperature and humidity) documented. Relying on the general OR suite HVAC system does not verify that the specific storage area maintains required conditions, especially since OR temperature is often set lower than sterile storage requirements.",

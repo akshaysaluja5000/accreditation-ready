@@ -16,7 +16,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "Use a qualified medical interpreter (in person or by phone/video) and document the interpreter's identity",
       "Use the son to translate - family interpretation is faster and the patient prefers it",
       "Proceed with consent in English and have the patient sign anyway",
-      "Cancel the case until the patient brings a certified family member translator",
+      "Cancel the case until the patient brings a certified family member translator"
     ],
     correctIndex: 0,
     explanation:
@@ -43,10 +43,10 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
     question:
       "A patient submits a written grievance to the ASC complaining about pain control after discharge. The administrator calls the patient, apologizes, and considers the matter closed. What governance step is missing?",
     options: [
-      "Nothing - verbal resolution with documented notes in the patient file satisfies the grievance regulation when the patient confirms they are satisfied during the call",
+      "A phone call with apology is sufficient if the administrator documents the conversation in the patient's chart",
       "A written response to the patient within the timeframe defined by ASC policy, with documentation in the grievance log",
       "The complaint must be referred immediately to CMS for formal review before the ASC takes any internal action",
-      "The medical director must personally review and countersign every grievance involving clinical complaints before closure",
+      "The medical director must personally review and countersign every grievance involving clinical complaints before closure"
     ],
     correctIndex: 1,
     explanation:
@@ -76,7 +76,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "Yes - advance directives belong to the patient and the original should always be returned at discharge",
       "Yes - ASCs are not subject to advance directive requirements because they do not provide inpatient care",
       "No - when an advance directive is presented at the time of care, the ASC must place a copy in the medical record and have a procedure to honor it",
-      "No - but only if the patient was admitted overnight after a complication requiring extended observation",
+      "No - but only if the patient was admitted overnight after a complication requiring extended observation"
     ],
     correctIndex: 2,
     explanation:
@@ -105,8 +105,8 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
     options: [
       "Proceed with the procedure - the site marking on the patient is the definitive source of truth when a consent contains a typographic error, and the surgical team's collective judgment can authorize continuation",
       "Have the circulator quietly amend the consent wording before the patient enters the OR so the documentation is corrected without alarming the patient unnecessarily",
-      "Cancel the case permanently and reschedule with a corrected consent, since any consent/marking discrepancy is a sentinel event that must halt all further scheduling",
       "Stop, verify with the patient while they are still able to participate, correct the consent with a new signature, and re-confirm the surgical site",
+      "Stop, verify with the patient while they are still able to participate, correct the consent with a new signature, and re-confirm the surgical site"
     ],
     correctIndex: 3,
     explanation:
@@ -136,7 +136,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "No issue - medical staff approval is the key step; governing body action is a formality that can follow the start date",
       "The issue only arises if a complication occurs during a case performed before governing body approval is signed",
       "Without governing body sign-off, the privileges have not been legally granted, and the two physicians are operating without authority",
-      "The issue applies only if the physicians lack current board certification or an unrestricted state license",
+      "The issue applies only if the physicians lack current board certification or an unrestricted state license"
     ],
     correctIndex: 2,
     explanation:
@@ -166,7 +166,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "None - informal hospital relationships built over years of working together are sufficient for emergency transfer purposes",
       "Major - the absence of either a current transfer agreement or documented physician admitting privileges violates the Conditions for Coverage and creates direct patient safety exposure",
       "Minor - transfer events are rare in ASCs and the deficiency is purely administrative with no patient safety dimension",
-      "None - the transfer requirement only applies to hospital-based surgical programs, not freestanding ASCs",
+      "None - the transfer requirement only applies to hospital-based surgical programs, not freestanding ASCs"
     ],
     correctIndex: 1,
     explanation:
@@ -196,7 +196,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "Yes - receipt of the QAPI report is documented in the official governing body minutes, which is what surveyors verify",
       "Yes - as long as the QAPI committee itself is taking action on the issue, governing body involvement is limited to acknowledgment",
       "No - only if patient harm has already occurred from a sterilization failure does governing body review rise to the level of a regulatory requirement",
-      "No - governance requires evidence of substantive review, discussion, and direction, not just receipt",
+      "No - governance requires evidence of substantive review, discussion, and direction, not just receipt"
     ],
     correctIndex: 3,
     explanation:
@@ -226,7 +226,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "Subordinating patient safety to revenue is a fiduciary and credentialing failure - the governing body cannot decline a clinically indicated review for non-clinical reasons",
       "No defect - high-volume, high-revenue clinicians contribute substantially to the ASC's mission and require a higher evidentiary threshold before triggering the focused-review process",
       "No defect - the governing body has full discretion over when focused review is initiated, and may weigh all relevant factors including clinical and operational considerations",
-      "Defect only if the surgeon then has a sentinel event that is causally connected to the complication trend identified by the medical director",
+      "Defect only if the surgeon then has a sentinel event that is causally connected to the complication trend identified by the medical director"
     ],
     correctIndex: 0,
     explanation:
@@ -256,7 +256,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "Yes - the H&P is within the 30-day window and the pre-op nursing assessment satisfies the day-of evaluation requirement",
       "No - a day-of update by a qualified provider is a required separate entry, independent of whether the H&P is within the 30-day window",
       "Yes - when the H&P is this recent, a verbal surgeon attestation at the pre-op pause is sufficient and does not require a written note",
-      "No - because the H&P window for ASC procedures is actually 14 days, making a 28-day H&P out of compliance regardless of the update note",
+      "No - because the H&P window for ASC procedures is actually 14 days, making a 28-day H&P out of compliance regardless of the update note"
     ],
     correctIndex: 1,
     explanation:
@@ -286,7 +286,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "Consent after sedation is presumptively defective - sedating medication impairs capacity, and consent must precede any premedication",
       "No defect - consent obtained in the pre-op holding area is timely regardless of medication sequence, because the nurse verified the patient appeared alert and oriented",
       "No defect - if the patient was verbally alert and answering questions during the signing, apparent capacity at the time of signing satisfies the standard",
-      "Defect only if the patient subsequently files a complaint or denies understanding what they consented to after the procedure",
+      "Defect only if the patient subsequently files a complaint or denies understanding what they consented to after the procedure"
     ],
     correctIndex: 0,
     explanation:
@@ -316,7 +316,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "Accept the verbal assurance and proceed - the surgeon's real-time attestation that the patient's condition is unchanged satisfies the intent of the H&P requirement for low-risk patients",
       "Add a brief surgeon attestation note to the chart documenting the verbal confirmation, which converts the existing H&P into a current document for regulatory purposes",
       "Re-do the H&P only if the patient is over 65 or has a documented comorbidity that has changed since the original H&P was completed, otherwise proceed with attestation",
-      "A new comprehensive H&P is required - the 38-day-old document is outside the 30-day window and no attestation converts an expired H&P into a current one",
+      "A new comprehensive H&P is required - the 38-day-old document is outside the 30-day window and no attestation converts an expired H&P into a current one"
     ],
     correctIndex: 3,
     explanation:
@@ -346,7 +346,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "Wait until the full chart is complete - releasing an incomplete record exposes the ASC to liability and may give the patient an inaccurate picture of their care",
       "Release only the portions the surgeon has reviewed and cosigned, and flag that the op note is pending to avoid releasing unauthenticated clinical content",
       "Provide what is currently in the record within 30 days; supplement with the op note when it is completed and authenticated",
-      "Require written physician authorization before releasing any portion of a surgical record, since surgical records contain clinical judgment that requires provider review before patient access",
+      "Require written physician authorization before releasing any portion of a surgical record, since surgical records contain clinical judgment that requires provider review before patient access"
     ],
     correctIndex: 2,
     explanation:
@@ -376,7 +376,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "No - all loads run since the last passing BI must be quarantined and any that were already used require patient notification and investigation",
       "Yes - the second passing cycle retroactively validates the equipment's function and confirms the first failure was an anomaly",
       "Yes - only implant loads require quarantine and recall after a BI failure; standard instrument loads require only repeat testing",
-      "No - but only if three consecutive failures occur, which is the threshold that triggers the formal recall protocol",
+      "No - but only if three consecutive failures occur, which is the threshold that triggers the formal recall protocol"
     ],
     correctIndex: 0,
     explanation:
@@ -406,7 +406,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "No issue - alcohol-based hand rubs are CDC-endorsed for all common healthcare-associated pathogens encountered in ASC settings",
       "Issue only in inpatient settings where C. diff burden is higher and contact transmission is more likely to occur between adjacent rooms",
       "Issue only if the patient is known to be symptomatic and currently shedding spores, since colonized patients without active diarrhea do not require soap-and-water handwashing",
-      "C. difficile spores are not killed by alcohol; soap-and-water hand washing is required after contact with a C. diff patient",
+      "C. difficile spores are not killed by alcohol; soap-and-water hand washing is required after contact with a C. diff patient"
     ],
     correctIndex: 3,
     explanation:
@@ -436,7 +436,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "Yes - the FDA label 'single-use device' is an absolute prohibition that applies regardless of the reprocessor's certification or approval status",
       "No - FDA-cleared third-party reprocessing of SUDs is a regulated and permitted practice; the ASC must track the reprocessor, device identity, and cycle count",
       "Yes - but only because this particular ASC is not a hospital, and ASCs must follow stricter standards for device reuse than hospital-based surgical programs",
-      "No - ASCs may conduct in-house SUD reprocessing using their own validated protocols without FDA clearance provided the ASC's governing body has approved the practice",
+      "No - ASCs may conduct in-house SUD reprocessing using their own validated protocols without FDA clearance provided the ASC's governing body has approved the practice"
     ],
     correctIndex: 1,
     explanation:
@@ -466,7 +466,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "Track only intra-operative findings - post-discharge SSI surveillance is impractical for ASC settings and is not required by ASC-specific regulations",
       "Skip SSI surveillance entirely and substitute procedure volume data, since the low incidence in ASCs means any rate data is statistically meaningless",
       "Implement structured post-op follow-up (calls at 7 and 30 days, surgeon office report-back, EHR query for return visits) and document the methodology in the QAPI plan",
-      "Rely exclusively on voluntary patient self-report through a post-discharge satisfaction survey that includes a symptom checklist",
+      "Rely exclusively on voluntary patient self-report through a post-discharge satisfaction survey that includes a symptom checklist"
     ],
     correctIndex: 2,
     explanation:
@@ -496,7 +496,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "Reappointment timelines are administrative milestones set by accreditors as guidance - they carry no hard regulatory force, and facilities regularly receive extensions with documentation of the delay reason",
       "Reappointment is only required when a complaint has been filed or a concerning clinical trend has been identified through OPPE, making it event-driven rather than calendar-driven",
       "Reappointment can be deferred indefinitely for low-volume clinicians whose limited case numbers make outcome-based review statistically unreliable and potentially unfair",
-      "Reappointment must occur on a cycle no longer than every 24 months with current primary source verification, updated competency data, and governing body action - privileges lapse at the deadline",
+      "Reappointment must occur on a cycle no longer than every 24 months with current primary source verification, updated competency data, and governing body action - privileges lapse at the deadline"
     ],
     correctIndex: 3,
     explanation:
@@ -526,7 +526,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "Allow him to operate - license renewals are routine administrative matters and the surgeon's intention to renew demonstrates continued legal standing to practice",
       "Auto-suspend privileges and reschedule today's cases until the current license renewal is verified",
       "Have the medical director sign a one-day waiver authorizing the surgeon to operate while the renewal certificate is in transit",
-      "Allow today's scheduled cases and document the lapse in QAPI as a near-miss to be reviewed at the next committee meeting",
+      "Allow today's scheduled cases and document the lapse in QAPI as a near-miss to be reviewed at the next committee meeting"
     ],
     correctIndex: 1,
     explanation:
@@ -556,7 +556,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "No gap - three consecutive positive evaluations create a statistically sufficient performance baseline; the remaining cases can be monitored through the standard OPPE process rather than formal proctoring",
       "No gap - the proctor apparently became confident in the surgeon's competence after three cases and stopped attending; this informal closeout is equivalent to a documented decision",
       "FPPE plans must be completed in full, with all planned cases reviewed and a documented closeout decision before the privilege moves to unrestricted status",
-      "Gap only if a complication occurred during one of the unproctored cases, since outcomes data can substitute for the missing proctored evaluation in the file",
+      "Gap only if a complication occurred during one of the unproctored cases, since outcomes data can substitute for the missing proctored evaluation in the file"
     ],
     correctIndex: 2,
     explanation:
@@ -586,7 +586,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "Accept the agency packet and proceed - locums are pre-vetted by the staffing agency, which holds primary-source verification responsibility and carries professional liability for the clinicians it places",
       "Apply the same credentialing and privileging standards to locums as to permanent staff: complete primary source verification, governing body action on temporary privileges, and a defined privilege list before any patient contact",
       "Skip independent credentialing - the locum operates under the agency's professional authority and the ASC is covered by the agency's umbrella credentialing program",
-      "Have the medical director sign the agency packet on the morning of surgery, which constitutes sufficient governing body delegation for temporary clinical coverage",
+      "Have the medical director sign the agency packet on the morning of surgery, which constitutes sufficient governing body delegation for temporary clinical coverage"
     ],
     correctIndex: 1,
     explanation:
@@ -616,7 +616,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "QAPI requires multidisciplinary clinical participation - without medical staff, nursing, and infection prevention input, the committee cannot evaluate clinical care and the structural deficiency is a finding independent of meeting frequency",
       "No structural problem - the committee is meeting consistently on the required schedule, which satisfies the primary compliance obligation for QAPI program existence",
       "No structural problem - if the administrator has a clinical background such as nursing or respiratory therapy, that credential satisfies the clinical expertise requirement for committee composition",
-      "Structural problem only if patient outcome metrics show deterioration, because the adequacy of committee composition is judged by results rather than membership criteria",
+      "Structural problem only if patient outcome metrics show deterioration, because the adequacy of committee composition is judged by results rather than membership criteria"
     ],
     correctIndex: 0,
     explanation:
@@ -646,7 +646,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "Hand-off is an operational workflow issue that falls under the administrator's scope rather than the QAPI program, which is focused on clinical quality indicators and outcome metrics",
       "Communication failures in transitions of care are a primary source of harm; QAPI should track hand-off completeness, intervene with a structured tool, and re-measure after implementation",
       "No QAPI angle unless a specific adverse event has occurred that can be directly attributed to a hand-off communication failure, since QAPI requires evidence of actual harm",
-      "QAPI should track only the rework time as an efficiency metric - the content of the communication is a clinical decision left to individual nursing judgment and cannot be standardized",
+      "QAPI should track only the rework time as an efficiency metric - the content of the communication is a clinical decision left to individual nursing judgment and cannot be standardized"
     ],
     correctIndex: 1,
     explanation:
@@ -676,7 +676,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "No QAPI problem - adverse event tracking fulfills the regulated minimum, and tracking near-misses is a voluntary best practice rather than a standard-level requirement for ASCs",
       "No QAPI problem - if the adverse event rate is consistently low, the near-miss signal is statistically redundant and adds administrative burden without proportionate safety benefit",
       "QAPI problem only after a sentinel event occurs that could have been predicted by a near-miss trend, at which point the absence of a near-miss tracking system becomes a cited deficiency",
-      "Near-misses are the early warning system for adverse events; ignoring them eliminates the most valuable prevention signal and means the program is reactive rather than preventive",
+      "Near-misses are the early warning system for adverse events; ignoring them eliminates the most valuable prevention signal and means the program is reactive rather than preventive"
     ],
     correctIndex: 3,
     explanation:
@@ -706,7 +706,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "No misalignment - any documented improvement work counts toward the QAPI requirement regardless of whether it addresses the plan's named clinical priorities",
       "No misalignment - parking and flow PIPs improve staff experience, which indirectly supports patient safety and should count toward the QAPI program's overall quality improvement portfolio",
       "Active PIPs must address the priorities named in the governing body-approved QAPI plan; running PIPs unrelated to those priorities means the program is not executing its approved roadmap",
-      "Misalignment only if a sentinel event occurred in one of the plan's named priority areas during the period when unrelated PIPs were consuming improvement resources",
+      "Misalignment only if a sentinel event occurred in one of the plan's named priority areas during the period when unrelated PIPs were consuming improvement resources"
     ],
     correctIndex: 2,
     explanation:
@@ -736,7 +736,7 @@ export const ascPretestQuestions: AscPretestQuestion[] = [
       "Discussion without documented decisions or assigned actions is process without product - QAPI requires closure, not just deliberation",
       "Detailed discussion minutes are strong evidence of compliance because they demonstrate the committee is actively engaged with the data in a meaningful way each month",
       "Decisions and action items are required only when a sentinel event or Condition-level deficiency has been reviewed; for routine indicator reviews, discussion minutes are sufficient documentation of program activity",
-      "Attendance at regular scheduled meetings is the primary compliance indicator surveyors use; the absence of formal decision documentation is a documentation style choice, not a regulatory gap",
+      "Attendance at regular scheduled meetings is the primary compliance indicator surveyors use; the absence of formal decision documentation is a documentation style choice, not a regulatory gap"
     ],
     correctIndex: 0,
     explanation:

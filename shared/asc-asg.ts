@@ -74,7 +74,7 @@ export const ascAsgLevel: Level = {
         "Room number and procedure type",
         "Patient name and date of birth",
         "Insurance ID number and admission date",
-        "Wristband color and procedure room assignment",
+        "Wristband color and procedure room assignment"
       ],
       correctIndex: 1,
       explanation:
@@ -101,7 +101,7 @@ export const ascAsgLevel: Level = {
         "Nothing - the nurse completing site marking is acceptable practice",
         "Surgical site marking must be performed by the operating practitioner who will perform the procedure - not by nursing staff",
         "Site marking must be done in the OR, not in pre-op",
-        "The surgeon should have marked the site at the time-out, not before it",
+        "The surgeon should have marked the site at the time-out, not before it"
       ],
       correctIndex: 1,
       explanation:
@@ -128,7 +128,7 @@ export const ascAsgLevel: Level = {
         "Yes - the time-out was conducted and documented",
         "No - all team members must actively participate in the time-out, not passively listen",
         "It depends on whether the surgeon knew the patient's name before the procedure",
-        "Yes - the circulating nurse has authority to conduct the time-out unilaterally",
+        "Yes - the circulating nurse has authority to conduct the time-out unilaterally"
       ],
       correctIndex: 1,
       explanation:
@@ -155,7 +155,7 @@ export const ascAsgLevel: Level = {
         "ASC internal policy only - there is no external standard for EtCO2 monitoring",
         "Nationally recognized anesthesia monitoring guidelines (such as ASA Standards for Basic Anesthetic Monitoring)",
         "Only applicable when the procedure lasts more than 60 minutes",
-        "EtCO2 monitoring is recommended but not required for general anesthesia",
+        "EtCO2 monitoring is recommended but not required for general anesthesia"
       ],
       correctIndex: 1,
       explanation:
@@ -182,7 +182,7 @@ export const ascAsgLevel: Level = {
         "The head nurse of the recovery area",
         "The governing body",
         "The anesthesia department chair",
-        "The state board of nursing",
+        "The state board of nursing"
       ],
       correctIndex: 1,
       explanation:
@@ -209,7 +209,7 @@ export const ascAsgLevel: Level = {
         "Only ASG.140 - the time-out standard",
         "Both ASG.130 (site marking) and ASG.140 (time-out), as well as the patient identification requirements",
         "Only ASG.130 - if the time-out had been done it would have caught the error",
-        "No ASG standard was violated - this is a physician error, not a system failure",
+        "No ASG standard was violated - this is a physician error, not a system failure"
       ],
       correctIndex: 1,
       explanation:
@@ -236,7 +236,7 @@ export const ascAsgLevel: Level = {
         "The H&P from 35 days ago is acceptable - H&Ps are valid for 90 days",
         "The H&P must be updated immediately before the procedure if the organization's policy requires more frequent review",
         "An H&P from 35 days ago automatically requires a complete new H&P",
-        "Only the anesthesiologist needs to update the assessment - not the surgeon",
+        "Only the anesthesiologist needs to update the assessment - not the surgeon"
       ],
       correctIndex: 1,
       explanation:
@@ -263,7 +263,7 @@ export const ascAsgLevel: Level = {
         "Only supplemental oxygen - medications are not required under moderate sedation standards",
         "Reversal agents, emergency medications, airway management equipment, and defibrillation capability - appropriate for the level of anesthesia used",
         "A helicopter transport arrangement with the nearest hospital",
-        "Moderate sedation complications are managed by nursing without physician intervention",
+        "Moderate sedation complications are managed by nursing without physician intervention"
       ],
       correctIndex: 1,
       explanation:
@@ -290,7 +290,7 @@ export const ascAsgLevel: Level = {
         "The 30-minute monitoring schedule is compliant - the next check will identify the issue",
         "The monitoring schedule must be flexible enough to respond to clinical changes - the nurse must assess and intervene immediately when a change occurs",
         "Post-anesthesia monitoring is a documentation requirement only - the nurse documents whatever is observed at scheduled intervals",
-        "Oxygen saturation below 90% in PACU is expected and does not require immediate intervention",
+        "Oxygen saturation below 90% in PACU is expected and does not require immediate intervention"
       ],
       correctIndex: 1,
       explanation:
@@ -317,7 +317,7 @@ export const ascAsgLevel: Level = {
         "The surgeon's order overrides nursing discharge criteria concerns",
         "The patient must not be discharged until written discharge criteria are met - the surgeon's preference does not override patient safety criteria",
         "The patient may be discharged with a responsible adult escort if the surgeon documents the decision",
-        "Discharge criteria are guidelines, not requirements - clinical judgment supersedes them",
+        "Discharge criteria are guidelines, not requirements - clinical judgment supersedes them"
       ],
       correctIndex: 1,
       explanation:
@@ -344,7 +344,7 @@ export const ascAsgLevel: Level = {
         "Yes - the nurse can conduct the time-out on behalf of absent team members",
         "No - the time-out must be conducted immediately before the procedure begins with ALL team members present and actively participating",
         "Yes - as long as the anesthesiologist verifies the time-out elements before administering anesthesia",
-        "Only if the surgeon has already confirmed the patient's identity",
+        "Only if the surgeon has already confirmed the patient's identity"
       ],
       correctIndex: 1,
       explanation:
@@ -371,7 +371,7 @@ export const ascAsgLevel: Level = {
         "The number of prior procedures performed at this facility",
         "Prior anesthesia complications - including difficult airway history, malignant hyperthermia risk, or adverse drug reactions",
         "The patient's preferred anesthesia type",
-        "Whether the patient has seen the same anesthesiologist before",
+        "Whether the patient has seen the same anesthesiologist before"
       ],
       correctIndex: 1,
       explanation:
@@ -398,7 +398,7 @@ export const ascAsgLevel: Level = {
         "The nurse should continue the procedure alone until the physician arrives",
         "Emergency responders and medications must be immediately available during any sedation administration - immediate assistance must be obtainable by a single staff member",
         "Only facilities administering general anesthesia need emergency response plans",
-        "The nurse should attempt CPR alone until paramedics arrive",
+        "The nurse should attempt CPR alone until paramedics arrive"
       ],
       correctIndex: 1,
       explanation:
@@ -425,7 +425,7 @@ export const ascAsgLevel: Level = {
         "Verification of the patient's name",
         "Confirmation of the correct surgical site, including level or side if applicable",
         "Confirmation of the anesthesia plan",
-        "Verification that all instruments are counted",
+        "Verification that all instruments are counted"
       ],
       correctIndex: 1,
       explanation:
@@ -452,7 +452,7 @@ export const ascAsgLevel: Level = {
         "When the surgeon has operated on the patient before",
         "When the procedure involves a single, non-lateral midline structure (per organizational policy), or when marking would be clinically inappropriate",
         "When the patient is under general anesthesia and cannot participate",
-        "Surgical site marking is always required - there are no exceptions",
+        "Surgical site marking is always required - there are no exceptions"
       ],
       correctIndex: 1,
       explanation:
@@ -479,7 +479,7 @@ export const ascAsgLevel: Level = {
         "No issue - bilateral procedures do not require site marking since both sides are affected",
         "Both surgical sites on a bilateral procedure should be marked - 'obvious' is not a compliant substitute for marking policy requirements",
         "Marking is only required for procedures with different techniques on each side",
-        "The anesthesiologist's pre-op note identifying the bilateral procedure satisfies the marking requirement",
+        "The anesthesiologist's pre-op note identifying the bilateral procedure satisfies the marking requirement"
       ],
       correctIndex: 1,
       explanation:
@@ -506,7 +506,7 @@ export const ascAsgLevel: Level = {
         "Pulse oximetry alone",
         "End-tidal CO2 (capnography) - the absence of CO2 waveform immediately indicates esophageal placement",
         "Blood pressure monitoring",
-        "Visual observation of chest rise",
+        "Visual observation of chest rise"
       ],
       correctIndex: 1,
       explanation:
@@ -533,7 +533,7 @@ export const ascAsgLevel: Level = {
         "Airway classification is required for billing purposes",
         "Identifying a potentially difficult airway before the procedure allows the anesthesia team to prepare for alternative airway management strategies",
         "Airway classification is only relevant for patients receiving general anesthesia with intubation",
-        "Airway assessment is the surgeon's responsibility, not the anesthesiologist's",
+        "Airway assessment is the surgeon's responsibility, not the anesthesiologist's"
       ],
       correctIndex: 1,
       explanation:
@@ -560,7 +560,7 @@ export const ascAsgLevel: Level = {
         "Only the patient's pain score at arrival and discharge",
         "Vital signs, level of consciousness, pain, nausea/vomiting, bleeding, and any complications - at defined intervals",
         "Only SpO2 and blood pressure - other parameters are optional",
-        "The recovery nurse monitors the patient continuously but only documents at discharge",
+        "The recovery nurse monitors the patient continuously but only documents at discharge"
       ],
       correctIndex: 1,
       explanation:
@@ -587,7 +587,7 @@ export const ascAsgLevel: Level = {
         "The patient may drive if they feel alert and oriented",
         "The patient must not be allowed to drive - they must have a responsible adult for transportation home, as required by the organization's discharge criteria and patient responsibility policies",
         "Driving is permitted if the patient received a reversal agent",
-        "Driving decisions are the patient's personal responsibility - the ASC has no authority",
+        "Driving decisions are the patient's personal responsibility - the ASC has no authority"
       ],
       correctIndex: 1,
       explanation:

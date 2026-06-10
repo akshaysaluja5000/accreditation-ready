@@ -74,7 +74,7 @@ export const ascQuaLevel: Level = {
         "The facility administrator based on patient satisfaction surveys",
         "At least one similarly privileged and/or similarly licensed peer",
         "A contracted quality consultant hired by the organization",
-        "The medical director reviewing all providers regardless of specialty",
+        "The medical director reviewing all providers regardless of specialty"
       ],
       correctIndex: 1,
       explanation:
@@ -101,7 +101,7 @@ export const ascQuaLevel: Level = {
         "Self-review is acceptable for solo practitioners",
         "An outside peer must provide peer review for the solo practitioner",
         "Peer review is waived for facilities with fewer than three providers in the same specialty",
-        "The medical director may review the anesthesiologist's cases regardless of specialty",
+        "The medical director may review the anesthesiologist's cases regardless of specialty"
       ],
       correctIndex: 1,
       explanation:
@@ -128,7 +128,7 @@ export const ascQuaLevel: Level = {
         "Providers must simply agree to be reviewed - no active development role is required",
         "Providers must participate in the development and application of peer review criteria used to evaluate the care they provide",
         "Providers must select the cases to be reviewed from their own practice",
-        "Providers must conduct unannounced peer observations of their colleagues",
+        "Providers must conduct unannounced peer observations of their colleagues"
       ],
       correctIndex: 1,
       explanation:
@@ -155,7 +155,7 @@ export const ascQuaLevel: Level = {
         "Every three years at reappointment",
         "At least annually by a peer or supervising health care professional",
         "Only when a clinical incident occurs",
-        "Every two years per accreditation cycle",
+        "Every two years per accreditation cycle"
       ],
       correctIndex: 1,
       explanation:
@@ -182,7 +182,7 @@ export const ascQuaLevel: Level = {
         "Data collection alone satisfies QUA.130 as long as it is ongoing",
         "The data must also be periodically evaluated for trends, and action must be taken when problems are identified",
         "Data must be submitted to a national registry to achieve compliance",
-        "QUA.130 only requires data collection - evaluation and action are addressed in QUA.160",
+        "QUA.130 only requires data collection - evaluation and action are addressed in QUA.160"
       ],
       correctIndex: 1,
       explanation:
@@ -209,7 +209,7 @@ export const ascQuaLevel: Level = {
         "Monthly",
         "At least annually",
         "Only when a provider is placed on focused review",
-        "At the time of each provider's reappointment",
+        "At the time of each provider's reappointment"
       ],
       correctIndex: 1,
       explanation:
@@ -236,7 +236,7 @@ export const ascQuaLevel: Level = {
         "Initial appointment decisions only",
         "The process for granting continuation of clinical privileges at reappointment",
         "Hiring decisions for employed physicians",
-        "Malpractice insurance premium determinations",
+        "Malpractice insurance premium determinations"
       ],
       correctIndex: 1,
       explanation:
@@ -263,7 +263,7 @@ export const ascQuaLevel: Level = {
         "Volume data is sufficient for QI compliance - trend analysis is optional",
         "QUA.130.20 requires periodic evaluation of data to identify trends or occurrences affecting patient outcomes",
         "Trend analysis is only required when an adverse event occurs",
-        "Volume data belongs in the administrative report, not the QI program",
+        "Volume data belongs in the administrative report, not the QI program"
       ],
       correctIndex: 1,
       explanation:
@@ -290,7 +290,7 @@ export const ascQuaLevel: Level = {
         "The topic selection - post-operative nausea is not a required QI study topic",
         "Re-measurement after the intervention to determine whether the change produced improvement",
         "Governing body approval of the study topic before implementation",
-        "QI studies do not need re-measurement if the intervention was clinically sound",
+        "QI studies do not need re-measurement if the intervention was clinically sound"
       ],
       correctIndex: 1,
       explanation:
@@ -317,7 +317,7 @@ export const ascQuaLevel: Level = {
         "Only peer review and QI studies - other programs are managed separately",
         "Peer review, QI activities, infection prevention and control, safety, and risk management",
         "Only clinical programs - administrative functions are excluded",
-        "The accreditation program, marketing, and patient experience",
+        "The accreditation program, marketing, and patient experience"
       ],
       correctIndex: 1,
       explanation:
@@ -344,7 +344,7 @@ export const ascQuaLevel: Level = {
         "Peer review reporting to the governing body is optional if the QI committee reviews results",
         "QUA.140 requires reporting to the governing body at least annually - two years without reporting is a deficiency",
         "GOV.240 is the only standard that addresses governing body review requirements",
-        "QUA.140 applies only to organizations with employed physicians",
+        "QUA.140 applies only to organizations with employed physicians"
       ],
       correctIndex: 1,
       explanation:
@@ -371,7 +371,7 @@ export const ascQuaLevel: Level = {
         "Document the incident in the patient's medical record only",
         "Review all clinical incidents in accordance with the organization's peer review policies and procedures",
         "Clinical incidents are referred directly to the risk manager and excluded from peer review",
-        "Incidents are only reviewed if the patient files a formal complaint",
+        "Incidents are only reviewed if the patient files a formal complaint"
       ],
       correctIndex: 1,
       explanation:
@@ -398,7 +398,7 @@ export const ascQuaLevel: Level = {
         "Benchmarking is optional and adds no compliance value",
         "Benchmarking allows the organization to compare its performance against external norms or best-practice standards to identify improvement opportunities",
         "Benchmarking is only required for organizations with Medicare-certified status",
-        "Benchmarking replaces internal data collection when external data is available",
+        "Benchmarking replaces internal data collection when external data is available"
       ],
       correctIndex: 1,
       explanation:
@@ -425,7 +425,7 @@ export const ascQuaLevel: Level = {
         "Only surgeons require peer review - anesthesia providers are reviewed by their own professional boards",
         "QUA.100 requires all physicians, dentists, or health care professionals to be reviewed - anesthesia providers are included",
         "Anesthesia peer review is governed by the American Board of Anesthesiology, not AAAHC",
-        "Peer review for anesthesia providers is optional if they hold current board certification",
+        "Peer review for anesthesia providers is optional if they hold current board certification"
       ],
       correctIndex: 1,
       explanation:
@@ -452,7 +452,7 @@ export const ascQuaLevel: Level = {
         "Only cases with patient complaints are selected for review",
         "Clinical care is selected for review on an ongoing basis",
         "Only randomly selected cases are reviewed - incident cases are excluded",
-        "Clinical care is reviewed annually during the recredentialing cycle only",
+        "Clinical care is reviewed annually during the recredentialing cycle only"
       ],
       correctIndex: 1,
       explanation:
@@ -479,7 +479,7 @@ export const ascQuaLevel: Level = {
         "IPC data is the exclusive domain of the IPC officer - it does not need to go to the QI committee",
         "QUA.220 requires integration of IPC data into the quality management program in a systematic way",
         "QI committees only review patient satisfaction and wait time data",
-        "IPC data is reported to the governing body directly and does not require QI committee review",
+        "IPC data is reported to the governing body directly and does not require QI committee review"
       ],
       correctIndex: 1,
       explanation:
@@ -506,7 +506,7 @@ export const ascQuaLevel: Level = {
         "Administrative efficiency studies fully satisfy QI study requirements",
         "QI studies must systematically assess and improve the quality of clinical care - clinical outcomes must be included",
         "QI studies only need to address areas cited in the previous AAAHC survey",
-        "The mix of study topics is at the organization's complete discretion",
+        "The mix of study topics is at the organization's complete discretion"
       ],
       correctIndex: 1,
       explanation:
@@ -533,7 +533,7 @@ export const ascQuaLevel: Level = {
         "Yes - mentioning the data in minutes demonstrates ongoing monitoring",
         "No - QUA.130 requires evaluation for trends and action when problems are identified, not just data mention",
         "Yes - the committee's expertise makes formal trend analysis unnecessary",
-        "No - only written QI studies can satisfy QUA.130 monitoring requirements",
+        "No - only written QI studies can satisfy QUA.130 monitoring requirements"
       ],
       correctIndex: 1,
       explanation:
@@ -560,7 +560,7 @@ export const ascQuaLevel: Level = {
         "It allows high-volume surgeons to be reviewed more frequently than others",
         "It ensures peer review is systematic and equitable - no provider is exempt from the selection process",
         "It allows providers with clean records to be reviewed less frequently",
-        "It only applies to providers who have had prior adverse peer review findings",
+        "It only applies to providers who have had prior adverse peer review findings"
       ],
       correctIndex: 1,
       explanation:
@@ -587,7 +587,7 @@ export const ascQuaLevel: Level = {
         "A written peer review policy only - a new facility cannot have completed reviews yet",
         "Both a written peer review policy AND documented evidence that peer review has been conducted for each privileged provider",
         "Three years of peer review data from previous facilities where the providers worked",
-        "A signed attestation from the medical director that peer review is planned",
+        "A signed attestation from the medical director that peer review is planned"
       ],
       correctIndex: 1,
       explanation:

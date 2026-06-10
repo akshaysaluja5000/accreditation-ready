@@ -15,7 +15,7 @@ export const deepDiveLevelsPart1: DeepDiveLevel[] = [
         baseOptions: [
         "Acceptable - provided the mop heads are physically changed between rooms even if the solution remains",
         "Acceptable - EPA-registered disinfectants maintain kill concentration for up to four consecutive rooms",
-        "Not acceptable - but only when rooms involved patients on contact or droplet isolation precautions",
+        "Not acceptable - mop solution must be changed between each room to prevent cross-contamination",
         "Not acceptable - mop solution must be changed between each room to prevent cross-contamination"
       ],
       baseCorrectIndex: 3,
@@ -295,7 +295,7 @@ export const deepDiveLevelsPart1: DeepDiveLevel[] = [
         id: "dd-env7",
         baseQuestion: "During a renovation, a surveyor notices that an adjacent patient care area has visible drywall dust on surfaces despite an ICRA barrier being in place. Is the ICRA barrier functioning properly?",
         baseOptions: [
-        "Some minor dust migration is expected during active renovation and does not indicate barrier failure",
+        "Visible dust in the patient care area indicates the ICRA barrier has been breached or is inadequate",
         "Visible dust in the patient care area indicates the ICRA barrier has been breached or is inadequate",
         "As long as airborne particulate counts remain below the established action threshold for that area",
         "But only if the adjacent area houses immunocompromised patients or is classified as a protected zone"
@@ -342,8 +342,8 @@ export const deepDiveLevelsPart1: DeepDiveLevel[] = [
         id: "dd-env8",
         baseQuestion: "A surveyor asks the EVS department for their policy on disinfecting electronic devices (keyboards, monitors, touch screens) in patient care areas. The staff says they avoid wiping electronics because they don't want to damage them. Is this acceptable?",
         baseOptions: [
+        "Not acceptable - electronic devices in patient care areas are high-touch surfaces that must be cleaned and disinfected using manufacturer-approved methods",
         "Not acceptable - but only touch screens require chemical disinfection; keyboards can be dry-wiped with microfiber cloths",
-        "Acceptable - dry microfiber cloth wiping is sufficient for electronics to preserve equipment functionality and warranties",
         "Not acceptable - electronic devices in patient care areas are high-touch surfaces that must be cleaned and disinfected using manufacturer-approved methods",
         "Acceptable - as long as electronic devices are replaced on a regular scheduled cycle to prevent pathogen accumulation"
       ],
@@ -436,10 +436,10 @@ export const deepDiveLevelsPart1: DeepDiveLevel[] = [
         id: "dd-env10",
         baseQuestion: "A surveyor notices that the facility uses UV-C disinfection robots as a supplement to manual cleaning in OR suites. Can UV-C technology replace manual cleaning?",
         baseOptions: [
-        "UV-C technology is not yet validated for healthcare environments and should only be used in research settings",
-        "UV-C robots achieve higher log reduction than manual cleaning and can fully replace human cleaning efforts",
         "UV-C technology supplements but does not replace manual cleaning; surfaces must be physically cleaned to remove organic matter before UV-C can be effective",
-        "But only in operating rooms and procedural areas where surface contamination matches UV-C efficacy profiles"
+        "UV-C technology is not yet validated for healthcare environments and should only be used in research settings",
+        "UV-C technology supplements but does not replace manual cleaning; surfaces must be physically cleaned to remove organic matter before UV-C can be effective",
+        "UV-C can replace manual cleaning only in operating rooms where surface contamination is minimal"
       ],
       baseCorrectIndex: 2,
         baseExplanation: "UV-C disinfection is an adjunct to, not a replacement for, manual cleaning. UV-C light is blocked by organic matter (soil, blood, body fluids) and only disinfects surfaces in direct line-of-sight. Physical cleaning must remove organic material first for UV-C to be effective against remaining microorganisms.",
@@ -486,7 +486,7 @@ export const deepDiveLevelsPart1: DeepDiveLevel[] = [
         "An uncalibrated dilution system may produce solutions at incorrect concentrations, compromising disinfection effectiveness",
         "Quarterly calibration is a manufacturer recommendation only, not a regulatory or accreditation requirement",
         "Modern automated dilution systems maintain accurate output concentration regardless of calibration status",
-        "But only if the system has been producing visible color or consistency changes in the dispensed solution"
+        "This is only a concern if the system has been producing visible color or consistency changes in the dispensed solution"
       ],
       baseCorrectIndex: 0,
         baseExplanation: "Automatic dilution systems must be calibrated per the manufacturer's recommended schedule. An uncalibrated system can produce solutions that are too dilute (ineffective) or too concentrated (wasteful, potentially harmful to surfaces and staff). Quarterly calibration is a minimum standard.",
@@ -532,10 +532,10 @@ export const deepDiveLevelsPart1: DeepDiveLevel[] = [
         id: "dd-env12",
         baseQuestion: "A surveyor asks about the facility's process for cleaning and disinfecting shared patient equipment (blood pressure cuffs, pulse oximeters, thermometers) between patients. Staff say they wipe them when they 'look dirty.' Is this acceptable?",
         baseOptions: [
-        "Not acceptable - but only for equipment used on patients who are on transmission-based precaution protocols",
+        "Acceptable—cleaning non-critical items only when visibly soiled meets Spaulding Classification and CDC guidelines",
         "Not acceptable - shared patient equipment must be cleaned and disinfected between every patient use, regardless of visible soiling",
-        "Acceptable - cleaning non-critical items only when visibly soiled meets Spaulding Classification and CDC guidelines",
-        "Acceptable - as long as the shared equipment is cleaned at least once per shift by the assigned nursing staff"
+        "Acceptable—shared equipment does not require disinfection between patients if the patient was not on transmission-based precautions",
+        "Acceptable—wiping with any disinfectant product is sufficient if performed at the point of care"
       ],
       baseCorrectIndex: 1,
         baseExplanation: "Shared patient care equipment must be cleaned and disinfected between every patient use. Visible soiling is not a reliable indicator of contamination - pathogens are invisible. This is a standard precautions requirement.",
@@ -581,9 +581,9 @@ export const deepDiveLevelsPart1: DeepDiveLevel[] = [
         id: "dd-env13",
         baseQuestion: "A surveyor sees that fabric curtains between patient beds in a semi-private room have no documented cleaning or change schedule. Staff say they change them 'when they get stained.' Is this compliant?",
         baseOptions: [
-        "Compliant - changing curtains when visibly stained is an acceptable risk-based approach",
-        "Compliant - curtains are low-touch surfaces and don't need scheduled changes",
         "Not compliant - but only in rooms with patients on contact precautions or confirmed infections",
+        "Compliant - privacy curtains are low-touch surfaces and don't need scheduled changes",
+        "Compliant - changing curtains when visibly stained is an acceptable risk-based approach",
         "Not compliant - privacy curtains are high-touch surfaces that require a documented"
       ],
       baseCorrectIndex: 3,
@@ -633,7 +633,7 @@ export const deepDiveLevelsPart1: DeepDiveLevel[] = [
         "But additional monitoring is only required for Class IV ICRA construction projects",
         "Daily visual inspections of the barrier are adequate",
         "Environmental monitoring during construction should include",
-        "But only if a designated infection preventionist performs the barrier inspections"
+        "Environmental monitoring is only necessary if the construction project involves demolition or asbestos abatement"
       ],
       baseCorrectIndex: 2,
         baseExplanation: "Comprehensive ICRA monitoring includes air particle count monitoring, pressure differential measurement and documentation, barrier integrity inspection, and environmental surveillance. Visual inspection alone does not detect airborne particulate migration that can occur even with intact barriers.",
@@ -679,9 +679,9 @@ export const deepDiveLevelsPart1: DeepDiveLevel[] = [
         id: "dd-env15",
         baseQuestion: "A water leak from a pipe above the ceiling has stained several ceiling tiles in a medication room. Maintenance replaces the tiles but does not address the leak because it is 'slow and intermittent.' Is this resolution adequate?",
         baseOptions: [
-        "As long as maintenance submits a work order to monitor the leak on a quarterly basis",
         "Replacing the stained tiles resolves the environmental concern",
-        "But only if the leak is located directly above a patient care or sterile area",
+        "As long as maintenance submits a work order to monitor the leak on a quarterly basis",
+        "Repairing the leak is a facilities issue, not an infection prevention concern",
         "Replacing tiles without repairing the leak ensures the problem will"
       ],
       baseCorrectIndex: 3,
@@ -777,10 +777,10 @@ export const deepDiveLevelsPart1: DeepDiveLevel[] = [
         id: "dd-env17",
         baseQuestion: "A facility has recently had three cases of hospital-acquired MRSA on the same unit. The infection preventionist asks EVS to perform enhanced environmental cleaning. What does enhanced cleaning typically include?",
         baseOptions: [
-        "Limiting cleaning to discharge rooms only to concentrate EVS resources effectively",
-        "Increased frequency of high-touch surface cleaning",
         "Cleaning the rooms more quickly to reduce pathogen exposure time",
-        "Performing standard cleaning but adding air fresheners to reduce odor concerns"
+        "Increased frequency of high-touch surface cleaning",
+        "Performing standard cleaning but adding air fresheners to reduce odor concerns",
+        "Switching to terminal cleaning protocols for all patient areas temporarily"
       ],
       baseCorrectIndex: 1,
         baseExplanation: "Enhanced environmental cleaning during an outbreak includes multiple intensified measures: increased cleaning frequency, potentially stronger or broader-spectrum disinfectants, supplemental disinfection technology, verification audits, and dedicated staffing to ensure consistent thoroughness on the affected unit.",
@@ -875,9 +875,9 @@ export const deepDiveLevelsPart1: DeepDiveLevel[] = [
         id: "dd-env19",
         baseQuestion: "A surveyor notices that the operating room has a portable HEPA air filtration unit running in the corner. The OR has its own dedicated HVAC with HEPA filtration. Is the portable unit necessary?",
         baseOptions: [
+        "Not necessarily - if the OR HVAC system is properly engineered and maintained, it should meet all design specifications without supplemental filtration that may disrupt engineered airflow patterns",
         "Extra filtration is always beneficial",
         "Not necessarily - portable units should be removed before each surgical case",
-        "But only during cases involving immunocompromised patients",
         "Not necessarily - if the OR HVAC system is"
       ],
       baseCorrectIndex: 3,
@@ -925,9 +925,9 @@ export const deepDiveLevelsPart1: DeepDiveLevel[] = [
         baseQuestion: "A surveyor asks the facility to describe their process for cleaning and disinfecting a room after a patient with active pulmonary tuberculosis is discharged. The staff describe standard discharge cleaning. Is this adequate?",
         baseOptions: [
         "Standard discharge cleaning is sufficient for TB rooms",
-        "But only the bed and immediate patient contact surfaces need sporicidal treatment",
+        "But staff should wear surgical masks during the standard cleaning procedure",
         "TB rooms require additional measures including extended room",
-        "But staff should wear surgical masks during the standard cleaning procedure"
+        "TB rooms require contact precautions instead of airborne precautions during the cleaning process"
       ],
       baseCorrectIndex: 2,
         baseExplanation: "Rooms housing patients with active pulmonary TB require airborne infection isolation room (AIIR) procedures after discharge: the room must remain vacant with the door closed for a calculated period (based on air changes per hour) to allow adequate clearance of airborne droplet nuclei before EVS enters for cleaning. Staff entering must wear N95 respirators.",
@@ -983,7 +983,7 @@ export const deepDiveLevelsPart1: DeepDiveLevel[] = [
         id: "dd-seg1",
         baseQuestion: "A surveyor observes that the facility's sterile processing department has a single corridor used by both clean and soiled traffic at different times of day. Is this arrangement compliant?",
         baseOptions: [
-        "Compliant only if the corridor receives terminal cleaning between traffic periods and ATP verification confirms less than 100 RLU on all surfaces",
+        "Not compliant - clean and soiled traffic must have physically separate pathways to prevent cross-contamination",
         "Not compliant - clean and soiled traffic must have physically separate pathways to prevent cross-contamination",
         "Not compliant unless the facility installs HEPA air filtration and UV-C disinfection systems that activate automatically between traffic periods",
         "Compliant - AAMI ST79 recognizes time-based separation with validated cleaning as an acceptable alternative to physical separation in existing facilities"
@@ -1179,9 +1179,9 @@ export const deepDiveLevelsPart1: DeepDiveLevel[] = [
         id: "dd-seg5",
         baseQuestion: "A pass-through window between the decontamination room and the clean assembly area has both sides open simultaneously. A tech on the decontamination side is handing instruments through to a tech on the clean side. Is this acceptable?",
         baseOptions: [
+        "Not acceptable - pass-through windows must not have both sides open simultaneously; one side must close before the other opens to maintain the pressure barrier between clean and soiled zones",
         "Acceptable during active hand-to-hand transfer if both technicians wear full PPE and the transfer is completed within thirty seconds",
         "Acceptable - AAMI ST79 specifies pass-through windows are designed for direct instrument transfer and simultaneous opening is permitted during operations",
-        "Not acceptable only if the decontamination room lacks negative pressure - positive airflow from clean to soiled side makes dual opening safe",
         "Not acceptable - pass-through windows must not have both sides open simultaneously; one side must close before the other opens to maintain the pressure barrier between clean and soiled zones"
       ],
       baseCorrectIndex: 3,
@@ -1326,9 +1326,9 @@ export const deepDiveLevelsPart1: DeepDiveLevel[] = [
         id: "dd-seg8",
         baseQuestion: "A surveyor observes that the SPD decontamination room has a positive pressure relative to the adjacent clean assembly area. Is this the correct pressure relationship?",
         baseOptions: [
+        "Incorrect - the decontamination room must have negative pressure relative to adjacent clean areas to prevent contaminated air from flowing into clean zones",
         "Correct if the decontamination room has a minimum of ten air changes per hour exhausted directly to the exterior of the building",
         "Correct - ASHRAE Standard 170 specifies decontamination rooms should maintain positive pressure to push contaminated air through the exhaust system",
-        "Incorrect only if the pass-through windows lack interlocking doors - positive pressure is acceptable when sealed pass-through barriers are installed",
         "Incorrect - the decontamination room must have negative pressure relative to adjacent clean areas to prevent contaminated air from flowing into clean zones"
       ],
       baseCorrectIndex: 3,
@@ -1522,9 +1522,9 @@ export const deepDiveLevelsPart1: DeepDiveLevel[] = [
         id: "dd-seg12",
         baseQuestion: "A surveyor follows a surgical case from start to finish. At the end of the case, the circulating nurse bags the soiled instruments and places the bag in the clean corridor outside the OR while she finishes documentation. Is this acceptable?",
         baseOptions: [
+        "Not acceptable - soiled instruments, even when bagged, must not be placed in clean corridors; they must go directly to the soiled corridor or soiled utility room",
         "Not acceptable unless the facility has documented that the clean corridor receives terminal cleaning between every surgical case turnover",
         "Acceptable - AORN permits temporary placement of sealed soiled instrument containers in clean corridors for up to fifteen minutes during turnover",
-        "Acceptable if the sealed bag is placed on a disposable impervious barrier and removed within ten minutes of surgical case completion",
         "Not acceptable - soiled instruments, even when bagged, must not be placed in clean corridors; they must go directly to the soiled corridor or soiled utility room"
       ],
       baseCorrectIndex: 3,
@@ -1718,10 +1718,10 @@ export const deepDiveLevelsPart1: DeepDiveLevel[] = [
         id: "dd-seg16",
         baseQuestion: "A surveyor observes an OR suite where sterile cases (instrument trays, implants) are brought into the OR through the same door that patients enter. Clean and soiled instruments also exit through this single door. Is a single-door OR acceptable?",
         baseOptions: [
-        "Acceptable only in ambulatory surgery centers - hospital inpatient ORs must always have separate clean and soiled doorways",
-        "It can be acceptable if traffic flow is properly managed and clean and soiled items do not travel through the door simultaneously",
         "Not acceptable - AORN requires all operating rooms to have minimum two doors for clean and soiled traffic separation at all times",
-        "Not acceptable - ORs must have separate clean and soiled entry and exit points per Joint Commission surgical environment standards"
+        "It can be acceptable if traffic flow is properly managed and clean and soiled items do not travel through the door simultaneously",
+        "Not acceptable - ORs must have separate clean and soiled entry and exit points per Joint Commission surgical environment standards",
+        "Not acceptable - single-door ORs cannot maintain proper environmental controls for sterile procedures"
       ],
       baseCorrectIndex: 1,
         baseExplanation: "Modern OR design standards acknowledge that single-door ORs can be compliant if traffic flow is properly managed. The critical requirement is that clean and soiled items do not travel simultaneously and that workflow procedures prevent cross-contamination, not necessarily that separate doors exist.",
@@ -1817,8 +1817,8 @@ export const deepDiveLevelsPart1: DeepDiveLevel[] = [
         baseQuestion: "A facility is designing a new SPD layout. The architect's plan shows the decontamination room with a window to the clean assembly area for visual communication between staff. Is a window between these areas acceptable?",
         baseOptions: [
         "Acceptable - visual communication improves workflow efficiency and any window design between processing areas is permitted by AAMI standards",
-        "Acceptable with an operable window if it has a self-closing mechanism and the decontamination room maintains continuous negative pressure",
         "Not acceptable under any circumstances - no visual openings are permitted between soiled and clean processing areas in SPD design",
+        "Acceptable with an operable window if it has a self-closing mechanism and the decontamination room maintains continuous negative pressure",
         "Acceptable only if the window is permanently sealed and airtight to prevent any air transfer between decontamination and clean zones"
       ],
       baseCorrectIndex: 3,
@@ -1867,7 +1867,7 @@ export const deepDiveLevelsPart1: DeepDiveLevel[] = [
         baseOptions: [
         "Acceptable - temporal separation is sufficient at the loading dock level since it is an exterior open-air environment",
         "Not ideal - best practice is separate receiving and waste staging areas to prevent cross-contamination of incoming supplies",
-        "Not acceptable - clean receiving and waste staging must have completely separate dock areas per Joint Commission EC.02.06.01 standards",
+        "Not acceptable - clean receiving and waste staging must have completely separate dock areas per Joint Commission EC standards",
         "Acceptable without restriction - loading docks are exterior spaces where standard indoor contamination control requirements do not apply"
       ],
       baseCorrectIndex: 1,

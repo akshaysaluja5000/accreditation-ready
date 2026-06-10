@@ -74,7 +74,7 @@ export const ascGovLevel: Level = {
         "A copy of the organization's AAAHC accreditation certificate",
         "Articles of incorporation",
         "The medical director's credentialing file",
-        "The organization's current operating budget",
+        "The organization's current operating budget"
       ],
       correctIndex: 1,
       explanation:
@@ -101,7 +101,7 @@ export const ascGovLevel: Level = {
         "Long-range plans are delegated to the medical director with no governing body involvement",
         "The governing body formulates long-range plans in accordance with the mission, goals, and objectives",
         "Long-range plans must be reviewed by the state health department before adoption",
-        "Long-range planning is only required for ASCs with more than 50 employees",
+        "Long-range planning is only required for ASCs with more than 50 employees"
       ],
       correctIndex: 1,
       explanation:
@@ -128,7 +128,7 @@ export const ascGovLevel: Level = {
         "Compliance with the Joint Commission's National Performance Goals (NPGs)",
         "Reporting to the National Practitioner Data Bank",
         "Submission of annual quality reports to CMS",
-        "Filing quarterly tax returns with the IRS",
+        "Filing quarterly tax returns with the IRS"
       ],
       correctIndex: 1,
       explanation:
@@ -155,7 +155,7 @@ export const ascGovLevel: Level = {
         "Mission statement, financial projections, and staffing ratios",
         "Treatments/procedures/services provided, population served, and hours of operation",
         "Quality improvement goals, infection control plan, and emergency procedures",
-        "Accreditation history, insurance contracts, and patient satisfaction scores",
+        "Accreditation history, insurance contracts, and patient satisfaction scores"
       ],
       correctIndex: 1,
       explanation:
@@ -182,7 +182,7 @@ export const ascGovLevel: Level = {
         "Only financial risk - clinical risk is managed by the medical director",
         "Review of risk management activities, as part of governing body oversight",
         "Monthly audits of all patient records by a third-party reviewer",
-        "Risk management applies only to facilities with prior adverse survey findings",
+        "Risk management applies only to facilities with prior adverse survey findings"
       ],
       correctIndex: 1,
       explanation:
@@ -209,7 +209,7 @@ export const ascGovLevel: Level = {
         "Monthly",
         "Quarterly",
         "At least annually",
-        "At least semi-annually",
+        "At least semi-annually"
       ],
       correctIndex: 2,
       explanation:
@@ -236,7 +236,7 @@ export const ascGovLevel: Level = {
         "Employee performance reviews",
         "The emergency and disaster preparedness plan",
         "The facility's annual budget",
-        "Third-party billing contractor performance",
+        "Third-party billing contractor performance"
       ],
       correctIndex: 1,
       explanation:
@@ -263,7 +263,7 @@ export const ascGovLevel: Level = {
         "Contractors must be licensed in the state where services are provided",
         "The governing body must monitor ongoing contractor performance, not just approve the initial contract",
         "All contractors must have AAAHC accreditation themselves",
-        "Governing body approval is only needed when contracts exceed $100,000 annually",
+        "Governing body approval is only needed when contracts exceed $100,000 annually"
       ],
       correctIndex: 1,
       explanation:
@@ -290,7 +290,7 @@ export const ascGovLevel: Level = {
         "The anesthesiologist chooses techniques independently based on clinical judgment",
         "The governing body must approve anesthesia techniques upon the recommendation of qualified professional personnel",
         "Anesthesia technique approval is delegated entirely to the state medical board",
-        "Only moderate and deep sedation require governing body approval; local anesthesia does not",
+        "Only moderate and deep sedation require governing body approval; local anesthesia does not"
       ],
       correctIndex: 1,
       explanation:
@@ -317,7 +317,7 @@ export const ascGovLevel: Level = {
         "It is required only for facilities that exclusively treat children",
         "The governing body must define the pediatric population and state whether or not this population is included in the scope of services",
         "Pediatric definition is left to the individual practitioners based on their clinical judgment",
-        "The AAAHC defines pediatric as under 18 years old for all organizations - no individual definition is needed",
+        "The AAAHC defines pediatric as under 18 years old for all organizations - no individual definition is needed"
       ],
       correctIndex: 1,
       explanation:
@@ -344,7 +344,7 @@ export const ascGovLevel: Level = {
         "The governing body must distribute meeting minutes to all employees within 30 days",
         "The governing body ensures that marketing and advertising statements are not misleading",
         "The governing body must maintain a social media presence",
-        "All external communications must be approved by the medical director",
+        "All external communications must be approved by the medical director"
       ],
       correctIndex: 1,
       explanation:
@@ -371,7 +371,7 @@ export const ascGovLevel: Level = {
         "A registered nurse with lithotripsy certification",
         "One or more qualified urologists",
         "The facility's risk manager",
-        "A biomedical engineer with equipment expertise",
+        "A biomedical engineer with equipment expertise"
       ],
       correctIndex: 1,
       explanation:
@@ -398,7 +398,7 @@ export const ascGovLevel: Level = {
         "The facility cleaning schedule",
         "The appointment and reappointment process for health care professionals",
         "The organization's social media policy",
-        "Individual employee payroll records",
+        "Individual employee payroll records"
       ],
       correctIndex: 1,
       explanation:
@@ -425,7 +425,7 @@ export const ascGovLevel: Level = {
         "Their salary ranges and benefits packages",
         "Their authority, responsibility, and functions as carried out through governing body directives",
         "Their personal liability exposure for clinical decisions",
-        "Their social media use policies during working hours",
+        "Their social media use policies during working hours"
       ],
       correctIndex: 1,
       explanation:
@@ -452,7 +452,7 @@ export const ascGovLevel: Level = {
         "Nothing - the governing body's only responsibility was initial contract approval",
         "The governing body must ensure services are provided safely and effectively, meaning performance issues must be addressed through governing body oversight",
         "The contract must be terminated immediately",
-        "GOV.200.50 only applies to clinical care contractors, not laboratory services",
+        "GOV.200.50 only applies to clinical care contractors, not laboratory services"
       ],
       correctIndex: 1,
       explanation:
@@ -479,7 +479,7 @@ export const ascGovLevel: Level = {
         "By the presence of a quality improvement committee with at least 10 members",
         "By governing body meeting minutes documenting receipt and review of quality improvement reports and actions taken",
         "By hiring a dedicated quality officer with advanced clinical degrees",
-        "By achieving a patient satisfaction score above 90%",
+        "By achieving a patient satisfaction score above 90%"
       ],
       correctIndex: 1,
       explanation:
@@ -506,7 +506,7 @@ export const ascGovLevel: Level = {
         "Approve and ensure compliance with CMS contracts and arrangements",
         "Submit annual cost reports to CMS on behalf of the facility",
         "Hire a Medicare compliance officer as a full-time employee",
-        "GOV.210 only applies to hospitals, not ambulatory surgery centers",
+        "GOV.210 only applies to hospitals, not ambulatory surgery centers"
       ],
       correctIndex: 0,
       explanation:
@@ -533,7 +533,7 @@ export const ascGovLevel: Level = {
         "Ensure each provider has completed the equipment manufacturer's training course",
         "Grant each provider privileges specifically for each energy-emitting device they use",
         "Purchase liability insurance covering all laser procedures",
-        "Post warning signs at the entrance to each room where lasers are used",
+        "Post warning signs at the entrance to each room where lasers are used"
       ],
       correctIndex: 1,
       explanation:
@@ -560,7 +560,7 @@ export const ascGovLevel: Level = {
         "Setting the surgical schedule for each week",
         "Establishing policies on patient education and continuing education for staff",
         "Performing monthly chart audits on all surgical cases",
-        "Scheduling annual performance reviews for all clinical staff",
+        "Scheduling annual performance reviews for all clinical staff"
       ],
       correctIndex: 1,
       explanation:
@@ -587,7 +587,7 @@ export const ascGovLevel: Level = {
         "Submit a compliance report to AAAHC within 30 days",
         "Revisions must be made as needed to maintain compliance",
         "Have all staff re-sign updated policies before the next survey",
-        "No action is required unless the survey is within 6 months",
+        "No action is required unless the survey is within 6 months"
       ],
       correctIndex: 1,
       explanation:

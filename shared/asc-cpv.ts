@@ -95,7 +95,7 @@ export const ascCpvLevel: Level = {
         "Hospital credentials are sufficient - the ASC may rely on them without its own verification",
         "The ASC must conduct its own independent credentialing and privileging process - hospital status may be considered but does not substitute for the ASC's review",
         "The surgeon may begin practicing while the ASC completes its credentialing process",
-        "CPV.100 only applies to new graduates - experienced surgeons may use privilege reciprocity",
+        "CPV.100 only applies to new graduates - experienced surgeons may use privilege reciprocity"
       ],
       correctIndex: 1,
       explanation:
@@ -122,7 +122,7 @@ export const ascCpvLevel: Level = {
         "A letter from the practitioner's specialty society endorsing their application",
         "Information from the National Practitioner Data Bank (NPDB)",
         "A copy of the practitioner's most recent federal tax return",
-        "A letter from the practitioner's malpractice insurer rating their risk category",
+        "A letter from the practitioner's malpractice insurer rating their risk category"
       ],
       correctIndex: 1,
       explanation:
@@ -149,7 +149,7 @@ export const ascCpvLevel: Level = {
         "Claims history is not part of the formal application - only the NPDB covers this",
         "The application must include the professional liability claims history as part of the written attestation",
         "Only claims that resulted in judgments (not settlements) must be disclosed",
-        "Claims from more than three years ago are excluded from attestation requirements",
+        "Claims from more than three years ago are excluded from attestation requirements"
       ],
       correctIndex: 1,
       explanation:
@@ -176,7 +176,7 @@ export const ascCpvLevel: Level = {
         "The governing body may grant privileges based on the application alone if the practitioner is board certified",
         "Primary or secondary source verification of credentials must be conducted",
         "A 30-day waiting period is required before verification begins",
-        "Verification is only required if the NPDB query returns adverse reports",
+        "Verification is only required if the NPDB query returns adverse reports"
       ],
       correctIndex: 1,
       explanation:
@@ -203,7 +203,7 @@ export const ascCpvLevel: Level = {
         "Peer review data belongs only in the quality committee - it has no role in reappointment",
         "CPV.200 requires peer references and/or peer review results to be incorporated into the appointment and reappointment decision process",
         "Peer review data is only required for reappointment when the practitioner has had adverse quality events",
-        "CPV.200 only applies to initial appointment, not reappointment",
+        "CPV.200 only applies to initial appointment, not reappointment"
       ],
       correctIndex: 1,
       explanation:
@@ -230,7 +230,7 @@ export const ascCpvLevel: Level = {
         "Every year",
         "At least every three years",
         "Every five years, consistent with hospital reappointment cycles",
-        "Only when there is a change in the practitioner's scope of practice",
+        "Only when there is a change in the practitioner's scope of practice"
       ],
       correctIndex: 1,
       explanation:
@@ -257,7 +257,7 @@ export const ascCpvLevel: Level = {
         "The expired license will be addressed at the scheduled reappointment - no action needed now",
         "The organization must monitor date-sensitive credentials like licensure on an ongoing basis and take action when the license expires - the practitioner may not practice on an expired license",
         "The PA should self-notify the organization when the license is renewed",
-        "Only physicians require ongoing licensure monitoring between reappointments",
+        "Only physicians require ongoing licensure monitoring between reappointments"
       ],
       correctIndex: 1,
       explanation:
@@ -284,7 +284,7 @@ export const ascCpvLevel: Level = {
         "Delegation to the Medical Director is not permitted - the governing body must personally review each application",
         "Documentation of the delegation must be present, and the governing body still makes the final appointment and reappointment decisions",
         "Once delegated, the Medical Director has full governing body authority for credentialing decisions",
-        "Delegation is only permitted for reappointment applications, not initial appointments",
+        "Delegation is only permitted for reappointment applications, not initial appointments"
       ],
       correctIndex: 1,
       explanation:
@@ -311,7 +311,7 @@ export const ascCpvLevel: Level = {
         "The education verification may be skipped since the school no longer exists",
         "Secondary source verification (through a CVO or accredited verification service that has access to historical records) is acceptable when primary source verification is impossible",
         "The applicant's self-attestation of their medical school education is sufficient in this case",
-        "A letter from the applicant's residency program confirming the medical degree is always sufficient for primary source verification",
+        "A letter from the applicant's residency program confirming the medical degree is always sufficient for primary source verification"
       ],
       correctIndex: 1,
       explanation:
@@ -338,7 +338,7 @@ export const ascCpvLevel: Level = {
         "The application is complete - attestation is only required at initial appointment",
         "The application is incomplete - attestation questions must be completed at reappointment as well as at initial appointment",
         "The attestation section can be skipped if the NPDB query is clean",
-        "Only practitioners with prior adverse history must complete the attestation at reappointment",
+        "Only practitioners with prior adverse history must complete the attestation at reappointment"
       ],
       correctIndex: 1,
       explanation:
@@ -365,7 +365,7 @@ export const ascCpvLevel: Level = {
         "DEA registration expiration is the anesthesiologist's personal responsibility - the organization has no tracking obligation",
         "The organization must monitor DEA registration expiration on an ongoing basis and ensure renewal occurs before the registration expires",
         "DEA registration only needs to be verified at initial appointment and reappointment",
-        "DEA tracking is only required for practitioners who prescribe Schedule II substances",
+        "DEA tracking is only required for practitioners who prescribe Schedule II substances"
       ],
       correctIndex: 1,
       explanation:
@@ -392,7 +392,7 @@ export const ascCpvLevel: Level = {
         "Physician-owners are exempt from formal reappointment requirements",
         "When the governing body is too small or has conflicts of interest, AAAHC standards note that solo providers and small groups may require review by an outside provider to ensure objectivity",
         "The other physician-owner may evaluate and approve the reappointment without any external review",
-        "Governing body members do not require credentialing because they are owners",
+        "Governing body members do not require credentialing because they are owners"
       ],
       correctIndex: 1,
       explanation:
@@ -416,10 +416,10 @@ export const ascCpvLevel: Level = {
       question:
         "During an AAAHC survey, the surveyor asks to see the credentials file for a contracted CRNA who provides anesthesia services. The administrator says the CRNA is employed by an anesthesia group that handles their own credentialing. Under CPV, what is the compliance issue?",
       options: [
-        "No issue - contracted practitioners are credentialed by their employer, not the ASC",
+        "The ASC must verify that the anesthesia group maintains its own credentialing process and may rely on their credentials review",
         "The ASC must have its own independent credentialing and privileging process for all practitioners providing services at the facility, including contracted CRNAs",
         "CRNAs do not require the same credentialing as physicians - only physician credentials are reviewed at the ASC level",
-        "Contracted practitioners are credentialed at reappointment only, not at initial appointment",
+        "Contracted practitioners are credentialed at reappointment only, not at initial appointment"
       ],
       correctIndex: 1,
       explanation:
@@ -443,10 +443,10 @@ export const ascCpvLevel: Level = {
       question:
         "An application for initial staff privileges is received and all documentation appears complete. However, the application is not signed by the applicant. Under CPV.160, what is the status of this application?",
       options: [
-        "The application can be processed - the signature can be obtained later",
+        "The application can be processed with a verbal attestation from the applicant",
         "An unsigned application does not satisfy CPV.160 and may not be processed until it is properly signed and dated by the applicant",
         "Only the governing body chairperson's signature is required on credentialing applications",
-        "Digital applications do not require signatures under CPV.160",
+        "Digital applications do not require signatures under CPV.160"
       ],
       correctIndex: 1,
       explanation:
@@ -472,8 +472,8 @@ export const ascCpvLevel: Level = {
       options: [
         "Board certification expiration has no effect on credentialing status - the original certification remains valid",
         "The organization must monitor board certification on an ongoing basis and update the credentials file to reflect the lapsed certification, which may affect the surgeon's credentialing status",
-        "Board certification monitoring is only required when the surgeon requests new privileges",
         "Lapsed board certification is only relevant at the next scheduled reappointment",
+        "Board certification monitoring is only required when the surgeon requests new privileges"
       ],
       correctIndex: 1,
       explanation:

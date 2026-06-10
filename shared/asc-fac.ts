@@ -81,7 +81,7 @@ export const ascFacLevel: Level = {
         "FAC.100 - general physical environment safety",
         "IPC.170 - decontamination area must be separate from clean areas with unidirectional workflow",
         "FAC.250 - equipment maintenance requirement",
-        "FAC.260 - alternate power requirement",
+        "FAC.260 - alternate power requirement"
       ],
       correctIndex: 1,
       explanation:
@@ -108,7 +108,7 @@ export const ascFacLevel: Level = {
         "Generators only need to be tested at initial installation - no ongoing testing is required",
         "The alternate power must be tested to confirm adequacy, and results must be documented - the absence of test records is a deficiency",
         "Testing is required only after a power outage",
-        "Generator testing is an FAC requirement only for facilities performing cardiac procedures",
+        "Generator testing is an FAC requirement only for facilities performing cardiac procedures"
       ],
       correctIndex: 1,
       explanation:
@@ -135,7 +135,7 @@ export const ascFacLevel: Level = {
         "Purchase receipts and warranty cards",
         "Calibration documentation (if applicable) AND preventive maintenance documentation",
         "Manufacturer data sheets and staff operating manuals",
-        "Insurance certificates and equipment serial numbers",
+        "Insurance certificates and equipment serial numbers"
       ],
       correctIndex: 1,
       explanation:
@@ -162,7 +162,7 @@ export const ascFacLevel: Level = {
         "Only the revenue potential of the new procedure",
         "Whether space, equipment, and supplies are adequate for the type and volume of the new procedure",
         "Whether all existing staff are interested in learning the new procedure",
-        "FAC.100 only applies to procedures already in the scope - new procedures are covered by GOV",
+        "FAC.100 only applies to procedures already in the scope - new procedures are covered by GOV"
       ],
       correctIndex: 1,
       explanation:
@@ -189,7 +189,7 @@ export const ascFacLevel: Level = {
         "OSHA 29 CFR 1910.1030",
         "ASHRAE 170 (Ventilation of Health Care Facilities)",
         "The Joint Commission Environment of Care standards",
-        "NFPA 70 (National Electrical Code)",
+        "NFPA 70 (National Electrical Code)"
       ],
       correctIndex: 1,
       explanation:
@@ -216,7 +216,7 @@ export const ascFacLevel: Level = {
         "Nothing additional - PM is current per the manufacturer schedule",
         "A sterilizer failure requires taking the unit out of service and investigating the cause - PM alone does not address a biological indicator failure",
         "The sterilizer may continue to be used until the next scheduled PM",
-        "Only the IPC officer needs to be notified - FAC standards are not implicated",
+        "Only the IPC officer needs to be notified - FAC standards are not implicated"
       ],
       correctIndex: 1,
       explanation:
@@ -243,7 +243,7 @@ export const ascFacLevel: Level = {
         "A safety inspection at initial accreditation satisfies FAC.150 permanently",
         "The physical environment must be continuously maintained as safe for patients, staff, and visitors, with identified hazards addressed promptly",
         "FAC.150 is only relevant to the procedure rooms - common areas are excluded",
-        "FAC.150 compliance is the contractor's responsibility, not the ASC's",
+        "FAC.150 compliance is the contractor's responsibility, not the ASC's"
       ],
       correctIndex: 1,
       explanation:
@@ -270,7 +270,7 @@ export const ascFacLevel: Level = {
         "Only a written policy for lithotripsy treatment",
         "Equipment, adequate supplies, and written policies/procedures for providing appropriate lithotripsy treatment in accordance with manufacturer's guidelines",
         "A designated urologist on-call at all times",
-        "A dedicated lithotripsy suite separate from all other procedure areas",
+        "A dedicated lithotripsy suite separate from all other procedure areas"
       ],
       correctIndex: 1,
       explanation:
@@ -297,7 +297,7 @@ export const ascFacLevel: Level = {
         "FAC.100 - general physical environment safety",
         "Both IPC.230/230 - written environmental controls policy requirement and the implementation/monitoring requirement",
         "FAC.250 - equipment maintenance requirement",
-        "No FAC standard is violated - humidity is a comfort issue, not a patient safety issue",
+        "No FAC standard is violated - humidity is a comfort issue, not a patient safety issue"
       ],
       correctIndex: 1,
       explanation:
@@ -324,7 +324,7 @@ export const ascFacLevel: Level = {
         "No documentation is required for simple diagnostic devices",
         "Documentation of periodic calibration per manufacturer's specifications and preventive maintenance per manufacturer instructions",
         "Only documentation of the original purchase and manufacturer warranty",
-        "Calibration is only required if the device fails a quality control test",
+        "Calibration is only required if the device fails a quality control test"
       ],
       correctIndex: 1,
       explanation:
@@ -351,7 +351,7 @@ export const ascFacLevel: Level = {
         "All ambulatory surgery centers regardless of anesthesia level",
         "Organizations that administer moderate sedation/analgesia, regional anesthesia, deep sedation/analgesia, or general anesthesia",
         "Only facilities that use general anesthesia",
-        "FAC.260 applies only to facilities with more than two procedure rooms",
+        "FAC.260 applies only to facilities with more than two procedure rooms"
       ],
       correctIndex: 1,
       explanation:
@@ -378,7 +378,7 @@ export const ascFacLevel: Level = {
         "Equipment used in telehealth is exempt from FAC maintenance requirements",
         "Medical equipment used in telehealth encounters is subject to the same FAC maintenance standards as in-person equipment",
         "Telehealth equipment is only subject to IT department standards",
-        "FAC.250 only applies to physical equipment used in the procedure room - not remote monitoring equipment",
+        "FAC.250 only applies to physical equipment used in the procedure room - not remote monitoring equipment"
       ],
       correctIndex: 1,
       explanation:
@@ -405,7 +405,7 @@ export const ascFacLevel: Level = {
         "Only a radiation safety survey meter",
         "Super voltage or megavoltage machine(s) for external beam treatments, kilovoltage x-ray source, computerized dosimetry, and simulation/CT imaging - all must be present or accessible",
         "A single linear accelerator is sufficient for all teletherapy requirements",
-        "FAC.280 equipment requirements are waived if the organization has an agreement with a hospital-based radiation oncology department",
+        "FAC.280 equipment requirements are waived if the organization has an agreement with a hospital-based radiation oncology department"
       ],
       correctIndex: 1,
       explanation:
@@ -432,7 +432,7 @@ export const ascFacLevel: Level = {
         "Only supplemental oxygen equipment",
         "Equipment, supplies, and staff adequate to monitor and respond to patients recovering from anesthesia - as required by the level of anesthesia used",
         "A minimum of two nurses per patient at all times",
-        "FAC.100 only applies to facilities that use general anesthesia",
+        "FAC.100 only applies to facilities that use general anesthesia"
       ],
       correctIndex: 1,
       explanation:
@@ -459,7 +459,7 @@ export const ascFacLevel: Level = {
         "No risk - the PM was completed as scheduled",
         "Returning equipment with a documented performance anomaly to patient service without resolution is a safety failure under FAC.250",
         "The anomaly can be addressed at the next scheduled PM",
-        "FAC.250 compliance is based on PM completion, not on performance test results",
+        "FAC.250 compliance is based on PM completion, not on performance test results"
       ],
       correctIndex: 1,
       explanation:
@@ -486,7 +486,7 @@ export const ascFacLevel: Level = {
         "No FAC concern - bathroom fixtures are not medical equipment",
         "A hazard that must be addressed promptly as part of maintaining a safe physical environment under FAC.100/150",
         "This is only an ADA compliance issue, not an AAAHC concern",
-        "Only the building owner is responsible for fixture repairs - the ASC has no AAAHC obligation",
+        "Only the building owner is responsible for fixture repairs - the ASC has no AAAHC obligation"
       ],
       correctIndex: 1,
       explanation:
@@ -513,7 +513,7 @@ export const ascFacLevel: Level = {
         "To maximize efficiency of instrument processing",
         "To prevent cross-contamination between soiled instruments and clean or sterile items",
         "To meet OSHA traffic control requirements",
-        "Unidirectional flow is a recommendation, not a requirement",
+        "Unidirectional flow is a recommendation, not a requirement"
       ],
       correctIndex: 1,
       explanation:
@@ -540,7 +540,7 @@ export const ascFacLevel: Level = {
         "Endoscopes have no special FAC concerns - they are processed the same as all surgical instruments",
         "Flexible endoscopes are complex devices that cannot be steam sterilized and require high-level disinfection per manufacturer instructions and nationally recognized guidelines (AAMI, SGNA, ASGE) - with specific FAC facility requirements for safe processing",
         "Endoscopes are disposable after each use - no processing area is needed",
-        "IPC.170 exempts flexible endoscopes from unidirectional workflow requirements",
+        "IPC.170 exempts flexible endoscopes from unidirectional workflow requirements"
       ],
       correctIndex: 1,
       explanation:
@@ -567,7 +567,7 @@ export const ascFacLevel: Level = {
         "The architect's original design specifications for the building",
         "Temperature, humidity, and air pressure monitoring logs with documented daily readings within the acceptable ranges",
         "Staff verbal statements about their comfort level in the procedure rooms",
-        "The HVAC contractor's most recent service invoice",
+        "The HVAC contractor's most recent service invoice"
       ],
       correctIndex: 1,
       explanation:
@@ -594,7 +594,7 @@ export const ascFacLevel: Level = {
         "All staff must use the same brand of equipment",
         "Written policies must define how each piece of equipment is to be used correctly and consistently by trained personnel",
         "Equipment use is standardized by the manufacturer - no organizational policy is needed",
-        "Only the biomedical engineer defines how equipment is used",
+        "Only the biomedical engineer defines how equipment is used"
       ],
       correctIndex: 1,
       explanation:

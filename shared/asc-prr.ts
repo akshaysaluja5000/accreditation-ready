@@ -74,7 +74,7 @@ export const ascPrrLevel: Level = {
         "Requiring all patients to wear identification wristbands during their visit",
         "Ensuring patients are treated respectfully of their personal, cultural, and religious beliefs",
         "Providing every patient with a written copy of the organization's mission statement",
-        "Limiting waiting room time to 30 minutes regardless of case complexity",
+        "Limiting waiting room time to 30 minutes regardless of case complexity"
       ],
       correctIndex: 1,
       explanation:
@@ -101,7 +101,7 @@ export const ascPrrLevel: Level = {
         "Governing body members only",
         "Staff",
         "Contracted anesthesia providers only",
-        "Family members who accompany the patient",
+        "Family members who accompany the patient"
       ],
       correctIndex: 1,
       explanation:
@@ -128,7 +128,7 @@ export const ascPrrLevel: Level = {
         "Using a family member is acceptable as long as the patient appears to agree",
         "The organization must have interpretive services available to facilitate care based on the patient's preferred language",
         "Staff may use a bilingual staff member only if one is physically present",
-        "Written translation is sufficient; verbal interpretation is not required",
+        "Written translation is sufficient; verbal interpretation is not required"
       ],
       correctIndex: 1,
       explanation:
@@ -155,7 +155,7 @@ export const ascPrrLevel: Level = {
         "A description of the risks discussed and the anesthesia type chosen",
         "The surgeon's attestation that the procedure was medically necessary, signed post-operatively",
         "Evidence that necessity/appropriateness and alternatives were discussed, AND the written consent signed before the procedure",
-        "A copy of the patient's insurance authorization and the consent form",
+        "A copy of the patient's insurance authorization and the consent form"
       ],
       correctIndex: 2,
       explanation:
@@ -182,7 +182,7 @@ export const ascPrrLevel: Level = {
         "PRR.200 only requires fee and payment information - credentials are listed in credentialing files",
         "The organization is missing information about the credentials of health care professionals, which must be available to patients",
         "Credentials must be posted on a website but not provided in writing to patients",
-        "PRR.200 requires credential information only if the patient specifically requests it",
+        "PRR.200 requires credential information only if the patient specifically requests it"
       ],
       correctIndex: 1,
       explanation:
@@ -209,7 +209,7 @@ export const ascPrrLevel: Level = {
         "The anesthesiologist should have been paged to review the directive before pre-op started",
         "The existence of an advance directive must be prominently documented in the clinical record",
         "The patient should have been asked to produce the original signed document",
-        "Verbal disclosure is sufficient for advance directive acknowledgment under PRR standards",
+        "Verbal disclosure is sufficient for advance directive acknowledgment under PRR standards"
       ],
       correctIndex: 1,
       explanation:
@@ -236,7 +236,7 @@ export const ascPrrLevel: Level = {
         "The patient is responsible for arranging their own transportation to the facility",
         "The patient is responsible for providing complete and accurate health information, including OTC products and dietary supplements",
         "The patient is responsible for selecting their own anesthesia type",
-        "The patient is responsible for cleaning the surgical site the morning of surgery",
+        "The patient is responsible for cleaning the surgical site the morning of surgery"
       ],
       correctIndex: 1,
       explanation:
@@ -263,7 +263,7 @@ export const ascPrrLevel: Level = {
         "The manager should have immediately suspended the staff member",
         "Verbal resolution without documentation fails to demonstrate that the grievance was received, investigated, and resolved with a written response",
         "Only written grievances require documentation - verbal ones may be resolved informally",
-        "The patient should have been referred directly to the state agency at intake",
+        "The patient should have been referred directly to the state agency at intake"
       ],
       correctIndex: 1,
       explanation:
@@ -290,7 +290,7 @@ export const ascPrrLevel: Level = {
         "PRR.100",
         "PRR.190",
         "PRR.200",
-        "PRR.440",
+        "PRR.440"
       ],
       correctIndex: 2,
       explanation:
@@ -317,7 +317,7 @@ export const ascPrrLevel: Level = {
         "Only if the anesthesiologist and surgeon sign the same form simultaneously",
         "A single consent form may satisfy both standards as long as it captures anesthesia consent and surgical consent elements",
         "Only in facilities that perform exclusively local anesthesia",
-        "PRR.240 and PRR.250 always require separate consent forms - they cannot be combined",
+        "PRR.240 and PRR.250 always require separate consent forms - they cannot be combined"
       ],
       correctIndex: 1,
       explanation:
@@ -344,7 +344,7 @@ export const ascPrrLevel: Level = {
         "Speaking loudly and slowly is sufficient accommodation for hearing impairment under PRR.440",
         "Services must be available to individuals with hearing or visual impairments - typically sign language interpretation or captioning",
         "Hearing-impaired patients may consent through their accompanying caregiver without additional accommodation",
-        "PRR.440 only covers language barriers, not physical impairments",
+        "PRR.440 only covers language barriers, not physical impairments"
       ],
       correctIndex: 1,
       explanation:
@@ -371,7 +371,7 @@ export const ascPrrLevel: Level = {
         "Patients must be informed of the total cost of the procedure, including surgeon fees",
         "Patients must be informed of the need to accept financial responsibility for charges not covered by insurance, but for Medicare-certified ASCs this is limited to deductible and coinsurance",
         "Patients must sign a blank financial responsibility agreement at check-in",
-        "Financial responsibility communication is optional if the patient has insurance verification on file",
+        "Financial responsibility communication is optional if the patient has insurance verification on file"
       ],
       correctIndex: 1,
       explanation:
@@ -398,7 +398,7 @@ export const ascPrrLevel: Level = {
         "Nothing - the signed consent form is sufficient documentation of the discussion",
         "Evidence that alternative treatment techniques were discussed with the patient must be present in the clinical record",
         "A second consent form for each alternative must also be signed",
-        "The surgeon must document why the alternatives were rejected by the patient",
+        "The surgeon must document why the alternatives were rejected by the patient"
       ],
       correctIndex: 1,
       explanation:
@@ -425,7 +425,7 @@ export const ascPrrLevel: Level = {
         "When the patient has already signed the consent form",
         "When other qualified providers are not available",
         "When the procedure is an emergency",
-        "When the ASC only has one physician on the credentialing roster",
+        "When the ASC only has one physician on the credentialing roster"
       ],
       correctIndex: 1,
       explanation:
@@ -452,7 +452,7 @@ export const ascPrrLevel: Level = {
         "The dollar amount of each practitioner's malpractice policy",
         "The name of the malpractice insurance carrier",
         "If applicable, the absence of malpractice coverage",
-        "All pending malpractice claims against the organization",
+        "All pending malpractice claims against the organization"
       ],
       correctIndex: 2,
       explanation:
@@ -479,7 +479,7 @@ export const ascPrrLevel: Level = {
         "Any adult family member present at the facility",
         "The patient's primary care physician",
         "The person appointed by a court of proper jurisdiction under applicable state law",
-        "The anesthesiologist, because they bear clinical responsibility",
+        "The anesthesiologist, because they bear clinical responsibility"
       ],
       correctIndex: 2,
       explanation:
@@ -506,7 +506,7 @@ export const ascPrrLevel: Level = {
         "Telehealth visits are exempt from PRR.100 privacy requirements",
         "Staff must ensure visual, auditory, and electronic privacy on the clinical side, and encourage patients to secure privacy on their end",
         "Only written communication is required for telehealth visits",
-        "Telehealth visits only require privacy protections during the billing process",
+        "Telehealth visits only require privacy protections during the billing process"
       ],
       correctIndex: 1,
       explanation:
@@ -533,7 +533,7 @@ export const ascPrrLevel: Level = {
         "The patient's responsibility to have valid auto insurance",
         "The patient's responsibility to provide a responsible adult to provide transportation home and remain with them as directed",
         "The patient's responsibility to sign a waiver releasing the ASC from liability",
-        "PRR.190 does not cover post-procedure transportation",
+        "PRR.190 does not cover post-procedure transportation"
       ],
       correctIndex: 1,
       explanation:
@@ -560,7 +560,7 @@ export const ascPrrLevel: Level = {
         "Their employer's insurance policy number",
         "Information about the purpose and scope of the test, confidentiality protections, the examiner's role, what may be conveyed to the employer, test results, and necessary follow-up",
         "Only the test results - other information is confidential",
-        "PRR.330 only applies to pre-employment physical examinations",
+        "PRR.330 only applies to pre-employment physical examinations"
       ],
       correctIndex: 1,
       explanation:
@@ -587,7 +587,7 @@ export const ascPrrLevel: Level = {
         "A 12th-grade reading level is appropriate for all patient populations",
         "Information must be provided in a manner that is easy to understand, and organizations should assume patients may have difficulty comprehending health information",
         "Plain language is only required for pediatric patients",
-        "Organizations must conduct literacy assessments before providing any written materials",
+        "Organizations must conduct literacy assessments before providing any written materials"
       ],
       correctIndex: 1,
       explanation:

@@ -74,7 +74,7 @@ export const ascMedLevel: Level = {
         "Filed in the administrator's office, accessible within 24 hours",
         "Onsite and readily retrievable by authorized personnel",
         "Submitted annually to the state pharmacy board",
-        "Posted in the medication storage room at all times",
+        "Posted in the medication storage room at all times"
       ],
       correctIndex: 1,
       explanation:
@@ -101,7 +101,7 @@ export const ascMedLevel: Level = {
         "In the pharmacy or medication room, accessible within five minutes",
         "In the same area as the high-alert medication, along with appropriate directions for use",
         "In the crash cart only",
-        "In the administrator's office for security purposes",
+        "In the administrator's office for security purposes"
       ],
       correctIndex: 1,
       explanation:
@@ -128,7 +128,7 @@ export const ascMedLevel: Level = {
         "The label is complete - drug name is all that is required",
         "Missing: drug strength, amount/volume, expiration date/time, and the nurse's name or initials",
         "Missing: patient name and procedure type",
-        "Propofol does not require labeling because it is administered immediately",
+        "Propofol does not require labeling because it is administered immediately"
       ],
       correctIndex: 1,
       explanation:
@@ -155,7 +155,7 @@ export const ascMedLevel: Level = {
         "Pre-signed prescriptions may be used if co-signed by a second practitioner",
         "Pre-signed and post-dated prescriptions are prohibited by written policy",
         "Pre-signed prescriptions are permitted only for controlled substances",
-        "Pre-signed prescriptions are acceptable if used within 24 hours",
+        "Pre-signed prescriptions are acceptable if used within 24 hours"
       ],
       correctIndex: 1,
       explanation:
@@ -182,7 +182,7 @@ export const ascMedLevel: Level = {
         "Temperature exposure",
         "Drug selection errors",
         "Medication theft",
-        "Label defacement",
+        "Label defacement"
       ],
       correctIndex: 1,
       explanation:
@@ -209,7 +209,7 @@ export const ascMedLevel: Level = {
         "The information must be provided only in writing",
         "Information must be consistent with legal requirements and patient needs",
         "Information must be provided by a pharmacist",
-        "Information is only required for controlled substances",
+        "Information is only required for controlled substances"
       ],
       correctIndex: 1,
       explanation:
@@ -236,7 +236,7 @@ export const ascMedLevel: Level = {
         "Quarterly medication reviews by a pharmacist",
         "The policy must require monitoring of all medications, including vaccines and samples, for expiration dates on a regular basis",
         "Annual disposal documentation to the DEA",
-        "Monitoring is only required for Schedule II controlled substances",
+        "Monitoring is only required for Schedule II controlled substances"
       ],
       correctIndex: 1,
       explanation:
@@ -263,7 +263,7 @@ export const ascMedLevel: Level = {
         "An automatic vaccine administration system",
         "A temperature monitoring device in accordance with the adopted nationally recognized guidelines",
         "A humidity sensor calibrated quarterly",
-        "A biometric lock accessible only to trained staff",
+        "A biometric lock accessible only to trained staff"
       ],
       correctIndex: 1,
       explanation:
@@ -290,7 +290,7 @@ export const ascMedLevel: Level = {
         "How to purchase replacement vaccines from the manufacturer",
         "Procedures to follow if vaccines are exposed to a temperature excursion",
         "How to calibrate the temperature monitoring device",
-        "The chemical composition of each vaccine to determine heat stability",
+        "The chemical composition of each vaccine to determine heat stability"
       ],
       correctIndex: 1,
       explanation:
@@ -317,7 +317,7 @@ export const ascMedLevel: Level = {
         "The American Medical Association's Prescribing Safety Guide",
         "ISMP's Confused Drug Names list",
         "The Joint Commission's Sentinel Event database",
-        "The FDA's Drug Approval Database",
+        "The FDA's Drug Approval Database"
       ],
       correctIndex: 1,
       explanation:
@@ -344,7 +344,7 @@ export const ascMedLevel: Level = {
         "Devices must be replaced annually",
         "Procedures for maintenance, cleaning, distribution, and use must adhere to manufacturer instructions",
         "Only nursing staff may operate medication delivery devices",
-        "Devices must be validated by the state pharmacy board",
+        "Devices must be validated by the state pharmacy board"
       ],
       correctIndex: 1,
       explanation:
@@ -371,7 +371,7 @@ export const ascMedLevel: Level = {
         "Weekly inspection by a pharmacist",
         "Documented staff training on the monitoring policy",
         "Annual submission of monitoring results to ISMP",
-        "Monthly purchasing records to verify inventory levels",
+        "Monthly purchasing records to verify inventory levels"
       ],
       correctIndex: 1,
       explanation:
@@ -398,7 +398,7 @@ export const ascMedLevel: Level = {
         "The contractor must be owned by a physician",
         "Documentation must demonstrate that the pharmacy contractor is appropriately licensed and/or certified",
         "The contractor must accept liability for all medication errors",
-        "The contractor must be physically located within 10 miles of the ASC",
+        "The contractor must be physically located within 10 miles of the ASC"
       ],
       correctIndex: 1,
       explanation:
@@ -425,7 +425,7 @@ export const ascMedLevel: Level = {
         "Only state guidelines - federal guidelines are secondary",
         "Manufacturer requirements AND state and/or CDC guidelines",
         "The organization's internal pharmacy policy, which supersedes all other guidelines",
-        "Only the CDC guidelines - manufacturer requirements are advisory",
+        "Only the CDC guidelines - manufacturer requirements are advisory"
       ],
       correctIndex: 1,
       explanation:
@@ -452,7 +452,7 @@ export const ascMedLevel: Level = {
         "Through review of the pharmacy license posted on the wall",
         "Through interviews with relevant staff",
         "Through submission of annual training records to the state pharmacy board",
-        "Only the medical director is required to demonstrate this knowledge",
+        "Only the medical director is required to demonstrate this knowledge"
       ],
       correctIndex: 1,
       explanation:
@@ -479,7 +479,7 @@ export const ascMedLevel: Level = {
         "Immediately flush the medications down the sink",
         "Segregate them from drugs available for active use before disposal",
         "Contact the DEA for disposal authorization for all medications",
-        "Notify the manufacturer for return instructions",
+        "Notify the manufacturer for return instructions"
       ],
       correctIndex: 1,
       explanation:
@@ -506,7 +506,7 @@ export const ascMedLevel: Level = {
         "When a vaccine is nearing its expiration date",
         "In case of emergency such as equipment failure, power outage, or natural disasters",
         "When a new vaccine is added to the formulary",
-        "When patients decline vaccination during pre-operative assessment",
+        "When patients decline vaccination during pre-operative assessment"
       ],
       correctIndex: 1,
       explanation:
@@ -533,7 +533,7 @@ export const ascMedLevel: Level = {
         "Administration within 15 minutes of preparation",
         "When the preparer completely administers the drug to the patient without any break in the process",
         "When a second nurse verifies the medication before administration",
-        "Administration within the same shift as preparation",
+        "Administration within the same shift as preparation"
       ],
       correctIndex: 1,
       explanation:
@@ -560,7 +560,7 @@ export const ascMedLevel: Level = {
         "No concern - heparin is not a high-alert medication",
         "Both high-alert medication error prevention (MED.150) and LASA error prevention (MED.160) concerns, because heparin is high-alert and the two concentrations are a known look-alike error risk",
         "Only MED.160 applies - concentration differences are LASA issues only",
-        "Only MED.150 applies - LASA concerns only exist for medications with different names",
+        "Only MED.150 applies - LASA concerns only exist for medications with different names"
       ],
       correctIndex: 1,
       explanation:
@@ -587,7 +587,7 @@ export const ascMedLevel: Level = {
         "Only the medical director and pharmacist",
         "All relevant staff",
         "Only staff with controlled substance handling responsibilities",
-        "Clinical staff only - administrative staff are excluded",
+        "Clinical staff only - administrative staff are excluded"
       ],
       correctIndex: 1,
       explanation:

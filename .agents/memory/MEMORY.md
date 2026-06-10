@@ -1,3 +1,4 @@
 - [Leaderboard XP bug](leaderboard-xp.md) — quiz_sessions deleted on level complete; streak.totalXp is the correct all-time XP source
 - [requireMfa admin bypass](mfa-admin-bypass.md) — admin+ (rank≥4) must bypass MFA, same as requireWallChartAccess pattern
 - [Leaderboard org-type exclusion](leaderboard-org-type.md) — registration dropdown lets users pick wrong org type; leaderboard MUST NOT filter by org type (facility filter is sufficient); startup migration normalizes org types to facility majority on each boot
+- [Batch script concurrency](batch-script-concurrency.md) — race condition + JSON parsing + bracket-counting fixes for the distractor rewriter script

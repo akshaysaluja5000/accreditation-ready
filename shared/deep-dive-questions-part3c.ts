@@ -12,9 +12,9 @@ export const ddPatientCareLevel: DeepDiveLevel = {
       id: "dd-pc1",
       baseQuestion: "A tracer reveals that a patient admitted through the ED had their initial nursing assessment documented 3 hours after arrival. According to Joint Commission standards, when must the initial nursing assessment be completed?",
       baseOptions: [
+        "Within the time frame defined by hospital policy",
         "Before the physician writes admission orders",
         "Within 24 hours of admission",
-        "Within 30 minutes of triage",
         "Within the time frame defined by"
       ],
       baseCorrectIndex: 3,
@@ -318,8 +318,8 @@ export const ddPatientCareLevel: DeepDiveLevel = {
       id: "dd-pc7",
       baseQuestion: "A surveyor discovers that a patient with a documented penicillin allergy has no allergy wristband and the allergy is not flagged in the electronic medication administration record (eMAR). What is the PRIMARY risk?",
       baseOptions: [
+        "Potential administration of a contraindicated medication due to lack of allergy awareness",
         "The pharmacy may not fill prescriptions correctly",
-        "The patient may refuse medications",
         "Potential administration of a contraindicated",
         "The patient's insurance may deny claims"
       ],
@@ -472,7 +472,7 @@ export const ddPatientCareLevel: DeepDiveLevel = {
       baseQuestion: "A surveyor asks a staff nurse what infection prevention education is provided to patients. The nurse states, 'We tell them to wash their hands.' What additional patient education is expected by Joint Commission?",
       baseOptions: [
         "Infection prevention education is the responsibility of infection preventionists, not bedside nurses",
-        "Provide a brochure upon discharge only",
+        "Education on hand hygiene, respiratory etiquette",
         "Education on hand hygiene, respiratory etiquette",
         "Hand hygiene education alone is sufficient"
       ],
@@ -777,9 +777,9 @@ export const ddPatientCareLevel: DeepDiveLevel = {
       id: "dd-pc16",
       baseQuestion: "During a tracer, a surveyor asks a patient about their understanding of fall prevention strategies. The patient states, 'I don't know why I have this yellow bracelet on.' What does this finding indicate?",
       baseOptions: [
+        "The patient was not educated about their fall risk",
         "The patient has cognitive impairment and cannot understand",
         "The wristband was placed in error",
-        "The wristband program is working as intended",
         "The patient was not educated about their fall risk"
       ],
       baseCorrectIndex: 3,
