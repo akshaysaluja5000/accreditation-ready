@@ -1469,10 +1469,10 @@ export async function registerRoutes(
           lastActive: streak?.lastPlayedDate || null,
         };
       }).sort((a, b) => {
-        // Primary: levels completed; Secondary: questions answered; Tertiary: accuracy
+        // Primary: XP; Secondary: levels completed; Tertiary: questions answered
+        if (b.totalXp !== a.totalXp) return b.totalXp - a.totalXp;
         if (b.levelsCompleted !== a.levelsCompleted) return b.levelsCompleted - a.levelsCompleted;
-        if (b.questionsAnswered !== a.questionsAnswered) return b.questionsAnswered - a.questionsAnswered;
-        return b.accuracy - a.accuracy;
+        return b.questionsAnswered - a.questionsAnswered;
       });
 
       res.json(leaderboard);
