@@ -146,7 +146,7 @@ export function LevelCard({ level, progress, savedSession, index, onPlay, onStud
                 </button>
               )}
               <button
-                onClick={() => setLocation(`/deep-dive/${level.id}`)}
+                onClick={() => setLocation(`/deep-dive/${level.id}?from=/`)}
                 data-testid={`button-deep-dive-${level.id}`}
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white/15 hover:bg-white/25 text-white border border-white/20 transition-all active:scale-95"
               >

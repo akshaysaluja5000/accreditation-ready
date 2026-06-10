@@ -79,6 +79,10 @@ export default function DeepDivePage() {
   const { user } = useAuth();
   const levelId = params?.levelId;
 
+  const fromParam = typeof window !== "undefined"
+    ? new URLSearchParams(window.location.search).get("from") ?? "/deep-dive"
+    : "/deep-dive";
+
   const { data: level, isLoading: levelLoading, isError: levelError } = useQuery<DeepDiveLevel>({
     queryKey: ["/api/game/deep-dive", levelId],
     enabled: !!levelId,
@@ -437,8 +441,8 @@ export default function DeepDivePage() {
     }
     invalidateDashboardData();
     setShowQuitDialog(false);
-    setLocation("/deep-dive");
-  }, [levelId, deleteSessionMutation, setLocation, questionOrder, gameState, selectedIndex, showExplanation]);
+    setLocation(fromParam);
+  }, [levelId, deleteSessionMutation, setLocation, questionOrder, gameState, selectedIndex, showExplanation, fromParam]);
 
   const handleStartOver = useCallback(() => {
     if (!level) return;
@@ -455,9 +459,9 @@ export default function DeepDivePage() {
 
   useEffect(() => {
     if (levelError) {
-      setLocation("/deep-dive");
+      setLocation(fromParam);
     }
-  }, [levelError, setLocation]);
+  }, [levelError, setLocation, fromParam]);
 
   if (levelError) {
     return (

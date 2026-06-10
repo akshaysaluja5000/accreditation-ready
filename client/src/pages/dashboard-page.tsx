@@ -149,7 +149,7 @@ function AscChapterCard({
                 </button>
               )}
               <button
-                onClick={() => setLocation(`/deep-dive/${chapter.levelId}`)}
+                onClick={() => setLocation(`/deep-dive/${chapter.levelId}?from=/`)}
                 data-testid={`button-asc-deep-dive-${chapter.levelId}`}
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white/15 hover:bg-white/25 text-white border border-white/20 transition-all active:scale-95"
               >
