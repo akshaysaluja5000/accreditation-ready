@@ -854,7 +854,7 @@ export default function RoleSelectPage() {
           )}
         </div>
 
-        <div className="fixed bottom-0 left-0 right-0 border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 z-10">
+        <div className="fixed bottom-0 left-0 right-0 border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 z-10" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
           <div className="max-w-4xl mx-auto px-4 py-4">
             {step === 1 && showError && !pendingFacility && (
               <div
