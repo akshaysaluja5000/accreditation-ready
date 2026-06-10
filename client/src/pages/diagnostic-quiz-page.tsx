@@ -96,6 +96,14 @@ export default function DiagnosticQuizPage() {
     if (phase === "loading") setPhase("intro");
   }, [sessionLoading, phase]);
 
+  // Safety escape: never stay stuck on the loading spinner beyond 4 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setPhase(p => p === "loading" ? "intro" : p);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const fetchQuestions = async () => {
     const res = await fetch("/api/diagnostic/questions", { credentials: "include" });
     const data = await res.json();
