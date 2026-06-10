@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { CalendarCheck, BarChart3, ArrowRight, BrainCircuit, TrendingUp, Search, Stethoscope, AlertTriangle, ShieldCheck, Moon, Sun, CheckCircle2 } from "lucide-react";
+import { CalendarCheck, BarChart3, ArrowRight, BrainCircuit, TrendingUp, Search, Stethoscope, AlertTriangle, ShieldCheck, Moon, Sun, CheckCircle2, Target } from "lucide-react";
 import { AppLogoMark } from "@/components/app-logo-mark";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
