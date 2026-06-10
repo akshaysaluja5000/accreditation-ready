@@ -454,6 +454,23 @@ export async function registerRoutes(
     }
   });
 
+  app.get("/api/facilities/org-type", async (req, res) => {
+    const code = typeof req.query.code === "string" ? req.query.code.trim().toUpperCase() : "";
+    if (!code || code.length < 3) return res.json({ organizationType: null });
+    try {
+      const facility = await getFacilityByCode(featPool, code);
+      if (!facility) return res.json({ organizationType: null });
+      const result = await featPool.query<{ organization_type: string }>(
+        `SELECT organization_type FROM users WHERE facility_id = $1 AND organization_type IS NOT NULL GROUP BY organization_type ORDER BY COUNT(*) DESC LIMIT 1`,
+        [(facility as { id: number }).id]
+      );
+      const orgType = result.rows.length > 0 ? result.rows[0].organization_type : null;
+      return res.json({ organizationType: orgType });
+    } catch {
+      return res.json({ organizationType: null });
+    }
+  });
+
   app.post("/api/auth/register", registrationLimiter, async (req, res) => {
     try {
       const { firstName, lastName, facilityCode, password, organizationType } = req.body;

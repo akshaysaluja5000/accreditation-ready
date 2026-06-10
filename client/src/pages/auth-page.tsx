@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion, AnimatePresence } from "framer-motion";
-import { Zap, Flame, Trophy, Eye, EyeOff, Loader2, ArrowLeft, KeyRound, Building2, Moon, Sun } from "lucide-react";
+import { Zap, Flame, Trophy, Eye, EyeOff, Loader2, ArrowLeft, KeyRound, Building2, Moon, Sun, CheckCircle2, Lock } from "lucide-react";
 import { AppLogoMark } from "@/components/app-logo-mark";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -21,10 +21,17 @@ export default function AuthPage() {
   const [view, setView] = useState<AuthView>("login");
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [lockedOrgType, setLockedOrgType] = useState<string | null>(null);
   const { login, register } = useAuth();
   const { toast } = useToast();
   const [, setLocation] = useLocation();
   const [darkMode, setDarkMode] = useState(() => localStorage.getItem("ar_night_mode") === "1");
+
+  const ORG_TYPE_LABELS: Record<string, string> = {
+    hospital: "Hospital (Joint Commission)",
+    asc: "Ambulatory Surgery Center (AAAHC)",
+    dnv: "Hospital (DNV NIAHO)",
+  };
 
   function toggleDark() {
     const next = !darkMode;
@@ -54,6 +61,32 @@ export default function AuthPage() {
     resolver: zodResolver(resetPasswordSchema),
     defaultValues: { username: "", newPassword: "", confirmNewPassword: "" },
   });
+
+  const facilityCodeValue = registerForm.watch("facilityCode");
+  useEffect(() => {
+    const trimmed = (facilityCodeValue ?? "").trim();
+    if (trimmed.length < 3) {
+      setLockedOrgType(null);
+      return;
+    }
+    const timer = setTimeout(async () => {
+      try {
+        const res = await fetch(`/api/facilities/org-type?code=${encodeURIComponent(trimmed)}`);
+        if (res.ok) {
+          const data = await res.json();
+          if (data.organizationType) {
+            setLockedOrgType(data.organizationType);
+            registerForm.setValue("organizationType", data.organizationType as "hospital" | "asc" | "dnv");
+          } else {
+            setLockedOrgType(null);
+          }
+        }
+      } catch {
+        setLockedOrgType(null);
+      }
+    }, 600);
+    return () => clearTimeout(timer);
+  }, [facilityCodeValue]);
 
   function extractErrorMessage(error: any, fallback: string): string {
     const raw = error?.message || fallback;
@@ -363,20 +396,36 @@ export default function AuthPage() {
                         <FormItem>
                           <FormLabel>Organization Type</FormLabel>
                           <FormControl>
-                            <Select
-                              value={field.value ?? "hospital"}
-                              onValueChange={field.onChange}
-                            >
-                              <SelectTrigger data-testid="select-register-organization-type">
-                                <SelectValue placeholder="Choose your organization type" />
-                              </SelectTrigger>
-                              <SelectContent>
-                                <SelectItem value="hospital" data-testid="option-org-hospital">Hospital (Joint Commission)</SelectItem>
-                                <SelectItem value="asc" data-testid="option-org-asc">Ambulatory Surgery Center (AAAHC)</SelectItem>
-                                <SelectItem value="dnv" data-testid="option-org-dnv">Hospital (DNV NIAHO)</SelectItem>
-                              </SelectContent>
-                            </Select>
+                            {lockedOrgType ? (
+                              <div
+                                className="flex items-center gap-2 px-3 py-2 rounded-md border border-green-200 bg-green-50 text-green-800 text-sm"
+                                data-testid="locked-org-type"
+                              >
+                                <CheckCircle2 size={15} className="text-green-600 shrink-0" />
+                                <span className="flex-1 font-medium">{ORG_TYPE_LABELS[lockedOrgType] ?? lockedOrgType}</span>
+                                <Lock size={13} className="text-green-500 shrink-0" />
+                              </div>
+                            ) : (
+                              <Select
+                                value={field.value ?? "hospital"}
+                                onValueChange={field.onChange}
+                              >
+                                <SelectTrigger data-testid="select-register-organization-type">
+                                  <SelectValue placeholder="Choose your organization type" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                  <SelectItem value="hospital" data-testid="option-org-hospital">Hospital (Joint Commission)</SelectItem>
+                                  <SelectItem value="asc" data-testid="option-org-asc">Ambulatory Surgery Center (AAAHC)</SelectItem>
+                                  <SelectItem value="dnv" data-testid="option-org-dnv">Hospital (DNV NIAHO)</SelectItem>
+                                </SelectContent>
+                              </Select>
+                            )}
                           </FormControl>
+                          {lockedOrgType && (
+                            <p className="text-xs text-green-700 mt-1">
+                              Matched to your team's module — set automatically.
+                            </p>
+                          )}
                           <FormMessage />
                         </FormItem>
                       )}
