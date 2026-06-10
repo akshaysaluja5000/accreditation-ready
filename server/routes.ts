@@ -1369,8 +1369,10 @@ export async function registerRoutes(
         const userProgress = (progressByUser.get(u.id) || []).filter((p) => moduleLevelIds.has(p.levelId));
 
         const { questionsAnswered, correct, accuracy, levelsCompleted, inProgressSessions } = computeUserActivityStats(userProgress, userSessions);
-        const moduleTotalXp = userSessions.reduce((s, sess) => s + (sess.xpEarned || 0), 0);
-        const periodXp = periodActivityByUser ? (periodActivityByUser.get(u.id) || 0) : moduleTotalXp;
+        // streak.totalXp is the correct all-time accumulator — it's incremented per correct answer
+        // and survives session deletion (quiz_sessions are deleted after level completion)
+        const allTimeXp = streak?.totalXp ?? 0;
+        const periodXp = periodActivityByUser ? (periodActivityByUser.get(u.id) || 0) : allTimeXp;
 
         return {
           id: u.id,
@@ -1378,7 +1380,7 @@ export async function registerRoutes(
           firstName: u.firstName,
           lastName: u.lastName,
           totalXp: periodXp,
-          allTimeXp: moduleTotalXp,
+          allTimeXp,
           currentStreak: streak?.currentStreak || 0,
           longestStreak: streak?.longestStreak || 0,
           questionsAnswered,

@@ -1,0 +1,2 @@
+- [Leaderboard XP bug](leaderboard-xp.md) — quiz_sessions deleted on level complete; streak.totalXp is the correct all-time XP source
+- [requireMfa admin bypass](mfa-admin-bypass.md) — admin+ (rank≥4) must bypass MFA, same as requireWallChartAccess pattern
