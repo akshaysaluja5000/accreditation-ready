@@ -304,9 +304,12 @@ export default function DiagnosticQuizPage() {
           <>
             <Loader2 size={32} className="animate-spin text-teal-500 mb-4" />
             <h2 className="text-xl font-bold text-teal-700 dark:text-teal-300 mb-2">Generating your quiz…</h2>
-            <p className="text-sm text-muted-foreground text-center max-w-xs">
+            <p className="text-sm text-muted-foreground text-center max-w-xs mb-6">
               AI is writing a fresh set of questions tailored to your compliance role. This usually takes 15–20 seconds.
             </p>
+            <Button variant="ghost" className="text-muted-foreground" onClick={() => { if (generateTimerRef.current) clearTimeout(generateTimerRef.current); setPhase("intro"); setGenerateError(false); }} data-testid="button-cancel-generating">
+              Cancel
+            </Button>
           </>
         )}
       </div>
