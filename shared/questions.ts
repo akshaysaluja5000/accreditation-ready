@@ -3097,15 +3097,15 @@ const hospitalLevelsRaw: Level[] = [
     questions: [
       {
         id: "up1",
-        question: "During the Time-Out, the surgeon keeps reviewing an X-ray while the circulator reads the checklist. He says 'I'm listening.' Acceptable?",
+        question: "During the Time-Out, the surgeon keeps reviewing an X-ray while the circulator reads the checklist and says 'I'm listening.' Is this an acceptable response?",
         options: [
           "No. ALL activity must stop during the Time-Out and every team member must actively participate.",
           "Yes. Reviewing imaging during the Time-Out demonstrates preparation and situational awareness.",
-          "No. Passive listening or multitasking during the Time-Out does not meet the requirement for active participation by all team members.",
+          "Yes. The surgeon's verbal acknowledgment satisfies the active participation requirement even while reviewing related clinical materials.",
           "Yes. The surgeon can continue other tasks as long as they verbally confirm each item during the checklist.",
         ],
         correctIndex: 0,
-        explanation: "ALL activity must stop during the Time-Out. Passive listening is not active participation. Every team member must pause what they are doing and actively engage in the verification.",
+        explanation: "ALL activity must stop during the Time-Out — no exceptions. Saying 'I'm listening' while continuing to review an X-ray is passive, not active participation. The Joint Commission's Universal Protocol requires every team member to fully stop what they are doing and actively engage in each verification step. Multitasking, even with verbal acknowledgment, does not satisfy this standard.",
         xpReward: 15,
         isSwipe: false,
       },
