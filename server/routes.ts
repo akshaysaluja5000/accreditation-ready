@@ -3082,11 +3082,13 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
       const moduleLevels = await getModuleLevelsForUser(req.user!.id);
       const requiredLevels = assignedChaptersForCheck.length > 0 ? moduleLevels.filter(l => assignedChaptersForCheck.includes(l.id)) : moduleLevels;
       const MIN_QUESTIONS_PER_SECTION = 10;
-      for (const level of requiredLevels) {
+      const LEVELS_REQUIRED = 5;
+      const completedCount = requiredLevels.filter(level => {
         const p = progress.find(pr => pr.levelId === level.id);
-        if (!p || p.totalQuestions < MIN_QUESTIONS_PER_SECTION) {
-          return res.status(403).json({ message: "You must complete more training before taking the Mastery Exam." });
-        }
+        return p && p.totalQuestions >= MIN_QUESTIONS_PER_SECTION;
+      }).length;
+      if (completedCount < LEVELS_REQUIRED) {
+        return res.status(403).json({ message: "You must complete at least 5 levels before taking the Final Assessment." });
       }
     }
     const MASTERY_PER_SECTION = 2;
