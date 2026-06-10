@@ -2559,7 +2559,7 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
   };
 
   app.get("/api/diagnostic/questions", requireAuth, async (req, res) => {
-    const NUM_QUESTIONS = 15;
+    const NUM_QUESTIONS = 25;
     let assignedChapters = await storage.getUserAssignedChapters(req.user!.id);
     if (assignedChapters.length === 0 && req.user!.roleId) {
       const dbRole = await storage.getRoleById(req.user!.roleId);
