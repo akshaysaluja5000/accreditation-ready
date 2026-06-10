@@ -1575,7 +1575,7 @@ export default function DashboardPage() {
       <input
         ref={feedbackFileInputRef}
         type="file"
-        accept="image/*,.pdf,.doc,.docx"
+        accept="image/*,.pdf,.doc,.docx,.heic,.heif"
         multiple
         className="hidden"
         data-testid="input-feedback-file"
