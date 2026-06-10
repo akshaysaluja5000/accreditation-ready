@@ -1398,11 +1398,13 @@ export async function registerRoutes(
       ]);
 
       const LEADERBOARD_EXCLUDED = new Set(["akshaysaluja", "rsaluja"]);
+      const currentOrgType = currentUser.organizationType || "hospital";
       const allUsersRaw = await storage.getAllUsers();
-      // Facility filter already scopes to the same team; org type filter is NOT
-      // applied here so teammates who accidentally chose a different org type on
-      // registration still appear on the leaderboard.
-      const allUsers = allUsersRaw.filter((u) => facilityFilter(u) && !LEADERBOARD_EXCLUDED.has(u.username));
+      const allUsers = allUsersRaw.filter((u) =>
+        facilityFilter(u) &&
+        !LEADERBOARD_EXCLUDED.has(u.username) &&
+        (u.organizationType || "hospital") === currentOrgType
+      );
       const userIds = allUsers.map(u => u.id);
       const [allStreaks, allSessions, allProgressFlat] = await Promise.all([
         storage.getStreaksForUsers(userIds),
@@ -5492,8 +5494,9 @@ Return ONLY valid JSON, no other text:
       if (req.query.start) startDate = new Date(req.query.start as string);
       if (req.query.end)   endDate   = new Date(req.query.end   as string);
 
+      const orgType = (caller as any).organizationType as string | undefined;
       const LEADERBOARD_EXCLUDED = new Set(["akshaysaluja", "rsaluja"]);
-      const lb = (await storage.getFacilityLeaderboard(facilityId, 50, startDate, endDate))
+      const lb = (await storage.getFacilityLeaderboard(facilityId, 50, startDate, endDate, orgType || "hospital"))
         .filter((u: any) => !LEADERBOARD_EXCLUDED.has(u.username));
       res.json(lb);
     } catch (err) {
@@ -5522,7 +5525,8 @@ Return ONLY valid JSON, no other text:
       if (req.query.start) startDate = new Date(req.query.start as string);
       if (req.query.end)   endDate   = new Date(req.query.end   as string);
 
-      const engagement = await storage.getStaffEngagement(facilityId, startDate, endDate);
+      const orgType = (caller as any).organizationType as string | undefined;
+      const engagement = await storage.getStaffEngagement(facilityId, startDate, endDate, orgType || "hospital");
       res.json(engagement);
     } catch (err) {
       console.error("GET /api/points/staff-engagement:", err);
