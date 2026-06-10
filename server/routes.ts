@@ -5472,15 +5472,20 @@ Return ONLY valid JSON, no other text:
 
   app.get("/api/points/leaderboard", requireAuth, async (req: Request, res: Response) => {
     try {
-      const facilityId = (req.user as any).facilityId as number | null ?? null;
-      if (!facilityId) return res.json([]);
+      const caller = req.user as User;
+      const callerRank = LEADERSHIP_RANK[getEffectiveLeadershipRole(caller)] ?? 0;
+      const isSuperAdmin = callerRank >= LEADERSHIP_RANK["super_admin"];
+      const facilityId = isSuperAdmin ? null : ((caller as any).facilityId as number | null ?? null);
+      if (!isSuperAdmin && !facilityId) return res.json([]);
 
       let startDate: Date | undefined;
       let endDate: Date | undefined;
-      const pilot = await storage.getActivePilotConfig(facilityId);
-      if (pilot) {
-        startDate = pilot.startDate instanceof Date ? pilot.startDate : new Date(pilot.startDate);
-        endDate   = pilot.endDate   instanceof Date ? pilot.endDate   : new Date(pilot.endDate);
+      if (facilityId) {
+        const pilot = await storage.getActivePilotConfig(facilityId);
+        if (pilot) {
+          startDate = pilot.startDate instanceof Date ? pilot.startDate : new Date(pilot.startDate);
+          endDate   = pilot.endDate   instanceof Date ? pilot.endDate   : new Date(pilot.endDate);
+        }
       }
 
       // Optional manual override via query params
@@ -5499,15 +5504,20 @@ Return ONLY valid JSON, no other text:
 
   app.get("/api/points/staff-engagement", requireAuth, requireLeadershipRole("director"), async (req: Request, res: Response) => {
     try {
-      const facilityId = (req.user as any).facilityId as number | null ?? null;
-      if (!facilityId) return res.json([]);
+      const caller = req.user as User;
+      const callerRank = LEADERSHIP_RANK[getEffectiveLeadershipRole(caller)] ?? 0;
+      const isSuperAdmin = callerRank >= LEADERSHIP_RANK["super_admin"];
+      const facilityId = isSuperAdmin ? null : ((caller as any).facilityId as number | null ?? null);
+      if (!isSuperAdmin && !facilityId) return res.json([]);
 
       let startDate: Date | undefined;
       let endDate: Date | undefined;
-      const pilot = await storage.getActivePilotConfig(facilityId);
-      if (pilot) {
-        startDate = pilot.startDate instanceof Date ? pilot.startDate : new Date(pilot.startDate);
-        endDate   = pilot.endDate   instanceof Date ? pilot.endDate   : new Date(pilot.endDate);
+      if (facilityId) {
+        const pilot = await storage.getActivePilotConfig(facilityId);
+        if (pilot) {
+          startDate = pilot.startDate instanceof Date ? pilot.startDate : new Date(pilot.startDate);
+          endDate   = pilot.endDate   instanceof Date ? pilot.endDate   : new Date(pilot.endDate);
+        }
       }
       if (req.query.start) startDate = new Date(req.query.start as string);
       if (req.query.end)   endDate   = new Date(req.query.end   as string);

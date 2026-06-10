@@ -1124,8 +1124,8 @@ export interface IStorage {
   addPointsEvent(userId: number, facilityId: number | null, eventType: string, pointsAwarded: number, meta?: Record<string, unknown>): Promise<void>;
   tryAwardDailyLogin(userId: number, facilityId: number | null, today: string): Promise<boolean>;
   getUserTotalPoints(userId: number, startDate?: Date, endDate?: Date): Promise<number>;
-  getFacilityLeaderboard(facilityId: number, limit?: number, startDate?: Date, endDate?: Date): Promise<import("@shared/schema").PointsLeaderboardEntry[]>;
-  getStaffEngagement(facilityId: number, startDate?: Date, endDate?: Date): Promise<import("@shared/schema").StaffEngagementEntry[]>;
+  getFacilityLeaderboard(facilityId: number | null, limit?: number, startDate?: Date, endDate?: Date): Promise<import("@shared/schema").PointsLeaderboardEntry[]>;
+  getStaffEngagement(facilityId: number | null, startDate?: Date, endDate?: Date): Promise<import("@shared/schema").StaffEngagementEntry[]>;
   getUserDrillDown(userId: number, facilityId: number, startDate?: Date, endDate?: Date): Promise<import("@shared/schema").UserDrillDown>;
   getActivePilotConfig(facilityId: number): Promise<import("@shared/schema").PilotConfig | null>;
 }
@@ -2534,12 +2534,12 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getFacilityLeaderboard(
-    facilityId: number,
+    facilityId: number | null,
     limit = 50,
     startDate?: Date,
     endDate?: Date,
   ): Promise<import("@shared/schema").PointsLeaderboardEntry[]> {
-    const params: unknown[] = [facilityId, startDate ?? null, endDate ?? null, limit];
+    const params: unknown[] = [facilityId ?? null, startDate ?? null, endDate ?? null, limit];
     const { rows } = await pool.query(
       `SELECT u.id AS user_id, u.username, u.first_name, u.last_name,
               COALESCE((
@@ -2550,7 +2550,7 @@ export class DatabaseStorage implements IStorage {
                   AND ($3::timestamptz IS NULL OR pl.created_at <= $3)
               ), 0) AS total_points
        FROM users u
-       WHERE u.facility_id = $1
+       WHERE ($1::int IS NULL OR u.facility_id = $1)
        ORDER BY total_points DESC
        LIMIT $4`,
       params,
@@ -2566,11 +2566,11 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getStaffEngagement(
-    facilityId: number,
+    facilityId: number | null,
     startDate?: Date,
     endDate?: Date,
   ): Promise<import("@shared/schema").StaffEngagementEntry[]> {
-    const params: unknown[] = [facilityId, startDate ?? null, endDate ?? null];
+    const params: unknown[] = [facilityId ?? null, startDate ?? null, endDate ?? null];
     const { rows } = await pool.query(
       `SELECT u.id AS user_id, u.username, u.first_name, u.last_name, u.department,
               COALESCE(SUM(pl.points_awarded), 0) AS total_points,
@@ -2587,7 +2587,7 @@ export class DatabaseStorage implements IStorage {
        LEFT JOIN points_ledger pl ON pl.user_id = u.id
          AND ($2::timestamptz IS NULL OR pl.created_at >= $2)
          AND ($3::timestamptz IS NULL OR pl.created_at <= $3)
-       WHERE u.facility_id = $1
+       WHERE ($1::int IS NULL OR u.facility_id = $1)
        GROUP BY u.id, u.username, u.first_name, u.last_name, u.department
        ORDER BY total_points DESC`,
       params,
