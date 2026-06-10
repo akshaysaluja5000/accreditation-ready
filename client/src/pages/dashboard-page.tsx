@@ -273,10 +273,6 @@ export default function DashboardPage() {
     queryKey: ["/api/flashcards/due/count"],
   });
 
-  const { data: pointsData } = useQuery<{ totalPoints: number; rank: number | null; totalParticipants: number }>({
-    queryKey: ["/api/points/me"],
-  });
-
   const { data: masteryEligibility } = useQuery<{ eligible: boolean; completedCount: number; levelsRequired: number; missingSections: string[] }>({
     queryKey: ["/api/mastery/eligibility"],
   });
@@ -1360,33 +1356,6 @@ export default function DashboardPage() {
                 <span className="text-xs text-muted-foreground font-semibold">Best Streak</span>
               </motion.div>
             </div>
-
-            {/* Points Score */}
-            {pointsData !== undefined && (
-              <motion.div
-                className="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-4 flex items-center gap-3"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                data-testid="card-points-score"
-              >
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 bg-amber-500/15">
-                  <Star size={18} className="text-amber-500" fill="currentColor" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-[10px] uppercase tracking-wider text-muted-foreground font-bold leading-none mb-1">Points Score</p>
-                  <p className="font-black text-xl leading-none" data-testid="text-total-points">{pointsData.totalPoints.toLocaleString()}</p>
-                </div>
-                {pointsData.rank !== null && (
-                  <div className="flex-shrink-0 text-right">
-                    <p className="text-[10px] uppercase tracking-wider text-muted-foreground font-bold leading-none mb-1">Rank</p>
-                    <p className="font-black text-lg leading-none text-amber-600 dark:text-amber-400" data-testid="text-points-rank">#{pointsData.rank}</p>
-                    {pointsData.totalParticipants > 0 && (
-                      <p className="text-[10px] text-muted-foreground leading-none mt-0.5">of {pointsData.totalParticipants}</p>
-                    )}
-                  </div>
-                )}
-              </motion.div>
-            )}
 
             {/* ── Due Flashcards Banner ── */}
             {dueData && dueData.count > 0 && (
