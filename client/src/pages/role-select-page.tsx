@@ -69,6 +69,7 @@ const ROLE_ICONS: Record<string, LucideIcon> = {
   or_circulating_nurse: Stethoscope,
   or_manager: ClipboardList,
   pacu_nurse: HeartPulse,
+  preadmission_nurse: Stethoscope,
   evs: Sparkles,
   facilities_maint: Wrench,
   compliance_officer: ShieldCheck,
@@ -121,6 +122,7 @@ const DEPT_ICONS: Record<string, LucideIcon> = {
   "Sterile Processing": Sparkles,
   "PACU & Floor": HeartPulse,
   "Pre-Op & PACU": HeartPulse,
+  "PACU, Pre-Op & Floor": HeartPulse,
   "Environmental Services": Sparkles,
   "Facilities & Maintenance": Wrench,
   "Environmental & Facilities": Wrench,
@@ -159,6 +161,7 @@ export default function RoleSelectPage() {
     const rv = facilityFlags?.roleVisibility;
     return all.filter((r) => {
       if (r.id === "facilities_maint") return rv?.facilities_maintenance === true;
+      if (r.id === "preadmission_nurse") return rv?.preadmission_testing_nurse === true;
       return true;
     });
   }, [facilityType, facilityFlags]);

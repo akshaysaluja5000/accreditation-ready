@@ -131,7 +131,7 @@ export const ROLE_CONFIGS: RoleConfig[] = [
   {
     id: "pacu_nurse",
     facilityType: "hospital",
-    department: "PACU & Floor",
+    department: "PACU, Pre-Op & Floor",
     title: "PACU / Floor Nurse",
     description: "Recovery care, monitoring, patient documentation",
     scope: "DEPT",
@@ -139,6 +139,18 @@ export const ROLE_CONFIGS: RoleConfig[] = [
     firstModuleId: "patient_care_docs",
     reportingScope: "own_department",
     chapters: ["patient_care_docs", "eoc_safety", "universal_protocol", "anesthesia_sedation", "medication_management", "npsg", "infection_control", "patient_rights", "life_safety", "emergency_management"],
+  },
+  {
+    id: "preadmission_nurse",
+    facilityType: "hospital",
+    department: "PACU, Pre-Op & Floor",
+    title: "Pre-Admission / Pre-Op Nurse",
+    description: "Pre-surgical assessment, anesthesia prep, medication reconciliation, patient education",
+    scope: "DEPT",
+    destinationRoute: "/play/patient_care_docs",
+    firstModuleId: "patient_care_docs",
+    reportingScope: "own_department",
+    chapters: ["patient_care_docs", "anesthesia_sedation", "medication_management", "universal_protocol", "npsg", "infection_control", "patient_rights", "life_safety", "emergency_management"],
   },
   {
     id: "evs",
@@ -544,7 +556,7 @@ export const DEPARTMENT_ORDER_BY_FACILITY: Record<FacilityType, string[]> = {
   hospital: [
     "Operating Room",
     "Sterile Processing",
-    "PACU & Floor",
+    "PACU, Pre-Op & Floor",
     "Environmental Services",
     "Facilities & Maintenance",
     "Leadership & Compliance",

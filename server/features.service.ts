@@ -25,6 +25,7 @@ export const DEFAULT_ROLE_VISIBILITY: FacilityRoleVisibility = {
   anesthesia_assistant_crna: true,
   spd_technician: true,
   pacu_floor_nurse: true,
+  preadmission_testing_nurse: true,
   environmental_services: true,
   facilities_maintenance: false,
   compliance_officer_cno: true,

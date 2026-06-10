@@ -44,6 +44,7 @@ export interface FacilityRoleVisibility {
   anesthesia_assistant_crna: boolean;
   spd_technician: boolean;
   pacu_floor_nurse: boolean;
+  preadmission_testing_nurse: boolean;
   environmental_services: boolean;
   facilities_maintenance: boolean;
   compliance_officer_cno: boolean;
