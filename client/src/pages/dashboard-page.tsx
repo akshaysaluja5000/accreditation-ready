@@ -1438,27 +1438,6 @@ export default function DashboardPage() {
               )}
             </motion.div>
 
-            {/* Risk Self-Assessment Card */}
-            <motion.button
-              className="rounded-2xl border-2 p-4 flex items-center gap-3 transition-all text-left bg-orange-500/5 border-orange-500/20 hover:bg-orange-500/10 hover:border-orange-500/40"
-              onClick={() => setLocation("/risk-assessment")}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileTap={{ scale: 0.98 }}
-              data-testid="button-risk-assessment"
-            >
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 bg-orange-500/15">
-                <ShieldAlert size={18} className="text-orange-500" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2">
-                  <h3 className="font-bold text-sm">My Risk Assessment</h3>
-                  <span className="px-1.5 py-0.5 rounded text-[10px] font-black bg-orange-500/15 text-orange-500 uppercase tracking-wider">AI</span>
-                </div>
-                <p className="text-xs text-muted-foreground mt-0.5">Identify your gaps · get a personalized plan</p>
-              </div>
-              <ChevronRight size={16} className="text-muted-foreground flex-shrink-0" />
-            </motion.button>
 
             {/* Readiness Gaps Panel */}
             {(() => {

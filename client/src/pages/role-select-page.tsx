@@ -157,9 +157,8 @@ export default function RoleSelectPage() {
   const visibleRoles = useMemo(() => {
     const all = rolesForFacility(facilityType);
     const rv = facilityFlags?.roleVisibility;
-    if (!rv) return all;
     return all.filter((r) => {
-      if (r.id === "facilities_maint") return rv.facilities_maintenance === true;
+      if (r.id === "facilities_maint") return rv?.facilities_maintenance === true;
       return true;
     });
   }, [facilityType, facilityFlags]);
