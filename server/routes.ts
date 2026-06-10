@@ -2573,17 +2573,21 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
       return { clientQuestions, shuffleMaps, questionData: pool };
     }
 
-    const questionPool = [...STATIC_DIAGNOSTIC_QUESTIONS].sort(() => Math.random() - 0.5).slice(0, NUM_QUESTIONS);
-
-    const { clientQuestions, shuffleMaps, questionData } = buildQuestionsPayload(questionPool);
-    await storage.upsertDiagnosticSession(req.user!.id, {
-      questionOrder: questionPool.map(q => q.id),
-      answers: [],
-      currentQuestion: 0,
-      shuffleMaps,
-      questionData,
-    });
-    res.json(clientQuestions);
+    try {
+      const questionPool = [...STATIC_DIAGNOSTIC_QUESTIONS].sort(() => Math.random() - 0.5).slice(0, NUM_QUESTIONS);
+      const { clientQuestions, shuffleMaps, questionData } = buildQuestionsPayload(questionPool);
+      await storage.upsertDiagnosticSession(req.user!.id, {
+        questionOrder: questionPool.map(q => q.id),
+        answers: [],
+        currentQuestion: 0,
+        shuffleMaps,
+        questionData: JSON.stringify(questionData),
+      });
+      res.json(clientQuestions);
+    } catch (err: any) {
+      console.error("[Diagnostic] Failed to load questions:", err?.message);
+      res.status(500).json({ message: "Failed to load questions. Please try again." });
+    }
   });
 
   app.get("/api/diagnostic/results", requireAuth, async (req, res) => {
