@@ -84,10 +84,13 @@ export default function DiagnosticQuizPage() {
     refetchOnMount: "always",
   });
 
-  const hasSession = !!(savedSession && savedSession.questions && savedSession.questions.length > 0);
+  const hasSession = !!(savedSession && savedSession.questions && savedSession.questions.length >= 25);
 
   useEffect(() => {
     if (sessionLoading) return;
+    if (savedSession && savedSession.questions && savedSession.questions.length < 25 && savedSession.questions.length > 0) {
+      deleteSavedSession.mutate();
+    }
     if (phase === "loading") setPhase("intro");
   }, [sessionLoading, phase]);
 
