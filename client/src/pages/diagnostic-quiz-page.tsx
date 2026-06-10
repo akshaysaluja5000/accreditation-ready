@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useLocation } from "wouter";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { motion, AnimatePresence } from "framer-motion";
@@ -73,6 +73,8 @@ export default function DiagnosticQuizPage() {
   const [expandedQuestions, setExpandedQuestions] = useState<Set<number>>(new Set());
   const [showAllQuestions, setShowAllQuestions] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [generateError, setGenerateError] = useState(false);
+  const generateTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const { data: pastResults } = useQuery<RichDiagnosticResult[]>({
     queryKey: ["/api/diagnostic/results"],
@@ -144,9 +146,13 @@ export default function DiagnosticQuizPage() {
   });
 
   const startFresh = async () => {
+    setGenerateError(false);
     setPhase("generating");
+    if (generateTimerRef.current) clearTimeout(generateTimerRef.current);
+    generateTimerRef.current = setTimeout(() => setGenerateError(true), 40_000);
     try {
       const qs = await fetchQuestions();
+      if (generateTimerRef.current) clearTimeout(generateTimerRef.current);
       setQuestions(qs);
       setCurrentQ(0);
       setAnswers(new Array(qs.length).fill(null));
@@ -159,7 +165,8 @@ export default function DiagnosticQuizPage() {
         shuffleMaps: buildShuffleMaps(qs),
       });
     } catch {
-      setPhase("intro");
+      if (generateTimerRef.current) clearTimeout(generateTimerRef.current);
+      setGenerateError(true);
     }
   };
 
@@ -279,11 +286,29 @@ export default function DiagnosticQuizPage() {
         <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-600 flex items-center justify-center mb-6 shadow-lg">
           <Stethoscope size={40} className="text-white" />
         </div>
-        <Loader2 size={32} className="animate-spin text-teal-500 mb-4" />
-        <h2 className="text-xl font-bold text-teal-700 dark:text-teal-300 mb-2">Generating your quiz…</h2>
-        <p className="text-sm text-muted-foreground text-center max-w-xs">
-          AI is writing a fresh set of questions tailored to your compliance role. This takes about 10 seconds.
-        </p>
+        {generateError ? (
+          <>
+            <AlertTriangle size={32} className="text-amber-500 mb-4" />
+            <h2 className="text-xl font-bold text-amber-700 dark:text-amber-300 mb-2">Taking longer than expected</h2>
+            <p className="text-sm text-muted-foreground text-center max-w-xs mb-6">
+              The AI service is under load. Click below to try again — it usually resolves immediately.
+            </p>
+            <Button className="h-11 px-8 font-bold bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white rounded-xl" onClick={startFresh} data-testid="button-retry-generate">
+              Try Again
+            </Button>
+            <Button variant="ghost" className="mt-3 text-muted-foreground" onClick={() => { setPhase("intro"); setGenerateError(false); }} data-testid="button-cancel-generate">
+              Back
+            </Button>
+          </>
+        ) : (
+          <>
+            <Loader2 size={32} className="animate-spin text-teal-500 mb-4" />
+            <h2 className="text-xl font-bold text-teal-700 dark:text-teal-300 mb-2">Generating your quiz…</h2>
+            <p className="text-sm text-muted-foreground text-center max-w-xs">
+              AI is writing a fresh set of questions tailored to your compliance role. This usually takes 15–20 seconds.
+            </p>
+          </>
+        )}
       </div>
     );
   }

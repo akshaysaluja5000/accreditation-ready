@@ -12,6 +12,7 @@ import { z } from "zod";
 import Anthropic from "@anthropic-ai/sdk";
 import { LEADERSHIP_RANK } from "@shared/schema";
 import type { User, DailyActivity, UserProgress } from "@shared/schema";
+import { diagnosticQuestions as STATIC_DIAGNOSTIC_QUESTIONS } from "@shared/diagnostic-questions";
 import { POINT_VALUES, PASSING_THRESHOLD } from "@shared/scoring-constants";
 import { getFacilityFeatures, getVisibleRoles, pool as featPool } from "./features.service";
 import { generateSecret as totpGenerateSecret, verifyToken as totpVerify, totpUri } from "./totp";
@@ -2560,6 +2561,23 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
 
   app.get("/api/diagnostic/questions", requireAuth, async (req, res) => {
     const NUM_QUESTIONS = 25;
+    const AI_TIMEOUT_MS = 28_000;
+
+    function buildQuestionsPayload(pool: { id: string; sectionId: string; question: string; options: string[]; correctIndex: number }[]) {
+      const shuffleMaps: Record<string, number[]> = {};
+      const clientQuestions = pool.map(q => {
+        const { options, shuffleMap } = shuffleQuestionOptions(q);
+        shuffleMaps[q.id] = shuffleMap;
+        return { id: q.id, sectionId: q.sectionId, question: q.question, options, shuffleMap };
+      });
+      return { clientQuestions, shuffleMaps, questionData: pool };
+    }
+
+    function getStaticFallback(count: number) {
+      const shuffled = [...STATIC_DIAGNOSTIC_QUESTIONS].sort(() => Math.random() - 0.5);
+      return shuffled.slice(0, count);
+    }
+
     let assignedChapters = await storage.getUserAssignedChapters(req.user!.id);
     if (assignedChapters.length === 0 && req.user!.roleId) {
       const dbRole = await storage.getRoleById(req.user!.roleId);
@@ -2575,45 +2593,49 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
       .map(c => `- ${c}: ${DIAGNOSTIC_CHAPTER_TOPICS[c]}`)
       .join("\n");
     const prompt = `You are writing multiple-choice compliance quiz questions for healthcare professionals preparing for accreditation survey. Generate exactly ${NUM_QUESTIONS} scenario-based questions covering these specific topics:\n\n${topicList}\n\nRules:\n- Each question MUST be a realistic clinical or operational scenario (someone doing something, a situation occurring, a surveyor finding something)\n- Each question has exactly 4 answer choices\n- Exactly one choice is correct\n- The other three are plausible, realistic distractors - not obviously wrong\n- Vary difficulty: mix straightforward and tricky questions\n- Distribute questions across the provided topics as evenly as possible\n- The sectionId field must be EXACTLY one of these keys: ${relevantChapters.join(", ")}\n\nReturn ONLY a valid JSON array with exactly ${NUM_QUESTIONS} items. Each item must have this exact shape:\n{"id":"ai-dq-N","sectionId":"<topic key>","question":"...","options":["...","...","...","..."],"correctIndex":0}\n\nNo markdown fences, no explanation, no extra text - just the raw JSON array starting with [ and ending with ].`;
+
+    let usedFallback = false;
+    let questionPool: { id: string; sectionId: string; question: string; options: string[]; correctIndex: number }[] = [];
+
     try {
-      const message = await callAnthropicWithRetry({
-        model: "claude-haiku-4-5",
-        max_tokens: 4000,
-        messages: [{ role: "user", content: prompt }],
-      });
+      const timeoutPromise = new Promise<never>((_, reject) =>
+        setTimeout(() => reject(new Error("AI_TIMEOUT")), AI_TIMEOUT_MS)
+      );
+      const message = await Promise.race([
+        callAnthropicWithRetry({ model: "claude-haiku-4-5", max_tokens: 4000, messages: [{ role: "user", content: prompt }] }, 1),
+        timeoutPromise,
+      ]);
       const raw = message.content[0]?.type === "text" ? message.content[0].text.trim() : "[]";
       const jsonText = raw.replace(/^```(?:json)?\s*/i, "").replace(/\s*```\s*$/, "").trim();
       const generatedRaw = safeJsonParse<{ id: string; sectionId: string; question: string; options: string[]; correctIndex: number }[] | null>(jsonText, null);
-      if (!generatedRaw) {
-        console.error("[Diagnostic AI] JSON parse failed:", jsonText.slice(0, 200));
-        return res.status(500).json({ message: "Failed to parse AI-generated questions" });
-      }
-      const generated = generatedRaw.filter(q =>
+      const generated = (generatedRaw || []).filter(q =>
         q.id && q.sectionId && q.question &&
         Array.isArray(q.options) && q.options.length === 4 &&
         typeof q.correctIndex === "number" && q.correctIndex >= 0 && q.correctIndex < 4
       );
-      if (generated.length === 0) {
-        return res.status(500).json({ message: "AI returned no valid questions" });
+      if (generated.length >= NUM_QUESTIONS) {
+        questionPool = generated.slice(0, NUM_QUESTIONS);
+      } else {
+        console.warn(`[Diagnostic AI] Only got ${generated.length} valid questions, falling back to static`);
+        usedFallback = true;
+        questionPool = getStaticFallback(NUM_QUESTIONS);
       }
-      const shuffleMaps: Record<string, number[]> = {};
-      const clientQuestions = generated.map(q => {
-        const { options, shuffleMap } = shuffleQuestionOptions(q);
-        shuffleMaps[q.id] = shuffleMap;
-        return { id: q.id, sectionId: q.sectionId, question: q.question, options, shuffleMap };
-      });
-      await storage.upsertDiagnosticSession(req.user!.id, {
-        questionOrder: generated.map(q => q.id),
-        answers: [],
-        currentQuestion: 0,
-        shuffleMaps,
-        questionData: generated,
-      });
-      res.json(clientQuestions);
     } catch (err: any) {
-      console.error("[Diagnostic AI]", err?.message);
-      res.status(500).json({ message: "Failed to generate diagnostic questions" });
+      const reason = err?.message === "AI_TIMEOUT" ? "timeout" : err?.message;
+      console.warn(`[Diagnostic AI] ${reason} — using static fallback`);
+      usedFallback = true;
+      questionPool = getStaticFallback(NUM_QUESTIONS);
     }
+
+    const { clientQuestions, shuffleMaps, questionData } = buildQuestionsPayload(questionPool);
+    await storage.upsertDiagnosticSession(req.user!.id, {
+      questionOrder: questionPool.map(q => q.id),
+      answers: [],
+      currentQuestion: 0,
+      shuffleMaps,
+      questionData,
+    });
+    res.json(clientQuestions);
   });
 
   app.get("/api/diagnostic/results", requireAuth, async (req, res) => {
