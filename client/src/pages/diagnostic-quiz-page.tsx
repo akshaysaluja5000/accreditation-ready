@@ -282,8 +282,15 @@ export default function DiagnosticQuizPage() {
 
   if (phase === "loading") {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-50 dark:from-teal-950/30 dark:via-cyan-950/30 dark:to-sky-950/30">
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4 bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-50 dark:from-teal-950/30 dark:via-cyan-950/30 dark:to-sky-950/30">
         <Loader2 size={32} className="animate-spin text-teal-500" />
+        <button
+          onClick={() => setLocation("/")}
+          className="mt-2 text-sm text-teal-600 hover:text-teal-800 underline underline-offset-2"
+          data-testid="loading-back-to-dashboard"
+        >
+          ← Back to Dashboard
+        </button>
       </div>
     );
   }
