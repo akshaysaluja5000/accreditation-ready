@@ -40,7 +40,7 @@ async function getFacilityByCode(db: typeof featPool, code: string) {
     return cached.row;
   }
   const result = await db.query(
-    "SELECT * FROM facilities WHERE facility_code = $1",
+    "SELECT * FROM facilities WHERE code = $1",
     [code],
   );
   if (result.rows.length > 0) {

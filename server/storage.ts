@@ -1300,8 +1300,14 @@ export class DatabaseStorage implements IStorage {
   }
 
   async createFacility(data: InsertFacility): Promise<Facility> {
-    const [facility] = await db.insert(facilities).values(data).returning();
-    return facility;
+    const [facility] = await db.insert(facilities)
+      .values(data)
+      .onConflictDoNothing()
+      .returning();
+    if (facility) return facility;
+    // Another concurrent request already created this facility code — fetch it
+    const [existing] = await db.select().from(facilities).where(eq(facilities.code, data.code));
+    return existing;
   }
 
   async updateFacility(id: number, data: { complianceMode?: string }): Promise<Facility> {
