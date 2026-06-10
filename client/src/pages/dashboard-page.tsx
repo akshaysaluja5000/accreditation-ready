@@ -605,9 +605,7 @@ export default function DashboardPage() {
             </Button>
             <a
               href={
-                (user?.isAdmin || ["director","ceo","admin","super_admin"].includes(user?.leadershipRole ?? "") || user?.leadershipRole === "educator")
-                  ? "/tutorial-leadership.html"
-                  : "/tutorial-employee.html"
+                "/tutorial-employee.html"
               }
               target="_blank"
               rel="noopener noreferrer"
@@ -642,9 +640,7 @@ export default function DashboardPage() {
                 <DropdownMenuItem asChild>
                   <a
                     href={
-                      (user?.isAdmin || ["director","ceo","admin","super_admin"].includes(user?.leadershipRole ?? "") || user?.leadershipRole === "educator")
-                        ? "/tutorial-leadership.html"
-                        : "/tutorial-employee.html"
+                      "/tutorial-employee.html"
                     }
                     target="_blank"
                     rel="noopener noreferrer"
