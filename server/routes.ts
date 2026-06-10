@@ -3049,9 +3049,10 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
   });
 
   app.get("/api/mastery/questions", requireAuth, async (req, res) => {
-    const isSuperAdmin = (req.user! as User).leadershipRole === "super_admin";
+    const user = req.user! as User;
+    const isAdminOrAbove = user.isAdmin || ["admin", "super_admin"].includes(user.leadershipRole ?? "");
     const assignedChaptersForCheck = await storage.getUserAssignedChapters(req.user!.id);
-    if (!isSuperAdmin) {
+    if (!isAdminOrAbove) {
       const progress = await storage.getProgress(req.user!.id);
       const moduleLevels = await getModuleLevelsForUser(req.user!.id);
       const requiredLevels = assignedChaptersForCheck.length > 0 ? moduleLevels.filter(l => assignedChaptersForCheck.includes(l.id)) : moduleLevels;
