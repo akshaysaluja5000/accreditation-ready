@@ -1028,7 +1028,7 @@ export async function registerRoutes(
         streak = await storage.upsertStreak(userId, {
           currentStreak: 1,
           longestStreak: 1,
-          totalXp: serverXp,
+          totalXp: 0,
           lastPlayedDate: today,
         });
       } else if (streak.lastPlayedDate !== today) {
@@ -1054,12 +1054,7 @@ export async function registerRoutes(
         streak = await storage.upsertStreak(userId, {
           currentStreak: newStreak,
           longestStreak: newLongest,
-          totalXp: streak.totalXp + serverXp,
           lastPlayedDate: today,
-        });
-      } else {
-        streak = await storage.upsertStreak(userId, {
-          totalXp: streak.totalXp + serverXp,
         });
       }
 
@@ -1328,21 +1323,34 @@ export async function registerRoutes(
       if (!(await userCanAccessLevel(userId, data.levelId))) {
         return res.status(403).json({ message: "This chapter is not assigned to your role." });
       }
-      const totalXp = data.baseXpEarned + data.expertXpEarned;
       const totalCorrect = data.baseCorrect + data.followUpCorrect;
       const totalAnswered = data.totalQuestions + data.followUpAttempted;
+      const xpEarned = totalCorrect * POINT_VALUES.question_correct;
 
       const todayCentral = toCentralDate(new Date());
-      await storage.upsertDailyActivity(userId, todayCentral, totalAnswered, totalCorrect, totalXp);
+      await storage.upsertDailyActivity(userId, todayCentral, totalAnswered, totalCorrect, xpEarned);
+
+      // Award points (and XP via addPointsEvent) for each correct deep-dive answer
+      if (totalCorrect > 0) {
+        const _ddFacilityId = (req.user! as any).facilityId as number | null ?? null;
+        void (async () => {
+          try {
+            for (let i = 0; i < totalCorrect; i++) {
+              await storage.addPointsEvent(userId, _ddFacilityId, "question_correct", POINT_VALUES.question_correct, { levelId: data.levelId });
+            }
+            await storage.tryAwardDailyLogin(userId, _ddFacilityId, todayCentral);
+          } catch (err) {
+            console.error("[Points] deep-dive submit:", err);
+          }
+        })();
+      }
 
       let streak = await storage.getStreak(userId);
-      const newTotalXp = (streak?.totalXp || 0) + totalXp;
-
       if (!streak) {
         streak = await storage.upsertStreak(userId, {
           currentStreak: 1,
           longestStreak: 1,
-          totalXp: newTotalXp,
+          totalXp: 0,
           lastPlayedDate: todayCentral,
         });
       } else {
@@ -1356,21 +1364,16 @@ export async function registerRoutes(
           streak = await storage.upsertStreak(userId, {
             currentStreak: newStreak,
             longestStreak: newLongest,
-            totalXp: newTotalXp,
             lastPlayedDate: todayCentral,
-          });
-        } else {
-          streak = await storage.upsertStreak(userId, {
-            totalXp: newTotalXp,
           });
         }
       }
 
       res.json({
         success: true,
-        xpEarned: totalXp,
-        baseXp: data.baseXpEarned,
-        expertXp: data.expertXpEarned,
+        xpEarned,
+        baseXp: data.baseCorrect * POINT_VALUES.question_correct,
+        expertXp: data.followUpCorrect * POINT_VALUES.question_correct,
       });
     } catch (err: any) {
       if (err instanceof z.ZodError) {

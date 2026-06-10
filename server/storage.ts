@@ -649,6 +649,14 @@ export async function ensureTablesExist() {
       WHERE users.facility_id = fm.facility_id
         AND users.organization_type IS DISTINCT FROM fm.organization_type
     `);
+    // Merge XP ← points_ledger: sync total_xp so both systems show one number
+    await client.query(`
+      UPDATE user_streaks SET total_xp = (
+        SELECT COALESCE(SUM(pl.points_awarded), 0)
+        FROM points_ledger pl
+        WHERE pl.user_id = user_streaks.user_id
+      )
+    `);
     await seedRoles(client);
     await seedLeadershipCodes(client);
     await seedComplianceItems(client);
@@ -2494,6 +2502,14 @@ export class DatabaseStorage implements IStorage {
        VALUES ($1, $2, $3, $4, $5)`,
       [userId, facilityId, eventType, pointsAwarded, JSON.stringify(meta)],
     );
+    if (pointsAwarded > 0) {
+      await pool.query(
+        `INSERT INTO user_streaks (user_id, total_xp, current_streak, longest_streak)
+         VALUES ($1, $2, 0, 0)
+         ON CONFLICT (user_id) DO UPDATE SET total_xp = user_streaks.total_xp + $2`,
+        [userId, pointsAwarded],
+      );
+    }
   }
 
   async tryAwardDailyLogin(
@@ -2513,6 +2529,14 @@ export class DatabaseStorage implements IStorage {
        RETURNING id`,
       [userId, facilityId, 15, JSON.stringify({ date: today }), today],
     );
+    if (rows.length > 0) {
+      await pool.query(
+        `INSERT INTO user_streaks (user_id, total_xp, current_streak, longest_streak)
+         VALUES ($1, 15, 0, 0)
+         ON CONFLICT (user_id) DO UPDATE SET total_xp = user_streaks.total_xp + 15`,
+        [userId],
+      );
+    }
     return rows.length > 0;
   }
 
