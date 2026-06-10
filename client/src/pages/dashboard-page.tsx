@@ -485,8 +485,8 @@ export default function DashboardPage() {
   }, []);
 
   const dailyGoal = user?.dailyGoal || 5;
-  const todayQuestions = todayActivity?.questionsAnswered || 0;
-  const goalProgress = Math.min((todayQuestions / dailyGoal) * 100, 100);
+  const todayCorrect = todayActivity?.correctAnswers || 0;
+  const goalProgress = Math.min((todayCorrect / dailyGoal) * 100, 100);
 
   const [showAllModules, setShowAllModules] = useState(false);
 
@@ -823,7 +823,7 @@ export default function DashboardPage() {
                 animate={{ opacity: 1, y: 0 }}
                 data-testid="strip-daily-goal"
               >
-                <Flame size={15} className={`flex-shrink-0 ${todayQuestions > 0 ? "text-orange-500" : "text-muted-foreground"}`} />
+                <Flame size={15} className={`flex-shrink-0 ${todayCorrect > 0 ? "text-orange-500" : "text-muted-foreground"}`} />
                 <span className="text-xs font-bold text-muted-foreground flex-shrink-0">Today</span>
                 <div className="flex-1 h-2 rounded-full bg-muted overflow-hidden">
                   <motion.div
@@ -834,7 +834,7 @@ export default function DashboardPage() {
                   />
                 </div>
                 <span className="text-xs font-bold text-foreground tabular-nums flex-shrink-0" data-testid="text-goal-strip-progress">
-                  {todayQuestions}/{dailyGoal}
+                  {todayCorrect}/{dailyGoal}
                 </span>
                 {goalProgress >= 100 && (
                   <span className="text-xs font-bold text-emerald-600 flex-shrink-0">Done!</span>
@@ -1399,7 +1399,7 @@ export default function DashboardPage() {
                   <Target size={16} className="text-primary" />
                   <h3 className="font-bold text-sm">Daily Goal</h3>
                 </div>
-                <span className="text-sm font-bold text-primary" data-testid="text-daily-progress">{todayQuestions}/{dailyGoal} questions</span>
+                <span className="text-sm font-bold text-primary" data-testid="text-daily-progress">{todayCorrect}/{dailyGoal} correct</span>
               </div>
               <div className="relative h-3 rounded-full bg-muted overflow-hidden">
                 <motion.div
