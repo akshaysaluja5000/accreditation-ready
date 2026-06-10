@@ -295,7 +295,7 @@ export default function LandingPage() {
                 </h2>
               </div>
               <p className="text-base text-muted-foreground leading-relaxed mb-6 max-w-3xl" data-testid="text-proof-body">
-                With Accreditation <em>Ready</em>, quality leaders have documented evidence of preparation:
+                With Accreditation <em>Ready</em>, leaders have documented evidence of preparation:
               </p>
               <ul className="space-y-3">
                 {proofPoints.map((point, i) => (
