@@ -74,6 +74,7 @@ RULES:
 - NEVER write obviously absurd answers (e.g., "terminate the staff", "add a disclaimer", "ignore it", "call police")
 - Each wrong answer tests a DIFFERENT knowledge gap — no near-duplicates
 - Match the length and tone of the correct answer
+- YES/NO FORMAT RULE: If the correct answer starts with "Yes." or "No.", ALL four options must start with either "Yes." or "No." — and there must be EXACTLY 2 "Yes." options and 2 "No." options. Never make 3 of one and 1 of the other.
 
 ${questionsBlock}
 

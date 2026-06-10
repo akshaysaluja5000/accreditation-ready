@@ -107,10 +107,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "t1",
         question: "After a case you spray enzymatic, close the bin, and use the soiled corridor. Correct?",
         options: [
-          "Yes. Enzymatic spray, a secured lid, and the soiled corridor are all three required steps.",
-          "No. You must rinse with water before applying enzymatic spray.",
-          "No. Only SPD staff may apply enzymatic spray at the decon sink.",
-          "No. Keep the lid open so the enzymatic spray can work during transport."
+          "Yes. Enzymatic spray, a secured lid, and the soiled corridor are all three required steps.,
+          "Yes. Pre-spray application with containment and proper transport route eliminate the need for immediate rinsing.,
+          "No. Only SPD staff may apply enzymatic spray at the decon sink.,
+          "No. Keep the lid open so the enzymatic spray can work during transport.",
         ],
         correctIndex: 0,
         explanation: "All three steps are correct: enzymatic spray at the point of use, lid secured before transport, and soiled corridor used. Missing any one of these is a finding.",
@@ -135,10 +135,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "t3",
         question: "After a case, you store the clean red bins in the soiled utility room. Is this correct?",
         options: [
-          "No. Clean bins must be stored in the clean supply room to prevent contamination before use.",
-          "Yes. Staging clean bins in the soiled utility room speeds up case turnover.",
-          "Yes. The soiled utility room is the correct staging area for all transport equipment.",
-          "Yes. Clean bins stay in the soiled utility room until the next case begins."
+          "No. Clean bins must be stored in the clean supply room to prevent contamination before use.,
+          "No. Storing clean bins in the soiled utility room contaminates them and creates a cross-contamination risk.,
+          "Yes. The soiled utility room is the correct staging area for all transport equipment.,
+          "Yes. Clean bins in the soiled utility room allow faster access during case turnovers.",
         ],
         correctIndex: 0,
         explanation: "Clean bins must go in the clean supply room when not in use. Storing them in the soiled utility room contaminates the exterior before the bins ever touch clean instruments.",
@@ -163,10 +163,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "t5",
         question: "You apply enzymatic spray but leave the bin lid off during transport. Is that okay?",
         options: [
-          "No. The lid must be secured before you leave the OR. An open container risks splashing and contamination in the corridor.",
-          "Yes. Leaving the lid open lets the enzymatic spray ventilate and work more effectively.",
-          "Yes. An open container lets you confirm instruments stay covered during transport.",
-          "Yes. The lid is only required when sharing an elevator with clean supplies."
+          "No. The lid must be secured before you leave the OR. An open container risks splashing and contamination in the corridor.,
+          "Yes. Leaving the lid open lets the enzymatic spray ventilate and work more effectively.,
+          "No. Enzymatic spray requires a sealed container during all transport to prevent aerosolization of bioburden.,
+          "Yes. The lid can be removed temporarily in the OR as long as it is secured before entering the hallway.",
         ],
         correctIndex: 0,
         explanation: "The lid must be secured before transport begins. An open bin can splash and spread contamination through the soiled corridor.",
@@ -177,10 +177,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "t6",
         question: "The soiled corridor adds three minutes. Can you cut through the clean core?",
         options: [
-          "No. Soiled instruments must use the designated soiled corridor every time, regardless of distance.",
-          "Yes. A sealed container in the clean core is acceptable for short distances.",
-          "Yes. Full PPE and a sealed container make the clean core acceptable.",
-          "Yes. A three-minute difference is within facility variance guidelines."
+          "No. Soiled instruments must use the designated soiled corridor every time, regardless of distance.,
+          "Yes. A sealed container in the clean core is acceptable for short distances.,
+          "No. Even a sealed container cannot pass through clean areas; the soiled corridor must always be used.,
+          "Yes. The proximity of SPD to the OR justifies using the clean core if the container is sealed.",
         ],
         correctIndex: 0,
         explanation: "Distance and convenience never justify using a clean corridor. Your soiled instruments belong in the soiled corridor, every time, every case.",
@@ -275,10 +275,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "t13",
         question: "You separate sharps from delicate instruments using a protective mat in the transport bin. Acceptable?",
         options: [
-          "Yes. A protective mat that separates sharps from delicate instruments prevents injury and instrument damage.",
-          "No. Only rigid dividers are an approved barrier method for sharps separation.",
-          "No. Sharps must be disposed of in a sharps container immediately and never transported to SPD.",
-          "No. Sharps must always go in a completely separate dedicated bin."
+          "Yes. A protective mat that separates sharps from delicate instruments prevents injury and instrument damage.,
+          "Yes. Protective barriers are an acceptable method for preventing sharps-related injuries during transport.,
+          "No. Sharps must be disposed of in a sharps container immediately and never transported to SPD.,
+          "No. Sharps must always go in a completely separate dedicated bin.",
         ],
         correctIndex: 0,
         explanation: "A protective mat that separates sharps from delicate instruments is acceptable. The goal is preventing sharps injuries and instrument damage during transport.",
@@ -289,10 +289,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "t14",
         question: "You use the soiled elevator, soiled corridor, and enter SPD through the decon door. Is that correct?",
         options: [
+          "Yes. The soiled elevator and corridor are acceptable, but decon room entry must be through the receiving window instead.,
+          "No. Instruments should enter through the clean side of SPD for logging before decon.,
+          "No. Soiled instruments must enter only through the SPD receiving window.,
           "Yes. Soiled elevator, soiled corridor, and decon entry follow the correct soiled pathway all the way through.",
-          "No. Instruments should enter through the clean side of SPD for logging before decon.",
-          "No. Soiled instruments must enter only through the SPD receiving window.",
-          "No. The soiled elevator should not be used when a dumbwaiter is available."
         ],
         correctIndex: 0,
         explanation: "This is the correct pathway. Soiled instruments enter SPD through the decontamination side, following designated soiled pathways from OR to decon the entire way.",
@@ -303,10 +303,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "t15",
         question: "You set the sealed soiled bin on the floor while getting the transport cart. Is that okay?",
         options: [
-          "No. The bin must not touch the floor during transport. Stage your cart before the case ends.",
-          "Yes. Two minutes is within the acceptable floor contact limit for sealed containers.",
-          "Yes. The lid is secured, so floor contact does not create a contamination risk.",
-          "Yes. Floor contact is only a concern in clean corridors, not soiled areas."
+          "No. The bin must not touch the floor during transport. Stage your cart before the case ends.,
+          "Yes. Two minutes is within the acceptable floor contact limit for sealed containers.,
+          "No. Placing containers on soiled corridor floors introduces contamination to the exterior surface regardless of lid security.,
+          "Yes. Floor contact is only a concern in clean corridors, not soiled areas.",
         ],
         correctIndex: 0,
         explanation: "The bin must not touch the floor. Floor contact contaminates the exterior, which you and others will then handle. Have your cart staged before the case ends.",
@@ -359,10 +359,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "t19",
         question: "Your sealed soiled bin and a clean supply cart reach the elevator at the same time. Can you share?",
         options: [
-          "Yes. A properly sealed, leak-proof soiled container may share an elevator with clean supplies.",
-          "No. Clean and soiled items must never share any transport conveyance.",
-          "Yes, but only if the soiled container is loaded last and unloaded first.",
-          "Only if a physical barrier separates the two carts inside the elevator."
+          "Yes. A properly sealed, leak-proof soiled container may share an elevator with clean supplies.,
+          "No. Clean and soiled items must never share any transport conveyance.,
+          "Yes. Sealed containers prevent cross-contamination even when transported together in the same elevator.,
+          "No. The facility must provide separate elevators or wait times must be staggered to prevent simultaneous use.",
         ],
         correctIndex: 0,
         explanation: "A properly sealed, closed, leak-proof soiled container may share an elevator with clean supplies. The compliance requirement is proper containment, not a dedicated elevator.",
@@ -373,10 +373,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "t20",
         question: "Your case ran long. You spray enzymatic but skip removing visible bone and tissue first. Acceptable?",
         options: [
-          "No. You must manually remove gross bioburden before enzymatic spray, regardless of time pressure.",
-          "Yes. Enzymatic spray dissolves bone and tissue during transport to SPD.",
-          "Yes. When time-critical, enzymatic spray alone is sufficient and SPD handles the rest.",
-          "Yes. The sealed container and soiled corridor compensate for the missed step."
+          "No. You must manually remove gross bioburden before enzymatic spray, regardless of time pressure.,
+          "Yes. Enzymatic spray dissolves bone and tissue during transport to SPD.,
+          "Yes. When time-critical, enzymatic spray alone is sufficient and SPD handles the rest.,
+          "No. Time-critical cases are exempt from pre-cleaning requirements if documented.",
         ],
         correctIndex: 0,
         explanation: "Enzymatic spray prevents drying but cannot substitute for removing gross bioburden. Bone fragments and tissue must be physically removed first, every time, no exceptions.",
@@ -478,10 +478,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "e1",
         question: "During a survey, your inspector sees minor scuff marks on the patient hallway floor. Is this a finding?",
         options: [
-          "No. Minor floor scuffs from normal wear are not flagged as an infection prevention finding.",
-          "Yes. Scuff marks compromise the floor surface and harbor pathogens in the grooves.",
+          "No. Minor floor scuffs from normal wear are not flagged as an infection prevention finding.,
+          "Yes. Scuff marks compromise the floor surface and harbor pathogens in the grooves.,
+          "No. Floor scuffs are cosmetic issues and require only periodic buffing, not repair.,
           "Yes. All surface damage in patient areas must be documented and reported for repair.",
-          "Yes. Floor scuffs indicate inadequate cleaning and require a process review."
         ],
         correctIndex: 0,
         explanation: "Minor floor scuffs from normal wear are not an infection prevention finding. The concern is surfaces that can no longer be properly disinfected.",
@@ -520,10 +520,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "e4",
         question: "Staff hang approved signage on the wall using adhesive hooks that leave no residue. Is this compliant?",
         options: [
-          "Yes. If the mounting method leaves the wall surface intact and cleanable, it is acceptable.",
-          "No. Only facility-installed mounting hardware is permitted on clinical walls.",
-          "No. All clinical area signage must use magnetic or suction-based mounting.",
-          "No. Adhesive hooks damage paint over time and belong only in non-clinical areas."
+          "Yes. If the mounting method leaves the wall surface intact and cleanable, it is acceptable.,
+          "Yes. Adhesive hooks are approved for signage as long as they do not penetrate the wall.,
+          "No. All clinical area signage must use magnetic or suction-based mounting.,
+          "No. Adhesive hooks damage paint over time and belong only in non-clinical areas.",
         ],
         correctIndex: 0,
         explanation: "The concern with tape is the sticky residue that cannot be properly disinfected. Adhesive hooks that leave no residue and keep the wall surface intact are acceptable.",
@@ -534,10 +534,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "e5",
         question: "A ceiling tile is displaced in the procedure room. You push it back into place. Is the issue resolved?",
         options: [
-          "No. You must inspect the tile for damage and investigate why it was displaced before calling it done.",
-          "Yes. Reseating the tile restores the ceiling barrier and fully resolves the issue.",
+          "No. You must inspect the tile for damage and investigate why it was displaced before calling it done.,
+          "No. The tile must be replaced entirely rather than reseated because displacement indicates structural failure.,
+          "Yes. Reseating the tile restores the ceiling barrier and fully resolves the issue.,
           "Yes. As long as no visible debris fell from the plenum, reseating is sufficient.",
-          "Yes. You should reseat displaced tiles promptly to minimize plenum exposure time."
         ],
         correctIndex: 0,
         explanation: "Pushing the tile back is not enough. You must check the tile for cracks or contamination and find out why it moved, otherwise it will happen again.",
@@ -562,10 +562,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "e7",
         question: "Peeling paint is found above a patient bed. Your work order is submitted. Can the room stay open?",
         options: [
-          "No. Peeling paint creates particles that can fall on patients and cannot be disinfected. Address it before using the room.",
-          "Yes. A documented work order shows your facility is actively addressing the problem.",
-          "Yes. Peeling paint is a maintenance concern but not an infection risk.",
-          "Yes. Move the bed away from the affected area as a temporary measure."
+          "No. Peeling paint creates particles that can fall on patients and cannot be disinfected. Address it before using the room.,
+          "Yes. A documented work order shows your facility is actively addressing the problem.,
+          "Yes. Peeling paint is a maintenance concern but not an infection risk.,
+          "No. The room may be used if the affected area is cordoned off with isolation tape.",
         ],
         correctIndex: 0,
         explanation: "Peeling paint above a patient is an active infection risk. Paint particles can fall on the patient, and the damaged surface cannot be disinfected. A work order documents the problem but does not eliminate the risk.",
@@ -590,10 +590,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "e9",
         question: "Ventilation grilles in the medication room have visible dust. Cleaning records show they were cleaned last week. Compliant?",
         options: [
-          "No. Visible dust is never acceptable regardless of when the grilles were last cleaned. Increase cleaning frequency.",
-          "Yes. Weekly cleaning of ventilation grilles meets the standard for medication rooms.",
-          "Yes. Dust accumulation between scheduled cleanings is expected and not a compliance issue.",
-          "Yes. If the log shows cleaning within 7 days, compliance is demonstrated."
+          "No. Visible dust is never acceptable regardless of when the grilles were last cleaned. Increase cleaning frequency.,
+          "No. Medication room ventilation grilles must be cleaned daily to prevent any dust accumulation.,
+          "Yes. Dust accumulation between scheduled cleanings is expected and not a compliance issue.,
+          "Yes. If the log shows cleaning within 7 days, compliance is demonstrated.",
         ],
         correctIndex: 0,
         explanation: "The standard is no visible dust, period. If dust is visible, your cleaning frequency is not enough for current conditions. Cleaning logs do not override what the surveyor can see.",
@@ -604,10 +604,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "e10",
         question: "Your OR looks perfect except for one small chip on the countertop that exposes the substrate. Is the room compliant?",
         options: [
-          "No. All surfaces must be intact and impervious. A chip exposes porous material that cannot be disinfected.",
-          "Yes. Minor chips are cosmetic wear addressed during routine maintenance.",
-          "Yes. One small chip in an otherwise compliant room is within acceptable tolerance.",
-          "Yes. The chip can be temporarily sealed with approved epoxy until maintenance arrives."
+          "No. All surfaces must be intact and impervious. A chip exposes porous material that cannot be disinfected.,
+          "Yes. The chip can be temporarily sealed with approved epoxy until maintenance arrives.,
+          "No. Countertop chips in an OR constitute a breach of environmental standards and require immediate replacement.,
+          "Yes. The chip can be temporarily sealed with approved epoxy until maintenance arrives.",
         ],
         correctIndex: 0,
         explanation: "The exposed substrate beneath a chip is porous and cannot be properly disinfected. No matter how small, the surface must be repaired before the room is fully compliant.",
@@ -632,10 +632,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "e12",
         question: "Standing water is found near a sink in a procedure room. It looks clean. Is it acceptable?",
         options: [
-          "No. Standing water is never acceptable. It is a slip hazard and a source of microbial growth regardless of appearance.",
-          "Yes. Clear water near a sink is expected and not an infection risk.",
-          "Yes. Minor water near sinks is normal and will evaporate without intervention.",
-          "Yes. If the water does not contain visible biological material, it is acceptable."
+          "No. Standing water is never acceptable. It is a slip hazard and a source of microbial growth regardless of appearance.,
+          "Yes. Clear water near a sink is expected and not an infection risk.,
+          "No. Standing water must be removed immediately and the source of the water must be investigated and corrected.,
+          "Yes. If the water does not contain visible biological material, it is acceptable.",
         ],
         correctIndex: 0,
         explanation: "Appearance does not make standing water safe. Even clear water promotes microbial growth and creates slip risk. Find the source and clean it up immediately.",
@@ -646,10 +646,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "e13",
         question: "An IV pole base has minor paint wear but no rust. The surface underneath is intact. Is this a finding?",
         options: [
-          "No. Minor paint wear is acceptable if the underlying surface is intact, rust-free, and cleanable.",
-          "Yes. Any paint wear on patient care equipment must be documented and the equipment removed from service.",
+          "No. Minor paint wear is acceptable if the underlying surface is intact, rust-free, and cleanable.,
+          "Yes. Any paint wear on patient care equipment must be documented and the equipment removed from service.,
+          "No. Paint wear is considered normal aging on equipment and does not affect disinfection ability.,
           "Yes. Worn paint creates rough surfaces that cannot be effectively disinfected.",
-          "Yes. Exposed metal under worn paint will eventually corrode and must be repainted."
         ],
         correctIndex: 0,
         explanation: "Minor paint wear is acceptable when the surface underneath is intact and rust-free. The concern is rust, which creates a surface that cannot be disinfected. Cosmetic wear alone is not a finding.",
@@ -688,10 +688,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "e16",
         question: "A small hole in the wall behind a wall-mounted dispenser is only visible when the dispenser is pulled forward. Is this a finding?",
         options: [
-          "Yes. Any wall penetration in a clinical area is a finding, regardless of whether it is visible from normal position.",
-          "No. Permanently mounted equipment creates a sealed barrier that prevents underlying defects from affecting the environment.",
-          "No. Holes behind mounted fixtures are not assessed during routine rounds.",
-          "No. Removing mounted fixtures to fix minor holes risks greater surface damage."
+          "Yes. Any wall penetration in a clinical area is a finding, regardless of whether it is visible from normal position.,
+          "Yes. Hidden holes behind fixtures are acceptable if the fixture prevents direct access to the hole.,
+          "No. Holes behind mounted fixtures are not assessed during routine rounds.,
+          "No. Removing mounted fixtures to fix minor holes risks greater surface damage.",
         ],
         correctIndex: 0,
         explanation: "Wall holes are findings regardless of visibility. A hidden hole can still harbor pests, collect moisture, and indicate structural problems. The dispenser being mounted over it does not seal the wall.",
@@ -730,10 +730,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "e19",
         question: "A renovated patient room has fabric acoustic panels on the walls. They are clean and mounted securely. Are they compliant?",
         options: [
-          "No. Fabric surfaces cannot be properly disinfected and may harbor pathogens even when visually clean.",
-          "Yes. They are acceptable as long as they are included in the routine cleaning schedule.",
-          "Yes. Securely mounted clean panels meet environmental surface requirements.",
-          "Yes. Acoustic panels are non-contact surfaces and are exempt from impervious surface requirements."
+          "No. Fabric surfaces cannot be properly disinfected and may harbor pathogens even when visually clean.,
+          "Yes. Securely mounted clean panels meet environmental surface requirements.,
+          "Yes. Securely mounted clean panels meet environmental surface requirements.,
+          "No. Fabric-covered surfaces may only be used in non-clinical areas such as waiting rooms or offices.",
         ],
         correctIndex: 0,
         explanation: "Fabric surfaces cannot be disinfected with hospital-grade cleaners, even when they look clean. All surfaces in patient care areas must be smooth, non-porous, and cleanable.",
@@ -744,10 +744,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "e20",
         question: "Dust is found on an OR light boom the day after cleaning. Staff says nearby construction is the cause. Still a finding?",
         options: [
-          "Yes. Visible dust on overhead surfaces in a clinical area is a finding regardless of cause. Increase cleaning frequency.",
-          "No. The cleaning log from yesterday confirms compliance, and construction dust is an external factor.",
-          "No. The construction contractor is responsible for dust containment during adjacent projects.",
-          "No. Environmental dust from active construction is classified as an uncontrollable external factor."
+          "Yes. Visible dust on overhead surfaces in a clinical area is a finding regardless of cause. Increase cleaning frequency.,
+          "No. Environmental dust from active construction is classified as an uncontrollable external factor.,
+          "Yes. Construction dust is an external factor, but the facility must implement additional containment measures during adjacent projects.,
+          "No. Environmental dust from active construction is classified as an uncontrollable external factor.",
         ],
         correctIndex: 0,
         explanation: "The cause of visible dust does not matter. The standard is no visible dust on overhead surfaces in clinical areas. When construction increases dust in your environment, your cleaning frequency must increase to match.",
@@ -861,10 +861,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "s1",
         question: "Patient supplies are on shelving 8 inches off the floor in your clean utility room. Is this compliant?",
         options: [
-          "Yes. Eight inches meets the 6-8 inch minimum clearance required for proper floor cleaning underneath.",
-          "No. Only sealed containers may be stored below 10 inches.",
+          "Yes. Eight inches meets the 6-8 inch minimum clearance required for proper floor cleaning underneath.,
+          "No. Only sealed containers may be stored below 10 inches.,
+          "Yes. Supplies stored at 8 inches provide adequate clearance for standard floor cleaning equipment.,
           "No. Supplies in clean utility rooms require 12 inches off the floor.",
-          "No. Shelving must be wire-rack style with impervious bottom shelves regardless of height."
         ],
         correctIndex: 0,
         explanation: "Eight inches is compliant. Items must be stored at least 6-8 inches off the floor to allow proper floor cleaning and mopping underneath.",
@@ -875,10 +875,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "s2",
         question: "A nurse rinses a bedpan in the handwashing sink, then disinfects the sink afterward. Is this acceptable?",
         options: [
-          "No. Handwashing sinks are designated exclusively for hand hygiene, regardless of post-use cleaning.",
-          "Yes. Proper disinfection with hospital-grade cleaner restores the sink to its designated function.",
-          "Yes. Temporary use during equipment outages is permitted if documented.",
-          "Yes. As long as she performs hand hygiene at a different sink before resuming patient care."
+          "No. Handwashing sinks are designated exclusively for hand hygiene, regardless of post-use cleaning.,
+          "Yes. Proper disinfection with hospital-grade cleaner restores the sink to its designated function.,
+          "No. Equipment use in handwashing sinks is prohibited even during temporary outages of designated equipment.,
+          "Yes. Temporary emergency use is acceptable if the sink is thoroughly disinfected and documented in the incident report.",
         ],
         correctIndex: 0,
         explanation: "Handwashing sinks are designated exclusively for hand hygiene. They cannot be used for equipment cleaning even if thoroughly cleaned afterward. Sink designation is absolute.",
@@ -889,10 +889,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "s3",
         question: "Patient care supplies are stored 2 feet from a sink with a splash barrier in place. Is this compliant?",
         options: [
-          "Yes. A splash barrier satisfies the storage requirement when supplies cannot be placed 3 feet away.",
-          "No. Splash barriers only reduce the required distance to 2.5 feet, not 2 feet.",
-          "No. Supplies must always be at least 3 feet from sinks regardless of any barriers installed.",
-          "No. Splash barriers are only approved for medication storage, not general patient care supplies."
+          "Yes. A splash barrier satisfies the storage requirement when supplies cannot be placed 3 feet away.,
+          "No. Splash barriers only reduce the required distance to 2.5 feet, not 2 feet.,
+          "Yes. When a splash barrier is in place, the 3-foot distance requirement is waived for patient care supplies.,
+          "No. Supplies must be stored a minimum of 3 feet from sinks unless an approved splash barrier reduces this to 2.5 feet.",
         ],
         correctIndex: 0,
         explanation: "Patient care items must be at least 3 feet from sinks OR have a splash barrier in place. With a barrier, the 3-foot requirement is satisfied even at 2 feet.",
@@ -903,10 +903,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "s4",
         question: "A surveyor finds your sealed water bottle at the nurses station in a patient care area. Is this compliant?",
         options: [
-          "No. Staff food and beverages are prohibited in all clinical and patient care areas, including nurses stations.",
-          "Yes. Sealed personal beverages at workstations are allowed if kept below counter level.",
-          "Yes. Sealed containers prevent contamination and are permitted at nurses stations.",
-          "Yes. As long as the beverage is not near medication storage or patient charts."
+          "No. Staff food and beverages are prohibited in all clinical and patient care areas, including nurses stations.,
+          "Yes. Sealed personal beverages at workstations are allowed if kept below counter level.,
+          "No. Beverages at workstations pose splash contamination risks even when sealed with a lid.,
+          "Yes. As long as the beverage is consumed immediately and the cap remains sealed.",
         ],
         correctIndex: 0,
         explanation: "Staff food and beverages are strictly prohibited in all clinical and patient care areas, including nurses stations. Sealed containers do not change this rule.",
@@ -917,10 +917,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "s5",
         question: "Soiled linen is in a covered hamper in a soiled area. Clean linen is in a covered cart in the clean supply room. Compliant?",
         options: [
-          "Yes. Soiled linen in a covered hamper in a soiled area and clean linen in a covered cart in the clean room both meet the requirement.",
-          "No. Clean linen carts must be stored in a dedicated linen closet, not the general clean supply room.",
-          "No. Soiled linen hampers must be in the soiled utility room specifically, not just a designated soiled area.",
-          "No. Covered carts are not approved for clean linen storage; only enclosed shelving is acceptable."
+          "Yes. Soiled linen in a covered hamper in a soiled area and clean linen in a covered cart in the clean room both meet the requirement.,
+          "No. Clean linen carts must be stored in a dedicated linen closet, not the general clean supply room.,
+          "Yes. Covered carts are an acceptable alternative to enclosed shelving for clean linen storage in clean supply areas.,
+          "No. Covered carts are not approved for clean linen storage; only enclosed shelving is acceptable.",
         ],
         correctIndex: 0,
         explanation: "Both requirements are met. Soiled linen must be in covered hampers in soiled areas, and clean linen must be stored in clean rooms or covered carts.",
@@ -931,10 +931,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "s6",
         question: "A covered biohazard waste container is in your clean utility room for overflow from the soiled room. Acceptable?",
         options: [
-          "No. Biohazard waste has no place in a clean utility room under any circumstance.",
-          "Yes. Overflow protocols allow temporary placement for up to 24 hours if the container is properly labeled.",
-          "Yes. As long as the container is sealed and not touching clean supplies on adjacent shelving.",
-          "Yes. Covered biohazard containers are permitted temporarily if the soiled room is at capacity."
+          "No. Biohazard waste has no place in a clean utility room under any circumstance.,
+          "Yes. Overflow protocols allow temporary placement for up to 24 hours if the container is properly labeled.,
+          "Yes. As long as the container is sealed and not touching clean supplies on adjacent shelving.,
+          "No. Biohazard containers may only be stored in soiled utility rooms; placing them in clean rooms violates waste segregation.",
         ],
         correctIndex: 0,
         explanation: "Clean utility rooms are exclusively for clean supplies and patient care items. Biohazard waste containers, even covered, are never permitted regardless of the reason.",
@@ -959,10 +959,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "s8",
         question: "A tech props the soiled utility room door open to improve airflow and reduce odors. Is this acceptable?",
         options: [
-          "No. The soiled utility room door must be kept closed to prevent contaminated air from spreading.",
-          "Yes. Propping the door open during staffed hours is acceptable as long as it is closed overnight.",
-          "Yes. Improved ventilation reduces airborne pathogen concentration during active use.",
-          "Yes. As long as the room has negative pressure ventilation, the open door does not matter."
+          "No. The soiled utility room door must be kept closed to prevent contaminated air from spreading.,
+          "Yes. Propping the door open during staffed hours is acceptable as long as it is closed overnight.,
+          "Yes. Improved ventilation reduces airborne pathogen concentration during active use.,
+          "No. Open doors in soiled utility rooms allow cross-contamination regardless of the facility's HVAC system.",
         ],
         correctIndex: 0,
         explanation: "Soiled utility room doors must be kept closed. Propping the door open for airflow defeats the purpose of separating soiled from clean areas.",
@@ -973,10 +973,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "s9",
         question: "A clean supply cart is parked directly next to a soiled linen hamper in the hallway. Is this compliant?",
         options: [
-          "No. Clean supplies must be physically separated from soiled items to prevent cross-contamination.",
-          "Yes. The soiled linen hamper has a cover, which provides sufficient barrier protection.",
-          "Yes. As long as both the cart and hamper are covered, proximity in hallways is acceptable.",
-          "Yes. Hallway placement is temporary and does not require the same separation standards as storage rooms."
+          "No. Clean supplies must be physically separated from soiled items to prevent cross-contamination.,
+          "Yes. The soiled linen hamper has a cover, which provides sufficient barrier protection.,
+          "No. Clean supply carts must be stored in designated cabinets, not placed in hallways near soiled items.,
+          "Yes. Hallway placement is temporary storage and does not require separation standards if carts are returned within 2 hours.",
         ],
         correctIndex: 0,
         explanation: "Clean supplies must be physically separated from soiled items. Parking a clean supply cart directly next to a soiled linen hamper violates the clean/dirty separation principle.",
@@ -1001,10 +1001,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "s11",
         question: "A surveyor checks under the medication room sink and finds cleaning supplies stored there. Is this compliant?",
         options: [
-          "No. Nothing should be stored under sinks due to potential leaks and contamination.",
-          "Yes. Cleaning supplies are non-sterile and may be stored under sinks in sealed containers.",
-          "Yes. Under-sink storage in a secondary containment tray is acceptable for non-patient-care items.",
-          "Yes. Cleaning products may be stored under sinks as long as they are not patient-contact items."
+          "No. Nothing should be stored under sinks due to potential leaks and contamination.,
+          "Yes. Cleaning supplies are non-sterile and may be stored under sinks in sealed containers.,
+          "No. Under-sink storage is acceptable if a spill kit is kept nearby for immediate cleanup.,
+          "Yes. Cleaning products may be stored under sinks as long as they are not patient-contact items.",
         ],
         correctIndex: 0,
         explanation: "Nothing should be stored under sinks — not patient supplies, not cleaning supplies, nothing. Potential leaks and splash contamination affect anything stored underneath.",
@@ -1029,10 +1029,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "s13",
         question: "Your personal lunch is in a clearly labeled container in the staff break room refrigerator. Is this a concern?",
         options: [
-          "No. Staff food in the designated break room refrigerator is compliant.",
-          "Yes. Staff food in any hospital refrigerator creates cross-contamination risk regardless of location.",
-          "Yes. All personal food must be stored in personal coolers, not hospital-owned refrigerators.",
-          "Yes. Personal food containers must be removed daily; storage beyond one shift is non-compliant."
+          "No. Staff food in the designated break room refrigerator is compliant.,
+          "Yes. Staff food in any hospital refrigerator creates cross-contamination risk regardless of location.,
+          "Yes. All personal food must be stored in personal coolers, not hospital-owned refrigerators.,
+          "No. Clearly labeled personal food containers may be stored in any hospital refrigerator indefinitely.",
         ],
         correctIndex: 0,
         explanation: "Staff food in the designated break room is compliant. The restriction is against staff food in clinical areas and clinical refrigerators, not in break rooms.",
@@ -1085,10 +1085,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "s17",
         question: "Supplies are stored 2.5 feet from a sink. No splash barrier is in place. Staff plans to install one next week. Compliant now?",
         options: [
-          "No. Without a barrier in place right now, supplies must be at least 3 feet from the sink. Planned installation does not count.",
-          "Yes. Supplies only 10% short of the 3-foot rule fall within acceptable tolerance.",
-          "Yes. A documented corrective action plan with a scheduled installation date demonstrates good-faith compliance.",
-          "No, but only for sterile supplies. General patient care supplies may be stored at 2 feet."
+          "No. Without a barrier in place right now, supplies must be at least 3 feet from the sink. Planned installation does not count.,
+          "Yes. Supplies only 10% short of the 3-foot rule fall within acceptable tolerance.,
+          "Yes. A documented corrective action plan with a scheduled installation date demonstrates good-faith compliance.,
+          "No. The 3-foot clearance applies only when a splash barrier cannot be installed due to space constraints.",
         ],
         correctIndex: 0,
         explanation: "Compliance is assessed at the time of observation. Without a splash barrier in place right now, supplies must be at least 3 feet from the sink. A planned future installation does not satisfy the current requirement.",
@@ -1238,10 +1238,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ss1",
         question: "A sterile pack has been stored 11 months with intact packaging and no damage. Is it considered sterile?",
         options: [
-          "Yes. Under event-related sterility, intact packaging maintains sterility until a compromise event occurs.",
-          "No. Items stored beyond 9 months require biological indicator testing before use.",
-          "No. Event-related sterility only applies to rigid sterilization containers, not wrapped or peel-pack items.",
-          "No. Sterile items must be reprocessed after 6 months of storage regardless of packaging condition."
+          "Yes. Under event-related sterility, intact packaging maintains sterility until a compromise event occurs.,
+          "No. Items stored beyond 9 months require biological indicator testing before use.,
+          "No. Event-related sterility only applies to rigid sterilization containers, not wrapped or peel-pack items.,
+          "Yes. Sterile packs remain acceptable for use beyond 12 months if packaging remains visibly intact.",
         ],
         correctIndex: 0,
         explanation: "Under event-related sterility, items remain sterile as long as packaging is intact. At 11 months with intact packaging, this item is sterile.",
@@ -1266,10 +1266,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ss3",
         question: "Your sterile storage has wire shelving with a solid bottom shelf, 9 inches off the floor, 20 inches below sprinklers, not touching walls. Compliant?",
         options: [
-          "Yes. All four storage requirements are met: shelving type, height, sprinkler clearance, and wall distance.",
-          "No. Supplies must be at least 24 inches below sprinkler deflectors to maintain proper spray distribution.",
-          "No. The bottom shelf must be at least 12 inches off the floor in sterile storage areas.",
-          "No. Wire shelving is not permitted in sterile storage; solid closed shelving is required."
+          "Yes. All four storage requirements are met: shelving type, height, sprinkler clearance, and wall distance.,
+          "No. Supplies must be at least 24 inches below sprinkler deflectors to maintain proper spray distribution.,
+          "Yes. Wire shelving with a 9-inch clearance below sprinkler heads meets all sterile storage standards.,
+          "No. Wire shelving is not permitted in sterile storage; solid closed shelving is required.",
         ],
         correctIndex: 0,
         explanation: "All requirements are met: wire shelving with solid bottom shelf (correct), 9 inches off floor (meets 8-inch minimum), 20 inches below sprinkler deflectors (exceeds 18-inch minimum), and not touching walls.",
@@ -1280,10 +1280,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ss4",
         question: "You removed items from cardboard shipping boxes and left the empty flattened boxes in sterile storage for recycling pickup. Acceptable?",
         options: [
-          "No. Cardboard in any form is never permitted in sterile storage areas.",
-          "Yes. Flattened boxes are acceptable temporarily if recycling pickup occurs within 24 hours.",
-          "Yes. Empty flattened boxes are acceptable because the items were properly removed first.",
-          "Yes. Flattened cardboard poses minimal fiber risk compared to full boxes."
+          "No. Cardboard in any form is never permitted in sterile storage areas.,
+          "Yes. Flattened boxes are acceptable temporarily if recycling pickup occurs within 24 hours.,
+          "No. Corrugated cardboard sheds fibers and must be removed from sterile storage immediately, including empty or flattened boxes.,
+          "Yes. Flattened cardboard poses minimal fiber risk compared to full boxes.",
         ],
         correctIndex: 0,
         explanation: "Corrugated cardboard is never permitted in sterile storage — including empty, flattened boxes. Cardboard sheds fibers and harbors dust and insects even when empty.",
@@ -1294,10 +1294,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ss5",
         question: "Peel packs on a shelf are stacked 3 high. Is this acceptable?",
         options: [
-          "No. Peel packs should be stacked no more than 2 high to prevent compression damage to the packaging seal.",
-          "Yes. Stacking up to 5 high is acceptable on wire shelving where airflow reduces moisture buildup.",
-          "Yes. Peel packs may be stacked up to 4 high as long as heavier items are on the bottom.",
-          "Yes. 3 high is within the acceptable range for lightweight instrument packs."
+          "No. Peel packs should be stacked no more than 2 high to prevent compression damage to the packaging seal.,
+          "Yes. Stacking up to 5 high is acceptable on wire shelving where airflow reduces moisture buildup.,
+          "No. Peel packs must remain unstacked to maintain optimal sterility and package integrity.,
+          "Yes. 3 high is within the acceptable range for lightweight instrument packs.",
         ],
         correctIndex: 0,
         explanation: "Peel packs should be stacked no more than 2 high to prevent compression damage that can compromise seal integrity. Three high exceeds this limit.",
@@ -1308,10 +1308,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ss6",
         question: "A sterile pack label shows sterilizer number and load number but no date. Is the label complete?",
         options: [
-          "No. The label must also include the date of sterilization. All three elements are required.",
-          "Yes. Sterilizer and load number are sufficient for full traceability and recall capability.",
-          "No, but only for items stored longer than 6 months.",
-          "Yes. The load number contains an embedded date code, so a separate date field is not needed."
+          "No. The label must also include the date of sterilization. All three elements are required.,
+          "Yes. Sterilizer and load number are sufficient for full traceability and recall capability.,
+          "No. The date of sterilization is a required element on the label for all sterile packs.,
+          "Yes. The load number contains an embedded date code, so a separate date field is not needed.",
         ],
         correctIndex: 0,
         explanation: "Every sterile pack must be labeled with three elements: sterilizer used, cycle/load number, AND date of sterilization. Missing any one element is incomplete.",
@@ -1322,10 +1322,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ss7",
         question: "A sterile pack has a small area of condensation on the outside. The seal appears intact. Can you use it?",
         options: [
-          "No. Moisture is a strike-through contamination event regardless of seal integrity. The item must be reprocessed.",
-          "Yes. Surface moisture from humidity changes is normal and does not affect sterility if the seal holds.",
-          "Yes. Dry the pack thoroughly before opening and the sterility is not compromised.",
-          "Yes. External condensation does not penetrate a properly sealed package."
+          "No. Moisture is a strike-through contamination event regardless of seal integrity. The item must be reprocessed.,
+          "Yes. Surface moisture from humidity changes is normal and does not affect sterility if the seal holds.,
+          "Yes. Dry the pack thoroughly before opening and the sterility is not compromised.,
+          "No. External condensation can cause strike-through contamination and wicking of bacteria through packaging material even with an intact seal.",
         ],
         correctIndex: 0,
         explanation: "Moisture is a strike-through contamination event. Moisture can wick bacteria through packaging material even without visibly breaking the seal. Reprocess the item.",
@@ -1350,10 +1350,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ss9",
         question: "Sterile supplies are stored on all-solid metal shelving with no wire sections. Is the shelving type compliant?",
         options: [
-          "No. Sterile storage requires wire shelving for airflow, with only the bottom shelf being solid.",
-          "Yes. Solid metal shelving provides superior protection against dust and particle contamination.",
-          "Yes. Any non-porous metal shelving meets sterile storage requirements regardless of design.",
-          "Yes. Solid shelving is preferred because it prevents peel packs from sagging through wire gaps."
+          "No. Sterile storage requires wire shelving for airflow, with only the bottom shelf being solid.,
+          "Yes. Solid metal shelving provides superior protection against dust and particle contamination.,
+          "No. All-solid shelving restricts air circulation needed to prevent moisture accumulation and mold growth.,
+          "Yes. Solid shelving is preferred because it prevents peel packs from sagging through wire gaps.",
         ],
         correctIndex: 0,
         explanation: "Sterile storage requires wire shelving to allow airflow, with only the bottom shelf being solid. All-solid shelving restricts the air circulation needed for proper storage conditions.",
@@ -1364,10 +1364,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ss10",
         question: "New stock arrives. You place the new items in front of the existing stock on the shelf. Is this correct?",
         options: [
-          "No. New items must go behind existing stock so older items are used first.",
-          "Yes. Placing new stock in front is acceptable under event-related sterility since items do not expire.",
-          "Yes. Newer items should be used first to ensure peak sterility assurance.",
-          "Yes. Stock rotation order is not required as long as all packages are inspected before use."
+          "No. New items must go behind existing stock so older items are used first.,
+          "Yes. Placing new stock in front is acceptable under event-related sterility since items do not expire.,
+          "No. The FIFO method requires newer items to be placed behind existing inventory to prevent extended storage.,
+          "Yes. Stock rotation order is not required as long as all packages are inspected before use.",
         ],
         correctIndex: 0,
         explanation: "First In, First Out (FIFO) requires placing newer items behind existing stock. Older items at the front get used first, preventing extended storage times.",
@@ -1378,10 +1378,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ss11",
         question: "A sterile item stored for 14 months has intact packaging. You pull it for use without additional inspection. Is this correct?",
         options: [
-          "No. All sterile packages require a point-of-use integrity inspection before opening, regardless of how long they have been stored.",
-          "Yes. Event-related sterility means intact packages remain sterile with no inspection needed.",
+          "No. All sterile packages require a point-of-use integrity inspection before opening, regardless of how long they have been stored.,
+          "Yes. Event-related sterility means intact packages remain sterile with no inspection needed.,
+          "Yes. Time-based expiration dates do not apply; only package integrity determines sterility status.,
           "No. Items stored over 1 year must be automatically reprocessed before use.",
-          "No. Items over 12 months must be returned to SPD for biological indicator testing."
         ],
         correctIndex: 0,
         explanation: "Event-related sterility means packaging integrity determines sterility, not time. But every sterile package must still be inspected at the point of use before opening. Skipping that inspection is the error here.",
@@ -1392,10 +1392,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ss12",
         question: "The sterile storage room reads 72°F and 45% humidity. Is this within acceptable parameters?",
         options: [
-          "Yes. Both temperature and humidity are within the acceptable ranges for sterile storage.",
-          "No. Humidity must be kept below 35% to prevent moisture damage to packaging.",
-          "No. The humidity at 45% exceeds the 40% maximum for sterile storage.",
-          "No. The temperature should be maintained between 60-68°F for optimal sterile storage."
+          "Yes. Both temperature and humidity are within the acceptable ranges for sterile storage.,
+          "No. Humidity must be kept below 35% to prevent moisture damage to packaging.,
+          "Yes. The temperature and humidity readings fall within AAMI ST79 acceptable parameters of 68-75°F and 30-60% respectively.,
+          "No. The temperature should be maintained between 60-68°F for optimal sterile storage.",
         ],
         correctIndex: 0,
         explanation: "Both readings are within acceptable parameters: temperature 68-75°F (72°F is compliant) and humidity 30-60% (45% is compliant).",
@@ -1420,10 +1420,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ss14",
         question: "Sterile supplies are stored 16 inches below a sprinkler head. Is this compliant?",
         options: [
-          "No. Supplies must be at least 18 inches below sprinkler deflectors to maintain fire suppression coverage.",
-          "Yes. 16 inches exceeds the standard 12-inch clearance requirement for sprinkler heads.",
-          "Yes. The 18-inch rule only applies to flammable storage areas, not sterile supply rooms.",
-          "Yes. Sterile storage rooms have a reduced 15-inch clearance requirement."
+          "No. Supplies must be at least 18 inches below sprinkler deflectors to maintain fire suppression coverage.,
+          "Yes. 16 inches exceeds the standard 12-inch clearance requirement for sprinkler heads.,
+          "No. The 12-inch rule applies only to non-sterile storage; sterile supplies require 18-inch clearance.,
+          "Yes. Sterile storage rooms have exemptions from sprinkler clearance requirements if supplies are organized vertically.",
         ],
         correctIndex: 0,
         explanation: "Supplies must be stored at least 18 inches below sprinkler deflectors. At 16 inches, these supplies are too close and would interfere with fire suppression coverage.",
@@ -1448,10 +1448,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ss16",
         question: "You pick up a sterile pack and hear rattling inside, suggesting the instrument shifted and may have contacted the seal area. Should you use it?",
         options: [
-          "No. An instrument shifting inside may have compromised the seal from the inside. Inspect more carefully or reprocess.",
-          "Yes. A changed chemical indicator confirms full sterilant exposure, and the externally intact seal satisfies all verification criteria.",
+          "No. An instrument shifting inside may have compromised the seal from the inside. Inspect more carefully or reprocess.,
+          "No. Internal movement of instruments can create stress and micro-breaches on the seal that may not be visible externally.,
+          "Yes. A changed chemical indicator confirms full sterilant exposure, and the externally intact seal satisfies all verification criteria.,
           "Yes. Minor instrument shifting during normal handling does not compromise seal integrity.",
-          "Yes. Open it with aseptic technique and visually inspect the instrument before it contacts the field."
         ],
         correctIndex: 0,
         explanation: "When in doubt, do not use it. An instrument shifting inside a peel pack can stress the seal from within, creating micro-breaches that are not visible externally. Return it for reprocessing.",
@@ -1462,10 +1462,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ss17",
         question: "Sterile supplies are on correct wire shelving 10 inches off the floor, but the shelving is touching the back wall. Is this a finding?",
         options: [
-          "Yes. Supplies must not touch walls in sterile storage. Wall contact can cause moisture wicking and packaging damage.",
-          "No. Wire shelving with solid bottom shelf and proper height meet all requirements.",
-          "No. The humidity at 45% is below the minimum 50% threshold, so that is actually the real finding.",
-          "No. The bottom shelf at 10 inches exceeds the 8-9 inch maximum, making that the finding instead."
+          "Yes. Supplies must not touch walls in sterile storage. Wall contact can cause moisture wicking and packaging damage.,
+          "No. Wire shelving with solid bottom shelf and proper height meet all requirements.,
+          "Yes. Wall contact creates a risk of moisture wicking and physical damage to sterile packages.,
+          "No. The bottom shelf at 10 inches exceeds the 8-9 inch maximum, making that the finding instead.",
         ],
         correctIndex: 0,
         explanation: "Sterile supplies must not touch walls. Contact with walls can cause moisture wicking and physical damage to packaging. All other parameters in this scenario are within acceptable ranges.",
@@ -1490,10 +1490,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ss19",
         question: "A sterile pack sterilized 13 months ago has completely intact packaging. You inspect and document it before returning it to the shelf. Correct?",
         options: [
-          "Yes. Event-related sterility means packaging integrity determines sterility regardless of time. Your documented inspection is the correct step.",
-          "No. Event-related sterility only applies for the first 12 months; after that, the item must be reprocessed.",
-          "No. Any item stored over 12 months must be automatically reprocessed.",
-          "No. Re-inspection alone is insufficient; the item must be tested biologically before release."
+          "Yes. Event-related sterility means packaging integrity determines sterility regardless of time. Your documented inspection is the correct step.,
+          "No. Event-related sterility only applies for the first 12 months; after that, the item must be reprocessed.,
+          "No. Items stored beyond 12 months require reprocessing regardless of visible package integrity.,
+          "Yes. As long as the package remains intact, event-related sterility is maintained indefinitely without time limitations.",
         ],
         correctIndex: 0,
         explanation: "Event-related sterility means packaging integrity determines sterility, not elapsed time. There is no standard that mandates automatic reprocessing after 12 months. Your documented integrity inspection is the correct process.",
@@ -1623,10 +1623,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "i2",
         question: "A stainless steel instrument has light gray toning and feels smooth. Should you remove it from service?",
         options: [
-          "Yes. Any discoloration requires documentation and removal pending metallurgical testing.",
-          "No. Light gray toning on a smooth surface is normal patina, not rust or etching.",
-          "Yes. Gray discoloration suggests chemical residue from improper rinsing that may compromise sterilization.",
-          "Yes. Any discoloration indicates the protective finish has degraded and the surface can no longer be sterilized."
+          "Yes. Any discoloration requires documentation and removal pending metallurgical testing.,
+          "No. Light gray toning on a smooth surface is normal patina, not rust or etching.,
+          "No. Light discoloration on smooth surfaces is cosmetic and does not affect instrument function or safety.,
+          "Yes. Gray discoloration indicates chemical residue accumulation that requires instrument reprocessing.",
         ],
         correctIndex: 1,
         explanation: "Light gray toning with a smooth surface is normal stainless steel patina. The concerns are orange or brown staining (rust), rough or frosted areas (etching), and pitting. Smooth gray toning alone is not a defect.",
@@ -1665,10 +1665,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "i5",
         question: "You verify a peel pack: intact seal, changed indicator, instrument open, no tears or moisture, complete label. Is it ready?",
         options: [
-          "Yes. You have confirmed all six required integrity criteria before opening.",
-          "No. You must also confirm the biological indicator for that sterilizer load was negative before using any pack from the load.",
-          "No. Peel packs also need an external chemical indicator strip on the outside of the package.",
-          "No. The pack must also show the technician's initials who assembled and loaded the instrument."
+          "Yes. You have confirmed all six required integrity criteria before opening.,
+          "No. You must also confirm the biological indicator for that sterilizer load was negative before using any pack from the load.,
+          "No. Peel packs also need an external chemical indicator strip on the outside of the package.,
+          "Yes. The instrument position and label information are sufficient; biological indicator verification is the sterilizer's responsibility, not the surveyor's.",
         ],
         correctIndex: 1,
         explanation: "All six integrity criteria are met, and this pack is ready for use. The pack label (sterilizer, load number, date) confirms traceability, and your point-of-use inspection confirms packaging integrity.",
@@ -1693,10 +1693,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "i7",
         question: "A scissor feels dull when you test it, but there is no rust, pitting, or damage. Can it stay in service?",
         options: [
-          "No. Dull cutting edges are a functional defect requiring removal for sharpening or replacement.",
-          "Yes. Dullness is normal wear and does not affect the instrument's sterility or safety.",
-          "Yes. The surgeon can sharpen the scissor on a sterile stone at the point of use.",
-          "Yes. As long as it passes a tissue test before the case, it may remain in service."
+          "No. Dull cutting edges are a functional defect requiring removal for sharpening or replacement.,
+          "Yes. Dullness is normal wear and does not affect the instrument's sterility or safety.,
+          "No. A dull scissor cannot cut tissue cleanly and may cause tissue trauma during use.,
+          "Yes. As long as the scissor passes a basic visual inspection, minor dullness is acceptable.",
         ],
         correctIndex: 1,
         explanation: "Dull cutting edges are a functional defect. Instruments with dull edges must be removed for professional sharpening or replacement. Using a dull scissor risks patient harm and is a compliance finding.",
@@ -1707,12 +1707,12 @@ const hospitalLevelsRaw: Level[] = [
         id: "i8",
         question: "A single-use device needs reprocessing. Can your facility's SPD reprocess it in-house to save time?",
         options: [
+          "No. Only FDA-registered third-party reprocessors may legally reprocess single-use devices. In-house reprocessing is a federal regulatory violation.",
           "Yes. Your facility may reprocess single-use devices in-house if you follow the manufacturer's IFU exactly.",
-          "Only FDA-registered third-party reprocessors may legally reprocess single-use devices.",
-          "Yes. Single-use devices that are non-critical or semi-critical may be reprocessed in-house.",
-          "Yes. Your validated sterilization program allows reprocessing single-use devices up to three times."
+          "No. The FDA prohibits all in-house SUD reprocessing regardless of sterilization validation programs.",
+          "Yes. Single-use devices that are non-critical may be reprocessed in-house with proper sterilization documentation.",
         ],
-        correctIndex: 1,
+        correctIndex: 0,
         explanation: "Your facility cannot reprocess single-use devices in-house unless it is itself registered with the FDA as a reprocessor. In practice, only FDA-registered third-party reprocessors may do this legally.",
         xpReward: 15,
         isSwipe: false,
@@ -1721,10 +1721,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "i9",
         question: "You store peel packs 2 high on smooth-edged wire shelving. Is this compliant?",
         options: [
-          "Yes. Stacking 2 high on smooth-edged shelving is within accepted practice, though on-edge storage is preferred by AORN.",
-          "No. Peel packs must be stored on solid shelving only; wire shelving risks puncturing the packaging material.",
+          "Yes. Stacking 2 high on smooth-edged shelving is within accepted practice, though on-edge storage is preferred by AORN.,
+          "No. Peel packs must be stored on solid shelving only; wire shelving risks puncturing the packaging material.,
+          "Yes. Stacking peel packs 2 high is acceptable practice as long as shelving edges are smooth and undamaged.,
           "No. Peel packs must always be stored individually in separate bins to prevent cross-contamination.",
-          "No. Any stacking compresses the seal and is not recommended for peel packs."
         ],
         correctIndex: 0,
         explanation: "Stacking 2 high on smooth-edged shelving is within accepted practice. AORN recommends storing peel packs on edge when possible to avoid seal compression over time. Wire shelving with smooth edges is appropriate.",
@@ -1749,10 +1749,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "i11",
         question: "An instrument has visible pitting but passes your function test. Can it remain in service?",
         options: [
-          "No. Pitting creates cavities where bacteria can hide. The instrument cannot be reliably sterilized and must be removed.",
-          "Yes. You may keep it if pitted area is polished smooth by your SPD team before the next cycle.",
+          "No. Pitting creates cavities where bacteria can hide. The instrument cannot be reliably sterilized and must be removed.,
+          "Yes. You may keep it if pitted area is polished smooth by your SPD team before the next cycle.,
+          "No. As long as the instrument functions and passes cleaning validation, minor pitting does not compromise sterilization efficacy.,
           "Yes. Minor pitting is expected wear and does not affect sterilization as long as function is confirmed.",
-          "Yes. Pitting on the outer surface does not affect sterilization because steam contacts interior surfaces during autoclaving."
         ],
         correctIndex: 0,
         explanation: "Pitting creates microscopic cavities that harbor bacteria and cannot be reached by sterilization. Functional performance does not equal sterility. Pitted instruments must be removed from service.",
@@ -1763,10 +1763,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "i12",
         question: "Chemical indicator tape on a sealed sterile package is frayed. The seal underneath appears intact. Is this a concern?",
         options: [
-          "No. The indicator is only for visual confirmation of sterilant exposure and does not affect seal integrity.",
-          "No. Frayed tape is common after normal handling and does not indicate package compromise.",
-          "Yes. Frayed tape suggests rough handling and the package should be inspected carefully or reprocessed.",
-          "No. If the indicator tape changed color and the underlying seal looks intact, the package is acceptable."
+          "No. The indicator is only for visual confirmation of sterilant exposure and does not affect seal integrity.,
+          "Yes. Frayed tape is common after normal handling and does not indicate package compromise.,
+          "Yes. Frayed tape suggests rough handling and the package should be inspected carefully or reprocessed.,
+          "No. Frayed tape on the exterior does not compromise the sterile barrier if the seal itself is visibly intact.",
         ],
         correctIndex: 2,
         explanation: "Frayed indicator tape suggests the package may have been handled roughly. Inspect the package thoroughly, and consider reprocessing if any doubt exists about seal integrity.",
@@ -1833,10 +1833,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "i17",
         question: "Instruments arrive from a German vendor without FDA clearance markings. The vendor says EU CE marking is equivalent. Can you use them on patients?",
         options: [
-          "Yes. German instruments are exempt from FDA requirements under international trade agreements.",
-          "Yes. EU CE marking is recognized as equivalent to FDA 510(k) clearance for surgical instruments.",
-          "No. All instruments used on US patients must have FDA clearance regardless of country of manufacture.",
-          "Only after your value analysis committee reviews and approves the vendor and instrument specifications."
+          "Yes. German instruments are exempt from FDA requirements under international trade agreements.,
+          "Yes. EU CE marking is recognized as equivalent to FDA 510(k) clearance for surgical instruments.,
+          "No. All instruments used on US patients must have FDA clearance regardless of country of manufacture.,
+          "No. Instruments without FDA clearance may only be used if approved through a formal exemption process.",
         ],
         correctIndex: 2,
         explanation: "FDA clearance is required for all instruments used on patients in the United States regardless of country of origin. EU CE marking does not substitute for FDA regulatory clearance.",
@@ -1847,10 +1847,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "i18",
         question: "During assembly you find a flat, smooth circular water spot on a scalpel handle. Should you remove it from service?",
         options: [
-          "Yes. Any mark or discoloration indicates a compromised surface that cannot be reliably sterilized.",
-          "No. A flat, smooth water spot is a mineral deposit from rinse water and is not a defect when the surface is intact.",
-          "Yes. Water spots indicate the rinse cycle was inadequate, leaving detergent residue on the instrument.",
-          "Yes. Circular marks suggest localized corrosion beginning beneath the surface."
+          "Yes. Any mark or discoloration indicates a compromised surface that cannot be reliably sterilized.,
+          "No. A flat, smooth water spot is a mineral deposit from rinse water and is not a defect when the surface is intact.,
+          "No. Water spots are only cosmetic and disappear during normal handling in the OR.,
+          "Yes. Circular marks on stainless steel always indicate the beginning stages of rust formation.",
         ],
         correctIndex: 1,
         explanation: "Water spots are flat, smooth mineral deposits from rinse water — cosmetic, not structural. Unlike rust (orange/brown, rough), etching (frosted texture), or pitting (cavities), water spots do not compromise the instrument surface.",
@@ -1861,10 +1861,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "i19",
         question: "A properly sealed peel pack with a changed indicator is stored paper side down on the shelf. Is this a concern?",
         options: [
-          "No. Storage orientation is a facility preference and has no effect on sterility or seal integrity.",
+          "No. Storage orientation is a facility preference and has no effect on sterility or seal integrity.,
+          "Yes. Paper side down actually protects the peel side from accidental punctures and dust on the shelf surface.,
+          "Yes. Peel packs should be stored paper side up so you can inspect the instrument and indicator without handling the pack.,
           "No. The seal and changed indicator are intact — orientation does not change the compliance status.",
-          "Yes. Peel packs should be stored paper side up so you can inspect the instrument and indicator without handling the pack.",
-          "No. Paper side down actually protects the peel side from accidental punctures on the shelf surface."
         ],
         correctIndex: 2,
         explanation: "Peel packs should be stored paper side up so you can visually inspect the instrument and chemical indicator without picking up and manipulating the package, which reduces risk of inadvertent seal compromise.",
@@ -1980,10 +1980,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "f1",
         question: "Your blanket warmer reads 128°F with only blankets inside and a current log. Is this compliant?",
         options: [
-          "No. Your blanket warmer must display both current and maximum recorded temperatures for the shift.",
+          "Yes. As long as the temperature is between 120°F and 130°F, blankets only are inside, and logs are current, the blanket warmer is compliant.,
+          "No. Your blanket warmer must stay below 120°F to prevent patient burn risk.,
+          "Yes. Temperature is within range, contents are blankets only, and your log is current.,
           "No. Your facility needs hourly blanket warmer logs, not just a single current reading.",
-          "Yes. Temperature is within range, contents are blankets only, and your log is current.",
-          "No. Your blanket warmer must stay below 120°F to prevent patient burn risk."
         ],
         correctIndex: 2,
         explanation: "This is compliant. Blanket warmers must not exceed 130°F (128°F is within range), only blankets are permitted (no fluids), and your temperature logs are maintained.",
@@ -1994,10 +1994,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "f2",
         question: "IV fluids are stored inside your blanket warmer at 125°F. Staff says it is for convenience. Is this acceptable?",
         options: [
-          "No. You must never store fluids or solutions in a blanket warmer regardless of temperature.",
-          "Yes. As long as the fluids are dated and your log is current, co-storage with blankets is permitted.",
+          "No. You must never store fluids or solutions in a blanket warmer regardless of temperature.,
+          "No. Storing IV fluids in a blanket warmer violates equipment use policies even if temperature is within acceptable range.,
+          "Yes. As long as the fluids are dated and your log is current, co-storage with blankets is permitted.,
           "Yes. 125°F is below the 130°F limit, so fluids are safe at this temperature.",
-          "Yes. You may store fluids temporarily in a blanket warmer for up to 4 hours if the temperature stays below 130°F."
         ],
         correctIndex: 0,
         explanation: "You must never store fluids or solutions in a blanket warmer. Fluids belong in designated fluid warmers at ≤110°F. Temperature compliance does not change this rule.",
@@ -2008,10 +2008,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "f3",
         question: "Your fluid warmer reads 108°F. Fluids inside are dated and unexpired. Your temperature log is current. Compliant?",
         options: [
-          "Yes. All fluid warmer requirements are met.",
-          "No. Your fluid warmer needs continuous electronic monitoring, not manual logs.",
-          "No. Fluid warmers must not exceed 100°F to protect IV solutions.",
-          "No. You must rotate fluids every 24 hours in a fluid warmer regardless of their expiration date."
+          "Yes. All fluid warmer requirements are met.,
+          "No. Fluid warmers must have continuous electronic monitoring and cannot rely on manual temperature logs.,
+          "Yes. A temperature of 108°F with dated fluids and current logs fully satisfies fluid warmer compliance.,
+          "No. Fluid warmers must remain below 100°F to prevent degradation of IV solutions.",
         ],
         correctIndex: 0,
         explanation: "This is compliant. Your fluid warmer is at 108°F (≤110°F), fluids are dated when placed and not expired, and your temperature logs are maintained.",
@@ -2036,10 +2036,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "f5",
         question: "Your code cart is on a red outlet with current checks and laryngoscope blades in a separate compartment. Compliant?",
         options: [
-          "No. Your code cart must be on a dedicated code cart outlet, not a standard red emergency outlet.",
-          "No. Your laryngoscope blades must be stored completely separately from the crash cart in a dedicated airway kit.",
-          "No. Your laryngoscope blades must be individually sealed in sterile packaging within the cart compartment.",
-          "Yes. All code cart requirements are met: red outlet, current checks, and blades stored separately."
+          "No. Your code cart must be plugged into a red outlet, but documentation checks must be recorded daily in a separate log, not just present on the cart.,
+          "No. Laryngoscope blades stored in a separate compartment within the cart do not meet the requirement; they must be in a completely sealed airway kit outside the cart.,
+          "Yes. All code cart requirements are met: red outlet, current checks, and blades stored separately.,
+          "Yes. All code cart requirements are met: red outlet, current checks, and blades stored separately.",
         ],
         correctIndex: 3,
         explanation: "Your code cart meets all requirements. It is on a red (emergency) outlet, checks are current, and laryngoscope blades are stored separately within the cart.",
@@ -2064,10 +2064,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "f7",
         question: "An emergency call light pull cord hangs 8 inches from the floor. Is this compliant?",
         options: [
-          "No. Your call cords must touch the floor to ensure patients in any position can reach them.",
-          "No. Your standard requires cords within 12 inches of the floor, so 8 inches actually exceeds the requirement.",
-          "No. Your call cords must hang to within 6 inches of the floor. At 8 inches, a fallen patient may not reach it.",
-          "Yes. At 8 inches, a patient on the floor could reasonably reach the cord."
+          "No. Your call cords must touch the floor to ensure patients in any position can reach them.,
+          "Yes. At 8 inches, a patient on the floor could reasonably reach the cord without assistance.,
+          "No. Your call cords must hang to within 6 inches of the floor. At 8 inches, a fallen patient may not reach it.,
+          "Yes. Call cord height of 8 inches exceeds the standard requirement and provides adequate accessibility.",
         ],
         correctIndex: 2,
         explanation: "Emergency call light pull cords must hang to within 6 inches of the floor. At 8 inches, the cord is too high — a patient who has fallen may not be able to reach it.",
@@ -2078,10 +2078,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "f8",
         question: "Your medication refrigerator reads 40°F with daily temperature logs documented. Is this compliant?",
         options: [
-          "No. Your medication fridge needs continuous digital monitoring, not manual daily logs.",
-          "Yes. 40°F is within the 36-46°F range and your daily logs are current.",
-          "No. Your medication refrigerator must stay at 35°F or below to maintain drug stability.",
-          "No. The acceptable range is 33-38°F and your 40°F reading exceeds the upper limit."
+          "No. Your medication fridge needs continuous digital monitoring, not manual daily logs.,
+          "Yes. 40°F is within the 36-46°F range and your daily logs are current.,
+          "No. Your medication refrigerator must stay at 35°F or below to maintain drug stability.,
+          "Yes. Daily temperature documentation is compliant as long as the refrigerator remains between 36-46°F.",
         ],
         correctIndex: 1,
         explanation: "This is compliant. Your medication refrigerator is within the acceptable 36-46°F range and you are documenting daily temperature checks.",
@@ -2092,10 +2092,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "f9",
         question: "You clean a glucometer with PDI Sani-Cloth Prime wipes and allow a 1-minute dwell time. Is this correct?",
         options: [
-          "Yes. PDI Sani-Cloth Prime requires a 1-minute dwell time for glucometer disinfection.",
-          "No. PDI Sani-Cloth Prime requires a 2-minute dwell time for point-of-care testing devices.",
-          "No. You must use only alcohol-based wipes for glucometers, not quaternary ammonium products.",
-          "No. All glucometer cleaning requires at least a 4-minute dwell time regardless of the disinfectant."
+          "Yes. PDI Sani-Cloth Prime requires a 1-minute dwell time for glucometer disinfection.,
+          "No. PDI Sani-Cloth Prime requires a 2-minute dwell time for point-of-care testing devices.,
+          "Yes. A 1-minute dwell time with PDI Sani-Cloth Prime is appropriate for NovaStat glucometer cleaning.,
+          "No. All glucometer cleaning requires at least a 4-minute dwell time regardless of the disinfectant.",
         ],
         correctIndex: 0,
         explanation: "PDI Sani-Cloth Prime requires only a 1-minute dwell time for glucometer disinfection. The 4-minute dwell time applies to Yellow Top Bleach Wipes.",
@@ -2106,10 +2106,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "f10",
         question: "You clean a glucometer with Yellow Top Bleach Wipes. After 2 minutes you wipe it dry and begin using it. Is this adequate?",
         options: [
-          "No. Yellow Top Bleach Wipes require a full 4-minute dwell time on glucometers.",
-          "No. Yellow Top Bleach Wipes require a full 4-minute dwell time on glucometers.",
-          "No. Yellow Top Bleach Wipes require a 10-minute dwell on any blood-contacting device.",
-          "Yes. Two minutes is sufficient for bleach-based disinfectants on non-critical devices."
+          "No. Yellow Top Bleach Wipes require a full 4-minute dwell time on glucometers.,
+          "Yes. Two minutes is sufficient for bleach-based disinfectants on non-critical devices.,
+          "No. Yellow Top Bleach Wipes require a 10-minute dwell on any blood-contacting device.,
+          "Yes. Wiping dry after 2 minutes is acceptable if the wipe was thoroughly saturated.",
         ],
         correctIndex: 0,
         explanation: "Yellow Top Bleach Wipes require a full 4-minute wet contact (dwell) time for glucometer disinfection. Wiping dry at 2 minutes is non-compliant.",
@@ -2120,10 +2120,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "f11",
         question: "Your ultrasound gel was opened and dated 25 days ago. Is it still acceptable for use?",
         options: [
-          "No. Your opened ultrasound gel expires 14 days after opening.",
-          "No. Your opened ultrasound gel expires 21 days after opening, making this bottle 4 days past expiration.",
-          "No. You must discard opened ultrasound gel after 7 days per infection prevention guidelines.",
-          "Yes. Ultrasound gel is good for 28 days after opening. Your gel is still within the acceptable window."
+          "No. Your opened ultrasound gel expires 14 days after opening.,
+          "No. Your opened ultrasound gel expires 21 days after opening, making this bottle 4 days past expiration.,
+          "Yes. Unopened gel can be used up to 30 days if stored in a temperature-controlled environment.,
+          "Yes. Ultrasound gel is good for 28 days after opening. Your gel is still within the acceptable window.",
         ],
         correctIndex: 3,
         explanation: "Ultrasound gel expires 28 days after opening. At 25 days from the date you wrote on the bottle, your gel is still within its acceptable use window.",
@@ -2134,10 +2134,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "f12",
         question: "A call light cord is wrapped neatly around the bedrail to keep it out of the way. Is this acceptable?",
         options: [
-          "Yes. Securing the cord to the rail keeps it within the patient's reach from the bed.",
-          "Yes. Wrapping prevents tripping hazards and keeps the patient area tidy.",
-          "Yes. As long as the call button is within the patient's reach from the bed, the method of securing it is acceptable.",
-          "No. Your call cords must hang freely to within 6 inches of the floor and must never be wrapped around rails."
+          "Yes. Securing the cord to the rail keeps it within the patient's reach from the bed.,
+          "Yes. Wrapping prevents tripping hazards and keeps the patient area tidy and organized.,
+          "No. Call cords must hang freely to within 6 inches of the floor and must never be wrapped around rails.,
+          "No. Your call cords must hang freely to within 6 inches of the floor and must never be wrapped around rails.",
         ],
         correctIndex: 3,
         explanation: "Call cords must never be wrapped around rails, tied up, or placed on the floor. They must hang freely so patients can reach them from any position, including after a fall.",
@@ -2162,10 +2162,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "f14",
         question: "Your defibrillator is plugged into a standard white outlet next to an available red emergency outlet. Is this acceptable?",
         options: [
-          "Yes. Defibrillators have internal batteries so the outlet color does not affect emergency readiness.",
-          "Yes. Any functional outlet is acceptable as long as the defibrillator maintains a full charge.",
-          "Yes. White outlets are acceptable when a red outlet is within 10 feet as backup.",
-          "No. Your defibrillator must be plugged into an emergency (red) outlet to maintain power during a facility outage."
+          "No. Your defibrillator must be plugged into an emergency (red) outlet to maintain power during a facility outage.,
+          "Yes. Defibrillators have internal batteries so the outlet color does not affect emergency readiness.,
+          "Yes. Any functional outlet is acceptable as long as the defibrillator maintains a full charge.,
+          "No. Your defibrillator must be plugged into an emergency (red) outlet to maintain power during a facility outage.",
         ],
         correctIndex: 3,
         explanation: "Code carts and defibrillators must be plugged into emergency (red) outlets. During a power outage, standard white outlets lose power while red outlets stay on via backup generators.",
@@ -2176,10 +2176,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "f15",
         question: "A surveyor sees your blanket warmer at 131°F. Staff adjusts it to 129°F immediately. Your log shows 128-130°F for the past 5 readings. Is the current situation compliant?",
         options: [
-          "Yes. A 1°F variance above the limit falls within acceptable calibration tolerance for warming equipment.",
-          "No. Your warmer was observed at 131°F, exceeding the 130°F maximum. The immediate reading is the finding.",
-          "Yes. Your immediate correction and your historical log showing consistent compliance resolve the issue.",
-          "Yes. Immediate correction by staff demonstrates an effective monitoring and response system."
+          "Yes. A 1°F variance above the limit falls within acceptable calibration tolerance for warming equipment.,
+          "No. Your warmer was observed at 131°F, exceeding the 130°F maximum. The immediate reading is the finding.,
+          "No. Historical compliance and immediate staff correction demonstrate the warmer meets temperature standards.,
+          "Yes. Immediate correction demonstrates effective facility monitoring and resolves the compliance concern.",
         ],
         correctIndex: 1,
         explanation: "Compliance is assessed at the moment of observation. Your warmer was at 131°F, exceeding the 130°F maximum. Historical readings within range do not erase the current finding.",
@@ -2190,10 +2190,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "f16",
         question: "Your fluid warmer reads 109°F. An IV bag has a placement date written 3 days ago but no separate expiration date. Manufacturer expiry is 6 months out. Compliant?",
         options: [
-          "No. You must remove and replace fluids in warmers every 24 hours regardless of manufacturer expiration.",
-          "No. Your facility must write both a placement date AND a warmer-specific expiration date on every fluid bag.",
-          "No. Only the manufacturer expiration date matters; the placement date is optional documentation.",
-          "Yes. Your fluid is dated when placed and within manufacturer expiration — both requirements are met."
+          "No. You must remove and replace fluids in warmers every 24 hours regardless of manufacturer expiration.,
+          "No. Your facility must write both a placement date AND a warmer-specific expiration date on every fluid bag.,
+          "Yes. Handwritten placement dates are acceptable documentation as long as the manufacturer expiration date is valid.,
+          "Yes. Your fluid is dated when placed and within manufacturer expiration — both requirements are met.",
         ],
         correctIndex: 3,
         explanation: "Your fluids must be dated when placed in the warmer and must not be expired. The placement date was written (3 days ago) and the manufacturer expiration is valid (6 months out). Both core requirements are satisfied.",
@@ -2204,10 +2204,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "f17",
         question: "Your supply room has 11 full O2 cylinders on one secured rack and 3 empty cylinders on a separate rack. Compliant?",
         options: [
-          "No. The 12-cylinder limit only counts full cylinders; empty cylinders do not count toward the total.",
-          "No. Empty cylinders must be stored in a separate designated room, not just on a separate rack.",
-          "Yes. Your full and empty cylinders are properly segregated, and the 12-cylinder limit applies to each category independently.",
-          "No. Your combined total of 14 cylinders exceeds the NFPA 99 limit for non-hazardous storage areas."
+          "No. The 12-cylinder limit only counts full cylinders; empty cylinders do not count toward the total.,
+          "Yes. Your full and empty cylinders are properly segregated, and the 12-cylinder limit applies to each category independently.,
+          "Yes. Storing 11 full cylinders is within the 12-cylinder limit for non-hazardous areas, and empty cylinders on a separate rack are appropriately managed.,
+          "No. Your combined total of 14 cylinders exceeds the NFPA 99 limit for non-hazardous storage areas.",
         ],
         correctIndex: 3,
         explanation: "NFPA 99 limits nonflammable medical gas storage in a non-hazardous area to 300 cubic feet, which equals approximately 12 E-cylinders total. The limit applies to all cylinders in the room — full, empty, or partial combined. Your total of 14 exceeds this limit.",
@@ -2218,10 +2218,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "f18",
         question: "Your code cart has current checks, is on a red outlet, with blades stored separately — but the wheels are unlocked and the cart is slowly rolling away. Is this a finding?",
         options: [
-          "No. Your code cart meets all required standards for documentation, power source, and blade storage.",
-          "No. Unlocked wheels are preferred so your cart can be quickly mobilized during a code event.",
-          "Yes. Your code cart wheels should be locked to keep the cart at its designated location and immediately accessible.",
-          "No. Wheel locking is a facility preference, not a regulatory requirement, as long as the cart stays plugged in."
+          "No. Unlocked wheels are preferred so your cart can be quickly mobilized during a code event.,
+          "No. Your code cart meets all required standards for documentation, power source, and blade storage.,
+          "Yes. Your code cart wheels should be locked to keep the cart at its designated location and immediately accessible.,
+          "Yes. Code cart wheels must be locked to ensure the cart remains at its designated location for accessibility.",
         ],
         correctIndex: 2,
         explanation: "Code carts must be secured at their designated locations. Unlocked wheels allow the cart to drift, making it harder to find in an emergency. Secure your cart at its designated position.",
@@ -2232,10 +2232,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "f19",
         question: "You clean a glucometer with Yellow Top Bleach Wipes, wait the full 4 minutes, but notice dried blood at the test strip port. You apply a second wipe there. Is the cleaning adequate?",
         options: [
-          "Yes. You used the correct wipe with the correct dwell time and addressed the visible blood with a second wipe.",
-          "No. You must remove visible blood mechanically before disinfection. Wipes alone may not penetrate dried blood.",
-          "Yes. A 4-minute bleach dwell time is sufficient to disinfect through dried blood without additional cleaning.",
-          "Yes. Applying a second wipe to the blood area provides double disinfection that compensates for any barrier."
+          "Yes. You used the correct wipe with the correct dwell time and addressed the visible blood with a second wipe.,
+          "No. You must remove visible blood mechanically before disinfection. Wipes alone may not penetrate dried blood.,
+          "Yes. A 4-minute bleach dwell time is sufficient to disinfect through dried blood without additional cleaning.,
+          "No. Dried blood requires scrubbing with a separate cloth before bleach application for full penetration.",
         ],
         correctIndex: 1,
         explanation: "You must mechanically remove visible contamination before disinfection. Wipes may not penetrate dried blood to reach the surface beneath. The correct sequence is: clean first (remove visible soil), then disinfect with proper dwell time.",
@@ -2728,10 +2728,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "or1",
         question: "The circulator needs to hand a supply to the scrub tech. She walks around the field without reaching over it. Correct?",
         options: [
-          "No. Only scrubbed team members may handle items near the sterile field under any circumstances.",
-          "No. Your circulator must wear sterile gloves when presenting items directly to the scrub tech.",
-          "No. Your circulator must place items on a designated transfer table rather than presenting them directly.",
-          "Yes. Walking around and not reaching over the field is the correct technique for unsterile personnel."
+          "No. Only scrubbed team members may handle items near the sterile field under any circumstances.,
+          "No. Your circulator must wear sterile gloves when presenting items directly to the scrub tech.,
+          "Yes. Walking around and not reaching over the field is the correct technique for unsterile personnel.,
+          "Yes. Walking around and not reaching over the field is the correct technique for unsterile personnel.",
         ],
         correctIndex: 3,
         explanation: "This is correct technique. Unsterile persons may present items to the sterile team as long as they maintain safe distance and never reach over the sterile field.",
@@ -2742,10 +2742,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "or2",
         question: "Your scrub nurse has a mask over mouth and nose, bouffant covering all hair, earrings removed, and no jewelry. Attire compliant?",
         options: [
-          "No. Your scrub nurse must also complete a surgical hand scrub before entering the restricted OR.",
-          "Yes. All surgical attire requirements are met.",
-          "No. Shoe covers are also required in restricted OR areas.",
-          "No. A bouffant cap does not adequately cover sideburns. A surgical hood is always required in restricted areas."
+          "No. Your scrub nurse must also complete a surgical hand scrub before entering the restricted OR.,
+          "Yes. All surgical attire requirements are met.,
+          "No. A mask covering the mouth and nose is adequate; additional protective equipment is not required for restricted OR entry.,
+          "Yes. With mask, cap, no earrings, and no jewelry, all attire elements meet the dress code for restricted areas.",
         ],
         correctIndex: 1,
         explanation: "All attire requirements are met: mask covers mouth AND nose, cap covers all hair, earrings removed, no jewelry. If sideburns or neckline hair were visible, a hood would be needed.",
@@ -2798,10 +2798,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "or6",
         question: "Anesthesia equipment surfaces were wiped with approved disinfectant between patients. Machine, monitors, and cart all cleaned. Adequate?",
         options: [
-          "No. Surface wipes are only adequate if you also replace disposable circuits and tubing between each patient.",
-          "No. Anesthesia equipment requires full terminal cleaning with liquid disinfectant, not surface wipes.",
-          "No. Anesthesia equipment only needs terminal cleaning at the end of the day, not between cases.",
-          "Yes. All anesthesia equipment surfaces must be cleaned and disinfected between every patient."
+          "No. Surface wipes are only adequate if you also replace disposable circuits and tubing between each patient.,
+          "No. Anesthesia equipment requires full terminal cleaning with liquid disinfectant, not surface wipes.,
+          "Yes. All anesthesia equipment surfaces must be cleaned and disinfected between every patient.,
+          "Yes. All anesthesia equipment surfaces must be cleaned and disinfected between every patient.",
         ],
         correctIndex: 3,
         explanation: "Anesthesia equipment surfaces must be cleaned and disinfected between EVERY patient, not just at end of day. This prevents cross-contamination between surgical patients.",
@@ -2812,10 +2812,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "or7",
         question: "A sterile team member briefly turns her back to the sterile field to ask the circulator a question. Is this a break in technique?",
         options: [
-          "Yes. Sterile team members must face the sterile field at all times.",
-          "No. A brief turn is acceptable for necessary communication as long as she does not leave the immediate area.",
-          "No. A brief turn is only a break in technique if her hands drop below waist level.",
-          "No. The back of the sterile gown is considered sterile down to the waist, so brief turns are acceptable."
+          "Yes. Sterile team members must face the sterile field at all times.,
+          "No. A brief turn is acceptable for necessary communication as long as she does not leave the immediate area.,
+          "Yes. Turning away from the sterile field, even momentarily, constitutes a break in sterile technique.,
+          "No. The back of the sterile gown is considered sterile down to the waist, so brief turns are acceptable.",
         ],
         correctIndex: 0,
         explanation: "Sterile team members must face the sterile field at ALL times. Turning away, even briefly, increases contamination risk from the non-sterile back of the gown.",
@@ -2840,10 +2840,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "or9",
         question: "Your OR has 8 people for a routine knee arthroscopy: surgeon, assistant, scrub tech, circulator, anesthesiologist, and 3 observers. Is traffic a concern?",
         options: [
-          "No. Observers are never permitted in the OR during active procedures.",
-          "No. Up to 10 personnel are permitted in a standard OR as long as everyone follows attire requirements.",
-          "No. All personnel have a reason to be present and are properly attired.",
-          "Yes. OR traffic must be minimized to only essential personnel. Three observers during a routine procedure may be excessive."
+          "No. Observers are never permitted in the OR during active procedures.,
+          "Yes. OR traffic must be minimized to only essential personnel. Three observers during a routine procedure may be excessive.,
+          "No. Up to 10 personnel are permitted in a standard OR as long as everyone follows attire requirements.,
+          "Yes. OR traffic must be minimized to only essential personnel. Three observers during a routine procedure may be excessive.",
         ],
         correctIndex: 3,
         explanation: "OR traffic must be minimized with only essential personnel present. Three observers during a routine knee arthroscopy creates unnecessary traffic and increases airborne contamination risk.",
@@ -2882,10 +2882,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "or12",
         question: "Off-field medications on the anesthesia cart are in labeled syringes. A surveyor asks if off-field medications also need labels. What do you say?",
         options: [
-          "No. Off-field medications only require labels when more than one medication is drawn up at the same time.",
-          "Yes. Both on-field and off-field medications must be labeled.",
-          "No. Off-field medications are under direct provider control and are exempt from labeling requirements.",
-          "No. Off-field medications are exempt from labeling if they remain in their original manufacturer packaging."
+          "No. Off-field medications only require labels when more than one medication is drawn up at the same time.,
+          "Yes. Both on-field and off-field medications must be labeled.,
+          "Yes. All syringes and containers used during procedures, whether on or off the sterile field, require clear labeling to prevent medication errors.,
+          "No. Off-field medications are exempt from labeling if they remain in their original manufacturer packaging.",
         ],
         correctIndex: 1,
         explanation: "Medications both ON and OFF the sterile field must be labeled. This applies to all syringes, cups, basins, and containers used during procedures.",
@@ -2896,10 +2896,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "or13",
         question: "A nurse wearing stud earrings fully covered by her surgical cap enters the restricted OR. Is this compliant?",
         options: [
-          "Yes. Earrings that are completely covered by the surgical cap meet the 'covered' requirement.",
-          "No. Only stud earrings smaller than 5mm may be worn under a surgical cap in restricted areas.",
+          "Yes. Earrings that are completely covered by the surgical cap meet the 'covered' requirement.,
+          "No. Only stud earrings smaller than 5mm may be worn under a surgical cap in restricted areas.,
+          "Yes. Any jewelry that is fully covered by the surgical cap or hood meets the covering requirement in restricted areas.,
           "No. All jewelry must be removed in restricted areas regardless of coverage.",
-          "No. Only clip-on earrings are permitted; pierced earrings must always be removed in restricted areas."
         ],
         correctIndex: 0,
         explanation: "Earrings must be covered or removed in surgical/procedure areas. Stud earrings fully covered by the surgical cap meet the 'covered' requirement.",
@@ -2910,10 +2910,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "or14",
         question: "A surgeon's bouffant cap covers his scalp but sideburns and neckline hair are visible in the restricted OR. Compliant?",
         options: [
-          "No. Your surgeon needs both a bouffant cap and a separate beard cover to address the sideburn exposure.",
-          "No. Sideburns and neckline hair are only required to be covered during implant or joint replacement cases.",
-          "No. Your surgical caps or hoods must cover ALL head and facial hair including sideburns and neckline in restricted areas.",
-          "Yes. A bouffant cap covers the required scalp area; sideburns are considered minimal exposure."
+          "No. Your surgeon needs both a bouffant cap and a separate beard cover to address the sideburn exposure.,
+          "Yes. A bouffant cap covers the required scalp area; sideburns and neckline are considered peripheral exposure.,
+          "No. Your surgical caps or hoods must cover ALL head and facial hair including sideburns and neckline in restricted areas.,
+          "Yes. Sideburns and neckline hair are only required to be covered during implant or joint replacement cases.",
         ],
         correctIndex: 2,
         explanation: "Caps or hoods must cover ALL head and facial hair, including sideburns and neckline. A bouffant cap that does not cover these areas is insufficient. Your surgeon needs a hood or larger cap.",
@@ -2924,10 +2924,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "or15",
         question: "Your circulator drops an item near the sterile field and bends down to pick it up, staying below back-table height. Is this acceptable?",
         options: [
-          "No. Your unsterile personnel should never reach or bend near the sterile field. Another team member away from the field should retrieve the item.",
-          "Yes. The item must only be left on the floor until the procedure is complete to avoid sterile field disruption.",
-          "Yes. Staying below sterile field level prevents contamination since sterile zones begin at table height.",
-          "Yes. As long as your circulator does not touch any sterile surfaces while bending, this technique is acceptable."
+          "No. Your unsterile personnel should never reach or bend near the sterile field. Another team member away from the field should retrieve the item.,
+          "Yes. Bending below the level of the sterile back table creates a protective barrier that prevents air currents from contaminating the field.,
+          "No. Any unsterile personnel moving near the sterile field during surgery increases the risk of contamination regardless of body position.,
+          "Yes. As long as the circulator avoids direct contact with sterile items and maintains a lower body position, retrieval is an acceptable practice.",
         ],
         correctIndex: 0,
         explanation: "Unsterile personnel must maintain safe distance from the sterile field and never reach or bend near it. Movement near the field creates air currents and contamination risk. Have personnel away from the field retrieve dropped items.",
@@ -3099,10 +3099,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "up1",
         question: "During the Time-Out, the surgeon keeps reviewing an X-ray while the circulator reads the checklist. He says 'I'm listening.' Acceptable?",
         options: [
-          "No. ALL activity must stop during the Time-Out and every team member must actively participate.",
-          "Yes. Reviewing imaging during the Time-Out demonstrates preparation and situational awareness.",
-          "Yes. As long as the surgeon acknowledges each item verbally, multitasking during the Time-Out is acceptable.",
-          "Yes. Verbal acknowledgment satisfies the active participation requirement during a Time-Out."
+          "No. ALL activity must stop during the Time-Out and every team member must actively participate.,
+          "Yes. Reviewing imaging during the Time-Out demonstrates preparation and situational awareness.,
+          "No. Passive listening or multitasking during the Time-Out does not meet the requirement for active participation by all team members.,
+          "Yes. The surgeon can continue other tasks as long as they verbally confirm each item during the checklist.",
         ],
         correctIndex: 0,
         explanation: "ALL activity must stop during the Time-Out. Passive listening is not active participation. Every team member must pause what they are doing and actively engage in the verification.",
@@ -3113,10 +3113,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "up2",
         question: "Your consent form lists the procedure as 'L TKA.' The left knee is marked and the patient confirms verbally. Is the consent form compliant?",
         options: [
-          "Yes. 'L TKA' is universally recognized in orthopedic surgery and the patient's verbal confirmation validates the intent.",
-          "Yes. Standard medical abbreviations are acceptable on consent forms when the patient can confirm understanding.",
-          "No. Consent forms must use the full procedure name. 'L' is on the JC Do Not Use abbreviation list and can be misread.",
-          "Yes. The site marking and verbal confirmation together compensate for the abbreviated consent."
+          "Yes. 'L TKA' is universally recognized in orthopedic surgery and the patient's verbal confirmation validates the intent.,
+          "No. Consent forms must use the full procedure name. 'L' is on the JC Do Not Use abbreviation list and can be misread.,
+          "No. Consent forms must use the full procedure name. 'L' is on the JC Do Not Use abbreviation list and can be misread.,
+          "Yes. The site marking and verbal confirmation together compensate for the abbreviated consent form.",
         ],
         correctIndex: 2,
         explanation: "Consent forms must use the full written procedure name. 'L' (left) is on the JC Do Not Use list — it can be misread as '1' or 'right.' Verbal confirmation does not fix a documentation deficiency. Write 'Left Total Knee Arthroplasty.'",
@@ -3141,10 +3141,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "up4",
         question: "The attending marks the surgical site with the patient awake. After draping, the mark is completely covered and not visible. Compliant?",
         options: [
-          "Yes. The mark location at the incision line is correct; post-draping visibility is a preference, not a requirement.",
+          "Yes. The mark location at the incision line is correct; post-draping visibility is a preference, not a requirement.,
+          "No. Your site mark must be visible after the patient is prepped and draped.,
+          "No. Your site mark must be visible after the patient is prepped and draped.,
           "Yes. The patient participated and the mark was correctly placed, fulfilling the marking requirement.",
-          "No. Your site mark must be visible after the patient is prepped and draped.",
-          "Yes. As long as the Time-Out was completed before draping, the mark does not need to remain visible."
         ],
         correctIndex: 2,
         explanation: "Your site mark must remain visible after prepping and draping so it can be confirmed during the Time-Out. A covered mark cannot serve its verification purpose. Place the mark where it will stay visible.",
@@ -3155,10 +3155,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "up5",
         question: "You identify a patient using their full name and room number before a procedure. Is this adequate identification?",
         options: [
-          "Yes. Name and room number together provide two distinct identifiers linked to the patient's current admission.",
-          "Yes. When combined with verbal confirmation, name and room number meet the two-identifier standard.",
-          "Yes. Room number is facility-assigned and unique during the patient's stay, making it a valid second identifier.",
-          "No. Room number is not a unique patient identifier. Use name and DOB, or name and MRN."
+          "Yes. Name and room number together provide two distinct identifiers linked to the patient's current admission.,
+          "No. Patient identification requires name and DOB or name and MRN; room number alone is not a unique patient identifier and changes between admissions.,
+          "Yes. When combined with verbal confirmation, name and room number meet the two-identifier standard.,
+          "No. Room number is not a unique patient identifier. Use name and DOB, or name and MRN.",
         ],
         correctIndex: 3,
         explanation: "Room numbers can change and are NOT unique to patients. You must use two unique patient identifiers: name and date of birth, or name and medical record number (MRN).",
@@ -3197,10 +3197,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "up8",
         question: "Your TKA patient has no opioid screening documented. The surgeon says the patient is not on opioids so it is not needed. Is he correct?",
         options: [
-          "Yes. Opioid screening is recommended best practice but not mandatory for TKA patients.",
+          "Yes. Opioid screening is recommended best practice but not mandatory for TKA patients.,
+          "No. Opioid screening must be documented for ALL THA and TKA patients regardless of current opioid use.,
+          "No. Opioid screening must be documented for ALL THA and TKA patients regardless of current opioid use.,
           "Yes. Opioid screening is only needed if the patient is currently taking opioids or has a substance use history.",
-          "No. Opioid screening must be documented for ALL THA and TKA patients regardless of current opioid use.",
-          "Yes. The surgeon's clinical assessment that the patient is opioid-naive serves as an equivalent to formal screening."
         ],
         correctIndex: 2,
         explanation: "Opioid screening must be documented for ALL Total Hip (THA) and Total Knee (TKA) arthroplasty patients. Whether the patient currently uses opioids is irrelevant — the screening documentation is required.",
@@ -3211,10 +3211,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "up9",
         question: "Your patient's H&P was performed 32 days before scheduled surgery. Is this H&P still valid?",
         options: [
-          "No. Your H&P must be completed within 30 days prior to surgery. At 32 days, a new one is required.",
-          "Yes. As long as a 24-hour update note is done, the original H&P is valid regardless of age.",
-          "Yes. The 30-day window has a standard 72-hour grace period for scheduling flexibility.",
-          "Yes. A follow-up assessment bridges the gap for H&Ps that are slightly outside the 30-day window."
+          "No. Your H&P must be completed within 30 days prior to surgery. At 32 days, a new one is required.,
+          "Yes. The 30-day window has a standard 72-hour grace period for scheduling flexibility.,
+          "Yes. As long as a 24-hour update note is done, the original H&P is valid regardless of age.,
+          "No. A follow-up assessment bridges the gap for H&Ps that are slightly outside the 30-day window.",
         ],
         correctIndex: 0,
         explanation: "Your H&P must be completed within 30 days prior to surgery. At 32 days, it is expired and must be redone. There is no grace period.",
@@ -3225,10 +3225,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "up10",
         question: "A resident marks the surgical site while the attending runs late. The patient participates in the marking. Is this acceptable?",
         options: [
-          "No. The provider who will perform the procedure must be the one to mark the site.",
-          "Yes. A resident acting under the attending's direction is an extension of the attending's authority for site marking.",
+          "No. The provider who will perform the procedure must be the one to mark the site.,
+          "Yes. A resident acting under the attending's direction is an extension of the attending's authority for site marking.,
+          "No. The attending surgeon, not a resident substitute, must perform the site marking to ensure accountability and accuracy.,
           "Yes. Any credentialed physician on the surgical team can mark the site when the patient participates and confirms.",
-          "Yes. Patient participation in marking is the critical safeguard, not which provider applies the mark."
         ],
         correctIndex: 0,
         explanation: "The provider who will perform the procedure must mark the site. Having a different provider mark it defeats the verification process regardless of patient participation.",
@@ -3239,10 +3239,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "up11",
         question: "Your patient has no advance directive. You inform them and offer help creating one. The patient declines. Compliant?",
         options: [
-          "No. Patients must create an advance directive before any procedure involving anesthesia.",
-          "Yes. Offering assistance fulfills the requirement even if the patient declines.",
-          "No. The patient's refusal must be documented with a witness signature to be compliant.",
-          "No. The offer and refusal must be on a facility-specific advance directive waiver form."
+          "No. Patients must create an advance directive before any procedure involving anesthesia.,
+          "Yes. Offering assistance fulfills the requirement even if the patient declines.,
+          "No. The patient's refusal must be documented with a witness signature to be compliant.,
+          "Yes. Documenting that the patient was informed about advance directives and offered assistance meets the compliance standard.",
         ],
         correctIndex: 1,
         explanation: "The requirement is to inform the patient and offer help completing an advance directive. Patients are not required to create one. Informing, offering, and documenting the outcome is all that is required.",
@@ -3253,10 +3253,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "up12",
         question: "Your consent form has a patient signature, date, time, and the full procedure name — but no witness signature. Is this consent complete per JC?",
         options: [
-          "Yes per JC. JC requires patient signature, date, time, and full procedure name. Witness signature requirements are set by state law and facility policy, not by JC itself.",
-          "No. Witness signature is only required for high-risk or invasive procedures but not all consents.",
-          "No. The surgeon's signature on the operative report serves as witness verification.",
-          "No. JC RI.01.03.01 explicitly requires both the patient and witness signatures."
+          "Yes. JC requires patient signature, date, time, and full procedure name. Witness signature requirements are set by state law and facility policy, not by JC itself.",
+          "Yes. Both patient and witness signatures are required by JC standard RI.01.03.01 for all informed consents.",
+          "No. The surgeon's signature on the operative report serves as the witness verification required by JC.",
+          "No. JC RI.01.03.01 explicitly requires both the patient and witness signatures on all consent forms."
         ],
         correctIndex: 0,
         explanation: "JC (RI.01.03.01) requires documentation that the patient was informed of risks, benefits, and alternatives. JC does NOT independently mandate a witness signature — that is governed by state law and your facility's policy. However, most facilities DO require witness signatures per their own policies, so always follow your facility's consent form requirements.",
@@ -3267,10 +3267,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "up13",
         question: "The surgeon who marked the site was called away. A different surgeon is now performing the case. Should the Time-Out proceed without the marking provider?",
         options: [
-          "Yes. Any attending present can verify the site and complete the Time-Out as long as the mark is visible.",
+          "Yes. Any attending present can verify the site and complete the Time-Out as long as the mark is visible.,
+          "No. The provider who marked the site must be present during the Time-Out.,
+          "No. The provider who marked the site must be present during the Time-Out.,
           "Yes. The site mark is valid documentation and the replacing surgeon can proceed.",
-          "No. The provider who marked the site must be present during the Time-Out.",
-          "Yes. The circulating nurse can verify the mark against the consent form, which is sufficient."
         ],
         correctIndex: 2,
         explanation: "The provider who marked the surgical site must be present during the Time-Out to confirm correct site identification. If that provider is unavailable, the site may need to be re-verified and re-marked before the Time-Out can proceed.",
@@ -3281,10 +3281,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "up14",
         question: "Your consent reads 'Right Total Knee Arthroplasty.' During the Time-Out the circulator reads it aloud as 'right TKA' to save time. Acceptable?",
         options: [
-          "Yes. The written consent uses the full name; abbreviating during verbal read-back is acceptable for efficiency.",
-          "Yes. The written consent is the legal document; the verbal read-back does not require exact wording.",
-          "No. Your Time-Out must read the consent exactly as written. Abbreviating undermines the verification process.",
-          "Yes. All team members understand standard orthopedic abbreviations, so verbal shorthand is functionally equivalent."
+          "Yes. The written consent uses the full name; abbreviating during verbal read-back is acceptable for efficiency.,
+          "Yes. All team members understand standard orthopedic abbreviations, so verbal shorthand is functionally equivalent.,
+          "No. Your Time-Out must read the consent exactly as written. Abbreviating undermines the verification process.,
+          "No. Verbal abbreviations during Time-Out create potential for miscommunication and deviate from the standardized verification protocol.",
         ],
         correctIndex: 2,
         explanation: "The Time-Out requires reading the consent aloud for verification by all team members. Abbreviating during read-back can cause confusion and defeats the cross-check purpose. State the full procedure name.",
@@ -3295,10 +3295,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "up15",
         question: "Your patient's H&P was done 28 days ago. A follow-up assessment was documented 36 hours before surgery. Is all documentation current?",
         options: [
-          "Yes. The follow-up timing is flexible as long as it occurs after the original H&P and before surgery.",
-          "Yes. A 36-hour follow-up is within the 48-hour acceptable window for pre-surgical updates.",
-          "Yes. The H&P is within 30 days and a follow-up assessment was done and documented.",
-          "No. Your follow-up assessment must be completed within 24 hours after admission/registration AND before surgery."
+          "Yes. A 36-hour follow-up assessment is acceptable as long as it occurs before the surgical procedure begins.,
+          "No. Your follow-up assessment must be completed within 24 hours after admission/registration AND before surgery.,
+          "Yes. The H&P is within the acceptable 30-day window, and documentation of any pre-surgical assessment satisfies compliance requirements.,
+          "No. Your follow-up assessment must be completed within 24 hours after admission/registration AND before surgery.",
         ],
         correctIndex: 3,
         explanation: "Your H&P is within 30 days, but the required follow-up must be within 24 hours of admission/registration and before surgery. If registration was less than 36 hours ago, the 36-hour-old update predates registration and fails. The update must be current at the time of surgery.",
@@ -3323,10 +3323,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "up17",
         question: "For a THA patient: consent done (full name, timed, dated, signatures), H&P from 10 days ago with a 12-hour update, opioid screening done, advance directives addressed, site marked by attending with patient. Pre-anesthesia assessment not yet done. Can the case start?",
         options: [
-          "Yes. The anesthesiologist can perform the assessment concurrently during induction to avoid surgical delays.",
-          "Yes. The H&P with the 12-hour update satisfies the pre-anesthesia assessment requirement.",
-          "Yes. All other requirements are met and pre-anesthesia can be done after induction while monitoring the patient.",
-          "No. Your pre-anesthesia assessment must be completed and documented BEFORE anesthesia is administered."
+          "Yes. The H&P with the 12-hour update satisfies the pre-anesthesia assessment requirement.,
+          "Yes. The anesthesiologist can perform the assessment concurrently during induction to avoid surgical delays.,
+          "No. Your pre-anesthesia assessment must be completed and documented BEFORE anesthesia is administered.,
+          "No. Your pre-anesthesia assessment must be completed and documented BEFORE anesthesia is administered.",
         ],
         correctIndex: 3,
         explanation: "Pre-anesthesia assessment must be done before anesthesia is given — it cannot be deferred or performed concurrently with induction. All other requirements in this scenario are met, but the case must wait.",
@@ -3337,10 +3337,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "up18",
         question: "Your consent form has: patient signature, witness signature, date, and full procedure name — but the time of signing is missing. Complete?",
         options: [
-          "Yes. The time can be cross-referenced from nursing documentation and added to the consent retroactively.",
-          "Yes. The date is sufficient for validity; the time is a supplemental element.",
-          "No. Your consent form must include the time at the point of signature; retroactive additions are not acceptable.",
-          "Yes. As long as the time is added before the patient enters the OR, the consent remains valid."
+          "Yes. The date is sufficient for validity; the time is a supplemental element.,
+          "Yes. As long as the time is added before the patient enters the OR, the consent remains valid.,
+          "No. Your consent form must include the time at the point of signature; retroactive additions are not acceptable.,
+          "No. Missing time renders the consent void and a new consent form must be obtained.",
         ],
         correctIndex: 2,
         explanation: "Consent forms must include time, date, signatures, and the full procedure name at the time of signing. A missing time field makes the consent incomplete. Retroactive additions are not acceptable.",
@@ -3351,10 +3351,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "up19",
         question: "You identify a patient using name and MRN printed on the wristband, confirmed by barcode scan. A surveyor asks if the identification was adequate.",
         options: [
-          "No. Name and MRN must be verbally confirmed by the patient, not just read from the wristband.",
-          "No. Barcode scanning alone is the required method; visual confirmation of name and MRN is outdated.",
-          "Yes. Name and MRN are two unique patient identifiers. Barcode scanning adds an extra verification layer.",
-          "No. Three identifiers are required for surgical patients: name, MRN, and date of birth."
+          "No. Name and MRN must be verbally confirmed by the patient, not just read from the wristband.,
+          "Yes. Barcode scanning alone is sufficient; visual confirmation of name and MRN is not required.,
+          "Yes. Name and MRN are two unique patient identifiers. Barcode scanning adds an extra verification layer.,
+          "No. Three identifiers are required for all patients: name, MRN, and date of birth.",
         ],
         correctIndex: 2,
         explanation: "Name and MRN are two unique patient identifiers — this meets the requirement. Barcode scanning is an excellent additional verification method and does not replace the two-identifier check.",
@@ -3470,10 +3470,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pc1",
         question: "Your patient received IV morphine 45 minutes ago. You reassess pain at 1 hour and document it. Is this reassessment timing correct?",
         options: [
-          "No. Reassessment must occur at exactly 45 minutes for parenteral medications per evidence-based guidelines.",
-          "Yes. IV medication reassessment is required within 1 hour of administration.",
-          "No. IV medication requires reassessment within 30 minutes to capture peak effect.",
-          "No. IV opioid reassessment requires a 2-hour window to allow for full therapeutic effect."
+          "No. Reassessment must occur at exactly 45 minutes for parenteral medications per evidence-based guidelines.,
+          "Yes. IV medication reassessment is required within 1 hour of administration.,
+          "No. IV medication requires reassessment within 30 minutes to capture peak effect.,
+          "Yes. One hour is an acceptable timeframe for parenteral pain medication reassessment and falls within the standard requirement.",
         ],
         correctIndex: 1,
         explanation: "Parenteral (IV) pain medication must be reassessed within 1 hour. Your reassessment at 1 hour meets this requirement.",
@@ -3484,10 +3484,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pc2",
         question: "Your patient received oral pain medication. You reassess at 1 hour and document 'no change.' Is this reassessment timing appropriate?",
         options: [
-          "No. Reassessing too early produces inaccurate data and should be repeated at the 2-hour mark.",
-          "No. Oral medication reassessment should occur at exactly 2 hours for peak therapeutic effect.",
-          "No. At 1 hour, your reassessment is premature and the documented result is not clinically valid.",
-          "Yes. Earlier reassessment is always acceptable. The required timeframe is the maximum, not the minimum."
+          "No. Reassessing too early produces inaccurate data and should be repeated at the 2-hour mark.,
+          "No. Oral medication reassessment should occur at exactly 2 hours for peak therapeutic effect.,
+          "Yes. Earlier reassessment provides additional safety monitoring and is acceptable within the allowable timeframe.,
+          "Yes. Earlier reassessment is always acceptable. The required timeframe is the maximum, not the minimum.",
         ],
         correctIndex: 3,
         explanation: "Reassessing earlier than the maximum required interval is always acceptable. The policy timeframe (typically 2 hours for oral medications) is the maximum — reassessing before that is fine as long as you document the result.",
@@ -3512,10 +3512,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pc4",
         question: "Your patient denied pain during the second assessment window, so you did not document a second assessment. Is once-daily pain documentation compliant?",
         options: [
-          "Yes. Pain denial eliminates the need for a second assessment as long as the first is documented.",
-          "Yes. A verbal denial during rounds meets the pain management documentation standard.",
-          "Yes. If the patient denies pain, no formal assessment documentation is needed since there is nothing to report.",
-          "No. Pain must be assessed and documented a minimum of 2 times per 24 hours regardless of patient report."
+          "Yes. Pain denial eliminates the need for a second assessment as long as the first is documented.,
+          "Yes. A verbal denial during rounds meets the pain management documentation standard.,
+          "No. Pain must be assessed and documented a minimum of 2 times per 24 hours regardless of patient report.,
+          "No. Pain must be assessed and documented a minimum of 2 times per 24 hours regardless of patient report.",
         ],
         correctIndex: 3,
         explanation: "Pain must be assessed AND documented at least 2 times every 24 hours — even if the patient denies pain. The denial itself is the assessment and must be recorded.",
@@ -3526,10 +3526,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pc5",
         question: "Before giving opioids you assess the patient's sedation level. After administration you document pain score but not post-dose sedation level. Adequate?",
         options: [
-          "Yes. Documenting the pain score implicitly captures sedation status since pain and sedation are inversely related.",
-          "Yes. Post-administration sedation monitoring is only needed for high-dose opioids.",
-          "No. Sedation level and LOC must be assessed BOTH before AND after every opioid administration.",
-          "Yes. Pre-administration sedation assessment is sufficient since it establishes the safety baseline."
+          "Yes. Documenting the pain score implicitly captures sedation status since pain and sedation are inversely related.,
+          "Yes. Post-administration sedation monitoring is only needed for high-dose opioids.,
+          "No. Sedation level and LOC must be assessed BOTH before AND after every opioid administration.,
+          "No. Sedation assessment after opioid administration is not required if the patient remains alert and communicative.",
         ],
         correctIndex: 2,
         explanation: "Sedation level and level of consciousness must be assessed both before AND after every opioid dose. Pain scores alone are insufficient — post-opioid sedation monitoring is essential for detecting respiratory depression.",
@@ -3540,10 +3540,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pc6",
         question: "A surveyor checks your PACU. Medications are stored in a locked automated dispensing cabinet with access controls. Is this compliant?",
         options: [
-          "No. Controlled substances in the PACU require a separate locked compartment from non-controlled medications.",
-          "Yes. Your medications are secured in a locked system, which meets the requirement.",
-          "No. PACU medications need additional double-lock verification beyond automated dispensing cabinet controls.",
-          "No. PACU medications must be stored in a separate locked room, not an automated dispensing cabinet."
+          "No. Controlled substances in the PACU require a separate locked compartment from non-controlled medications.,
+          "Yes. Your medications are secured in a locked system, which meets the requirement.,
+          "No. PACU medications need additional double-lock verification beyond automated dispensing cabinet controls.,
+          "Yes. An automated dispensing cabinet with access control is the standard secure storage method for PACU medications.",
         ],
         correctIndex: 1,
         explanation: "All medications in all locations, including the PACU, must be secured. Your locked automated dispensing cabinet meets this requirement.",
@@ -3554,10 +3554,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pc7",
         question: "A PRN order reads 'Ondansetron 4mg IV PRN.' Is this order complete?",
         options: [
-          "Yes. The indication is only required for controlled substances, not standard PRN medications like ondansetron.",
-          "Yes. The clinical indication is implied since ondansetron is universally known as an antiemetic.",
-          "No. Your PRN orders must include the clinical indication, such as 'for nausea.'",
-          "Yes. Drug name, dose, route, and PRN designation meet the minimum order requirements."
+          "Yes. The indication is only required for controlled substances, not standard PRN medications like ondansetron.,
+          "Yes. The clinical indication is implied since ondansetron is universally known as an antiemetic.,
+          "No. Your PRN orders must include the clinical indication, such as 'for nausea.',
+          "No. PRN orders without a documented indication cannot be safely administered by nursing staff.",
         ],
         correctIndex: 2,
         explanation: "PRN medication orders must include the clinical indication — the specific reason to give the medication. 'PRN' alone without 'for nausea' or another indication is incomplete.",
@@ -3568,10 +3568,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pc8",
         question: "Your post-anesthesia evaluation was completed 50 hours after the procedure. Is this within the required timeframe?",
         options: [
-          "Yes. The 48-hour guideline allows a reasonable grace period for weekends and staffing constraints.",
-          "Yes. The evaluation was completed within 3 calendar days, which meets the intent of the requirement.",
-          "Yes. The standard is a 72-hour window for post-anesthesia assessments.",
-          "No. Your post-anesthesia evaluation must be completed within 48 hours of the procedure."
+          "Yes. The 48-hour guideline allows a reasonable grace period for weekends and staffing constraints.,
+          "Yes. The standard is a 72-hour window for post-anesthesia assessments.,
+          "No. Your post-anesthesia evaluation must be completed within 48 hours of the procedure.,
+          "No. Your post-anesthesia evaluation must be completed within 48 hours of the procedure.",
         ],
         correctIndex: 3,
         explanation: "Your post-anesthesia evaluation must be completed within 48 hours of the procedure. At 50 hours, it exceeds the required timeframe — no grace period applies.",
@@ -3582,10 +3582,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pc9",
         question: "Your post-op note includes: surgeon, assistants, findings, procedures, specimens, EBL, and post-op diagnosis. It is signed and dated but has no time. Complete?",
         options: [
-          "No. Authentication requires signed, dated, AND timed. Your missing time makes the note incomplete.",
-          "Yes. The time of the procedure is in the operative record and does not need to be on the post-op note.",
-          "Yes. The time is supplemental and can be added retroactively from the anesthesia record.",
-          "Yes. Signed and dated is sufficient authentication for immediate post-op notes."
+          "No. Authentication requires signed, dated, AND timed. Your missing time makes the note incomplete.,
+          "Yes. The time of the procedure is in the operative record and does not need to be on the post-op note.,
+          "Yes. Signed and dated is sufficient authentication for immediate post-op notes.,
+          "No. The post-op note cannot be authenticated without the surgeon's initials in addition to the signature.",
         ],
         correctIndex: 0,
         explanation: "Your post-op note must be authenticated with signature, date, AND time. Missing any authentication element makes the note incomplete.",
@@ -3596,10 +3596,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pc10",
         question: "Your facility retains tissue tracking records for 7 years with full donor-to-recipient traceability. Is this adequate?",
         options: [
-          "No. Tissue records must be retained for a minimum of 10 years.",
-          "Yes. Seven years exceeds the 5-year FDA minimum for tissue documentation retention.",
-          "Yes. Tissue records follow the same 7-year retention schedule as general surgical records.",
-          "Yes. Seven years meets the standard medical records retention period, which applies equally to tissue tracking."
+          "No. Tissue records must be retained for a minimum of 10 years.,
+          "Yes. Seven years exceeds the 5-year FDA minimum for tissue documentation retention.,
+          "Yes. Tissue records follow the same 7-year retention schedule as general surgical records.,
+          "No. Tissue tracking records must be retained indefinitely to ensure perpetual donor-to-recipient traceability.",
         ],
         correctIndex: 0,
         explanation: "Tissue records must be retained for a minimum of 10 years with full traceability from donor to recipient and back. Seven years is insufficient.",
@@ -3610,10 +3610,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pc11",
         question: "Your patient screens positive on the C-SSRS. You document the positive screen and notify the physician. Is anything else required?",
         options: [
-          "No. Physician notification triggers an automatic psychiatric consult, which fulfills the follow-up requirement.",
-          "No. The C-SSRS is the comprehensive assessment tool and no additional evaluation is required.",
-          "No. Positive screen documentation and physician notification is sufficient for initial management.",
-          "Yes. A SAFE-T risk assessment must follow, and you must provide the patient with 988 Crisis Lifeline information."
+          "No. Physician notification triggers an automatic psychiatric consult, which fulfills the follow-up requirement.,
+          "Yes. Documentation and physician notification will generate the appropriate clinical response automatically.,
+          "No. The C-SSRS is the comprehensive assessment tool and no additional evaluation is required.,
+          "Yes. A SAFE-T risk assessment must follow, and you must provide the patient with 988 Crisis Lifeline information.",
         ],
         correctIndex: 3,
         explanation: "A positive suicide screen requires a SAFE-T risk assessment (thoughts, method, plan, behaviors, intent), suicide precaution orders matched to risk level, documented safety checks, and providing the 988 Crisis Lifeline number to the patient.",
@@ -3624,10 +3624,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pc12",
         question: "You applied restraints to a combative patient. Your documentation shows: physician order, time of application, and patient assessment. Is this complete?",
         options: [
-          "No. Your documentation must also show that less restrictive alternatives were tried and were ineffective.",
-          "Yes. Physician order, time of application, and patient assessment are the required elements.",
-          "Yes. The physician order itself implicitly documents that alternatives were considered before restraints.",
-          "Yes. Combative behavior justifies immediate restraint application without requiring documentation of alternatives."
+          "No. Your documentation must also show that less restrictive alternatives were tried and were ineffective.,
+          "Yes. Physician order, time of application, and patient assessment are the required elements.,
+          "Yes. The physician order itself implicitly documents that alternatives were considered before restraints.,
+          "No. Restraint documentation must include specific names of at least two staff members who attempted de-escalation techniques.",
         ],
         correctIndex: 0,
         explanation: "Restraint documentation must include proof that less restrictive alternatives were attempted first and were ineffective. Restraints are a last resort and this must be explicitly documented.",
@@ -3695,9 +3695,9 @@ const hospitalLevelsRaw: Level[] = [
         question: "A range PRN order reads 'Morphine 2–4 mg IV PRN for pain.' One nurse gives 4 mg for pain of 3/10. Another gives 2 mg for pain of 8/10. Is this appropriate?",
         options: [
           "Yes. Range orders allow nurses to use professional discretion, and factors beyond pain score inform dosing.",
-          "Concerning. The administration pattern — maximum dose for mild pain and minimum for severe pain — does not reflect individualized assessment.",
-          "Yes. As long as both doses fall within the prescribed range and the 4-hour interval is maintained, administration is compliant.",
-          "Yes. Both are within the range order and reflect individual clinical judgment."
+          "Yes. This pattern is concerning — giving maximum dose for mild pain and minimum for severe pain does not reflect individualized assessment and must be addressed.",
+          "No. Both doses fall within the prescribed range and the 4-hour interval is maintained, so this is compliant.",
+          "No. The prescribed range gives nurses full latitude; no pattern review is required as long as dosing is within the range.",
         ],
         correctIndex: 1,
         explanation: "Range orders require clinical judgment that matches dose to actual pain level and clinical status. Giving the maximum dose for mild pain (3/10) and the minimum for severe pain (8/10) suggests assessment is not driving dosing decisions. This administration pattern warrants review.",
@@ -3736,10 +3736,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pc20",
         question: "Your patient has been in restraints for 6 hours. Documentation shows: initial order, initial assessment, and a note that alternatives were attempted. The restraint flowsheet has not been updated in 4 hours. Adequate?",
         options: [
-          "Yes. Restraint reassessment is only required at order renewal, not continuously.",
-          "Yes. The initial order, assessment, and alternatives documentation are sufficient for a 6-hour restraint period.",
-          "Yes. A 4-hour documentation gap is acceptable as long as the patient is being visually monitored.",
-          "No. Restraints require ongoing flowsheet documentation with regular reassessments, not just an initial assessment."
+          "Yes. Restraint reassessment is only required at order renewal, not continuously.,
+          "Yes. The initial order, assessment, and alternatives documentation are sufficient for a 6-hour restraint period.,
+          "No. Restraints require ongoing flowsheet documentation with regular reassessments, not just an initial assessment.,
+          "No. Restraints require ongoing flowsheet documentation with regular reassessments, not just an initial assessment.",
         ],
         correctIndex: 3,
         explanation: "Restraint documentation must be continuous. Your restraint flowsheet must be updated at regular intervals with reassessments throughout the restraint period. An initial assessment alone is insufficient.",
@@ -3855,10 +3855,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "eoc2",
         question: "Your soiled utility room door is open while a housekeeper mops inside. Is this a compliance issue?",
         options: [
-          "No. Doors may be open during active cleaning since the housekeeper is present and preventing access.",
-          "No. Soiled utility room doors only need to be closed when contaminated materials are being transported.",
-          "Yes. Your soiled utility room door must remain closed at all times to contain contamination.",
-          "No. Your door only needs to be closed when the room is unoccupied and not actively in use."
+          "No. Doors may be open during active cleaning since the housekeeper is present and preventing access.,
+          "Yes. The vendor's equipment must be tested and approved by the hospital before any patient use.,
+          "No. Vendor equipment can be used on patients if the manufacturer has already certified it as safe.,
+          "Yes. Demonstration equipment requires a brief orientation but can be used immediately in clinical practice.",
         ],
         correctIndex: 2,
         explanation: "Soiled utility room doors must remain closed at ALL times to contain contamination, odors, and airborne particles. Active cleaning does not exempt this requirement.",
@@ -3869,10 +3869,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "eoc3",
         question: "Your fire extinguisher inspection tag is initialed and dated 28 days ago this month. Is this compliant?",
         options: [
-          "No. Your fire extinguisher must be inspected weekly, not monthly.",
-          "Yes. Monthly inspection is required, and a 28-day-old inspection is within the current calendar month.",
-          "No. Fire extinguishers must be inspected immediately before every shift, not monthly.",
-          "No. Your facility must use electronic fire extinguisher monitoring and physical tags are no longer accepted."
+          "Yes. A locked computer screen satisfies HIPAA requirements for electronic PHI, and paper charts are exempt from view-distance regulations in common areas.,
+          "No. Your facility must secure all PHI in both electronic and paper forms; an unattended open paper chart with visible patient identifiers is a privacy violation.,
+          "Yes. As long as the computer is locked and no staff are present accessing the information, visibility of a paper chart is not a compliance concern.,
+          "No. Your facility must use electronic fire extinguisher monitoring and physical tags are no longer accepted.",
         ],
         correctIndex: 1,
         explanation: "Fire extinguishers must be inspected monthly. A 28-day-old inspection tag within the current month is compliant.",
@@ -3897,10 +3897,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "eoc5",
         question: "A surveyor finds your emergency exit blocked by a supply cart during a busy shift. Staff says it will be cleared after the rush. Is this a finding?",
         options: [
-          "Yes. Your emergency exits must remain clear and unobstructed at all times. No exceptions.",
-          "No. Temporary obstruction during peak operational hours is a recognized operational necessity.",
-          "No. Your exit has an overhead illuminated exit sign and a secondary exit within 100 feet.",
-          "No. Your emergency exit only needs to be clear during fire drills and actual emergencies."
+          "Yes. Your emergency exits must remain clear and unobstructed at all times. No exceptions.,
+          "No. Temporary obstruction during peak operational hours is a recognized operational necessity.,
+          "No. A locked cart with secured chemicals poses no obstruction risk to emergency egress.,
+          "Yes. Unattended equipment in hallways creates a life safety hazard and must be immediately removed.",
         ],
         correctIndex: 0,
         explanation: "Emergency exits must remain clear and unobstructed at ALL times. There are no exceptions for busy periods or operational convenience.",
@@ -3953,10 +3953,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "eoc9",
         question: "Your facility's patient whiteboard in a room near the hallway shows the patient's full name, diagnosis, and nurse's name. Is this a privacy concern?",
         options: [
-          "No. Whiteboards are an approved communication tool and the information is visible only to those entering the patient's room.",
-          "No. PHI on a whiteboard in the patient's own room is considered acceptable under HIPAA's treatment exception.",
-          "Yes. Your whiteboard must either be positioned so it is not visible from the hallway OR display only non-identifying information.",
-          "No. Whiteboards in patient rooms are exempt from privacy standards because patients have consented to their room assignment."
+          "No. Whiteboards are an approved communication tool and the information is visible only to those entering the patient's room.,
+          "Yes. Patient identifiers on whiteboards are permitted if the whiteboard is positioned so PHI is not visible from outside the room.,
+          "No. Protected health information displayed on patient room whiteboards violates privacy standards unless the whiteboard is secured behind closed doors.,
+          "Yes. Whiteboards displaying patient names and clinical information are acceptable in patient rooms under HIPAA's direct treatment exception.",
         ],
         correctIndex: 2,
         explanation: "Whiteboards visible from hallways display PHI to anyone who passes, including non-authorized visitors. Your whiteboard must be positioned so it is not visible from outside the room, or it should use non-identifying information only.",
@@ -3967,10 +3967,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "eoc10",
         question: "A surveyor finds your crash cart padlock broken. Staff says a new one is on order. Is this a finding?",
         options: [
-          "No. A broken padlock is a facilities maintenance issue, not a patient safety finding, as long as the cart is still accessible.",
-          "No. Crash carts only need to be secured when not in use; during the shift the cart is accessible regardless of lock status.",
-          "Yes. Your crash cart must be locked and tamper-evident at all times. A broken lock is an immediate finding.",
-          "No. Your crash cart can remain in service during a brief transition period while awaiting a replacement lock."
+          "No. A broken padlock is a facilities maintenance issue, not a patient safety finding, as long as the cart is still accessible.,
+          "Yes. Visual and auditory privacy during physician-patient conversations about diagnosis is adequately maintained.,
+          "No. A curtain alone provides sufficient privacy; a closed door is not required during clinical conversations.,
+          "Yes. Both the closed door and drawn curtain ensure the patient's right to privacy during sensitive discussions.",
         ],
         correctIndex: 2,
         explanation: "Your crash cart must be locked and tamper-evident at all times. A broken padlock means you cannot verify that the cart contents have not been accessed or altered since the last documented check. This is an immediate finding.",
@@ -3995,10 +3995,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "eoc12",
         question: "Your glucometer cleaning log shows the correct product and dwell time, but the 'cleaned by' field is blank for 3 of the last 10 entries. Is this a concern?",
         options: [
-          "No. The product and dwell time are the critical compliance fields; staff identification is optional.",
-          "No. Three missing initials out of 10 entries represents a minor documentation gap, not a compliance finding.",
-          "Yes. All cleaning log fields — including who performed the cleaning — must be completed for every entry.",
-          "No. As long as the most recent entry is complete, older entries with missing initials are not reviewed."
+          "No. Eyewash stations must remain completely unobstructed and free of all items that could impede rapid access in an emergency.,
+          "Yes. A small caddy positioned to the side does not block the actual eyewash mechanism and is acceptable for storage of supporting supplies.,
+          "Yes. All cleaning log fields — including who performed the cleaning — must be completed for every entry.,
+          "No. As long as the most recent entry is complete, older entries with missing initials are not reviewed.",
         ],
         correctIndex: 2,
         explanation: "All fields in your cleaning and disinfection logs must be completed for every entry. Incomplete documentation makes it impossible to verify accountability and traceability for cleaning procedures.",
@@ -4009,10 +4009,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "eoc13",
         question: "Your linen cart in the hallway has a torn cover exposing the clean linens below. Is this a finding?",
         options: [
-          "No. Clean linen carts are only required to be covered during transport, not during stationary storage.",
-          "No. A torn cover still provides significant protection and is acceptable until the next supply order.",
-          "Yes. Your clean linen must be covered at all times to protect it from contamination.",
-          "No. Your hallway is a restricted area; unauthorized personnel cannot access the linen."
+          "No. Electrodes must be discarded immediately after the package is opened; they cannot be stored and reused after 3 days.,
+          "Yes. Opened electrodes remain viable for up to one week if kept on a clean shelf protected from dust.,
+          "Yes. Your clean linen must be covered at all times to protect it from contamination.,
+          "No. Once electrode packages are opened, the electrodes dry out and lose conductivity; they must be discarded per manufacturer guidelines.",
         ],
         correctIndex: 2,
         explanation: "Clean linen must be covered at all times to protect it from airborne and contact contamination. A torn cover that exposes linens is a finding regardless of whether the cart is stationary or in transit.",
@@ -4037,10 +4037,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "eoc15",
         question: "Your storage room has boxes within 16 inches of the ceiling sprinkler heads. Is this a compliance issue?",
         options: [
-          "No. Eighteen inches is the required clearance from sprinkler heads; 16 inches is within 2 inches of the minimum.",
-          "No. The clearance requirement is measured from the top of the sprinkler deflector, and 16 inches may meet that standard.",
-          "Yes. Your storage must maintain at least 18 inches of clearance from sprinkler heads at all times.",
-          "No. The 18-inch rule only applies to combustible materials, not cardboard boxes."
+          "No. All personnel in the OR, including vendors and contracted staff, must display identification badges; recognition by staff does not substitute for credential verification.,
+          "Yes. Facility-provided scrubs and cap combined with staff recognition constitute adequate identification in the OR environment.,
+          "Yes. Vendor representatives wearing facility-provided surgical attire are exempt from badge requirements if OR staff can vouch for them.,
+          "No. The 18-inch rule only applies to combustible materials, not cardboard boxes.",
         ],
         correctIndex: 2,
         explanation: "NFPA 13 requires at least 18 inches of clearance below sprinkler deflectors. At 16 inches, your boxes obstruct proper water distribution. This is a finding.",
@@ -4053,7 +4053,7 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "Yes. Completing the current patient's care before swapping is a reasonable clinical priority.",
           "Yes. The fill line is a guideline and the container can safely hold additional sharps up to the closure line.",
-          "Yes. You can defer to the next patient encounter since this patient's exposure risk is already established.",
+          "No. Sharps containers past the fill line may only be used if a documented variance is filed with the safety officer.",
           "No. Your sharps container must be replaced immediately when it reaches the fill line — no deferral is acceptable."
         ],
         correctIndex: 3,
@@ -4065,10 +4065,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "eoc17",
         question: "Your patient's computer is locked, whiteboard turned from the door, and door is closed — but a printed discharge summary with full PHI is visible on the bedside table. Is privacy maintained?",
         options: [
-          "No. Your printed discharge summary with visible PHI on the bedside table is accessible to anyone entering the room.",
-          "Yes. The closed door limits access to authorized personnel, and your whiteboard is appropriately positioned.",
-          "Yes. The closed door creates a reasonable expectation of privacy, making the document placement acceptable.",
-          "Yes. Discharge summaries are patient property and their placement in the patient's own room is not a privacy violation."
+          "No. Your printed discharge summary with visible PHI on the bedside table is accessible to anyone entering the room.,
+          "No. Discharge summaries are patient property and their placement in the patient's own room is not a privacy violation.,
+          "Yes. The closed door creates a reasonable expectation of privacy, making the document placement acceptable.,
+          "Yes. The locked computer screen and positioned whiteboard demonstrate sufficient privacy controls for a bedside document.",
         ],
         correctIndex: 0,
         explanation: "PHI must be secured in ALL forms. A printed document with full PHI visible on a bedside table is a privacy violation even when other privacy measures are in place. Paper documents must be face-down, in a folder, or otherwise secured from view.",
@@ -4079,10 +4079,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "eoc18",
         question: "A mobile computer workstation is parked 2.5 feet from your medical gas shut-off panel. The 3-foot access zone is marked on the floor. Is this a finding?",
         options: [
-          "No. The 3-foot zone is a guideline and mobile equipment can be moved quickly in an emergency.",
-          "No. The 2.5-foot distance is within acceptable variance for mobile equipment near gas shut-off panels.",
-          "No. Mobile equipment is exempt from clearance requirements since any staff member can reposition it quickly.",
-          "Yes. Your medical gas shut-off panels must remain unobstructed at all times. Your workstation within the clearance zone is a finding."
+          "No. The 3-foot zone is a guideline and mobile equipment can be moved quickly in an emergency.,
+          "Yes. Your medical gas shut-off panels must remain unobstructed at all times. Your workstation within the clearance zone is a finding.,
+          "No. Mobile workstations are exempt from clearance zones since they can be repositioned by any nearby staff member.,
+          "Yes. Your medical gas shut-off panels must remain unobstructed at all times. Your workstation within the clearance zone is a finding.",
         ],
         correctIndex: 3,
         explanation: "Medical gas shut-off valves must remain accessible and unobstructed at all times. In a gas emergency, seconds matter. Mobile equipment parked within your facility's marked clearance zone is a finding regardless of how easily it can be moved.",
@@ -4093,10 +4093,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "eoc19",
         question: "A nurse used a pill cutter 2 hours ago and cleaned it. It looks clean. She is about to use it for a different patient. Should she clean it again?",
         options: [
-          "Yes. You must clean your pill cutter between EACH patient use regardless of appearance or time since last cleaning.",
-          "No. Your pill cutter only requires cleaning at the end of each medication pass, not between individual patients.",
-          "No. It was cleaned after the last use and still appears clean, so re-cleaning is unnecessary.",
-          "No. Visual inspection confirming no residue is sufficient between uses of the same medication class."
+          "Yes. You must clean your pill cutter between EACH patient use regardless of appearance or time since last cleaning.,
+          "No. Cleaning after every medication pass is sufficient even when multiple patients receive medications during that pass.,
+          "No. If no visible residue is present, the pill cutter does not require cleaning between different patients.,
+          "Yes. Cross-contamination between patients' medications is prevented by visual inspection rather than cleaning between uses.",
         ],
         correctIndex: 0,
         explanation: "Pill cutters and crushers must be cleaned between each patient use to prevent cross-contamination. Appearance and time since last cleaning are irrelevant — the standard is between each patient.",
@@ -4219,10 +4219,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "anes2",
         question: "Your post-anesthesia evaluation at 36 hours documents respiratory function, cardiovascular function, pain, and mental status. Is this complete?",
         options: [
-          "Yes. These 4 elements satisfy JC post-anesthesia requirements.",
-          "No. Temperature, nausea/vomiting status, and post-operative hydration status are also required.",
-          "No. ASA classification and level of consciousness are missing.",
-          "No. A pre-anesthesia re-assessment and current vital signs are also required."
+          "Yes. These four elements—respiratory function, cardiovascular function, pain level, and mental status—meet standard post-anesthesia documentation requirements.,
+          "No. Temperature, nausea/vomiting status, and post-operative hydration status are also required.,
+          "No. The evaluation is incomplete without documentation of the patient's pre-operative baseline vital signs and ASA physical status classification.,
+          "Yes. Post-anesthesia evaluations require these core assessments; additional elements such as temperature are optional based on facility protocol.",
         ],
         correctIndex: 1,
         explanation: "Your post-anesthesia evaluation must include all 7 required elements: respiratory function, cardiovascular function, mental status, temperature, pain, nausea/vomiting, and post-operative hydration status. Temperature, nausea/vomiting status, and hydration are missing here.",
@@ -4443,10 +4443,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "anes18",
         question: "A CRNA performing a spinal anesthetic for a C-section asks the circulating RN to monitor the patient's sedation level during the case. Is this arrangement compliant?",
         options: [
-          "No. Only a physician anesthesiologist may administer spinal anesthesia in an OR setting.",
-          "No. A CRNA must monitor and administer simultaneously because they are the credentialed provider.",
-          "No. Even for a CRNA, a dedicated observer is required — the CRNA cannot administer and solely monitor at the same time.",
-          "Yes. The CRNA assigning the circulating RN as the dedicated monitor satisfies the monitoring requirement."
+          "No. A CRNA must have a separate dedicated observer for patient monitoring during spinal administration.,
+          "Yes. The CRNA assigning the circulating RN as the dedicated monitor satisfies the monitoring requirement.,
+          "No. Only a physician anesthesiologist may administer spinal anesthesia in an OR setting.,
+          "Yes. The CRNA assigning the circulating RN as the dedicated monitor satisfies the monitoring requirement.",
         ],
         correctIndex: 3,
         explanation: "This IS compliant. The CRNA administering the anesthetic cannot simultaneously serve as the sole dedicated monitor — a separate observer is required. By assigning the circulating RN to monitor and report patient status, this arrangement correctly provides a dedicated observer. The RN's monitoring role should be documented.",
@@ -4471,10 +4471,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "anes20",
         question: "A chart shows: signed surgical consent (pre-sedation), written anesthesia plan, complete pre-anesthesia assessment with airway eval and ASA class, intraoperative monitoring, and a post-anesthesia evaluation at 44 hours with all 7 elements. Compliant?",
         options: [
-          "No. The post-anesthesia evaluation at 44 hours exceeds the acceptable window.",
-          "No. The written anesthesia plan must be completed after the procedure, not before.",
-          "Yes. All JC anesthesia documentation requirements are met.",
-          "No. The pre-anesthesia assessment must be completed by the surgeon, not the anesthesiologist."
+          "No. The pre-anesthesia assessment must be completed by the surgeon, not the anesthesiologist.,
+          "No. The written anesthesia plan must be completed after the procedure, not before.,
+          "Yes. All JC anesthesia documentation requirements are met.,
+          "Yes. The post-anesthesia evaluation completed at 44 hours is within the acceptable timeframe.",
         ],
         correctIndex: 2,
         explanation: "This chart is fully compliant: consent before sedation, pre-procedure written anesthesia plan, complete pre-anesthesia assessment (airway eval + ASA classification), intraoperative monitoring documented, and post-anesthesia evaluation within 48 hours with all 7 required elements present.",
@@ -6186,10 +6186,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ls12",
         question: "A fire alarm activates when someone accidentally pulls the station. Staff know it is accidental. Should staff still respond?",
         options: [
-          "No. If staff know it is accidental, the alarm can be ignored and reset without a response.",
-          "Yes. Every fire alarm activation requires a response verifying there is no actual fire before the alarm is silenced.",
-          "Only the charge nurse needs to respond. Other staff may continue patient care.",
-          "Staff should wait for two separate alarm activations before treating it as a real emergency."
+          "No. If staff know it is accidental, the alarm can be ignored and reset without a response.,
+          "Yes. Every fire alarm activation requires a response verifying there is no actual fire before the alarm is silenced.,
+          "Yes. Staff may silence accidental alarms without investigation if the pull station is known to be faulty.,
+          "No. Only the charge nurse needs to respond. Other staff may continue patient care.",
         ],
         correctIndex: 1,
         explanation: "Every fire alarm activation must be treated as real until the absence of fire is confirmed. Even known-accidental activations require a response to verify. Ignoring alarms because staff believe they know the cause trains staff to ignore all alarms — and a true fire could be dismissed. JC expects a defined alarm response and reset protocol that includes verification.",
@@ -6618,10 +6618,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "em17",
         question: "Your hospital experiences a power failure that knocks out main electrical systems for four hours. Does this event require an after-action review under EM.04.01.01?",
         options: [
-          "No. The AAR requirement applies only to planned drills, not actual emergencies.",
-          "Yes. EM.04.01.01 requires after-action reviews following both drills and actual emergency events.",
-          "Only if the power failure was declared a formal emergency by the CEO.",
-          "Only if patient care was affected during the outage."
+          "No. The AAR requirement applies only to planned drills, not actual emergencies.,
+          "Yes. EM.04.01.01 requires after-action reviews following both drills and actual emergency events.,
+          "Yes. An after-action review is only required if the power failure lasted longer than six hours.,
+          "No. Only if patient care was affected during the outage.",
         ],
         correctIndex: 1,
         explanation: "EM.04.01.01 requires after-action reviews after both emergency exercises AND actual emergency events. A real power failure activates the EOP's utilities critical area. It must be reviewed to identify how your facility responded, whether backup systems worked as planned, and what should be improved before the next event.",
