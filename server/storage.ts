@@ -618,6 +618,15 @@ export async function ensureTablesExist() {
     `);
     console.log("Ensured all database tables exist");
     await seedFacilities(client);
+    // One-time adoption: assign orphan users (null facility_id) to the matching known facility.
+    // Covers users who registered before facility codes were required.
+    await client.query(`
+      UPDATE users SET facility_id = f.id
+      FROM facilities f
+      WHERE users.facility_id IS NULL
+        AND f.code = 'SITE486045'
+        AND (users.organization_type = 'hospital' OR users.organization_type IS NULL)
+    `);
     await seedRoles(client);
     await seedLeadershipCodes(client);
     await seedComplianceItems(client);
