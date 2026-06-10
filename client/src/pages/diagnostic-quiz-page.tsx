@@ -74,7 +74,6 @@ export default function DiagnosticQuizPage() {
   const [showAllQuestions, setShowAllQuestions] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [generateError, setGenerateError] = useState(false);
-  const generateTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const { data: pastResults } = useQuery<RichDiagnosticResult[]>({
     queryKey: ["/api/diagnostic/results"],
@@ -156,11 +155,8 @@ export default function DiagnosticQuizPage() {
   const startFresh = async () => {
     setGenerateError(false);
     setPhase("generating");
-    if (generateTimerRef.current) clearTimeout(generateTimerRef.current);
-    generateTimerRef.current = setTimeout(() => setGenerateError(true), 40_000);
     try {
       const qs = await fetchQuestions();
-      if (generateTimerRef.current) clearTimeout(generateTimerRef.current);
       setQuestions(qs);
       setCurrentQ(0);
       setAnswers(new Array(qs.length).fill(null));
@@ -173,8 +169,8 @@ export default function DiagnosticQuizPage() {
         shuffleMaps: buildShuffleMaps(qs),
       });
     } catch {
-      if (generateTimerRef.current) clearTimeout(generateTimerRef.current);
       setGenerateError(true);
+      setPhase("intro");
     }
   };
 
@@ -318,11 +314,11 @@ export default function DiagnosticQuizPage() {
         ) : (
           <>
             <Loader2 size={32} className="animate-spin text-teal-500 mb-4" />
-            <h2 className="text-xl font-bold text-teal-700 dark:text-teal-300 mb-2">Generating your quiz…</h2>
+            <h2 className="text-xl font-bold text-teal-700 dark:text-teal-300 mb-2">Preparing your quiz…</h2>
             <p className="text-sm text-muted-foreground text-center max-w-xs mb-6">
-              AI is writing a fresh set of questions tailored to your compliance role. This usually takes 15–20 seconds.
+              Loading your questions. This only takes a moment.
             </p>
-            <Button variant="ghost" className="text-muted-foreground" onClick={() => { if (generateTimerRef.current) clearTimeout(generateTimerRef.current); setPhase("intro"); setGenerateError(false); }} data-testid="button-cancel-generating">
+            <Button variant="ghost" className="text-muted-foreground" onClick={() => { setPhase("intro"); setGenerateError(false); }} data-testid="button-cancel-generating">
               Cancel
             </Button>
           </>
