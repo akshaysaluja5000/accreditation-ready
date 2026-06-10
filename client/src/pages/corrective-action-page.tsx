@@ -1341,7 +1341,7 @@ export default function CorrectiveActionPage() {
   const showFacility = isSuperAdmin && dataMode !== "demo";
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col pb-20">
 
       {/* ── Header ── */}
       <div className="sticky top-[58px] z-40 border-b border-border bg-background/95 backdrop-blur-md">

@@ -217,7 +217,7 @@ export default function ContentIntelligencePage() {
   const canUpload = !!selectedItemId && docName.trim().length > 0;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-20">
       <div className="max-w-3xl mx-auto px-4 py-8 space-y-8">
 
         {/* Header */}

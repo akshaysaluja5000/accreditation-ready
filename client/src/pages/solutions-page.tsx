@@ -128,7 +128,7 @@ export function SolutionsPage({ slug }: { slug: keyof typeof SOLUTIONS }) {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-background pb-20">
       <div className="relative">
         <header className="relative z-10 sticky top-0 border-b border-border bg-background/95 backdrop-blur-md">
           <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-4">

@@ -167,7 +167,7 @@ export default function MyLogEntriesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-20">
       <div className="max-w-2xl mx-auto px-4 py-8 space-y-6">
 
         {/* Header */}

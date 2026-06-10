@@ -84,7 +84,7 @@ export default function ExecutiveComplianceConsolePage() {
   const comingSoonCount = AGENTS.filter(a => a.status === "coming-soon").length;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-20">
       {/* Header */}
       <div className="border-b border-border bg-card/60">
         <div className="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between gap-4">

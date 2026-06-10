@@ -128,7 +128,7 @@ function ChapterView({ chapter, onBack }: { chapter: HandbookChapter; onBack: ()
   const [showQuickRef, setShowQuickRef] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col pb-20">
       <div className="sticky top-[58px] z-40 border-b border-border bg-background/95 backdrop-blur-md">
         <div className="max-w-2xl mx-auto px-4 py-3 flex items-center gap-3">
           <Button variant="ghost" size="icon" onClick={onBack} data-testid="button-back-handbook">
@@ -319,7 +319,7 @@ export default function HandbookPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col pb-20">
       {/* Lightbox overlay */}
       <AnimatePresence>
         {lightboxSrc && (

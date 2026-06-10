@@ -529,7 +529,7 @@ export default function ExecutiveReportPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col print:bg-white print:text-black">
+    <div className="min-h-screen flex flex-col pb-20 print:bg-white print:text-black print:pb-0">
 
       {/* ── Header ── */}
       <div className="sticky top-[58px] z-40 border-b border-border print:hidden bg-background/95 backdrop-blur-md">

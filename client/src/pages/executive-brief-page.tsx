@@ -278,7 +278,7 @@ export default function ExecutiveBriefPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-20">
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-8 print:px-0 print:py-0 print:max-w-none">
 
         {/* Header - hidden when printing */}
