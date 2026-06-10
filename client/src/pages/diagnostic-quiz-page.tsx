@@ -308,7 +308,7 @@ export default function DiagnosticQuizPage() {
                 <span className="font-bold text-sm text-teal-700 dark:text-teal-300">You have a saved quiz in progress</span>
               </div>
               <p className="text-sm text-muted-foreground mb-4">
-                Question {(savedSession?.currentQuestion || 0) + 1} of {savedSession?.questions?.length || 15} - {savedSession?.answers?.length || 0} answers saved
+                Question {(savedSession?.currentQuestion || 0) + 1} of {savedSession?.questions?.length || 25} - {savedSession?.answers?.length || 0} answers saved
               </p>
               <div className="flex gap-3">
                 <Button className="flex-1 h-11 font-bold bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white rounded-xl" onClick={resumeSession} data-testid="button-resume-diagnostic">
