@@ -502,6 +502,20 @@ export async function registerRoutes(
       }
       const facilityId: number = facility.id;
 
+      // Auto-infer org type from existing facility members so new users always
+      // land in the same bucket as their teammates regardless of what they
+      // selected in the dropdown.
+      let effectiveOrgType = normalizedOrgType;
+      try {
+        const facilityOrgResult = await featPool.query<{ organization_type: string }>(
+          `SELECT organization_type FROM users WHERE facility_id = $1 AND organization_type IS NOT NULL GROUP BY organization_type ORDER BY COUNT(*) DESC LIMIT 1`,
+          [facilityId]
+        );
+        if (facilityOrgResult.rows.length > 0) {
+          effectiveOrgType = facilityOrgResult.rows[0].organization_type as typeof normalizedOrgType;
+        }
+      } catch (_e) { /* fall through to user-supplied value */ }
+
       const hashedPassword = await hashPassword(password);
       const isFirstUser = (await storage.getAllUsers()).length === 0;
       let user = await storage.createUser({
@@ -513,7 +527,7 @@ export async function registerRoutes(
       });
 
       user = (await storage.updateUser(user.id, {
-        organizationType: normalizedOrgType,
+        organizationType: effectiveOrgType,
         ...(isFirstUser ? { isAdmin: true } : {}),
       }))!;
 
@@ -1311,7 +1325,6 @@ export async function registerRoutes(
     try {
       const currentUser = req.user as User;
       const facilityFilter = getFacilityFilter(currentUser);
-      const orgTypeFilter = getOrganizationTypeFilter(currentUser);
       const period = (req.query.period as string) || "all";
 
       const [hospitalLvls, ascLvls, dnvLvls] = await Promise.all([
@@ -1327,7 +1340,10 @@ export async function registerRoutes(
 
       const LEADERBOARD_EXCLUDED = new Set(["akshaysaluja", "rsaluja"]);
       const allUsersRaw = await storage.getAllUsers();
-      const allUsers = allUsersRaw.filter((u) => facilityFilter(u) && orgTypeFilter(u) && !LEADERBOARD_EXCLUDED.has(u.username));
+      // Facility filter already scopes to the same team; org type filter is NOT
+      // applied here so teammates who accidentally chose a different org type on
+      // registration still appear on the leaderboard.
+      const allUsers = allUsersRaw.filter((u) => facilityFilter(u) && !LEADERBOARD_EXCLUDED.has(u.username));
       const userIds = allUsers.map(u => u.id);
       const [allStreaks, allSessions, allProgressFlat] = await Promise.all([
         storage.getStreaksForUsers(userIds),

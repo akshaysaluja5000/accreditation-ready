@@ -627,6 +627,28 @@ export async function ensureTablesExist() {
         AND f.code = 'SITE486045'
         AND (users.organization_type = 'hospital' OR users.organization_type IS NULL)
     `);
+    // Normalize org type within each facility: update any user whose org type
+    // differs from the majority in their facility so that teammates always see
+    // each other on the leaderboard and in admin views.
+    await client.query(`
+      WITH facility_majority AS (
+        SELECT DISTINCT ON (facility_id)
+          facility_id,
+          organization_type
+        FROM (
+          SELECT facility_id, organization_type, COUNT(*) AS cnt
+          FROM users
+          WHERE facility_id IS NOT NULL AND organization_type IS NOT NULL
+          GROUP BY facility_id, organization_type
+        ) ranked
+        ORDER BY facility_id, cnt DESC, organization_type
+      )
+      UPDATE users
+      SET organization_type = fm.organization_type
+      FROM facility_majority fm
+      WHERE users.facility_id = fm.facility_id
+        AND users.organization_type IS DISTINCT FROM fm.organization_type
+    `);
     await seedRoles(client);
     await seedLeadershipCodes(client);
     await seedComplianceItems(client);
