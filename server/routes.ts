@@ -5,7 +5,7 @@ import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
 import { scrypt, randomBytes, timingSafeEqual } from "crypto";
 import { promisify } from "util";
-import { storage } from "./storage";
+import { storage, pool as dbPool } from "./storage";
 import { format } from "date-fns";
 import connectPgSimple from "connect-pg-simple";
 import { z } from "zod";
@@ -1415,25 +1415,34 @@ export async function registerRoutes(
         storage.getProgressForUsers(userIds),
       ]);
 
-      // Always compute XP from daily_activity — the only table that reliably accumulates
-      // all quiz XP without being wiped. streak.totalXp is NOT reliable (startup sync can reset it).
+      // Use points_ledger as the single source of truth for XP — same source as the
+      // Leadership Console (Staff Engagement), ensuring both surfaces always agree.
+      // daily_activity.xp_earned is unreliable: it uses client-submitted values at a
+      // different scale (xpReward ~15) vs points_ledger (POINT_VALUES.question_correct=20)
+      // and has incomplete historical coverage.
       const now = new Date();
-      let startDate: string;
+      let periodStartTs: string;
       if (period === "daily") {
-        startDate = toCentralDate(now);
+        periodStartTs = toCentralDate(now) + "T00:00:00";
       } else if (period === "weekly") {
         const d = new Date(now);
         d.setDate(d.getDate() - 6);
-        startDate = d.toISOString().slice(0, 10);
+        periodStartTs = d.toISOString().slice(0, 10) + "T00:00:00";
       } else if (period === "monthly") {
-        startDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-01`;
+        periodStartTs = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-01T00:00:00`;
       } else {
-        startDate = "2000-01-01"; // all-time: include every row
+        periodStartTs = "2000-01-01T00:00:00"; // all-time
       }
-      const activities = await storage.getDailyActivitySince(startDate);
+      const { rows: plRows } = await dbPool.query<{ user_id: number; total_points: number }>(
+        `SELECT user_id, COALESCE(SUM(points_awarded), 0)::int AS total_points
+         FROM points_ledger
+         WHERE created_at >= $1
+         GROUP BY user_id`,
+        [periodStartTs],
+      );
       const periodActivityByUser = new Map<number, number>();
-      for (const a of activities) {
-        periodActivityByUser.set(a.userId, (periodActivityByUser.get(a.userId) || 0) + (a.xpEarned || 0));
+      for (const r of plRows) {
+        periodActivityByUser.set(r.user_id, r.total_points);
       }
 
       const streakMap = new Map(allStreaks.map((s) => [s.userId, s]));

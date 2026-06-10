@@ -649,14 +649,14 @@ export async function ensureTablesExist() {
       WHERE users.facility_id = fm.facility_id
         AND users.organization_type IS DISTINCT FROM fm.organization_type
     `);
-    // Sync total_xp from daily_activity (the authoritative quiz XP accumulator).
-    // daily_activity is written on every quiz answer and never wiped.
-    // points_ledger only contains badge/event XP, NOT quiz XP — do NOT use it here.
+    // Sync total_xp from points_ledger — the single source of truth for all earned points.
+    // points_ledger is written server-side for every quiz answer, flashcard review, etc.
+    // This matches the Leadership Console (Staff Engagement) so both surfaces always agree.
     await client.query(`
       UPDATE user_streaks SET total_xp = (
-        SELECT COALESCE(SUM(da.xp_earned), 0)
-        FROM daily_activity da
-        WHERE da.user_id = user_streaks.user_id
+        SELECT COALESCE(SUM(pl.points_awarded), 0)
+        FROM points_ledger pl
+        WHERE pl.user_id = user_streaks.user_id
       )
     `);
     await seedRoles(client);
@@ -1260,14 +1260,14 @@ export class DatabaseStorage implements IStorage {
       result = created;
     }
 
-    // Keep user_streaks.total_xp in sync with the daily_activity sum (authoritative XP source).
-    // This ensures the streak row always reflects reality, not just at server restart.
+    // Keep user_streaks.total_xp in sync with points_ledger (single source of truth).
+    // points_ledger is written server-side and matches the Leadership Console display.
     if (xpEarned > 0) {
       await pool.query(
         `INSERT INTO user_streaks (user_id, total_xp, current_streak, longest_streak)
-         VALUES ($1, (SELECT COALESCE(SUM(xp_earned),0) FROM daily_activity WHERE user_id=$1), 0, 0)
+         VALUES ($1, (SELECT COALESCE(SUM(points_awarded),0) FROM points_ledger WHERE user_id=$1), 0, 0)
          ON CONFLICT (user_id) DO UPDATE
-         SET total_xp = (SELECT COALESCE(SUM(xp_earned),0) FROM daily_activity WHERE user_id=$1)`,
+         SET total_xp = (SELECT COALESCE(SUM(points_awarded),0) FROM points_ledger WHERE user_id=$1)`,
         [userId],
       );
     }
