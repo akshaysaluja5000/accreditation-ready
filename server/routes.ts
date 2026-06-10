@@ -245,6 +245,25 @@ function requireMfa(req: Request, res: Response, next: NextFunction) {
   next();
 }
 
+// Wall Tracker: director/ceo require MFA; admin+ bypass MFA; learner/educator blocked entirely
+function requireWallChartAccess(req: Request, res: Response, next: NextFunction) {
+  if (!req.isAuthenticated()) return res.status(401).json({ message: "Not authenticated" });
+  const rank = LEADERSHIP_RANK[getEffectiveLeadershipRole(req.user!)] ?? 0;
+  if (rank < LEADERSHIP_RANK["director"]) {
+    return res.status(403).json({ message: "Access restricted to compliance officers and above." });
+  }
+  if (rank < LEADERSHIP_RANK["admin"]) {
+    // director or ceo — require MFA
+    if (!req.user!.mfaEnabled) {
+      return res.status(403).json({ mfaSetupRequired: true, message: "MFA setup is required to access the Wall Tracker." });
+    }
+    if (!req.session.mfaVerified) {
+      return res.status(403).json({ mfaRequired: true, message: "MFA verification required." });
+    }
+  }
+  next();
+}
+
 async function userCanAccessLevel(userId: number, levelId: string): Promise<boolean> {
   const user = await storage.getUser(userId);
   if (!user) return false;
@@ -4682,7 +4701,7 @@ Rules:
   });
 
   // ── Wall Chart (item-level status, no task join) ──────────────────────────
-  app.get("/api/wall-chart/items", requireAuth, async (_req: Request, res: Response) => {
+  app.get("/api/wall-chart/items", requireWallChartAccess, async (_req: Request, res: Response) => {
     try {
       const items = await storage.getWallChartItems();
       res.json(items);
@@ -4692,7 +4711,7 @@ Rules:
     }
   });
 
-  app.get("/api/wall-chart/summary", requireAuth, async (_req: Request, res: Response) => {
+  app.get("/api/wall-chart/summary", requireWallChartAccess, async (_req: Request, res: Response) => {
     try {
       const items = await storage.getWallChartItems();
       const now = new Date(); now.setHours(0, 0, 0, 0);
@@ -4712,7 +4731,7 @@ Rules:
     }
   });
 
-  app.post("/api/wall-chart/:id/mark-posted", requireAuth, async (req: Request, res: Response) => {
+  app.post("/api/wall-chart/:id/mark-posted", requireWallChartAccess, async (req: Request, res: Response) => {
     try {
       const itemId = parseInt(req.params.id);
       if (isNaN(itemId)) return res.status(400).json({ error: "Invalid item id." });
@@ -4730,7 +4749,7 @@ Rules:
     }
   });
 
-  app.get("/api/compliance/wall-chart", requireAuth, async (req: Request, res: Response) => {
+  app.get("/api/compliance/wall-chart", requireWallChartAccess, async (req: Request, res: Response) => {
     try {
       const user = req.user as any;
       const facilityId: number = user.facilityId ?? 0;
@@ -4742,7 +4761,7 @@ Rules:
     }
   });
 
-  app.post("/api/compliance/wall-chart/mark", requireAuth, async (req: Request, res: Response) => {
+  app.post("/api/compliance/wall-chart/mark", requireWallChartAccess, async (req: Request, res: Response) => {
     try {
       const user = req.user as any;
       const facilityId: number = user.facilityId ?? 0;

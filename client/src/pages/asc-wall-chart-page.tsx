@@ -4,7 +4,7 @@ import { useQuery, useMutation } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import {
   ArrowLeft, CheckCircle2, AlertTriangle, XCircle, HelpCircle,
-  Calendar, User, RefreshCw, ClipboardCheck, Pin,
+  Calendar, User, RefreshCw, ClipboardCheck, Pin, ShieldOff,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,6 +12,11 @@ import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest, queryClient } from "@/lib/queryClient";
+import { useAuth } from "@/lib/auth";
+
+const LEADERSHIP_RANK: Record<string, number> = {
+  learner: 0, educator: 1, director: 2, ceo: 3, admin: 4, super_admin: 5,
+};
 
 type PostingStatus = "current" | "expiring" | "expired" | "missing";
 
@@ -61,6 +66,7 @@ function fmtPostedDate(val: string | null | undefined): string {
 export default function AscWallChartPage() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
+  const { user } = useAuth();
   const [activeItem, setActiveItem] = useState<WallChartItem | null>(null);
   const [nextDueDate, setNextDueDate] = useState(() => {
     const d = new Date();
@@ -68,6 +74,28 @@ export default function AscWallChartPage() {
     return d.toISOString().slice(0, 10);
   });
   const [postedBy, setPostedBy] = useState("");
+
+  const userRank = LEADERSHIP_RANK[user?.leadershipRole ?? "learner"] ?? 0;
+  const effectiveRank = (user?.isAdmin && userRank < LEADERSHIP_RANK["admin"]) ? LEADERSHIP_RANK["admin"] : userRank;
+
+  if (effectiveRank < LEADERSHIP_RANK["director"]) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center p-6">
+        <div className="flex flex-col items-center gap-4 text-center max-w-sm">
+          <div className="w-16 h-16 rounded-full bg-destructive/10 flex items-center justify-center">
+            <ShieldOff className="w-8 h-8 text-destructive" />
+          </div>
+          <h2 className="text-xl font-black">Access Restricted</h2>
+          <p className="text-sm text-muted-foreground">
+            The Wall Tracker is only available to compliance officers and above. Contact your facility administrator if you need access.
+          </p>
+          <Button variant="outline" onClick={() => setLocation("/dashboard")} data-testid="btn-wall-chart-back-home">
+            Back to Dashboard
+          </Button>
+        </div>
+      </div>
+    );
+  }
 
   const { data: items = [], isLoading } = useQuery<WallChartItem[]>({
     queryKey: ["/api/wall-chart/items"],
