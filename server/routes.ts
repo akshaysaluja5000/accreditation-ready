@@ -2825,7 +2825,9 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
   }
 
   function requireAsc(req: any, res: any, next: any) {
-    if (req.user?.organizationType !== "asc") {
+    const u = req.user as User | undefined;
+    const isAdminOrAbove = u?.isAdmin || ["admin", "super_admin"].includes(u?.leadershipRole ?? "");
+    if (!isAdminOrAbove && u?.organizationType !== "asc") {
       return res.status(403).json({ message: "ASC module access required" });
     }
     next();
@@ -2958,7 +2960,9 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
   });
 
   function requireDnv(req: any, res: any, next: any) {
-    if (req.user?.organizationType !== "dnv") {
+    const u = req.user as User | undefined;
+    const isAdminOrAbove = u?.isAdmin || ["admin", "super_admin"].includes(u?.leadershipRole ?? "");
+    if (!isAdminOrAbove && u?.organizationType !== "dnv") {
       return res.status(403).json({ message: "DNV NIAHO module access required" });
     }
     next();
@@ -3163,12 +3167,14 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
   });
 
   app.get("/api/mastery/eligibility", requireAuth, async (req, res) => {
-    const moduleLevels = await getModuleLevelsForUser(req.user!.id);
-    if ((req.user! as User).leadershipRole === "super_admin") {
-      return res.json({ eligible: true, completedSections: moduleLevels.map(l => l.id), missingSections: [], isAdmin: true });
+    const u = req.user! as User;
+    const isAdminOrAbove = u.isAdmin || ["admin", "super_admin"].includes(u.leadershipRole ?? "");
+    const moduleLevels = await getModuleLevelsForUser(u.id);
+    if (isAdminOrAbove) {
+      return res.json({ eligible: true, completedSections: moduleLevels.map(l => l.id), missingSections: [], completedCount: moduleLevels.length, levelsRequired: 5, isAdmin: true });
     }
-    const progress = await storage.getProgress(req.user!.id);
-    const assigned = await storage.getUserAssignedChapters(req.user!.id);
+    const progress = await storage.getProgress(u.id);
+    const assigned = await storage.getUserAssignedChapters(u.id);
     const requiredLevels = assigned.length > 0 ? moduleLevels.filter(l => assigned.includes(l.id)) : moduleLevels;
     const MIN_QUESTIONS_PER_SECTION = 10;
     const completedSections: string[] = [];
@@ -3190,11 +3196,12 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
     if (!answers || !Array.isArray(answers)) {
       return res.status(400).json({ message: "Answers required" });
     }
-    const isSuperAdmin = (req.user! as User).leadershipRole === "super_admin";
-    if (!isSuperAdmin) {
-      const progress = await storage.getProgress(req.user!.id);
-      const assignedSubmit = await storage.getUserAssignedChapters(req.user!.id);
-      const moduleLevelsSubmit = await getModuleLevelsForUser(req.user!.id);
+    const submitUser = req.user! as User;
+    const isAdminOrAbove = submitUser.isAdmin || ["admin", "super_admin"].includes(submitUser.leadershipRole ?? "");
+    if (!isAdminOrAbove) {
+      const progress = await storage.getProgress(submitUser.id);
+      const assignedSubmit = await storage.getUserAssignedChapters(submitUser.id);
+      const moduleLevelsSubmit = await getModuleLevelsForUser(submitUser.id);
       const requiredLevels = assignedSubmit.length > 0 ? moduleLevelsSubmit.filter(l => assignedSubmit.includes(l.id)) : moduleLevelsSubmit;
       const MIN_QUESTIONS_PER_SECTION = 10;
       const LEVELS_REQUIRED = 5;
