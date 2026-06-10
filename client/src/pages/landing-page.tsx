@@ -215,7 +215,7 @@ export default function LandingPage() {
                 </h2>
               </div>
               <p className="text-base text-muted-foreground leading-relaxed max-w-3xl" data-testid="text-solution-body">
-                Accreditation <em>Ready</em> converts accreditation standards into short, role-based training sessions staff complete in 10–15 minutes. Quality leaders get a live readiness dashboard across every unit.
+                Accreditation <em>Ready</em> converts accreditation standards into short, role-based training sessions staff complete in 10–15 minutes. Leaders get a live readiness dashboard across every unit.
               </p>
             </motion.div>
           </div>
