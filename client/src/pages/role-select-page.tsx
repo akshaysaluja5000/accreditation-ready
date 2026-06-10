@@ -380,6 +380,25 @@ export default function RoleSelectPage() {
     setStep(2);
   };
 
+  const handleFacilitySelect = async (m: FacilityType) => {
+    setPendingFacility(m);
+    if (m !== facilityType) {
+      try {
+        await switchFacilityMutation.mutateAsync(m);
+      } catch {
+        return;
+      }
+    }
+    if (m === "asc") {
+      try { sessionStorage.removeItem("mosh_force_role_select"); } catch {}
+      try { sessionStorage.removeItem(SELECTION_KEY); } catch {}
+      try { sessionStorage.removeItem("mosh_intended_facility"); } catch {}
+      window.location.assign("/");
+      return;
+    }
+    setStep(2);
+  };
+
   const FACILITY_ACCREDITOR: Record<FacilityType, string> = {
     hospital: "The Joint Commission",
     asc: "AAAHC",
@@ -495,7 +514,7 @@ export default function RoleSelectPage() {
                     aria-checked={isSelected}
                     aria-label={`${MODULE_LABELS[m]}. ${FACILITY_DESCRIPTIONS[m]}`}
                     data-testid={`card-facility-${m}`}
-                    onClick={() => setPendingFacility(m)}
+                    onClick={() => handleFacilitySelect(m)}
                     className={`group relative text-left rounded-xl border-2 bg-card p-5 transition-all hover-elevate active-elevate-2 ${
                       isSelected
                         ? "border-primary ring-2 ring-primary/20 shadow-sm bg-primary/5"

@@ -13,6 +13,7 @@ const HIDE_TABBAR_PREFIXES = [
   "/play/", "/study/", "/diagnostic", "/mastery",
   "/asc-pretest", "/asc-posttest", "/dnv-pretest", "/dnv-posttest",
   "/deep-dive", "/mfa-setup", "/mfa-verify", "/flashcard-review",
+  "/role-select",
 ];
 
 export function AppShell({ children }: AppShellProps) {
