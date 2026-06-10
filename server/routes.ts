@@ -1272,8 +1272,9 @@ export async function registerRoutes(
         ["dnv", new Set(dnvLvls.map((l) => l.id))],
       ]);
 
+      const LEADERBOARD_EXCLUDED = new Set(["akshaysaluja", "rsaluja"]);
       const allUsersRaw = await storage.getAllUsers();
-      const allUsers = allUsersRaw.filter((u) => facilityFilter(u) && orgTypeFilter(u));
+      const allUsers = allUsersRaw.filter((u) => facilityFilter(u) && orgTypeFilter(u) && !LEADERBOARD_EXCLUDED.has(u.username));
       const userIds = allUsers.map(u => u.id);
       const [allStreaks, allSessions, allProgressFlat] = await Promise.all([
         storage.getStreaksForUsers(userIds),
@@ -5414,7 +5415,9 @@ Return ONLY valid JSON, no other text:
       if (req.query.start) startDate = new Date(req.query.start as string);
       if (req.query.end)   endDate   = new Date(req.query.end   as string);
 
-      const lb = await storage.getFacilityLeaderboard(facilityId, 50, startDate, endDate);
+      const LEADERBOARD_EXCLUDED = new Set(["akshaysaluja", "rsaluja"]);
+      const lb = (await storage.getFacilityLeaderboard(facilityId, 50, startDate, endDate))
+        .filter((u: any) => !LEADERBOARD_EXCLUDED.has(u.username));
       res.json(lb);
     } catch (err) {
       console.error("GET /api/points/leaderboard:", err);
