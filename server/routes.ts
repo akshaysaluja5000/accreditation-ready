@@ -19,11 +19,20 @@ import { generateSecret as totpGenerateSecret, verifyToken as totpVerify, totpUr
 import QRCode from "qrcode";
 import multer from "multer";
 import mammoth from "mammoth";
+import rateLimit from "express-rate-limit";
 import { createRequire } from "module";
 const _require = createRequire(import.meta.url);
 const pdfParse = _require("pdf-parse") as (buf: Buffer) => Promise<{ text: string }>;
 
 const facilityCodeCache: Record<string, { row: Record<string, unknown>; expires: number }> = {};
+
+const registrationLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 50,
+  message: { error: "Too many registration attempts. Please wait a moment and try again." },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
 
 async function getFacilityByCode(db: typeof featPool, code: string) {
   const cached = facilityCodeCache[code];
@@ -444,7 +453,7 @@ export async function registerRoutes(
     }
   });
 
-  app.post("/api/auth/register", async (req, res) => {
+  app.post("/api/auth/register", registrationLimiter, async (req, res) => {
     try {
       const { firstName, lastName, facilityCode, password, organizationType } = req.body;
       const username = typeof req.body.username === "string" ? req.body.username.trim().toLowerCase() : "";
