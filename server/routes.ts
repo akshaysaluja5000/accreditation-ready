@@ -1415,26 +1415,25 @@ export async function registerRoutes(
         storage.getProgressForUsers(userIds),
       ]);
 
-      // For time-based periods, pull daily_activity since startDate
-      let periodActivityByUser: Map<number, number> | null = null;
-      if (period !== "all") {
-        const now = new Date();
-        let startDate: string;
-        if (period === "daily") {
-          startDate = now.toISOString().slice(0, 10);
-        } else if (period === "weekly") {
-          const d = new Date(now);
-          d.setDate(d.getDate() - 6);
-          startDate = d.toISOString().slice(0, 10);
-        } else {
-          // monthly - start of current month
-          startDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-01`;
-        }
-        const activities = await storage.getDailyActivitySince(startDate);
-        periodActivityByUser = new Map();
-        for (const a of activities) {
-          periodActivityByUser.set(a.userId, (periodActivityByUser.get(a.userId) || 0) + (a.xpEarned || 0));
-        }
+      // Always compute XP from daily_activity — the only table that reliably accumulates
+      // all quiz XP without being wiped. streak.totalXp is NOT reliable (startup sync can reset it).
+      const now = new Date();
+      let startDate: string;
+      if (period === "daily") {
+        startDate = toCentralDate(now);
+      } else if (period === "weekly") {
+        const d = new Date(now);
+        d.setDate(d.getDate() - 6);
+        startDate = d.toISOString().slice(0, 10);
+      } else if (period === "monthly") {
+        startDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-01`;
+      } else {
+        startDate = "2000-01-01"; // all-time: include every row
+      }
+      const activities = await storage.getDailyActivitySince(startDate);
+      const periodActivityByUser = new Map<number, number>();
+      for (const a of activities) {
+        periodActivityByUser.set(a.userId, (periodActivityByUser.get(a.userId) || 0) + (a.xpEarned || 0));
       }
 
       const streakMap = new Map(allStreaks.map((s) => [s.userId, s]));
@@ -1449,10 +1448,9 @@ export async function registerRoutes(
         const userProgress = (progressByUser.get(u.id) || []).filter((p) => moduleLevelIds.has(p.levelId));
 
         const { questionsAnswered, correct, accuracy, levelsCompleted, inProgressSessions } = computeUserActivityStats(userProgress, userSessions);
-        // streak.totalXp is the correct all-time accumulator — it's incremented per correct answer
-        // and survives session deletion (quiz_sessions are deleted after level completion)
-        const allTimeXp = streak?.totalXp ?? 0;
-        const periodXp = periodActivityByUser ? (periodActivityByUser.get(u.id) || 0) : allTimeXp;
+        // Always use daily_activity sum — the authoritative quiz XP source
+        const allTimeXp = periodActivityByUser.get(u.id) || 0;
+        const periodXp = allTimeXp;
 
         return {
           id: u.id,

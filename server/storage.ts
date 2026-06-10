@@ -649,12 +649,14 @@ export async function ensureTablesExist() {
       WHERE users.facility_id = fm.facility_id
         AND users.organization_type IS DISTINCT FROM fm.organization_type
     `);
-    // Merge XP ← points_ledger: sync total_xp so both systems show one number
+    // Sync total_xp from daily_activity (the authoritative quiz XP accumulator).
+    // daily_activity is written on every quiz answer and never wiped.
+    // points_ledger only contains badge/event XP, NOT quiz XP — do NOT use it here.
     await client.query(`
       UPDATE user_streaks SET total_xp = (
-        SELECT COALESCE(SUM(pl.points_awarded), 0)
-        FROM points_ledger pl
-        WHERE pl.user_id = user_streaks.user_id
+        SELECT COALESCE(SUM(da.xp_earned), 0)
+        FROM daily_activity da
+        WHERE da.user_id = user_streaks.user_id
       )
     `);
     await seedRoles(client);
@@ -1238,6 +1240,7 @@ export class DatabaseStorage implements IStorage {
 
   async upsertDailyActivity(userId: number, date: string, questionsAnswered: number, correctAnswers: number, xpEarned: number): Promise<DailyActivity> {
     const existing = await this.getDailyActivity(userId, date);
+    let result: DailyActivity;
 
     if (existing) {
       const [updated] = await db.update(dailyActivity).set({
@@ -1245,17 +1248,31 @@ export class DatabaseStorage implements IStorage {
         correctAnswers: existing.correctAnswers + correctAnswers,
         xpEarned: existing.xpEarned + xpEarned,
       }).where(eq(dailyActivity.id, existing.id)).returning();
-      return updated;
+      result = updated;
+    } else {
+      const [created] = await db.insert(dailyActivity).values({
+        userId,
+        date,
+        questionsAnswered,
+        correctAnswers,
+        xpEarned,
+      }).returning();
+      result = created;
     }
 
-    const [created] = await db.insert(dailyActivity).values({
-      userId,
-      date,
-      questionsAnswered,
-      correctAnswers,
-      xpEarned,
-    }).returning();
-    return created;
+    // Keep user_streaks.total_xp in sync with the daily_activity sum (authoritative XP source).
+    // This ensures the streak row always reflects reality, not just at server restart.
+    if (xpEarned > 0) {
+      await pool.query(
+        `INSERT INTO user_streaks (user_id, total_xp, current_streak, longest_streak)
+         VALUES ($1, (SELECT COALESCE(SUM(xp_earned),0) FROM daily_activity WHERE user_id=$1), 0, 0)
+         ON CONFLICT (user_id) DO UPDATE
+         SET total_xp = (SELECT COALESCE(SUM(xp_earned),0) FROM daily_activity WHERE user_id=$1)`,
+        [userId],
+      );
+    }
+
+    return result;
   }
 
   async getQuizSession(userId: number, levelId: string): Promise<QuizSession | undefined> {
