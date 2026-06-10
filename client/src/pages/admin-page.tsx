@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
-import { ArrowLeft, Users, TrendingUp, Target, BarChart3, Calendar, UserPlus, Shield, ScrollText, FlaskConical, Database, Building2, BookOpen, ShieldCheck, PowerOff, GitCommit } from "lucide-react";
+import { ArrowLeft, Users, TrendingUp, Target, BarChart3, Calendar, UserPlus, Shield, ScrollText, FlaskConical, Database, Building2, BookOpen, ShieldCheck, PowerOff, GitCommit, Trash2, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useAuth } from "@/lib/auth";
@@ -67,6 +67,7 @@ export default function AdminPage() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
   const [dataMode, setDataMode] = useState<"live" | "demo">("live");
+  const [pendingDeleteId, setPendingDeleteId] = useState<number | null>(null);
 
   const { data: liveStats, isLoading } = useQuery<AdminStats>({
     queryKey: ["/api/admin/stats"],
@@ -125,6 +126,27 @@ export default function AdminPage() {
     },
     onError: (err: any) => {
       toast({ title: "Failed to update role", description: err.message, variant: "destructive" });
+    },
+  });
+
+  const callerIsSuperAdmin = (user?.leadershipRole as string) === "super_admin";
+
+  const deleteUserMutation = useMutation({
+    mutationFn: async (userId: number) => {
+      const res = await apiRequest("DELETE", `/api/admin/users/${userId}`);
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.message || "Failed to delete user");
+      }
+    },
+    onSuccess: () => {
+      setPendingDeleteId(null);
+      queryClient.invalidateQueries({ queryKey: ["/api/admin/stats"] });
+      toast({ title: "User deleted" });
+    },
+    onError: (err: any) => {
+      setPendingDeleteId(null);
+      toast({ title: "Delete failed", description: err.message, variant: "destructive" });
     },
   });
 
@@ -289,6 +311,9 @@ export default function AdminPage() {
                   {callerIsAdmin && dataMode === "live" && (
                     <th className="text-left p-3 font-bold text-muted-foreground hidden lg:table-cell">Access Role</th>
                   )}
+                  {callerIsSuperAdmin && dataMode === "live" && (
+                    <th className="p-3" />
+                  )}
                 </tr>
               </thead>
               <tbody>
@@ -334,6 +359,40 @@ export default function AdminPage() {
                               <option key={r} value={r}>{LEADERSHIP_LABELS[r as LeadershipRole]}</option>
                             ))}
                           </select>
+                        </td>
+                      )}
+                      {callerIsSuperAdmin && dataMode === "live" && (
+                        <td className="p-3 text-right">
+                          {pendingDeleteId === u.id ? (
+                            <div className="flex items-center justify-end gap-1.5">
+                              <AlertCircle size={13} className="text-destructive shrink-0" />
+                              <span className="text-xs text-destructive font-semibold whitespace-nowrap">Sure?</span>
+                              <button
+                                className="text-xs font-bold text-destructive border border-destructive/40 rounded px-2 py-0.5 hover:bg-destructive hover:text-white transition-colors"
+                                onClick={() => deleteUserMutation.mutate(u.id)}
+                                disabled={deleteUserMutation.isPending}
+                                data-testid={`button-confirm-delete-${u.id}`}
+                              >
+                                {deleteUserMutation.isPending ? "…" : "Yes"}
+                              </button>
+                              <button
+                                className="text-xs font-semibold text-muted-foreground border border-border rounded px-2 py-0.5 hover:bg-muted transition-colors"
+                                onClick={() => setPendingDeleteId(null)}
+                                data-testid={`button-cancel-delete-${u.id}`}
+                              >
+                                No
+                              </button>
+                            </div>
+                          ) : (
+                            <button
+                              className="p-1.5 rounded text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors"
+                              onClick={() => setPendingDeleteId(u.id)}
+                              data-testid={`button-delete-${u.id}`}
+                              title={`Delete ${u.username}`}
+                            >
+                              <Trash2 size={14} />
+                            </button>
+                          )}
                         </td>
                       )}
                     </tr>

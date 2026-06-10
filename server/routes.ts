@@ -794,6 +794,48 @@ export async function registerRoutes(
     }
   });
 
+  app.delete("/api/admin/users/:id", requireAuth, requireLeadershipRole("super_admin"), async (req, res) => {
+    try {
+      const targetId = parseInt(String(req.params.id), 10);
+      if (Number.isNaN(targetId)) return res.status(400).json({ message: "Invalid user id" });
+      const caller = req.user as User;
+      if (caller.id === targetId) return res.status(400).json({ message: "Cannot delete your own account" });
+      const target = await storage.getUser(targetId);
+      if (!target) return res.status(404).json({ message: "User not found" });
+      if ((target.leadershipRole as string) === "super_admin") {
+        return res.status(403).json({ message: "Cannot delete a super_admin account" });
+      }
+      const client = await featPool.connect();
+      try {
+        await client.query("BEGIN");
+        for (const table of [
+          "rate_limit_events", "staff_training_alerts", "flashcard_reviews",
+          "risk_assessments", "points_ledger", "team_members",
+          "dnv_posttest_results", "dnv_pretest_results",
+          "asc_posttest_results", "asc_pretest_results",
+          "mastery_sessions", "mastery_results",
+          "diagnostic_sessions", "diagnostic_results",
+          "quiz_sessions", "daily_activity", "user_streaks", "user_progress",
+        ]) {
+          await client.query(`DELETE FROM ${table} WHERE user_id = $1`, [targetId]);
+        }
+        await client.query("UPDATE audit_logs SET user_id = NULL WHERE user_id = $1", [targetId]);
+        await client.query("UPDATE corrective_action_plans SET created_by_user_id = NULL WHERE created_by_user_id = $1", [targetId]);
+        await client.query("DELETE FROM users WHERE id = $1", [targetId]);
+        await client.query("COMMIT");
+      } catch (err) {
+        await client.query("ROLLBACK");
+        throw err;
+      } finally {
+        client.release();
+      }
+      res.json({ ok: true });
+    } catch (err: any) {
+      console.error("DELETE /api/admin/users/:id error:", err);
+      res.status(500).json({ message: "Failed to delete user" });
+    }
+  });
+
   app.patch("/api/admin/users/:id/organization-type", requireAdmin, async (req, res) => {
     try {
       const allowed = ["hospital", "asc", "dnv"] as const;
