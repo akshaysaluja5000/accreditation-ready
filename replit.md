@@ -47,6 +47,7 @@ React 18 + TypeScript, Vite, Tailwind CSS, Framer Motion, wouter, TanStack Query
 
 ## User Preferences
 Iterative development; ask before significant architectural changes. Detailed explanations for AI integrations and DB interactions.
+Do NOT send, store, or reference any HEIC or JPEG images attached in Replit (e.g. screenshots shared for bug reports). Use them only for visual context within the session.
 
 ## Gotchas
 - `leadershipRole` defaults to `'learner'`; `isAdmin=true` users get effective rank of `admin`(4). Bypass accounts get `super_admin`(5).
