@@ -68,7 +68,6 @@ export function DailyCalendar({ activities, dailyGoal }: DailyCalendarProps) {
           const dateStr = format(day, "yyyy-MM-dd");
           const activity = activityMap.get(dateStr);
           const isCurrentMonth = day >= monthStart && day <= monthEnd;
-          const goalMet = activity && activity.questionsAnswered >= dailyGoal;
           const hasActivity = activity && activity.questionsAnswered > 0;
           const today = isToday(day);
           const isSelected = selectedDate === dateStr;
@@ -93,18 +92,13 @@ export function DailyCalendar({ activities, dailyGoal }: DailyCalendarProps) {
                   ? "ring-2 ring-primary ring-offset-1 ring-offset-background"
                   : ""
               } ${
-                goalMet
+                hasActivity
                   ? "bg-chart-1/20 text-chart-1 font-bold"
-                  : hasActivity
-                  ? "bg-chart-4/15 text-chart-4 font-bold"
                   : ""
               }`}
               data-testid={`calendar-day-${dateStr}`}
             >
               {format(day, "d")}
-              {goalMet && (
-                <div className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-chart-1" />
-              )}
             </button>
           );
         })}
@@ -163,16 +157,6 @@ export function DailyCalendar({ activities, dailyGoal }: DailyCalendarProps) {
         </div>
       )}
 
-      <div className="flex items-center gap-4 mt-4 justify-center">
-        <div className="flex items-center gap-1.5">
-          <div className="w-3 h-3 rounded-sm bg-chart-1/20" />
-          <span className="text-xs text-muted-foreground">Goal met</span>
-        </div>
-        <div className="flex items-center gap-1.5">
-          <div className="w-3 h-3 rounded-sm bg-chart-4/15" />
-          <span className="text-xs text-muted-foreground">Active</span>
-        </div>
-      </div>
     </div>
   );
 }
