@@ -423,10 +423,18 @@ export default function DashboardPage() {
   const [quizOpen, setQuizOpen] = useState(false);
   const [feedbackOpen, setFeedbackOpen] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState("");
+  const [feedbackCategory, setFeedbackCategory] = useState<string | null>(null);
   const [feedbackSent, setFeedbackSent] = useState(false);
   const [feedbackFiles, setFeedbackFiles] = useState<{ name: string; type: string; data: string; size: number }[]>([]);
   const [feedbackFileError, setFeedbackFileError] = useState<string | null>(null);
   const feedbackFileInputRef = useRef<HTMLInputElement>(null);
+
+  const FEEDBACK_CATEGORIES = [
+    { value: "Technical Issue", label: "Technical Issue", desc: "Login, loading, or errors" },
+    { value: "Content Error", label: "Content Error", desc: "Incorrect information" },
+    { value: "Suggestion", label: "Suggestion", desc: "Feature or improvement idea" },
+    { value: "Other", label: "Other", desc: "Anything else" },
+  ];
 
   const searchRef = useRef<HTMLDivElement>(null);
 
@@ -628,7 +636,7 @@ export default function DashboardPage() {
                 <DropdownMenuItem onClick={() => setLocation("/leaderboard")} data-testid="menu-item-leaderboard">
                   <Trophy size={14} className="mr-2 text-muted-foreground" /> Leaderboard
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => { setFeedbackOpen(true); setFeedbackSent(false); setFeedbackMessage(""); setFeedbackFiles([]); setFeedbackFileError(null); }} data-testid="menu-item-feedback">
+                <DropdownMenuItem onClick={() => { setFeedbackOpen(true); setFeedbackSent(false); setFeedbackMessage(""); setFeedbackCategory(null); setFeedbackFiles([]); setFeedbackFileError(null); }} data-testid="menu-item-feedback">
                   <MessageSquare size={14} className="mr-2 text-muted-foreground" /> Send Feedback
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
@@ -1563,7 +1571,7 @@ export default function DashboardPage() {
 
       {/* Floating Feedback Button */}
       <button
-        onClick={() => { setFeedbackOpen(true); setFeedbackSent(false); setFeedbackMessage(""); setFeedbackFiles([]); setFeedbackFileError(null); }}
+        onClick={() => { setFeedbackOpen(true); setFeedbackSent(false); setFeedbackMessage(""); setFeedbackCategory(null); setFeedbackFiles([]); setFeedbackFileError(null); }}
         data-testid="button-open-feedback"
         className="fixed bottom-20 right-4 z-50 flex items-center gap-2 px-4 py-2.5 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all text-sm font-bold"
       >
@@ -1631,6 +1639,27 @@ export default function DashboardPage() {
                 <div>
                   <h2 className="text-lg font-black">Send Feedback</h2>
                   <p className="text-sm text-muted-foreground mt-1">Questions, concerns, or suggestions — we want to hear it all.</p>
+                </div>
+                {/* Category selector */}
+                <div className="flex flex-col gap-1.5">
+                  <span className="text-xs font-semibold text-muted-foreground">Type of Feedback</span>
+                  <div className="grid grid-cols-2 gap-2">
+                    {FEEDBACK_CATEGORIES.map(cat => (
+                      <button
+                        key={cat.value}
+                        type="button"
+                        onClick={() => setFeedbackCategory(prev => prev === cat.value ? null : cat.value)}
+                        data-testid={`button-feedback-category-${cat.value.toLowerCase().replace(/\s+/g, "-")}`}
+                        className={`flex flex-col items-start px-3 py-2.5 rounded-xl border text-left transition-all text-xs font-semibold
+                          ${feedbackCategory === cat.value
+                            ? "border-primary bg-primary/10 text-primary"
+                            : "border-border bg-background text-foreground hover:border-primary/50 hover:bg-muted/50"}`}
+                      >
+                        <span>{cat.label}</span>
+                        <span className={`font-normal mt-0.5 ${feedbackCategory === cat.value ? "text-primary/70" : "text-muted-foreground"}`}>{cat.desc}</span>
+                      </button>
+                    ))}
+                  </div>
                 </div>
                 <textarea
                   className="w-full min-h-[120px] rounded-xl border border-border bg-background px-4 py-3 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-primary/40 placeholder:text-muted-foreground"
@@ -1707,6 +1736,7 @@ export default function DashboardPage() {
                           credentials: "include",
                           body: JSON.stringify({
                             message: feedbackMessage.trim(),
+                            category: feedbackCategory ?? undefined,
                             attachments: feedbackFiles.map(f => ({ name: f.name, type: f.type, data: f.data })),
                           }),
                         });

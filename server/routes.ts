@@ -1348,10 +1348,12 @@ export async function registerRoutes(
 
   // ── Feedback routes ──────────────────────────────────────────────────────────
   app.post("/api/feedback", requireAuth, async (req, res) => {
-    const { message, attachments } = req.body;
+    const { message, category, attachments } = req.body;
     if (!message || typeof message !== "string" || message.trim().length === 0) {
       return res.status(400).json({ message: "Message is required" });
     }
+    const validCategories = ["Technical Issue", "Content Error", "Suggestion", "Other"];
+    const safeCategory = typeof category === "string" && validCategories.includes(category) ? category : null;
     const validAttachments: { name: string; type: string; data: string }[] = [];
     if (Array.isArray(attachments)) {
       for (const a of attachments) {
@@ -1368,6 +1370,7 @@ export async function registerRoutes(
       lastName: u.lastName,
       facilityId: u.facilityId ?? undefined,
       message: message.trim(),
+      category: safeCategory ?? undefined,
       attachments: validAttachments.length > 0 ? validAttachments : undefined,
     });
 
@@ -1381,8 +1384,8 @@ export async function registerRoutes(
         const emailBody: any = {
           from: "AccreditationReady Feedback <feedback@innovans.ai>",
           to: (process.env.FEEDBACK_RECIPIENTS || "").split(",").map(e => e.trim()).filter(Boolean),
-          subject: `New Feedback from ${displayName}`,
-          text: `From: ${displayName} (@${u.username})\nFacility ID: ${u.facilityId || "N/A"}\n\n${message.trim()}${attachmentLine}`,
+          subject: `[${safeCategory || "Feedback"}] from ${displayName}`,
+          text: `From: ${displayName} (@${u.username})\nFacility ID: ${u.facilityId || "N/A"}\nType: ${safeCategory || "Not specified"}\n\n${message.trim()}${attachmentLine}`,
         };
         if (validAttachments.length > 0) {
           emailBody.attachments = validAttachments.map(a => ({
