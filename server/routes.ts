@@ -23,6 +23,27 @@ import { createRequire } from "module";
 const _require = createRequire(import.meta.url);
 const pdfParse = _require("pdf-parse") as (buf: Buffer) => Promise<{ text: string }>;
 
+const facilityCodeCache: Record<string, { row: Record<string, unknown>; expires: number }> = {};
+
+async function getFacilityByCode(db: typeof featPool, code: string) {
+  const cached = facilityCodeCache[code];
+  if (cached && cached.expires > Date.now()) {
+    return cached.row;
+  }
+  const result = await db.query(
+    "SELECT * FROM facilities WHERE facility_code = $1",
+    [code],
+  );
+  if (result.rows.length > 0) {
+    facilityCodeCache[code] = {
+      row: result.rows[0],
+      expires: Date.now() + 5 * 60 * 1000,
+    };
+    return result.rows[0];
+  }
+  return null;
+}
+
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: { fileSize: 10 * 1024 * 1024 },
@@ -459,12 +480,15 @@ export async function registerRoutes(
         });
       }
       const normalizedCode = trimmedCode.toUpperCase();
-      let facility = await storage.getFacilityByCode(normalizedCode);
+      let facility = await getFacilityByCode(featPool, normalizedCode) as Awaited<ReturnType<typeof storage.getFacilityByCode>>;
       if (!facility) {
         facility = await storage.createFacility({
           code: normalizedCode,
           name: normalizedCode,
         });
+        if (facility) {
+          facilityCodeCache[normalizedCode] = { row: facility as unknown as Record<string, unknown>, expires: Date.now() + 5 * 60 * 1000 };
+        }
       }
       const facilityId: number = facility.id;
 
