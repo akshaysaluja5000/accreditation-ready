@@ -3091,29 +3091,61 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
         return res.status(403).json({ message: "You must complete at least 5 levels before taking the Final Assessment." });
       }
     }
-    const MASTERY_PER_SECTION = 2;
-    const MASTERY_EXTRAS = 3;
-    const assignedChapters = await storage.getUserAssignedChapters(req.user!.id);
-    const allMasteryQ = await storage.getMasteryQuestions();
-    const pool = assignedChapters.length > 0
-      ? allMasteryQ.filter(q => assignedChapters.includes(q.sectionId))
-      : allMasteryQ;
-    let selected = pickRandomPerSection(pool, MASTERY_PER_SECTION);
-    const usedIds = new Set(selected.map(q => q.id));
-    const remaining = pool.filter(q => !usedIds.has(q.id));
-    const shuffledRemaining = shuffleArray([...remaining]);
-    selected = selected.concat(shuffledRemaining.slice(0, MASTERY_EXTRAS));
-    selected = shuffleArray(selected);
-    res.json(selected.map(q => {
-      const { options, shuffleMap } = shuffleQuestionOptions(q);
-      return {
-        id: q.id,
-        sectionId: q.sectionId,
-        question: q.question,
-        options,
-        shuffleMap,
-      };
-    }));
+    const NUM_MASTERY_QUESTIONS = 25;
+    let assignedChapters = await storage.getUserAssignedChapters(req.user!.id);
+    if (assignedChapters.length === 0 && req.user!.roleId) {
+      const dbRole = await storage.getRoleById(req.user!.roleId);
+      if (dbRole) {
+        const roleConfig = ROLE_CONFIGS.find(r => r.id === dbRole.slug);
+        if (roleConfig) assignedChapters = roleConfig.chapters;
+      }
+    }
+    const relevantChapters = assignedChapters.length > 0
+      ? assignedChapters.filter(c => DIAGNOSTIC_CHAPTER_TOPICS[c])
+      : Object.keys(DIAGNOSTIC_CHAPTER_TOPICS).slice(0, 8);
+    const topicList = relevantChapters
+      .map(c => `- ${c}: ${DIAGNOSTIC_CHAPTER_TOPICS[c]}`)
+      .join("\n");
+    const masteryPrompt = `You are writing advanced multiple-choice compliance quiz questions for healthcare professionals taking a final mastery assessment after completing accreditation training. Generate exactly ${NUM_MASTERY_QUESTIONS} high-difficulty scenario-based questions covering these specific topics:\n\n${topicList}\n\nRules:\n- Every question MUST be a complex, realistic clinical or operational scenario — a surveyor finding something, a staff member making a decision under pressure, or a policy gap being tested\n- Each question has exactly 4 answer choices\n- Exactly one choice is correct\n- The other three are plausible, realistic distractors that test deep understanding — not obviously wrong\n- Questions should be harder and more nuanced than a basic quiz — test application and judgment, not just recall\n- Distribute questions across the provided topics as evenly as possible\n- The sectionId field must be EXACTLY one of these keys: ${relevantChapters.join(", ")}\n- Do NOT reuse questions from any prior quiz or diagnostic — generate entirely fresh scenarios\n\nReturn ONLY a valid JSON array with exactly ${NUM_MASTERY_QUESTIONS} items. Each item must have this exact shape:\n{"id":"ai-fa-N","sectionId":"<topic key>","question":"...","options":["...","...","...","..."],"correctIndex":0,"explanation":"..."}\n\nNo markdown fences, no explanation, no extra text - just the raw JSON array starting with [ and ending with ].`;
+    try {
+      const message = await callAnthropicWithRetry({
+        model: "claude-haiku-4-5",
+        max_tokens: 6000,
+        messages: [{ role: "user", content: masteryPrompt }],
+      });
+      const raw = message.content[0]?.type === "text" ? message.content[0].text.trim() : "[]";
+      const jsonText = raw.replace(/^```(?:json)?\s*/i, "").replace(/\s*```\s*$/, "").trim();
+      const generatedRaw = safeJsonParse<{ id: string; sectionId: string; question: string; options: string[]; correctIndex: number; explanation?: string }[] | null>(jsonText, null);
+      if (!generatedRaw) {
+        console.error("[Mastery AI] JSON parse failed:", jsonText.slice(0, 200));
+        return res.status(500).json({ message: "Failed to parse AI-generated questions" });
+      }
+      const generated = generatedRaw.filter(q =>
+        q.id && q.sectionId && q.question &&
+        Array.isArray(q.options) && q.options.length === 4 &&
+        typeof q.correctIndex === "number" && q.correctIndex >= 0 && q.correctIndex < 4
+      );
+      if (generated.length === 0) {
+        return res.status(500).json({ message: "AI returned no valid questions" });
+      }
+      const shuffleMaps: Record<string, number[]> = {};
+      const clientQuestions = generated.map(q => {
+        const { options, shuffleMap } = shuffleQuestionOptions(q);
+        shuffleMaps[q.id] = shuffleMap;
+        return { id: q.id, sectionId: q.sectionId, question: q.question, options, shuffleMap };
+      });
+      await storage.upsertMasterySession(req.user!.id, {
+        questionOrder: generated.map(q => q.id),
+        answers: [],
+        currentQuestion: 0,
+        shuffleMaps: shuffleMaps as any,
+        questionData: JSON.stringify(generated),
+      });
+      res.json(clientQuestions);
+    } catch (err: any) {
+      console.error("[Mastery AI]", err?.message);
+      res.status(500).json({ message: "Failed to generate final assessment questions" });
+    }
   });
 
   app.post("/api/mastery/check", requireAuth, async (req, res) => {
@@ -3121,15 +3153,21 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
     if (!questionId || selectedIndex === undefined) {
       return res.status(400).json({ message: "questionId and selectedIndex required" });
     }
-    const allMasteryQ = await storage.getMasteryQuestions();
-    const q = allMasteryQ.find(mq => mq.id === questionId);
+    const session = await storage.getMasterySession(req.user!.id);
+    const storedQuestions = session?.questionData
+      ? safeJsonParse<{ id: string; correctIndex: number; explanation?: string }[]>(session.questionData, [])
+      : [];
+    const q = storedQuestions.find(sq => sq.id === questionId);
     if (!q) {
       return res.status(404).json({ message: "Question not found" });
     }
+    const shuffleMaps = (session?.shuffleMaps as any) ?? {};
+    const sm = shuffleMaps[questionId] as number[] | undefined;
+    const correctIndex = sm ? sm.indexOf(q.correctIndex) : q.correctIndex;
     res.json({
-      correct: selectedIndex === q.correctIndex,
-      correctIndex: q.correctIndex,
-      explanation: q.explanation,
+      correct: selectedIndex === correctIndex,
+      correctIndex,
+      explanation: q.explanation ?? "",
     });
   });
 
@@ -3139,16 +3177,17 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
     const questionIds = session.questionOrder;
     const savedAnswers = session.answers as any[];
     const savedShuffleMaps = (session.shuffleMaps as any) ?? null;
-    const allMasteryQ = await storage.getMasteryQuestions();
+    const storedQuestions = session.questionData
+      ? safeJsonParse<{ id: string; sectionId: string; question: string; options: string[]; correctIndex: number; explanation?: string }[]>(session.questionData, [])
+      : [];
     const questionsData = questionIds.map((id) => {
-      const q = allMasteryQ.find(mq => mq.id === id);
+      const q = storedQuestions.find(sq => sq.id === id);
       if (!q) return null;
       if (savedShuffleMaps && savedShuffleMaps[id]) {
         const sm = savedShuffleMaps[id] as number[];
-        return { id: q.id, sectionId: q.sectionId, question: q.question, options: sm.map(i => q.options[i]), shuffleMap: sm };
+        return { id: q.id, sectionId: q.sectionId, question: q.question, options: sm.map((i: number) => q.options[i]), shuffleMap: sm };
       }
-      const { options, shuffleMap } = shuffleQuestionOptions(q);
-      return { id: q.id, sectionId: q.sectionId, question: q.question, options, shuffleMap };
+      return { id: q.id, sectionId: q.sectionId, question: q.question, options: q.options, shuffleMap: q.options.map((_: any, i: number) => i) };
     }).filter(Boolean);
     res.json({
       questions: questionsData,
@@ -3222,31 +3261,35 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
       const moduleLevelsSubmit = await getModuleLevelsForUser(req.user!.id);
       const requiredLevels = assignedSubmit.length > 0 ? moduleLevelsSubmit.filter(l => assignedSubmit.includes(l.id)) : moduleLevelsSubmit;
       const MIN_QUESTIONS_PER_SECTION = 10;
-      for (const level of requiredLevels) {
+      const LEVELS_REQUIRED = 5;
+      const completedCount = requiredLevels.filter(level => {
         const p = progress.find(pr => pr.levelId === level.id);
-        if (!p || p.totalQuestions < MIN_QUESTIONS_PER_SECTION) {
-          return res.status(403).json({ message: "You must complete more training before taking the Mastery Exam." });
-        }
+        return p && p.totalQuestions >= MIN_QUESTIONS_PER_SECTION;
+      }).length;
+      if (completedCount < LEVELS_REQUIRED) {
+        return res.status(403).json({ message: "You must complete at least 5 levels before taking the Final Assessment." });
       }
     }
 
     const session = await storage.getMasterySession(req.user!.id);
     const serverShuffleMaps = (session?.shuffleMaps as any) ?? null;
     const trustedMaps = serverShuffleMaps || clientShuffleMaps || {};
+    const storedQuestions = session?.questionData
+      ? safeJsonParse<{ id: string; sectionId: string; question: string; options: string[]; correctIndex: number; explanation?: string }[]>(session.questionData, [])
+      : [];
 
     let score = 0;
     const detailedResults: {
       questionId: string; sectionId: string; question: string; options: string[];
       selectedIndex: number; correctIndex: number; correct: boolean; explanation: string;
     }[] = [];
-    const allMasteryQ = await storage.getMasteryQuestions();
     for (const ans of answers) {
-      const q = allMasteryQ.find(mq => mq.id === ans.questionId);
+      const q = storedQuestions.find(sq => sq.id === ans.questionId);
       if (q) {
         const sm = trustedMaps[q.id] as number[] | undefined;
         let displayOptions = q.options;
         let displayCorrectIndex = q.correctIndex;
-        let displaySelectedIndex = ans.selectedIndex;
+        const displaySelectedIndex = ans.selectedIndex;
         if (sm && sm.length === q.options.length) {
           displayOptions = sm.map((i: number) => q.options[i]);
           displayCorrectIndex = sm.indexOf(q.correctIndex);
@@ -3258,7 +3301,7 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
         detailedResults.push({
           questionId: q.id, sectionId: q.sectionId, question: q.question,
           options: displayOptions, selectedIndex: displaySelectedIndex,
-          correctIndex: displayCorrectIndex, correct, explanation: q.explanation,
+          correctIndex: displayCorrectIndex, correct, explanation: q.explanation ?? "",
         });
       }
     }

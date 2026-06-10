@@ -307,6 +307,7 @@ export const masterySessions = pgTable("mastery_sessions", {
   answers: jsonb("answers").notNull().default(sql`'[]'::jsonb`),
   currentQuestion: integer("current_question").notNull().default(0),
   shuffleMaps: jsonb("shuffle_maps").notNull().default(sql`'{}'::jsonb`),
+  questionData: text("question_data"),
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
 }, (t) => [
   index("idx_mastery_sessions_user_id").on(t.userId),

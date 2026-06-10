@@ -172,6 +172,7 @@ export async function ensureTablesExist() {
         updated_at TIMESTAMP NOT NULL DEFAULT NOW()
       );
       ALTER TABLE diagnostic_sessions ADD COLUMN IF NOT EXISTS question_data TEXT;
+      ALTER TABLE mastery_sessions ADD COLUMN IF NOT EXISTS question_data TEXT;
       CREATE TABLE IF NOT EXISTS mastery_sessions (
         id SERIAL PRIMARY KEY,
         user_id INTEGER NOT NULL REFERENCES users(id),
@@ -1477,6 +1478,7 @@ export class DatabaseStorage implements IStorage {
       answers: (data.answers as any) ?? [],
       currentQuestion: data.currentQuestion || 0,
       shuffleMaps: (data.shuffleMaps as any) ?? {},
+      questionData: data.questionData ?? null,
     }).returning();
     return created;
   }
