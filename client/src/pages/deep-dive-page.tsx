@@ -419,6 +419,24 @@ export default function DeepDivePage() {
 
   const handleQuitConfirm = useCallback(async (saveProgress: boolean) => {
     if (saveTimeoutRef.current) clearTimeout(saveTimeoutRef.current);
+
+    const totalCorrectSoFar = gameState.baseCorrect + gameState.followUpCorrect;
+
+    // Always award XP for any correct answers already given, regardless of save/discard
+    if (levelId && totalCorrectSoFar > 0) {
+      try {
+        await apiRequest("POST", "/api/game/deep-dive/submit", {
+          levelId,
+          baseCorrect: gameState.baseCorrect,
+          followUpCorrect: gameState.followUpCorrect,
+          totalQuestions: questions.length,
+          followUpAttempted: gameState.followUpAttempted,
+          baseXpEarned: gameState.baseXpEarned,
+          expertXpEarned: gameState.expertXpEarned,
+        });
+      } catch (e) {}
+    }
+
     if (saveProgress && levelId) {
       try {
         const payload: SavedDeepDiveState = {
@@ -431,7 +449,7 @@ export default function DeepDivePage() {
           questionOrder,
           answers: JSON.stringify(payload),
           currentQuestion: gameState.currentQuestion,
-          correctAnswers: gameState.baseCorrect + gameState.followUpCorrect,
+          correctAnswers: totalCorrectSoFar,
           xpEarned: gameState.baseXpEarned + gameState.expertXpEarned,
         });
       } catch (e) {}
@@ -442,7 +460,7 @@ export default function DeepDivePage() {
     invalidateDashboardData();
     setShowQuitDialog(false);
     setLocation(fromParam);
-  }, [levelId, deleteSessionMutation, setLocation, questionOrder, gameState, selectedIndex, showExplanation, fromParam]);
+  }, [levelId, deleteSessionMutation, setLocation, questionOrder, gameState, selectedIndex, showExplanation, fromParam, questions]);
 
   const handleStartOver = useCallback(() => {
     if (!level) return;
