@@ -24,11 +24,11 @@ export const ddAnesthesiaLevel: DeepDiveLevel = {
         {
           question: "The hospitalist argues that the transition to deep sedation was unintended and brief. The facility's policy does not address unintended sedation depth escalation. What are the JC compliance implications of this policy gap?",
           options: [
-            "No implications - unintended sedation escalation is an expected clinical event and does not require specific policy guidance",
-            "The policy gap means the facility lacks defined procedures for managing unintended sedation depth escalation, which JC would cite as a deficiency in the sedation management program",
-            "The compliance issue rests entirely with the individual provider - facility policy gaps are not cited when the root cause is a provider credentialing issue",
-            "The gap is permissible if the facility documents the event as a near-miss and submits a corrective action plan within 90 days"
-          ],
+          "The failure is individual provider non-compliance - the hospitalist should be suspended from performing moderate sedation pending completion of retraining and reassessment, and this targeted corrective action is the only intervention required by accreditation standards.",
+          "Systemic failures include: lack of mandatory depth-of-sedation documentation, no trigger for reporting unintended escalation, no monitoring of sedation complication rates by provider, and no review of sedation outcomes at the credentials committee. Corrections include sedation monitoring policy revision, mandatory reporting protocol, and outcomes tracking linked to re-credentialing",
+          "The finding requires immediate reporting to the state medical board and the DEA before any internal corrective action can be taken - unintended deep sedation transitions are mandatory external report events that supersede internal quality review processes and hospital credentialing authority.",
+          "The four undocumented events are the only findings requiring action - the facility should implement a comprehensive chart audit to identify all missing sedation documentation across all providers, backfill the anesthesia records with retrospective documentation, and implement a prospective checklist system.",
+        ],
           correctIndex: 1,
           explanation: "JC requires that the hospital's anesthesia and sedation policies address the full spectrum of clinical scenarios, including unintended sedation level escalation. A policy that does not define what to do when a patient transitions unexpectedly from moderate to deep sedation leaves staff without guidance during a critical moment. This policy gap would be cited as a systemic deficiency in the sedation program.",
           expertXp: 25
@@ -51,11 +51,11 @@ export const ddAnesthesiaLevel: DeepDiveLevel = {
       id: "dd-anes2",
       baseQuestion: "A post-anesthesia evaluation completed at 46 hours documents all required elements except post-operative hydration status. The anesthesiologist argues this element is covered by nursing assessments and need not be in the anesthesia evaluation. Is this reasoning correct?",
       baseOptions: [
-        "Yes - hydration status is a nursing domain and its documentation in the nursing flow sheet satisfies the anesthesia evaluation requirement",
-        "No - all 7 required post-anesthesia evaluation elements must be documented by the qualified provider completing the evaluation, not distributed across other documentation",
-        "Yes - the Joint Commission allows cross-referencing other chart sections for post-anesthesia evaluation elements",
-        "No - but only when the anesthesia evaluation is the only post-procedure note in the chart"
-      ],
+          "Yes - hydration status is a nursing domain and its documentation in the nursing flow sheet satisfies the anesthesia evaluation requirement when the anesthesiologist reviews and approves the nursing assessment.",
+          "No - all 7 required post-anesthesia evaluation elements must be documented by the qualified provider completing the evaluation, not distributed across other documentation",
+          "Yes - the Joint Commission allows cross-referencing other chart sections for post-anesthesia evaluation elements when those sections are completed by qualified clinical personnel.",
+          "No - but only when the anesthesia evaluation is completed within 24 hours and the nursing documentation clearly addresses all elements that are missing.",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "All 7 post-anesthesia evaluation elements must be present in the evaluation completed by the qualified provider. Cross-referencing nursing documentation for required elements does not satisfy the standard - each element must be addressed within the evaluation itself.",
       baseXp: 15,
@@ -63,11 +63,11 @@ export const ddAnesthesiaLevel: DeepDiveLevel = {
         {
           question: "A quality audit reveals that 23% of post-anesthesia evaluations are missing at least one of the 7 required elements, and 15% are completed beyond the 48-hour window. The anesthesia department chief submits a plan to re-educate providers. What else must the improvement plan include to satisfy JC performance improvement expectations?",
           options: [
-            "Re-education alone satisfies JC performance improvement requirements - the plan is complete",
-            "The plan must also include: a baseline measurement of the current deficiency rate, a defined improvement goal, a monitoring mechanism with regular data collection post-intervention, a reporting cadence to leadership, and a reassessment timeline to verify sustained improvement",
-            "The plan must include a corrective action for each individual provider who had deficient documentation - systemic measures are secondary to individual accountability",
-            "The plan is complete once a new documentation template is created that prompts providers to complete all 7 elements"
-          ],
+          "Re-education alone satisfies JC performance improvement requirements - the plan is complete if staff receive training on the seven required elements and documentation templates are revised to prompt completion of all components",
+          "The plan must also include: a baseline measurement of the current deficiency rate, a defined improvement goal, a monitoring mechanism with regular data collection post-intervention, a reporting cadence to leadership, and a reassessment timeline to verify sustained improvement",
+          "The plan must include a corrective action for each individual provider who had deficient documentation - systemic measures are secondary to individual provider accountability and documentation compliance enforcement through the credentialing process",
+          "The plan is complete once a new documentation template is created that prompts providers to complete all seven required elements and the template is distributed to the anesthesia department for implementation",
+        ],
           correctIndex: 1,
           explanation: "A re-education-only plan does not constitute a performance improvement process. JC requires PDSA-cycle thinking: define the problem (baseline data), implement an intervention, measure the result, and sustain improvement. The plan must include baseline data, an improvement goal, a post-intervention monitoring mechanism, leadership reporting, and reassessment. A documentation template can be one tool, but it must be accompanied by outcome measurement.",
           expertXp: 25
@@ -78,11 +78,11 @@ export const ddAnesthesiaLevel: DeepDiveLevel = {
       id: "dd-anes3",
       baseQuestion: "A GI suite uses midazolam and fentanyl for colonoscopy sedation. During a tracer, the surveyor asks the nurse to show where reversal agents are stored. The nurse leads the surveyor to the medication room, approximately 90 feet away. Is this location compliant?",
       baseOptions: [
-        "Yes - the medication room is the standard storage location for all reversal agents in a GI suite",
-        "No - reversal agents must be immediately available at the bedside or in the procedure room during any procedure using the drugs they reverse",
-        "Yes - 90 feet is within the acceptable distance standard for reversal agent access",
-        "No - reversal agents must be carried by the administering provider at all times during sedation procedures"
-      ],
+          "Yes - the medication room is the standard storage location for all reversal agents in a GI suite and satisfies the accreditation requirement for agent availability during sedation procedures",
+          "No - reversal agents must be immediately available at the bedside or in the procedure room during any procedure using the drugs they reverse",
+          "Yes - 90 feet is within the acceptable distance standard for reversal agent access and emergency availability during colonoscopy procedures with sedation",
+          "No - reversal agents must be carried by the administering provider or anesthesia team at all times during sedation procedures to ensure immediate access without any delay",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "JC requires reversal agents to be 'immediately available' - meaning at the bedside or within the procedure room, not down the hall. A medication room 90 feet away does not meet the standard because a delay in obtaining naloxone or flumazenil during a sedation emergency could result in patient harm or death.",
       baseXp: 15,
@@ -105,11 +105,11 @@ export const ddAnesthesiaLevel: DeepDiveLevel = {
       id: "dd-anes4",
       baseQuestion: "Before a spinal block, an anesthesiologist marks the lumbar site with a skin marker, discusses the plan with the patient, and proceeds without a formal time-out. The anesthesiologist argues that a time-out is not required for a spinal because 'the site is obvious and the patient is awake.' Is this reasoning correct?",
       baseOptions: [
-        "Yes - time-outs for spinal anesthesia are discretionary when the patient is awake and can confirm the site",
-        "No - regional anesthesia and nerve blocks require a site-specific time-out before injection regardless of patient awareness or perceived site clarity",
-        "Yes - time-outs are required only for procedures performed under general anesthesia",
-        "No - but only when the spinal is performed for surgical rather than obstetrical anesthesia"
-      ],
+          "Yes - time-outs for spinal anesthesia are discretionary when the patient is awake and can confirm the site, since verbal patient identification reduces procedural risk",
+          "No - regional anesthesia and nerve blocks require a site-specific time-out before injection regardless of patient awareness or perceived site clarity",
+          "Yes - time-outs are required only for procedures performed under general anesthesia, not for regional techniques where the patient can communicate throughout",
+          "No - but only when the spinal is performed for surgical rather than obstetrical anesthesia, since obstetrical patients have enhanced safety monitoring requirements",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "The Universal Protocol requires a time-out before all invasive procedures involving regional anesthesia techniques - including spinal blocks. Patient awareness does not substitute for the time-out process. The time-out confirms correct patient, correct site/level, and correct procedure with the clinical team present.",
       baseXp: 15,
@@ -117,11 +117,11 @@ export const ddAnesthesiaLevel: DeepDiveLevel = {
         {
           question: "A facility's anesthesia department argues that requiring a time-out for every spinal block slows workflow in a high-volume obstetrics unit. They propose a 'mini time-out' where only the anesthesiologist verbally confirms the site to themselves before injection. Does this modified approach satisfy the Universal Protocol?",
           options: [
-            "Yes - any verbal confirmation before an invasive procedure constitutes a time-out under the Universal Protocol",
-            "No - the Universal Protocol requires a team time-out involving at least the anesthesiologist and one other member of the clinical team - a solo provider self-confirming does not satisfy the requirement",
-            "Yes - the Universal Protocol time-out requirement has documented efficiency exceptions for high-volume procedural areas",
-            "No - the time-out requires all team members present in the room, including circulating nurses, scrub technicians, and the supervising physician"
-          ],
+          "Yes - any verbal confirmation by a provider before an invasive procedure constitutes a complete time-out under the Universal Protocol requirements for team verification",
+          "No - the Universal Protocol requires a team time-out involving at least the anesthesiologist and one other member of the clinical team - a solo provider self-confirming does not satisfy the requirement",
+          "Yes - the Universal Protocol time-out requirement has documented efficiency exceptions for high-volume procedural areas in obstetrics and other specialized departments",
+          "No - the time-out requires all team members present in the room, including circulating nurses, scrub technicians, and the supervising physician to verbally confirm",
+        ],
           correctIndex: 1,
           explanation: "The Universal Protocol time-out must involve the clinical team - it is a team verification process, not an individual self-confirmation. A provider verbally confirming to themselves is not a time-out. In an obstetrics setting, the minimum team for a spinal time-out would include the anesthesiologist and the labor and delivery nurse. Workflow concerns must be addressed through efficient process design, not by eliminating team verification.",
           expertXp: 30
@@ -144,11 +144,11 @@ export const ddAnesthesiaLevel: DeepDiveLevel = {
         {
           question: "The unit implements a new competency validation process where nurses complete 3 proctored sedation cases with a physician sign-off. One nurse fails to achieve independent performance after 3 cases but is credentialed anyway because of unit staffing needs. What are the JC implications?",
           options: [
-            "Credentialing a provider who failed to demonstrate competency creates direct patient risk and constitutes a false credential - JC would cite this as a serious compliance failure in the medical staff credentialing process",
-            "The credential is valid because the physician signed off, and staffing need is a documented mitigating factor",
-            "The nurse can be credentialed provisionally if an experienced nurse is available in the unit during each of their sedation cases",
-            "The implication depends on whether the cases where the nurse struggled involved any adverse patient outcomes"
-          ],
+          "Credentialing a provider who failed to demonstrate competency creates direct patient risk and constitutes a false credential - JC would cite this as a serious compliance failure in the medical staff credentialing process",
+          "The credential is valid because the physician has already signed off on the cases, and staffing shortages are a documented mitigating factor that justifies proceeding despite incomplete competency demonstration.",
+          "The nurse can be credentialed provisionally with a requirement that an experienced nurse or physician be present during each sedation case until independent competency is subsequently demonstrated.",
+          "The credentialing implications depend on whether any of the three proctored cases where the nurse struggled resulted in documented adverse patient outcomes or safety events.",
+        ],
           correctIndex: 0,
           explanation: "Credentialing a provider who has not demonstrated competency - regardless of the reason - is a fundamental credentialing failure. JC requires that credentials reflect demonstrated competency, not staffing convenience. Granting a credential to someone who failed the validation process exposes patients to an unqualified provider and constitutes a falsification of the credential record. JC would cite this as a serious finding in the credentialing program.",
           expertXp: 30
@@ -160,11 +160,11 @@ export const ddAnesthesiaLevel: DeepDiveLevel = {
       id: "dd-anes6",
       baseQuestion: "A pre-anesthesia evaluation is documented 3 hours before a scheduled elective knee replacement. The patient discloses during the pre-op assessment with nursing that they started a new beta-blocker 4 days ago for hypertension. The anesthesiologist is not informed and the case proceeds. What compliance issue does this represent?",
       baseOptions: [
-        "No compliance issue - a new beta-blocker is expected perioperative management and would not change the anesthetic plan",
-        "The pre-anesthesia evaluation was not updated to reflect a material change in the patient's medication history discovered after the evaluation - the evaluating anesthesiologist must be notified of new information affecting anesthetic risk, and the evaluation must be updated or a new evaluation completed before proceeding",
-        "The compliance issue is a nursing documentation problem - nursing should have updated the anesthesia record directly",
-        "Beta-blockers are not a reportable medication change for anesthesia purposes unless the patient also has a known cardiac condition"
-      ],
+          "No compliance issue - a new beta-blocker started 4 days ago for hypertension is expected perioperative management and would not materially change the anesthetic plan or risk assessment, so the original pre-anesthesia evaluation remains adequate",
+          "The pre-anesthesia evaluation was not updated to reflect a material change in the patient's medication history discovered after the evaluation - the evaluating anesthesiologist must be notified of new information affecting anesthetic risk, and the evaluation must be updated or a new evaluation completed before proceeding",
+          "The compliance issue is a nursing documentation problem - nursing should have updated the anesthesia record directly rather than waiting for the anesthesiologist to discover the medication change during the pre-operative assessment immediately before surgery",
+          "Beta-blockers are not a reportable medication change for anesthesia purposes unless the patient also has a documented cardiac condition, so disclosure of a new beta-blocker started for hypertension management does not require formal anesthesia re-evaluation",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "The pre-anesthesia evaluation must reflect the patient's condition immediately before the procedure. A new medication - particularly a beta-blocker, which has hemodynamic implications - discovered after the initial evaluation represents a material change requiring anesthesiologist notification and evaluation update. Proceeding without this update means the anesthesia plan was based on incomplete information.",
       baseXp: 15,
@@ -172,11 +172,11 @@ export const ddAnesthesiaLevel: DeepDiveLevel = {
         {
           question: "A new beta-blocker was started 4 days before surgery. The anesthesiologist, now informed, notes the patient's pre-op heart rate is 48. What must happen before proceeding?",
           options: [
-            "The case may proceed since beta-blockers lower heart rate and this is an expected pharmacological effect",
-            "A clinical assessment of the bradycardia is required - a heart rate of 48 in a surgical patient may represent excessive beta-blockade that increases perioperative risk, and the anesthesiologist must document the clinical decision to proceed or delay with the rationale",
-            "The case should be cancelled automatically - any heart rate below 60 is a contraindication to general anesthesia",
-            "The prescribing physician must be consulted and must authorize continuation of the beta-blocker before anesthesia may proceed"
-          ],
+          "The case may proceed since beta-blockers lower heart rate and this is an expected pharmacological effect that does not increase perioperative risk in otherwise healthy surgical patients",
+          "A clinical assessment of the bradycardia is required - a heart rate of 48 in a surgical patient may represent excessive beta-blockade that increases perioperative risk, and the anesthesiologist must document the clinical decision to proceed or delay with the rationale",
+          "The case should be cancelled automatically - any heart rate below 60 is an absolute contraindication to general anesthesia and requires postponement until the beta-blocker wears off or is reversed",
+          "The prescribing physician must be consulted and must authorize continuation of the beta-blocker before anesthesia may proceed, since the prescriber bears responsibility for verifying that the new medication is appropriate perioperatively",
+        ],
           correctIndex: 1,
           explanation: "A resting heart rate of 48 bpm in the context of a newly initiated beta-blocker requires clinical evaluation before proceeding with elective surgery. The anesthesiologist must assess whether this represents hemodynamic compromise, determine whether dose adjustment is warranted, consult cardiology if indicated, and document the clinical reasoning. Proceeding without this evaluation means the perioperative team accepted a potentially modifiable risk without documentation of the decision.",
           expertXp: 25
@@ -199,11 +199,11 @@ export const ddAnesthesiaLevel: DeepDiveLevel = {
         {
           question: "The endoscopist escalates to the medical director, arguing that the anesthesia provider's refusal is causing unnecessary delays and patient inconvenience. How should the medical director respond?",
           options: [
-            "Override the anesthesia provider's decision - procedure efficiency is a quality metric and the colonoscopy is a low-risk procedure",
-            "Support the anesthesia provider's clinical judgment - the refusal to administer sedation to a patient who ate 4 hours ago is consistent with established safety standards and is not a performance problem. The medical director should educate the endoscopist about NPO requirements and ensure the scheduling process captures fasting status before patients arrive",
-            "Allow the procedure to proceed with a waiver signed by the patient - informed consent for increased aspiration risk satisfies the clinical obligation",
-            "Refer the dispute to the credentials committee for review of whether the anesthesia provider's refusal pattern represents a disruptive behavior issue"
-          ],
+          "Override the anesthesia provider's decision because procedure efficiency is a quality metric and the colonoscopy is classified as a low-risk procedure with minimal complications, making NPO violations acceptable if the patient provides informed consent documentation",
+          "Support the anesthesia provider's clinical judgment - the refusal to administer sedation to a patient who ate 4 hours ago is consistent with established safety standards and is not a performance problem. The medical director should educate the endoscopist about NPO requirements and ensure the scheduling process captures fasting status before patients arrive",
+          "Allow the procedure to proceed with a waiver signed by the patient acknowledging increased aspiration risk and accepting responsibility for any adverse outcomes, as informed consent for procedural risks satisfies the clinical obligation to proceed with the case",
+          "Refer the dispute to the credentials committee to determine whether the anesthesia provider's repeated refusals represent a disruptive behavior pattern that warrants peer review and possible action against their clinical privileges",
+        ],
           correctIndex: 1,
           explanation: "A medical director who overrides a patient safety decision made by a qualified anesthesia provider creates serious patient harm risk and institutional liability. The anesthesia provider's refusal is not a behavioral or performance issue - it is correct clinical decision-making. The appropriate response is institutional support for the safety decision and system improvement to prevent patients from arriving for procedures without meeting fasting requirements.",
           expertXp: 30
@@ -241,11 +241,11 @@ export const ddAnesthesiaLevel: DeepDiveLevel = {
       id: "dd-anes9",
       baseQuestion: "PACU discharge criteria at a freestanding surgery center require a minimum Aldrete score of 9 before a patient can be discharged to a Step-Down area. A nurse discharges a patient with an Aldrete score of 7, stating 'the surgeon said she's fine.' What is the compliance finding?",
       baseOptions: [
-        "No finding - physician order supersedes structured discharge scoring tools",
-        "Discharging a patient who does not meet the facility's defined PACU discharge criteria is a compliance finding regardless of verbal physician instruction - discharge criteria exist to standardize safety thresholds and are not subject to physician override absent a documented exception process",
-        "The finding is limited to documentation - the nurse should have documented the surgeon's verbal order as the basis for early discharge",
-        "The Aldrete score is a guideline, not a requirement - clinical judgment may appropriately supersede scoring thresholds"
-      ],
+          "No compliance finding exists - the physician's verbal order to discharge supersedes the structured discharge scoring tool, as the intensivist's clinical judgment about individual patient readiness is not subject to administrative policy restrictions.",
+          "Discharging a patient who does not meet the facility's defined PACU discharge criteria is a compliance finding regardless of verbal physician instruction - discharge criteria exist to standardize safety thresholds and are not subject to physician override absent a documented exception process",
+          "The compliance finding is limited to documentation - the nurse should have documented the surgeon's verbal order authorizing discharge as the basis for early discharge and the clinical reasoning for the exception in the patient's record for audit trail purposes.",
+          "The Aldrete score is a guideline rather than a strict requirement - clinical judgment may appropriately supersede the scoring threshold when the surgeon and anesthesiologist agree the patient is physiologically stable despite a lower objective score.",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "Facility-defined discharge criteria are safety standards, not suggestions. When a facility sets an Aldrete score of 9 as the minimum for PACU discharge, a nurse who discharges at 7 based on a verbal physician comment has bypassed the safety system. If the facility wants to allow exceptions, it must have a documented exception process with physician sign-off and leadership awareness - not informal verbal overrides.",
       baseXp: 15,
@@ -268,11 +268,11 @@ export const ddAnesthesiaLevel: DeepDiveLevel = {
       id: "dd-anes10",
       baseQuestion: "A post-anesthesia care audit reveals that 22% of patients who received general anesthesia had no documented temperature measurement in the PACU. The PACU manager says 'we check temperature if we think the patient looks cold.' What is the compliance concern?",
       baseOptions: [
-        "No concern - clinical judgment-based temperature assessment is an appropriate standard for PACU monitoring",
-        "Temperature monitoring is a required post-anesthesia assessment element - general anesthesia impairs thermoregulation and hypothermia increases bleeding, cardiac, and wound healing risk. Selective monitoring based on visual appearance is insufficient and does not constitute clinical assessment",
-        "The concern applies only to patients who received volatile anesthetic agents - TIVA patients do not require routine temperature monitoring",
-        "Temperature monitoring in the PACU is required only if the patient's intraoperative temperature was below 36°C"
-      ],
+          "No concern exists - clinical judgment-based selective temperature assessment is an appropriate and efficient standard for PACU monitoring when nurses visually evaluate patient appearance and prioritize measurement for higher-risk cases.",
+          "Temperature monitoring is a required post-anesthesia assessment element - general anesthesia impairs thermoregulation and hypothermia increases bleeding, cardiac, and wound healing risk. Selective monitoring based on visual appearance is insufficient and does not constitute clinical assessment",
+          "The concern applies only to patients who received volatile anesthetic agents during general anesthesia - patients receiving total intravenous anesthesia (TIVA) do not require routine objective temperature monitoring in the PACU because TIVA eliminates the thermoregulatory impairment associated with volatile agents.",
+          "Temperature monitoring requirements in the PACU apply only if the patient's documented intraoperative temperature fell below 36°C, as normothermic patients during surgery do not have the same post-anesthesia monitoring obligations.",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "Post-anesthesia temperature monitoring is not optional - general anesthesia impairs thermoregulation, and intraoperative hypothermia is common even with active warming. The PACU is the first opportunity to identify and correct hypothermia before its consequences develop. 'Looking cold' is not a clinical assessment - many hypothermic patients do not appear cold. Temperature must be documented for all post-general-anesthesia patients.",
       baseXp: 15,
@@ -280,11 +280,11 @@ export const ddAnesthesiaLevel: DeepDiveLevel = {
         {
           question: "A PACU nurse argues that temperature measurement requires equipment that is 'usually busy with other patients' and proposes documenting 'temperature not measured - patient warm to touch' as the assessment. Does this documentation satisfy the post-anesthesia monitoring requirement?",
           options: [
-            "Yes - 'warm to touch' is a clinical assessment finding that documents the temperature evaluation",
-            "No - 'warm to touch' is a subjective tactile finding, not a temperature measurement. The standard requires an objective temperature value. If equipment availability is the barrier, that is a resource planning problem requiring additional thermometers - not a justification for substituting subjective assessment for an objective measurement",
-            "Yes - when objective measurement is not available, subjective clinical assessment is an accepted documentation alternative",
-            "Partially - 'warm to touch' satisfies the requirement for patients who have no intraoperative temperature concerns; objective measurement is only required for patients who were hypothermic intraoperatively"
-          ],
+          "Yes - 'warm to touch' is a clinical assessment finding that documents the nurse's evaluation of the patient's temperature status and can serve as an acceptable alternative assessment when equipment is temporarily unavailable or when patient comfort is prioritized over objective measurement.",
+          "No - 'warm to touch' is a subjective tactile finding, not a temperature measurement. The standard requires an objective temperature value. If equipment availability is the barrier, that is a resource planning problem requiring additional thermometers - not a justification for substituting subjective assessment for an objective measurement",
+          "Yes - when thermometer equipment is not immediately available, subjective clinical assessment of skin temperature and perfusion characteristics is an accepted and recognized documentation alternative that satisfies the post-anesthesia monitoring requirement.",
+          "Partially - 'warm to touch' satisfies the documentation requirement for patients who had normothermia maintained throughout their procedure; objective measurement is only mandated for patients who experienced intraoperative hypothermia or whose operative time exceeded 90 minutes.",
+        ],
           correctIndex: 1,
           explanation: "Post-anesthesia monitoring standards require objective measurements, not subjective impressions. A nurse's perception that a patient feels warm to touch has limited clinical accuracy and no documented numeric value for trending or handoff communication. If equipment availability is the real constraint, the facility must address equipment access - that is an administrative and resource problem, not a clinical assessment problem. Documenting a subjective finding as a substitute for an objective standard creates false documentation.",
           expertXp: 25
@@ -322,11 +322,11 @@ export const ddAnesthesiaLevel: DeepDiveLevel = {
       id: "dd-anes12",
       baseQuestion: "An anesthesiologist performs a pre-anesthesia evaluation 5 days before a scheduled elective hip replacement. The day-of-surgery assessment is delegated to a CRNA who documents 'see anesthesiologist's pre-op note - no change.' The patient reports having developed a productive cough and fever of 38.5°C in the past 2 days. The surgery proceeds. What is the finding?",
       baseOptions: [
-        "No finding - the CRNA's documentation of 'no change' satisfies the day-of-surgery assessment requirement",
-        "The day-of-surgery assessment did not capture or address a material change in the patient's clinical condition - a new fever and productive cough represent potential active infection that may affect anesthetic risk and raise the question of whether elective surgery should be deferred. The assessment was not actually performed; it referenced a 5-day-old note",
-        "The finding is limited to the CRNA - the anesthesiologist who performed the initial evaluation bears no responsibility for the day-of-surgery assessment",
-        "No finding - pre-anesthesia evaluations are valid for 7 days under JC standards"
-      ],
+          "No finding - the CRNA's documentation of 'see anesthesiologist's pre-op note, no change' satisfies the regulatory and accreditation requirements for a day-of-surgery assessment in most accreditation standards for elective procedures scheduled within 7 days",
+          "The day-of-surgery assessment did not capture or address a material change in the patient's clinical condition - a new fever and productive cough represent potential active infection that may affect anesthetic risk and raise the question of whether elective surgery should be deferred. The assessment was not actually performed; it referenced a 5-day-old note",
+          "The finding is limited to the CRNA's documentation practices - the anesthesiologist who performed the initial pre-operative evaluation 5 days prior bears primary professional responsibility for that assessment and the day-of-surgery verification of status",
+          "No finding - pre-anesthesia evaluations conducted within 7 days of surgery remain valid for the entire perioperative period under Joint Commission standards, and reference to the initial evaluation satisfies day-of-surgery assessment documentation requirements",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "A day-of-surgery assessment must reflect the patient's current condition - not cross-reference an evaluation from days earlier. 'No change' documented without actually assessing the patient is a false entry. The patient's new fever and productive cough represent a material clinical development that could indicate active infection - a contraindication to elective surgery. This assessment failure allowed a potentially avoidable surgical risk to proceed unchecked.",
       baseXp: 20,
@@ -349,11 +349,11 @@ export const ddAnesthesiaLevel: DeepDiveLevel = {
       id: "dd-anes13",
       baseQuestion: "A hospital's anesthesia department has never conducted a formal anesthesia machine checkout procedure audit. A surveyor asks to see documentation showing that pre-use machine checks are being performed. The department chief produces a laminated checklist posted on each machine but no completion records. What is the compliance finding?",
       baseOptions: [
-        "No finding - a posted checklist constitutes a documented protocol and demonstrates that the procedure is expected to be performed",
-        "A compliance finding - JC requires documented evidence that pre-use anesthesia machine checks are being performed, not just that a protocol exists. Without completion records, there is no verification that the safety check is actually occurring before each use",
-        "Partial finding - the checklist satisfies the protocol requirement; the completion record requirement only applies to facilities that have experienced anesthesia machine-related adverse events",
-        "The finding is limited to the department chief - the anesthesiologist performing each case is responsible for documenting the machine check without department-level tracking"
-      ],
+          "No finding - a posted checklist constitutes a documented protocol and demonstrates that the procedure is expected to be performed, so actual completion records are not required by Joint Commission standards",
+          "A compliance finding - JC requires documented evidence that pre-use anesthesia machine checks are being performed, not just that a protocol exists. Without completion records, there is no verification that the safety check is actually occurring before each use",
+          "Partial finding - the checklist satisfies the protocol requirement; the completion record requirement only applies to facilities that have experienced anesthesia machine-related adverse events or near-misses in the past",
+          "The finding is limited to the department chief - the anesthesiologist performing each case is responsible for documenting the machine check independently without requiring department-level audit trails or compliance tracking",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "A posted protocol demonstrates intent - it does not demonstrate performance. JC requires evidence that required safety processes are actually being carried out. Pre-use anesthesia machine checkout must be documented at the case level. Without completion records, the facility cannot demonstrate that this critical safety step is reliably performed. In the event of an equipment failure, undocumented checks also mean there is no evidence to support or refute whether a problem was pre-existing or caused by the checkout process.",
       baseXp: 15,
@@ -376,11 +376,11 @@ export const ddAnesthesiaLevel: DeepDiveLevel = {
       id: "dd-anes14",
       baseQuestion: "A patient undergoing general anesthesia for a 4-hour spine surgery has no temperature monitoring device applied. The anesthesiologist notes intraoperatively that the patient's end-tidal CO₂ is stable and assumes temperature is adequate. The patient arrives in PACU at 34.8°C. What perioperative standard was not met?",
       baseOptions: [
-        "No standard was missed - end-tidal CO₂ monitoring is an adequate substitute for temperature monitoring during spine procedures",
-        "Continuous temperature monitoring is required during general anesthesia for procedures exceeding a defined duration - the absence of any temperature monitoring device meant the team had no data to guide active warming interventions during the case, resulting in clinically significant hypothermia on arrival to PACU",
-        "The standard was met - temperature monitoring is only required for procedures where hypothermia is the primary clinical concern, such as cardiac surgery with cardioplegia",
-        "The PACU temperature finding triggers a requirement - intraoperative temperature monitoring is only standard of care if hypothermia is anticipated based on patient risk factors"
-      ],
+          "No standard was missed because end-tidal CO₂ monitoring and stable vital signs are adequate substitutes for direct temperature monitoring during spine procedures, particularly when the anesthesiologist is experienced in recognizing metabolic indicators of hypothermia",
+          "Continuous temperature monitoring is required during general anesthesia for procedures exceeding a defined duration - the absence of any temperature monitoring device meant the team had no data to guide active warming interventions during the case, resulting in clinically significant hypothermia on arrival to PACU",
+          "The standard was met because temperature monitoring is only required for procedures where hypothermia is the primary anticipated clinical concern, such as cardiac surgery with cardioplegia or prolonged vascular procedures in vulnerable populations",
+          "The PACU temperature finding triggers a retrospective requirement, but intraoperative temperature monitoring is only mandatory if hypothermia was anticipated based on documented patient risk factors such as age, weight, or comorbid conditions prior to case start",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "All patients undergoing general anesthesia for any extended procedure are at risk for hypothermia due to anesthetic-induced thermoregulatory impairment, cold operating room environments, and exposed body cavities. Temperature monitoring allows real-time guided warming interventions. The absence of monitoring meant the team could not act on temperature data they never had. A 34.8°C PACU arrival temperature indicates a preventable adverse outcome.",
       baseXp: 15,
@@ -403,11 +403,11 @@ export const ddAnesthesiaLevel: DeepDiveLevel = {
       id: "dd-anes15",
       baseQuestion: "During a tracer, a surveyor asks the anesthesia team about their protocol for a failed airway - specifically, what they do if they cannot intubate and cannot oxygenate a patient. The attending anesthesiologist describes a series of escalating steps but is unable to identify where the surgical airway kit is kept. A CRNA in the room also cannot locate it. What does this reveal?",
       baseOptions: [
-        "A knowledge gap for two individuals - the emergency airway kit location should be part of orientation but is not a systemic finding if it is properly stocked elsewhere in the OR",
-        "A critical emergency preparedness failure - in a 'cannot intubate, cannot oxygenate' emergency, every second counts. If the airway team cannot immediately locate the surgical airway kit, the kit is functionally unavailable. Emergency equipment must be immediately accessible AND the location must be known to all team members who may need to use it",
-        "A training deficiency for the CRNA only - attending anesthesiologists are not expected to know the location of equipment stored by surgical technologists",
-        "No finding - the anesthesia team described the correct escalation steps and the kit location is a secondary operational detail"
-      ],
+          "A knowledge gap limited to two individuals on the team, since the emergency airway kit location should be part of initial orientation but is not a systemic finding if the kit is properly stocked and available in other locations throughout the OR suite",
+          "A critical emergency preparedness failure - in a 'cannot intubate, cannot oxygenate' emergency, every second counts. If the airway team cannot immediately locate the surgical airway kit, the kit is functionally unavailable. Emergency equipment must be immediately accessible AND the location must be known to all team members who may need to use it",
+          "A training deficiency specific to the CRNA role, since attending anesthesiologists are not routinely expected to know the location of equipment that is stocked and managed by surgical technologists and OR support staff in designated areas",
+          "No significant finding warranting institutional action, because the anesthesia team described the correct escalation steps and the equipment kit location is a secondary operational detail that does not affect clinical decision-making in an emergency",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "A 'cannot intubate, cannot oxygenate' scenario is the most time-critical airway emergency in anesthesia. The surgical airway kit must be immediately accessible - within seconds - and its location must be known to all team members. If both the anesthesiologist and CRNA cannot locate it, the kit provides no protection in a real emergency. Equipment location knowledge is not optional for life-safety emergency equipment.",
       baseXp: 20,
@@ -430,11 +430,11 @@ export const ddAnesthesiaLevel: DeepDiveLevel = {
       id: "dd-anes16",
       baseQuestion: "A facility that performs procedures under monitored anesthesia care (MAC) does not require patients receiving only local anesthetic with minimal sedation to have an anesthesiologist present. A surveyor finds a case where a patient received 3 mg midazolam and 150 mcg fentanyl from the proceduralist with no dedicated sedation monitor. What is the finding?",
       baseOptions: [
-        "No finding - when a proceduralist administers their own minimal sedation, anesthesia department involvement is not required",
-        "A finding - 3 mg midazolam combined with 150 mcg fentanyl in combination represents moderate sedation, not minimal sedation. The drug combination and doses exceed the 'anxiolysis only' threshold for minimal sedation and require a qualified dedicated sedation monitor separate from the performing provider",
-        "A finding limited to documentation - the proceduralist should have documented the sedation level as 'moderate' rather than 'minimal'",
-        "No finding - MAC is defined by the presence of an anesthesia provider and this case did not use MAC at all, placing it outside JC sedation standards"
-      ],
+          "No finding, because when a proceduralist self-administers only minimal sedation using anxiolytic agents, direct anesthesia department involvement and continuous dedicated monitoring are not required by accreditation standards or regulatory guidelines",
+          "A finding - 3 mg midazolam combined with 150 mcg fentanyl in combination represents moderate sedation, not minimal sedation. The drug combination and doses exceed the 'anxiolysis only' threshold for minimal sedation and require a qualified dedicated sedation monitor separate from the performing provider",
+          "A documentation finding only, since the proceduralist should have recorded the sedation level as 'moderate' rather than 'minimal' to reflect the actual clinical intervention, though this is an accuracy issue rather than a clinical safety concern",
+          "No finding, because MAC is specifically defined by the presence of a qualified anesthesia provider and this case did not employ MAC protocols at all, placing it outside the scope of Joint Commission sedation standards and monitoring requirements",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "Midazolam and fentanyl in combination are capable of producing deep sedation at moderate doses. The combined administration of 3 mg midazolam and 150 mcg fentanyl to an average adult frequently produces moderate or deeper sedation. The sedation level is defined by the patient's level of consciousness, not by the provider's intentions or the drug's labeled category. Misclassifying this as minimal sedation removes the required monitoring safeguards.",
       baseXp: 20,
@@ -442,11 +442,11 @@ export const ddAnesthesiaLevel: DeepDiveLevel = {
         {
           question: "The facility's policy states that 'minimal sedation cases do not require a dedicated sedation monitor.' The proceduralist argues that they were performing minimal sedation because they intended to produce only anxiolysis. How should the policy be revised?",
           options: [
-            "Add a physician attestation that the intended sedation level is minimal - this satisfies the policy definition requirement",
-            "Revise the policy to define sedation level by the patient's clinical state, not provider intention, and include maximum dose thresholds for drugs commonly used in sedation that, if exceeded, require automatic classification as moderate sedation with corresponding monitoring requirements",
-            "Remove the minimal sedation exception entirely - all sedation cases require a dedicated monitor regardless of intended depth",
-            "The policy is adequate - the finding is an individual provider education issue, not a policy gap"
-          ],
+          "Add a requirement for physician attestation documenting that the intended sedation level is minimal—this approach satisfies the policy definition requirement while preserving proceduralist autonomy and reducing administrative oversight burden",
+          "Revise the policy to define sedation level by the patient's clinical state, not provider intention, and include maximum dose thresholds for drugs commonly used in sedation that, if exceeded, require automatic classification as moderate sedation with corresponding monitoring requirements",
+          "Remove the minimal sedation exception entirely from the policy so that all sedation cases require a dedicated monitor regardless of the intended depth, patient population, or drug combination to eliminate classification variability and provider interpretation differences",
+          "The current policy is adequate because the finding represents an individual provider education issue rather than a systemic policy gap, and retraining on sedation classification will prevent future misclassification without requiring formal policy revision",
+        ],
           correctIndex: 1,
           explanation: "Sedation level policies that rely on provider intention rather than patient clinical state create systematic misclassification. The revision should define what constitutes minimal sedation by clinical criteria (patient responds normally to verbal stimulation, maintains all protective reflexes, no drug combination likely to produce deeper sedation) and include drug dose thresholds that trigger automatic moderate sedation classification. Evidence-based dose thresholds give providers objective criteria rather than subjective intent assessment.",
           expertXp: 25
@@ -484,11 +484,11 @@ export const ddAnesthesiaLevel: DeepDiveLevel = {
       id: "dd-anes18",
       baseQuestion: "A post-PACU review finds that three patients who received neuraxial anesthesia (spinal or epidural) were discharged from PACU before documenting return of motor function below the level of the block. One was discharged to Phase II, and two were sent directly home. What is the compliance and safety concern?",
       baseOptions: [
-        "No concern - the anesthesia provider verified the block was adequate at the time of administration; PACU staff do not need to re-assess neurological recovery",
-        "Patients with neuraxial blockade must have return of motor and sensory function documented before PACU discharge - premature discharge before block regression is resolved carries risk of unrecognized complications (neurological injury, cauda equina) and falls. Discharge before resolution of the block requires explicit documentation of the clinical decision and disposition plan",
-        "Concern only for the two patients discharged directly home - Phase II discharge before full block resolution is acceptable",
-        "The concern is documentation only - the anesthesia record documents the block level, which serves as the post-operative assessment"
-      ],
+          "No concern - the anesthesiologist verified adequate block at the time of administration, and PACU staff do not need to perform additional neurological reassessment after neuraxial block placement since intraoperative documentation by the anesthesiologist satisfies all accreditation and safety requirements.",
+          "Patients with neuraxial blockade must have return of motor and sensory function documented before PACU discharge - premature discharge before block regression is resolved carries risk of unrecognized complications (neurological injury, cauda equina) and falls. Discharge before resolution of the block requires explicit documentation of the clinical decision and disposition plan",
+          "Concern only for the two patients discharged directly home to Phase II recovery, since Phase II discharge before complete block resolution is acceptable if the patient has a responsible adult at home and telephone follow-up is arranged within 24 hours of discharge.",
+          "The concern is primarily documentation quality rather than clinical safety - the anesthesia record documents the block level and sensory assessment at placement, which serves as the complete post-operative neurological baseline for all clinical purposes.",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "Neuraxial anesthesia recovery must be documented before PACU discharge. Return of motor function must be verified because: (1) premature mobility before block resolution causes falls, (2) persistent or asymmetric neurological findings may indicate a spinal hematoma or other complication requiring emergency intervention, and (3) patients discharged before the block resolves cannot reliably detect new neurological symptoms. This assessment is a required component of the post-anesthesia evaluation.",
       baseXp: 15,
@@ -511,11 +511,11 @@ export const ddAnesthesiaLevel: DeepDiveLevel = {
       id: "dd-anes19",
       baseQuestion: "A CRNA administers 100 mg of bupivacaine for a peripheral nerve block. Within 3 minutes, the patient reports perioral tingling, becomes confused, and begins having tonic-clonic seizures. The CRNA calls for help and begins ventilatory support. What is the specific treatment for this complication?",
       baseOptions: [
-        "Benzodiazepine for seizure management and vasopressors for hemodynamic support - standard cardiac resuscitation protocol",
-        "Lipid emulsion therapy (Intralipid 20%) - this is the specific antidote for local anesthetic systemic toxicity (LAST). It should be administered immediately alongside seizure management, airway support, and ACLS if cardiac arrest occurs",
-        "Immediate cardioversion - bupivacaine toxicity causes ventricular fibrillation that requires electrical treatment before drug therapy",
-        "Sodium bicarbonate to alkalinize the plasma - bupivacaine toxicity is treated by raising blood pH to reduce drug-receptor binding"
-      ],
+          "Benzodiazepine for seizure management and vasopressors for hemodynamic support - standard cardiac resuscitation protocol is appropriate for managing local anesthetic systemic toxicity complications",
+          "Lipid emulsion therapy (Intralipid 20%) - this is the specific antidote for local anesthetic systemic toxicity (LAST). It should be administered immediately alongside seizure management, airway support, and ACLS if cardiac arrest occurs",
+          "Immediate cardioversion - bupivacaine toxicity causes ventricular fibrillation that requires electrical treatment before drug therapy can be effective for hemodynamic recovery",
+          "Sodium bicarbonate to alkalinize the plasma - bupivacaine toxicity is treated by raising blood pH to reduce drug-receptor binding and facilitate faster drug elimination through renal clearance",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "Local anesthetic systemic toxicity (LAST) is a recognized complication of regional anesthesia. Lipid emulsion (Intralipid 20%) is the specific treatment - it acts as a lipid sink, sequestering bupivacaine from cardiac and CNS tissue. The ASRA LAST checklist recommends immediate lipid emulsion administration at the first sign of LAST, concurrent with airway management, seizure suppression, and ACLS if indicated. Epinephrine in LAST is used cautiously in small doses; standard ACLS epinephrine doses may worsen cardiac toxicity.",
       baseXp: 20,

@@ -39,11 +39,11 @@ export const ddNpsgLevel: DeepDiveLevel = {
       id: "dd-npsg2",
       baseQuestion: "A cardiac unit's alarm management audit reveals 387 monitor alarms per patient per day, with nursing response occurring for fewer than 12% of alarms. Staff have developed a pattern of silencing alarms without patient assessment. Three weeks later, a patient dies after a fatal arrhythmia went undetected for 6 minutes while the alarm was silenced. What does NPG 1 / formerly NPSG.06.01.01 require the facility to do after this event?",
       baseOptions: [
-        "Discipline the staff members who silenced the alarm without assessing the patient",
-        "Conduct a sentinel event review, analyze the alarm management system as a root cause, implement individualized alarm parameter policies, and establish ongoing alarm response metrics with leadership reporting",
-        "Replace the monitor equipment with a newer system that cannot be silenced without entering a clinical justification",
-        "Implement a policy requiring two-nurse cosign to silence any cardiac monitor alarm"
-      ],
+          "Discipline the staff members responsible for silencing alarms without proper patient assessment to establish individual accountability and deter future non-compliance with monitoring protocols",
+          "Conduct a sentinel event review, analyze the alarm management system as a root cause, implement individualized alarm parameter policies, and establish ongoing alarm response metrics with leadership reporting",
+          "Replace the monitor equipment with a newer system that cannot be silenced without entering a documented clinical justification, creating a technical requirement for thoughtful alarm management decisions",
+          "Implement a policy requiring two-nurse cosign before any cardiac monitor alarm can be silenced, ensuring collective accountability and reducing the likelihood of inappropriate alarm suppression",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "A patient death potentially related to alarm fatigue is a sentinel event. NPG 1 / formerly NPSG.06.01.01 requires not just individual accountability but systemic response: root cause analysis of the alarm environment, individualized parameter setting, improved alarm response protocols, and ongoing monitoring of alarm response metrics. 387 alarms per patient per day is a system-level problem requiring a system-level solution.",
       baseXp: 20,
@@ -51,11 +51,11 @@ export const ddNpsgLevel: DeepDiveLevel = {
         {
           question: "The unit implements individualized alarm parameters for all patients. Three months later, a quality audit shows the average alarms per patient per day dropped to 94 - but nursing response to alarms remained at 18%, still well below expectations. What does this persistent gap indicate and what additional intervention is needed?",
           options: [
-            "A 75% reduction in alarm volume is a success - 18% response rate is an acceptable outcome when alarm volume is reduced",
-            "The persistent low response rate despite lower alarm volume indicates that alarm fatigue has created a deeply embedded behavioral pattern - individualized parameters alone are insufficient; additional interventions needed include role clarity for alarm response, real-time monitoring of response rates, leadership accountability structures, and potentially cultural change work addressing the normalization of ignoring alarms",
-            "Reducing alarms further to below 50 per patient per day will drive response rates above 50% automatically - additional behavioral interventions are not needed",
-            "The 18% response rate suggests the remaining alarms are predominantly non-actionable - further alarm reduction is the only needed intervention"
-          ],
+          "A 75% reduction in alarm volume is a success metric - the 18% response rate is an acceptable outcome when alarm volume is reduced because staff workload decreases and fatigue becomes less of a factor in response patterns. Further alarm reduction through parameter optimization is the primary intervention needed to improve outcomes.",
+          "The persistent low response rate despite lower alarm volume indicates that alarm fatigue has created a deeply embedded behavioral pattern - individualized parameters alone are insufficient; additional interventions needed include role clarity for alarm response, real-time monitoring of response rates, leadership accountability structures, and potentially cultural change work addressing the normalization of ignoring alarms",
+          "Reducing alarms further to below 50 per patient per day will drive response rates above 50% automatically because fewer alerts allow nurses to prioritize remaining alarms more effectively and staff fatigue becomes manageable when workload decreases significantly. Additional behavioral interventions are not needed when alarm volume reaches sufficiently low levels.",
+          "The 18% response rate suggests the remaining alarms are predominantly non-actionable and clinically irrelevant to patient care requiring further optimization. Further alarm reduction and more aggressive parameter tuning combined with feedback to clinical areas is the only needed intervention to achieve meaningful improvement in this metric.",
+        ],
           correctIndex: 1,
           explanation: "Alarm fatigue creates conditioned behavioral responses - staff have learned over time that alarms do not require response. Parameter optimization removes non-actionable alarms but does not automatically reverse deeply embedded behavioral habits. Sustained improvement requires multiple simultaneous interventions: clear role definitions for who responds to which alarm, real-time feedback loops, leadership visibility into response data, simulation training on high-priority alarm recognition, and culture work that re-establishes alarm response as a non-negotiable professional expectation.",
           expertXp: 30
@@ -66,11 +66,11 @@ export const ddNpsgLevel: DeepDiveLevel = {
       id: "dd-npsg3",
       baseQuestion: "A hospital screens all inpatients for suicide risk using the Columbia Suicide Severity Rating Scale. A medical-surgical patient screens positive with recent ideation and a prior attempt. The nurse notifies the physician, who orders a one-to-one sitter. No environmental modifications are made to the room. Three days later, the patient uses a ligature point in the bathroom. What NPG 8 / formerly NPSG.15.01.01 requirement was not fully implemented?",
       baseOptions: [
-        "The sitter should have been positioned inside the bathroom during all bathroom use",
-        "Environmental safety modifications - removing ligature risks from the patient's room and bathroom - are a required component of the NPSG suicide risk response, not just a one-to-one sitter",
-        "A psychiatric consult was required before any safety measures were implemented",
-        "The screening tool was administered incorrectly - a positive screen in a medical-surgical patient should be repeated before safety measures are initiated"
-      ],
+          "Environmental safety modifications such as removing ligature risks from the patient's room and bathroom should only be implemented after a formal psychiatric evaluation is completed and documented",
+          "Environmental safety modifications - removing ligature risks from the patient's room and bathroom - are a required component of the NPSG suicide risk response, not just a one-to-one sitter",
+          "One-to-one sitter observation is the only required safety response to a positive suicide screening - additional environmental modifications are only necessary for patients on psychiatric hold",
+          "The screening tool was administered and interpreted incorrectly - a positive screen in a medical-surgical patient should be verified with a repeat assessment before implementing any safety measures or modifications",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "NPG 8 / formerly NPSG.15.01.01 requires three responses to a positive suicide screen: safety assessment, care plan, and environmental modifications. Environmental modifications include removing or securing potential ligature points - shower curtain rods, IV pole hooks, door handles, call light cords. A sitter without environmental modifications leaves available means in the patient's immediate environment.",
       baseXp: 20,
@@ -93,11 +93,11 @@ export const ddNpsgLevel: DeepDiveLevel = {
       id: "dd-npsg4",
       baseQuestion: "A quality improvement team analyzes medication reconciliation data and finds that 67% of patients admitted through the emergency department have incomplete reconciliation - missing medications, incorrect doses, or undocumented changes from their home regimen. The team proposes training emergency nurses on reconciliation. What else does this data suggest about the reconciliation system?",
       baseOptions: [
-        "Training alone is likely sufficient - a 67% failure rate reflects widespread knowledge gaps that education will correct",
-        "A 67% failure rate in a consistent population (ED admissions) indicates a systemic process problem, not just a knowledge gap - the workflow, tools, resources, and role clarity for ED reconciliation require evaluation alongside education",
-        "The data is expected - ED environments are too chaotic for accurate reconciliation and a 67% completion rate is operationally normal",
-        "The finding should be reported to pharmacy leadership who bears primary reconciliation responsibility in the ED setting"
-      ],
+          "Training alone is likely sufficient to improve performance because a 67% failure rate reflects widespread knowledge gaps among ED nursing staff that targeted education can effectively address",
+          "A 67% failure rate in a consistent population (ED admissions) indicates a systemic process problem, not just a knowledge gap - the workflow, tools, resources, and role clarity for ED reconciliation require evaluation alongside education",
+          "The data is expected in ED environments because chaos and time constraints make accurate reconciliation impossible, and a 67% completion rate represents reasonable performance given operational constraints",
+          "The finding should be reported to pharmacy leadership since pharmacists bear primary responsibility for medication reconciliation in the emergency department and nursing gaps indicate inadequate pharmacy oversight",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "A 67% failure rate across an entire population is a process and system indicator, not just a training indicator. If nearly two-thirds of all ED admissions have reconciliation failures, the workflow itself needs examination - does the ED have reliable access to medication histories, adequate time and tools for reconciliation, clear role responsibility, and EHR support? Training addresses knowledge; process redesign addresses the system conditions that make reconciliation difficult or impractical.",
       baseXp: 15,
@@ -105,11 +105,11 @@ export const ddNpsgLevel: DeepDiveLevel = {
         {
           question: "The team's root cause analysis reveals three contributing factors: (1) patients arrive without medication lists and cannot accurately recall home medications; (2) the EHR does not integrate with outpatient pharmacy records; (3) there is no defined timeline for completing ED reconciliation before admission orders are written. Which of these factors is most directly addressable through a JC-compliant process improvement within 90 days?",
           options: [
-            "Factor 1 - patient recall can be improved through a standardized patient intake questionnaire administered at triage that prompts specific medication classes",
-            "Factor 3 - defining a clear timeline and role responsibility for reconciliation completion before admission orders are written is a process design change that can be implemented rapidly and directly reduces the window during which unreconciled medications generate incorrect admission orders",
-            "Factor 2 - EHR integration with outpatient pharmacies is the highest-leverage solution and should be prioritized over process changes",
-            "All three factors require simultaneous action and cannot be prioritized"
-          ],
+          "Factor 1 - patient recall can be improved through a standardized patient intake questionnaire administered at triage that prompts for specific medication classes and allows for more complete and accurate medication history documentation during the admission process",
+          "Factor 3 - defining a clear timeline and role responsibility for reconciliation completion before admission orders are written is a process design change that can be implemented rapidly and directly reduces the window during which unreconciled medications generate incorrect admission orders",
+          "Factor 2 - EHR integration with outpatient pharmacies is the highest-leverage solution and should be prioritized because it addresses the data availability problem at its source and reduces dependence on patient recall and manual data entry",
+          "All three factors require simultaneous action because medication errors are multifactorial in nature and a single intervention addressing only one root cause will not achieve significant measurable improvement in reconciliation accuracy",
+        ],
           correctIndex: 1,
           explanation: "Factor 3 - the absence of a defined timeline - is the most immediately actionable process design change. Without a defined point at which reconciliation must be completed before admission orders are written, there is no structural incentive for timely completion. Establishing the requirement ('reconciliation must be complete before admission orders are co-signed by the admitting physician') creates a process gate. Factor 1 can be addressed concurrently. Factor 2 (EHR integration) typically requires significant resources and a longer timeline - it cannot be the 90-day solution.",
           expertXp: 25
@@ -120,11 +120,11 @@ export const ddNpsgLevel: DeepDiveLevel = {
       id: "dd-npsg5",
       baseQuestion: "During a survey tracer, the surveyor follows a nurse who performs a structured handoff using SBAR at shift change. The handoff includes diagnosis, current status, recent events, and pending tasks. The receiving nurse asks about the patient's fall risk status - the outgoing nurse is unsure. The receiving nurse asks about a critical lab result from 3 hours ago - the outgoing nurse was unaware of it. What does this scenario reveal about the handoff process?",
       baseOptions: [
-        "The handoff was functional - no handoff process can guarantee 100% information transfer and the gaps are expected",
-        "The structured format (SBAR) was used but the handoff content was incomplete - critical information including safety risk status and critical results was not reliably communicated, suggesting the SBAR template itself does not capture all required elements or was not used with sufficient rigor",
-        "The failure is the receiving nurse's - they should proactively review the chart rather than relying on handoff communication",
-        "The critical lab result gap is a separate laboratory notification failure unrelated to the handoff process"
-      ],
+          "The handoff was functional and appropriate overall because no handoff process can guarantee 100% information transfer, and minor gaps in non-critical elements are acceptable and expected in busy clinical environments.",
+          "The structured format (SBAR) was used but the handoff content was incomplete - critical information including safety risk status and critical results was not reliably communicated, suggesting the SBAR template itself does not capture all required elements or was not used with sufficient rigor",
+          "The receiving nurse bears primary responsibility for obtaining complete information by proactively reviewing the electronic health record rather than relying solely on verbal handoff communication, making the gap a receiving nurse accountability issue.",
+          "The critical lab result communication gap is a separate laboratory notification and results-reporting system failure unrelated to the shift handoff process itself, indicating the need to address results-reporting procedures independent of handoff improvement.",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "Using a structured format is necessary but not sufficient. The handoff must also ensure completeness of critical content. A fall risk status gap suggests the SBAR template does not include safety risk as a required element. An unknown critical lab result 3 hours later suggests a breakdown in the critical value notification and documentation process that creates handoff gaps. Both are process failures.",
       baseXp: 15,
@@ -132,11 +132,11 @@ export const ddNpsgLevel: DeepDiveLevel = {
         {
           question: "The facility's SBAR template is reviewed and found to include: diagnosis, current vitals, recent medications, and pending orders - but not fall risk, pressure injury risk, current safety precautions, or critical pending results. What process redesign does this require?",
           options: [
-            "No redesign - nurses should supplement the template with any additional relevant information they think of at the time",
-            "The SBAR template must be revised to include patient safety status elements as required fields: fall risk score and active precautions, pressure injury risk and prevention measures, pending critical results, and active safety orders. Required fields prevent omission by making safety communication a structured expectation, not an optional addition",
-            "A separate safety-focused handoff should be conducted after the SBAR, requiring nurses to complete two separate handoff processes per patient",
-            "The template is sufficient - the failures identified were individual nurse performance issues, not template design issues"
-          ],
+          "No redesign is necessary - nurses should supplement the template with any additional relevant information about patient safety status they think of at the time, as this individualized approach ensures all critical safety elements are communicated during handoff",
+          "The SBAR template must be revised to include patient safety status elements as required fields: fall risk score and active precautions, pressure injury risk and prevention measures, pending critical results, and active safety orders. Required fields prevent omission by making safety communication a structured expectation, not an optional addition",
+          "A separate safety-focused handoff should be conducted after the SBAR is completed, requiring nurses to follow the standard template first and then engage in an additional targeted discussion of fall risk, pressure injury risk, and active safety precautions to ensure comprehensive safety communication",
+          "The template is sufficient as currently designed - the failures identified were individual nurse performance issues related to attention to detail rather than template design issues, and additional training will ensure nurses consistently include safety elements",
+        ],
           correctIndex: 1,
           explanation: "JC's handoff requirement is for a standardized process that reliably communicates all critical information. If the template systematically omits patient safety information - fall risk, pressure injury status, active safety orders - those elements will be omitted in most handoffs because they require providers to deviate from the structure. Building safety elements into required template fields ensures consistent communication. The goal is one complete handoff, not two separate processes.",
           expertXp: 25
@@ -148,11 +148,11 @@ export const ddNpsgLevel: DeepDiveLevel = {
       id: "dd-npsg6",
       baseQuestion: "A patient in pre-op states 'I know you need two ID identifiers - I'm John Smith, DOB January 5, 1962.' The nurse says 'great, thanks' and places the IV without scanning the wristband or asking the patient to repeat the identifiers. Is the identification process complete?",
       baseOptions: [
-        "Yes - the patient verbalized two identifiers, satisfying the NPG patient identification requirement",
-        "No - JC requires that at least two identifiers be verified against the source - the patient's identification band or other authoritative documentation - not simply accepted from the patient's verbal statement alone. The patient's recall of their own identifiers does not substitute for cross-referencing the wristband or medical record",
-        "Yes - patient-verbalized identifiers are acceptable when the patient is alert and oriented",
-        "Partially - one additional identifier (such as address or phone number) must be added when the patient volunteers the information"
-      ],
+          "Yes - the patient verbalized two identifiers, satisfying the NPG patient identification requirement. JC standards emphasize patient engagement in the identification process, and a patient who can accurately recall their own identifiers demonstrates awareness and participation in their own safety verification.",
+          "No - JC requires that at least two identifiers be verified against the source - the patient's identification band or other authoritative documentation - not simply accepted from the patient's verbal statement alone. The patient's recall of their own identifiers does not substitute for cross-referencing the wristband or medical record",
+          "Yes - patient-verbalized identifiers are acceptable when the patient is alert and oriented. An alert and oriented patient's self-identification is reliable, and requiring additional verification steps for cooperative patients creates unnecessary workflow burden and delays essential clinical care such as IV placement.",
+          "Partially - one additional identifier (such as address or phone number) must be added when the patient volunteers the information. The combination of patient-verbalized identifiers plus one supplemental identifier meets a modified verification standard that balances patient engagement with the facility's compliance requirements.",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "The purpose of two-identifier verification is to prevent errors caused by misidentification - including situations where staff approach the wrong patient, who confirms their own (incorrect from the perspective of who was intended) identity. Verification must compare patient-provided identifiers against a secondary source: the wristband, the order, or the MAR. A patient telling you who they are without cross-referencing a secondary source does not complete the verification process.",
       baseXp: 15,
@@ -160,11 +160,11 @@ export const ddNpsgLevel: DeepDiveLevel = {
         {
           question: "In a busy ED, a nurse argues that stopping to scan wristbands on every patient interaction slows care and that 'I know my patients.' What does evidence about wrong-patient errors in high-familiarity settings show?",
           options: [
-            "Provider familiarity with patients is a reliable substitute for systematic identification - the 'I know my patients' approach is safe in defined small-unit environments",
-            "Wrong-patient errors occur most frequently in high-familiarity environments where providers bypass verification because they believe they know the patient. Cognitive shortcuts - mistaking a similar-appearing patient in the same room type, or confusing patients with similar names - cause errors precisely when staff feel most confident they don't need to verify. Systematic identification is most important in high-volume, familiar settings",
-            "Wristband scanning is only required for medication administration and procedures - non-medication interactions do not require two-identifier verification",
-            "The 'I know my patients' argument is valid for the primary nurse but not for any other provider who encounters the patient"
-          ],
+          "Provider familiarity with patients is a reliable substitute for systematic identification - the 'I know my patients' approach is safe in defined small-unit environments where staff know each patient's name, appearance, and room assignment because cognitive shortcuts are less likely to occur in these controlled settings.",
+          "Wrong-patient errors occur most frequently in high-familiarity environments where providers bypass verification because they believe they know the patient. Cognitive shortcuts - mistaking a similar-appearing patient in the same room type, or confusing patients with similar names - cause errors precisely when staff feel most confident they don't need to verify. Systematic identification is most important in high-volume, familiar settings",
+          "Wristband scanning is only required for medication administration and procedures - non-medication interactions such as vital signs, hygiene assistance, or patient education do not require two-identifier verification because the risk of misidentification is substantially lower for non-clinical interventions.",
+          "The 'I know my patients' argument is valid for the primary nurse assigned to the patient's care throughout their entire shift - other providers who encounter the patient less frequently should verify identification, but the primary nurse has sufficient familiarity to rely on recognition in most routine care situations.",
+        ],
           correctIndex: 1,
           explanation: "Paradoxically, wrong-patient errors are more common in familiar settings because familiarity breeds complacency about systematic verification. Cognitive load in busy EDs causes staff to pattern-match on expected identities rather than verify actual identities. The safeguard exists precisely because human pattern-recognition is unreliable under high volume and time pressure. The scan takes 2 seconds; the wrong-patient error it prevents may result in catastrophic harm.",
           expertXp: 25
@@ -175,11 +175,11 @@ export const ddNpsgLevel: DeepDiveLevel = {
       id: "dd-npsg7",
       baseQuestion: "A critical laboratory value (serum potassium of 6.8 mEq/L) is called to the nursing unit by the lab at 2:47 AM. The unit secretary answers the phone, hears the value, and writes it on a note. She does not call the patient's nurse because 'it's 3 AM and I didn't want to wake anyone up.' The nurse discovers the critical value at 6:30 AM during chart review. What NPG requirement was violated?",
       baseOptions: [
-        "No NPG violation - the lab fulfilled its reporting obligation by calling the unit, and documentation of the value satisfies the standard",
-        "Critical value reporting requires that the receiving individual ensure the result reaches a licensed caregiver who can act on it - the unit secretary receiving the call and not passing it to the nurse represents a failure in the critical value notification chain. Additionally, the secretary's decision not to notify the nurse due to the time of day reflects a misunderstanding of what 'critical' means",
-        "The violation is limited to documentation - the critical value should have been entered in the electronic record immediately upon receipt",
-        "The lab bears responsibility for the failure - they should have called back to verify the result reached a licensed provider"
-      ],
+          "No NPG violation occurred - the lab fulfilled its reporting obligation by calling the unit, and documentation of the value satisfies the standard. Once the lab has communicated the critical value to the facility by telephone, responsibility for acting on it transfers to facility staff.",
+          "Critical value reporting requires that the receiving individual ensure the result reaches a licensed caregiver who can act on it - the unit secretary receiving the call and not passing it to the nurse represents a failure in the critical value notification chain. Additionally, the secretary's decision not to notify the nurse due to the time of day reflects a misunderstanding of what 'critical' means",
+          "The violation is limited to documentation - the critical value should have been entered in the electronic record immediately upon receipt. If the value had been properly documented in the EHR system at 2:47 AM, the nurse would have been able to see it the next morning when checking patient records and could have acted promptly.",
+          "The lab bears responsibility for the failure because they should have called back to verify the result reached a licensed provider. Once the lab has made one telephone call to the unit, they have fulfilled their reporting obligation and responsibility shifts to facility staff for follow-up.",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "Critical value notification requires that the result reach a licensed clinician who can evaluate and act on it. Having a unit secretary receive the value and not relay it to nursing is a complete failure of the critical value communication chain. A potassium of 6.8 mEq/L is a life-threatening hyperkalemia that requires immediate intervention - a 3.75-hour delay in notification represents a serious patient safety failure that could have resulted in fatal arrhythmia.",
       baseXp: 20,
@@ -256,11 +256,11 @@ export const ddNpsgLevel: DeepDiveLevel = {
       id: "dd-npsg10",
       baseQuestion: "A central line bundle compliance audit shows 97% compliance across all five elements for new PICC placements. Despite this, the CLABSI rate has not declined over 6 months. What should the quality team investigate?",
       baseOptions: [
-        "The audit data - 97% compliance is near-perfect and the CLABSI rate must be attributable to patient factors outside the bundle's control",
-        "Maintenance bundle compliance - CLABSI risk continues throughout the catheter's dwell time. High insertion bundle compliance reduces insertion-related infections but does not address hub access frequency, dressing change compliance, and need reassessment. If the maintenance bundle is being neglected while insertion is measured, the audit is capturing only part of the prevention picture",
-        "The NHSN benchmark - the current CLABSI definition may include events that are not truly related to central lines",
-        "PICC placement team training - 97% compliance by a dedicated team may mask compliance gaps when non-team members perform line placements"
-      ],
+          "The audit data - 97% compliance is near-perfect and the CLABSI rate must be attributable to patient factors outside the bundle's control. High compliance with insertion bundle elements indicates that the prevention strategy is working appropriately.",
+          "Maintenance bundle compliance - CLABSI risk continues throughout the catheter's dwell time. High insertion bundle compliance reduces insertion-related infections but does not address hub access frequency, dressing change compliance, and need reassessment. If the maintenance bundle is being neglected while insertion is measured, the audit is capturing only part of the prevention picture",
+          "The NHSN benchmark - the current CLABSI definition may include events that are not truly related to central lines. Clarifying the definition of CLABSI and reviewing which infections are actually attributable to line placement may explain the discrepancy between compliance and outcome.",
+          "PICC placement team training - 97% compliance by a dedicated team may mask compliance gaps when non-team members perform line placements. Investigating whether insertion bundle compliance varies by clinician or by whether placements were performed by the core team versus others could explain the flat CLABSI rate.",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "CLABSI prevention requires both insertion and maintenance bundle compliance. A 97% insertion bundle score with a flat CLABSI rate suggests the maintenance bundle - daily need assessment, dressing change compliance, hub scrub technique, and tubing change frequency - may not be receiving the same scrutiny. A high insertion compliance score combined with poor or unmeasured maintenance compliance is a common pattern in programs where the CLABSI rate fails to improve.",
       baseXp: 15,
@@ -268,11 +268,11 @@ export const ddNpsgLevel: DeepDiveLevel = {
         {
           question: "A direct observation of maintenance practices reveals that hub disinfection ('scrub the hub') takes an average of 4 seconds, when the recommended minimum friction scrub time is 15 seconds. Staff say 'we're very quick - we scrub every hub.' What does this reveal?",
           options: [
-            "The 4-second scrub reflects efficient technique - friction time is less important than the action of scrubbing",
-            "A documented compliance gap that is invisible to self-report audits - staff believe they are compliant ('we scrub every hub') while the actual technique fails to meet minimum requirements. A 4-second scrub does not achieve the friction duration required for adequate disinfection of hub organisms. The maintenance bundle compliance figure derived from self-report or documentation review would show 100% hub scrub compliance while actual technique compliance is 0%",
-            "The timing standard is overly conservative - 4 seconds of friction scrub with an alcohol swab is clinically equivalent to 15 seconds",
-            "The finding is relevant only for needleless connector types with biofilm-prone surfaces - standard luer-lock hubs are adequately cleaned in 4 seconds"
-          ],
+          "The 4-second scrub reflects efficient technique - friction time is less important than the action of scrubbing. The exact duration of scrubbing is less critical than ensuring staff apply vigorous mechanical action with an appropriate disinfectant agent, and experienced staff can achieve adequate disinfection in shorter timeframes than recommended standards.",
+          "A documented compliance gap that is invisible to self-report audits - staff believe they are compliant ('we scrub every hub') while the actual technique fails to meet minimum requirements. A 4-second scrub does not achieve the friction duration required for adequate disinfection of hub organisms. The maintenance bundle compliance figure derived from self-report or documentation review would show 100% hub scrub compliance while actual technique compliance is 0%",
+          "The timing standard is overly conservative - 4 seconds of friction scrub with an alcohol swab is clinically equivalent to 15 seconds. Published studies on alcohol-based disinfectant efficacy demonstrate that 4-second application achieves equivalent log-reduction of hub-dwelling bacteria when using high-concentration chlorhexidine or similar agents.",
+          "The finding is relevant only for needleless connector types with biofilm-prone surfaces - standard luer-lock hubs are adequately cleaned in 4 seconds. The 15-second standard applies specifically to connectors with internal ridges or valves where organisms may harbor, while smooth luer-lock hubs achieve adequate disinfection with shorter friction times.",
+        ],
           correctIndex: 1,
           explanation: "The 4-second versus 15-second scrub finding reveals the critical difference between documentation compliance and behavioral compliance. Staff who self-report or have their hub access documented as 'scrubbed' may have technically performed the action while failing to achieve the minimum duration for disinfection effectiveness. Direct observation is the only measurement method that captures technique quality. The CLABSI program must include direct observation of maintenance technique, not just documentation audits.",
           expertXp: 25
@@ -310,11 +310,11 @@ export const ddNpsgLevel: DeepDiveLevel = {
       id: "dd-npsg12",
       baseQuestion: "A hospital conducts an anticoagulation safety review and finds that 22% of patients on therapeutic anticoagulation had no documented baseline INR or anti-Xa level before the first dose was given. What is the patient safety concern?",
       baseOptions: [
-        "Documentation only - the laboratory values were likely checked but not recorded in the medication administration record",
-        "A clinical safety gap - baseline coagulation status before initiating anticoagulation therapy affects dosing decisions and establishes a reference point for monitoring therapy. Without baseline values, an elevated baseline INR (from liver disease, malnutrition, or drug interaction) could lead to dangerous supratherapeutic anticoagulation at doses that would be therapeutic in a patient with normal baseline function",
-        "The concern applies only to warfarin, not to heparin or direct oral anticoagulants",
-        "Baseline laboratory values are not required before initiating anticoagulation therapy in emergency or urgent clinical situations"
-      ],
+          "Documentation only - the laboratory values were likely checked and interpreted by the clinician but not recorded in the electronic medication administration record or the patient's chart, creating a documentation gap that prevented the baseline coagulation status information from being accessible during therapy initiation and subsequent dose adjustments.",
+          "A clinical safety gap - baseline coagulation status before initiating anticoagulation therapy affects dosing decisions and establishes a reference point for monitoring therapy. Without baseline values, an elevated baseline INR (from liver disease, malnutrition, or drug interaction) could lead to dangerous supratherapeutic anticoagulation at doses that would be therapeutic in a patient with normal baseline function",
+          "The concern applies only to warfarin - heparin and direct oral anticoagulants do not require baseline laboratory assessment before initiation because dose adjustments are made based on clinical response and renal function rather than baseline coagulation laboratory values.",
+          "Baseline laboratory values are not required before initiating anticoagulation therapy in emergency or urgent clinical situations where time constraints prevent pre-treatment assessment and clinical judgment guides dosing decisions based on patient presentation, risk factors, and mechanism of injury.",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "Pre-anticoagulation baseline laboratory assessment is a clinical standard because it identifies patients with existing coagulation abnormalities that affect therapeutic dosing. A patient with an INR of 1.8 at baseline needs different management than one with an INR of 1.0. A 22% rate of missing baseline values indicates a systemic workflow gap in the anticoagulation initiation process. This is a clinical safety issue, not just a documentation problem.",
       baseXp: 15,
@@ -391,11 +391,11 @@ export const ddNpsgLevel: DeepDiveLevel = {
       id: "dd-npsg15",
       baseQuestion: "A hospital's medication reconciliation process reconciles home medications on admission but has no formal process for reconciliation at internal care transitions (ICU to medical-surgical floor, surgery to post-op unit). Three patients in one quarter experienced medication continuation errors (held medications not restarted, new duplicates created) at these internal transitions. What does this reveal?",
       baseOptions: [
-        "Individual prescribing errors - physicians are responsible for reviewing all medications at each care transition",
-        "A systemic gap in the reconciliation program - NPG 3 / formerly NPSG.03.06.01 requires medication reconciliation not only at admission and discharge but also at all internal care transitions where medication changes could occur. A process that only reconciles at admission leaves internal transitions as an unprotected step where omissions and duplications accumulate",
-        "An EHR failure - the medication list should carry forward automatically across care transitions without requiring manual reconciliation",
-        "A nursing failure - medication reconciliation at internal transfers is a nursing documentation responsibility, not a physician prescribing responsibility"
-      ],
+          "Individual prescribing errors by physicians who fail to review all medications at each care transition are responsible for medication omissions. The solution is to improve physician awareness and responsibility at transitions rather than implementing a formal reconciliation process.",
+          "A systemic gap in the reconciliation program - NPG 3 / formerly NPSG.03.06.01 requires medication reconciliation not only at admission and discharge but also at all internal care transitions where medication changes could occur. A process that only reconciles at admission leaves internal transitions as an unprotected step where omissions and duplications accumulate",
+          "An EHR failure - the medication list should carry forward automatically across care transitions without requiring manual reconciliation. When the electronic health record system is functioning properly, medications documented during admission should automatically transfer to all subsequent care areas without need for additional verification.",
+          "A nursing failure - medication reconciliation at internal transfers is a nursing documentation responsibility, not a physician prescribing responsibility. Nurses should ensure that medication lists are accurate at each transition point by reviewing all current medications and documenting them appropriately.",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "Medication reconciliation at internal transitions is a frequently overlooked NPG requirement. The admission reconciliation captures home medications; internal transfer reconciliation ensures that medications appropriately held for a procedure are restarted, newly prescribed medications during the prior stay are reviewed, and no duplicates or omissions exist at the point of transfer. ICU-to-floor transitions are particularly high-risk because of the complexity of medication regimens and the change in provider teams.",
       baseXp: 15,
@@ -403,11 +403,11 @@ export const ddNpsgLevel: DeepDiveLevel = {
         {
           question: "The pharmacy proposes a pharmacist-led transfer reconciliation process where a pharmacist reviews all active medications and makes recommendations to the receiving team within 4 hours of transfer. The receiving physician team expresses concern that pharmacist recommendations create a delay. What is the evidence basis for the proposed process?",
           options: [
-            "Pharmacist-led reconciliation is not evidence-based for internal transfers - the focus should be on physician awareness of transfer-of-care responsibilities",
-            "Pharmacist-led reconciliation at transitions has strong evidence for improving reconciliation accuracy and reducing medication errors. The 4-hour window is a reasonable starting point, though higher-risk transfers (post-operative, ICU to floor) may warrant a tighter timeline. The physician concern about delay is addressed by designing the process as a recommendation model - the pharmacist identifies discrepancies and brings them to physician attention, accelerating rather than delaying resolution",
-            "Accept the 4-hour delay concern - medication errors from transition can be addressed through increased nursing monitoring rather than a pharmacist-intensive reconciliation process",
-            "Pharmacist involvement should be limited to high-alert medications - standard medications can be self-reconciled by the receiving physician"
-          ],
+          "Pharmacist-led reconciliation is not evidence-based for internal hospital transfers and resources should focus on enhancing physician awareness of transfer-of-care responsibilities. The physician concern about potential delay is valid and suggests process changes should streamline rather than add steps to the existing physician-led reconciliation workflow.",
+          "Pharmacist-led reconciliation at transitions has strong evidence for improving reconciliation accuracy and reducing medication errors. The 4-hour window is a reasonable starting point, though higher-risk transfers (post-operative, ICU to floor) may warrant a tighter timeline. The physician concern about delay is addressed by designing the process as a recommendation model - the pharmacist identifies discrepancies and brings them to physician attention, accelerating rather than delaying resolution",
+          "Accept the 4-hour delay concern and address medication errors from transition through increased nursing surveillance and monitoring rather than implementing a pharmacist-intensive reconciliation process. Nursing assessment combined with physician awareness of transfer-of-care responsibilities provides sufficient oversight of medication changes without adding additional workflow steps.",
+          "Pharmacist involvement should be limited to high-alert medications only, as standard medications can be appropriately reconciled by the receiving physician through chart review. This targeted approach focuses pharmacist expertise where error risk is highest while allowing physicians to maintain control over reconciliation decisions and timeline for routine medications.",
+        ],
           correctIndex: 1,
           explanation: "Pharmacist-led transfer reconciliation is evidence-based and improves reconciliation accuracy compared to physician-only processes. Physicians at the point of care often lack the time and medication-specific knowledge to efficiently review complex inpatient regimens for omissions and duplications. The pharmacist recommendation model accelerates resolution by doing the work of comparison and flagging discrepancies - the physician then confirms or adjusts. This is additive to physician authority, not a replacement of it.",
           expertXp: 25
@@ -499,11 +499,11 @@ export const ddNpsgLevel: DeepDiveLevel = {
       id: "dd-npsg19",
       baseQuestion: "A nurse performs a structured handoff at shift change using the facility's approved SBAR format. The outgoing nurse tells the incoming nurse: 'Mr. Chen in 412 is stable - he's on warfarin for AFib, his INR was 2.6 this morning, and he's due for his 8 PM dose. No concerns.' The incoming nurse later discovers that Mr. Chen's morning INR result actually showed a critical value of 4.9, which was corrected in the chart 2 hours after initial entry due to a specimen labeling issue. The 2.6 was the original erroneous value. What handoff process failure occurred?",
       baseOptions: [
-        "The handoff was adequate - the outgoing nurse communicated what they believed to be accurate based on available information",
-        "Critical result updates and corrections must be incorporated into the active patient management and communicated at handoff - if the correct INR of 4.9 was in the chart 2 hours before shift change, the outgoing nurse failed to verify current information before handoff. Handing off based on a superseded value with a critical medication dose due represents a significant patient safety risk",
-        "The failure is the laboratory's - the specimen labeling error that required correction should have been flagged to the nursing team directly",
-        "The failure is an EHR design problem - result correction workflows should alert the current nursing user when a value they have viewed is superseded"
-      ],
+          "The handoff was adequate - the outgoing nurse communicated what they believed to be accurate based on available information at the time of the shift change, and the incoming nurse has responsibility to verify critical values before administering time-sensitive medications. Nursing handoff protocols do not require real-time verification of all previously documented results.",
+          "Critical result updates and corrections must be incorporated into the active patient management and communicated at handoff - if the correct INR of 4.9 was in the chart 2 hours before shift change, the outgoing nurse failed to verify current information before handoff. Handing off based on a superseded value with a critical medication dose due represents a significant patient safety risk",
+          "The failure is the laboratory's - the specimen labeling error that required correction should have been flagged to the nursing team directly through a phone call or alert rather than silently updated in the EHR where the outdated value had already been communicated. Laboratory result correction protocols should prioritize direct notification over system-only updates.",
+          "The failure is an EHR design problem - result correction workflows should alert the current nursing user when a value they have viewed is superseded, and nursing staff cannot be expected to continuously monitor for system updates that occur after they have reviewed results. System limitations should not be attributed to individual nurse accountability.",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "A handoff based on outdated or superseded critical values creates patient harm risk - in this case, the patient may receive a warfarin dose despite a supratherapeutic INR of 4.9. Pre-handoff preparation must include a current chart review that verifies the most recent values, not those reviewed hours earlier. Result corrections in the EHR - especially for critical values - must trigger active notification to the current care team, not just passive chart updates.",
       baseXp: 20,
@@ -511,11 +511,11 @@ export const ddNpsgLevel: DeepDiveLevel = {
         {
           question: "To prevent similar events, the quality team proposes two interventions: (1) a requirement that nurses review all active medication orders and current labs within 30 minutes of shift start, and (2) an EHR alert that notifies the current nurse when a result they have previously viewed is corrected or superseded. Which intervention is more effective and why?",
           options: [
-            "Intervention 1 is more effective - active nurse review is more reliable than EHR alerts, which are subject to alert fatigue",
-            "Intervention 2 is more effective in isolation - a real-time system notification that pushes superseded-result alerts to the current nurse requires no behavior change and acts at the precise moment a critical update is made",
-            "Both interventions are needed - intervention 2 provides immediate point-of-correction notification that intervention 1 cannot guarantee (the nurse may review labs before the correction occurs); intervention 1 provides a safety net for other information changes that would not trigger a correction alert. Together they provide redundant coverage across different failure modes",
-            "Neither intervention is effective - handoff failures require cultural change, not process or technology interventions"
-          ],
+          "Intervention 1 is more effective than intervention 2 - active nurse review of medications and labs at shift start is more reliable than EHR alerts, which are subject to alert fatigue and may be dismissed by busy clinical staff",
+          "Both interventions are needed - intervention 2 provides immediate point-of-correction notification that intervention 1 cannot guarantee (the nurse may review labs before the correction occurs); intervention 1 provides a safety net for other information changes that would not trigger a correction alert. Together they provide redundant coverage across different failure modes",
+          "Both interventions are needed - intervention 2 provides immediate point-of-correction notification that intervention 1 cannot guarantee (the nurse may review labs before the correction occurs); intervention 1 provides a safety net for other information changes that would not trigger a correction alert. Together they provide redundant coverage across different failure modes",
+          "Intervention 2 alone is necessary and sufficient - providing immediate EHR alerts for all result corrections will notify nurses at the point where critical value changes occur, making intervention 1's retrospective lab review redundant and unnecessary",
+        ],
           correctIndex: 2,
           explanation: "Complementary interventions covering different failure modes are more effective than any single intervention. Real-time result correction alerts (intervention 2) catch the specific scenario where a value changes after the nurse has already reviewed it - which is precisely what occurred in this event. Structured post-handoff review (intervention 1) catches any changes that occurred before the nurse took report. Together they provide overlapping protection. Choosing only one leaves a gap that the other would have covered.",
           expertXp: 30

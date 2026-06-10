@@ -1128,9 +1128,9 @@ const hospitalLevelsRaw: Level[] = [
         question: "Your soiled utility room has PPE, covered waste containers, a closed door, and items at 8 inches off the floor. A surveyor asks what is missing. What do you say?",
         options: [
           "A hand hygiene station. PPE, waste receptacles, and a hand hygiene station are all required.",
-          "A biohazard spill kit.",
-          "Nothing. PPE, waste receptacles, closed door, and proper shelving meet all the requirements.",
-          "A negative-pressure ventilation system."
+          "A biohazard spill kit with absorbent materials and disinfectant for managing chemical and blood spills",
+          "Nothing. PPE, waste receptacles, closed door, and proper shelving meet all the requirements completely",
+          "A negative-pressure ventilation system to prevent contaminated air from escaping into adjacent hallways",
         ],
         correctIndex: 0,
         explanation: "Soiled utility rooms require PPE, waste receptacles, AND a hand hygiene station. The hand hygiene station is missing from the list of what was described.",
@@ -1477,9 +1477,9 @@ const hospitalLevelsRaw: Level[] = [
         question: "Sterile storage has a corrugated cardboard divider between tray types and peel packs stacked 2 high. Which is the finding?",
         options: [
           "Only the cardboard divider. Corrugated cardboard in any form is prohibited in sterile storage. Peel packs at 2 high are acceptable.",
-          "Only the peel packs. Stacking compresses seals and AORN recommends storing peel packs on edge.",
-          "Neither. Plastic-coated corrugated dividers are acceptable and 2-high stacking is within limits.",
-          "Both. Cardboard is prohibited and peel packs must always be stored vertically on edge."
+          "Only the peel packs stacked 2 high. Stacking compresses the seals and AORN standards recommend storing peel packs vertically on their edge only",
+          "Neither is a finding. Plastic-coated corrugated dividers are acceptable and stacking peel packs 2 high is within acceptable storage limits per AAMI",
+          "Both findings must be corrected. Corrugated cardboard is prohibited and peel packs must always be stored vertically on edge, never stacked horizontally",
         ],
         correctIndex: 0,
         explanation: "Corrugated cardboard in any form is prohibited in sterile storage, including as dividers. Peel packs stacked 2 high are within accepted practice. The cardboard is the clear compliance finding.",
@@ -1735,10 +1735,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "i10",
         question: "A surveyor asks what tool must be at every instrument inspection workstation. What do you answer?",
         options: [
-          "A UV inspection light for detecting residual bioburden invisible under standard lighting.",
+          "A UV inspection light for detecting residual bioburden and contaminants invisible under standard room lighting.",
           "Lighted magnification — illuminated magnification equipment, not a separate lamp and handheld magnifier.",
-          "An endoscope camera for viewing instrument lumens.",
-          "A standard magnifying glass held under bright lighting."
+          "An endoscope camera system for visualizing the internal lumens and channels of hollow surgical instruments.",
+          "A standard magnifying glass held under bright overhead lighting or portable lamp, per facility equipment policy.",
         ],
         correctIndex: 1,
         explanation: "Lighted magnification must be available at assembly and inspection workstations. This means integrated illuminated magnification, not a separate desk lamp plus a handheld magnifier. Its absence is itself a finding.",
@@ -2568,9 +2568,9 @@ const hospitalLevelsRaw: Level[] = [
         question: "A tech uses enzymatic detergent at double the manufacturer's concentration because stronger must be better. Is this acceptable?",
         options: [
           "No. Your enzymatic detergent must be used at the exact concentration in the IFU. Over-concentration can damage instruments and leave residue.",
-          "Yes. Higher concentration ensures faster bioburden breakdown during the soak cycle.",
-          "No. Your enzymatic concentration must be verified with test strips, and 2x would exceed the acceptable range.",
-          "Yes. Doubling the concentration is acceptable for heavily soiled instruments from complex surgical cases."
+          "Yes. Using higher enzymatic detergent concentration ensures faster bioburden breakdown and improved cleaning during the soak cycle phase",
+          "No. Your enzymatic detergent concentration must be verified with test strips each time and the 2x concentration would exceed the acceptable range",
+          "Yes. Doubling the enzymatic detergent concentration is acceptable for heavily soiled instruments from complex surgical procedures and cases",
         ],
         correctIndex: 0,
         explanation: "You must follow your enzymatic detergent IFU exactly, including concentration. Over-concentration does not improve cleaning — it can damage instrument surfaces, leave chemical residue, and invalidate the validated cleaning process.",
@@ -2967,9 +2967,9 @@ const hospitalLevelsRaw: Level[] = [
         question: "A sterile field was set up 3 hours ago. No contamination events occurred and a staff member has been present the entire time. Is the field sterile?",
         options: [
           "Yes. Neither JC nor AAMI ST79 specifies an absolute time limit. Continuous monitoring with no compromise events can maintain sterility per facility policy.",
-          "No. AAMI standards require breaking down and re-establishing a sterile field if the case is delayed beyond 1 hour.",
-          "No. AORN requires sterile fields to be used within 2 hours of setup.",
-          "Yes. As long as the room's positive-pressure ventilation is functioning, the sterile field is maintained indefinitely."
+          "No. AAMI standards require the sterile field to be broken down and re-established if delayed beyond one hour without exception.",
+          "No. AORN guidelines establish a two-hour maximum time limit for all sterile fields before they must be dismantled and reset.",
+          "Yes. As long as the room maintains positive-pressure ventilation and air handling systems functioning, sterility is maintained indefinitely.",
         ],
         correctIndex: 0,
         explanation: "Neither JC nor AAMI ST79 specifies an absolute maximum time for a sterile field. The key requirements are continuous monitoring by qualified personnel, no contamination events, controlled room access, and compliance with facility policy.",
@@ -3254,9 +3254,9 @@ const hospitalLevelsRaw: Level[] = [
         question: "Your consent form has a patient signature, date, time, and the full procedure name — but no witness signature. Is this consent complete per JC?",
         options: [
           "Yes. JC requires patient signature, date, time, and full procedure name. Witness signature requirements are set by state law and facility policy, not by JC itself.",
-          "Yes. Both patient and witness signatures are required by JC standard RI.01.03.01 for all informed consents.",
-          "No. The surgeon's signature on the operative report serves as the witness verification required by JC.",
-          "No. JC RI.01.03.01 explicitly requires both the patient and witness signatures on all consent forms."
+          "Yes. Both patient and witness signatures are required by JC standard RI.01.03.01 for all informed consents regardless of state law or facility policy requirements.",
+          "No. The surgeon's signature on the operative report serves as the official witness verification required by JC standard RI.01.03.01 for consent documentation.",
+          "No. JC RI.01.03.01 explicitly requires both the patient signature and a separate witness signature on all consent forms before any procedure can be performed.",
         ],
         correctIndex: 0,
         explanation: "JC (RI.01.03.01) requires documentation that the patient was informed of risks, benefits, and alternatives. JC does NOT independently mandate a witness signature — that is governed by state law and your facility's policy. However, most facilities DO require witness signatures per their own policies, so always follow your facility's consent form requirements.",
@@ -3680,10 +3680,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pc16",
         question: "Your post-anesthesia evaluation at 40 hours documents: respiratory, cardiovascular, mental status, pain, nausea/vomiting, and hydration. What is missing?",
         options: [
-          "Nothing is missing. The 40-hour timeframe exceeds the 24-hour maximum, which is the actual finding.",
+          "Nothing is missing. The 40-hour timeframe exceeds the maximum allowed, but the six documented elements represent a complete post-anesthesia evaluation.",
           "Temperature is missing. All 7 required elements must be documented — respiratory, cardiovascular, mental status, temperature, pain, nausea/vomiting, and hydration.",
-          "The evaluation must be completed in the PACU prior to discharge, not 40 hours post-procedure.",
-          "Nothing. The six documented elements are a complete post-anesthesia evaluation within the required timeframe."
+          "The evaluation must be completed in the PACU prior to discharge, not 40 hours post-procedure, regardless of which elements are documented.",
+          "Nothing. The six documented elements are sufficient for a complete post-anesthesia evaluation within the required 24-hour timeframe after surgery.",
         ],
         correctIndex: 1,
         explanation: "Your post-anesthesia evaluation must include all 7 elements: respiratory function, cardiovascular function, mental status, temperature, pain, nausea/vomiting, and hydration status. Temperature is missing. The 40-hour timeframe is within the 48-hour requirement.",
@@ -3694,10 +3694,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pc17",
         question: "A range PRN order reads 'Morphine 2–4 mg IV PRN for pain.' One nurse gives 4 mg for pain of 3/10. Another gives 2 mg for pain of 8/10. Is this appropriate?",
         options: [
-          "Yes. Range orders allow nurses to use professional discretion, and factors beyond pain score inform dosing.",
+          "Yes. Range orders allow nurses to use clinical judgment and professional discretion; dosing decisions may reflect factors beyond pain scores",
           "Yes. This pattern is concerning — giving maximum dose for mild pain and minimum for severe pain does not reflect individualized assessment and must be addressed.",
-          "No. Both doses fall within the prescribed range and the 4-hour interval is maintained, so this is compliant.",
-          "No. The prescribed range gives nurses full latitude; no pattern review is required as long as dosing is within the range.",
+          "No. Both doses fall within the prescribed range and the 4-hour interval is maintained, so the prescribing and administration are compliant",
+          "No. The prescribed range gives nurses full authority to choose dosing; no pattern review or intervention is required as long as dosing stays within the range",
         ],
         correctIndex: 1,
         explanation: "Range orders require clinical judgment that matches dose to actual pain level and clinical status. Giving the maximum dose for mild pain (3/10) and the minimum for severe pain (8/10) suggests assessment is not driving dosing decisions. This administration pattern warrants review.",
@@ -4261,10 +4261,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "anes5",
         question: "A CRNA reviews the patient's pre-op note showing no prior adverse reactions to anesthesia and proceeds directly to induction without a separate pre-anesthesia assessment. Compliant?",
         options: [
-          "Yes. The pre-op registration note documents adverse reaction history and satisfies the pre-anesthesia assessment requirement.",
+          "Yes. The pre-op registration note documents adverse reaction history and satisfies the pre-anesthesia assessment requirement prior to induction.",
           "No. A formal pre-anesthesia assessment including airway review, medications, ASA classification, and prior anesthesia history must be completed before induction.",
-          "Yes. If the CRNA reviews the H&P, a separate pre-anesthesia assessment is not required.",
-          "No. Only the attending anesthesiologist may complete the pre-anesthesia assessment, not a CRNA."
+          "Yes. If the CRNA reviews the H&P and nursing pre-op assessment, a separate pre-anesthesia assessment document is not required by accreditation standards.",
+          "No. Only the attending anesthesiologist (not CRNA) may complete the pre-anesthesia assessment documentation before any anesthesia is administered.",
         ],
         correctIndex: 1,
         explanation: "A pre-anesthesia assessment is a distinct, required document separate from the H&P and pre-op nursing assessments. It must be completed before anesthesia and must include airway assessment, medication review, ASA classification, and prior anesthesia history.",
@@ -4359,10 +4359,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "anes12",
         question: "After oral diazepam pre-medication, the anesthesiologist has the patient sign a separate nerve block consent. Is this compliant?",
         options: [
-          "Yes. Consent obtained before the nerve block procedure itself is sufficient.",
+          "Yes. Consent obtained before the nerve block procedure itself is sufficient regardless of medication timing.",
           "No. Consent for regional anesthesia must be obtained before any sedating or anxiolytic medication is administered.",
-          "Yes. Diazepam given orally does not impair decision-making so consent remains valid.",
-          "No. Nerve block consent must be obtained by a nurse, not the anesthesiologist."
+          "Yes. Diazepam given orally does not significantly impair decision-making so consent remains valid even after medication administration.",
+          "No. Nerve block consent must be obtained and witnessed by a nurse, not by the anesthesiologist or CRNA.",
         ],
         correctIndex: 1,
         explanation: "Consent must be obtained before any sedating medication is administered. Diazepam is a benzodiazepine with sedating properties — even given orally. Consent obtained after a sedating pre-medication is presumptively defective because decision-making capacity may be compromised.",
@@ -4415,10 +4415,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "anes16",
         question: "A quality review finds 8 of 12 post-anesthesia evaluations document respiratory, cardiovascular, and pain — but routinely omit temperature and hydration. What is the compliance status?",
         options: [
-          "Partially compliant. Five of 7 elements are documented, satisfying a 70% threshold under JC standards.",
+          "Partially compliant. Five of seven required post-anesthesia evaluation elements are documented, which satisfies a 70% compliance threshold",
           "Non-compliant. All required post-anesthesia evaluation elements must be present; omitting temperature and hydration is a finding for each case.",
-          "Compliant. Temperature and hydration are nursing documentation responsibilities, not part of the anesthesia evaluation.",
-          "Non-compliant only if the omissions caused patient harm during the review period."
+          "Compliant. Temperature and hydration are nursing assessment responsibilities and not required as part of the post-anesthesia evaluation",
+          "Non-compliant only if the omissions directly contributed to patient harm or adverse events during the review period",
         ],
         correctIndex: 1,
         explanation: "JC requires all 7 post-anesthesia evaluation elements in every case — there is no partial-credit threshold. Systematic omission of temperature and hydration across 8 of 12 charts is a pattern of deficient documentation and would be cited on every affected record.",
@@ -4585,10 +4585,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "mm2",
         question: "A surveyor finds a vial of concentrated potassium chloride (20 mEq/10 mL) in your medical-surgical unit's medication drawer. What is the finding?",
         options: [
-          "Minor finding. Concentrated KCl is acceptable on MS units when kept in a locked drawer.",
-          "No finding. 20 mEq is below the threshold requiring pharmacy-only storage.",
+          "Minor finding. Concentrated potassium chloride is acceptable on medical-surgical units when stored securely in a locked medication drawer",
+          "No finding. A concentration of 20 mEq is below the threshold that would require the medication to be stored exclusively in the pharmacy",
           "Immediate finding. Concentrated electrolytes must not be stored in patient care areas outside the pharmacy.",
-          "Finding only if the vial is not labeled with a warning sticker."
+          "Finding only if the concentrated potassium chloride vial is not clearly labeled with a high-alert warning sticker or notice",
         ],
         correctIndex: 2,
         explanation: "Following multiple fatal KCl administration errors, JC requires concentrated potassium chloride to be removed from all patient care units. Storing concentrated KCl on a unit is an immediate finding regardless of access controls or drawer locks.",
@@ -4627,10 +4627,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "mm5",
         question: "Your nurse completes a medication history at admission but does not compare home medications against the physician's admission orders. What process is missing?",
         options: [
-          "Nothing. Medication history documentation alone satisfies the admission requirement.",
+          "Nothing. Medication history documentation alone satisfies the admission reconciliation requirement for all patients.",
           "Medication reconciliation. Your home medication list must be compared against admission orders to identify discrepancies.",
-          "Only a pharmacist is required to perform admission medication reconciliation, not nursing.",
-          "Reconciliation is only required for patients with five or more home medications."
+          "Only a pharmacist is required to perform admission medication reconciliation; nursing documentation of history does not fulfill this requirement.",
+          "Reconciliation is only required for patients with five or more home medications or those with chronic disease conditions.",
         ],
         correctIndex: 1,
         explanation: "Medication reconciliation requires comparing your patient's complete home medication list against new admission orders to identify omissions, duplications, dose changes, and interactions. Simply documenting the home list without comparing it to the orders is not reconciliation.",
@@ -4669,10 +4669,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "mm8",
         question: "An order reads 'Warfarin 2.5mg QD.' What is the compliance concern?",
         options: [
-          "None. 'QD' is a standard approved abbreviation for once-daily dosing.",
+          "None. 'QD' is a standard approved abbreviation for once-daily dosing in most hospital pharmacy systems and clinical practice.",
           "'QD' is on the Do Not Use list — it can be misread as 'QID' (4x daily). The order must read 'warfarin 2.5 mg daily.'",
-          "The concern is the dose. Warfarin must not be ordered below 5 mg.",
-          "'QD' is only prohibited for controlled substance orders, not anticoagulants."
+          "The concern is the dose. Warfarin must not be ordered below 5 mg per dose due to therapeutic threshold requirements.",
+          "'QD' is only prohibited for controlled substance orders, not for anticoagulants like warfarin or other non-controlled medications.",
         ],
         correctIndex: 1,
         explanation: "'QD' is prohibited under JC's Do Not Use list because it can be misread as 'QID' — a 4-fold dosing error. For a high-alert medication like warfarin, this error could cause serious hemorrhagic complications. All orders must use 'daily' instead of QD.",
@@ -4711,10 +4711,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "mm11",
         question: "Your patient transfers from the ICU to a step-down unit. The ICU nurse gives a verbal handoff but no medication reconciliation is performed. What is missing?",
         options: [
-          "Nothing. Verbal handoff satisfies the transfer reconciliation requirement.",
+          "Nothing. Verbal handoff satisfies the transfer reconciliation requirement for intra-hospital unit-to-unit transfers.",
           "Medication reconciliation must occur at every care transition, including unit-to-unit transfers within the same hospital.",
-          "Reconciliation is only required at admission and discharge, not for intra-hospital transfers.",
-          "Transfer reconciliation is only required when medications change during the ICU stay."
+          "Reconciliation is only required at admission and discharge, not for intra-hospital transfers between ICU and step-down units.",
+          "Transfer reconciliation is only required when medications are actually changed during the ICU stay or transfer order.",
         ],
         correctIndex: 1,
         explanation: "JC requires medication reconciliation at every care transition — admission, unit-to-unit transfers, and discharge. ICU-to-step-down transfers carry high risk because patients often have complex regimens. Omissions and inappropriate continuations must be caught at every transition.",
@@ -4795,10 +4795,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "mm17",
         question: "Your unit has heparin in two concentrations — 25,000 units/250 mL and 25,000 units/500 mL — in the same bin. What safeguard does JC require?",
         options: [
-          "None. The concentration difference is apparent from the volume printed on each bag label.",
+          "None. The concentration difference is clearly apparent from the volume printed on each bag label and will prevent selection errors",
           "Multiple concentrations of high-alert drugs must be clearly differentiated, stored separately, with prominent concentration labeling.",
-          "Remove the lower concentration bag from floor stock and make it pharmacy-only.",
-          "Dual concentrations are acceptable if nurses verbally confirm concentration before hanging each bag."
+          "Remove the lower concentration heparin bag from floor stock and restrict it to pharmacy-only dispensing and preparation areas",
+          "Dual concentrations of heparin are acceptable if nursing staff verbally confirm the concentration before hanging each infusion bag",
         ],
         correctIndex: 1,
         explanation: "Heparin is a high-alert anticoagulant. Two concentrations in the same location — 100 units/mL and 50 units/mL — is a dangerous mix-up scenario. JC requires physical separation, prominent labeling, and ideally limiting to one standard concentration. Verbal confirmation alone is insufficient.",
@@ -4809,10 +4809,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "mm18",
         question: "Your nurses routinely override the pharmacy verification system for non-urgent medications to avoid delays. What is the compliance concern?",
         options: [
-          "None. Nurse override authority is appropriate for any time-sensitive medication.",
-          "Acceptable as long as the nurse documents clinical rationale in the chart.",
+          "None. Nurse override authority is appropriate for any time-sensitive medication to ensure rapid patient treatment.",
+          "Acceptable as long as the nurse documents the clinical rationale for the override in the patient medical record.",
           "Overrides should be limited to true emergencies. Routine overrides bypass the pharmacist review that catches errors before administration.",
-          "Override compliance depends only on whether the pharmacy is closed at the time."
+          "Override compliance depends only on whether the pharmacy department is closed or unavailable at the time of medication administration.",
         ],
         correctIndex: 2,
         explanation: "Pharmacist review is a critical safety check. JC expects facilities to monitor override patterns and restrict overrides to true clinical emergencies. High override rates signal systemic problems — understaffing, workflow issues, or inadequate pharmacy support — that increase medication error risk.",
@@ -4823,10 +4823,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "mm19",
         question: "Your nurse administers insulin to a patient without checking blood glucose first. The order reads 'Regular Insulin 10 units subcutaneous now.' What risk does this represent?",
         options: [
-          "None. The physician ordered the dose without a glucose parameter, so the nurse followed the order correctly.",
-          "No risk if the patient reports feeling fine.",
+          "None. The physician ordered the dose without a glucose parameter, so the nurse followed the order correctly and is not responsible for additional assessment steps.",
           "Administering insulin without verifying current blood glucose risks severe hypoglycemia. Glucose should be checked per protocol before administration.",
-          "Risk only exists for sliding-scale insulin orders, not for fixed-dose orders."
+          "Administering insulin without verifying current blood glucose risks severe hypoglycemia. Glucose should be checked per protocol before administration.",
+          "Risk only exists for sliding-scale insulin orders, not for fixed-dose orders that are written by the attending physician.",
         ],
         correctIndex: 2,
         explanation: "Insulin is a high-alert medication. Administering a fixed dose without knowing current blood glucose risks hypoglycemia — especially if the patient has not eaten or had unexpected glucose changes. Your protocol should require glucose verification before insulin administration.",
@@ -4964,10 +4964,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "npsg3",
         question: "Your post-surgical patient has a Morse fall score of 65. You document the score but write 'standard fall precautions' with no further specifics. What is missing?",
         options: [
-          "Nothing. Documenting standard fall precautions is the appropriate response to any fall risk score.",
+          "Nothing. Documenting standard fall precautions is the appropriate response to any fall risk score obtained during the patient's assessment.",
           "The specific individualized interventions addressing your patient's identified risk factors must be documented in the care plan.",
-          "You should have called the physician for a fall risk consultation order.",
-          "Standard fall precautions satisfy JC requirements for high-risk patients when the score is below 90."
+          "You should have called the physician for a fall risk consultation order before implementing any precautions.",
+          "Standard fall precautions satisfy JC requirements for high-risk patients when the score is documented on the assessment tool.",
         ],
         correctIndex: 1,
         explanation: "JC requires individualized fall prevention interventions tailored to the specific risk factors identified — not a generic 'standard precautions' notation. If the patient is at risk from sedating medications, that risk factor needs a specific documented intervention.",
@@ -4978,10 +4978,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "npsg4",
         question: "Your cardiac monitor alarm is set at HR >120 bpm. Your patient's baseline is consistently 110-115 bpm and triggers frequent alarms that staff silence without assessment. What does JC require?",
         options: [
-          "Nothing. Alarm silencing is an acceptable nursing judgment when the cause is understood.",
+          "Nothing. Alarm silencing is an acceptable nursing judgment when the cause is understood by the clinical care team.",
           "The alarm threshold should be individualized to the patient's clinical baseline to reduce non-actionable alarms while preserving safety.",
-          "The alarm must remain at 120 bpm. Modifying hospital default alarm thresholds is not permitted.",
-          "Move the patient to telemetry where alarms are monitored centrally."
+          "The alarm must remain at 120 bpm. Modifying hospital default alarm thresholds is not permitted by clinical engineering standards.",
+          "Move the patient to telemetry where alarms are monitored centrally by trained staff rather than at the bedside.",
         ],
         correctIndex: 1,
         explanation: "JC alarm safety standards require alarm parameters to be individualized to each patient's clinical baseline. If your patient's baseline rate consistently triggers non-actionable alarms, the threshold should be adjusted by provider order. Silencing alarms without assessment is alarm fatigue behavior — the root cause must be addressed.",
@@ -5034,10 +5034,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "npsg8",
         question: "Your patient is started on a heparin infusion. You receive a verbal rate from the physician and adjust the pump without checking the patient's weight or your facility's weight-based protocol. What safety step was bypassed?",
         options: [
-          "Nothing. Physicians determine heparin dosing and nursing follows the rate as ordered.",
+          "Nothing. Physicians determine heparin dosing and nursing follows the rate as ordered by the licensed independent practitioner.",
           "Heparin must be administered per an approved anticoagulation management program. Bypassing the protocol is not acceptable.",
-          "Weight-based protocol is only required for heparin bolus doses, not infusion rate adjustments.",
-          "Weight-based verification is optional for experienced nurses."
+          "Weight-based protocol is only required for heparin bolus doses, not infusion rate adjustments made during the patient's stay.",
+          "Weight-based verification is optional for experienced nurses who have demonstrated competency in anticoagulation management.",
         ],
         correctIndex: 1,
         explanation: "NPG 14 (formerly NPSG.03.05.01) requires facilities to use approved evidence-based protocols for anticoagulant dosing. Adjusting a heparin infusion from a verbal order without verifying the weight-based protocol bypasses a critical safety step. Heparin dosing errors are a leading cause of medication-related harm.",
@@ -5048,10 +5048,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "npsg9",
         question: "Your patient is admitted with three home medications. The physician orders two of them but does not address the third. What must happen?",
         options: [
-          "The unaddressed medication is automatically discontinued on admission.",
+          "The unaddressed medication is automatically discontinued on admission per standard hospital medication reconciliation policy.",
           "Medication reconciliation requires every home medication to be addressed — explicitly ordered, held with rationale, or discontinued with documentation.",
-          "Continue the third medication at home dose until the physician addresses it.",
-          "Unaddressed medications require a pharmacist consultation order before any action."
+          "Continue the third medication at home dose until the physician addresses it in the next medical record documentation.",
+          "Unaddressed medications require a pharmacist consultation order before any action can be taken on the patient's medication list.",
         ],
         correctIndex: 1,
         explanation: "Medication reconciliation requires ALL home medications to be accounted for in admission orders — either continued, held with a reason, or discontinued with documentation. A home medication that is simply not mentioned is a reconciliation failure.",
@@ -5076,10 +5076,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "npsg11",
         question: "Your patient's Braden admission score is 14 (mild risk). You document the score but add no care plan entry. Three days later the patient develops a sacral pressure injury. What was the process failure?",
         options: [
-          "A Braden score of 14 is normal and does not require clinical intervention.",
-          "Braden score documentation alone satisfies the JC requirement; the injury was unpreventable.",
+          "A Braden score of 14 indicates mild risk and does not trigger a requirement for documented clinical interventions or prevention strategies",
+          "Braden scale documentation in the medical record alone satisfies the Joint Commission requirement; pressure injuries may still be unavoidable",
           "A validated risk score triggers a requirement for individualized prevention interventions documented in the plan of care.",
-          "Pressure injury prevention plans are required only for Braden scores below 12."
+          "Pressure injury prevention care plans and interventions are required only for patients with Braden scores of 12 or below",
         ],
         correctIndex: 2,
         explanation: "A Braden score of 14 falls in the mild-risk range and requires documented prevention interventions in the care plan. Documenting only the score without corresponding interventions is incomplete. JC requires that identified risks generate specific, individualized care planning.",
@@ -5104,10 +5104,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "npsg13",
         question: "Your ED patient reports 'occasional thoughts of not wanting to live anymore' when asked 'are you feeling safe?' You document 'patient denies suicidal ideation.' What is wrong?",
         options: [
-          "Nothing. The patient's response can be interpreted as denial of active suicidal ideation.",
+          "Nothing. The patient's response can be interpreted as denial of active suicidal ideation requiring immediate intervention.",
           "The question used is not a validated suicide risk tool. A validated instrument such as the C-SSRS or ASQ must be used.",
-          "Suicide screening is only required for patients with a psychiatric history in the ED.",
-          "Documentation is sufficient as long as the assessment was performed verbally."
+          "Suicide screening is only required for patients with a psychiatric history presenting to the emergency department.",
+          "Documentation is sufficient as long as the assessment was performed verbally and the patient was observed during their stay.",
         ],
         correctIndex: 1,
         explanation: "NPG 8 requires a validated suicide risk screening tool — not informal questions. 'Are you feeling safe?' is not validated. The C-SSRS and ASQ are validated tools. Additionally, this patient's response suggests possible passive ideation warranting formal follow-up assessment.",
@@ -5118,10 +5118,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "npsg14",
         question: "Your warfarin patient is discharged. The discharge instructions include a medication list but no education about bleeding signs, INR monitoring, or food interactions. What is missing?",
         options: [
-          "Nothing. Medication lists are the only required discharge documentation for anticoagulant patients.",
+          "Nothing is missing. The discharge medication list is the primary required documentation for all patients taking anticoagulant medications",
           "Patient education about anticoagulant risks, monitoring requirements, and dietary interactions is required at discharge for all anticoagulant patients.",
-          "Anticoagulant education at discharge is the prescribing physician's responsibility, not nursing's.",
-          "Education is only required if the patient is newly starting anticoagulation, not if they were on warfarin before admission."
+          "Anticoagulant education at discharge is the primary responsibility of the prescribing physician and is not required from nursing staff",
+          "Education about anticoagulant therapy is only required if the patient is newly initiated on anticoagulation, not for established therapy",
         ],
         correctIndex: 1,
         explanation: "NPG 14 requires patient and family education about anticoagulants at discharge. Education must cover: the drug and purpose, monitoring requirements (INR schedule), signs of adverse effects (bleeding), food and drug interactions, and when to seek emergency care. A medication list alone is insufficient.",
@@ -5146,10 +5146,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "npsg16",
         question: "Your COPD patient's baseline SpO2 is 90-92% on 2L NC. The pulse ox alarm is set at <88% and frequently triggers. Staff silence it routinely. What is the appropriate action?",
         options: [
-          "Continue current settings. 88% is the standard clinical threshold for all patient populations.",
+          "Continue the current alarm setting at 88% saturation since this is the standard clinical threshold used across all patient populations",
           "Raise the alarm threshold to 89-90% to match the patient's clinical baseline, reducing false alarms while maintaining safety.",
-          "Disable the SpO2 alarm entirely for COPD patients since lower saturation is expected.",
-          "Switch the patient to continuous telemetry monitoring."
+          "Disable the pulse oximetry alarm entirely for COPD patients since lower oxygen saturation levels are clinically expected and anticipated",
+          "Switch the patient to continuous telemetry monitoring and remove the pulse oximetry alarm from active use on this patient",
         ],
         correctIndex: 1,
         explanation: "JC alarm safety standards require individualized alarm parameters based on each patient's clinical status. For a COPD patient with a baseline of 90-92%, a threshold of 88% generates non-actionable alarms and promotes alarm fatigue. Raising the threshold to the patient's clinical baseline maintains meaningful alerting. Any alarm parameter change requires a provider order and documentation.",
@@ -5188,10 +5188,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "npsg19",
         question: "Your high fall risk patient has a yellow wristband, fall risk sign, and locked bed wheels. The next morning the patient falls reaching for water on the bedside table. What prevention step was likely missed?",
         options: [
-          "Nothing. You implemented standard fall precautions correctly and the fall was unpreventable.",
+          "Nothing. You implemented standard fall precautions correctly and the fall was unpreventable and due to patient behavior.",
           "Individualized interventions addressing the specific risk — such as placing water within reach and providing call light education — were not implemented.",
-          "You should have physically restrained the patient to prevent unassisted movement.",
-          "A sitter should have been ordered. Yellow wristbands and bed locks are insufficient for any high-risk patient."
+          "A sitter should have been ordered to provide continuous one-on-one monitoring. Yellow wristbands and bed locks alone are insufficient precautions.",
+          "You should have physically restrained the patient using soft restraints to prevent any unassisted movement or reaching behavior.",
         ],
         correctIndex: 1,
         explanation: "Individualized fall prevention requires more than universal precautions. If a patient's risk includes reaching for items, the individualized plan must address that specifically — placing frequently needed items within reach, call light education, hourly rounding. Generic precautions without patient-specific interventions represent an incomplete fall prevention plan.",
@@ -5329,10 +5329,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ic3",
         question: "Your central line has been in place for 8 days. You document a site assessment and dressing change — but no daily necessity review. What is missing?",
         options: [
-          "Nothing. Central line necessity reviews are a physician responsibility, not a nursing documentation requirement.",
+          "Nothing. Central line necessity reviews are a physician responsibility, not a nursing documentation requirement for compliance.",
           "Daily documentation of clinical justification for the line's continued use is required as part of the CLABSI prevention maintenance bundle.",
-          "Necessity reviews are only required for femoral lines, not subclavian or internal jugular sites.",
-          "The necessity documentation requirement begins on day 10 of catheter dwell time."
+          "Necessity reviews are only required for femoral lines, not subclavian or internal jugular sites used in this patient.",
+          "The necessity documentation requirement begins on day 10 of catheter dwell time, not immediately upon line placement.",
         ],
         correctIndex: 1,
         explanation: "Daily review of central line necessity is a required component of the CLABSI maintenance bundle. The clinical indication for continued central access must be documented daily — if there is no documented necessity, the line must be considered for removal. Extended dwell time is the primary modifiable CLABSI risk factor.",
@@ -5343,10 +5343,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ic4",
         question: "Your phlebotomist uses the same lancet to collect blood glucose from two adjacent patients because lancets ran out. What is the compliance finding?",
         options: [
-          "No finding if the lancet was wiped with alcohol between patients.",
-          "Minor finding. Lancet sharing is prohibited but does not constitute a serious safety event.",
+          "No finding if the lancet was wiped with alcohol between patients to ensure proper decontamination before reuse.",
+          "Minor finding. Lancet sharing is prohibited but does not constitute a serious safety event requiring immediate reporting.",
           "Immediate serious finding. Lancets are single-use — reuse between patients creates direct bloodborne pathogen transmission risk.",
-          "Finding only if one of the patients has a known bloodborne infection."
+          "Finding only if one of the patients has a known bloodborne infection or symptoms of a transmissible disease process.",
         ],
         correctIndex: 2,
         explanation: "Lancets are single-use devices and must never be shared. Reuse creates a direct route for bloodborne pathogen transmission (hepatitis B, C, HIV) regardless of whether either patient has a known infection. Outbreaks of hepatitis B have been directly linked to lancet sharing in healthcare settings.",
@@ -5357,10 +5357,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ic5",
         question: "Your surgical patient receives cefazolin for SSI prophylaxis. The infusion starts 2 hours before incision because the OR ran ahead of schedule. Is this timing compliant?",
         options: [
-          "Yes. Antibiotics given within 4 hours of incision satisfy the SSI prophylaxis requirement.",
+          "Yes. Antibiotics given within 4 hours before the incision satisfy all standard SSI prophylaxis requirements for cefazolin.",
           "No. Prophylactic antibiotics must be administered within 1 hour before skin incision to maintain therapeutic tissue levels.",
-          "Yes. Earlier administration is preferable because it allows more time to reach tissue levels.",
-          "No. The antibiotic should be given exactly at incision time, not before."
+          "Yes. Earlier administration is preferable and allows sufficient time for the antibiotic to reach adequate tissue concentration levels.",
+          "No. Cefazolin should be administered exactly at the time of skin incision, not administered before the procedure begins.",
         ],
         correctIndex: 1,
         explanation: "SSI prophylaxis requires administration within 1 hour before skin incision (2 hours for vancomycin and fluoroquinolones). Cefazolin given 2 hours before incision means tissue concentration may fall below therapeutic levels by the time incision occurs — the prophylaxis window has been missed. Timing must be coordinated with the surgical schedule.",
@@ -5371,10 +5371,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ic6",
         question: "You suspect a patient has tuberculosis. While waiting for the airborne isolation room to be cleaned, you place the patient in a standard private room with the door closed. What is wrong?",
         options: [
-          "Nothing. A private room with a closed door provides adequate isolation for suspected TB.",
+          "Nothing. A private room with a closed door provides adequate isolation and infection control precautions for suspected TB cases.",
           "Suspected TB requires a negative pressure airborne infection isolation room. Standard private rooms do not provide the required air handling.",
-          "Droplet precautions with a surgical mask are appropriate for suspected TB until confirmed by culture.",
-          "A standard room is acceptable if the patient wears a surgical mask at all times."
+          "Droplet precautions with a surgical mask on the patient are appropriate for suspected TB until the diagnosis is confirmed by culture results.",
+          "A standard private room is acceptable for suspected TB if the patient wears a properly fitted surgical mask at all times during care.",
         ],
         correctIndex: 1,
         explanation: "Suspected tuberculosis requires immediate placement in an airborne infection isolation room (AIIR) — negative pressure with 6-12 air changes per hour exhausted outside or HEPA-filtered. A standard private room does not provide negative pressure and cannot prevent airborne transmission. Explore alternatives (outdoor waiting, a large room) while preparing an AIIR.",
@@ -5413,10 +5413,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ic9",
         question: "A staff member is about to enter a suspected measles patient's room wearing a surgical mask. What is wrong with this PPE selection?",
         options: [
-          "Nothing. Surgical masks are appropriate for droplet-transmitted infections like measles.",
+          "Nothing is wrong. Surgical masks are appropriate protection for droplet-transmitted infections such as measles in clinical settings.",
           "An N95 respirator is required for measles. It is airborne-transmitted and surgical masks do not provide required filtration.",
-          "A surgical mask is acceptable if the staff member has documented measles immunity.",
-          "Measles requires contact precautions only — no respiratory protection is indicated."
+          "A surgical mask is acceptable if the staff member has received prior vaccination and has documented immunity to measles infection.",
+          "Measles requires contact precautions and standard precautions only — respiratory protection devices are not clinically indicated.",
         ],
         correctIndex: 1,
         explanation: "Measles is airborne-transmitted and requires an N95 respirator (or higher) — not a surgical mask. Surgical masks do not filter the small particle droplet nuclei that carry the measles virus. Non-immune staff should not enter measles isolation rooms when possible.",
@@ -5427,10 +5427,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ic10",
         question: "Your unit's blood glucose monitoring device is shared between patients. Between uses, it is wiped with an alcohol wipe. Is this practice compliant?",
         options: [
-          "Yes. Alcohol wipes provide adequate disinfection between patient uses for blood glucose monitors.",
+          "Yes. Alcohol wipes provide adequate disinfection and are the standard cleaning method between patient uses for shared glucose monitors.",
           "No. Blood glucose monitors contact blood and must be cleaned and disinfected per the device manufacturer's instructions between each patient use.",
-          "Yes. As long as a new lancet and test strip are used for each patient, device sharing is acceptable.",
-          "No. Blood glucose monitors must be single-use and discarded between patients."
+          "Yes. As long as a new lancet and fresh test strip are used for each patient, sharing the glucose monitoring device is completely acceptable.",
+          "No. Blood glucose monitors must be classified as single-use devices and are required to be discarded immediately after each patient use.",
         ],
         correctIndex: 1,
         explanation: "Blood glucose monitors contact blood and must be cleaned and disinfected between each patient use per the manufacturer's specified method and product. A quick alcohol wipe may not achieve the required contact time or use the correct product. Outbreaks of hepatitis B have been traced to improperly cleaned shared blood glucose devices.",
@@ -5469,10 +5469,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ic13",
         question: "A multi-dose saline vial in your medication room has no date written on it. Staff say it was opened 'a few weeks ago.' What is the compliance issue?",
         options: [
-          "No issue. Multi-dose vials do not require dating as long as they appear visually clear.",
+          "No issue. Multi-dose vials do not require dating as long as they remain visually clear and show no signs of discoloration or contamination.",
           "Multi-dose vials must be dated when opened and discarded per the manufacturer's beyond-use date or facility policy, typically within 28 days.",
-          "The only requirement for multi-dose vials is refrigeration — dating is optional.",
-          "Multi-dose vials are not regulated by JC — this falls under FDA jurisdiction only."
+          "The only requirement for multi-dose vials is proper refrigeration and storage temperature. Dating requirements are optional for clear solutions.",
+          "Multi-dose vials are not regulated by Joint Commission; medication dating falls exclusively under FDA jurisdiction and state pharmacy boards.",
         ],
         correctIndex: 1,
         explanation: "Multi-dose vials must be dated when first opened and discarded per the manufacturer's beyond-use date or facility policy, typically within 28 days. An undated vial open for an unknown period cannot be safely used. Multi-dose vials have been implicated in infection outbreaks when shared between patients or accessed with contaminated needles.",
@@ -5539,10 +5539,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ic18",
         question: "A reusable medical device labeled 'for single use only' was cleaned and reused on a second patient. What is the compliance and safety concern?",
         options: [
-          "No concern if the device was thoroughly cleaned and sterilized between patients.",
-          "Single-use devices may be reused by facilities with documented cleaning protocols, regardless of manufacturer labeling.",
+          "No concern exists if the device was thoroughly cleaned and sterilized using appropriate sterilization methods between patient uses.",
+          "Single-use devices may be reused by facilities if they have established and documented cleaning and sterilization protocols in place.",
           "Reuse of single-use devices is prohibited without an FDA-cleared reprocessing program. Manufacturer safety guarantees do not apply after reuse.",
-          "The compliance concern only exists if the second patient develops an infection."
+          "The compliance concern applies only if the second patient actually develops an infection or adverse event related to device reuse.",
         ],
         correctIndex: 2,
         explanation: "Single-use devices may not be reused unless processed by an FDA-cleared third-party reprocessor. The manufacturer's safety and efficacy data applies only to the first use. Reuse without validated reprocessing carries unknown risks of contamination, device failure, and infection transmission — violating both JC and FDA requirements.",
@@ -5553,10 +5553,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ic19",
         question: "You perform hand hygiene entering a patient's room and again upon exit. You did NOT perform hand hygiene immediately before a dressing change during the visit. Which WHO moment was missed?",
         options: [
-          "Moment 1 — Before patient contact (entry hand hygiene covers this).",
+          "Moment 1 was missed — before patient contact when entering the room, though entry hand hygiene typically addresses this moment completely.",
           "Moment 2 — Before an aseptic or clean procedure. Dressing change requires hand hygiene immediately before.",
-          "Moment 4 — After patient contact.",
-          "Moment 5 — After contact with patient surroundings."
+          "Moment 3 was not performed — after body fluid exposure risk, which applies when performing any dressing change on a patient.",
+          "Moment 5 was missed — after contact with patient surroundings and equipment, which is necessary after completing the dressing change.",
         ],
         correctIndex: 1,
         explanation: "WHO Moment 2 is 'Before an aseptic or clean procedure.' A dressing change requires hand hygiene immediately before to protect the patient from microorganisms on your hands. Entry hand hygiene satisfies Moment 1 but does not substitute for the Moment 2 requirement immediately before the procedure.",
@@ -5666,10 +5666,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pr1",
         question: "A medical assistant obtains surgical consent after explaining the surgery to the patient. The physician never discusses the procedure. Is this valid consent?",
         options: [
-          "Yes. The patient's signature on the form constitutes valid informed consent regardless of who explained it.",
+          "Yes. The patient's signature on the informed consent form constitutes valid consent regardless of which staff member explained the procedure.",
           "No. Informed consent for surgery must be obtained by a licensed practitioner qualified to explain the procedure and answer clinical questions.",
-          "No. But only if the patient later reports not understanding the procedure.",
-          "Yes. Medical assistants may obtain consent when the physician is available for follow-up questions."
+          "No. But the consent violation is only significant if the patient later reports that they did not fully understand the proposed procedure.",
+          "Yes. Medical assistants may obtain patient consent when the physician is available in the facility for any follow-up clinical questions.",
         ],
         correctIndex: 1,
         explanation: "Informed consent must be obtained by a licensed practitioner qualified to explain the procedure and answer clinical questions. A medical assistant cannot obtain surgical consent. The physician's failure to discuss the procedure makes this consent invalid regardless of the patient's signature.",
@@ -5680,10 +5680,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pr2",
         question: "Your patient's advance directive with a DNR order is placed in the 'history' section of the chart — not active orders. The patient arrests and is resuscitated. What was the failure?",
         options: [
-          "None. The advance directive was in the chart and accessible to staff.",
+          "No concern. The advance directive was placed in the chart and was therefore accessible to clinical staff during the patient's admission.",
           "The advance directive must be in the active, readily accessible section of the medical record to be effectively honored in emergencies.",
-          "The failure was the physician's — only an active physician DNR order can prevent resuscitation.",
-          "DNR orders from advance directives are automatically converted to active physician orders upon admission."
+          "The failure was the physician's alone — only an active physician order for DNR can effectively prevent resuscitation in emergencies.",
+          "Advance directives with DNR orders are automatically converted to active physician orders upon the patient's hospital admission process.",
         ],
         correctIndex: 1,
         explanation: "An advance directive buried in the history section may not be seen in an emergency. JC requires it to be in a prominent, accessible location in the active chart. More importantly, an advance directive should prompt the physician to enter an active DNR/DNAR order in the orders section — the directive alone may not be visible to emergency responders.",
@@ -5708,10 +5708,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pr4",
         question: "Your Spanish-speaking patient needs to sign informed consent. The patient's adult daughter who speaks English volunteers to interpret. Can you use the daughter for the consent discussion?",
         options: [
-          "Yes. Family members are the preferred interpreters for clinical discussions per patient rights standards.",
+          "Yes. Family members are the preferred interpreters for clinical discussions and informed consent per established patient rights standards.",
           "No. Professional interpreter services must be offered first. The patient may choose to use a family member only after professional services are offered and declined.",
-          "No. Family members may never be used as interpreters for clinical conversations under any circumstances.",
-          "Yes. The patient's right to use family members supersedes any professional interpreter requirement."
+          "No. Family members may never be used as interpreters for any clinical conversations or consent discussions under any circumstances whatsoever.",
+          "Yes. The patient's right to choose family members as interpreters supersedes any requirement to offer professional interpreter services.",
         ],
         correctIndex: 1,
         explanation: "JC requires that professional interpreter services be offered to patients with limited English proficiency first. Only after professional services are offered may a patient choose a family member. For informed consent discussions specifically, professional interpreters are strongly preferred because family members may filter information and conflicts of interest can affect accuracy.",
@@ -5736,10 +5736,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pr6",
         question: "Your patient with decision-making capacity refuses a blood transfusion for religious reasons despite being told the refusal could be life-threatening. What must your clinical team do?",
         options: [
-          "Administer the transfusion anyway. The duty to preserve life supersedes a patient's right to refuse.",
-          "Obtain an emergency court order to override the patient's refusal.",
+          "Administer the transfusion anyway because the clinical team's duty to preserve life supersedes the patient's legal right to refuse treatment.",
+          "Obtain an emergency court order immediately to legally override and enforce the transfusion despite the patient's documented religious refusal.",
           "Document the patient's informed refusal (including consequences explained), notify the physician, and honor the decision.",
-          "Transfer the patient to a facility that will override the refusal."
+          "Transfer care of the patient to another facility or physician who will override the refusal and administer the necessary blood transfusion.",
         ],
         correctIndex: 2,
         explanation: "A competent adult has an absolute right to refuse any treatment, including life-sustaining care. Your team must ensure the patient understands the consequences, document the discussion and the patient's demonstrated understanding, notify the physician, and honor the decision. Overriding the refusal of a competent patient constitutes battery regardless of clinical rationale.",
@@ -5764,10 +5764,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pr8",
         question: "During an assessment, your nurse notices patterned bruising on an elderly patient inconsistent with the reported mechanism of injury. What is the nurse's obligation?",
         options: [
-          "Document the findings in the chart and wait for the physician to assess and determine next steps.",
-          "Ask the patient's family member if they are aware of the bruising before taking any action.",
+          "Document the findings in the chart and wait for the physician to assess and determine next steps before reporting to supervisory channels.",
           "Report the suspected abuse to the appropriate supervisory and administrative channels per facility policy and state mandatory reporting law.",
-          "Take no action unless the patient explicitly states they have been abused."
+          "Report the suspected abuse to the appropriate supervisory and administrative channels per facility policy and state mandatory reporting law.",
+          "Take no action unless the patient explicitly states they have been abused or until additional evidence corroborates the initial suspicion of abuse.",
         ],
         correctIndex: 2,
         explanation: "Nurses are mandatory reporters. Patterned bruising inconsistent with the reported mechanism in an elderly patient constitutes reasonable suspicion of abuse that triggers mandatory reporting obligations. JC requires hospitals to have abuse reporting processes and staff must follow them. Waiting for the patient to disclose or deferring to family delays protective action.",
@@ -5778,10 +5778,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pr9",
         question: "Your patient asks to read their medical record. The nursing supervisor says they need to submit a written request and can view the record in 45 days. Is this timeframe compliant?",
         options: [
-          "Yes. 45 days is within the standard access window for patient medical records.",
+          "Yes. 45 days is within the standard allowable access window for patient medical records under applicable federal regulations.",
           "No. HIPAA requires records to be provided within 30 days of a patient's request, with a possible 30-day extension under specific circumstances.",
-          "Yes. 45 days is compliant for inpatient records. Outpatient records must be provided within 7 days.",
-          "No. Patients have the right to immediate real-time access to their records upon request."
+          "Yes. 45 days is compliant for inpatient records; however, outpatient records must be provided within 7 days of a formal written request.",
+          "No. Patients have an absolute right to immediate real-time electronic access to their complete medical records upon verbal request.",
         ],
         correctIndex: 1,
         explanation: "Under HIPAA (45 CFR 164.524), covered entities must provide access to medical records within 30 days of a written request. One 30-day extension is permitted if the entity notifies the patient in writing with the reason and new deadline. A 45-day response without an extension notice violates HIPAA. JC aligns with HIPAA's patient access requirements.",
@@ -5792,10 +5792,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pr10",
         question: "You find a restrained patient's restraint is cutting into their wrist, causing redness and mild skin breakdown. What must you do?",
         options: [
-          "Document the finding and notify the physician at the end of the shift.",
+          "Document the finding and notify the physician at the end of the shift, then reassess the restraint during the next scheduled monitoring interval.",
           "Remove or adjust the restraint immediately, assess the injury, provide wound care, notify the physician, and document all actions.",
-          "Contact the charge nurse for guidance before taking any independent action.",
-          "Apply padding over the restraint and continue the monitoring schedule."
+          "Contact the charge nurse for guidance before taking any independent action to remove or adjust the restraint without a physician's direct order.",
+          "Apply padding over the restraint and continue the monitoring schedule with increased frequency to track any further skin breakdown progression.",
         ],
         correctIndex: 1,
         explanation: "Monitoring restrained patients for circulation, sensation, and skin integrity at defined intervals exists specifically to prevent this type of harm. Skin breakdown from a restraint requires immediate action: remove or reposition the restraint, assess and treat the injury, notify the physician, and document thoroughly. This is both a patient rights and patient safety issue.",
@@ -5806,10 +5806,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pr11",
         question: "Your patient received 4 mg IV lorazepam 20 minutes ago for anxiety. The surgeon now asks your nurse to have the patient sign the consent form. What should your nurse do?",
         options: [
-          "Proceed. The surgeon has indicated the patient is ready and the nurse should follow the order.",
+          "Proceed with obtaining consent. The surgeon has indicated readiness for the procedure and the nurse should follow this clinical judgment order.",
           "Refuse. Consent obtained after administering a sedating benzodiazepine is presumptively invalid due to impaired decision-making capacity.",
-          "Ask the patient if they feel capable of consenting and proceed if they say yes.",
-          "Have a second nurse witness the signing to validate the consent."
+          "Ask the patient if they feel capable of consenting and proceed if they say yes, documenting their subjective assessment of their own competence.",
+          "Have a second nurse witness the signing to validate the consent and ensure the process meets documentation requirements for legal validity.",
         ],
         correctIndex: 1,
         explanation: "Lorazepam is a sedating benzodiazepine that impairs cognitive function and decision-making capacity. Informed consent obtained while a patient is under the influence of sedating medication is presumptively invalid. Consent must be obtained before sedating medications are administered.",
@@ -5820,10 +5820,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pr12",
         question: "Your patient asks whether the hospital has a process for filing a complaint about their care. What information must your hospital provide?",
         options: [
-          "The name of the unit manager is sufficient — that is the appropriate complaint recipient for hospital patients.",
+          "The name of the unit manager is sufficient — that is the appropriate complaint recipient for all hospital patients and their family members.",
           "Written information about the right to file a grievance, the grievance process, and contact information for the state health agency if the hospital cannot resolve the issue.",
-          "The hospital only needs to provide complaint information if the patient has already expressed a specific concern.",
-          "Patients must be redirected to the quality department. Bedside staff cannot answer questions about complaint processes."
+          "The hospital only needs to provide complaint information if the patient has already expressed a specific concern about their current care.",
+          "Patients must be redirected to the quality department. Bedside staff cannot answer questions about complaint processes or grievance procedures.",
         ],
         correctIndex: 1,
         explanation: "JC requires hospitals to inform patients of their grievance rights — typically at admission through a patient rights document. This must include: the right to file a grievance, how to do so, the hospital's response timeline, and contact information for the state health department or accrediting body if the grievance is not resolved internally. This information must be proactively provided.",
@@ -5834,10 +5834,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pr13",
         question: "Your non-English speaking patient signs a consent form written in English with no interpreter present. Your nurse witnessed the signature. Is this consent valid?",
         options: [
-          "Yes. The patient's signature constitutes agreement to the procedure regardless of language barriers.",
+          "Yes. The patient's signature constitutes agreement to the procedure regardless of language barriers or ability to read the consent document.",
           "No. Informed consent requires that the patient understand what they are consenting to. A patient who cannot read the form lacks the information necessary for valid consent.",
-          "Yes. The nurse's witness signature validates the consent.",
-          "No. But only if the procedure is elective — emergent procedures may proceed with a witnessed signature only."
+          "Yes. The nurse's witness signature validates the consent and demonstrates that appropriate procedural documentation has been completed.",
+          "No. But only if the procedure is elective — emergent procedures may proceed with a witnessed signature only and without language interpretation.",
         ],
         correctIndex: 1,
         explanation: "Valid informed consent requires the patient to understand the information. A patient who cannot read English cannot have understood an English-only consent form. The signature is meaningless without comprehension. Professional interpreter services must be used for the consent discussion, and a translated consent form should ideally be provided.",
@@ -5848,10 +5848,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pr14",
         question: "A visitor asks which room your patient is in. The patient is listed in the hospital directory. What should your nurse do?",
         options: [
-          "Provide the room number. Directory information is public and sharing it does not violate patient rights.",
+          "Provide the room number immediately. Directory information is public and sharing it does not violate patient rights or privacy protections.",
           "Verify the patient has not opted out of the directory, then provide directory information including room number and general condition.",
-          "Decline to provide any information. All patient information is confidential regardless of directory status.",
-          "Ask the visitor to show identification before releasing any information."
+          "Decline to provide any information whatsoever. All patient information is confidential regardless of directory status or visitor claims.",
+          "Ask the visitor to show identification and proof of relationship before releasing any directory information or confirming patient location.",
         ],
         correctIndex: 1,
         explanation: "Hospitals may share basic directory information (name, general condition, location) with visitors who ask for a patient by name — unless the patient has opted out. If the patient has opted out, the hospital must state they cannot confirm or deny the patient is there. Patients must be informed of the directory practice and their opt-out right on admission.",
@@ -5876,10 +5876,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pr16",
         question: "Your patient's psychiatric diagnosis is inadvertently mentioned at the nursing station where other patients can overhear. What patient right has been violated?",
         options: [
-          "None. Incidental disclosures in a clinical setting are expected and permitted.",
+          "None. Incidental disclosures in a clinical setting are expected, permitted, and do not constitute a violation of patient privacy rights.",
           "The patient's right to privacy and confidentiality. Protected health information must not be discussed in areas where it can be overheard.",
-          "Only financial and demographic information is protected in verbal communications.",
-          "The right is only violated if the overheard patient knows who the information refers to."
+          "Only financial and demographic information is protected in verbal communications; clinical information may be discussed at the nursing station.",
+          "The right is only violated if the overheard patient knows who the information refers to or can identify the specific patient being discussed.",
         ],
         correctIndex: 1,
         explanation: "Patients have a right to have their health information kept private. Discussing a patient's diagnosis — especially a sensitive psychiatric diagnosis — in a public area where it can be overheard violates HIPAA and JC patient rights standards. Clinical conversations must occur in private settings. This is a common JC finding when surveyors observe staff discussing patients at public nursing stations.",
@@ -5890,10 +5890,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pr17",
         question: "Your patient lacks decision-making capacity, has no advance directive, and has no family available. The clinical team needs to make a treatment decision. What process applies?",
         options: [
-          "The attending physician has sole authority to make treatment decisions for incapacitated patients without family.",
-          "No treatment may be provided — care must be suspended until a legal guardian is appointed.",
+          "The attending physician has sole authority to make treatment decisions for incapacitated patients without family members or legal guardians.",
+          "No treatment may be provided — care must be suspended until a legal guardian is appointed by the court system for the incapacitated patient.",
           "The hospital's ethics committee or legally defined surrogate decision-making process must be engaged to determine the appropriate decision-maker.",
-          "Emergency treatment proceeds. All non-emergency decisions are deferred indefinitely."
+          "Emergency treatment proceeds without delay. All non-emergency decisions are deferred indefinitely until family or legal decision-makers appear.",
         ],
         correctIndex: 2,
         explanation: "When a patient lacks decision-making capacity and has no advance directive or available family, hospitals must engage defined surrogate decision-making processes — which may include ethics committee consultation, court-appointed guardianship, or state-specific surrogate hierarchy laws. The physician alone cannot serve as the sole decision-maker. JC requires hospitals to have a defined process for these circumstances.",
@@ -6060,10 +6060,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ls3",
         question: "An EVS staff member uses a rubber doorstop to hold a stairwell fire door open while cleaning the corridor. What is the compliance finding?",
         options: [
-          "Minor finding. Doorstops are acceptable for temporary access during cleaning activities.",
-          "No finding. Stairwell doors are exempt from fire door requirements in non-patient care areas.",
+          "Minor finding. Doorstops are acceptable for temporary access during cleaning activities if removed immediately after use.",
+          "No finding. Stairwell doors are exempt from fire door requirements in non-patient care areas and common corridors.",
           "Immediate finding. Fire doors must never be propped open — they must remain closed or use approved automatic closing devices.",
-          "Finding only if the door was propped open for more than 15 minutes."
+          "Finding only if the door was propped open for more than 15 minutes during the shift or multiple times per day.",
         ],
         correctIndex: 2,
         explanation: "Propping a fire door open — even briefly, even in a non-patient corridor — defeats the fire compartmentalization design. This is one of the most commonly cited immediate JC findings. Fire doors must remain closed at all times or be equipped with automatic closing devices that release when the alarm sounds.",
@@ -6102,10 +6102,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ls6",
         question: "Your surgical patient has oxygen running at 4L/min via nasal cannula. A staff member uses an alcohol-based sanitizer near the patient and leaves the open bottle on the bedside table. What is the fire safety concern?",
         options: [
-          "None. Alcohol-based sanitizers are safe near all levels of supplemental oxygen.",
+          "There is no fire safety concern - alcohol-based hand sanitizers are completely safe for use in any environment with supplemental oxygen at any flow rate without any special precautions.",
           "Oxygen enriches combustion. Flammable materials including alcohol-based products must be kept away from oxygen sources, and open containers must not be left at the bedside.",
-          "The concern exists only if the patient is using a non-rebreather mask at 15L/min or higher.",
-          "The concern applies only to liquid oxygen systems, not to piped medical oxygen."
+          "Fire safety concerns from alcohol-based sanitizers near oxygen apply only when patients are using high-flow non-rebreather masks delivering 15L/min or greater in closed systems.",
+          "This concern applies only to portable oxygen tanks and liquid oxygen systems; piped medical gas oxygen from wall sources does not create a fire safety risk with alcohol-based products.",
         ],
         correctIndex: 1,
         explanation: "Supplemental oxygen enriches the environment and significantly increases combustion risk. Alcohol-based hand rubs and sanitizers are flammable and must not be left open near oxygen sources. Fires with patients on supplemental oxygen have caused serious patient injuries.",
@@ -6116,10 +6116,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ls7",
         question: "Sprinkler heads in a supply room are coated with paint from a recent renovation. What is the compliance and safety concern?",
         options: [
-          "None. Paint protects sprinkler heads from corrosion without affecting their function.",
+          "None. Paint actually protects sprinkler heads from corrosion and rust without affecting their activation function or temperature sensitivity.",
           "Painted sprinkler heads may fail to activate at the required temperature. All paint must be removed and heads replaced as necessary.",
-          "The concern only exists for dry-pipe sprinkler systems, not wet-pipe systems.",
-          "Paint on sprinkler heads is only cited if coverage exceeds 50% of the head surface."
+          "The concern about painted sprinkler heads only applies to dry-pipe sprinkler systems in storage areas, not wet-pipe systems in patient care.",
+          "Paint on sprinkler heads is only a compliance citation if the paint coverage exceeds 50 percent of the total head surface area.",
         ],
         correctIndex: 1,
         explanation: "Sprinkler heads activate via a heat-sensitive element that melts at a defined temperature. Paint covers the element and can prevent it from melting correctly, causing activation failure during a fire. Paint on sprinkler heads is an immediate JC finding. Affected heads must be replaced — they cannot be repaired. Staff who paint walls and ceilings must mask sprinkler heads.",
@@ -6214,10 +6214,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ls14",
         question: "Your facility's sprinkler system is going offline for 3 days for construction. What is the minimum required ILSM response?",
         options: [
-          "Post construction warning signs and restrict entry to the affected area.",
+          "Post construction warning signs and restrict entry to the affected area during impairment.",
           "A continuous fire watch by trained staff in the impaired area, additional portable fire extinguishers, and staff notification.",
-          "Evacuate all patients from the affected area until the system is restored.",
-          "No ILSM is required for planned maintenance impairments approved by the facilities department."
+          "Evacuate all patients from the affected area until the sprinkler system restoration is complete.",
+          "No ILSM is required for planned maintenance impairments approved by the facilities department director.",
         ],
         correctIndex: 1,
         explanation: "A sprinkler impairment requires: (1) an ongoing fire watch (trained staff patrol at defined intervals), (2) additional portable fire extinguishers in the affected area, (3) staff briefing on the impairment and compensatory measures. These ILSMs are required immediately upon impairment. The facility should also notify the local fire authority and insurer as required.",
@@ -6270,10 +6270,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ls18",
         question: "A nurse attempts to use a portable fire extinguisher during a small wastebasket fire. The extinguisher is empty. What was the process failure?",
         options: [
-          "None. Extinguishers discharge quickly and the nurse should have used a second one.",
+          "None. Extinguishers discharge quickly and the nurse should have immediately retrieved and used a second extinguisher from an adjacent hallway.",
           "The extinguisher inspection process failed. Monthly inspections must verify charge status and annual service must confirm contents.",
-          "Process failure only if the extinguisher was not the correct type for the fire class involved.",
-          "The nurse should have confirmed the extinguisher was charged before attempting to use it during a fire."
+          "Process failure only if the extinguisher was not the correct type for the fire class involved in the wastebasket incident.",
+          "The nurse should have confirmed the extinguisher was charged and functional before attempting to use it during the fire emergency.",
         ],
         correctIndex: 1,
         explanation: "Fire extinguishers must be inspected monthly (visual inspection of charge indicator and physical condition) and serviced annually. A discharged extinguisher should be identified during monthly checks. Discovering an empty extinguisher during an actual fire is a direct patient safety failure caused by inspection process breakdown.",
@@ -6284,10 +6284,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ls19",
         question: "During a survey walk-through, a surveyor asks a new staff member what to do if they smell smoke. The employee says 'I would call the charge nurse.' What is missing from this response?",
         options: [
-          "Nothing. Calling the charge nurse is the appropriate first response to any emergency.",
+          "Nothing. Calling the charge nurse is the appropriate first response to any emergency situation in a healthcare facility.",
           "The employee should describe RACE: rescue anyone in immediate danger, alarm the system, contain by closing doors, and extinguish or evacuate.",
-          "The employee should call 911 before taking any other action.",
-          "The employee should first investigate the source of the smoke before taking any action."
+          "The employee should call 911 immediately and then notify the charge nurse before taking any other action in response.",
+          "The employee should first investigate the source of the smoke and location before alerting others or taking any action.",
         ],
         correctIndex: 1,
         explanation: "All staff must know and be able to describe the RACE protocol. 'Call the charge nurse' is not a RACE step and does not address the immediate life-safety priorities: getting people out of danger and activating the alarm. A new employee's inability to describe RACE indicates inadequate fire safety training and is a JC training compliance finding.",
@@ -6422,10 +6422,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "em3",
         question: "Your hospital's Emergency Operations Plan was downloaded from a state health department template website and filed without modification. A surveyor reviews it. What is the most likely finding?",
         options: [
-          "No finding. Using a state-approved template satisfies the EOP requirement.",
-          "Minor finding. The hospital must add its name and address to the document.",
+          "No finding. Using a state-approved template that has been reviewed satisfies the EOP requirement.",
+          "Minor finding. The hospital must add its name, address, and contact information to the template.",
           "Significant finding. The EOP must be facility-specific, reflecting the hospital's actual hazards, resources, and community.",
-          "No finding. Templates are reviewed and approved by the Joint Commission in advance."
+          "No finding. State templates are pre-approved by Joint Commission and do not require facility modification.",
         ],
         correctIndex: 2,
         explanation: "The EOP must be facility-specific. A generic template that doesn't reflect your hospital's unique hazard profile (from the HVA), actual resources, community relationships, and staff roles does not meet EM.01.01.01. Surveyors look for evidence the plan was built around your specific facility, not downloaded and filed.",
@@ -6464,10 +6464,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "em6",
         question: "Which of the following is NOT one of the six critical areas required by JC standard EM.02.02.01?",
         options: [
-          "Communications.",
-          "Utilities management.",
+          "Communications and coordination protocols for all departments.",
+          "Utilities management and backup power systems for critical functions.",
           "Financial and billing continuity.",
-          "Staff responsibilities."
+          "Staff training and competency requirements for emergency response roles.",
         ],
         correctIndex: 2,
         explanation: "The six required critical areas under EM.02.02.01 are: (1) Communications, (2) Resources and assets, (3) Safety and security, (4) Staff responsibilities, (5) Utilities management, and (6) Patient clinical and support activities. Financial and billing continuity is not one of the six required areas.",
@@ -6492,10 +6492,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "em8",
         question: "During a mass casualty event, your ED is overwhelmed. Your EOP activates a plan to convert a conference room into an overflow treatment area and discharge stable floor patients. Which critical area does this represent?",
         options: [
-          "Safety and security.",
-          "Utilities management.",
-          "Staff responsibilities.",
-          "Patient clinical and support activities."
+          "Safety and security during the emergency response and patient flow.",
+          "Utilities management and backup power to sustain the overflow area.",
+          "Staff responsibilities and chain of command during the mass casualty event.",
+          "Patient clinical and support activities.",
         ],
         correctIndex: 3,
         explanation: "The Patient Clinical and Support Activities critical area addresses how your hospital will continue and expand care during an emergency — including surge capacity planning, care space expansion, patient discharge acceleration, and prioritization of care resources. This is surge capacity activation.",
@@ -6534,10 +6534,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "em11",
         question: "Your hospital conducts its annual emergency drill but does not complete a written critique or identify corrective actions afterward. A surveyor finds the drill documentation. What is the compliance issue?",
         options: [
-          "None. Completing the drill itself satisfies EM.03.01.01.",
-          "Minor issue. A critique form is recommended but not required by the standard.",
+          "None. Completing the drill itself satisfies all requirements of the emergency management standard.",
+          "Minor issue. A critique form is recommended but not explicitly required by the accreditation standard.",
           "Significant issue. Drill documentation must include a critique and corrective actions to meet the standard.",
-          "None. Corrective actions are only required when the drill reveals a major failure."
+          "None. Corrective actions are only required when the drill reveals a major failure or significant gap.",
         ],
         correctIndex: 2,
         explanation: "Conducting the drill is not enough. EM.03.01.01 requires documentation that includes the date, type of exercise, participants, a critique/evaluation of performance, and corrective actions identified for improvement. A drill without documented critique and follow-up is an incomplete exercise from a compliance standpoint.",
@@ -6576,10 +6576,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "em14",
         question: "What is an after-action review (AAR) in the context of emergency management?",
         options: [
-          "A financial audit conducted after an emergency to calculate the cost of the event.",
+          "A financial audit conducted after an emergency to calculate total costs incurred and identify budget adjustments needed for future preparedness.",
           "A structured evaluation conducted after a drill or actual emergency to identify what worked, what failed, and what improvements are needed.",
-          "A regulatory report submitted to the Joint Commission within 30 days of any declared emergency.",
-          "A staff disciplinary review for employees who did not respond correctly during the emergency."
+          "A regulatory report submitted to the Joint Commission within 30 days of any declared emergency event for compliance documentation purposes.",
+          "A staff disciplinary process for employees who did not perform correctly during the emergency response and require corrective action plans.",
         ],
         correctIndex: 1,
         explanation: "An after-action review (AAR) is a structured debrief that happens after every emergency drill or real event. It examines what went well, what didn't, and what specific changes should be made to the EOP or training. EM.04.01.01 requires this process to be documented and corrective actions tracked through to completion.",
@@ -6604,10 +6604,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "em16",
         question: "Who should participate in the after-action review following an emergency exercise?",
         options: [
-          "Only the incident commander and senior leadership who oversaw the drill.",
-          "Only the compliance officer and emergency management coordinator.",
+          "Only the incident commander and senior leadership who oversaw the drill, plus selected department representatives.",
+          "Only the compliance officer and emergency management coordinator responsible for coordinating the exercise.",
           "A cross-functional group including frontline staff who participated, department leads, and leadership.",
-          "External observers and Joint Commission consultants only, to ensure objectivity."
+          "External observers and Joint Commission consultants only, to ensure objectivity and independence from internal bias.",
         ],
         correctIndex: 2,
         explanation: "Effective AARs require participation from people who were actually involved at every level — frontline staff, charge nurses, department leaders, and incident command. Frontline staff often have the most actionable observations about what broke down in practice. Limiting AAR participation to leadership misses the most important operational insights.",
@@ -6632,10 +6632,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "em18",
         question: "A surveyor asks your Facilities technician: 'What is your role if the hospital activates its EOP for a utility failure?' The tech responds: 'I'd go to my department and wait for instructions.' How should this be evaluated?",
         options: [
-          "Acceptable. Utility staff should wait for incident command direction before taking any action.",
-          "Acceptable. Knowing to report to your department is sufficient for frontline staff.",
+          "Acceptable. Utility staff should wait for incident command direction before taking any action and should not attempt to operate backup systems without explicit authorization from leadership",
+          "Acceptable. Knowing to report to your department demonstrates sufficient awareness of emergency procedures required for frontline facilities and maintenance personnel",
           "Unacceptable. The technician should know specific duties such as activating backup generators, checking medical gas systems, and reporting status to incident command.",
-          "Unacceptable. Utility staff are not part of the EOP and should evacuate during declared emergencies."
+          "Unacceptable. Utility staff are not part of the EOP and should evacuate the facility during any declared emergency or utility failure event",
         ],
         correctIndex: 2,
         explanation: "Facilities staff have critical and specific roles in utility failure emergencies — activating backup systems, monitoring medical gas levels, isolating failed systems, and reporting to incident command. 'Wait for instructions' indicates the technician has not been trained on their EOP role, which is an EM.02.02.01 staff responsibilities finding.",
@@ -6646,10 +6646,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "em19",
         question: "Which of the following best describes 'surge capacity planning' as required in the EOP?",
         options: [
-          "The process of hiring additional staff before a predicted busy season.",
+          "The process of hiring and training additional staff members before a predicted busy season to meet anticipated patient volume increases.",
           "Your hospital's plan for managing more patients than its normal licensed capacity during a mass casualty or disaster event.",
-          "The backup generator capacity calculations required by the utilities critical area.",
-          "The process for requesting additional medical supplies from the state health department annually."
+          "The backup generator capacity calculations and electrical infrastructure requirements mandated by the critical utilities technical standards.",
+          "The process for requesting additional medical supplies and pharmaceutical inventory from the state health department on an annual basis.",
         ],
         correctIndex: 1,
         explanation: "Surge capacity planning addresses how your hospital will expand patient care capacity when demand overwhelms normal operations — typically during mass casualty events, community disasters, or pandemics. The EOP must address accelerating discharges, opening additional care areas, canceling elective procedures, and requesting mutual aid from neighboring hospitals.",
@@ -6753,10 +6753,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pss1",
         question: "Your surgeon skips the surgical time-out because he believes it slows the room down and 'nothing bad has ever happened.' Under Just Culture, how should this behavior be classified?",
         options: [
-          "Human error. Console the surgeon and remind him of the policy.",
+          "Human error. Console the surgeon about the importance of policy and send a reminder email regarding Universal Protocol requirements.",
           "At-risk behavior. Coach the surgeon and redesign the workflow to make time-outs faster and easier to complete.",
-          "Reckless behavior. Disciplinary action is required immediately without any coaching step.",
-          "At-risk behavior. Terminate the surgeon since time-outs are a safety requirement."
+          "Reckless behavior. Immediate disciplinary action and potential suspension are required since time-outs are a mandatory safety requirement.",
+          "At-risk behavior. Terminate the surgeon's operating privileges immediately because skipping time-outs violates the Universal Protocol.",
         ],
         correctIndex: 1,
         explanation: "Skipping a time-out because 'nothing bad has ever happened' is at-risk behavior — the surgeon has drifted from a safe practice, likely not fully recognizing the cumulative risk. The Just Culture response is coaching and redesigning the workflow to make the safe behavior easier and faster. Reckless behavior requires conscious disregard of a substantial risk; here the behavior is rationalized, not openly defiant.",
@@ -6795,10 +6795,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pss4",
         question: "Your hospital's CSA of a sentinel event lists one corrective action: 'All OR staff will be re-educated on the Universal Protocol.' A surveyor flags this as insufficient. Why?",
         options: [
-          "Education is not an allowable corrective action under JC standards — only process changes are accepted.",
+          "Education is not an allowable corrective action under Joint Commission standards; only structural process changes and system redesign are accepted.",
           "Staff education as the sole corrective action does not address the system design failures that allowed the event to occur and is unlikely to prevent recurrence.",
-          "The corrective action should target leadership, not frontline staff.",
-          "CSA action plans must include at least 5 distinct corrective actions to be considered complete."
+          "The hospital's corrective action plan must include a minimum of five distinct and separate corrective actions to satisfy CSA requirements.",
+          "Corrective actions in a CSA must focus exclusively on leadership and administrative oversight rather than frontline clinical staff education.",
         ],
         correctIndex: 1,
         explanation: "JC's PSS standards require that CSA corrective actions address root causes — the system conditions that enabled the event. 'Re-educate staff' as the sole action treats the event as an individual knowledge failure rather than examining workflow design, communication systems, and environmental factors. Education may be one component but cannot be the entire corrective plan.",
@@ -6809,10 +6809,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pss5",
         question: "How long does your hospital have to complete a Comprehensive Systemic Analysis (CSA) after a sentinel event?",
         options: [
-          "30 calendar days from the event date.",
+          "30 calendar days from when the event was first discovered by the organization.",
           "45 calendar days from the event or JC notification, whichever comes first.",
-          "60 calendar days from JC notification.",
-          "90 days, the same timeframe as a corrective action plan."
+          "60 calendar days from the date that Joint Commission was formally notified of the event.",
+          "90 days, the same timeframe as a corrective action plan implementation and verification period.",
         ],
         correctIndex: 1,
         explanation: "The CSA must be completed within 45 calendar days of the sentinel event or JC notification, whichever comes first. This is a hard deadline — missing it is itself a JC compliance finding. The 45-day window covers the analysis AND development of the action plan. Begin the CSA process immediately after the event is identified, not after JC has been notified.",
@@ -6865,10 +6865,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pss9",
         question: "Which of the following best describes the difference between a Comprehensive Systemic Analysis (CSA) and a Failure Mode and Effects Analysis (FMEA)?",
         options: [
-          "CSA is used for near misses. FMEA is used for sentinel events.",
+          "CSA is used for near misses and process improvements, while FMEA is used exclusively for analyzing serious sentinel events and never-events in healthcare",
           "CSA is reactive — conducted after a serious safety event. FMEA is proactive — conducted before an adverse event to identify and redesign vulnerable processes.",
-          "CSA is required by CMS. FMEA is required only by JC.",
-          "CSA focuses on individual behavior. FMEA focuses on equipment failures."
+          "CSA is required by CMS for all hospitals, while FMEA is required only by The Joint Commission for specific high-risk procedures and processes",
+          "CSA focuses on identifying individual clinician behavior and performance issues, while FMEA focuses on equipment failures and maintenance problems",
         ],
         correctIndex: 1,
         explanation: "CSA is retrospective — it analyzes what went wrong after a serious safety event. FMEA is prospective — it maps a high-risk process, identifies where it could fail, and redesigns it before harm occurs. Together they form the two-sided PSS improvement cycle: react to events (CSA) and proactively reduce risk (FMEA).",
@@ -6893,10 +6893,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pss11",
         question: "A surveyor asks your bedside RN: 'What would you do if you made a medication error?' The nurse responds: 'I'd probably just monitor the patient closely and tell my charge nurse privately so we don't have to fill out all the paperwork.' How should this response be evaluated?",
         options: [
-          "Acceptable. Verbal reporting to the charge nurse satisfies the immediate reporting requirement.",
-          "Acceptable. Not all medication errors require formal documentation.",
+          "Acceptable. Verbal reporting to the charge nurse satisfies the immediate reporting requirement and allows the organization to monitor the patient without formal documentation",
+          "Acceptable. Not all medication errors require formal documentation through the safety system, particularly if patient harm did not occur or was minimal",
           "Unacceptable. The nurse should report the event through the facility's safety event reporting system, which enables system-level analysis and corrective action.",
-          "Unacceptable. The nurse should report directly to the pharmacy department, not the charge nurse."
+          "Unacceptable. The nurse should report directly to the pharmacy department and medical staff office, not to the charge nurse or incident reporting systems",
         ],
         correctIndex: 2,
         explanation: "PSS requires that safety events — including medication errors — be reported through the organization's formal safety event reporting system, not handled through informal verbal channels. Formal reporting enables tracking, pattern identification, CSA if warranted, and QAPI review. A culture where staff route events around the reporting system undermines the entire patient safety infrastructure.",
@@ -6935,10 +6935,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pss14",
         question: "Your charge nurse pauses to investigate why two staff members independently reported the medication dispensing cabinet was 'hard to use,' even though no errors have occurred yet. Which HRO principle is being applied?",
         options: [
-          "Deference to expertise. The charge nurse defers to the staff's experience with the cabinet.",
-          "Commitment to resilience. The charge nurse is building redundancy into the medication system.",
+          "Deference to expertise. The charge nurse defers to the staff's clinical experience with equipment.",
+          "Commitment to resilience. The charge nurse is building redundancy into the medication dispensing system.",
           "Preoccupation with failure. The charge nurse treats staff concerns as early warning signals and investigates before an adverse event occurs.",
-          "Reluctance to simplify. The charge nurse refuses to accept a simple explanation for the cabinet issue."
+          "Reluctance to simplify. The charge nurse refuses to accept a simple explanation for the cabinet issue.",
         ],
         correctIndex: 2,
         explanation: "Preoccupation with failure means treating small signals — near misses, staff concerns, workarounds, equipment complaints — as potential early warnings of a serious failure. The charge nurse is not waiting for a medication error; she is acting on staff reports before harm occurs. This is the essence of preoccupation with failure.",
@@ -6949,10 +6949,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pss15",
         question: "Your CSA team concludes a wrong-patient transfusion occurred because 'the nurse was distracted and did not follow policy.' The action plan states the nurse will receive disciplinary action and all transfusion nurses will complete an online module. A JC reviewer rejects this CSA. Why?",
         options: [
-          "Your hospital should have filed the CSA within 30 days, not 45 days.",
+          "Your hospital should have filed the Comprehensive Systemic Analysis within 30 days of discovery instead of waiting 45 days to begin.",
           "The CSA focused on individual blame rather than identifying and redesigning the system conditions — workflow, labeling, verification process — that allowed the error to occur.",
-          "Online competency modules are not an acceptable corrective action format under PSS standards.",
-          "The CSA team should have included the patient's family as a required member."
+          "Online competency modules and computer-based training are not acceptable formats for corrective actions under Patient Safety Systems standards.",
+          "The CSA team should have included the patient and family members as required participants in the analysis and action plan development.",
         ],
         correctIndex: 1,
         explanation: "A CSA that concludes 'the nurse was distracted' and prescribes disciplinary action has not identified root causes — it has identified an individual. A valid CSA must examine the system: Was the two-patient identifier verification step clearly designed? Were look-alike labels involved? What workarounds existed? Root causes are system conditions, not individual failures.",
@@ -6963,10 +6963,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pss16",
         question: "Your hospital selects its high-alert medication preparation process for this year's required FMEA. The team maps the process, identifies 23 possible failure modes, scores them, and identifies the top 5 highest-risk steps. What is the required next step?",
         options: [
-          "Report the top 5 findings to the state health department within 60 days.",
+          "Report the top 5 findings to the state health department and accreditation body within 60 days.",
           "Redesign the process to eliminate or reduce the highest-risk failure modes, implement the changes, and measure their effectiveness.",
-          "Conduct a CSA for each of the 5 high-risk failure modes identified.",
-          "Re-administer the FMEA in 6 months to confirm the results before taking action."
+          "Conduct a comprehensive CSA for each of the 5 highest-risk failure modes that were identified.",
+          "Re-administer the FMEA in 6 months to confirm the results and validate findings before taking action.",
         ],
         correctIndex: 1,
         explanation: "After scoring and prioritizing failure modes, the FMEA process requires redesigning the process to address the highest-risk steps, implementing those redesigns, and measuring whether changes achieved the intended risk reduction. An FMEA that stops at identifying risks without implementing and measuring changes provides no protection against the failures identified.",
@@ -6978,9 +6978,9 @@ const hospitalLevelsRaw: Level[] = [
         question: "Your hospital's governing board receives patient safety performance data once a year in a brief slide during the annual report. A JC surveyor notes this as a gap. What does the PSS chapter require of the governing body?",
         options: [
           "The governing body must receive patient safety data at least quarterly and must hold leadership accountable for results.",
-          "The governing body has no direct PSS obligation — patient safety is a medical staff function.",
-          "The governing body must approve every CSA action plan before it is submitted to JC.",
-          "The governing body must include a patient safety officer as a board member."
+          "The governing body must receive patient safety data at least quarterly and must hold leadership accountable for results.",
+          "The governing body must approve and sign off on every single CSA action plan before submission to the Joint Commission surveyor.",
+          "The governing body must designate a dedicated patient safety officer who serves as a permanent voting member of the board.",
         ],
         correctIndex: 0,
         explanation: "PSS and the JC Leadership chapter together require the governing body to receive regular patient safety performance data — not just an annual summary — and to hold leadership accountable for improvement. Board-level accountability is explicit. Once-a-year exposure during an annual report does not constitute active board oversight.",

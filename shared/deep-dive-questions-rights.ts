@@ -12,11 +12,11 @@ export const ddPatientRightsLevel: DeepDiveLevel = {
       id: "dd-pr1",
       baseQuestion: "A patient consented to a laparoscopic appendectomy. Intraoperatively, the surgeon discovers a suspicious mass on the colon and wants to perform a biopsy. The patient is under general anesthesia and cannot be consulted. The surgeon performs the biopsy. Is this practice compliant?",
       baseOptions: [
-        "Yes - the discovery of an unexpected finding during surgery gives the surgeon the authority to perform clinically indicated procedures without additional consent",
-        "No - unless the biopsy was immediately necessary to prevent death or serious harm, the extension of the procedure scope without consent requires that the patient be awakened to consent or the procedure deferred to a separate encounter",
-        "Yes - general surgical consent covers all procedures performed within the same operative session",
-        "No - the surgeon should have called the patient's healthcare proxy for telephone consent during the procedure"
-      ],
+          "Yes - the discovery of an unexpected clinical finding during surgery gives the surgeon the legal authority to perform clinically indicated procedures without obtaining additional informed consent from the patient",
+          "No - unless the biopsy was immediately necessary to prevent death or serious harm, the extension of the procedure scope without consent requires that the patient be awakened to consent or the procedure deferred to a separate encounter",
+          "Yes - informed consent for general surgical procedures covers all procedures performed within the same operative session, including biopsies of unexpected findings discovered intraoperatively",
+          "No - the surgeon should have called the patient's healthcare proxy for telephone consent during the procedure rather than proceeding with the biopsy without prior authorization or discussion",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "Informed consent for surgery covers the specific procedure consented to. Performing an additional, non-emergency procedure without consent - even if discovered during the consented procedure - violates the patient's right to consent to their own care. The biopsy could be deferred to a separate encounter with appropriate consent discussion, unless immediate biopsy was clinically necessary to prevent serious imminent harm.",
       baseXp: 20,
@@ -24,11 +24,11 @@ export const ddPatientRightsLevel: DeepDiveLevel = {
         {
           question: "The surgeon argues that informing the patient about the mass before surgery would have caused undue anxiety and that the biopsy result ultimately showed a benign finding, so no harm occurred. Does the benign result change the consent analysis?",
           options: [
-            "Yes - a benign outcome demonstrates that the biopsy was the correct clinical decision, which retroactively validates the consent deviation",
-            "No - the validity of consent is evaluated at the time it is obtained, not by the outcome of the procedure. A benign result does not retroactively justify performing a procedure without consent. The patient's right to make an informed decision about the biopsy - including the right to refuse - existed regardless of what the result turned out to be",
-            "Partially - the benign result eliminates liability but does not fully satisfy the consent standard",
-            "Yes - JC standards include a harm-based consent analysis where outcome determines whether a deviation was acceptable"
-          ],
+          "Yes - a benign outcome demonstrates that the biopsy was the correct clinical decision and that proceeding without consent did not result in patient harm, which retroactively validates that the deviation from the consent standard was necessary and medically appropriate in this case.",
+          "No - the validity of consent is evaluated at the time it is obtained, not by the outcome of the procedure. A benign result does not retroactively justify performing a procedure without consent. The patient's right to make an informed decision about the biopsy - including the right to refuse - existed regardless of what the result turned out to be",
+          "Partially - the benign result eliminates the medical malpractice liability and damages component of the case but does not fully satisfy the informed consent standard, which is a separate violation of patient rights that exists independent of clinical outcome or harm.",
+          "Yes - Joint Commission standards include a harm-based consent analysis where the outcome of the procedure determines whether a deviation from the consent process was legally and ethically acceptable in the clinical context.",
+        ],
           correctIndex: 1,
           explanation: "Informed consent is a process right - the right to decide in advance, based on information, whether to accept a proposed treatment. Outcome does not determine whether consent was properly obtained. The surgeon's argument that the patient 'didn't need to know' substitutes physician judgment for patient autonomy, which is the core concept consent rights protect against. The benign result is irrelevant to the rights violation.",
           expertXp: 25
@@ -39,11 +39,11 @@ export const ddPatientRightsLevel: DeepDiveLevel = {
       id: "dd-pr2",
       baseQuestion: "An elderly patient with dementia becomes agitated at night and attempts to climb out of bed. The nurse applies wrist restraints citing fall risk. No physician order has been obtained. The nurse calls the physician 2 hours later to report. What is the compliance status of this sequence?",
       baseOptions: [
-        "Non-compliant - nursing judgment in an immediate safety emergency permits restraint application prior to physician notification",
-        "Non-compliant - behavioral restraints require a physician order before application; emergency restraint application without an order requires immediate physician notification and order within a defined timeframe (typically 1 hour), not 2 hours later",
-        "Compliant - the 2-hour window for physician notification is within acceptable limits for behavioral restraints in geriatric patients",
-        "Non-compliant - dementia patients cannot be restrained under any circumstances without ethics committee approval"
-      ],
+          "Non-compliant - nursing judgment in an immediate safety emergency permits restraint application prior to physician notification when fall risk is objectively high, but documentation must be thorough",
+          "Non-compliant - behavioral restraints require a physician order before application; emergency restraint application without an order requires immediate physician notification and order within a defined timeframe (typically 1 hour), not 2 hours later",
+          "Compliant - the 2-hour window for physician notification meets acceptable standards for behavioral restraints in geriatric patients with dementia who have high acute fall risk in hospital settings",
+          "Non-compliant - dementia patients cannot be restrained under any circumstances without prior ethics committee approval and written consent from a surrogate decision-maker",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "JC and CMS require a physician order for behavioral restraints. Emergency application without a prior order is permissible in some circumstances, but notification and order must occur within a defined timeframe - typically 1 hour. A 2-hour delay between application and physician notification exceeds the allowable window and is a compliance finding.",
       baseXp: 15,
@@ -66,11 +66,11 @@ export const ddPatientRightsLevel: DeepDiveLevel = {
       id: "dd-pr3",
       baseQuestion: "A hospital conducts a grievance audit and finds: 34 written grievances received in 90 days; average written response time of 18 days; 6 grievances with no written response at all; and no tracking of grievance themes for quality improvement. What is the compliance status?",
       baseOptions: [
-        "Partially compliant - the 18-day average response is within acceptable limits for complex grievances",
-        "Non-compliant on multiple dimensions - CMS requires written response within 7 days for most grievances; 6 unresponded grievances represent direct compliance failures; and lack of grievance trend tracking for quality improvement violates the requirement that grievance data drive improvement",
-        "Compliant - an 18-day average suggests some responses were timely; the average masks the range",
-        "Non-compliant only for the 6 unresponded grievances - response timing is measured from the date the investigation is complete, not the date of receipt"
-      ],
+          "Non-compliant on multiple dimensions - CMS requires written response within 7 days for most grievances; 6 unresponded grievances represent direct compliance failures; and lack of grievance trend tracking for quality improvement violates the requirement that grievance data drive improvement",
+          "Non-compliant on multiple dimensions - CMS requires written response within 7 days for most grievances; 6 unresponded grievances represent direct compliance failures; and lack of grievance trend tracking for quality improvement violates the requirement that grievance data drive improvement",
+          "Partially compliant — while the 18-day average response time exceeds the 7-day requirement, the facility is responding to most grievances; the 6 unresponded grievances must be prioritized, but grievance trend data can be collected retrospectively if not previously tracked systematically",
+          "Non-compliant only for the 6 unresponded grievances — response timing is measured from the date investigation is completed rather than the date of initial receipt, which means the 18-day average may be within acceptable limits if investigation periods are properly documented and tracked",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "Multiple failures are present: (1) CMS requires written response within 7 days - an 18-day average represents a systemic timing violation; (2) 6 unanswered grievances are direct non-compliance; (3) no theme tracking means the grievance process is not being used for improvement as required. The grievance program has both process and outcome failures.",
       baseXp: 15,
@@ -78,11 +78,11 @@ export const ddPatientRightsLevel: DeepDiveLevel = {
         {
           question: "The patient relations director proposes fixing the response time issue by having the investigation summary letter sent automatically within 7 days stating 'your grievance is under investigation and you will receive a full response within 30 days.' Does this approach satisfy the CMS and JC grievance response requirements?",
           options: [
-            "Yes - acknowledging receipt within 7 days satisfies the written response requirement; the 30-day follow-up provides the investigation result",
-            "No - the written response within 7 days must include the substance of the response: what was investigated, what was found, what actions were taken, and the name of a contact person. A form letter saying 'we are investigating' does not satisfy the content requirements of the written response standard",
-            "Yes - CMS explicitly permits a two-stage response where acknowledgment and final resolution are sent separately",
-            "Partially - the 7-day acknowledgment satisfies the timing requirement; the content requirement can be met in the 30-day follow-up"
-          ],
+          "Yes - acknowledging receipt of the grievance within 7 days satisfies the written response requirement; the complete investigation results and corrective actions can be provided in the 30-day follow-up communication",
+          "No - the written response within 7 days must include the substance of the response: what was investigated, what was found, what actions were taken, and the name of a contact person. A form letter saying 'we are investigating' does not satisfy the content requirements of the written response standard",
+          "Yes - CMS explicitly permits a two-stage response process where an initial acknowledgment letter is sent within 7 days and the complete response with findings is sent in a separate follow-up within 30 days",
+          "Partially - the 7-day acknowledgment satisfies the timing component of the written response requirement; the substantive content requirements regarding investigation findings and actions can be met in the follow-up communication",
+        ],
           correctIndex: 1,
           explanation: "The CMS grievance response requirements specify that the written response must include: the hospital contact person, steps taken to investigate, results of the grievance investigation, and the date of completion. A form acknowledgment letter stating 'we are investigating' does not meet the content standard - it only satisfies notification that the grievance was received. The substantive response must be provided on a timely basis, not deferred to a separate letter weeks later.",
           expertXp: 25
@@ -93,11 +93,11 @@ export const ddPatientRightsLevel: DeepDiveLevel = {
       id: "dd-pr4",
       baseQuestion: "A nurse caring for an elderly patient witnesses a nursing assistant being verbally abusive to the patient - shouting, using demeaning language, and roughly handling the patient during repositioning. The nurse does not report the behavior because 'I don't want to cause problems with a coworker.' What are the nurse's obligations?",
       baseOptions: [
-        "The nurse should speak privately with the nursing assistant first - direct peer-to-peer feedback is the appropriate first step before escalation",
-        "The nurse has a mandatory obligation to report the witnessed abuse to a supervisor and through the facility's abuse reporting process - 'not wanting to cause problems' is not an acceptable reason to withhold a required abuse report. The patient's right to be free from abuse is not negotiable",
-        "The nurse should document the observation in the patient's chart - chart documentation satisfies the reporting obligation",
-        "Reporting is appropriate but not mandatory when the abuse is verbal rather than physical"
-      ],
+          "The nurse should document the observation thoroughly in the patient's medical record — comprehensive chart documentation creates a clinical record of the incident and alerts the clinical team to the behavior pattern, which satisfies the core reporting obligation to ensure patient safety and appropriate care",
+          "The nurse has a mandatory obligation to report the witnessed abuse to a supervisor and through the facility's abuse reporting process - 'not wanting to cause problems' is not an acceptable reason to withhold a required abuse report. The patient's right to be free from abuse is not negotiable",
+          "Reporting is discretionary when verbal abuse is involved rather than physical abuse, since verbal behavior alone does not cause direct physical harm — only incidents involving physical contact or visible injury require mandatory reporting to comply with state abuse reporting laws and facility policy",
+          "The nurse should first address the behavior directly with the nursing assistant through private conversation before reporting — this allows the staff member an opportunity to understand the impact of their behavior and change it without involving management or compliance, preserving professional relationships",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "Witnessing patient abuse - including verbal abuse and rough physical handling - triggers a mandatory reporting obligation. JC requires that staff report suspected abuse through the facility's defined reporting channels. The coworker relationship does not reduce this obligation. Documenting in the chart without reporting through the abuse reporting channel is insufficient.",
       baseXp: 20,
@@ -105,11 +105,11 @@ export const ddPatientRightsLevel: DeepDiveLevel = {
         {
           question: "The nurse reports the incident to the charge nurse, who says 'I know him, he's actually really good with patients - probably just a bad day. Let's not make it a big deal.' The charge nurse takes no further action. What has occurred and what should happen next?",
           options: [
-            "The charge nurse made a reasonable clinical judgment - a single witnessed incident does not constitute confirmed abuse and investigation is appropriate before escalation",
-            "The charge nurse has failed to fulfill their supervisory obligation to escalate an abuse report - the nurse who witnessed the event must escalate the report to the next level of leadership or through an alternative reporting pathway (patient safety hotline, compliance department) since the immediate supervisor has not acted",
-            "The charge nurse's dismissal of the report means the obligation is discharged - the frontline nurse has fulfilled their responsibility by reporting to their supervisor",
-            "The nurse should confront the nursing assistant directly since the charge nurse declined to act"
-          ],
+          "The charge nurse made a reasonable clinical judgment - a single witnessed incident does not constitute confirmed abuse, and a brief informal investigation or observation period is appropriate before escalating the concern to senior leadership, the compliance officer, or external reporting agencies.",
+          "The charge nurse has failed to fulfill their supervisory obligation to escalate an abuse report - the nurse who witnessed the event must escalate the report to the next level of leadership or through an alternative reporting pathway (patient safety hotline, compliance department) since the immediate supervisor has not acted",
+          "The charge nurse's dismissal of the report means the obligation is discharged - the frontline nurse has fulfilled their professional responsibility by reporting the concern to their immediate supervisor, and further escalation to other levels of leadership or external agencies is not required.",
+          "The nurse should confront the nursing assistant directly about the witnessed behavior to clarify the individual's intent and obtain an explanation before involving the charge nurse, management, or other leadership in the matter to avoid potential damage to the staff member's professional reputation.",
+        ],
           correctIndex: 1,
           explanation: "When a supervisor fails to act on a reported abuse allegation, the reporting obligation does not end - it escalates. The nurse who witnessed the abuse must use alternative escalation pathways: direct supervisor's supervisor, patient safety or compliance reporting line, or risk management. A supervisor's dismissal of an abuse report as 'a bad day' is itself a supervisory failure that may require reporting. JC expects that facilities have multiple reporting pathways specifically because direct supervisor channels can fail.",
           expertXp: 30
@@ -120,11 +120,11 @@ export const ddPatientRightsLevel: DeepDiveLevel = {
       id: "dd-pr5",
       baseQuestion: "A non-English-speaking patient with limited literacy in their native language is admitted. The physician uses the patient's teenage child as an interpreter for the entire admission history, physical findings discussion, consent for procedure, and discharge instructions. The child is 14 years old. What rights issues are present?",
       baseOptions: [
-        "No issues - the patient chose to have their child interpret and patient preference for family interpreters is supported by JC",
-        "Multiple issues: professional interpreter services must be offered first before a patient can choose family interpretation; a 14-year-old child should not be asked to interpret complex medical information for a parent - this creates an inappropriate role reversal and the child may filter, misunderstand, or be emotionally harmed by the content; and consent discussions require accurate interpretation that a child may not be able to provide",
-        "One issue - consent should have used a professional interpreter, but the history and discharge instructions are acceptable with a family interpreter",
-        "No issues - JC permits family interpretation when the patient has not requested professional services"
-      ],
+          "No issues exist - the patient chose to have their child interpret and patient preference for family interpreters is a supported practice by Joint Commission standards, and the physician documented that the patient seemed to understand the information discussed during the admission and consent process",
+          "Multiple issues: professional interpreter services must be offered first before a patient can choose family interpretation; a 14-year-old child should not be asked to interpret complex medical information for a parent - this creates an inappropriate role reversal and the child may filter, misunderstand, or be emotionally harmed by the content; and consent discussions require accurate interpretation that a child may not be able to provide",
+          "One issue exists - the consent discussion should have used a professional interpreter, but the history and discharge instructions are acceptable with a family interpreter since those conversations are less legally sensitive and do not carry the same informed decision-making requirements as a surgical consent discussion",
+          "No issues exist - Joint Commission permits family interpretation when the patient has not specifically requested professional interpreter services or expressed concerns about the child's ability to accurately translate medical terminology and complex clinical concepts discussed during the encounter",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "Multiple rights and safety issues exist: (1) professional interpreter services must be offered before family interpretation occurs - there is no documentation that this happened; (2) using a minor child as a medical interpreter creates an inappropriate burden, a role reversal with psychological implications, and an accuracy risk since a 14-year-old may not have the vocabulary, emotional distance, or ability to accurately translate complex medical content; (3) consent interpretation through a child raises validity questions.",
       baseXp: 20,
@@ -132,11 +132,11 @@ export const ddPatientRightsLevel: DeepDiveLevel = {
         {
           question: "The physician argues that the patient 'seemed to understand' during the visit and that the child is bilingual and well-educated. The patient expressed no concerns. Does the patient's apparent satisfaction with the interpretation validate the approach?",
           options: [
-            "Yes - patient satisfaction is a key indicator of effective communication; if the patient did not express concerns, the interpretation was likely adequate",
-            "No - patient satisfaction with the interpretation process does not validate it. Patients often do not know what they do not know - they may not realize information was filtered, mistranslated, or omitted. A patient cannot evaluate interpretation accuracy in a language they cannot fully understand. JC and HIPAA-aligned standards require that professional interpreters be offered regardless of patient apparent satisfaction",
-            "Partially - patient satisfaction validates the history and discharge components but does not validate the consent discussion",
-            "Yes - if the child was objectively bilingual and the physician observed appropriate understanding, the standard has been met"
-          ],
+          "Yes - patient satisfaction with the interpretation process is a key indicator of effective communication, and if the patient did not express concerns about understanding the information, the interpretation was likely adequate and met the standard for informed decision-making in this clinical encounter",
+          "No - patient satisfaction with the interpretation process does not validate it. Patients often do not know what they do not know - they may not realize information was filtered, mistranslated, or omitted. A patient cannot evaluate interpretation accuracy in a language they cannot fully understand. JC and HIPAA-aligned standards require that professional interpreters be offered regardless of patient apparent satisfaction",
+          "Partially - patient satisfaction validates the accuracy of the history and discharge instruction components but does not validate the consent discussion, which requires professional interpretation regardless of the patient's perception of understanding or satisfaction with the interaction",
+          "Yes - if the child was objectively bilingual and the physician documented that they observed appropriate understanding and the patient expressed no concerns about the interpretation quality, the standard has been met according to JC visitation and communication standards",
+        ],
           correctIndex: 1,
           explanation: "Apparent patient satisfaction cannot be used to validate interpretation quality because patients are unable to independently assess whether translation was accurate, complete, or appropriately nuanced. This is precisely why professional interpreter standards exist - to protect patients from communication failures they cannot themselves detect. A patient who nods and says 'yes' when asked if they understand may be responding to social cues rather than genuine comprehension.",
           expertXp: 25
@@ -148,11 +148,11 @@ export const ddPatientRightsLevel: DeepDiveLevel = {
       id: "dd-pr6",
       baseQuestion: "A patient with end-stage heart failure has a valid DNR order on file. During a cardiac arrest, the patient's adult daughter - who arrived at the hospital after the arrest began - demands that staff 'do everything.' The nurse initiates CPR. What right has been violated?",
       baseOptions: [
-        "No right was violated - family member requests override advance directives in emergency situations",
-        "The patient's right to self-determination - a valid DNR order represents the patient's previously expressed, legally documented decision not to receive CPR. A family member who has not been designated as healthcare proxy does not have authority to override a valid advance directive",
-        "The right was violated only if the patient was ever conscious and able to reconfirm the DNR during this hospitalization",
-        "No right was violated - uncertainty in emergency situations justifies defaulting to resuscitation"
-      ],
+          "The patient's family has the right to override the DNR order because family members are the appropriate surrogate decision-makers when the patient cannot speak for themselves, regardless of whether they have formal healthcare proxy designation",
+          "The patient's right to self-determination - a valid DNR order represents the patient's previously expressed, legally documented decision not to receive CPR. A family member who has not been designated as healthcare proxy does not have authority to override a valid advance directive",
+          "The right was violated only if the patient was ever conscious and able to reconfirm the DNR order during this hospitalization, since advance directives may become outdated and require periodic patient reaffirmation to remain legally binding",
+          "No right was violated because emergency circumstances justify using family preference as a guide when the patient's wishes are not immediately clear or when resuscitation may preserve life long enough for additional family input",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "A valid DNR order is the patient's documented exercise of their right to refuse life-sustaining treatment. It is legally binding. A family member who is not designated as the legal healthcare proxy does not have authority to override it. Initiating CPR contrary to a valid DNR violates patient autonomy and may constitute unwanted medical intervention. Staff must know the policy for handling family disagreement with advance directives before emergency situations occur.",
       baseXp: 20,
@@ -241,11 +241,11 @@ export const ddPatientRightsLevel: DeepDiveLevel = {
         {
           question: "The facility's admission rights form is a generic multi-page document that patients sign without a staff member reviewing the specific rights with them. 74% of psychiatric voluntary patients cannot accurately describe their discharge rights when asked post-admission. What does this indicate?",
           options: [
-            "The rights form satisfies the legal requirement - patient education comprehension is not a compliance standard",
-            "A systemic patient education failure - the rights notification process is designed for compliance documentation, not patient understanding. JC requires that patient rights information be communicated in a way that the patient can understand, not merely signed. A 74% incomprehension rate indicates the form-signing process is not providing meaningful rights notification",
-            "The 74% rate is expected for psychiatric patients who may have cognitive impairment - modified standards apply",
-            "The form satisfies the standard - patient rights forms are legal documents that require signature, not comprehension testing"
-          ],
+          "The rights form satisfies the legal requirement for compliance documentation, and patient education comprehension levels are not formally measured as part of accreditation standards since the signature itself demonstrates acknowledgment of the notification process and fulfills the facility's documentation obligations.",
+          "A systemic patient education failure - the rights notification process is designed for compliance documentation, not patient understanding. JC requires that patient rights information be communicated in a way that the patient can understand, not merely signed. A 74% incomprehension rate indicates the form-signing process is not providing meaningful rights notification",
+          "The 74% incomprehension rate is expected and acceptable for psychiatric patients who may have cognitive impairment or acute psychiatric conditions, and modified standards for patient rights comprehension are appropriately applied in behavioral health settings to account for the population's clinical presentation.",
+          "The form satisfies the standard because patient rights forms are legal documents that require signature documentation, and the comprehension level of individual patients is not a measurable component of the rights notification requirement under accreditation standards for any healthcare setting.",
+        ],
           correctIndex: 1,
           explanation: "Patient rights notification must be meaningful - not just a form-signing exercise. JC's patient rights standards require that information be communicated in a way the patient can understand. A 74% incomprehension rate demonstrates that the current process fails this standard. Improvements should include verbal explanation by a staff member at the time of admission, teach-back verification of key rights (discharge rights, grievance rights, least restrictive treatment rights), and translation for non-English-speaking patients.",
           expertXp: 25
@@ -295,11 +295,11 @@ export const ddPatientRightsLevel: DeepDiveLevel = {
         {
           question: "A speech-language pathologist is consulted and determines the patient has intact comprehension and can communicate reliably through writing and a letter board. The patient, when offered the letter board, spells out that they want to go home for comfort care. Their children object and want aggressive treatment. What is the correct response?",
           options: [
-            "Honor the family's request - family are the appropriate surrogate decision-makers when a patient cannot verbally communicate",
-            "Honor the patient's expressed preference - the patient has demonstrated decision-making capacity through an alternative communication modality. Their preference for comfort care is now a documented competent patient decision. Family disagreement does not override a competent patient's stated wishes. Aggressive treatment contrary to the patient's expressed preference would be a rights violation",
-            "Seek a second opinion from neurology on the patient's capacity before honoring any patient preference that conflicts with family wishes",
-            "Continue the current treatment plan while the ethics committee reviews the family conflict - conflict with family is grounds for maintaining status quo pending review"
-          ],
+          "Honor the family's request - family members are the appropriate surrogate decision-makers when a patient cannot verbally communicate with the clinical team, regardless of what alternative communication methods might demonstrate about the patient's underlying capacity.",
+          "Honor the patient's expressed preference - the patient has demonstrated decision-making capacity through an alternative communication modality. Their preference for comfort care is now a documented competent patient decision. Family disagreement does not override a competent patient's stated wishes. Aggressive treatment contrary to the patient's expressed preference would be a rights violation",
+          "Seek a second opinion from neurology on the patient's capacity before honoring any patient preference that conflicts with family wishes, since stroke-related cognitive impairment requires neurological assessment to determine whether the patient's written communications reflect actual decision-making capacity.",
+          "Continue the current treatment plan while the ethics committee reviews the family conflict - continuation of aggressive treatment pending ethics review is appropriate when there is disagreement between patient preferences and family wishes regarding the appropriate level of care intensity.",
+        ],
           correctIndex: 1,
           explanation: "When a patient who was previously assumed to lack decision-making capacity is found to have capacity through proper assessment and alternative communication, their expressed preferences must be honored as the primary ethical and legal standard. The patient is not a surrogate decision-making situation - they are a competent patient with a currently expressed preference. Family disagreement is emotionally significant and should be addressed with support, but it does not override the patient's rights.",
           expertXp: 30
@@ -310,11 +310,11 @@ export const ddPatientRightsLevel: DeepDiveLevel = {
       id: "dd-pr12",
       baseQuestion: "A patient undergoing a lumbar puncture refuses to allow medical students to observe the procedure, stating 'I don't want students in the room.' The resident performing the procedure allows two medical students to remain in the room while the patient's gown is adjusted for the procedure, saying 'they're just watching.' When the patient notices and objects, the resident says they are already ready to begin. What rights violation occurred?",
       baseOptions: [
-        "No violation - medical students are part of the care team and their presence does not require specific patient consent",
-        "The patient's right to privacy was violated - the patient explicitly declined student presence. Allowing students to remain without the patient's consent and proceeding with an invasive procedure after the patient's objection violates both privacy rights and the right to informed refusal of specific provider presence. Academic teaching does not override explicit patient objection to student observation",
-        "A minor privacy concern only - the students were observing, not participating, which reduces the privacy violation",
-        "No violation if the students were properly attired in clinical clothing and introduced as members of the clinical team"
-      ],
+          "No violation - medical students are part of the care team and their presence does not require specific patient consent. Students routinely observe invasive procedures as part of their clinical education, and teaching hospitals have an educational mission that includes student participation in patient care.",
+          "The patient's right to privacy was violated - the patient explicitly declined student presence. Allowing students to remain without the patient's consent and proceeding with an invasive procedure after the patient's objection violates both privacy rights and the right to informed refusal of specific provider presence. Academic teaching does not override explicit patient objection to student observation",
+          "A minor privacy concern only - the students were observing, not participating, which reduces the privacy violation. The primary patient right at issue involves informed consent for treatment, not observation by educational personnel.",
+          "No violation if the students were properly attired in clinical clothing and introduced as members of the clinical team. Patient objections to 'students in the room' refer to lay persons, and medical students identified as clinical team members satisfy transparency requirements.",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "Patients have the right to refuse the presence of specific individuals during their care - including students, residents, and non-essential staff. An explicit refusal of student presence that is overridden by a clinician who determines that 'watching' is acceptable constitutes a rights violation. The patient's autonomy over who is present during an invasive procedure is not negotiable on the basis of academic convenience or procedural timing.",
       baseXp: 15,
@@ -376,11 +376,11 @@ export const ddPatientRightsLevel: DeepDiveLevel = {
         {
           question: "The nurse files a formal complaint with the risk management department about potential retaliation. The risk manager says 'we can't prove the review was related to the report - it could be coincidental.' What must the investigation include?",
           options: [
-            "The risk manager's assessment is adequate - without proof of direct causal connection, no further action is required",
-            "The investigation must examine the timing and content of the performance review relative to the incident report date, the reviewer's prior knowledge of who filed the report (which requires examining the confidentiality breach), the nurse's prior performance evaluation history for baseline comparison, and whether 'lack of teamwork' citations correlate with any specific behaviors or incidents - not just the report timing. The confidentiality breach itself is a separate finding requiring investigation regardless of the review's motivation",
-            "Limit the investigation to the confidentiality breach - the performance review is an HR matter outside risk management's scope",
-            "Close the investigation pending any future retaliation events - a single data point is insufficient for a formal finding"
-          ],
+          "The risk manager's assessment is adequate without proof of direct causal connection, but a thorough retaliation investigation requires examining the timing and content of the performance review relative to the incident report date, the reviewer's prior knowledge of who filed the report through confidentiality breach analysis, the nurse's prior performance evaluation history for baseline comparison, and whether 'lack of teamwork' citations correlate with specific behaviors or incidents rather than just report timing alone.",
+          "The investigation must examine the timing and content of the performance review relative to the incident report date, the reviewer's prior knowledge of who filed the report (which requires examining the confidentiality breach), the nurse's prior performance evaluation history for baseline comparison, and whether 'lack of teamwork' citations correlate with any specific behaviors or incidents - not just the report timing. The confidentiality breach itself is a separate finding requiring investigation regardless of the review's motivation",
+          "Limit the investigation to the confidentiality breach as the primary finding, since the performance review timing alone cannot establish retaliation without direct evidence of causal intent, and HR personnel typically make review decisions independent of risk management reporting channels and clinical incident data.",
+          "Close the investigation pending any future retaliation events, as a single data point of timing correlation is insufficient for a formal finding without additional corroborating evidence of discriminatory intent or pattern behavior by the manager or institution.",
+        ],
           correctIndex: 1,
           explanation: "A thorough retaliation investigation requires objective evidence analysis - prior performance review history, timing relative to reporting, content analysis of the review language, and the confidentiality breach that enabled targeted action. The absence of a signed confession does not mean there was no retaliation. Circumstantial evidence patterns - timing, vague negative language in reviews, identified supervisors in confidential systems - are exactly the evidence that retaliation investigations evaluate. A dismissive 'can't prove it' response to this pattern is itself a culture failure.",
           expertXp: 30
@@ -391,11 +391,11 @@ export const ddPatientRightsLevel: DeepDiveLevel = {
       id: "dd-pr15",
       baseQuestion: "A patient admitted for a non-psychiatric condition is placed in physical restraints for confused behavior after falling out of bed twice. The orders are written by the hospitalist and the restraints are applied. On day 3, the patient has shown no fall attempts and is more oriented. The restraints remain in place because 'we're busy and he fell before.' What patient rights issues are present?",
       baseOptions: [
-        "None - the initial fall history justifies continued restraint use until the hospitalist reviews and discontinues the order",
-        "Multiple - restraint orders require daily physician reassessment and a determination that continued use is still clinically justified. Keeping restraints in place because the unit is 'busy' and based on a 3-day-old clinical event without current reassessment violates the patient's right to the least restrictive care environment and exceeds the authorized restraint duration",
-        "Only a documentation issue - the restraints are clinically appropriate and the lapse is in documentation of reassessment",
-        "No rights issue if the patient cannot verbally articulate objection to the restraints"
-      ],
+          "None - the initial fall history justifies continued restraint use until the hospitalist reviews and discontinues the order, and documentation of clinical reasoning supports this decision without requiring daily reassessment when the patient remains confused and at high risk for falls",
+          "Multiple - restraint orders require daily physician reassessment and a determination that continued use is still clinically justified. Keeping restraints in place because the unit is 'busy' and based on a 3-day-old clinical event without current reassessment violates the patient's right to the least restrictive care environment and exceeds the authorized restraint duration",
+          "Only a documentation issue - the restraints are clinically appropriate based on the patient's repeated fall attempts and confusion, and the compliance concern is limited to ensuring that reassessment notes are added to the medical record within 24 hours of the current date",
+          "No rights issue if the patient cannot verbally articulate objection to the restraints because restraint necessity is determined solely by clinical risk factors, and a patient's inability to protest does not create an obligation for physician reassessment",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "Restraint use is time-limited and must be continuously justified. Each day of continued use requires clinical reassessment demonstrating that the criteria for restraint are still met - not assumption based on prior events. A patient who has not attempted to fall in 3 days, is more oriented, and has restraints maintained because the unit is busy is being denied the right to least restrictive care. The 'he fell before' rationale without current reassessment is a rights and clinical failure.",
       baseXp: 15,
@@ -445,11 +445,11 @@ export const ddPatientRightsLevel: DeepDiveLevel = {
       id: "dd-pr17",
       baseQuestion: "An ICU patient who is alert and oriented refuses a medically necessary arterial line that the intensivist orders for hemodynamic monitoring. The intensivist argues the patient 'doesn't understand how sick they are' and that the monitoring is essential. The patient says 'I understand - I just don't want it.' What is the correct approach?",
       baseOptions: [
-        "The intensivist may place the arterial line - clinical judgment supersedes patient refusal for medically necessary interventions in the ICU",
-        "The patient's refusal must be respected - an alert, oriented, capacitated patient has the absolute right to refuse any medical intervention, including an arterial line that the physician considers medically necessary. The intensivist's disagreement with the patient's decision does not override the patient's autonomy. The clinical team must document the patient's informed refusal, explain the risks of monitoring without the line, and explore whether alternative monitoring is acceptable to the patient",
-        "Request an urgent ethics committee consultation - the intensivist's clinical concern requires ethical review before honoring the patient's refusal",
-        "Place the arterial line if the patient's hemodynamic status deteriorates - clinical deterioration restores physician authority to override refusal"
-      ],
+          "The intensivist may place the arterial line without consent if they document clinical judgment that the intervention is immediately necessary to prevent serious harm - this doctrine of emergency override applies when a capacitated patient's refusal directly contradicts life-saving treatment in the ICU setting, provided the intensivist obtains a second physician opinion and documents the emergency circumstances justifying the override decision.",
+          "The patient's refusal must be respected - an alert, oriented, capacitated patient has the absolute right to refuse any medical intervention, including an arterial line that the physician considers medically necessary. The intensivist's disagreement with the patient's decision does not override the patient's autonomy. The clinical team must document the patient's informed refusal, explain the risks of monitoring without the line, and explore whether alternative monitoring is acceptable to the patient",
+          "Request an urgent ethics committee consultation to evaluate whether the patient's refusal is truly informed - the intensivist's clinical concern about inadequate monitoring justifies a multidisciplinary review to determine if the patient's decision-making demonstrates sufficient understanding of the hemodynamic risks and consequences of refusing the monitoring intervention.",
+          "Place the arterial line if the patient's hemodynamic status deteriorates during the surgery or monitoring period - clinical deterioration and emerging signs of instability restore physician authority to override the patient's initial refusal based on changed medical circumstances and the principle of implied consent during medical emergencies.",
+        ],
       baseCorrectIndex: 1,
       baseExplanation: "A capacitated adult patient's right to refuse any medical intervention is absolute - even when the refusal is against medical advice and the provider considers the intervention medically necessary. Disagreeing with the patient's decision, or believing the patient does not fully understand their situation, does not reduce their right to refuse. The appropriate response is thorough education, exploration of acceptable alternatives, documentation of the informed refusal, and continuing to provide care within the scope of what the patient accepts.",
       baseXp: 20,

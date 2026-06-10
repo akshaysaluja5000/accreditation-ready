@@ -13,10 +13,10 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
         id: "dd-dnv-qm-1",
         baseQuestion: "A DNV surveyor reviews your hospital's Performance Improvement (PI) program. They note that the PI committee meets quarterly, collects data on core measures, but has not demonstrated that data analysis leads to measurable improvements. Which finding does this most directly represent under NIAHO QM standards?",
         baseOptions: [
-          "The hospital exceeds minimum NIAHO requirements because core measures data is being collected",
+          "The hospital exceeds minimum NIAHO requirements because core measures data is being collected quarterly by a dedicated committee",
           "The hospital fails to demonstrate a systematic PI process with identifiable improvement actions and outcome tracking",
-          "Quarterly meetings satisfy NIAHO frequency requirements; no deficiency exists",
-          "NIAHO requires only data collection, not demonstration of improvement outcomes"
+          "Quarterly meetings satisfy NIAHO frequency requirements; no deficiency exists in the committee's structure or meeting schedule",
+          "NIAHO requires only data collection and reporting; demonstration of improvement outcomes is a best practice but not mandated",
         ],
         baseCorrectIndex: 1,
         baseExplanation: "NIAHO QM.1 requires that the PI program not only collect data but demonstrate that analysis drives actions and that outcomes improve. A committee that collects data without traceable improvement cycles fails the 'systematic' and 'outcome' requirements of the standard.",
@@ -25,11 +25,11 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
           {
             question: "The PI committee argues that their quarterly reports show steady core measure performance, which proves the program is working. How should this evidence be interpreted under NIAHO QM standards?",
             options: [
-              "Steady performance is sufficient evidence of an effective PI program because it demonstrates the hospital is not declining",
-              "NIAHO requires trend data over at least 24 months; quarterly reports covering less than two years cannot satisfy QM.1",
-              "Steady performance does not prove the PI program caused or maintained that performance; the hospital must show the cycle of analysis, action, and re-measurement",
-              "Core measure stability is acceptable proof under QM.1 as long as no measures fall below the national 50th percentile"
-            ],
+          "Yes - at least one frontline representative on a committee roster satisfies NIAHO QM staff involvement requirements for all quality improvement activities and initiatives",
+          "No - NIAHO QM.1 requires a documented process for soliciting frontline staff input across all clinical departments, not a single representative on a committee roster",
+          "Staff involvement is not explicitly required by NIAHO; only medical staff and leadership committee participation is mandated for quality improvement compliance",
+          "Yes - the nurse representative fulfills the requirement; additional involvement is recommended but not required under NIAHO standards for quality management",
+        ],
             correctIndex: 2,
             explanation: "NIAHO QM standards require a demonstrable PDSA or equivalent improvement cycle - not just stable metrics. Correlation between a PI program's existence and steady outcomes is not the same as demonstrating the program drives results. Surveyors look for action items, re-measurements, and documented improvement loops.",
             expertXp: 25
@@ -52,10 +52,10 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
         id: "dd-dnv-qm-2",
         baseQuestion: "Your hospital's QM plan states that all departments must submit quality indicators monthly. During a DNV survey tracer, three departments have not submitted data for the past four months. The QM director explains this was an oversight due to staff turnover. What is the most significant compliance concern?",
         baseOptions: [
-          "Staff turnover is an acceptable reason for data gaps; NIAHO allows temporary suspensions of reporting during personnel transitions",
+          "Staff turnover is an acceptable reason for data gaps; NIAHO allows temporary suspensions of reporting during personnel transitions and hiring",
           "The hospital's QM plan is not being implemented as written, demonstrating a gap between policy and practice that is a direct NIAHO QM finding",
-          "Only the three departments are deficient; the hospital-wide QM plan remains compliant",
-          "The concern is minor since no patient harm resulted from the data gap"
+          "Only the three departments are deficient; the hospital-wide QM plan remains compliant overall and the issue is localized",
+          "The concern is minor since no patient harm resulted from the data gap; NIAHO focuses on outcomes rather than process compliance",
         ],
         baseCorrectIndex: 1,
         baseExplanation: "A QM plan that is not executed as written represents a fundamental NIAHO compliance failure. The plan creates an obligation; gaps between written plans and actual practice are primary survey findings under QM standards regardless of the reason.",
@@ -64,11 +64,11 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
           {
             question: "The QM director proposes updating the plan to reduce reporting frequency to quarterly, which would retroactively eliminate the deficiency. How should this be handled?",
             options: [
-              "Retroactive plan changes are acceptable under NIAHO if the governing body approves the revision before the survey closes",
-              "Plan changes must go through the formal PI governance process and take effect prospectively; they cannot resolve a past gap in compliance",
-              "NIAHO permits plan amendments at any time; the revised quarterly frequency would eliminate the deficiency if documented",
-              "The surveyor must accept the plan revision since NIAHO does not mandate monthly reporting frequency"
-            ],
+          "Purchasing and installing the software is sufficient; NIAHO does not require post-implementation monitoring or additional verification of system performance",
+          "The hospital must document a corrective action plan, track implementation, verify data completeness for two consecutive quarters, and present this to the PI committee with documented discussion",
+          "Staff training records for the new system are the only additional documentation required under NIAHO QM standards for demonstrating compliance",
+          "The hospital should request a DNV interim visit to close the finding before the next survey cycle and verify system installation",
+        ],
             correctIndex: 1,
             explanation: "A plan change cannot retroactively fix a documented compliance gap. NIAHO surveyors evaluate whether the organization followed its own plan during the survey period. Prospective amendments are appropriate but do not resolve past non-compliance.",
             expertXp: 25
@@ -101,10 +101,10 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
         id: "dd-dnv-gov-1",
         baseQuestion: "During a DNV governance tracer, the surveyor asks the board chair how the governing body ensures the quality of care provided. The chair responds that the board reviews quarterly financial reports and the CEO's updates on operations. What critical gap does this response reveal?",
         baseOptions: [
-          "No gap - financial oversight is the primary governing body responsibility under NIAHO GOV standards",
+          "No gap - financial oversight is the primary governing body responsibility, and NIAHO GOV standards do not require direct clinical quality oversight by the board",
           "The governing body is not demonstrating direct oversight of clinical quality and patient safety, which is an explicit NIAHO GOV responsibility",
-          "The gap is that board meeting minutes were not available; content of oversight is not evaluated by NIAHO",
-          "Operational updates from the CEO satisfy the governing body's NIAHO quality oversight requirement"
+          "The gap is that board meeting minutes were not available for surveyor review; NIAHO requires documentation of all governance discussions and decisions",
+          "Operational updates from the CEO satisfy the governing body's NIAHO quality oversight requirement when documented in board meeting minutes",
         ],
         baseCorrectIndex: 1,
         baseExplanation: "NIAHO GOV standards require the governing body to maintain direct accountability for the quality of care. Delegating all clinical quality oversight to the CEO without direct board engagement with quality metrics, adverse events, and improvement activities is a fundamental governance gap.",
@@ -113,11 +113,11 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
           {
             question: "The board chair explains they receive a 'quality dashboard' from the CNO at each meeting. The dashboard shows overall satisfaction scores but does not include sentinel events, infection rates, or PI outcomes. Does this satisfy NIAHO GOV?",
             options: [
-              "Yes - any quality dashboard presented to the board satisfies NIAHO GOV oversight requirements",
-              "No - NIAHO requires the governing body to receive and act on comprehensive quality information including patient safety events, clinical outcomes, and PI results, not satisfaction scores alone",
-              "Yes - patient satisfaction is a core NIAHO quality indicator; satisfaction scores are sufficient for governing body reporting",
-              "The standard only requires annual quality reporting to the board; quarterly dashboards exceed the requirement"
-            ],
+          "Yes - the MEC-to-CEO-to-board chain is a compliant governance structure under NIAHO GOV if the CEO is a physician and reports directly to the board chair without filtering quality data",
+          "No - NIAHO requires the governing body to have direct mechanisms for receiving quality information and cannot fully delegate this accountability through the CEO",
+          "No - NIAHO requires the governing body to have direct mechanisms for receiving quality information and cannot fully delegate this accountability through the CEO",
+          "Yes - NIAHO explicitly allows the CEO to serve as the governing body's sole quality liaison and to determine which quality metrics are presented to the board",
+        ],
             correctIndex: 1,
             explanation: "NIAHO GOV requires substantive quality oversight. A satisfaction-only dashboard leaves the governing body without visibility into clinical safety, outcomes, and improvement activity - the core elements they are accountable for. Surveyors will probe the depth and completeness of board-level quality information.",
             expertXp: 25
@@ -152,11 +152,11 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
           {
             question: "The credentials committee presents its recommendations to the MEC, which then forwards an approved list to the board. The board votes to 'accept the MEC report' en bloc without individual review. Is this compliant with NIAHO?",
             options: [
-              "Yes - en bloc acceptance of MEC recommendations is a recognized and compliant governing body practice under NIAHO GOV",
-              "No - the governing body must review individual credentials files, not just accept committee lists",
-              "The en bloc acceptance is compliant only if any board member may request individual review and the board formally approves each recommendation, even as a group vote",
-              "NIAHO requires a two-thirds majority vote for credential approvals; en bloc unanimous acceptance does not satisfy this threshold"
-            ],
+          "Yes - NIAHO requires that any physician facing privilege reduction or revocation have direct access to the governing body for an appeal hearing",
+          "No - NIAHO requires a fair hearing process but does not mandate that the governing body be the hearing body; a properly constituted hearing panel satisfies the standard",
+          "The physician may appear before the board only if the hospital's bylaws explicitly provide for this; NIAHO is silent on the matter and defers to institutional policy",
+          "NIAHO prohibits governing body involvement in individual privilege disputes to avoid conflicts of interest and to protect peer review confidentiality",
+        ],
             correctIndex: 2,
             explanation: "En bloc acceptance is compliant when structured properly: the board must formally vote on the recommendations (not just 'accept' a report passively), and individual members must have the right to pull any application for separate review. The key is documented, deliberate governing body action.",
             expertXp: 25
@@ -189,10 +189,10 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
         id: "dd-dnv-ms-1",
         baseQuestion: "A DNV surveyor performing a medical staff tracer asks to see evidence of Focused Professional Practice Evaluation (FPPE) for a physician who joined the medical staff six months ago. The credentials coordinator states that FPPE is only required for physicians with performance concerns. What is the compliance issue?",
         baseOptions: [
-          "No issue - FPPE triggered by performance concerns is the only NIAHO MS requirement for focused evaluation",
+          "No issue - FPPE triggered by performance concerns is the only NIAHO MS requirement for focused evaluation of newly privileged practitioners at any stage of their appointment.",
           "NIAHO MS requires FPPE for all newly granted privileges, not only when concerns arise; the credentials coordinator has an incorrect understanding of the standard",
-          "FPPE is required only after the first full year of practice; six months is too early to evaluate",
-          "The coordinator is correct; NIAHO requires ONGOING Professional Practice Evaluation (OPPE), not FPPE, for new physicians"
+          "FPPE is required only after the first full year of practice; six months is too early to conduct a meaningful evaluation of the physician's clinical performance and outcomes.",
+          "The coordinator is correct; NIAHO requires ONGOING Professional Practice Evaluation (OPPE), not FPPE, for new physicians in the initial credentialing and privileging process.",
         ],
         baseCorrectIndex: 1,
         baseExplanation: "NIAHO MS standards require FPPE for all new privileges - it is a time-limited, focused review that applies to every newly privileged practitioner regardless of performance. It is not triggered only by concerns. After the FPPE period ends, the practitioner transitions to OPPE.",
@@ -201,11 +201,11 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
           {
             question: "The FPPE for the new surgeon consisted of a department chief reviewing three operative reports and signing a form stating 'no concerns identified.' The surveyor finds this insufficient. Why?",
             options: [
-              "NIAHO requires at least 10 cases be reviewed during FPPE; three cases is below the minimum threshold",
-              "FPPE must include a specific number of cases defined in medical staff bylaws, direct observation or proctoring, and documented performance criteria - a signature form without defined metrics does not meet the standard",
-              "The department chief cannot conduct FPPE; it must be performed by an external peer reviewer",
-              "FPPE documentation must be submitted to the governing body; review only at the department level is not compliant"
-            ],
+          "The department chief's recommendation is sufficient for privilege continuation; no further governance review is required if the chief documents that FPPE objectives were met during the observation period",
+          "The credentials committee must review the FPPE data and make a recommendation to the MEC, which forwards to the governing body for final approval of privilege continuation",
+          "The MEC alone can approve privilege continuation after FPPE without governing body involvement when FPPE has been completed and documented in accordance with medical staff bylaws and standards",
+          "The physician must self-report their FPPE outcomes to the credentials office; peer review is not required for routine privilege continuation decisions following completion of the observation period",
+        ],
             correctIndex: 1,
             explanation: "NIAHO requires that FPPE be based on defined performance criteria established in the medical staff bylaws or privileging criteria, with structured data collection. A chief's informal review without pre-defined metrics, case minimums from the bylaws, or direct observation where indicated does not demonstrate a compliant FPPE process.",
             expertXp: 25
@@ -228,10 +228,10 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
         id: "dd-dnv-ms-2",
         baseQuestion: "A DNV surveyor asks to see your hospital's process for peer review of adverse events involving medical staff. The CMO explains that peer review findings are shared with the involved physician but not retained in the credentials file. What NIAHO concern does this practice raise?",
         baseOptions: [
-          "No concern - physician privacy protections prohibit storing peer review findings in credentials files",
+          "No concern - physician privacy protections prohibit storing peer review findings in credentials files under state and federal confidentiality laws protecting the peer review process from disclosure",
           "Peer review findings must inform OPPE and be retained so that patterns can be identified across multiple events; excluding them from the credentials process defeats NIAHO's peer review purpose",
-          "NIAHO does not specify how peer review findings must be retained; the CMO's approach is acceptable",
-          "The concern is limited to events involving patient harm; peer review for near-misses does not require documentation in credentials files"
+          "NIAHO does not specify how peer review findings must be retained; the CMO's approach is acceptable and aligns with common medical staff practices in hospitals nationally",
+          "The concern is limited to events involving patient harm; peer review for near-misses and system issues does not require documentation in credentials files or OPPE tracking",
         ],
         baseCorrectIndex: 1,
         baseExplanation: "NIAHO requires peer review to feed into the OPPE process. If findings are shared with the physician but not retained for pattern analysis and credential review, the hospital cannot identify recurring performance issues - the central purpose of NIAHO peer review requirements.",
@@ -240,11 +240,11 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
           {
             question: "The CMO argues that retaining peer review findings in credentials files creates a legal liability and discourages voluntary reporting. How should this conflict be balanced under NIAHO?",
             options: [
-              "Legal liability concerns override NIAHO requirements; the CMO's practice is defensible and NIAHO surveyors must accommodate it",
-              "Most states provide peer review privilege protections that allow retention of peer review data in protected credentials files; the hospital should work with legal counsel to structure a compliant, protected process rather than eliminate the documentation",
-              "NIAHO explicitly exempts peer review documentation from credentials files in states with peer review privilege laws",
-              "The solution is to use numerical codes instead of physician names in peer review files, satisfying NIAHO while protecting identities"
-            ],
+          "Legal liability concerns override NIAHO requirements; the CMO's practice is defensible and NIAHO surveyors must accommodate legitimate concerns raised by hospital legal counsel regarding peer review retention.",
+          "Most states provide peer review privilege protections that allow retention of peer review data in protected credentials files; the hospital should work with legal counsel to structure a compliant, protected process rather than eliminate the documentation",
+          "NIAHO explicitly exempts peer review documentation from credentials files in states with peer review privilege laws, allowing hospitals to maintain separate confidential peer review databases outside the official credentialing file.",
+          "The solution is to use numerical codes instead of physician names in peer review files, satisfying NIAHO while protecting identities and reducing legal liability concerns about discoverable credentialing information.",
+        ],
             correctIndex: 1,
             explanation: "State peer review privilege laws exist specifically to allow retention of peer review findings in a protected context. The solution is not to eliminate documentation but to structure the process within available legal protections. NIAHO requires functional peer review that informs credentialing, and legal counsel should help design a compliant framework.",
             expertXp: 25
@@ -277,10 +277,10 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
         id: "dd-dnv-ns-1",
         baseQuestion: "During a nursing services tracer, a DNV surveyor reviews the ICU staffing grid for the previous 30 days. On seven shifts, the grid shows RN-to-patient ratios above the hospital's own policy limit due to call-outs. Each shift was managed by floating CNAs to cover. What is the primary NIAHO NS finding?",
         baseOptions: [
-          "No finding - using CNAs to fill coverage gaps is an accepted staffing solution under NIAHO NS",
           "The hospital failed to ensure sufficient RN coverage consistent with its own staffing policy; CNA coverage does not satisfy RN scope-of-practice requirements in an ICU setting",
-          "The finding is limited to the staffing documentation; NIAHO only requires that staffing plans exist, not that they be followed on every shift",
-          "NIAHO NS findings only arise when patient harm is documented; no finding exists without evidence of adverse outcomes"
+          "The hospital failed to ensure sufficient RN coverage consistent with its own staffing policy; CNA coverage does not satisfy RN scope-of-practice requirements in an ICU setting",
+          "The finding is limited to the staffing documentation; NIAHO only requires that staffing plans exist, not that they be followed on every individual shift in the unit",
+          "NIAHO NS findings only arise when patient harm is documented; no finding exists without evidence of adverse outcomes from the staffing ratios",
         ],
         baseCorrectIndex: 1,
         baseExplanation: "NIAHO NS requires that nursing services be provided by a sufficient number of qualified RNs at all times. In an ICU, CNA scope of practice cannot substitute for RN clinical judgment and assessment. Repeated violations of the hospital's own policy also demonstrate that the policy is not operationally effective - a second-order NIAHO finding.",
@@ -289,11 +289,11 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
           {
             question: "The CNO explains that agency RNs were unavailable and the hospital could not require overtime above the policy limit. She argues the staffing decisions were reasonable under the circumstances. How does NIAHO evaluate this?",
             options: [
-              "NIAHO accepts documented evidence of good-faith effort to staff appropriately; circumstantial staffing below policy is not a finding if efforts are documented",
-              "NIAHO requires the hospital to have contingency staffing plans - including agency relationships, per-diem pools, or float pools - sufficient to maintain safe staffing; repeated gaps indicate the contingency system itself is inadequate",
-              "A CNO's professional judgment that staffing was safe on each shift satisfies NIAHO NS requirements regardless of ratio variances",
-              "NIAHO only evaluates staffing plans, not actual shift-by-shift staffing; the policy variance is an internal compliance matter, not a NIAHO finding"
-            ],
+          "This is a medical records documentation finding, not a nursing services finding; NIAHO NS standards do not specify the frequency or timing requirements for care plan updates during patient stays",
+          "NIAHO NS requires nursing care plans to be initiated, maintained, and updated to reflect the patient's current status - a three-day-old care plan inconsistent with daily assessments demonstrates failure to maintain individualized care plans",
+          "NIAHO requires care plan updates only when the patient's condition changes significantly; routine status changes that are documented in daily nursing notes do not require separate updates to the formal care plan document",
+          "The finding applies only if the physician co-signed the outdated care plan; nursing documentation and care planning alone do not constitute a NIAHO NS violation unless the medical staff has approved or validated the care plan",
+        ],
             correctIndex: 1,
             explanation: "NIAHO requires not just that a staffing plan exist but that the hospital maintain adequate contingency resources to actually execute safe staffing. Seven shifts of ICU understaffing over 30 days demonstrates that the contingency infrastructure - agency relationships, per diem staff, cross-training - is insufficient, making the system itself the finding.",
             expertXp: 25
@@ -326,10 +326,10 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
         id: "dd-dnv-mm-1",
         baseQuestion: "A DNV medication management tracer reveals that concentrated potassium chloride (KCl) 2mEq/mL vials are stored in three floor-level medication rooms accessible to nursing staff without restriction. The pharmacy director states this has been policy for years. What is the most significant NIAHO MM finding?",
         baseOptions: [
-          "No finding - nursing staff access to concentrated KCl enables faster response to critical hypokalemia in emergencies",
+          "No finding - nursing staff access to concentrated KCl enables faster response to critical hypokalemia in emergencies and reduces unnecessary pharmacy delays in time-sensitive clinical situations",
           "Concentrated potassium chloride is a high-alert medication that must be removed from floor-level storage and stored only in the pharmacy or in restricted, clearly labeled locations with mandatory double-check protocols",
-          "The finding is documentation-related; NIAHO requires only that concentrated electrolytes be labeled, not that they be restricted from floor storage",
-          "This is a JCAHO National Patient Safety Goal requirement, not a NIAHO MM standard; DNV does not survey this specific practice"
+          "The finding is documentation-related; NIAHO requires only that concentrated electrolytes be labeled, not that they be restricted from floor storage or subject to dispensing controls",
+          "This is a JCAHO National Patient Safety Goal requirement, not a NIAHO MM standard; DNV does not survey medication storage practices or high-alert medication segregation",
         ],
         baseCorrectIndex: 1,
         baseExplanation: "Concentrated electrolytes including potassium chloride are a NIAHO high-alert medication category. NIAHO MM standards require that high-alert medications be segregated, clearly labeled, and protected from inadvertent administration. Unrestricted floor-level storage of concentrated KCl is a sentinel-event-level compliance failure.",
@@ -338,11 +338,11 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
           {
             question: "The pharmacy director proposes placing bright-red warning labels on all concentrated KCl vials and adding a policy requiring two-nurse verification before any concentrated electrolyte administration. Does this fully remediate the NIAHO finding?",
             options: [
-              "Yes - warning labels and double-check protocols fully satisfy NIAHO MM high-alert medication requirements for concentrated KCl",
-              "No - while labels and double checks are required components, NIAHO also requires that concentrated KCl be removed from floor stock and dispensed only from pharmacy on a patient-specific basis",
-              "Yes - NIAHO requires process controls but does not mandate removal from floor stock if adequate precautions are in place",
-              "Labels satisfy NIAHO; double-check verification is a recommended practice only, not a NIAHO MM requirement"
-            ],
+          "Clinical need for rapid access to concentrated KCl overrides NIAHO MM high-alert medication requirements; the nurse's concern about treatment delays justifies maintaining floor stock with enhanced monitoring",
+          "The pharmacy should establish a STAT dispensing protocol with defined turnaround times; if clinical need requires pre-mixed solutions, pharmacy can prepare patient-specific KCl infusions and deliver to the unit in advance",
+          "The hospital should apply for a NIAHO variance or waiver allowing floor storage of concentrated KCl in critical care areas with enhanced controls, supervision, and documentation to address access delays",
+          "NIAHO allows floor storage of concentrated KCl in ICU and acute care settings due to the critical nature of the patient population and documented clinical need for immediate medication access",
+        ],
             correctIndex: 1,
             explanation: "NIAHO MM standards for high-alert medications require both process controls (labels, double checks) AND storage controls (removal from routine floor stock, pharmacy-controlled dispensing). Labels alone on floor-stocked concentrated KCl do not eliminate the risk of wrong-drug or wrong-concentration errors during a high-stress clinical moment.",
             expertXp: 25
@@ -375,10 +375,10 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
         id: "dd-dnv-ss-1",
         baseQuestion: "A DNV surgical services tracer observes a universal protocol/time-out in OR 3 before a laparoscopic cholecystectomy. The circulating nurse reads from the checklist while the surgeon completes instrument counting and the anesthesiologist documents vitals. Neither the surgeon nor anesthesiologist verbally confirms items. Is this time-out compliant with NIAHO SS?",
         baseOptions: [
-          "Yes - the circulating nurse's verbal read of the checklist constitutes a compliant time-out under NIAHO SS",
+          "Yes - the circulating nurse's verbal read of the checklist satisfies the team-based safety requirement as long as all surgical team members are present in the operating room during the procedure",
           "No - NIAHO SS requires active participation and verbal confirmation by all relevant team members; a time-out performed by one person while others are occupied does not constitute a team-based safety check",
-          "The time-out is compliant because all required personnel are physically present in the room during the procedure",
-          "NIAHO requires only that the time-out be documented; verbal confirmation is a recommended practice, not a standard requirement"
+          "The time-out is compliant because documentation of the checklist completion by the circulating nurse meets NIAHO SS requirements for universal protocol adherence in surgical services",
+          "NIAHO requires that the time-out be performed by the surgeon; verbal confirmation by the circulating nurse alone does not satisfy the standard requirement for surgical team participation",
         ],
         baseCorrectIndex: 1,
         baseExplanation: "NIAHO SS universal protocol standards require that the time-out be an active, team-based process during which all activity pauses and each relevant team member confirms key safety elements. A nurse reading while the surgeon and anesthesiologist perform other tasks is a passive recitation, not an active time-out - a common survey finding.",
@@ -387,11 +387,11 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
           {
             question: "The OR director argues that their time-out process has been in place for five years with no wrong-site surgeries, proving it works. How should this argument be evaluated in the NIAHO compliance context?",
             options: [
-              "Absence of wrong-site surgeries over five years is strong evidence that the process is effective and satisfies NIAHO SS requirements",
-              "NIAHO evaluates compliance with defined standards, not outcome absence; a non-compliant process that has not yet caused harm is still a finding, because system reliability cannot be confirmed without process adherence",
-              "Five years of positive outcomes satisfies NIAHO's risk-based evaluation framework for surgical safety",
-              "The argument is valid; NIAHO SS standards include an outcomes-based compliance pathway for hospitals with established safety records"
-            ],
+          "No concern - same-day consent is common practice and fully compliant with accreditation standards as long as the signature is present on the consent form and medical record documentation is complete and legible for survey review",
+          "NIAHO requires that informed consent be obtained while the patient has decision-making capacity; pre-sedation consents obtained immediately before sedation risk capturing consent from a patient whose capacity may already be altered by anxiety, pre-medications, or the clinical environment",
+          "NIAHO requires consent to be obtained at least 24 hours before surgery without exception; same-day consent is categorically non-compliant with the informed consent standards regardless of patient signature or medical record documentation completeness",
+          "The concern is documentation-related only; NIAHO does not regulate the timing of informed consent in relation to sedation administration or the environmental conditions in which consent is obtained from the patient",
+        ],
             correctIndex: 1,
             explanation: "Absence of harm does not equal compliance with safety systems. NIAHO evaluates whether the process is designed and executed to reliably prevent errors - a passive time-out may have worked by chance, not by system design. Surveyors assess process reliability, not just outcome history.",
             expertXp: 25
@@ -424,10 +424,10 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
         id: "dd-dnv-pc-1",
         baseQuestion: "A DNV patient care tracer follows a 74-year-old patient admitted with hip fracture. The nursing assessment was completed at admission. On day 3, the surveyor asks to see evidence of reassessment since initial admission. The medical record shows only a daily nurse note with vital signs and pain score. What NIAHO PC concern exists?",
         baseOptions: [
-          "No concern - daily vital signs and pain scores constitute adequate reassessment documentation under NIAHO PC",
+          "No concern - daily vital signs and pain scores constitute adequate reassessment documentation under NIAHO PC standards for medical-surgical patients",
           "NIAHO PC requires reassessment at defined intervals and in response to changes in condition; a vital signs/pain-only note is not a comprehensive reassessment and does not capture functional, cognitive, or discharge planning status",
-          "Reassessment frequency is determined by hospital policy; the surveyor cannot cite a finding unless the hospital's own policy specifies a different frequency",
-          "NIAHO requires physician-driven reassessment documentation; nursing notes alone do not satisfy the reassessment standard"
+          "Reassessment frequency is determined by hospital policy and the surveyor cannot cite a finding unless the hospital's own policy specifies a different frequency than weekly documentation",
+          "NIAHO requires physician-driven reassessment documentation in the medical record; nursing notes and assessments alone do not satisfy the regulatory reassessment standard",
         ],
         baseCorrectIndex: 1,
         baseExplanation: "NIAHO PC reassessment standards require documentation of the patient's clinical status across all relevant dimensions - not just vitals and pain. For a hip fracture patient, this includes functional assessment, mobility status, cognitive screening, discharge planning progress, and response to treatment - elements absent from a brief daily note.",
@@ -436,11 +436,11 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
           {
             question: "The nurse explains that the full interdisciplinary assessment form is only completed weekly. Physical therapy, social work, and case management have not re-documented since admission. Is the weekly interdisciplinary re-assessment schedule compliant with NIAHO PC?",
             options: [
-              "Yes - weekly interdisciplinary reassessment is specifically authorized under NIAHO PC for non-ICU patients with stable conditions",
-              "No - NIAHO PC requires that reassessment be performed in response to changes in condition and at intervals appropriate to the patient's clinical situation; a fixed weekly schedule regardless of clinical changes is not compliant for an acute post-surgical patient",
-              "Weekly reassessment is compliant as long as the physician documents daily progress notes",
-              "NIAHO PC does not specify interdisciplinary reassessment frequency; weekly scheduling is an internal hospital decision outside NIAHO scope"
-            ],
+          "No finding - one-day discharge planning is within normal variation for an acute care hospital, and the timing of social work referral is not a compliance indicator under NIAHO PC standards",
+          "NIAHO PC requires discharge planning to begin at or near admission for patients with anticipated complex discharge needs; a day-4 referral for a patient needing SNF placement demonstrates failure to initiate timely discharge planning",
+          "The finding is a social work documentation issue, not a NIAHO PC violation - the discharge planning process occurred but the documentation of the initiation date was recorded incorrectly in the medical record",
+          "NIAHO only requires discharge planning for patients hospitalized more than seven days; a five-day stay does not trigger the discharge planning standard even when SNF placement is anticipated",
+        ],
             correctIndex: 1,
             explanation: "NIAHO PC requires reassessment to be clinically driven, not calendar-driven. A post-surgical hip fracture patient in the acute phase requires frequent interdisciplinary reassessment as mobility, pain, cognition, and discharge readiness evolve daily. A fixed weekly schedule that does not respond to clinical change does not meet the standard.",
             expertXp: 25
@@ -473,10 +473,10 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
         id: "dd-dnv-es-1",
         baseQuestion: "During a DNV environment of care tracer, the surveyor tests a fire door in the surgical corridor and finds it does not fully latch when released. The facilities director states the door was inspected annually as required. What NIAHO ES finding exists?",
         baseOptions: [
-          "No finding - annual inspection is the NIAHO-required frequency; the current door failure is a maintenance issue discovered between inspections",
+          "No finding - annual inspection is the NIAHO-required frequency; the current door failure is a maintenance issue discovered between scheduled inspections and does not constitute a violation",
           "The hospital must demonstrate both compliant inspection frequency and that identified deficiencies are corrected within required timeframes; a latching failure in a fire door represents an active life safety deficiency regardless of inspection schedule",
-          "The finding only applies if the door is in a smoke compartment boundary; corridor fire doors are held to a lower standard",
-          "Annual inspection satisfies NIAHO ES; the surveyor cannot issue a finding for a deficiency discovered after a compliant inspection"
+          "The finding only applies if the door is in a smoke compartment boundary; corridor fire doors are held to a lower standard under NIAHO ES and do not require full latching functionality",
+          "Annual inspection satisfies NIAHO ES requirements; the surveyor cannot issue a finding for a deficiency discovered after a compliant inspection unless the deficiency poses immediate danger",
         ],
         baseCorrectIndex: 1,
         baseExplanation: "NIAHO ES life safety standards require both compliant inspection programs AND correction of identified deficiencies. A fire door that fails to latch is an active life safety deficiency regardless of when it was last inspected. The inspection's purpose is to find and correct deficiencies - not to create a compliance shield for subsequent failures.",
@@ -485,11 +485,11 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
           {
             question: "The facilities director shows the surveyor inspection records from the past two years, all showing 'pass.' He argues the door must have been damaged recently. What additional documentation should exist to support a compliant NIAHO ES program?",
             options: [
-              "The inspection 'pass' records are sufficient; NIAHO does not require interim monitoring between annual inspections",
-              "A compliant program requires documented staff reporting mechanisms for between-inspection deficiencies, documented work orders for repairs, and a corrective action tracking log showing timely remediation - absence of any recent work orders for this door raises questions about the reporting system",
-              "The director should provide the manufacturer's warranty documentation to show the door was recently serviced; warranty records satisfy NIAHO ES between-inspection requirements",
-              "NIAHO requires facilities staff to perform weekly fire door checks in addition to annual inspections; the director should show these weekly logs"
-            ],
+          "ILSMs are only required when construction compromises more than 25% of a single occupied floor; a renovation affecting only one wing does not meet the threshold for triggering interim life safety measure requirements",
+          "NIAHO requires that when life safety systems are impaired by construction or renovation, ILSMs must be implemented, documented, and monitored for the duration of the impairment - six months without ILSM documentation is a significant ES finding",
+          "NIAHO requires that when life safety systems are impaired by construction or renovation, ILSMs must be implemented, documented, and monitored for the duration of the impairment - six months without ILSM documentation is a significant ES finding",
+          "The general contractor is solely responsible for implementing ILSMs during construction; hospital facilities staff and administration are not required to document interim measures unless construction directly affects occupied patient care areas",
+        ],
             correctIndex: 1,
             explanation: "A compliant life safety program requires ongoing monitoring between formal inspections through staff observation and reporting. The absence of any documented issues or work orders for a door with an active deficiency suggests either the deficiency is not new (inspection records may be inaccurate) or the between-inspection reporting system failed - both are NIAHO concerns.",
             expertXp: 25
@@ -522,10 +522,10 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
         id: "dd-dnv-pr-1",
         baseQuestion: "A DNV patient rights tracer reviews a patient's chart where soft wrist restraints were applied after the patient pulled at their IV twice. The physician order reads 'restraints PRN for safety.' The restraints remained in place for 18 hours with nursing monitoring every 4 hours. What is the primary NIAHO PR finding?",
         baseOptions: [
-          "No finding - a physician PRN order and 4-hour monitoring satisfy NIAHO PR restraint requirements",
+          "No finding exists because a physician PRN order combined with 4-hour monitoring intervals satisfies all NIAHO PR restraint requirements for safety restraints applied to prevent medical device displacement",
           "NIAHO PR requires that restraint orders be time-limited (not PRN), that the least restrictive alternative be documented, that monitoring occur at least every 2 hours, and that the continued need be reassessed with physician involvement - all of these requirements are violated",
-          "The finding is limited to the monitoring frequency; PRN orders are acceptable under NIAHO PR for non-behavioral restraints",
-          "NIAHO PR restraint requirements apply only to behavioral (violent) restraints; safety restraints for IV protection are excluded from these standards"
+          "The finding is limited to the monitoring frequency; PRN orders are acceptable under NIAHO PR for non-behavioral safety restraints used to prevent medical device-related harm, such as restraints applied to prevent IV line displacement",
+          "NIAHO PR restraint standards apply only to behavioral or violent restraints; safety restraints applied to protect IV lines and other medical devices are excluded from the specific time-limited order and monitoring requirements",
         ],
         baseCorrectIndex: 1,
         baseExplanation: "NIAHO PR restraint standards for non-violent/non-self-destructive restraints require: a specific time-limited order (not PRN), documentation that less restrictive alternatives were tried, monitoring at defined intervals (at minimum every 2 hours), and reassessment of continued need. A PRN order lasting 18 hours with 4-hour monitoring violates multiple concurrent requirements.",
@@ -534,11 +534,11 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
           {
             question: "The nurse explains that the patient was at high fall risk and agitated, and that the physician was unavailable for the first 4 hours after restraint application. How does NIAHO PR address emergency restraint application before a physician order is obtained?",
             options: [
-              "NIAHO PR prohibits restraint application without a prior physician order under any circumstances; the nurse should have waited",
-              "NIAHO allows a nurse to apply restraints in an emergency to protect the patient or staff, but a physician order must be obtained within a defined timeframe (typically 1 hour) and the event must be documented as an emergency application",
-              "NIAHO requires a verbal order from the physician before restraint application; verbal orders do not require documentation until the end of the shift",
-              "Emergency restraint application by nursing staff is not governed by NIAHO PR; this is covered only by state nursing practice acts"
-            ],
+          "Family members have no legal decision-making authority over a confused patient without a power of attorney or guardianship; the clinical team may maintain restraints based on the physician order without engaging the family in the discussion",
+          "Under NIAHO PR, the clinical team must engage the family, explain the clinical rationale, reassess whether the continued restraint meets criteria, explore less restrictive alternatives, and document the conversation - the family's concern must be taken seriously even if the ultimate clinical decision differs",
+          "If the patient lacks capacity and has no advance directive, the physician's clinical judgment supersedes all family input; NIAHO PR does not require engagement with family surrogates for restraint continuation decisions once clinical need is established",
+          "NIAHO PR requires restraints to be immediately removed when a family member requests removal, regardless of the patient's clinical status, current confusion level, or the physician's assessment of continued medical necessity",
+        ],
             correctIndex: 1,
             explanation: "NIAHO PR recognizes emergency restraint application but requires rapid physician involvement - typically within one hour. The emergency application must be documented, a physician order obtained promptly, and the restraint reassessed as a formal order with all applicable requirements met. A 4-hour delay in physician involvement is a PR finding.",
             expertXp: 25
@@ -620,10 +620,10 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
         id: "dd-dnv-pe-1",
         baseQuestion: "A DNV performance evaluation tracer reviews competency documentation for ICU nurses. The education coordinator shows annual competency checklists with supervisor sign-off for all staff. However, for three nurses who transitioned from med-surg to ICU within the past year, no additional competency validation is documented beyond the standard annual checklist. What NIAHO PE finding exists?",
         baseOptions: [
-          "No finding - annual competency checklists apply equally to all nurses regardless of unit transfer",
+          "No finding - annual competency checklists apply equally to all nurses regardless of unit transfer, and no additional assessment is required for internal staff reassignments",
           "NIAHO PE requires that staff who take on new roles or responsibilities demonstrate competency specific to those new responsibilities; a med-surg nurse moving to ICU requires role-specific competency validation beyond a standard annual checklist",
-          "Additional competency validation is only required for nurses who failed their annual competency assessment",
-          "NIAHO PE competency requirements apply only at initial hire; internal transfers do not trigger additional competency assessment"
+          "Additional competency validation is only required for nurses who failed their annual competency assessment; passing nurses may transfer between units without further evaluation",
+          "NIAHO PE competency requirements apply only at initial hire and during annual reviews; internal transfers between units do not trigger additional competency assessment requirements",
         ],
         baseCorrectIndex: 1,
         baseExplanation: "NIAHO PE requires competency validation whenever staff take on new or expanded responsibilities. A med-surg nurse transitioning to ICU must demonstrate ICU-specific competencies - hemodynamic monitoring, vasoactive drips, ventilator management - that are not covered by a general annual checklist. The absence of role-specific competency documentation for these three nurses is a direct PE finding.",
@@ -632,11 +632,11 @@ export const dnvDeepDiveLevels: DeepDiveLevel[] = [
           {
             question: "The education coordinator argues that the three nurses completed an ICU orientation program and were deemed competent by their charge nurse at the end. The charge nurse did not document the competency assessment. How does NIAHO PE view undocumented competency validation?",
             options: [
-              "Verbal competency confirmation by a charge nurse satisfies NIAHO PE if the charge nurse is available to attest to this during the survey",
-              "NIAHO PE requires that competency assessments be documented; undocumented competency validation cannot be verified and does not meet the standard - if it isn't documented, it didn't happen from a compliance standpoint",
-              "NIAHO accepts orientation program completion certificates as equivalent to documented competency assessment",
-              "The three-month recency of the orientation satisfies NIAHO PE; documentation requirements only apply to assessments performed more than six months ago"
-            ],
+          "Yes - a written test with a defined passing score and retake process fully satisfies NIAHO PE competency requirements for assessing clinical knowledge and procedural readiness in nursing staff across all patient care settings",
+          "No - NIAHO PE requires that competency assessment include demonstration of skills performance, not just written knowledge; a written test alone is insufficient for clinical competencies that require skill demonstration",
+          "Written tests are the preferred NIAHO competency assessment method; skills demonstration is required only for high-risk procedures such as central line placement and advanced hemodynamic monitoring in critical care units",
+          "Yes - the 80% passing score aligns with NIAHO PE's recommended threshold for clinical competency programs and meets industry standards for knowledge-based assessment in healthcare accreditation frameworks",
+        ],
             correctIndex: 1,
             explanation: "NIAHO PE standards require documented competency assessment. Orientation attendance proves exposure, not competency. A charge nurse's undocumented verbal attestation cannot be verified during a survey or referenced in future performance reviews. NIAHO applies the fundamental principle that undocumented care - or assessment - did not occur from a compliance standpoint.",
             expertXp: 25

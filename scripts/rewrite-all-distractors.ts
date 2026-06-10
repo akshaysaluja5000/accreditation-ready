@@ -73,7 +73,7 @@ RULES:
 - Wrong answers = misapplied policies, wrong numbers/timeframes, confused requirements, incomplete procedures
 - NEVER write obviously absurd answers (e.g., "terminate the staff", "add a disclaimer", "ignore it", "call police")
 - Each wrong answer tests a DIFFERENT knowledge gap — no near-duplicates
-- Match the length and tone of the correct answer
+- LENGTH RULE (critical): Wrong answers must be SIMILAR in length to the correct answer. The correct answer must NOT be the longest option. If the correct answer is long, write long wrong answers. If short, write short wrong answers. A test-taker must not be able to guess the correct answer simply by picking the longest option.
 - YES/NO FORMAT RULE: If the correct answer starts with "Yes." or "No.", ALL four options must start with either "Yes." or "No." — and there must be EXACTLY 2 "Yes." options and 2 "No." options. Never make 3 of one and 1 of the other.
 
 ${questionsBlock}

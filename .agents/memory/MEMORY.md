@@ -1,5 +1,6 @@
 - [Leaderboard XP source](leaderboard-xp.md) — daily_activity is the authoritative XP source; startup migration overwrote streak.totalXp with points_ledger (wrong); leaderboard now reads daily_activity directly
 - [Yes/No question balance rule](yesno-question-balance.md) — Yes/No questions must have exactly 2 "Yes." + 2 "No." options; never 3+1; fix script at scripts/fix-yesno-balance.ts
+- [Answer length balance rule](answer-length-balance.md) — correct answer must NOT be the longest option; wrong answers must match correct length; fix script at scripts/fix-answer-lengths.ts
 - [requireMfa admin bypass](mfa-admin-bypass.md) — admin+ (rank≥4) must bypass MFA, same as requireWallChartAccess pattern
 - [Leaderboard org-type exclusion](leaderboard-org-type.md) — registration dropdown lets users pick wrong org type; leaderboard MUST NOT filter by org type (facility filter is sufficient); startup migration normalizes org types to facility majority on each boot
 - [Batch script concurrency](batch-script-concurrency.md) — race condition + JSON parsing + bracket-counting fixes for the distractor rewriter script
