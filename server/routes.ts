@@ -3528,7 +3528,8 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
       const _fcFacilityId = (req.user! as any).facilityId as number | null ?? null;
       void (async () => {
         try {
-          await storage.addPointsEvent(req.user!.id, _fcFacilityId, "flashcard_reviewed", POINT_VALUES.flashcard_reviewed, { levelId, cardIndex, rating });
+          const _fcEventType = `flashcard_${rating}` as keyof typeof POINT_VALUES;
+          await storage.addPointsEvent(req.user!.id, _fcFacilityId, _fcEventType, POINT_VALUES[_fcEventType] ?? 5, { levelId, cardIndex, rating });
         } catch (err) {
           console.error("[Points] flashcard review:", err);
         }
@@ -5423,7 +5424,7 @@ Return ONLY valid JSON, no other text:
       const userId = req.user!.id;
       const facilityId = (req.user as any).facilityId as number | null ?? null;
 
-      const validEvents = ["question_correct","flashcard_reviewed","final_complete","final_passed_first_attempt"];
+      const validEvents = ["question_correct","flashcard_again","flashcard_hard","flashcard_good","final_complete","final_passed_first_attempt"];
       if (!validEvents.includes(eventType)) {
         return res.status(400).json({ error: "Invalid event type" });
       }

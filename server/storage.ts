@@ -2592,7 +2592,7 @@ export class DatabaseStorage implements IStorage {
       `SELECT u.id AS user_id, u.username, u.first_name, u.last_name, u.department,
               COALESCE(SUM(pl.points_awarded), 0) AS total_points,
               COUNT(CASE WHEN pl.event_type = 'question_correct' THEN 1 END) AS questions_correct,
-              COUNT(CASE WHEN pl.event_type = 'flashcard_reviewed' THEN 1 END) AS flashcards_reviewed,
+              COUNT(CASE WHEN pl.event_type IN ('flashcard_again','flashcard_hard','flashcard_good') THEN 1 END) AS flashcards_reviewed,
               COUNT(CASE WHEN pl.event_type = 'final_complete' THEN 1 END) AS finals_completed,
               MAX(pl.created_at) AS last_active,
               CASE
@@ -2654,7 +2654,7 @@ export class DatabaseStorage implements IStorage {
       pool.query(
         `SELECT level_id,
                 COUNT(CASE WHEN event_type = 'question_correct' THEN 1 END)::int AS questions_correct,
-                COUNT(CASE WHEN event_type = 'flashcard_reviewed' THEN 1 END)::int AS flashcards_reviewed,
+                COUNT(CASE WHEN event_type IN ('flashcard_again','flashcard_hard','flashcard_good') THEN 1 END)::int AS flashcards_reviewed,
                 SUM(points_awarded)::int AS level_points
          FROM points_ledger
          WHERE ${dateWhere} AND level_id IS NOT NULL

@@ -7,10 +7,10 @@ export { POINT_VALUES, PASSING_THRESHOLD, calculateFinalExamResult };
 /**
  * Record a scoreable activity — non-blocking, never throws.
  * Only call for events that earn points:
- *   question_correct, flashcard_reviewed,
+ *   question_correct, flashcard_again, flashcard_hard, flashcard_good,
  *   final_complete, final_passed_first_attempt
  * Do NOT call for incorrect answers.
- * All flashcard ratings (Again/Hard/Good) use flashcard_reviewed (+10 pts each).
+ * Flashcard ratings fire as separate events: flashcard_again/hard/good (+5 pts each).
  */
 export async function recordActivity(
   eventType: PointEventType,

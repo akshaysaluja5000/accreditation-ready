@@ -1,6 +1,8 @@
 export const POINT_VALUES = {
   question_correct:            20,  // correct answers only — incorrect earn zero
-  flashcard_reviewed:          10,  // ALL ratings (Again/Hard/Good) earn same points
+  flashcard_again:              5,  // "Again" rating
+  flashcard_hard:               5,  // "Hard" rating
+  flashcard_good:               5,  // "Good" rating
   final_complete:             100,  // flat bonus when final exam submitted
   final_passed_first_attempt:  50,  // bonus for passing on first attempt
 } as const;

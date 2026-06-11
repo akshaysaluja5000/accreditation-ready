@@ -881,7 +881,9 @@ export type ComplianceCompletionLog = typeof complianceCompletionLog.$inferSelec
 
 export const POINT_EVENT_TYPES = [
   "question_correct",
-  "flashcard_reviewed",
+  "flashcard_again",
+  "flashcard_hard",
+  "flashcard_good",
   "final_complete",
   "final_passed_first_attempt",
 ] as const;
