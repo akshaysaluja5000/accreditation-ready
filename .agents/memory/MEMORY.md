@@ -4,3 +4,4 @@
 - [requireMfa admin bypass](mfa-admin-bypass.md) — admin+ (rank≥4) must bypass MFA, same as requireWallChartAccess pattern
 - [Leaderboard org-type exclusion](leaderboard-org-type.md) — registration dropdown lets users pick wrong org type; leaderboard MUST NOT filter by org type (facility filter is sufficient); startup migration normalizes org types to facility majority on each boot
 - [Batch script concurrency](batch-script-concurrency.md) — race condition + JSON parsing + bracket-counting fixes for the distractor rewriter script
+- [MOSH facility code & seeding](mosh-facility-seeding.md) — MOSH (ID=1) facility code is 482601; code must be updated in KNOWN_FACILITIES + LEADERSHIP_CODES_BY_FACILITY + orphan-user query + routes.ts startup check; seeder re-seeds on every boot so all four locations must stay in sync

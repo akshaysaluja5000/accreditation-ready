@@ -1988,11 +1988,11 @@ export async function registerRoutes(
   });
 
   try {
-    let facility = await storage.getFacilityByCode("SITE486045");
+    let facility = await storage.getFacilityByCode("482601");
     if (!facility) {
       facility = await storage.createFacility({
         name: "Midwest Orthopedic Specialty Hospital",
-        code: "SITE486045",
+        code: "482601",
       });
     }
 
@@ -2466,23 +2466,25 @@ After your answer, add one line: "See: [source]" naming the specific chapter or 
         max_tokens: 80,
         system: `You are generating flashcard questions for healthcare staff preparing for accreditation surveys (AAAHC, Joint Commission, CMS, DNV).
 
-Given the ANSWER content the user provides, write a single flashcard question for the front of the card.
+Given the ANSWER content below, write a single flashcard question.
 
 RULES:
-- Write the question directly from the answer content — not from any section title or header
-- The question must stand completely alone, with no reference to any chapter name, section title, or category label
-- Write as if a surveyor or trainer is quizzing a staff member
-- Use plain, direct language a frontline healthcare worker would understand
-- Never use the phrase "What must be documented and demonstrated for…"
-- Never wrap a section title inside a question
-- The question should have one clear, testable answer
+- Write the question directly from the answer content
+- Never reference section titles or chapter names
+- Write as if a surveyor is quizzing a staff member
+- Use plain language a frontline healthcare worker understands
+- Never use "What must be documented and demonstrated for..."
+- The question should have one clear testable answer
 - Aim for 10-20 words
 
-Return only the question. No preamble, no explanation, no quotes.`,
+ANSWER CONTENT:
+${answerText}
+
+Return only the question. No preamble.`,
         messages: [
           {
             role: "user",
-            content: answerText,
+            content: "Generate the flashcard question.",
           },
         ],
       });
@@ -2736,7 +2738,9 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
     }
 
     try {
-      const questionPool = [...STATIC_DIAGNOSTIC_QUESTIONS].sort(() => Math.random() - 0.5).slice(0, NUM_QUESTIONS);
+      const dbQuestions = await storage.getDiagnosticQuestions();
+      const basePool = dbQuestions.length >= NUM_QUESTIONS ? dbQuestions : [...STATIC_DIAGNOSTIC_QUESTIONS];
+      const questionPool = [...basePool].sort(() => Math.random() - 0.5).slice(0, NUM_QUESTIONS);
       const { clientQuestions, shuffleMaps, questionData } = buildQuestionsPayload(questionPool);
       await storage.upsertDiagnosticSession(req.user!.id, {
         questionOrder: questionPool.map(q => q.id),

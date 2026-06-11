@@ -58,6 +58,11 @@ const SECTION_NAMES: Record<string, string> = {
   universal_protocol: "Surgical Safety & Consent",
   patient_care_docs: "Patient Care & Documentation",
   eoc_safety: "EOC & Safety Compliance",
+  infection_control: "Infection Control",
+  life_safety: "Life Safety",
+  medication_management: "Medication Management",
+  npsg: "National Patient Safety Goals",
+  patient_rights: "Patient Rights",
 };
 
 export default function DiagnosticQuizPage() {
@@ -74,6 +79,7 @@ export default function DiagnosticQuizPage() {
   const [showAllQuestions, setShowAllQuestions] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [generateError, setGenerateError] = useState(false);
+  const prefetchedQuestionsRef = useRef<DiagnosticQ[] | null>(null);
 
   const { data: pastResults } = useQuery<RichDiagnosticResult[]>({
     queryKey: ["/api/diagnostic/results"],
@@ -102,6 +108,15 @@ export default function DiagnosticQuizPage() {
     }, 4000);
     return () => clearTimeout(timer);
   }, []);
+
+  // Silently pre-fetch questions while user reads the intro screen
+  useEffect(() => {
+    if (phase === "intro") {
+      fetchQuestions().then(qs => {
+        prefetchedQuestionsRef.current = qs;
+      }).catch(() => {});
+    }
+  }, [phase]);
 
   const fetchQuestions = async () => {
     const res = await fetch("/api/diagnostic/questions", { credentials: "include" });
@@ -158,22 +173,38 @@ export default function DiagnosticQuizPage() {
 
   const startFresh = async () => {
     setGenerateError(false);
-    setPhase("generating");
-    try {
-      const qs = await fetchQuestions();
-      setQuestions(qs);
+    const prefetched = prefetchedQuestionsRef.current;
+    prefetchedQuestionsRef.current = null;
+    if (prefetched && prefetched.length >= 25) {
+      setQuestions(prefetched);
       setCurrentQ(0);
-      setAnswers(new Array(qs.length).fill(null));
+      setAnswers(new Array(prefetched.length).fill(null));
       setSelected(null);
       setPhase("quiz");
       saveMutation.mutate({
-        questionOrder: qs.map(q => q.id),
+        questionOrder: prefetched.map(q => q.id),
         answers: [],
         currentQuestion: 0,
-        shuffleMaps: buildShuffleMaps(qs),
+        shuffleMaps: buildShuffleMaps(prefetched),
       });
-    } catch {
-      setGenerateError(true);
+    } else {
+      setPhase("generating");
+      try {
+        const qs = await fetchQuestions();
+        setQuestions(qs);
+        setCurrentQ(0);
+        setAnswers(new Array(qs.length).fill(null));
+        setSelected(null);
+        setPhase("quiz");
+        saveMutation.mutate({
+          questionOrder: qs.map(q => q.id),
+          answers: [],
+          currentQuestion: 0,
+          shuffleMaps: buildShuffleMaps(qs),
+        });
+      } catch {
+        setGenerateError(true);
+      }
     }
   };
 
@@ -303,9 +334,9 @@ export default function DiagnosticQuizPage() {
         {generateError ? (
           <>
             <AlertTriangle size={32} className="text-amber-500 mb-4" />
-            <h2 className="text-xl font-bold text-amber-700 dark:text-amber-300 mb-2">Taking longer than expected</h2>
+            <h2 className="text-xl font-bold text-amber-700 dark:text-amber-300 mb-2">Could not load questions</h2>
             <p className="text-sm text-muted-foreground text-center max-w-xs mb-6">
-              The AI service is under load. Click below to try again — it usually resolves immediately.
+              Questions could not be loaded. Click below to try again.
             </p>
             <Button className="h-11 px-8 font-bold bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white rounded-xl" onClick={startFresh} data-testid="button-retry-generate">
               Try Again

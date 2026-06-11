@@ -624,7 +624,7 @@ export async function ensureTablesExist() {
       UPDATE users SET facility_id = f.id
       FROM facilities f
       WHERE users.facility_id IS NULL
-        AND f.code = 'SITE486045'
+        AND f.code = '482601'
         AND (users.organization_type = 'hospital' OR users.organization_type IS NULL)
     `);
     // Normalize org type within each facility: update any user whose org type
@@ -762,7 +762,7 @@ const KNOWN_FACILITIES: KnownFacility[] = [
     roleVisibility: STANDARD_ROLE_VISIBILITY,
   },
   {
-    code: "SITE486045",
+    code: "482601",
     name: "Midwest Orthopedic Specialty Hospital",
     features: MOSH_FEATURES,
     roleVisibility: STANDARD_ROLE_VISIBILITY,
@@ -775,7 +775,7 @@ const LEADERSHIP_CODES_BY_FACILITY: Record<string, string[]> = {
     "ARLD-T7NB-W1CJ",
     "ARLD-5HFR-D8LZ",
   ],
-  SITE486045: [
+  "482601": [
     "MOSH-J7KP-X4NR",
     "MOSH-B2WQ-T9FV",
     "MOSH-C6LD-Y3HZ",
