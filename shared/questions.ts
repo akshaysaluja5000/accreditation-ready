@@ -248,9 +248,9 @@ const hospitalLevelsRaw: Level[] = [
         question: "A surveyor asks who is responsible for point-of-use instrument prep. What do you say?",
         options: [
           "OR staff at the point of use. You remove bioburden, open instruments, apply enzymatic spray, and secure the container.",
-          "The surgeon who performed the case is responsible for post-case instrument handling.",
-          "The SPD technician who receives the tray at the decontamination window handles prep.",
-          "The charge nurse assigns point-of-use prep responsibility at the start of each case."
+          "Responsibility for post-case instrument handling shifts to SPD once the contaminated tray reaches the decontamination window.",
+          "In-room cleanup, including instrument handling, is the circulating nurse's responsibility rather than the scrub tech's.",
+          "Point-of-use prep is assigned at the start of each case by the charge nurse based on staffing availability."
         ],
         correctIndex: 0,
         explanation: "OR staff are responsible for point-of-use prep: remove bioburden, open instruments, apply enzymatic spray, secure the container, and transport via soiled corridor.",
@@ -619,9 +619,9 @@ const hospitalLevelsRaw: Level[] = [
         question: "A chair in the waiting room has torn vinyl. Is this an infection prevention concern or just cosmetic?",
         options: [
           "Infection prevention concern. Torn upholstery exposes material that cannot be properly disinfected.",
-          "Just cosmetic. Waiting areas are non-clinical spaces with lower environmental standards.",
-          "Just cosmetic. Replace it for patient comfort, but it is not an infection risk.",
-          "Just cosmetic. The foam underneath can still be cleaned with hospital-grade disinfectant."
+          "Waiting areas follow lower environmental standards than clinical spaces — flag it for routine facility management, not infection control.",
+          "Replace it for patient comfort, but torn waiting room furniture does not reach the threshold for an infection prevention finding.",
+          "Exposed foam can be spot-wiped with hospital-grade disinfectant, which is sufficient for non-procedure areas."
         ],
         correctIndex: 0,
         explanation: "Torn furniture coverings cannot be properly disinfected, even in waiting rooms. Patients contact waiting room chairs, so the same surface integrity standard applies.",
@@ -675,9 +675,9 @@ const hospitalLevelsRaw: Level[] = [
         question: "You find a lighter ceiling tile (clean, intact), rust on a cabinet handle, and tape residue on a wall. Which are findings?",
         options: [
           "The rust on the cabinet handle and the tape residue. The lighter tile is likely a recent replacement.",
-          "Only the tape residue. Minor rust on stainless steel in humid environments is normal wear.",
+          "Tape residue is the sole finding — minor rust on stainless steel hardware in humid environments is classified as normal wear, not a compliance deficiency.",
           "All three. Any visible surface change in a procedure room must be corrected.",
-          "Only the rust. Tape residue on an undamaged wall is cosmetic."
+          "Rust on the cabinet handle is the finding — tape residue on an undamaged painted wall surface is cosmetic and poses no infection prevention risk."
         ],
         correctIndex: 0,
         explanation: "Two findings: rust on equipment (surface that cannot be disinfected) and tape residue on the wall (sticky surface that cannot be properly disinfected). A lighter-colored intact tile is likely a recent replacement — color variation alone is not an infection risk.",
@@ -1100,9 +1100,9 @@ const hospitalLevelsRaw: Level[] = [
         question: "A surveyor opens your medication refrigerator and finds medications, daily logs at 38°F, and a clearly labeled staff lunch bag. What is the finding?",
         options: [
           "The staff lunch bag. Staff food cannot be stored in a medication refrigerator under any circumstances.",
-          "Nothing. The lunch is clearly labeled and physically separated from medications on a different shelf.",
-          "Nothing. The ice pack keeps the lunch at a safe temperature and the labeling prevents medication errors.",
-          "Nothing. Personal items in sealed containers are permitted in medication refrigerators during a staff member's shift."
+          "Labeling and shelf separation from medications satisfy both infection control and medication safety requirements for shared clinical refrigerators.",
+          "Confirm the refrigerator temperature remained in range — a sealed, labeled container cannot compromise a clinical refrigerator's temperature integrity.",
+          "Sealed and labeled personal containers are permitted in medication refrigerators during an active shift under standard facility policy."
         ],
         correctIndex: 0,
         explanation: "Staff food must never be stored in clinical refrigerators, including medication refrigerators. A labeled lunch bag does not change this rule. Staff food belongs only in designated break room refrigerators.",
@@ -1653,8 +1653,8 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "Remove it immediately. You cannot reprocess a single-use instrument in-house regardless of what is on file.",
           "Flag it for review. You can use it today but it must be evaluated before the next processing cycle.",
-          "Use it. A changed indicator and intact seal confirm it was processed correctly.",
-          "Use it. The single-use symbol only applies to soft goods, not rigid metal instruments."
+          "A changed indicator and intact seal confirm it was processed correctly — sterilization documentation overrides the manufacturer's single-use labeling.",
+          "Single-use labeling on metal instruments refers to the intended use period; rigid instruments may be reprocessed regardless of any such marking."
         ],
         correctIndex: 0,
         explanation: "Single-use instruments, identified by the single-use symbol or 'Do Not Reprocess' language, cannot be reprocessed in-house. Only FDA-registered third-party reprocessors may legally reprocess single-use devices.",
@@ -1679,10 +1679,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "i6",
         question: "You find brown discoloration only in the box lock area of a hemostat. The rest looks clean. What should you do?",
         options: [
-          "Return it to service. Box lock discoloration is expected friction wear from repeated use.",
+          "Box lock discoloration is expected friction wear — document it and return to service after confirming the instrument opens and closes smoothly.",
           "Clean it with enzymatic solution and return to service. Box lock discoloration is surface staining that resolves with thorough ultrasonic cleaning.",
           "Remove it. Brown discoloration in the box lock likely indicates trapped bioburden or early corrosion.",
-          "Return it to service as long as the instrument opens and closes smoothly."
+          "Smooth opening and closing confirms the box lock is functionally intact; surface discoloration without pitting does not affect sterility."
         ],
         correctIndex: 2,
         explanation: "Brown discoloration in the box lock is a red flag for trapped bioburden or corrosion. Bioburden in hinges prevents proper sterilization. The instrument needs thorough inspection and cleaning.",
@@ -1735,10 +1735,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "i10",
         question: "A surveyor asks what tool must be at every instrument inspection workstation. What do you answer?",
         options: [
-          "A UV inspection light for detecting residual bioburden and contaminants invisible under standard room lighting.",
+          "UV inspection lights for detecting bioburden invisible under standard lighting — required at decontamination stations, not at assembly inspection workstations.",
           "Lighted magnification — illuminated magnification equipment, not a separate lamp and handheld magnifier.",
-          "An endoscope camera system for visualizing the internal lumens and channels of hollow surgical instruments.",
-          "A standard magnifying glass held under bright overhead lighting or portable lamp, per facility equipment policy.",
+          "Endoscope camera systems for visualizing hollow instrument lumens are specialized tools, not a standard inspection workstation requirement.",
+          "Standard magnifying glass under bright overhead lighting satisfies the visibility requirement when no integrated lighted magnification unit is available.",
         ],
         correctIndex: 1,
         explanation: "Lighted magnification must be available at assembly and inspection workstations. This means integrated illuminated magnification, not a separate desk lamp plus a handheld magnifier. Its absence is itself a finding.",
@@ -1791,10 +1791,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "i14",
         question: "You inspect a Kerrison rongeur: it closes normally but has a small pitted area on the inner jaw. What do you do?",
         options: [
-          "Polish the pitted area smooth and return it to service before the next sterilization cycle.",
+          "Polish the pitted area smooth — once the surface is restored, the instrument can safely return to service before the next sterilization cycle.",
           "Remove it from service. Pitting creates crevices that harbor bacteria and cannot be reliably sterilized.",
-          "Return it to service. Pitting on the inner jaw does not affect sterilization of the outer surfaces.",
-          "Return it to service. Minor pitting on an otherwise functional instrument is within normal wear tolerance."
+          "Pitting on the inner jaw does not reach the outer contact surfaces, so sterilization validity is unaffected and the instrument can remain in service.",
+          "Minor pitting on an otherwise functional instrument is within normal wear tolerance and does not warrant removal from service."
         ],
         correctIndex: 1,
         explanation: "Pitting creates microscopic surface irregularities where bacteria can hide even after sterilization. Unlike smooth patina, pitting compromises the instrument's sterility. Remove it regardless of functionality.",
@@ -1805,10 +1805,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "i15",
         question: "Three instruments from peel packs: A has a changed indicator and is open; B has a changed indicator but is closed; C has no indicator change and is open. Which can you use?",
         options: [
-          "None. When any instrument in a lot fails, treat all instruments from that sterilizer load as compromised.",
+          "When any instrument in a sterilizer load fails inspection, treat all instruments from that load as compromised and pull the entire set.",
           "A and B. Both have changed indicators, which is the primary verification of sterilant exposure.",
           "Only A. Only A meets both requirements: changed indicator AND open position.",
-          "A and C. Both are in the required open position, ensuring sterilant reached all surfaces."
+          "Instruments A and C qualify — both are in the required open position, ensuring sterilant reached all internal surfaces during the cycle."
         ],
         correctIndex: 2,
         explanation: "Only Instrument A meets both criteria: the chemical indicator changed (sterilant exposure confirmed) AND the instrument is in the open position (all surfaces exposed). B fails on position; C fails on indicator. Both must be reprocessed.",
@@ -2024,8 +2024,8 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "Both. Your total of 14 exceeds the 12-cylinder limit AND full cylinders must be segregated from partially full ones.",
           "None. The 12-cylinder limit only applies to flammable gas, not medical oxygen.",
-          "Only the total. Your 14 cylinders exceed the maximum; segregation is recommended but not required.",
-          "Only the mixing. You must segregate full from partially full, but your total of 14 is within the 15-cylinder limit."
+          "Cylinder count is the finding — your 14 exceeds the 12-cylinder maximum, but segregation of full from partially full is recommended, not required.",
+          "Segregation is the finding — you must separate full from partially full cylinders, but your total of 14 remains within the 15-cylinder per-room limit."
         ],
         correctIndex: 0,
         explanation: "Two violations: (1) your total of 14 cylinders exceeds the 12-cylinder maximum for non-hazardous rooms, and (2) you must segregate full cylinders from empty or partially full ones.",
@@ -2357,10 +2357,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "spd1",
         question: "A surveyor holds a tissue at the bottom of the decon room door. It pushes outward. What does this indicate?",
         options: [
-          "Correct negative pressure. Air pushing outward from under the door confirms the exhaust fan is actively pulling contaminated air out of the room.",
+          "Expected behavior. In a properly functioning decon room, negative pressure draws air inward, but slight outward door-gap movement is normal from HEPA exhaust turbulence.",
           "A problem. Your room has positive pressure — contaminated air is escaping into clean areas.",
-          "Correct negative pressure. Outward movement confirms air is cycling through the HEPA exhaust system.",
-          "Correct negative pressure. Tissue movement in any direction confirms your ventilation is functioning."
+          "Inconclusive — tissue paper at the door gap is not a calibrated measurement. Air movement near a door can result from hallway traffic rather than room pressure.",
+          "Acceptable. Any detectable tissue movement at the door base confirms the exhaust fan is operational and the ventilation system is functioning."
         ],
         correctIndex: 1,
         explanation: "In negative pressure, air flows INTO the room (tissue pulls inward). If the tissue pushes outward, your decon room has positive pressure and contaminated air is escaping. This is a serious finding.",
@@ -2582,8 +2582,8 @@ const hospitalLevelsRaw: Level[] = [
         question: "An assembly workstation has a standard desk lamp and a regular magnifying glass but no lighted magnification unit. What is missing?",
         options: [
           "Lighted magnification. Your assembly station must have integrated lighted magnification, not a separate lamp and magnifier.",
-          "Nothing. A desk lamp and magnifying glass together provide adequate illumination and magnification per minimum requirements.",
-          "Nothing. Lighted magnification is only required for microsurgical instrument inspection, not general assembly.",
+          "A desk lamp and standard magnifying glass together provide adequate illumination and magnification — the standard specifies proper visibility, not a specific equipment type.",
+          "Lighted magnification is required only at microsurgical instrument inspection stations; general assembly workstations have different equipment specifications.",
           "A UV inspection light. UV illumination is required to detect residual bioburden invisible under standard lighting."
         ],
         correctIndex: 0,
@@ -2840,9 +2840,9 @@ const hospitalLevelsRaw: Level[] = [
         id: "or9",
         question: "Your OR has 8 people for a routine knee arthroscopy: surgeon, assistant, scrub tech, circulator, anesthesiologist, and 3 observers. Is traffic a concern?",
         options: [
-          "No. Observers are never permitted in the OR during active procedures.",
-          "No. Eight personnel is within the standard limit. Observers do not count toward traffic concerns when they remain behind the designated observation line and wear proper OR attire.",
-          "No. Up to 10 personnel are permitted in a standard OR as long as everyone follows attire requirements.",
+          "Observers are allowed in the OR with prior approval; three observers in proper OR attire for a routine arthroscopy fall within standard visitor protocols.",
+          "Eight personnel is within the normal occupancy range; observers positioned behind the observation line do not contribute to scrub-field traffic.",
+          "Up to 10 personnel are permitted in a standard-size OR when everyone follows attire and access protocols.",
           "Yes. OR traffic must be minimized to only essential personnel. Three observers during a routine procedure may be excessive.",
         ],
         correctIndex: 3,
@@ -2954,8 +2954,8 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "Two findings. The unlabeled cup plus the scrub tech's verbal-only identification together create both a labeling violation and a separate communication documentation deficiency.",
           "One finding. ALL solutions on your sterile field must be labeled with name and concentration, no exceptions.",
-          "No finding. Your scrub tech verbally announces contents at case start, which is an acceptable alternative.",
-          "No finding. Since the other syringes are labeled, the remaining cup can be identified by process of elimination."
+          "Verbal announcement of contents at case start is an accepted alternative to physical labeling when the team concurs and the call-out is documented.",
+          "Since all other containers are labeled, the remaining cup can be identified by process of elimination — context makes its contents unambiguous to the team."
         ],
         correctIndex: 1,
         explanation: "ALL medications and solutions on the sterile field must be labeled — including irrigation saline. Verbal identification is never acceptable. An unlabeled container of clear fluid is a medication error waiting to happen.",
@@ -2995,9 +2995,9 @@ const hospitalLevelsRaw: Level[] = [
         question: "Your OR door opens and closes 12 times in 30 minutes during a knee arthroscopy. All personnel are properly attired. What is the concern?",
         options: [
           "Excessive door opening disrupts your OR's positive-pressure laminar airflow, raising airborne contamination risk near the surgical site.",
-          "No concern. Door traffic is only a finding if personnel are improperly attired or enter without authorization.",
+          "Door traffic is only a finding when personnel are improperly attired or enter without authorization — frequency alone does not trigger a citation.",
           "The concern is noise disruption. Frequent door openings distract the surgical team and increase procedural error risk.",
-          "No concern. Your ventilation system compensates for door openings automatically."
+          "Your ventilation system is specifically engineered to compensate for normal door openings, maintaining positive pressure throughout the case."
         ],
         correctIndex: 0,
         explanation: "Each door opening disrupts your OR's positive-pressure environment and laminar airflow designed to direct contaminants away from the surgical site. Excessive traffic — even by properly attired personnel — increases airborne particle counts and infection risk.",
@@ -3100,9 +3100,9 @@ const hospitalLevelsRaw: Level[] = [
         question: "During the Time-Out, the surgeon keeps reviewing an X-ray while the circulator reads the checklist and says 'I'm listening.' Is this an acceptable response?",
         options: [
           "No. ALL activity must stop during the Time-Out and every team member must actively participate.",
-          "Yes. Reviewing imaging during the Time-Out demonstrates preparation and situational awareness.",
-          "Yes. The surgeon's verbal acknowledgment satisfies the active participation requirement even while reviewing related clinical materials.",
-          "Yes. The surgeon can continue other tasks as long as they verbally confirm each item during the checklist.",
+          "Reviewing imaging during the Time-Out demonstrates clinical engagement and constitutes active situational awareness per the verification standard.",
+          "Verbal acknowledgment satisfies the active participation requirement — the standard does not prohibit continued review of directly relevant clinical materials.",
+          "Other tasks may continue as long as the surgeon verbally confirms each checklist item; multitasking during the Time-Out is not explicitly prohibited.",
         ],
         correctIndex: 0,
         explanation: "ALL activity must stop during the Time-Out — no exceptions. Saying 'I'm listening' while continuing to review an X-ray is passive, not active participation. The Joint Commission's Universal Protocol requires every team member to fully stop what they are doing and actively engage in each verification step. Multitasking, even with verbal acknowledgment, does not satisfy this standard.",
@@ -3197,10 +3197,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "up8",
         question: "Your TKA patient has no opioid screening documented. The surgeon says the patient is not on opioids so it is not needed. Is he correct?",
         options: [
-          "Yes. Opioid screening is recommended best practice but not mandatory for TKA patients.",
-          "Yes. Opioid screening is only required when the patient reports pain above 7 on the numeric scale, which triggers mandatory risk documentation per JC pain management standards.",
+          "Screening for opioid risk is a best-practice recommendation for TKA patients but remains a facility-level clinical policy choice, not a JC mandate.",
+          "Pain scores above 7 on the numeric scale trigger mandatory risk documentation under JC pain management standards; procedure type alone does not.",
           "No. Opioid screening must be documented for ALL THA and TKA patients regardless of current opioid use.",
-          "Yes. Opioid screening is only needed if the patient is currently taking opioids or has a substance use history.",
+          "Documentation is only clinically indicated when the patient has an active prescription or documented substance use history at the time of admission.",
         ],
         correctIndex: 2,
         explanation: "Opioid screening must be documented for ALL Total Hip (THA) and Total Knee (TKA) arthroplasty patients. Whether the patient currently uses opioids is irrelevant — the screening documentation is required.",
@@ -3310,8 +3310,8 @@ const hospitalLevelsRaw: Level[] = [
         question: "Time-Out for bilateral knee injections: surgeon states the procedure and bilateral sites, circulator confirms consent and both knees are marked. What was missed?",
         options: [
           "Only patient identification was missed; all other elements are optional for minor injection procedures.",
-          "Nothing. Your Time-Out covered the procedure, bilateral sites, and consent verification.",
-          "Nothing. Bilateral procedures only require site and consent verification since the procedure is the same on both sides.",
+          "Your Time-Out covered all three required elements — procedure type, bilateral sites, and consent verification are sufficient for bilateral injection cases.",
+          "Bilateral procedures require only site and consent verification, since the procedure is identical on both sides and patient confirmation is implicit.",
           "Patient identity was not confirmed. The three core JC Time-Out elements are: correct patient, correct procedure, correct site."
         ],
         correctIndex: 3,
@@ -3365,9 +3365,9 @@ const hospitalLevelsRaw: Level[] = [
         id: "up20",
         question: "Your attending marks with an 'X,' a colleague uses an arrow, another uses initials. A surveyor asks about your site marking method. What is the concern?",
         options: [
-          "No concern. Any visible mark that both the patient and surgeon agree on is acceptable.",
-          "No concern. Individual surgeon marking style is acceptable as long as the mark is at or near the incision site.",
-          "No concern. Variety of marks actually adds identification because each surgeon's mark is unique.",
+          "Each surgeon's preferred marking method is acceptable when the patient and surgeon agree — patient consent validates the site identification.",
+          "Individual marking styles are acceptable when the mark is visible, near the incision site, and confirmed by the patient during the pre-op assessment.",
+          "Varied marks actually improve identification — each surgeon's unique mark is recognizable to the team and reduces site confusion.",
           "Your site marking method must be consistent and standardized across your facility per JC UP.01.02.01."
         ],
         correctIndex: 3,
@@ -3680,10 +3680,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pc16",
         question: "Your post-anesthesia evaluation at 40 hours documents: respiratory, cardiovascular, mental status, pain, nausea/vomiting, and hydration. What is missing?",
         options: [
-          "Nothing is missing. The 40-hour timeframe exceeds the maximum allowed, but the six documented elements represent a complete post-anesthesia evaluation.",
+          "All six documented elements are present and the 40-hour timeframe is within the 48-hour maximum — no further action is needed.",
           "Temperature is missing. All 7 required elements must be documented — respiratory, cardiovascular, mental status, temperature, pain, nausea/vomiting, and hydration.",
           "The evaluation must be completed in the PACU prior to discharge, not 40 hours post-procedure, regardless of which elements are documented.",
-          "Nothing. The six documented elements are sufficient for a complete post-anesthesia evaluation within the required 24-hour timeframe after surgery.",
+          "Documentation within the required 24-hour window with six complete elements satisfies the post-anesthesia evaluation standard.",
         ],
         correctIndex: 1,
         explanation: "Your post-anesthesia evaluation must include all 7 elements: respiratory function, cardiovascular function, mental status, temperature, pain, nausea/vomiting, and hydration status. Temperature is missing. The 40-hour timeframe is within the 48-hour requirement.",
@@ -3708,9 +3708,9 @@ const hospitalLevelsRaw: Level[] = [
         id: "pc18",
         question: "Your immediate post-op note includes: surgeon name, findings, procedures, specimens removed, and post-op diagnosis. It is signed and dated. What required elements are missing?",
         options: [
-          "Only the time of authentication. Assistant names are included in the operative report separately.",
-          "Only assistant names. All other required elements are present.",
-          "Only estimated blood loss (EBL). Assistants are optional on immediate post-op notes.",
+          "Just the time of authentication is missing — assistant names are captured in the full operative report, not required in the immediate post-op note.",
+          "Assistant names are missing, but all other required elements — findings, procedures, specimens, post-op diagnosis, and EBL — are present.",
+          "EBL is the only missing element; assistant names are not required in an immediate post-op note when the surgeon operated alone.",
           "Assistant names, EBL, specimen disposition, and the time of authentication are all missing."
         ],
         correctIndex: 3,
@@ -3722,10 +3722,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pc19",
         question: "Your patient screens positive on the C-SSRS. You document the screen and place them on 1:1 observation. What additional steps are required?",
         options: [
-          "None. A positive screen with 1:1 observation is the maximum required intervention until psychiatric consultation.",
+          "A positive screen with 1:1 observation is the maximum required clinical intervention — psychiatric consultation handles the remaining documentation requirements.",
           "SAFE-T risk assessment, suicide precaution orders matched to risk level, documented safety checks, and providing the 988 Crisis Lifeline number.",
           "Only a psychiatric consultation referral. The 1:1 observation and documented screen satisfy all other requirements.",
-          "None. One-to-one observation is the highest precaution and encompasses all required safety measures."
+          "One-to-one observation is the highest precaution level and encompasses all required physical safety measures for a positive C-SSRS screen."
         ],
         correctIndex: 1,
         explanation: "A positive C-SSRS screen triggers required next steps: SAFE-T risk assessment, matched precaution orders, documented safety checks, ligature-resistant garments for high-risk patients, and providing the 988 Crisis Lifeline information to the patient.",
@@ -4613,8 +4613,8 @@ const hospitalLevelsRaw: Level[] = [
         id: "mm4",
         question: "DOBUTamine and DOPamine are stored side by side in the same bin in your medication room. What does JC require for these LASA medications?",
         options: [
-          "Nothing additional. LASA drugs may be stored together if both vials have clear labels visible from the front.",
-          "Nothing additional. Side-by-side storage is acceptable when both drugs are in the same therapeutic class.",
+          "LASA drugs may be stored together when both vials have clear labels visible from the front of the bin — legibility satisfies the differentiation standard.",
+          "Side-by-side storage is acceptable when both drugs are in the same therapeutic class, since clinical context reduces the risk of harmful mix-up.",
           "Separate storage and differentiation strategies such as tall-man lettering and electronic alerts.",
           "Action is only required for LASA pairs in the same dosage form — IV formulations are excluded."
         ],
@@ -4781,8 +4781,8 @@ const hospitalLevelsRaw: Level[] = [
         id: "mm16",
         question: "Your discharge medication list omits two home medications deliberately held during the stay, with no documented reason for discontinuation. What is missing?",
         options: [
-          "Nothing. Medications not ordered during the stay are automatically discontinued at discharge.",
-          "Nothing. Your discharge list satisfies requirements if it includes all medications ordered during the inpatient stay.",
+          "Medications not ordered during the inpatient stay are automatically discontinued at discharge — the list only needs to reflect active admission orders.",
+          "Your discharge list is complete when it documents all medications actively ordered during the inpatient stay, including newly prescribed discharge medications.",
           "Discharge reconciliation must account for all home medications. Intentional discontinuations must include clinical rationale.",
           "The physician's verbal stop order substitutes for written reconciliation documentation."
         ],
@@ -5036,8 +5036,8 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "Nothing. Physicians determine heparin dosing and nursing follows the rate as ordered by the licensed independent practitioner.",
           "Heparin must be administered per an approved anticoagulation management program. Bypassing the protocol is not acceptable.",
-          "Weight-based protocol is only required for heparin bolus doses, not infusion rate adjustments made during the patient's stay.",
-          "Weight-based verification is optional for experienced nurses who have demonstrated competency in anticoagulation management.",
+          "Protocol review applies only to initial heparin bolus loading doses — rate adjustments during an ongoing infusion are governed by direct physician orders.",
+          "Experienced nurses who have completed annual anticoagulation competency validation may adjust heparin infusion rates from verbal orders without protocol review.",
         ],
         correctIndex: 1,
         explanation: "NPG 14 (formerly NPSG.03.05.01) requires facilities to use approved evidence-based protocols for anticoagulant dosing. Adjusting a heparin infusion from a verbal order without verifying the weight-based protocol bypasses a critical safety step. Heparin dosing errors are a leading cause of medication-related harm.",
@@ -5062,9 +5062,9 @@ const hospitalLevelsRaw: Level[] = [
         id: "npsg10",
         question: "Your patient's ID band fell off. You are about to collect a blood specimen. What must happen first?",
         options: [
-          "Proceed using room number and chart verification since you know the patient.",
+          "Room number and chart verification together satisfy the two-identifier requirement when the nurse has cared for the patient on prior shifts.",
           "Apply a replacement ID band and verify both identifiers before any specimen collection or treatment.",
-          "Proceed with one identifier if a second nurse witnesses the identification.",
+          "One identifier is sufficient when a second qualified nurse co-witnesses the specimen collection and co-signs the identification record.",
           "The physician must order a replacement wristband before you can proceed."
         ],
         correctIndex: 1,
@@ -5317,8 +5317,8 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "Gloves alone are sufficient for visitors since they do not perform clinical care.",
           "Both gown and gloves are required for ALL persons entering a contact precaution room, including visitors.",
-          "Visitors are exempt from contact precaution requirements because they are not hospital employees.",
-          "Visitors need a mask in addition to gloves only when the patient has an active wound."
+          "Non-employees entering a contact precaution room are exempt from gown requirements because infection control PPE mandates apply only to clinical staff.",
+          "A mask in addition to gloves is required for visitors only when the patient has an active, uncontained wound — gloves alone are otherwise sufficient."
         ],
         correctIndex: 1,
         explanation: "Contact precautions apply to ALL persons entering the room — staff and visitors alike. Gown and gloves must be worn upon entry and removed before leaving. Visitors should receive education on proper donning and doffing. Unprotected visitor entry creates a transmission risk and is a JC finding.",
@@ -5526,9 +5526,9 @@ const hospitalLevelsRaw: Level[] = [
         question: "Your facility's MRSA rate has increased over 3 consecutive quarters. Your infection prevention committee reviews the data but takes no formal action. What does JC require?",
         options: [
           "No action is required unless the rate exceeds a nationally defined absolute threshold.",
-          "The committee has fulfilled its obligation by reviewing and discussing the data quarterly.",
+          "Quarterly review and documented discussion fulfill the committee's surveillance obligation — performance improvement action is a separate QAPI function.",
           "A formal performance improvement plan with evidence-based interventions and defined goals must be implemented and monitored.",
-          "The issue must be reported to state health authorities before any internal action is taken."
+          "Reporting to state health authorities is required before any internal corrective measures can be initiated when rates show a sustained upward trend."
         ],
         correctIndex: 2,
         explanation: "JC requires surveillance data to drive action. A three-quarter rising MRSA trend must generate a formal improvement response: root cause analysis, evidence-based interventions (active surveillance cultures, contact precaution audits, environmental cleaning enhancements), defined goals, and ongoing monitoring. Reviewing data without action does not satisfy the IC chapter.",
@@ -5750,10 +5750,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pr7",
         question: "A family member asks your nurse what medications a 45-year-old competent patient is receiving. The nurse provides the list because 'the family is involved in care.' What patient rights issue has occurred?",
         options: [
-          "None. Family involvement in care implies consent to information sharing.",
+          "Family involvement in care implies consent to information sharing, particularly when the family member is the primary caregiver and present at the bedside.",
           "Patient health information cannot be shared with family members without the patient's explicit authorization.",
           "The issue only exists if the patient has documented in the chart that they do not want information shared.",
-          "None. Sharing medication information with family is standard of care and does not require consent."
+          "Sharing the medication list with actively involved family members is standard nursing practice and does not require a separate written authorization."
         ],
         correctIndex: 1,
         explanation: "A competent adult's health information — including medication list — is protected and cannot be shared with family members without the patient's explicit authorization. 'Family involvement' is not consent. This applies even to close relatives. Your nurse must obtain the patient's permission before sharing any health information with family.",
@@ -5820,9 +5820,9 @@ const hospitalLevelsRaw: Level[] = [
         id: "pr12",
         question: "Your patient asks whether the hospital has a process for filing a complaint about their care. What information must your hospital provide?",
         options: [
-          "The name of the unit manager is sufficient — that is the appropriate complaint recipient for all hospital patients and their family members.",
+          "Directing the patient to the unit manager is sufficient — charge nurses are the designated first point of contact for patient concerns under hospital policy.",
           "Written information about the right to file a grievance, the grievance process, and contact information for the state health agency if the hospital cannot resolve the issue.",
-          "The hospital only needs to provide complaint information if the patient has already expressed a specific concern about their current care.",
+          "Complaint information only needs to be provided once the patient has expressed a specific concern — proactive disclosure at admission is not mandated.",
           "Patients must be redirected to the quality department. Bedside staff cannot answer questions about complaint processes or grievance procedures.",
         ],
         correctIndex: 1,
@@ -6130,10 +6130,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "ls8",
         question: "Your department manager stores a cart of clean linens in the exit corridor to free up space. A surveyor walks by. What is the finding?",
         options: [
-          "No finding. Clean linen carts in corridors do not constitute a fire or egress hazard.",
+          "Clean linen carts in corridors do not constitute a fire or egress hazard — only combustible or hazardous materials trigger an immediate corridor citation.",
           "Minor finding. Corridor storage is only cited when it creates an acute fire risk.",
           "Immediate finding if the cart reduces the required minimum corridor clear width for egress.",
-          "No finding as long as the cart is on one side and leaves the other half of the corridor free."
+          "A cart positioned against one wall that leaves the opposing half of the corridor clear does not violate minimum egress width requirements."
         ],
         correctIndex: 2,
         explanation: "Egress routes must maintain the minimum required clear width for patient evacuation. Storing carts — even temporarily, even with clean items — in corridors is cited when they obstruct the required exit path width. Healthcare corridors must maintain minimum widths to allow safe gurney and wheelchair evacuation. This is a consistently cited JC finding.",
@@ -6422,10 +6422,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "em3",
         question: "Your hospital's Emergency Operations Plan was downloaded from a state health department template website and filed without modification. A surveyor reviews it. What is the most likely finding?",
         options: [
-          "No finding. Using a state-approved template that has been reviewed satisfies the EOP requirement.",
+          "Using a state-approved template that has been reviewed satisfies the EOP requirement — regulatory pre-review substitutes for facility-specific development.",
           "Minor finding. The hospital must add its name, address, and contact information to the template.",
           "Significant finding. The EOP must be facility-specific, reflecting the hospital's actual hazards, resources, and community.",
-          "No finding. State templates are pre-approved by Joint Commission and do not require facility modification.",
+          "State templates carry implicit JC acceptance and need no facility-specific modification to meet the EM.01.01.01 standard.",
         ],
         correctIndex: 2,
         explanation: "The EOP must be facility-specific. A generic template that doesn't reflect your hospital's unique hazard profile (from the HVA), actual resources, community relationships, and staff roles does not meet EM.01.01.01. Surveyors look for evidence the plan was built around your specific facility, not downloaded and filed.",
@@ -6534,10 +6534,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "em11",
         question: "Your hospital conducts its annual emergency drill but does not complete a written critique or identify corrective actions afterward. A surveyor finds the drill documentation. What is the compliance issue?",
         options: [
-          "None. Completing the drill itself satisfies all requirements of the emergency management standard.",
+          "Completing the drill itself satisfies all requirements of the emergency management standard — critique forms are an internal quality tool, not a separate accreditation element.",
           "Minor issue. A critique form is recommended but not explicitly required by the accreditation standard.",
           "Significant issue. Drill documentation must include a critique and corrective actions to meet the standard.",
-          "None. Corrective actions are only required when the drill reveals a major failure or significant gap.",
+          "Corrective actions are only required when the drill uncovers a major failure; routine drills without identified gaps do not require action plans.",
         ],
         correctIndex: 2,
         explanation: "Conducting the drill is not enough. EM.03.01.01 requires documentation that includes the date, type of exercise, participants, a critique/evaluation of performance, and corrective actions identified for improvement. A drill without documented critique and follow-up is an incomplete exercise from a compliance standpoint.",
@@ -6604,8 +6604,8 @@ const hospitalLevelsRaw: Level[] = [
         id: "em16",
         question: "Who should participate in the after-action review following an emergency exercise?",
         options: [
-          "Only the incident commander and senior leadership who oversaw the drill, plus selected department representatives.",
-          "Only the compliance officer and emergency management coordinator responsible for coordinating the exercise.",
+          "Incident commanders and senior leadership who oversaw the drill, plus selected department representatives who organized logistics.",
+          "Compliance officers and emergency management coordinators responsible for coordinating the exercise and producing the documentation.",
           "A cross-functional group including frontline staff who participated, department leads, and leadership.",
           "External observers and Joint Commission consultants only, to ensure objectivity and independence from internal bias.",
         ],
@@ -6646,10 +6646,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "em19",
         question: "Which of the following best describes 'surge capacity planning' as required in the EOP?",
         options: [
-          "The process of hiring and training additional staff members before a predicted busy season to meet anticipated patient volume increases.",
+          "Proactive hiring and cross-training of additional staff to handle anticipated high-volume seasonal periods before patient census surges.",
           "Your hospital's plan for managing more patients than its normal licensed capacity during a mass casualty or disaster event.",
           "The backup generator capacity calculations and electrical infrastructure requirements mandated by the critical utilities technical standards.",
-          "The process for requesting additional medical supplies and pharmaceutical inventory from the state health department on an annual basis.",
+          "Requesting additional pharmaceutical and supply inventory from state health authorities before an anticipated high-acuity event.",
         ],
         correctIndex: 1,
         explanation: "Surge capacity planning addresses how your hospital will expand patient care capacity when demand overwhelms normal operations — typically during mass casualty events, community disasters, or pandemics. The EOP must address accelerating discharges, opening additional care areas, canceling elective procedures, and requesting mutual aid from neighboring hospitals.",
@@ -7005,10 +7005,10 @@ const hospitalLevelsRaw: Level[] = [
         id: "pss19",
         question: "Your hospital has conducted its annual PSS program evaluation. To whom must this evaluation be formally presented?",
         options: [
-          "The state health department and CMS regional office.",
-          "The medical executive committee only.",
+          "State health authorities and CMS regional offices, who require the evaluation for regulatory compliance reporting.",
+          "Medical executive committee members, since they hold clinical oversight authority over safety program performance.",
           "Hospital leadership and the governing body (board of directors).",
-          "The Joint Commission field representative assigned to your facility."
+          "JC field representatives assigned to your facility, who receive the evaluation as part of their pre-survey document request."
         ],
         correctIndex: 2,
         explanation: "The annual PSS program evaluation must be presented to both hospital leadership and the governing body. This ensures board-level visibility into whether the safety program is functioning — whether events are being reported, CSAs completed on time, FMEAs conducted, and culture surveys acted upon. Presenting only to the medical executive committee does not satisfy the board accountability requirement.",
