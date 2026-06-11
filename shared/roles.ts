@@ -144,7 +144,7 @@ export const ROLE_CONFIGS: RoleConfig[] = [
     id: "preadmission_nurse",
     facilityType: "hospital",
     department: "PACU, Pre-Op & Floor",
-    title: "Pre-Admission / Pre-Op Nurse",
+    title: "Preadmission Testing Nurse",
     description: "Pre-surgical assessment, anesthesia prep, medication reconciliation, patient education",
     scope: "DEPT",
     destinationRoute: "/play/patient_care_docs",
