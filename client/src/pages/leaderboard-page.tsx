@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
-import { ArrowLeft, Trophy, Zap, Flame, TrendingUp, Medal, Crown, Calendar, CalendarDays, Sun } from "lucide-react";
+import { ArrowLeft, Trophy, Zap, Flame, TrendingUp, Medal, Crown, Calendar, CalendarDays, Sun, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useAuth } from "@/lib/auth";
@@ -21,6 +21,7 @@ interface LeaderboardEntry {
   questionsAnswered: number;
   accuracy: number;
   levelsCompleted: number;
+  flashcardReviews: number;
   lastActive: string | null;
 }
 
@@ -248,9 +249,18 @@ export default function LeaderboardPage() {
                       <span>{entry.levelsCompleted}/{totalLevels} levels</span>
                       <span>·</span>
                       <span>{entry.questionsAnswered} Qs</span>
+                      {entry.flashcardReviews > 0 && (
+                        <>
+                          <span>·</span>
+                          <span className="flex items-center gap-0.5">
+                            <BookOpen size={10} className="text-primary/60" />
+                            {entry.flashcardReviews} FC
+                          </span>
+                        </>
+                      )}
                       <span>·</span>
-                      <span className={entry.accuracy >= 80 ? "text-chart-1 font-bold" : entry.accuracy >= 50 ? "text-chart-4 font-bold" : "text-destructive font-bold"}>
-                        {entry.accuracy}%
+                      <span className={entry.accuracy >= 80 ? "text-chart-1 font-bold" : entry.accuracy >= 50 ? "text-chart-4 font-bold" : entry.questionsAnswered === 0 ? "" : "text-destructive font-bold"}>
+                        {entry.questionsAnswered === 0 ? "—" : `${entry.accuracy}%`}
                       </span>
                     </div>
                   </div>

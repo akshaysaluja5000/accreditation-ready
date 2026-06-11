@@ -1431,16 +1431,30 @@ export async function registerRoutes(
       } else {
         periodStartTs = "2000-01-01T00:00:00"; // all-time
       }
-      const { rows: plRows } = await dbPool.query<{ user_id: number; total_points: number }>(
-        `SELECT user_id, COALESCE(SUM(points_awarded), 0)::int AS total_points
-         FROM points_ledger
-         WHERE created_at >= $1
-         GROUP BY user_id`,
-        [periodStartTs],
-      );
+      const [{ rows: plRows }, { rows: fcRows }] = await Promise.all([
+        dbPool.query<{ user_id: number; total_points: number }>(
+          `SELECT user_id, COALESCE(SUM(points_awarded), 0)::int AS total_points
+           FROM points_ledger
+           WHERE created_at >= $1
+           GROUP BY user_id`,
+          [periodStartTs],
+        ),
+        dbPool.query<{ user_id: number; fc_count: number }>(
+          `SELECT user_id, COUNT(*)::int AS fc_count
+           FROM points_ledger
+           WHERE created_at >= $1
+             AND event_type IN ('flashcard_again', 'flashcard_hard', 'flashcard_good')
+           GROUP BY user_id`,
+          [periodStartTs],
+        ),
+      ]);
       const periodActivityByUser = new Map<number, number>();
       for (const r of plRows) {
         periodActivityByUser.set(r.user_id, r.total_points);
+      }
+      const flashcardCountByUser = new Map<number, number>();
+      for (const r of fcRows) {
+        flashcardCountByUser.set(r.user_id, r.fc_count);
       }
 
       const streakMap = new Map(allStreaks.map((s) => [s.userId, s]));
@@ -1471,6 +1485,7 @@ export async function registerRoutes(
           questionsAnswered,
           accuracy,
           levelsCompleted,
+          flashcardReviews: flashcardCountByUser.get(u.id) || 0,
           lastActive: streak?.lastPlayedDate || null,
         };
       }).sort((a, b) => {
