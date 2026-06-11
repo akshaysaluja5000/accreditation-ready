@@ -708,6 +708,7 @@ const ROLE_SEED: { name: string; slug: string; department: string; scope: "stand
 const MOSH_FEATURES = {
   education: true,
   compliance: false,
+  show_hospital_dashboard: true,
   survey_readiness_agent: false,
   content_intelligence_agent: false,
   compliance_task_manager: false,
@@ -719,6 +720,7 @@ const MOSH_FEATURES = {
 const FULL_FEATURES = {
   education: true,
   compliance: true,
+  show_asc_dashboard: true,
   survey_readiness_agent: true,
   content_intelligence_agent: true,
   compliance_task_manager: true,
