@@ -605,7 +605,7 @@ const hospitalLevelsRaw: Level[] = [
         question: "Your OR looks perfect except for one small chip on the countertop that exposes the substrate. Is the room compliant?",
         options: [
           "No. All surfaces must be intact and impervious. A chip exposes porous material that cannot be disinfected.",
-          "Yes. The chip can be temporarily sealed with approved epoxy until maintenance arrives.",
+          "Yes. Surface chips are acceptable when disinfection logs confirm daily cleaning is completed and the chip does not penetrate through to the underside of the counter.",
           "No. Countertop chips in an OR constitute a breach of environmental standards and require immediate replacement.",
           "Yes. The chip can be temporarily sealed with approved epoxy until maintenance arrives.",
         ],
@@ -731,7 +731,7 @@ const hospitalLevelsRaw: Level[] = [
         question: "A renovated patient room has fabric acoustic panels on the walls. They are clean and mounted securely. Are they compliant?",
         options: [
           "No. Fabric surfaces cannot be properly disinfected and may harbor pathogens even when visually clean.",
-          "Yes. Securely mounted clean panels meet environmental surface requirements.",
+          "Yes. Acoustic panels are permanent architectural elements and are exempt from the smooth, non-porous surface requirement.",
           "Yes. Securely mounted clean panels meet environmental surface requirements.",
           "No. Fabric-covered surfaces may only be used in non-clinical areas such as waiting rooms or offices.",
         ],
@@ -747,7 +747,7 @@ const hospitalLevelsRaw: Level[] = [
           "Yes. Visible dust on overhead surfaces in a clinical area is a finding regardless of cause. Increase cleaning frequency.",
           "No. Environmental dust from active construction is classified as an uncontrollable external factor.",
           "Yes. Construction dust is an external factor, but the facility must implement additional containment measures during adjacent projects.",
-          "No. Environmental dust from active construction is classified as an uncontrollable external factor.",
+          "No. Once you document the construction as the source and notify infection control, the finding is deferred until the project ends.",
         ],
         correctIndex: 0,
         explanation: "The cause of visible dust does not matter. The standard is no visible dust on overhead surfaces in clinical areas. When construction increases dust in your environment, your cleaning frequency must increase to match.",
@@ -1680,7 +1680,7 @@ const hospitalLevelsRaw: Level[] = [
         question: "You find brown discoloration only in the box lock area of a hemostat. The rest looks clean. What should you do?",
         options: [
           "Return it to service. Box lock discoloration is expected friction wear from repeated use.",
-          "Remove it. Brown discoloration in the box lock likely indicates trapped bioburden or early corrosion.",
+          "Clean it with enzymatic solution and return to service. Box lock discoloration is surface staining that resolves with thorough ultrasonic cleaning.",
           "Remove it. Brown discoloration in the box lock likely indicates trapped bioburden or early corrosion.",
           "Return it to service as long as the instrument opens and closes smoothly."
         ],
@@ -2038,7 +2038,7 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "No. Your code cart must be plugged into a red outlet, but documentation checks must be recorded daily in a separate log, not just present on the cart.",
           "No. Laryngoscope blades stored in a separate compartment within the cart do not meet the requirement; they must be in a completely sealed airway kit outside the cart.",
-          "Yes. All code cart requirements are met: red outlet, current checks, and blades stored separately.",
+          "Yes. All requirements are met, but a documented policy variance is needed because blades stored inside the cart body rather than a sealed external airway bag is a non-standard arrangement.",
           "Yes. All code cart requirements are met: red outlet, current checks, and blades stored separately.",
         ],
         correctIndex: 3,
@@ -2162,7 +2162,7 @@ const hospitalLevelsRaw: Level[] = [
         id: "f14",
         question: "Your defibrillator is plugged into a standard white outlet next to an available red emergency outlet. Is this acceptable?",
         options: [
-          "No. Your defibrillator must be plugged into an emergency (red) outlet to maintain power during a facility outage.",
+          "No. Defibrillators must be on a dedicated circuit and cannot share an outlet with other plugged-in equipment regardless of outlet color.",
           "Yes. Defibrillators have internal batteries so the outlet color does not affect emergency readiness.",
           "Yes. Any functional outlet is acceptable as long as the defibrillator maintains a full charge.",
           "No. Your defibrillator must be plugged into an emergency (red) outlet to maintain power during a facility outage.",
@@ -2357,7 +2357,7 @@ const hospitalLevelsRaw: Level[] = [
         id: "spd1",
         question: "A surveyor holds a tissue at the bottom of the decon room door. It pushes outward. What does this indicate?",
         options: [
-          "A problem. Your room has positive pressure — contaminated air is escaping into clean areas.",
+          "Correct negative pressure. Air pushing outward from under the door confirms the exhaust fan is actively pulling contaminated air out of the room.",
           "A problem. Your room has positive pressure — contaminated air is escaping into clean areas.",
           "Correct negative pressure. Outward movement confirms air is cycling through the HEPA exhaust system.",
           "Correct negative pressure. Tissue movement in any direction confirms your ventilation is functioning."
@@ -2730,7 +2730,7 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "No. Only scrubbed team members may handle items near the sterile field under any circumstances.",
           "No. Your circulator must wear sterile gloves when presenting items directly to the scrub tech.",
-          "Yes. Walking around and not reaching over the field is the correct technique for unsterile personnel.",
+          "Yes. But the circulator must don a sterile gown when walking within arm's reach of the field; scrub attire alone is insufficient at that distance.",
           "Yes. Walking around and not reaching over the field is the correct technique for unsterile personnel.",
         ],
         correctIndex: 3,
@@ -2800,7 +2800,7 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "No. Surface wipes are only adequate if you also replace disposable circuits and tubing between each patient.",
           "No. Anesthesia equipment requires full terminal cleaning with liquid disinfectant, not surface wipes.",
-          "Yes. All anesthesia equipment surfaces must be cleaned and disinfected between every patient.",
+          "Yes. Between-case surface cleaning is sufficient as long as full terminal cleaning with approved disinfectant is performed at the end of the daily schedule.",
           "Yes. All anesthesia equipment surfaces must be cleaned and disinfected between every patient.",
         ],
         correctIndex: 3,
@@ -2841,7 +2841,7 @@ const hospitalLevelsRaw: Level[] = [
         question: "Your OR has 8 people for a routine knee arthroscopy: surgeon, assistant, scrub tech, circulator, anesthesiologist, and 3 observers. Is traffic a concern?",
         options: [
           "No. Observers are never permitted in the OR during active procedures.",
-          "Yes. OR traffic must be minimized to only essential personnel. Three observers during a routine procedure may be excessive.",
+          "No. Eight personnel is within the standard limit. Observers do not count toward traffic concerns when they remain behind the designated observation line and wear proper OR attire.",
           "No. Up to 10 personnel are permitted in a standard OR as long as everyone follows attire requirements.",
           "Yes. OR traffic must be minimized to only essential personnel. Three observers during a routine procedure may be excessive.",
         ],
@@ -2952,7 +2952,7 @@ const hospitalLevelsRaw: Level[] = [
         id: "or17",
         question: "Your back table has labeled syringes but one unlabeled medicine cup with clear fluid. Your scrub tech says 'it's just irrigation saline.' What is the finding?",
         options: [
-          "One finding. ALL solutions on your sterile field must be labeled with name and concentration, no exceptions.",
+          "Two findings. The unlabeled cup plus the scrub tech's verbal-only identification together create both a labeling violation and a separate communication documentation deficiency.",
           "One finding. ALL solutions on your sterile field must be labeled with name and concentration, no exceptions.",
           "No finding. Your scrub tech verbally announces contents at case start, which is an acceptable alternative.",
           "No finding. Since the other syringes are labeled, the remaining cup can be identified by process of elimination."
@@ -3114,7 +3114,7 @@ const hospitalLevelsRaw: Level[] = [
         question: "Your consent form lists the procedure as 'L TKA.' The left knee is marked and the patient confirms verbally. Is the consent form compliant?",
         options: [
           "Yes. 'L TKA' is universally recognized in orthopedic surgery and the patient's verbal confirmation validates the intent.",
-          "No. Consent forms must use the full procedure name. 'L' is on the JC Do Not Use abbreviation list and can be misread.",
+          "No. The abbreviation 'TKA' is also prohibited. The consent form must spell out the complete procedure as 'Total Knee Arthroplasty' with no acronyms of any kind.",
           "No. Consent forms must use the full procedure name. 'L' is on the JC Do Not Use abbreviation list and can be misread.",
           "Yes. The site marking and verbal confirmation together compensate for the abbreviated consent form.",
         ],
@@ -3142,7 +3142,7 @@ const hospitalLevelsRaw: Level[] = [
         question: "The attending marks the surgical site with the patient awake. After draping, the mark is completely covered and not visible. Compliant?",
         options: [
           "Yes. The mark location at the incision line is correct; post-draping visibility is a preference, not a requirement.",
-          "No. Your site mark must be visible after the patient is prepped and draped.",
+          "No. The mark must be placed in the procedure room immediately before incision so it is visible and unambiguous at the moment of the Time-Out.",
           "No. Your site mark must be visible after the patient is prepped and draped.",
           "Yes. The patient participated and the mark was correctly placed, fulfilling the marking requirement.",
         ],
@@ -3156,7 +3156,7 @@ const hospitalLevelsRaw: Level[] = [
         question: "You identify a patient using their full name and room number before a procedure. Is this adequate identification?",
         options: [
           "Yes. Name and room number together provide two distinct identifiers linked to the patient's current admission.",
-          "No. Patient identification requires name and DOB or name and MRN; room number alone is not a unique patient identifier and changes between admissions.",
+          "No. Room number is not a unique patient identifier. Name plus a wristband barcode scan replaces the need for DOB or MRN verification and is the preferred two-identifier method.",
           "Yes. When combined with verbal confirmation, name and room number meet the two-identifier standard.",
           "No. Room number is not a unique patient identifier. Use name and DOB, or name and MRN.",
         ],
@@ -3198,7 +3198,7 @@ const hospitalLevelsRaw: Level[] = [
         question: "Your TKA patient has no opioid screening documented. The surgeon says the patient is not on opioids so it is not needed. Is he correct?",
         options: [
           "Yes. Opioid screening is recommended best practice but not mandatory for TKA patients.",
-          "No. Opioid screening must be documented for ALL THA and TKA patients regardless of current opioid use.",
+          "Yes. Opioid screening is only required when the patient reports pain above 7 on the numeric scale, which triggers mandatory risk documentation per JC pain management standards.",
           "No. Opioid screening must be documented for ALL THA and TKA patients regardless of current opioid use.",
           "Yes. Opioid screening is only needed if the patient is currently taking opioids or has a substance use history.",
         ],
@@ -3268,7 +3268,7 @@ const hospitalLevelsRaw: Level[] = [
         question: "The surgeon who marked the site was called away. A different surgeon is now performing the case. Should the Time-Out proceed without the marking provider?",
         options: [
           "Yes. Any attending present can verify the site and complete the Time-Out as long as the mark is visible.",
-          "No. The provider who marked the site must be present during the Time-Out.",
+          "No. If the marking provider is unavailable, the entire procedure must be rescheduled to ensure the original marking provider can complete the Time-Out on the same case.",
           "No. The provider who marked the site must be present during the Time-Out.",
           "Yes. The site mark is valid documentation and the replacing surgeon can proceed.",
         ],
@@ -3296,7 +3296,7 @@ const hospitalLevelsRaw: Level[] = [
         question: "Your patient's H&P was done 28 days ago. A follow-up assessment was documented 36 hours before surgery. Is all documentation current?",
         options: [
           "Yes. A 36-hour follow-up assessment is acceptable as long as it occurs before the surgical procedure begins.",
-          "No. Your follow-up assessment must be completed within 24 hours after admission/registration AND before surgery.",
+          "No. An H&P completed 28 days ago falls outside the acceptable 30-day window and requires a completely new H&P, regardless of when the follow-up assessment was performed.",
           "Yes. The H&P is within the acceptable 30-day window, and documentation of any pre-surgical assessment satisfies compliance requirements.",
           "No. Your follow-up assessment must be completed within 24 hours after admission/registration AND before surgery.",
         ],
@@ -3325,7 +3325,7 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "Yes. The H&P with the 12-hour update satisfies the pre-anesthesia assessment requirement.",
           "Yes. The anesthesiologist can perform the assessment concurrently during induction to avoid surgical delays.",
-          "No. Your pre-anesthesia assessment must be completed and documented BEFORE anesthesia is administered.",
+          "No. Because more than 8 hours have passed since the H&P update, the pre-anesthesia assessment must be repeated before a new anesthesia plan can be finalized.",
           "No. Your pre-anesthesia assessment must be completed and documented BEFORE anesthesia is administered.",
         ],
         correctIndex: 3,
@@ -3514,7 +3514,7 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "Yes. Pain denial eliminates the need for a second assessment as long as the first is documented.",
           "Yes. A verbal denial during rounds meets the pain management documentation standard.",
-          "No. Pain must be assessed and documented a minimum of 2 times per 24 hours regardless of patient report.",
+          "No. A pain denial must be documented, but only once per nursing shift. Round-the-clock twice-daily documentation applies only when the patient reports active pain.",
           "No. Pain must be assessed and documented a minimum of 2 times per 24 hours regardless of patient report.",
         ],
         correctIndex: 3,
@@ -3570,7 +3570,7 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "Yes. The 48-hour guideline allows a reasonable grace period for weekends and staffing constraints.",
           "Yes. The standard is a 72-hour window for post-anesthesia assessments.",
-          "No. Your post-anesthesia evaluation must be completed within 48 hours of the procedure.",
+          "No. Post-anesthesia evaluations must be completed within 24 hours of the procedure; the 48-hour window applies only to post-operative progress notes.",
           "No. Your post-anesthesia evaluation must be completed within 48 hours of the procedure.",
         ],
         correctIndex: 3,
@@ -3652,7 +3652,7 @@ const hospitalLevelsRaw: Level[] = [
         id: "pc14",
         question: "Your tissue supplier's FDA registration was verified 15 months ago. You are still receiving tissue from them. Is this acceptable?",
         options: [
-          "No. Your facility must verify that tissue suppliers are FDA-registered on an annual basis.",
+          "No. Tissue supplier FDA registration must be re-verified with each new order cycle, not just annually. The 15-month gap represents at least two missed verification cycles.",
           "No. Your facility must verify that tissue suppliers are FDA-registered on an annual basis.",
           "Yes. If the supplier provides a current FDA certificate with each shipment, independent verification is not required.",
           "Yes. FDA registration only needs verification at initial contracting and during contract renewal."
@@ -3738,7 +3738,7 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "Yes. Restraint reassessment is only required at order renewal, not continuously.",
           "Yes. The initial order, assessment, and alternatives documentation are sufficient for a 6-hour restraint period.",
-          "No. Restraints require ongoing flowsheet documentation with regular reassessments, not just an initial assessment.",
+          "No. The 4-hour flowsheet gap exceeds the maximum interval and also indicates the restraint order expired without renewal, which requires both documentation catch-up and a new physician order.",
           "No. Restraints require ongoing flowsheet documentation with regular reassessments, not just an initial assessment.",
         ],
         correctIndex: 3,
@@ -3911,7 +3911,7 @@ const hospitalLevelsRaw: Level[] = [
         id: "eoc6",
         question: "Your OR positive-pressure air exchange runs 20 exchanges per hour. The standard requires a minimum of 20. Compliant?",
         options: [
-          "Yes. Meeting the minimum of 20 exchanges per hour satisfies the OR ventilation requirement.",
+          "Yes. Twenty exchanges per hour meets the minimum, though ORs with more than 6 surgical personnel require a minimum of 25 exchanges per ASHRAE guidelines for higher-occupancy spaces.",
           "Yes. Meeting the minimum of 20 exchanges per hour satisfies the OR ventilation requirement.",
           "No. Your OR requires a minimum of 25 air exchanges per hour; 20 is the standard for procedure rooms.",
           "No. Your ventilation must be validated quarterly, regardless of the current exchange rate."
@@ -3925,7 +3925,7 @@ const hospitalLevelsRaw: Level[] = [
         id: "eoc7",
         question: "Your clean supply room has a mop and bucket stored in the corner after the morning cleaning. Is this a finding?",
         options: [
-          "Yes. Your clean supply room must not contain cleaning equipment. Mops belong in the soiled utility or janitor's closet.",
+          "Yes. The mop is a finding only if stored directly adjacent to medical supplies; cleaning equipment stored in a designated corner away from supplies is acceptable in a clean supply room.",
           "No. Cleaning equipment may be stored in clean supply rooms when not actively in use and not near supplies.",
           "Yes. Your clean supply room must not contain cleaning equipment. Mops belong in the soiled utility or janitor's closet.",
           "No. Your clean supply room must only exclude hazardous materials; mops are not classified as hazardous."
@@ -3939,7 +3939,7 @@ const hospitalLevelsRaw: Level[] = [
         id: "eoc8",
         question: "Your patient room computer screen is unlocked, visible to the door, and displaying the patient's name and diagnosis. The door is open. Is this a concern?",
         options: [
-          "Yes. Your computer must be locked or positioned so PHI is not visible to unauthorized persons passing the doorway.",
+          "Yes. This is a concern, but it is resolved if the provider repositions the screen. Locking the workstation is only required when the provider leaves the room for more than 5 minutes.",
           "No. Your patient room is semi-private and shared information in this space is permitted.",
           "No. Displaying PHI on a screen in a patient's own room is not a privacy violation.",
           "Yes. Your computer must be locked or positioned so PHI is not visible to unauthorized persons passing the doorway."
@@ -4080,7 +4080,7 @@ const hospitalLevelsRaw: Level[] = [
         question: "A mobile computer workstation is parked 2.5 feet from your medical gas shut-off panel. The 3-foot access zone is marked on the floor. Is this a finding?",
         options: [
           "No. The 3-foot zone is a guideline and mobile equipment can be moved quickly in an emergency.",
-          "Yes. Your medical gas shut-off panels must remain unobstructed at all times. Your workstation within the clearance zone is a finding.",
+          "Yes. This is a finding, but mobile equipment within the clearance zone has a 30-minute correction window before formal documentation is required since it can be repositioned by any nearby staff.",
           "No. Mobile workstations are exempt from clearance zones since they can be repositioned by any nearby staff member.",
           "Yes. Your medical gas shut-off panels must remain unobstructed at all times. Your workstation within the clearance zone is a finding.",
         ],
@@ -4444,7 +4444,7 @@ const hospitalLevelsRaw: Level[] = [
         question: "A CRNA performing a spinal anesthetic for a C-section asks the circulating RN to monitor the patient's sedation level during the case. Is this arrangement compliant?",
         options: [
           "No. A CRNA must have a separate dedicated observer for patient monitoring during spinal administration.",
-          "Yes. The CRNA assigning the circulating RN as the dedicated monitor satisfies the monitoring requirement.",
+          "Yes. Automated vital-sign monitoring provides continuous objective data during spinal administration, which satisfies the dedicated observer requirement without requiring a separate human monitor.",
           "No. Only a physician anesthesiologist may administer spinal anesthesia in an OR setting.",
           "Yes. The CRNA assigning the circulating RN as the dedicated monitor satisfies the monitoring requirement.",
         ],
@@ -4824,7 +4824,7 @@ const hospitalLevelsRaw: Level[] = [
         question: "Your nurse administers insulin to a patient without checking blood glucose first. The order reads 'Regular Insulin 10 units subcutaneous now.' What risk does this represent?",
         options: [
           "None. The physician ordered the dose without a glucose parameter, so the nurse followed the order correctly and is not responsible for additional assessment steps.",
-          "Administering insulin without verifying current blood glucose risks severe hypoglycemia. Glucose should be checked per protocol before administration.",
+          "Minimal risk. Blood glucose verification is only required for sliding-scale or weight-based insulin orders; a fixed flat-dose written by the attending does not require pre-administration glucose testing.",
           "Administering insulin without verifying current blood glucose risks severe hypoglycemia. Glucose should be checked per protocol before administration.",
           "Risk only exists for sliding-scale insulin orders, not for fixed-dose orders that are written by the attending physician.",
         ],
@@ -4993,7 +4993,7 @@ const hospitalLevelsRaw: Level[] = [
         question: "You remove gloves after patient care and immediately touch the door handle without performing hand hygiene. Which WHO moment was missed?",
         options: [
           "Moment 1 — Before patient contact.",
-          "Moment 4 — After patient contact (including after glove removal).",
+          "Moment 2 — Before a clean or aseptic procedure. Touching a shared surface immediately after glove removal triggers the before-next-procedure moment.",
           "Moment 4 — After patient contact (including after glove removal).",
           "Moment 5 — After contact with patient surroundings."
         ],
@@ -5401,7 +5401,7 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "The catheter should remain in place for at least 7 days post-surgery as standard protocol.",
           "The catheter must be removed when the clinical indication no longer exists. Spontaneous voiding indicates the indication has resolved.",
-          "The catheter must be removed when the clinical indication no longer exists. Spontaneous voiding indicates the indication has resolved.",
+          "The catheter should remain until a post-void residual ultrasound confirms the bladder empties fully. Two spontaneous voids alone do not confirm that post-surgical urinary retention has fully resolved.",
           "The catheter may remain for monitoring urine output even after spontaneous voiding."
         ],
         correctIndex: 1,
@@ -5765,7 +5765,7 @@ const hospitalLevelsRaw: Level[] = [
         question: "During an assessment, your nurse notices patterned bruising on an elderly patient inconsistent with the reported mechanism of injury. What is the nurse's obligation?",
         options: [
           "Document the findings in the chart and wait for the physician to assess and determine next steps before reporting to supervisory channels.",
-          "Report the suspected abuse to the appropriate supervisory and administrative channels per facility policy and state mandatory reporting law.",
+          "Notify the attending physician first and document the finding in detail. Mandatory reporting is the physician's responsibility; the nurse's obligation is thorough documentation and timely notification to the care team.",
           "Report the suspected abuse to the appropriate supervisory and administrative channels per facility policy and state mandatory reporting law.",
           "Take no action unless the patient explicitly states they have been abused or until additional evidence corroborates the initial suspicion of abuse.",
         ],
@@ -6076,7 +6076,7 @@ const hospitalLevelsRaw: Level[] = [
         options: [
           "The nurse should have said 'push' not 'pull' for the pin.",
           "The nurse should aim at the BASE of the fire, not at the flames. Aiming at the base removes the fuel source.",
-          "The nurse should aim at the BASE of the fire, not at the flames. Aiming at the base removes the fuel source.",
+          "The description omitted the 'Sweep' step. PASS requires sweeping side to side at the base; 'spray' is not precise enough to demonstrate competency to a surveyor.",
           "The description is complete and correct — aiming at the flames is the appropriate target."
         ],
         correctIndex: 1,
@@ -6450,7 +6450,7 @@ const hospitalLevelsRaw: Level[] = [
         id: "em5",
         question: "Your hospital in Arizona has an HVA that lists hurricanes as a high-probability, high-impact threat. A surveyor reviews this. What is the concern?",
         options: [
-          "Your HVA is not facility-specific — it appears to be a generic template not based on actual local conditions.",
+          "Your HVA lists hurricanes because JC requires all natural disaster types to be included regardless of local probability; the concern is that the impact rating should be 'low' not 'high' for an inland Arizona facility.",
           "Your HVA is not facility-specific — it appears to be a generic template not based on actual local conditions.",
           "None. JC requires all natural disasters be listed regardless of local probability.",
           "None. Hurricanes in the southwest U.S. are more common than most people realize."
@@ -6978,7 +6978,7 @@ const hospitalLevelsRaw: Level[] = [
         question: "Your hospital's governing board receives patient safety performance data once a year in a brief slide during the annual report. A JC surveyor notes this as a gap. What does the PSS chapter require of the governing body?",
         options: [
           "The governing body must receive patient safety data at least quarterly and must hold leadership accountable for results.",
-          "The governing body must receive patient safety data at least quarterly and must hold leadership accountable for results.",
+          "The governing body must receive patient safety data at least annually; quarterly reporting is a best practice recommendation but not an explicit JC requirement.",
           "The governing body must approve and sign off on every single CSA action plan before submission to the Joint Commission surveyor.",
           "The governing body must designate a dedicated patient safety officer who serves as a permanent voting member of the board.",
         ],
