@@ -1,12 +1,8 @@
 export const POINT_VALUES = {
-  question_correct:            20,
-  flashcard_again:              5,
-  flashcard_hard:               5,
-  flashcard_good:               5,
-  daily_login:                 15,
-  diagnostic_complete:          0,
-  final_complete:             100,
-  final_passed_first_attempt:  50,
+  question_correct:            20,  // correct answers only — incorrect earn zero
+  flashcard_reviewed:          10,  // ALL ratings (Again/Hard/Good) earn same points
+  final_complete:             100,  // flat bonus when final exam submitted
+  final_passed_first_attempt:  50,  // bonus for passing on first attempt
 } as const;
 
 export type PointEventType = keyof typeof POINT_VALUES;

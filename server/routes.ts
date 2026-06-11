@@ -1130,7 +1130,6 @@ export async function registerRoutes(
             for (let i = 0; i < deltaC; i++) {
               await storage.addPointsEvent(userId, facilityId, "question_correct", POINT_VALUES.question_correct, { levelId });
             }
-            await storage.tryAwardDailyLogin(userId, facilityId, today);
           } catch (err) {
             console.error("[Points] quiz session:", err);
           }
@@ -1338,7 +1337,6 @@ export async function registerRoutes(
             for (let i = 0; i < totalCorrect; i++) {
               await storage.addPointsEvent(userId, _ddFacilityId, "question_correct", POINT_VALUES.question_correct, { levelId: data.levelId });
             }
-            await storage.tryAwardDailyLogin(userId, _ddFacilityId, todayCentral);
           } catch (err) {
             console.error("[Points] deep-dive submit:", err);
           }
@@ -2891,7 +2889,6 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
           for (let i = 0; i < score; i++) {
             await storage.addPointsEvent(_dUserId, _dFacilityId, "question_correct", POINT_VALUES.question_correct);
           }
-          await storage.tryAwardDailyLogin(_dUserId, _dFacilityId, _dToday);
         } catch (err) {
           console.error("[Points] diagnostic submit:", err);
         }
@@ -3442,7 +3439,6 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
         for (let i = 0; i < score; i++) {
           await storage.addPointsEvent(_mUserId, _mFacilityId, "question_correct", POINT_VALUES.question_correct);
         }
-        await storage.tryAwardDailyLogin(_mUserId, _mFacilityId, _mToday);
         await storage.addPointsEvent(_mUserId, _mFacilityId, "final_complete", POINT_VALUES.final_complete);
         if (_mPassed && isFirstMasteryAttempt) {
           await storage.addPointsEvent(_mUserId, _mFacilityId, "final_passed_first_attempt", POINT_VALUES.final_passed_first_attempt);
@@ -3528,8 +3524,7 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
       const _fcFacilityId = (req.user! as any).facilityId as number | null ?? null;
       void (async () => {
         try {
-          const eventKey = `flashcard_${rating}` as keyof typeof POINT_VALUES;
-          await storage.addPointsEvent(req.user!.id, _fcFacilityId, eventKey, POINT_VALUES[eventKey], { levelId, cardIndex });
+          await storage.addPointsEvent(req.user!.id, _fcFacilityId, "flashcard_reviewed", POINT_VALUES.flashcard_reviewed, { levelId, cardIndex, rating });
         } catch (err) {
           console.error("[Points] flashcard review:", err);
         }
@@ -5424,24 +5419,18 @@ Return ONLY valid JSON, no other text:
       const userId = req.user!.id;
       const facilityId = (req.user as any).facilityId as number | null ?? null;
 
-      const validEvents = ["question_correct","flashcard_again","flashcard_hard","flashcard_good","final_complete","final_passed_first_attempt"];
+      const validEvents = ["question_correct","flashcard_reviewed","final_complete","final_passed_first_attempt"];
       if (!validEvents.includes(eventType)) {
         return res.status(400).json({ error: "Invalid event type" });
       }
 
       const pointsAwarded = POINT_VALUES[eventType as keyof typeof POINT_VALUES] ?? 0;
-      if (pointsAwarded === 0) return res.json({ pointsAwarded: 0, dailyBonusAwarded: false, totalPoints: await storage.getUserTotalPoints(userId) });
+      if (pointsAwarded === 0) return res.json({ pointsAwarded: 0, totalPoints: await storage.getUserTotalPoints(userId) });
 
       await storage.addPointsEvent(userId, facilityId, eventType, pointsAwarded, { moduleId, questionId, ...metadata });
 
-      let dailyBonusAwarded = false;
-      if (eventType === "question_correct") {
-        const today = toCentralDate(new Date());
-        dailyBonusAwarded = await storage.tryAwardDailyLogin(userId, facilityId, today);
-      }
-
       const totalPoints = await storage.getUserTotalPoints(userId);
-      res.json({ pointsAwarded, dailyBonusAwarded, totalPoints });
+      res.json({ pointsAwarded, totalPoints });
     } catch (err) {
       console.error("POST /api/points/award:", err);
       res.status(500).json({ error: "Failed to award points" });

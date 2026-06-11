@@ -1132,7 +1132,6 @@ export interface IStorage {
 
   // Points Ledger
   addPointsEvent(userId: number, facilityId: number | null, eventType: string, pointsAwarded: number, meta?: Record<string, unknown>): Promise<void>;
-  tryAwardDailyLogin(userId: number, facilityId: number | null, today: string): Promise<boolean>;
   getUserTotalPoints(userId: number, startDate?: Date, endDate?: Date): Promise<number>;
   getFacilityLeaderboard(facilityId: number | null, limit?: number, startDate?: Date, endDate?: Date, orgType?: string): Promise<import("@shared/schema").PointsLeaderboardEntry[]>;
   getStaffEngagement(facilityId: number | null, startDate?: Date, endDate?: Date, orgType?: string): Promise<import("@shared/schema").StaffEngagementEntry[]>;
@@ -2529,33 +2528,7 @@ export class DatabaseStorage implements IStorage {
     }
   }
 
-  async tryAwardDailyLogin(
-    userId: number,
-    facilityId: number | null,
-    today: string,
-  ): Promise<boolean> {
-    const { rows } = await pool.query(
-      `INSERT INTO points_ledger (user_id, facility_id, event_type, points_awarded, metadata)
-       SELECT $1, $2, 'daily_login', $3, $4
-       WHERE NOT EXISTS (
-         SELECT 1 FROM points_ledger
-         WHERE user_id = $1
-           AND event_type = 'daily_login'
-           AND created_at::date = $5::date
-       )
-       RETURNING id`,
-      [userId, facilityId, 15, JSON.stringify({ date: today }), today],
-    );
-    if (rows.length > 0) {
-      await pool.query(
-        `INSERT INTO user_streaks (user_id, total_xp, current_streak, longest_streak)
-         VALUES ($1, 15, 0, 0)
-         ON CONFLICT (user_id) DO UPDATE SET total_xp = user_streaks.total_xp + 15`,
-        [userId],
-      );
-    }
-    return rows.length > 0;
-  }
+
 
   async getUserTotalPoints(
     userId: number,
@@ -2619,7 +2592,7 @@ export class DatabaseStorage implements IStorage {
       `SELECT u.id AS user_id, u.username, u.first_name, u.last_name, u.department,
               COALESCE(SUM(pl.points_awarded), 0) AS total_points,
               COUNT(CASE WHEN pl.event_type = 'question_correct' THEN 1 END) AS questions_correct,
-              COUNT(CASE WHEN pl.event_type IN ('flashcard_again','flashcard_hard','flashcard_good') THEN 1 END) AS flashcards_reviewed,
+              COUNT(CASE WHEN pl.event_type = 'flashcard_reviewed' THEN 1 END) AS flashcards_reviewed,
               COUNT(CASE WHEN pl.event_type = 'final_complete' THEN 1 END) AS finals_completed,
               MAX(pl.created_at) AS last_active,
               CASE
@@ -2681,7 +2654,7 @@ export class DatabaseStorage implements IStorage {
       pool.query(
         `SELECT level_id,
                 COUNT(CASE WHEN event_type = 'question_correct' THEN 1 END)::int AS questions_correct,
-                COUNT(CASE WHEN event_type IN ('flashcard_again','flashcard_hard','flashcard_good') THEN 1 END)::int AS flashcards_reviewed,
+                COUNT(CASE WHEN event_type = 'flashcard_reviewed' THEN 1 END)::int AS flashcards_reviewed,
                 SUM(points_awarded)::int AS level_points
          FROM points_ledger
          WHERE ${dateWhere} AND level_id IS NOT NULL
