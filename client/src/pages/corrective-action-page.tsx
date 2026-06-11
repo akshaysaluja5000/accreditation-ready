@@ -6,7 +6,7 @@ import {
   ArrowLeft, Plus, AlertTriangle, CheckCircle2,
   Clock, X, Calendar, Info, FlaskConical, Database,
   GraduationCap, ShieldCheck, User, ClipboardList,
-  Hospital, Stethoscope, ChevronRight, BookOpen, ShieldAlert,
+  Hospital, Stethoscope, ChevronRight, BookOpen,
   Library, Sparkles, CalendarDays, Loader2, LayoutList,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -165,10 +165,6 @@ function getStepsForScore(
   return [plans[0], plans[1]];
 }
 
-function needsReassessment(score: number): boolean {
-  return score < 50;
-}
-
 // ── UI Helpers ─────────────────────────────────────────────────────────────
 
 function statusConfig(status: PlanStatus) {
@@ -290,14 +286,6 @@ function PlanDirectoryCard({ facilityTypeFilter }: { facilityTypeFilter: "All" |
                     </div>
                   </div>
 
-                  {/* Reassessment note - below 50% */}
-                  <div className="flex items-start gap-2 rounded-xl border border-orange-500/25 bg-orange-500/8 px-3 py-2.5">
-                    <ShieldAlert size={13} className="text-orange-400 flex-shrink-0 mt-0.5" />
-                    <p className="text-xs text-orange-300 font-semibold leading-relaxed">
-                      Score below 50% - Steps 1 + 2 assigned, plus supervisor reassessment required before the plan can be marked Verified.
-                    </p>
-                  </div>
-
                   {/* Step 3 - educator-led reinforcement */}
                   <div className="flex flex-col gap-2">
                     <span className="self-start text-xs font-bold px-2.5 py-0.5 rounded-full bg-muted/60 border border-border text-muted-foreground">
@@ -326,7 +314,7 @@ function PurposeBanner() {
     <div className="rounded-2xl border border-primary/25 bg-primary/6 px-5 py-4" data-testid="banner-purpose">
       <p className="text-sm leading-relaxed text-foreground/80">
         <span className="font-semibold text-foreground/95">Guided Education Plans</span> are assigned when a learner scores below the required passing threshold on the final test.
-        Each plan provides targeted review steps and reinforcement activities. Plans below 50% also require a supervisor reassessment before being marked complete.
+        Each plan provides targeted review steps and reinforcement activities.
       </p>
     </div>
   );
@@ -366,7 +354,7 @@ function HowToReadBox() {
                   <li><span className="font-semibold text-blue-300">Assigned</span> - the guided education plan has been created and assigned</li>
                   <li><span className="font-semibold text-blue-400">In Progress</span> - the learner is completing review or reinforcement steps</li>
                   <li><span className="font-semibold text-green-300">Completed</span> - the learner finished the assigned education activities</li>
-                  <li><span className="font-semibold text-purple-500">Verified</span> - a supervisor or educator confirmed completion</li>
+                  <li><span className="font-semibold text-purple-500">Verified</span> - the educator confirmed completion</li>
                 </ul>
               </div>
               <div>
@@ -379,7 +367,7 @@ function HowToReadBox() {
               </div>
               <div>
                 <p className="font-bold text-foreground/90 mb-1 text-sm uppercase tracking-wide">Assigned Plan</p>
-                <p>The preset educational follow-up selected for the learner's category or chapter. One plan is assigned for scores 60–69%; two plans for scores below 60%. Scores below 50% also require supervisor reassessment before the plan can be verified.</p>
+                <p>The preset educational follow-up selected for the learner's category or chapter. One plan is assigned for scores 60–74%; two plans for scores below 60%.</p>
               </div>
             </div>
           </motion.div>
@@ -393,7 +381,6 @@ function HowToReadBox() {
 
 function StepsPreview({ facilityType, category, score }: { facilityType: "Hospital" | "ASC" | ""; category: string; score: number; }) {
   const steps = getStepsForScore(facilityType, category, score);
-  const reassessment = needsReassessment(score);
   if (!steps.length || !category || !facilityType) return null;
   return (
     <div className="rounded-xl border border-primary/20 bg-primary/5 p-4 flex flex-col gap-3">
@@ -406,12 +393,6 @@ function StepsPreview({ facilityType, category, score }: { facilityType: "Hospit
           <p className="text-xs text-muted-foreground leading-relaxed">{s.description}</p>
         </div>
       ))}
-      {reassessment && (
-        <div className="flex items-start gap-2 rounded-lg bg-orange-500/10 border border-orange-500/25 px-3 py-2">
-          <ShieldAlert size={13} className="text-orange-400 flex-shrink-0 mt-0.5" />
-          <p className="text-xs text-orange-300 font-semibold">Supervisor reassessment required before this plan can be marked Verified.</p>
-        </div>
-      )}
     </div>
   );
 }
@@ -465,8 +446,6 @@ function CreatePlanDialog({
 
   const categoryOptions = facilityType === "Hospital" ? HOSPITAL_CATEGORIES : facilityType === "ASC" ? ASC_CATEGORIES : [];
   const previewSteps = getStepsForScore(facilityType as "Hospital" | "ASC" | "", category, scoreNum);
-  const reassessment = needsReassessment(scoreNum);
-
   const canGeneratePlan = !!(facilityType && category && learner && dueDate && !isNaN(scoreNum) && scoreNum > 0 && scoreNum < 75 && previewSteps.length > 0);
 
   async function handleGeneratePlan() {
@@ -518,7 +497,7 @@ function CreatePlanDialog({
       quizScore: score,
       passingThreshold: PASSING_THRESHOLD,
       remediationSteps: steps,
-      reassessmentRequired: needsReassessment(score),
+      reassessmentRequired: false,
       status: "Assigned",
       assignedDate: new Date().toISOString().split("T")[0],
       dueDate: data.dueDate,
@@ -611,7 +590,6 @@ function CreatePlanDialog({
               {!isNaN(scoreNum) && scoreNum > 0 && scoreNum < 75 && (
                 <p className="text-[11px] text-muted-foreground">
                   {scoreNum >= 60 ? "1 step assigned" : "2 steps assigned"}
-                  {scoreNum < 50 ? " + reassessment required" : ""}
                 </p>
               )}
             </div>
@@ -840,11 +818,6 @@ function PlanCard({
         {overdue && (
           <span className="inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full border bg-red-500/15 border-red-400/30 text-red-400" data-testid={`badge-overdue-${plan.id}`}>
             <AlertTriangle size={11} /> Overdue
-          </span>
-        )}
-        {plan.reassessmentRequired && (
-          <span className="inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full border bg-orange-500/20 border-orange-500/50 text-orange-500" data-testid={`badge-reassessment-${plan.id}`}>
-            <ShieldAlert size={11} /> Reassessment Required
           </span>
         )}
         {showFacility && (
@@ -1110,12 +1083,6 @@ function PlanLibraryDrawer({ open, onClose }: { open: boolean; onClose: () => vo
                     <p className="text-xs text-muted-foreground leading-relaxed">{step.description}</p>
                   </div>
                 ))}
-                {showReassessment && (
-                  <div className="flex items-start gap-2 rounded-lg bg-orange-500/10 border border-orange-500/25 px-3 py-2">
-                    <ShieldAlert size={12} className="text-orange-400 flex-shrink-0 mt-0.5" />
-                    <p className="text-[11px] text-orange-300 font-semibold">Supervisor reassessment required (score below 50%).</p>
-                  </div>
-                )}
               </div>
             ))
           )}
