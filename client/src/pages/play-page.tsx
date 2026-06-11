@@ -252,7 +252,9 @@ export default function PlayPage() {
       } catch (e) {}
     }
     if (!saveProgress && levelId) {
-      deleteSessionMutation.mutate();
+      try {
+        await deleteSessionMutation.mutateAsync();
+      } catch (e) {}
     }
     invalidateDashboardData();
     setShowQuitDialog(false);
