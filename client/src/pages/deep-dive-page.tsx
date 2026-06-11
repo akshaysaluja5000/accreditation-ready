@@ -134,7 +134,9 @@ export default function DeepDivePage() {
 
     if (savedSession && savedSession.questionOrder && savedSession.questionOrder.length > 0) {
       try {
-        const parsed: SavedDeepDiveState = JSON.parse(savedSession.answers || "{}");
+        const rawAnswers = savedSession.answers;
+        const answersStr = typeof rawAnswers === "string" ? rawAnswers : JSON.stringify(rawAnswers ?? {});
+        const parsed: SavedDeepDiveState = JSON.parse(answersStr || "{}");
         if (parsed.gameState && parsed.questionOrder && Array.isArray(parsed.questionOrder)) {
           setQuestionOrder(parsed.questionOrder);
           const migratedAnswers = (parsed.gameState.answers ?? []).map((a: any) => ({

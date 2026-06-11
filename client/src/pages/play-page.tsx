@@ -115,7 +115,10 @@ export default function PlayPage() {
     if (sessionLoaded) return;
 
     if (savedSession && savedSession.questionOrder && savedSession.questionOrder.length > 0) {
-      const savedAnswers: GameState["answers"] = JSON.parse(savedSession.answers || "[]");
+      const rawAnswers = savedSession.answers;
+      const savedAnswers: GameState["answers"] = Array.isArray(rawAnswers)
+        ? rawAnswers
+        : JSON.parse(typeof rawAnswers === "string" ? rawAnswers || "[]" : "[]");
       setQuestionOrder(savedSession.questionOrder);
       setGameState({
         currentQuestion: savedSession.currentQuestion,
