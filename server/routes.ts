@@ -5514,9 +5514,15 @@ Return ONLY valid JSON, no other text:
       if (req.query.end)   endDate   = new Date(req.query.end   as string);
 
       const orgType = (caller as any).organizationType as string | undefined;
-      const LEADERBOARD_EXCLUDED = new Set(["akshaysaluja", "rsaluja"]);
+      const LEADERBOARD_EXCLUDED_USERNAMES = new Set(["akshaysaluja", "rsaluja"]);
+      const LEADERBOARD_EXCLUDED_NAMES = new Set(["Patricia Paulus"]);
       const lb = (await storage.getFacilityLeaderboard(facilityId, 50, startDate, endDate, orgType || "hospital"))
-        .filter((u: any) => !LEADERBOARD_EXCLUDED.has(u.username));
+        .filter((u: any) => {
+          if (LEADERBOARD_EXCLUDED_USERNAMES.has(u.username)) return false;
+          const fullName = `${u.firstName || ""} ${u.lastName || ""}`.trim();
+          if (LEADERBOARD_EXCLUDED_NAMES.has(fullName)) return false;
+          return true;
+        });
       res.json(lb);
     } catch (err) {
       console.error("GET /api/points/leaderboard:", err);
@@ -5545,7 +5551,15 @@ Return ONLY valid JSON, no other text:
       if (req.query.end)   endDate   = new Date(req.query.end   as string);
 
       const orgType = (caller as any).organizationType as string | undefined;
-      const engagement = await storage.getStaffEngagement(facilityId, startDate, endDate, orgType || "hospital");
+      const ENGAGEMENT_EXCLUDED_USERNAMES = new Set(["akshaysaluja", "rsaluja"]);
+      const ENGAGEMENT_EXCLUDED_NAMES = new Set(["Patricia Paulus"]);
+      const engagementRaw = await storage.getStaffEngagement(facilityId, startDate, endDate, orgType || "hospital");
+      const engagement = engagementRaw.filter((u) => {
+        if (ENGAGEMENT_EXCLUDED_USERNAMES.has(u.username)) return false;
+        const fullName = `${u.firstName || ""} ${u.lastName || ""}`.trim();
+        if (ENGAGEMENT_EXCLUDED_NAMES.has(fullName)) return false;
+        return true;
+      });
       res.json(engagement);
     } catch (err) {
       console.error("GET /api/points/staff-engagement:", err);
