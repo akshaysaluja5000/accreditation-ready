@@ -196,9 +196,7 @@ function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
 export default function LeadershipHubPage() {
   const { user } = useAuth();
   const [, setLocation] = useLocation();
-  const [onboardingDismissed, setOnboardingDismissed] = useState<boolean>(() => {
-    try { return localStorage.getItem("ar_compliance_onboarding_done") === "1"; } catch { return false; }
-  });
+  const [onboardingDismissed, setOnboardingDismissed] = useState(false);
 
   const effectiveRole = user ? getEffectiveRole(user) : "learner";
   const effectiveRank = LEADERSHIP_RANK[effectiveRole] ?? 0;
@@ -238,7 +236,6 @@ export default function LeadershipHubPage() {
   const showOnboardingBanner = !settingsLoading && complianceMode !== "full_platform" && !onboardingDismissed && effectiveRank >= LEADERSHIP_RANK["director"];
 
   function dismissOnboarding(enableFull: boolean) {
-    try { localStorage.setItem("ar_compliance_onboarding_done", "1"); } catch {}
     setOnboardingDismissed(true);
     if (enableFull) {
       fetch("/api/admin/facility/compliance-mode", {
