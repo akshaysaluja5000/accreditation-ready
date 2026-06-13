@@ -1703,7 +1703,7 @@ export async function registerRoutes(
         featPool.query(`SELECT (pl.created_at AT TIME ZONE 'America/Chicago')::date::text as day, COUNT(*)::int as cnt FROM points_ledger pl WHERE pl.facility_id = $1 AND pl.event_type = 'question_correct' AND pl.created_at >= NOW() - INTERVAL '7 days' GROUP BY 1 ORDER BY 1`, [facilityId]),
         featPool.query(`SELECT (fr.updated_at AT TIME ZONE 'America/Chicago')::date::text as day, COUNT(*)::int as cnt FROM flashcard_reviews fr JOIN users u ON fr.user_id = u.id WHERE u.facility_id = $1 AND fr.updated_at >= NOW() - INTERVAL '7 days' GROUP BY 1 ORDER BY 1`, [facilityId]),
         featPool.query(`SELECT da.date, COUNT(DISTINCT da.user_id)::int as dau FROM daily_activity da JOIN users u ON da.user_id = u.id WHERE u.facility_id = $1 AND da.date::date >= CURRENT_DATE - INTERVAL '6 days' GROUP BY da.date ORDER BY da.date`, [facilityId]),
-        featPool.query(`SELECT pl.user_id, SUM(pl.points_awarded)::int as week_points FROM points_ledger pl WHERE pl.facility_id = $1 AND pl.created_at >= NOW() - INTERVAL '7 days' GROUP BY pl.user_id ORDER BY week_points DESC LIMIT 3`, [facilityId]),
+        featPool.query(`SELECT pl.user_id, SUM(pl.points_awarded)::int as week_points, u.first_name, u.last_name, r.name as role_name FROM points_ledger pl JOIN users u ON pl.user_id = u.id LEFT JOIN roles r ON u.role_id = r.id WHERE pl.facility_id = $1 AND u.is_admin = false AND u.username NOT IN ('rsaluja','akshaysaluja') AND TRIM(COALESCE(u.first_name,'') || ' ' || COALESCE(u.last_name,'')) <> 'Patricia Paulus' AND pl.created_at >= NOW() - INTERVAL '7 days' GROUP BY pl.user_id, u.first_name, u.last_name, r.name ORDER BY week_points DESC LIMIT 3`, [facilityId]),
         featPool.query(`SELECT name FROM facilities WHERE id = $1`, [facilityId]),
       ]);
 
@@ -1812,10 +1812,12 @@ export async function registerRoutes(
       };
 
       const topPerformers = (topPerfRes.rows as any[]).map((r: any) => {
-        const u = allStaff.find((s: any) => s.id === r.user_id);
         const masteries = masteryByUser.get(r.user_id) || [];
         const lm = masteries.length > 0 ? masteries[masteries.length - 1] : null;
-        return { name: u ? `${u.first_name ? u.first_name[0] + '.' : ''} ${u.last_name}`.trim() : 'Staff', role: u?.role_name || 'Staff', weekPoints: r.week_points, finalScore: lm ? pct(lm.score, lm.total_questions) : null };
+        const firstName = r.first_name || '';
+        const lastName = r.last_name || '';
+        const name = [firstName ? firstName[0] + '.' : '', lastName].filter(Boolean).join(' ') || 'Staff';
+        return { name, role: r.role_name || 'Staff', weekPoints: r.week_points, finalScore: lm ? pct(lm.score, lm.total_questions) : null };
       });
 
       res.json({
