@@ -138,3 +138,57 @@ id = "-VdPSTNcR8jnOeBn2inqW"
 uri = "file://attached_assets/IMG_5140_1778809824135.jpeg"
 type = "image"
 title = "Wall Chart 3 — Medical Equipment & Infection Control"
+
+[[outputs]]
+id = "Ua2fYMFTL_VZ69LXzjYaR"
+uri = "file://attached_assets/Transport_of_Instruments_(2)_1772207074704.pdf"
+type = "pdf"
+title = "Transport of Instruments"
+
+[[outputs]]
+id = "bcYXeWn_966WIOV-ywKqU"
+uri = "file://attached_assets/Sterile_Processing_1772207090609.pdf"
+type = "pdf"
+title = "Sterile Processing"
+
+[[outputs]]
+id = "DPF2WeQ28Y_luha4hjfsQ"
+uri = "file://attached_assets/Infection_Prevention_1772207107907.pdf"
+type = "pdf"
+title = "Infection Prevention"
+
+[[outputs]]
+id = "97RliYo-un3M9mZgXAxVw"
+uri = "file://attached_assets/EOC_Rounding_1772207099749.pdf"
+type = "pdf"
+title = "EOC Rounding"
+
+[[outputs]]
+id = "BdZLrQwWcSIS237GEy6dE"
+uri = "file://attached_assets/Comprehensive_Documentation_1772207082788.pdf"
+type = "pdf"
+title = "Comprehensive Documentation"
+
+[[outputs]]
+id = "fAtfc1G2LQw7fnBGffXUq"
+uri = "file://attached_assets/Surgery_Comprehensive_Documentation_1772207066207.pdf"
+type = "pdf"
+title = "Surgery Comprehensive Documentation"
+
+[[outputs]]
+id = "2WxEk3dpo9V57NQetJuR2"
+uri = "file://attached_assets/Regulatory_Rounding_Surgery_1772207056207.pdf"
+type = "pdf"
+title = "Regulatory Rounding Surgery"
+
+[[outputs]]
+id = "GXCyYpzGZhsvxHr6QC2pb"
+uri = "file://attached_assets/AAAHC_v42_Handbook_MDS_FINAL_2023_1777493030397.pdf"
+type = "pdf"
+title = "AAAHC Handbook v42 (ASC module source)"
+
+[[outputs]]
+id = "l6VlfR0vZtcm99mqDQLIO"
+uri = "file://attached_assets/DNV_NIAHO_requirements_and_interpretive_guidelines_25-1_update_1778875991964.pdf"
+type = "pdf"
+title = "DNV NIAHO Requirements & Interpretive Guidelines (DNV module source)"
