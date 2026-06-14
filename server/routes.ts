@@ -2642,6 +2642,14 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
         const progress = await storage.getProgress(user.id);
         if (!progress.length) continue;
 
+        const totalQ = progress.reduce((s, p) => s + p.totalQuestions, 0);
+        const totalC = progress.reduce((s, p) => s + Math.min(p.score, p.totalQuestions), 0);
+        const overallAccuracy = totalQ > 0 ? Math.round((totalC / totalQ) * 100) : 0;
+
+        // Only flag users whose OVERALL accuracy is below 75% — per-topic dips on an
+        // otherwise high-performing learner do not constitute a "below passing threshold" finding.
+        if (overallAccuracy >= 75) continue;
+
         const levelAccuracies = progress
           .map((p) => {
             const accuracy = p.totalQuestions > 0 ? Math.round((p.score / p.totalQuestions) * 100) : 0;
@@ -2649,12 +2657,6 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
             return { levelId: p.levelId, accuracy, mapped };
           })
           .filter((p) => p.accuracy < 75 && p.mapped);
-
-        if (!levelAccuracies.length) continue;
-
-        const totalQ = progress.reduce((s, p) => s + p.totalQuestions, 0);
-        const totalC = progress.reduce((s, p) => s + Math.min(p.score, p.totalQuestions), 0);
-        const overallAccuracy = totalQ > 0 ? Math.round((totalC / totalQ) * 100) : 0;
 
         const sorted = [...levelAccuracies].sort((a, b) => a.accuracy - b.accuracy);
 
