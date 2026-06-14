@@ -1398,14 +1398,17 @@ export async function registerRoutes(
         ["dnv", new Set(dnvLvls.map((l) => l.id))],
       ]);
 
-      const LEADERBOARD_EXCLUDED = new Set(["akshaysaluja", "rsaluja"]);
+      const LEADERBOARD_EXCLUDED_USERNAMES = new Set(["akshaysaluja", "rsaluja"]);
+      const LEADERBOARD_EXCLUDED_NAMES = new Set(["Patricia Paulus"]);
       const currentOrgType = currentUser.organizationType || "hospital";
       const allUsersRaw = await storage.getAllUsers();
-      const allUsers = allUsersRaw.filter((u) =>
-        facilityFilter(u) &&
-        !LEADERBOARD_EXCLUDED.has(u.username) &&
-        (u.organizationType || "hospital") === currentOrgType
-      );
+      const allUsers = allUsersRaw.filter((u) => {
+        const fullName = `${u.firstName || ""} ${u.lastName || ""}`.trim();
+        return facilityFilter(u) &&
+          !LEADERBOARD_EXCLUDED_USERNAMES.has(u.username) &&
+          !LEADERBOARD_EXCLUDED_NAMES.has(fullName) &&
+          (u.organizationType || "hospital") === currentOrgType;
+      });
       const userIds = allUsers.map(u => u.id);
       const [allStreaks, allSessions, allProgressFlat] = await Promise.all([
         storage.getStreaksForUsers(userIds),
