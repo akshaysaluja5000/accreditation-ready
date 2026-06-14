@@ -2,12 +2,13 @@ import { useState } from "react";
 import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  ArrowLeft, BarChart3, TrendingUp, GraduationCap, BrainCircuit,
+  ArrowLeft, BarChart3, TrendingUp, GraduationCap,
   Users, Building2, Stethoscope, ChevronRight, ShieldCheck,
   ClipboardList, FileText, Lock, AlertTriangle, Bot, Globe, Briefcase, Zap,
   FolderOpen, Star, Brain, BookOpen,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AiLeadershipCoach } from "@/components/ai-leadership-coach";
 import { useAuth } from "@/lib/auth";
 import { useQuery } from "@tanstack/react-query";
 import { LEADERSHIP_LABELS } from "@shared/schema";
@@ -179,18 +180,6 @@ function getConsoleCards(activeStandardsBody: string): ConsoleCard[] { return [
     href: "/corrective-actions",
     minRole: "director",
   },
-  {
-    id: "ai-coach",
-    title: "AI Leadership Coach",
-    description: "AI-generated readiness summaries, staff performance insights, and recommended focus areas.",
-    icon: BrainCircuit,
-    iconBg: "bg-chart-4/10",
-    iconColor: "text-chart-4",
-    href: "/admin",
-    minRole: "director",
-    badge: "AI",
-  },
-
 ];}
 
 export default function LeadershipHubPage() {
@@ -559,6 +548,17 @@ export default function LeadershipHubPage() {
                 })}
               </div>
             )}
+          </motion.div>
+        )}
+
+        {/* AI Leadership Coach (director+) */}
+        {effectiveRank >= LEADERSHIP_RANK["director"] && (
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            data-testid="section-ai-leadership-coach"
+          >
+            <AiLeadershipCoach />
           </motion.div>
         )}
 
