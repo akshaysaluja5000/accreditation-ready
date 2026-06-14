@@ -1697,9 +1697,9 @@ export async function registerRoutes(
       const [
         usersRes, diagRes, masteryRes, lastActiveRes, quizUserRes,
         qCorrectRes, flashcardRes, dauRes, qSparkRes, fcSparkRes,
-        dauSparkRes, topPerfRes, facilityRes,
+        dauSparkRes, topPerfRes, facilityRes, quizStatsRes, fcPerUserRes,
       ] = await Promise.all([
-        featPool.query(`SELECT u.id, u.first_name, u.last_name, u.leadership_role, r.name as role_name, r.department as role_dept FROM users u LEFT JOIN roles r ON u.role_id = r.id WHERE u.facility_id = $1 AND u.is_admin = false ORDER BY u.id`, [facilityId]),
+        featPool.query(`SELECT u.id, u.first_name, u.last_name, u.leadership_role, r.name as role_name, r.department as role_dept FROM users u LEFT JOIN roles r ON u.role_id = r.id WHERE u.facility_id = $1 AND u.is_admin = false AND u.username NOT IN ('rsaluja','akshaysaluja') AND TRIM(COALESCE(u.first_name,'') || ' ' || COALESCE(u.last_name,'')) <> 'Patricia Paulus' ORDER BY u.id`, [facilityId]),
         featPool.query(`SELECT DISTINCT ON (dr.user_id) dr.user_id, dr.score, dr.total_questions FROM diagnostic_results dr JOIN users u ON dr.user_id = u.id WHERE u.facility_id = $1 ORDER BY dr.user_id, dr.completed_at ASC`, [facilityId]),
         featPool.query(`SELECT mr.user_id, mr.score, mr.total_questions, ROW_NUMBER() OVER (PARTITION BY mr.user_id ORDER BY mr.completed_at ASC) as attempt_num FROM mastery_results mr JOIN users u ON mr.user_id = u.id WHERE u.facility_id = $1 ORDER BY mr.user_id, mr.completed_at`, [facilityId]),
         featPool.query(`SELECT da.user_id, MAX(da.date) as last_active FROM daily_activity da JOIN users u ON da.user_id = u.id WHERE u.facility_id = $1 GROUP BY da.user_id`, [facilityId]),
@@ -1712,6 +1712,8 @@ export async function registerRoutes(
         featPool.query(`SELECT da.date, COUNT(DISTINCT da.user_id)::int as dau FROM daily_activity da JOIN users u ON da.user_id = u.id WHERE u.facility_id = $1 AND da.date::date >= CURRENT_DATE - INTERVAL '6 days' GROUP BY da.date ORDER BY da.date`, [facilityId]),
         featPool.query(`SELECT pl.user_id, SUM(pl.points_awarded)::int as week_points, u.first_name, u.last_name, r.name as role_name FROM points_ledger pl JOIN users u ON pl.user_id = u.id LEFT JOIN roles r ON u.role_id = r.id WHERE pl.facility_id = $1 AND u.is_admin = false AND u.username NOT IN ('rsaluja','akshaysaluja') AND TRIM(COALESCE(u.first_name,'') || ' ' || COALESCE(u.last_name,'')) <> 'Patricia Paulus' AND pl.created_at >= NOW() - INTERVAL '7 days' GROUP BY pl.user_id, u.first_name, u.last_name, r.name ORDER BY week_points DESC LIMIT 3`, [facilityId]),
         featPool.query(`SELECT name FROM facilities WHERE id = $1`, [facilityId]),
+        featPool.query(`SELECT qs.user_id, COUNT(*)::int as quiz_count, COALESCE(SUM(qs.score),0)::int as score_sum, COALESCE(SUM(qs.total_questions),0)::int as questions_sum FROM quiz_sessions qs JOIN users u ON qs.user_id = u.id WHERE u.facility_id = $1 AND u.is_admin = false GROUP BY qs.user_id`, [facilityId]),
+        featPool.query(`SELECT fr.user_id, COUNT(*)::int as fc_count FROM flashcard_reviews fr JOIN users u ON fr.user_id = u.id WHERE u.facility_id = $1 GROUP BY fr.user_id`, [facilityId]),
       ]);
 
       const allStaff: any[] = usersRes.rows;
@@ -1729,6 +1731,16 @@ export async function registerRoutes(
       const lastActiveByUser = new Map<number, string>();
       for (const r of lastActiveRes.rows as any[]) lastActiveByUser.set(r.user_id, r.last_active);
       const quizUsers = new Set<number>((quizUserRes.rows as any[]).map((r: any) => r.user_id));
+
+      const quizStatsByUser = new Map<number, { quizCount: number; quizAccuracy: number | null }>();
+      for (const r of quizStatsRes.rows as any[]) {
+        quizStatsByUser.set(r.user_id, {
+          quizCount: r.quiz_count,
+          quizAccuracy: r.questions_sum > 0 ? Math.round((r.score_sum / r.questions_sum) * 100) : null,
+        });
+      }
+      const fcCountByUser = new Map<number, number>();
+      for (const r of fcPerUserRes.rows as any[]) fcCountByUser.set(r.user_id, r.fc_count);
 
       const daysSince = (d: string | null | undefined): number => {
         if (!d) return 9999;
@@ -1775,7 +1787,8 @@ export async function registerRoutes(
         else if (diagDone && latestScore === null) priority = 3;
         else if (finalPassed) priority = 4;
         const name = [u.first_name ? u.first_name[0] + '.' : '', u.last_name].filter(Boolean).join(' ') || 'Staff';
-        staffList.push({ id: u.id, name, role: u.role_name || 'Staff', diagDone, finalDone: latestScore !== null, finalScore: latestScore, engagement, priority });
+        const qs = quizStatsByUser.get(u.id);
+        staffList.push({ id: u.id, name, role: u.role_name || 'Staff', diagDone, finalDone: latestScore !== null, finalScore: latestScore, engagement, priority, quizCount: qs?.quizCount || 0, fcCount: fcCountByUser.get(u.id) || 0, quizAccuracy: qs?.quizAccuracy ?? null });
         const dept = u.role_dept || 'Other';
         const role = u.role_name || 'Staff';
         if (!deptRoleMap.has(dept)) deptRoleMap.set(dept, new Map());
