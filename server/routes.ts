@@ -1668,6 +1668,10 @@ export async function registerRoutes(
         };
       }).sort((a, b) => b.totalXp - a.totalXp);
 
+      const averageAccuracy = totalQuestionsAnswered > 0
+        ? Math.round((totalCorrect / totalQuestionsAnswered) * 100)
+        : 0;
+
       res.json({
         totalUsers: allUsers.length,
         activeToday,

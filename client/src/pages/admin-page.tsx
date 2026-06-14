@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
-import { ArrowLeft, Users, TrendingUp, Target, BarChart3, Calendar, UserPlus, Shield, ScrollText, FlaskConical, Database, Building2, BookOpen, ShieldCheck, PowerOff, GitCommit, Trash2, AlertCircle } from "lucide-react";
+import { ArrowLeft, Users, TrendingUp, Target, BarChart3, Calendar, UserPlus, Shield, ScrollText, FlaskConical, Database, BookOpen, ShieldCheck, PowerOff, GitCommit, Trash2, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useAuth } from "@/lib/auth";
@@ -413,49 +413,46 @@ export default function AdminPage() {
 
       {callerRank >= LEADERSHIP_RANK["director"] && dataMode === "live" && (
         <div className="max-w-4xl mx-auto px-4 mt-6">
-          <div className="rounded-2xl bg-card border border-card-border overflow-hidden" data-testid="container-facility-settings">
+          <div className="rounded-2xl bg-card border border-card-border overflow-hidden" data-testid="container-compliance-mode">
             <div className="p-5 border-b border-card-border flex items-center gap-2">
-              <Building2 size={18} className="text-primary" />
-              <h3 className="font-bold text-base">Facility Settings</h3>
+              <ShieldCheck size={18} className="text-primary" />
+              <h3 className="font-bold text-base">Compliance Management Mode</h3>
               <span className="ml-auto text-xs text-muted-foreground font-medium">Platform Mode</span>
             </div>
-            <div className="p-5 flex flex-col gap-4">
-              <div>
-                <p className="text-sm font-semibold text-foreground mb-1">Compliance Management Mode</p>
-                <p className="text-xs text-muted-foreground leading-relaxed mb-4">
-                  Controls which features are visible to your leadership team. <strong>Education Only</strong> shows training tools only. <strong>Full Platform</strong> adds Survey Readiness, Compliance Tasks, Regulatory Watch, and all AI compliance agents.
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  {[
-                    { value: "education_only", label: "Education Only", desc: "Training tools only - quizzes, flashcards, reports.", Icon: BookOpen, color: "text-blue-600", bg: "bg-blue-500/10", border: "border-blue-500/40" },
-                    { value: "full_platform", label: "Full Platform", desc: "Education + all compliance management tools.", Icon: ShieldCheck, color: "text-emerald-600", bg: "bg-emerald-500/10", border: "border-emerald-500/40" },
-                    { value: "off", label: "Off", desc: "Compliance tools disabled and hidden for all users.", Icon: PowerOff, color: "text-muted-foreground", bg: "bg-muted/40", border: "border-border" },
-                  ].map(({ value, label, desc, Icon, color, bg, border }) => {
-                    const isActive = (facilitySettings?.complianceMode ?? "education_only") === value;
-                    return (
-                      <button
-                        key={value}
-                        data-testid={`button-compliance-mode-${value}`}
-                        disabled={complianceModeMutation.isPending}
-                        onClick={() => complianceModeMutation.mutate(value)}
-                        className={`rounded-xl border-2 p-4 text-left flex flex-col gap-2 transition-all ${
-                          isActive
-                            ? `${border} ${bg}`
-                            : "border-border bg-background hover:border-border/80 hover:bg-muted/20"
-                        } ${complianceModeMutation.isPending ? "opacity-60 cursor-not-allowed" : "cursor-pointer"}`}
-                      >
-                        <div className="flex items-center gap-2">
-                          <Icon size={16} className={isActive ? color : "text-muted-foreground"} />
-                          <span className={`text-sm font-bold ${isActive ? "text-foreground" : "text-muted-foreground"}`}>{label}</span>
-                          {isActive && (
-                            <span className={`ml-auto text-[10px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded ${bg} ${color}`}>Active</span>
-                          )}
-                        </div>
-                        <p className="text-xs text-muted-foreground leading-snug">{desc}</p>
-                      </button>
-                    );
-                  })}
-                </div>
+            <div className="p-5">
+              <p className="text-xs text-muted-foreground leading-relaxed mb-4">
+                Controls which features are visible to your leadership team. <strong>Education Only</strong> shows training tools only. <strong>Full Platform</strong> adds Survey Readiness, Compliance Tasks, Regulatory Watch, and all AI compliance agents.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {[
+                  { value: "education_only", label: "Education Only", desc: "Training tools only - quizzes, flashcards, reports.", Icon: BookOpen, color: "text-blue-600", bg: "bg-blue-500/10", border: "border-blue-500/40" },
+                  { value: "full_platform", label: "Full Platform", desc: "Education + all compliance management tools.", Icon: ShieldCheck, color: "text-emerald-600", bg: "bg-emerald-500/10", border: "border-emerald-500/40" },
+                  { value: "off", label: "Off", desc: "Compliance tools disabled and hidden for all users.", Icon: PowerOff, color: "text-muted-foreground", bg: "bg-muted/40", border: "border-border" },
+                ].map(({ value, label, desc, Icon, color, bg, border }) => {
+                  const isActive = (facilitySettings?.complianceMode ?? "education_only") === value;
+                  return (
+                    <button
+                      key={value}
+                      data-testid={`button-compliance-mode-${value}`}
+                      disabled={complianceModeMutation.isPending}
+                      onClick={() => complianceModeMutation.mutate(value)}
+                      className={`rounded-xl border-2 p-4 text-left flex flex-col gap-2 transition-all ${
+                        isActive
+                          ? `${border} ${bg}`
+                          : "border-border bg-background hover:border-border/80 hover:bg-muted/20"
+                      } ${complianceModeMutation.isPending ? "opacity-60 cursor-not-allowed" : "cursor-pointer"}`}
+                    >
+                      <div className="flex items-center gap-2">
+                        <Icon size={16} className={isActive ? color : "text-muted-foreground"} />
+                        <span className={`text-sm font-bold ${isActive ? "text-foreground" : "text-muted-foreground"}`}>{label}</span>
+                        {isActive && (
+                          <span className={`ml-auto text-[10px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded ${bg} ${color}`}>Active</span>
+                        )}
+                      </div>
+                      <p className="text-xs text-muted-foreground leading-snug">{desc}</p>
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
