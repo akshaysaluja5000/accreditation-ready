@@ -1434,7 +1434,8 @@ export async function registerRoutes(
       } else {
         periodStartTs = "2000-01-01T00:00:00"; // all-time
       }
-      const [{ rows: plRows }, { rows: fcRows }] = await Promise.all([
+      const periodStartDate = periodStartTs.slice(0, 10); // YYYY-MM-DD for daily_activity filter
+      const [{ rows: plRows }, { rows: fcRows }, { rows: daRows }] = await Promise.all([
         dbPool.query<{ user_id: number; total_points: number }>(
           `SELECT user_id, COALESCE(SUM(points_awarded), 0)::int AS total_points
            FROM points_ledger
@@ -1450,6 +1451,15 @@ export async function registerRoutes(
            GROUP BY user_id`,
           [periodStartTs],
         ),
+        dbPool.query<{ user_id: number; total_q: number; total_c: number }>(
+          `SELECT user_id,
+             COALESCE(SUM(questions_answered), 0)::int AS total_q,
+             COALESCE(SUM(correct_answers), 0)::int AS total_c
+           FROM daily_activity
+           WHERE date >= $1
+           GROUP BY user_id`,
+          [periodStartDate],
+        ),
       ]);
       const periodActivityByUser = new Map<number, number>();
       for (const r of plRows) {
@@ -1458,6 +1468,12 @@ export async function registerRoutes(
       const flashcardCountByUser = new Map<number, number>();
       for (const r of fcRows) {
         flashcardCountByUser.set(r.user_id, r.fc_count);
+      }
+      // daily_activity is the floor: captures diagnostic, mastery, and regular quiz questions
+      // that quiz_sessions/user_progress may not record (e.g. users who only did the diagnostic).
+      const dailyActivityByUser = new Map<number, { total_q: number; total_c: number }>();
+      for (const r of daRows) {
+        dailyActivityByUser.set(r.user_id, { total_q: r.total_q, total_c: r.total_c });
       }
 
       const streakMap = new Map(allStreaks.map((s) => [s.userId, s]));
@@ -1471,8 +1487,15 @@ export async function registerRoutes(
         const userSessions = (sessionsByUser.get(u.id) || []).filter((s) => moduleLevelIds.has(s.levelId));
         const userProgress = (progressByUser.get(u.id) || []).filter((p) => moduleLevelIds.has(p.levelId));
 
-        const { questionsAnswered, correct, accuracy, levelsCompleted, inProgressSessions } = computeUserActivityStats(userProgress, userSessions);
-        // Always use daily_activity sum — the authoritative quiz XP source
+        const { questionsAnswered: computedQ, correct: computedC, levelsCompleted, inProgressSessions } = computeUserActivityStats(userProgress, userSessions);
+        // Use daily_activity as a floor so users who only did diagnostics/mastery exams
+        // (which don't write to quiz_sessions) still show real question counts.
+        const da = dailyActivityByUser.get(u.id);
+        const questionsAnswered = Math.max(computedQ, da?.total_q || 0);
+        const correct = Math.max(computedC, da?.total_c || 0);
+        const accuracy = questionsAnswered > 0 ? Math.min(100, Math.round((correct / questionsAnswered) * 100)) : 0;
+
+        // Always use points_ledger as the authoritative XP source
         const allTimeXp = periodActivityByUser.get(u.id) || 0;
         const periodXp = allTimeXp;
 
