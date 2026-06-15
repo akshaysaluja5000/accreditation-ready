@@ -1487,16 +1487,17 @@ export async function registerRoutes(
         const userSessions = (sessionsByUser.get(u.id) || []).filter((s) => moduleLevelIds.has(s.levelId));
         const userProgress = (progressByUser.get(u.id) || []).filter((p) => moduleLevelIds.has(p.levelId));
 
-        const { questionsAnswered: computedQ, correct: computedC, levelsCompleted, inProgressSessions } = computeUserActivityStats(userProgress, userSessions);
-        // Use daily_activity as a fallback PAIR when it has more questions than quiz_sessions.
-        // Must treat as a pair — never mix numerator from one source with denominator from another
-        // or accuracy will be artificially low.
+        const { questionsAnswered: computedQ, correct: computedC, accuracy: computedAccuracy, levelsCompleted, inProgressSessions } = computeUserActivityStats(userProgress, userSessions);
+        // daily_activity.questions_answered captures diagnostic + mastery + level quiz,
+        // so use it as a floor for the Qs DISPLAY COUNT only.
+        // daily_activity.correct_answers is not reliably populated, so NEVER use it for
+        // accuracy — always derive accuracy from user_progress.score via computeUserActivityStats.
         const da = dailyActivityByUser.get(u.id);
         const daQ = da?.total_q || 0;
-        const daC = da?.total_c || 0;
-        const questionsAnswered = daQ > computedQ ? daQ : computedQ;
-        const correct = daQ > computedQ ? daC : computedC;
-        const accuracy = questionsAnswered > 0 ? Math.min(100, Math.round((correct / questionsAnswered) * 100)) : 0;
+        const questionsAnswered = Math.max(computedQ, daQ);
+        // Accuracy stays anchored to the computed source (user_progress.score is reliable).
+        // For users with 0 computedQ (diagnostic-only), accuracy shows 0 — honest.
+        const accuracy = computedAccuracy;
 
         // Always use points_ledger as the authoritative XP source
         const allTimeXp = periodActivityByUser.get(u.id) || 0;
