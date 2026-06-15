@@ -1488,11 +1488,14 @@ export async function registerRoutes(
         const userProgress = (progressByUser.get(u.id) || []).filter((p) => moduleLevelIds.has(p.levelId));
 
         const { questionsAnswered: computedQ, correct: computedC, levelsCompleted, inProgressSessions } = computeUserActivityStats(userProgress, userSessions);
-        // Use daily_activity as a floor so users who only did diagnostics/mastery exams
-        // (which don't write to quiz_sessions) still show real question counts.
+        // Use daily_activity as a fallback PAIR when it has more questions than quiz_sessions.
+        // Must treat as a pair — never mix numerator from one source with denominator from another
+        // or accuracy will be artificially low.
         const da = dailyActivityByUser.get(u.id);
-        const questionsAnswered = Math.max(computedQ, da?.total_q || 0);
-        const correct = Math.max(computedC, da?.total_c || 0);
+        const daQ = da?.total_q || 0;
+        const daC = da?.total_c || 0;
+        const questionsAnswered = daQ > computedQ ? daQ : computedQ;
+        const correct = daQ > computedQ ? daC : computedC;
         const accuracy = questionsAnswered > 0 ? Math.min(100, Math.round((correct / questionsAnswered) * 100)) : 0;
 
         // Always use points_ledger as the authoritative XP source
