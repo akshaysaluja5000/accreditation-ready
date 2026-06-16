@@ -17,15 +17,24 @@ export function getLevelsForModule(module: ModuleId): Level[] {
 export function getVisibleLevelsForModule(
   module: ModuleId,
   opts: { includeDraft?: boolean } = {},
+  allowedModuleIds?: string[],
 ): Level[] {
   const levels = getLevelsForModule(module);
-  if (opts.includeDraft) return levels;
-  return levels
-    .filter((l) => !l.draft)
-    .map((l) => ({
-      ...l,
-      questions: l.questions.filter((q) => !q.draft),
-    }));
+  const visible = opts.includeDraft
+    ? levels
+    : levels
+        .filter((l) => !l.draft)
+        .map((l) => ({
+          ...l,
+          questions: l.questions.filter((q) => !q.draft),
+        }));
+
+  if (module === "asc" && allowedModuleIds && allowedModuleIds.length > 0) {
+    const allowedSet = new Set(allowedModuleIds);
+    return visible.filter((l) => allowedSet.has(l.id));
+  }
+
+  return visible;
 }
 
 export function getVisibleLevelsForAscRole(

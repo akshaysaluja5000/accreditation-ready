@@ -42,6 +42,7 @@ interface AscDashData {
     text: string;
     time: string;
   }[];
+  allowedModuleIds: string[] | null;
 }
 
 function relTime(iso: string): string {
