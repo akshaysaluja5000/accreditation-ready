@@ -104,7 +104,7 @@ declare module "express-session" {
 import type { ModuleId } from "@shared/schema";
 import type { AscPretestQuestion } from "@shared/asc-pretest";
 import type { MasteryQuestion } from "@shared/mastery-questions";
-import { getRoleConfig, ROLE_CONFIGS, ASC_ROLE_MODULE_MAP } from "@shared/roles";
+import { getRoleConfig, ROLE_CONFIGS, ASC_ROLE_MODULE_MAP, rolesForFacility } from "@shared/roles";
 
 function getFacilityFilter(user: User | undefined | null): (other: { facilityId: number | null }) => boolean {
   // super_admin can see all facilities; all other roles are scoped to their own facility
@@ -1905,6 +1905,26 @@ export async function registerRoutes(
       const facilityId = (adminUser as any).facilityId as number | null;
       if (!facilityId) return res.status(400).json({ error: "No facility associated with your account." });
 
+      // Derive the requesting admin's ASC role and its allowed module IDs.
+      // If the admin has no job-based ASC role (or their role has no allowedModules), allowedModuleIds
+      // stays empty and filtering is skipped — they see the full set.
+      let allowedModuleIds: string[] = [];
+      if ((adminUser as any).roleId) {
+        const roleSlugRes = await featPool.query<{ slug: string }>(
+          "SELECT slug FROM roles WHERE id = $1",
+          [(adminUser as any).roleId],
+        );
+        const adminRoleSlug = roleSlugRes.rows[0]?.slug ?? "";
+        const userAscRole = rolesForFacility("asc").find((r) => r.id === adminRoleSlug);
+        allowedModuleIds = userAscRole?.allowedModules ?? [];
+      }
+
+      // Build a set of uppercase prefixes for fast matching against standard_code values
+      // like "EMG.100", "FAC.150". Prefix = first segment before "." or "-".
+      const allowedPrefixes = allowedModuleIds.length > 0
+        ? new Set(allowedModuleIds.map((m) => m.replace("asc_", "").toUpperCase()))
+        : null; // null = no restriction
+
       const surveyTarget = new Date("2026-10-01T00:00:00");
       const nowDate = new Date();
       const daysUntilWindow = Math.max(0, Math.ceil((surveyTarget.getTime() - nowDate.getTime()) / 86400000));
@@ -1987,9 +2007,18 @@ export async function registerRoutes(
         return { name: r.item_name, standard: r.standard_code, detail, status };
       });
 
-      const overdueItems = policyItems.filter((p: any) => p.status === "overdue");
-      const policiesScore = policyItems.length > 0
-        ? pct(policyItems.filter((p: any) => p.status === "current").length, policyItems.length)
+      // Apply role-scoped module filter to compliance items. allowedPrefixes is null when the
+      // admin has no job-based ASC role restriction — in that case the full list is shown.
+      const filteredPolicyItems = allowedPrefixes
+        ? policyItems.filter((p: any) => {
+            const prefix = (p.standard as string).split(/[.\-]/)[0].toUpperCase();
+            return allowedPrefixes.has(prefix);
+          })
+        : policyItems;
+
+      const overdueItems = filteredPolicyItems.filter((p: any) => p.status === "overdue");
+      const policiesScore = filteredPolicyItems.length > 0
+        ? pct(filteredPolicyItems.filter((p: any) => p.status === "current").length, filteredPolicyItems.length)
         : null;
       const overall = policiesScore !== null
         ? Math.round(staffTraining * 0.6 + policiesScore * 0.4)
@@ -2058,8 +2087,9 @@ export async function registerRoutes(
           incompleteTraining: { count: totalNotCompleted, items: incompleteItems },
         },
         roleTraining,
-        policyStatus: policyItems.slice(0, 8),
+        policyStatus: filteredPolicyItems.slice(0, 8),
         recentActivity,
+        allowedModuleIds: allowedModuleIds.length > 0 ? allowedModuleIds : null,
       });
     } catch (err: any) {
       console.error("[AscDashboard]", err?.message);
