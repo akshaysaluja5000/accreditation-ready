@@ -552,6 +552,46 @@ export const ROLE_CONFIGS: RoleConfig[] = [
 
 ];
 
+// ==========================================================================
+// ASC ROLE → MODULE ASSIGNMENT MAP
+// Maps each ASC staff role key to the ordered list of ASC module IDs
+// that role should study. Hospital and DNV roles are NOT represented here.
+// ==========================================================================
+export const ASC_ROLE_MODULE_MAP: Record<string, string[]> = {
+
+  // 5 modules — basic safety and universal standards only
+  "evs":          ["asc_emg", "asc_fac", "asc_ipc", "asc_prr", "asc_saf"],
+
+  // 8 modules — patient-facing admin + universal standards
+  "front_desk":   ["asc_adm", "asc_cmc", "asc_cri", "asc_emg",
+                   "asc_fac", "asc_ipc", "asc_ocs", "asc_prr"],
+
+  // 8 modules — OR-focused + universal standards
+  "surgical_tech":["asc_asg", "asc_cmc", "asc_emg", "asc_fac",
+                   "asc_ipc", "asc_prr", "asc_qua", "asc_saf"],
+
+  // 7 modules — sterile processing focus
+  "spd":          ["asc_asg", "asc_emg", "asc_fac", "asc_ipc",
+                   "asc_prr", "asc_qua", "asc_saf"],
+
+  // 11 modules — full clinical except credentialing/governance
+  "anesthesia":   ["asc_asg", "asc_cmc", "asc_cri", "asc_emg",
+                   "asc_fac", "asc_ipc", "asc_lrs", "asc_med",
+                   "asc_prr", "asc_qua", "asc_saf"],
+
+  // 12 modules — full clinical scope
+  "nursing_pacu": ["asc_adm", "asc_asg", "asc_cmc", "asc_cri",
+                   "asc_emg", "asc_fac", "asc_ipc", "asc_lrs",
+                   "asc_med", "asc_prr", "asc_qua", "asc_saf"],
+
+  // 17 modules — all modules, no exceptions
+  "leadership":   ["asc_adm", "asc_asg", "asc_beh", "asc_cmc",
+                   "asc_cp",  "asc_cri", "asc_emg", "asc_fac",
+                   "asc_gov", "asc_ipc", "asc_lrs", "asc_med",
+                   "asc_ocs", "asc_prr", "asc_qua", "asc_saf",
+                   "asc_val"]
+};
+
 export const DEPARTMENT_ORDER_BY_FACILITY: Record<FacilityType, string[]> = {
   hospital: [
     "Operating Room",
