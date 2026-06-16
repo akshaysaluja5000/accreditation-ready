@@ -16,7 +16,7 @@ import { useAuth } from "@/lib/auth";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import { useMutation } from "@tanstack/react-query";
 import type { UserStreak, UserProgress, DailyActivity, QuizSession, DiagnosticResult } from "@shared/schema";
-import { getVisibleLevelsForModule, findLevelById } from "@shared/all-levels";
+import { getVisibleLevelsForModule, getVisibleLevelsForAscRole, findLevelById } from "@shared/all-levels";
 import { ascHandbook, ASC_HANDBOOK_CATEGORY_ORDER, type AscHandbookChapter } from "@shared/asc-handbook";
 import { MODULE_LABELS, type ModuleId } from "@shared/schema";
 import { getRoleConfig } from "@shared/roles";
@@ -304,7 +304,12 @@ export default function DashboardPage() {
   const userModule: ModuleId = (user?.organizationType as ModuleId) || "hospital";
   const isAsc = userModule === "asc";
   const isDnv = userModule === "dnv";
-  const moduleLevels = getVisibleLevelsForModule(userModule);
+  const ascRoleSlug = isAsc && user?.roleId
+    ? (rolesList?.find((r) => r.id === user!.roleId)?.slug ?? "")
+    : "";
+  const moduleLevels = isAsc
+    ? getVisibleLevelsForAscRole(ascRoleSlug)
+    : getVisibleLevelsForModule(userModule);
 
   // Hospital users still respect role-based assigned chapters. ASC/DNV users always see every chapter.
   const assignedFilteredLevels = (isAsc || isDnv)
@@ -326,7 +331,12 @@ export default function DashboardPage() {
   // Module-scoped XP: only count XP earned on levels in the current module (hospital vs ASC).
   // Quiz sessions persist past completion with their final xpEarned value, so summing per-module
   // sessions is the correct module-specific total without leaking the other module's XP.
-  const moduleLevelIdSet = new Set(getVisibleLevelsForModule(userModule, { includeDraft: true }).map((l) => l.id));
+  const moduleLevelIdSet = new Set(
+    (isAsc
+      ? getVisibleLevelsForAscRole(ascRoleSlug, { includeDraft: true })
+      : getVisibleLevelsForModule(userModule, { includeDraft: true })
+    ).map((l) => l.id)
+  );
   const displayXp = savedSessions
     ?.filter((s) => moduleLevelIdSet.has(s.levelId))
     .reduce((sum, s) => sum + (s.xpEarned || 0), 0) || 0;

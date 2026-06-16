@@ -104,7 +104,7 @@ declare module "express-session" {
 import type { ModuleId } from "@shared/schema";
 import type { AscPretestQuestion } from "@shared/asc-pretest";
 import type { MasteryQuestion } from "@shared/mastery-questions";
-import { getRoleConfig, ROLE_CONFIGS } from "@shared/roles";
+import { getRoleConfig, ROLE_CONFIGS, ASC_ROLE_MODULE_MAP } from "@shared/roles";
 
 function getFacilityFilter(user: User | undefined | null): (other: { facilityId: number | null }) => boolean {
   // super_admin can see all facilities; all other roles are scoped to their own facility
@@ -317,6 +317,22 @@ async function getModuleLevelsForUser(userId: number) {
   const user = await storage.getUser(userId);
   if (!user) return storage.getLevelsByModule("hospital");
   const module: ModuleId = (user.organizationType as ModuleId) || "hospital";
+
+  if (module === "asc" && user.roleId) {
+    const allAscLevels = await storage.getLevelsByModule("asc");
+    const { rows } = await featPool.query<{ slug: string }>(
+      "SELECT slug FROM roles WHERE id = $1",
+      [user.roleId],
+    );
+    const slug = rows[0]?.slug ?? "";
+    const allowed = ASC_ROLE_MODULE_MAP[slug as keyof typeof ASC_ROLE_MODULE_MAP];
+    if (allowed && allowed.length > 0) {
+      const allowedSet = new Set(allowed);
+      return allAscLevels.filter((l) => allowedSet.has(l.id));
+    }
+    return allAscLevels;
+  }
+
   return storage.getLevelsByModule(module);
 }
 

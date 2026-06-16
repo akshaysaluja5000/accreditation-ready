@@ -2,6 +2,7 @@ import type { Level, ModuleId } from "./schema";
 import { hospitalLevels } from "./questions";
 import { ascLevels } from "./asc-questions";
 import { dnvLevels } from "./dnv-niaho-questions";
+import { ASC_ROLE_MODULE_MAP } from "./roles";
 
 export const levelsByModule: Record<ModuleId, Level[]> = {
   hospital: hospitalLevels,
@@ -25,6 +26,17 @@ export function getVisibleLevelsForModule(
       ...l,
       questions: l.questions.filter((q) => !q.draft),
     }));
+}
+
+export function getVisibleLevelsForAscRole(
+  roleSlug: string,
+  opts: { includeDraft?: boolean } = {},
+): Level[] {
+  const all = getVisibleLevelsForModule("asc", opts);
+  const allowed = ASC_ROLE_MODULE_MAP[roleSlug as keyof typeof ASC_ROLE_MODULE_MAP];
+  if (!allowed || allowed.length === 0) return all;
+  const allowedSet = new Set(allowed);
+  return all.filter((l) => allowedSet.has(l.id));
 }
 
 export function getAllLevels(): Level[] {
