@@ -579,8 +579,8 @@ export const ROLE_CONFIGS: RoleConfig[] = [
     destinationRoute: "/play/asc_adm",
     firstModuleId: "asc_adm",
     reportingScope: "own_department",
-    chapters: ["asc_adm", "asc_cmc", "asc_cri", "asc_emg", "asc_fac", "asc_ipc", "asc_ocs", "asc_prr"],
-    allowedModules: ["asc_adm", "asc_cmc", "asc_cri", "asc_emg", "asc_fac", "asc_ipc", "asc_ocs", "asc_prr"],
+    chapters: ["asc_adm", "asc_cmc", "asc_crd", "asc_emg", "asc_fac", "asc_ipc", "asc_ocs", "asc_prr"],
+    allowedModules: ["asc_adm", "asc_cmc", "asc_crd", "asc_emg", "asc_fac", "asc_ipc", "asc_ocs", "asc_prr"],
   },
   {
     id: "surgical_tech",
@@ -618,8 +618,8 @@ export const ROLE_CONFIGS: RoleConfig[] = [
     destinationRoute: "/play/asc_asg",
     firstModuleId: "asc_asg",
     reportingScope: "own_department",
-    chapters: ["asc_asg", "asc_cmc", "asc_cri", "asc_emg", "asc_fac", "asc_ipc", "asc_lrs", "asc_med", "asc_prr", "asc_qua", "asc_saf"],
-    allowedModules: ["asc_asg", "asc_cmc", "asc_cri", "asc_emg", "asc_fac", "asc_ipc", "asc_lrs", "asc_med", "asc_prr", "asc_qua", "asc_saf"],
+    chapters: ["asc_asg", "asc_cmc", "asc_crd", "asc_emg", "asc_fac", "asc_ipc", "asc_lrd", "asc_med", "asc_prr", "asc_qua", "asc_saf"],
+    allowedModules: ["asc_asg", "asc_cmc", "asc_crd", "asc_emg", "asc_fac", "asc_ipc", "asc_lrd", "asc_med", "asc_prr", "asc_qua", "asc_saf"],
   },
   {
     id: "nursing_pacu",
@@ -631,8 +631,8 @@ export const ROLE_CONFIGS: RoleConfig[] = [
     destinationRoute: "/play/asc_adm",
     firstModuleId: "asc_adm",
     reportingScope: "own_department",
-    chapters: ["asc_adm", "asc_asg", "asc_cmc", "asc_cri", "asc_emg", "asc_fac", "asc_ipc", "asc_lrs", "asc_med", "asc_prr", "asc_qua", "asc_saf"],
-    allowedModules: ["asc_adm", "asc_asg", "asc_cmc", "asc_cri", "asc_emg", "asc_fac", "asc_ipc", "asc_lrs", "asc_med", "asc_prr", "asc_qua", "asc_saf"],
+    chapters: ["asc_adm", "asc_asg", "asc_cmc", "asc_crd", "asc_emg", "asc_fac", "asc_ipc", "asc_lrd", "asc_med", "asc_prr", "asc_qua", "asc_saf"],
+    allowedModules: ["asc_adm", "asc_asg", "asc_cmc", "asc_crd", "asc_emg", "asc_fac", "asc_ipc", "asc_lrd", "asc_med", "asc_prr", "asc_qua", "asc_saf"],
   },
   {
     id: "leadership",
@@ -644,8 +644,8 @@ export const ROLE_CONFIGS: RoleConfig[] = [
     destinationRoute: "/play/asc_adm",
     firstModuleId: "asc_adm",
     reportingScope: "enterprise",
-    chapters: ["asc_adm", "asc_asg", "asc_beh", "asc_cmc", "asc_cp", "asc_cri", "asc_emg", "asc_fac", "asc_gov", "asc_ipc", "asc_lrs", "asc_med", "asc_ocs", "asc_prr", "asc_qua", "asc_saf", "asc_val"],
-    allowedModules: ["asc_adm", "asc_asg", "asc_beh", "asc_cmc", "asc_cp", "asc_cri", "asc_emg", "asc_fac", "asc_gov", "asc_ipc", "asc_lrs", "asc_med", "asc_ocs", "asc_prr", "asc_qua", "asc_saf", "asc_val"],
+    chapters: ["asc_adm", "asc_asg", "asc_beh", "asc_cmc", "asc_cpv", "asc_crd", "asc_emg", "asc_fac", "asc_gov", "asc_ipc", "asc_lrd", "asc_med", "asc_ocs", "asc_prr", "asc_qua", "asc_saf", "asc_val"],
+    allowedModules: ["asc_adm", "asc_asg", "asc_beh", "asc_cmc", "asc_cpv", "asc_crd", "asc_emg", "asc_fac", "asc_gov", "asc_ipc", "asc_lrd", "asc_med", "asc_ocs", "asc_prr", "asc_qua", "asc_saf", "asc_val"],
   },
 
 ];
@@ -661,7 +661,7 @@ export const ASC_ROLE_MODULE_MAP: Record<string, string[]> = {
   "evs":          ["asc_emg", "asc_fac", "asc_ipc", "asc_prr", "asc_saf"],
 
   // 8 modules — patient-facing admin + universal standards
-  "front_desk":   ["asc_adm", "asc_cmc", "asc_cri", "asc_emg",
+  "front_desk":   ["asc_adm", "asc_cmc", "asc_crd", "asc_emg",
                    "asc_fac", "asc_ipc", "asc_ocs", "asc_prr"],
 
   // 8 modules — OR-focused + universal standards
@@ -673,19 +673,19 @@ export const ASC_ROLE_MODULE_MAP: Record<string, string[]> = {
                    "asc_prr", "asc_qua", "asc_saf"],
 
   // 11 modules — full clinical except credentialing/governance
-  "anesthesia":   ["asc_asg", "asc_cmc", "asc_cri", "asc_emg",
-                   "asc_fac", "asc_ipc", "asc_lrs", "asc_med",
+  "anesthesia":   ["asc_asg", "asc_cmc", "asc_crd", "asc_emg",
+                   "asc_fac", "asc_ipc", "asc_lrd", "asc_med",
                    "asc_prr", "asc_qua", "asc_saf"],
 
   // 12 modules — full clinical scope
-  "nursing_pacu": ["asc_adm", "asc_asg", "asc_cmc", "asc_cri",
-                   "asc_emg", "asc_fac", "asc_ipc", "asc_lrs",
+  "nursing_pacu": ["asc_adm", "asc_asg", "asc_cmc", "asc_crd",
+                   "asc_emg", "asc_fac", "asc_ipc", "asc_lrd",
                    "asc_med", "asc_prr", "asc_qua", "asc_saf"],
 
   // 17 modules — all modules, no exceptions
   "leadership":   ["asc_adm", "asc_asg", "asc_beh", "asc_cmc",
-                   "asc_cp",  "asc_cri", "asc_emg", "asc_fac",
-                   "asc_gov", "asc_ipc", "asc_lrs", "asc_med",
+                   "asc_cpv", "asc_crd", "asc_emg", "asc_fac",
+                   "asc_gov", "asc_ipc", "asc_lrd", "asc_med",
                    "asc_ocs", "asc_prr", "asc_qua", "asc_saf",
                    "asc_val"]
 };
