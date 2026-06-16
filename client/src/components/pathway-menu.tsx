@@ -78,6 +78,10 @@ export function PathwayMenu({
       queryClient.invalidateQueries({ queryKey: ["/api/asc-posttest/results"] });
       queryClient.invalidateQueries({ queryKey: ["/api/dnv-pretest/results"] });
       queryClient.invalidateQueries({ queryKey: ["/api/dnv-posttest/results"] });
+      // Clear module-scoped queries so switching org type always fetches fresh data
+      queryClient.invalidateQueries({ queryKey: ["/api/game/leaderboard"] });
+      queryClient.invalidateQueries({ queryKey: ["/api/admin/stats"] });
+      queryClient.invalidateQueries({ queryKey: ["/api/points/staff-engagement"] });
       setLocation("/");
       const label = PATHWAYS.find(p => p.module === updatedUser?.organizationType)?.title ?? "your facility";
       toast({ title: "Switched facility", description: `Now viewing ${label}.` });

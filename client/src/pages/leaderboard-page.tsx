@@ -54,7 +54,7 @@ export default function LeaderboardPage() {
   const [period, setPeriod] = useState<Period>("all");
 
   const { data: leaderboard, isLoading } = useQuery<LeaderboardEntry[]>({
-    queryKey: ["/api/game/leaderboard", period],
+    queryKey: ["/api/game/leaderboard", period, user?.organizationType ?? "hospital"],
     queryFn: () =>
       fetch(`/api/game/leaderboard?period=${period}`, { credentials: "include" }).then((r) => r.json()),
   });
