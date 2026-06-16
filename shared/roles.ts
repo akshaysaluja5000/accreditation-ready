@@ -15,6 +15,7 @@ export interface RoleConfig {
   firstModuleId: string;
   reportingScope: ReportingScope;
   chapters: string[];
+  allowedModules?: string[];
   restricted?: boolean;
 }
 
@@ -548,6 +549,103 @@ export const ROLE_CONFIGS: RoleConfig[] = [
     firstModuleId: "asc_val",
     reportingScope: "own_department",
     chapters: ["asc_val"],
+  },
+
+  // ==========================================================================
+  // ASC JOB-BASED ROLES — each maps to the full set of modules relevant to
+  // that staff role. allowedModules drives both the dashboard card list and
+  // the server-side quiz level filter (getModuleLevelsForUser).
+  // ==========================================================================
+  {
+    id: "evs",
+    facilityType: "asc",
+    department: "AAAHC Standards",
+    title: "EVS / Environmental Services",
+    description: "Emergency preparedness, facility safety, infection prevention, patient rights, and safety program",
+    scope: "DEPT",
+    destinationRoute: "/play/asc_emg",
+    firstModuleId: "asc_emg",
+    reportingScope: "own_department",
+    chapters: ["asc_emg", "asc_fac", "asc_ipc", "asc_prr", "asc_saf"],
+    allowedModules: ["asc_emg", "asc_fac", "asc_ipc", "asc_prr", "asc_saf"],
+  },
+  {
+    id: "front_desk",
+    facilityType: "asc",
+    department: "AAAHC Standards",
+    title: "Front Desk / Registration",
+    description: "Administration, care coordination, clinical records, emergency management, facility safety, infection prevention, other clinical services, and patient rights",
+    scope: "DEPT",
+    destinationRoute: "/play/asc_adm",
+    firstModuleId: "asc_adm",
+    reportingScope: "own_department",
+    chapters: ["asc_adm", "asc_cmc", "asc_cri", "asc_emg", "asc_fac", "asc_ipc", "asc_ocs", "asc_prr"],
+    allowedModules: ["asc_adm", "asc_cmc", "asc_cri", "asc_emg", "asc_fac", "asc_ipc", "asc_ocs", "asc_prr"],
+  },
+  {
+    id: "surgical_tech",
+    facilityType: "asc",
+    department: "AAAHC Standards",
+    title: "Surgical Technologist",
+    description: "Anesthesia and surgical services, care management, emergency management, facility safety, infection prevention, patient rights, quality, and safety",
+    scope: "DEPT",
+    destinationRoute: "/play/asc_asg",
+    firstModuleId: "asc_asg",
+    reportingScope: "own_department",
+    chapters: ["asc_asg", "asc_cmc", "asc_emg", "asc_fac", "asc_ipc", "asc_prr", "asc_qua", "asc_saf"],
+    allowedModules: ["asc_asg", "asc_cmc", "asc_emg", "asc_fac", "asc_ipc", "asc_prr", "asc_qua", "asc_saf"],
+  },
+  {
+    id: "spd",
+    facilityType: "asc",
+    department: "AAAHC Standards",
+    title: "SPD / Sterile Processing",
+    description: "Surgical services support, emergency management, facility controls, infection prevention, patient rights, quality, and safety",
+    scope: "DEPT",
+    destinationRoute: "/play/asc_asg",
+    firstModuleId: "asc_asg",
+    reportingScope: "own_department",
+    chapters: ["asc_asg", "asc_emg", "asc_fac", "asc_ipc", "asc_prr", "asc_qua", "asc_saf"],
+    allowedModules: ["asc_asg", "asc_emg", "asc_fac", "asc_ipc", "asc_prr", "asc_qua", "asc_saf"],
+  },
+  {
+    id: "anesthesia",
+    facilityType: "asc",
+    department: "AAAHC Standards",
+    title: "Anesthesia / CRNA",
+    description: "Surgical services, care management, clinical records, emergency management, facility safety, infection prevention, lab and radiology, medications, patient rights, quality, and safety",
+    scope: "DEPT",
+    destinationRoute: "/play/asc_asg",
+    firstModuleId: "asc_asg",
+    reportingScope: "own_department",
+    chapters: ["asc_asg", "asc_cmc", "asc_cri", "asc_emg", "asc_fac", "asc_ipc", "asc_lrs", "asc_med", "asc_prr", "asc_qua", "asc_saf"],
+    allowedModules: ["asc_asg", "asc_cmc", "asc_cri", "asc_emg", "asc_fac", "asc_ipc", "asc_lrs", "asc_med", "asc_prr", "asc_qua", "asc_saf"],
+  },
+  {
+    id: "nursing_pacu",
+    facilityType: "asc",
+    department: "AAAHC Standards",
+    title: "Nursing / PACU",
+    description: "Full clinical scope — administration, surgical services, care management, clinical records, emergency management, facility safety, infection prevention, lab and radiology, medications, patient rights, quality, and safety",
+    scope: "DEPT",
+    destinationRoute: "/play/asc_adm",
+    firstModuleId: "asc_adm",
+    reportingScope: "own_department",
+    chapters: ["asc_adm", "asc_asg", "asc_cmc", "asc_cri", "asc_emg", "asc_fac", "asc_ipc", "asc_lrs", "asc_med", "asc_prr", "asc_qua", "asc_saf"],
+    allowedModules: ["asc_adm", "asc_asg", "asc_cmc", "asc_cri", "asc_emg", "asc_fac", "asc_ipc", "asc_lrs", "asc_med", "asc_prr", "asc_qua", "asc_saf"],
+  },
+  {
+    id: "leadership",
+    facilityType: "asc",
+    department: "AAAHC Standards",
+    title: "Leadership / Administration",
+    description: "Full standards scope across all 17 AAAHC chapters — governance, credentialing, quality, compliance, and all clinical domains",
+    scope: "FULL",
+    destinationRoute: "/play/asc_adm",
+    firstModuleId: "asc_adm",
+    reportingScope: "enterprise",
+    chapters: ["asc_adm", "asc_asg", "asc_beh", "asc_cmc", "asc_cp", "asc_cri", "asc_emg", "asc_fac", "asc_gov", "asc_ipc", "asc_lrs", "asc_med", "asc_ocs", "asc_prr", "asc_qua", "asc_saf", "asc_val"],
+    allowedModules: ["asc_adm", "asc_asg", "asc_beh", "asc_cmc", "asc_cp", "asc_cri", "asc_emg", "asc_fac", "asc_gov", "asc_ipc", "asc_lrs", "asc_med", "asc_ocs", "asc_prr", "asc_qua", "asc_saf", "asc_val"],
   },
 
 ];
