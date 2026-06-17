@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "@/lib/auth";
 import { useLocation } from "wouter";
+import { useEffect } from "react";
 import { format } from "date-fns";
 import {
   ChevronLeft, Users, BookOpen, CheckCircle2, XCircle,
@@ -81,7 +82,11 @@ function initials(user: any) {
 export default function HospitalDashboardPage() {
   const { user } = useAuth();
   const [, setLocation] = useLocation();
-  const { data: D, isLoading, error } = useQuery<DashData>({ queryKey: ["/api/admin/hospital-dashboard"] });
+  const { data: D, isLoading, error } = useQuery<DashData>({ queryKey: ["/api/admin/hospital-dashboard"], retry: 1 });
+
+  useEffect(() => {
+    if (error) setLocation("/leadership");
+  }, [error]);
 
   const now = new Date();
   const hour = now.getHours();
@@ -95,18 +100,7 @@ export default function HospitalDashboardPage() {
   const fcSpark = D?.bottomStats.flashcardsSparkline || Array(7).fill(0);
   const dauSpark = D?.bottomStats.dauSparkline || Array(7).fill(0);
 
-  if (error) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-center space-y-3">
-          <div className="text-4xl">⚠️</div>
-          <p className="font-semibold text-destructive">Unable to load dashboard</p>
-          <p className="text-sm text-muted-foreground">Check your connection or MFA status</p>
-          <Button variant="outline" onClick={() => setLocation("/leadership")}>Back to Console</Button>
-        </div>
-      </div>
-    );
-  }
+  if (error) return null;
 
   return (
     <div className="min-h-screen bg-background" data-testid="hospital-dashboard">

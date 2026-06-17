@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "@/lib/auth";
 import { useLocation } from "wouter";
+import { useEffect } from "react";
 import { format } from "date-fns";
 
 interface AscDashData {
@@ -325,7 +326,11 @@ const CSS = `
 export default function AscDashboardPage() {
   const { user } = useAuth();
   const [, setLocation] = useLocation();
-  const { data: D, isLoading, error } = useQuery<AscDashData>({ queryKey: ["/api/admin/asc-dashboard"] });
+  const { data: D, isLoading, error } = useQuery<AscDashData>({ queryKey: ["/api/admin/asc-dashboard"], retry: 1 });
+
+  useEffect(() => {
+    if (error) setLocation("/leadership");
+  }, [error]);
 
   const now = new Date();
   const hour = now.getHours();
@@ -344,20 +349,7 @@ export default function AscDashboardPage() {
       ? "Several items need attention. Review the sections below to improve your readiness score."
       : "Your facility has compliance gaps that require immediate action before the survey window opens.";
 
-  if (error) {
-    return (
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", minHeight: "100vh", background: "#F2F5F9", fontFamily: "'DM Sans', sans-serif" }}>
-        <div style={{ textAlign: "center" }}>
-          <div style={{ fontSize: 48, marginBottom: 12 }}>⚠️</div>
-          <div style={{ fontSize: 16, fontWeight: 600, color: "#B93333" }}>Unable to load dashboard</div>
-          <div style={{ fontSize: 13, color: "#6B7C96", marginTop: 6 }}>Check your connection or MFA status</div>
-          <button onClick={() => setLocation("/leadership")} style={{ marginTop: 16, padding: "8px 20px", background: "#1B2A4A", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", fontSize: 13 }}>
-            Back to Console
-          </button>
-        </div>
-      </div>
-    );
-  }
+  if (error) return null;
 
   return (
     <div className="asc-db" data-testid="asc-dashboard">
