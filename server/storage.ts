@@ -627,27 +627,21 @@ export async function ensureTablesExist() {
         AND f.code = '482601'
         AND (users.organization_type = 'hospital' OR users.organization_type IS NULL)
     `);
-    // Normalize org type within each facility: update any user whose org type
-    // differs from the majority in their facility so that teammates always see
-    // each other on the leaderboard and in admin views.
+    // NOTE: The facility-majority org-type normalization was removed.
+    // It overwrote valid ASC users' org_type at mixed-type facilities (e.g. MOSH).
+    // Each user's org_type is set at registration via the auto-infer query and
+    // must not be overwritten on subsequent boots.
+    //
+    // Recovery: restore org_type = 'asc' for any user whose assigned role has
+    // department = 'AAAHC Standards'. This undoes any damage from the old normalization
+    // without touching hospital or DNV users.
     await client.query(`
-      WITH facility_majority AS (
-        SELECT DISTINCT ON (facility_id)
-          facility_id,
-          organization_type
-        FROM (
-          SELECT facility_id, organization_type, COUNT(*) AS cnt
-          FROM users
-          WHERE facility_id IS NOT NULL AND organization_type IS NOT NULL
-          GROUP BY facility_id, organization_type
-        ) ranked
-        ORDER BY facility_id, cnt DESC, organization_type
-      )
-      UPDATE users
-      SET organization_type = fm.organization_type
-      FROM facility_majority fm
-      WHERE users.facility_id = fm.facility_id
-        AND users.organization_type IS DISTINCT FROM fm.organization_type
+      UPDATE users u
+      SET organization_type = 'asc'
+      FROM roles r
+      WHERE u.role_id = r.id
+        AND r.department = 'AAAHC Standards'
+        AND (u.organization_type IS NULL OR u.organization_type != 'asc')
     `);
     // Sync total_xp from points_ledger — the single source of truth for all earned points.
     // points_ledger is written server-side for every quiz answer, flashcard review, etc.

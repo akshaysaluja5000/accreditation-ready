@@ -1431,8 +1431,7 @@ export async function registerRoutes(
         const fullName = `${u.firstName || ""} ${u.lastName || ""}`.trim();
         return facilityFilter(u) &&
           !LEADERBOARD_EXCLUDED_USERNAMES.has(u.username) &&
-          !LEADERBOARD_EXCLUDED_NAMES.has(fullName) &&
-          (u.organizationType || "hospital") === currentOrgType;
+          !LEADERBOARD_EXCLUDED_NAMES.has(fullName);
       });
       const userIds = allUsers.map(u => u.id);
       const [allStreaks, allSessions, allProgressFlat] = await Promise.all([
