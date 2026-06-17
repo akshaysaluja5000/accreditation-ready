@@ -84,7 +84,19 @@ function freqDotColor(freq: string): string {
   return "bg-slate-300";
 }
 
+const ANNUAL_FREQUENCIES = new Set(["Annually", "Biennially", "Triennially", "Quadrennially", "Quinquennially"]);
+
 function MonthGrid({ frequency }: { frequency: string }) {
+  // Annual+ frequencies don't subdivide by month — show a single "once per year" dot
+  if (ANNUAL_FREQUENCIES.has(frequency)) {
+    const dotColor = freqDotColor(frequency);
+    return (
+      <div className="flex items-center gap-2 mt-1.5">
+        <div className={`w-3 h-3 rounded-full ${dotColor}`} />
+        <span className="text-[10px] text-muted-foreground">Once per year</span>
+      </div>
+    );
+  }
   const dots = FREQ_MONTH_DOTS[frequency] ?? [];
   const dotColor = freqDotColor(frequency);
   if (dots.length === 0) {
