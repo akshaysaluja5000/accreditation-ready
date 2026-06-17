@@ -1059,6 +1059,29 @@ export default function DashboardPage() {
 
               {isAsc ? (
                 <div className="flex flex-col gap-6">
+                  {/* ASC role banner */}
+                  {ascRoleSlug ? (
+                    <div className="flex flex-wrap items-center gap-3 mb-0 px-4 py-3 rounded-xl bg-muted border border-border" data-testid="text-asc-role-banner">
+                      <Briefcase size={16} className="text-muted-foreground flex-shrink-0" />
+                      <p className="text-sm flex-1 min-w-[180px] text-foreground">
+                        Showing <span className="font-semibold">{assignedFilteredLevels.length}</span> level{assignedFilteredLevels.length === 1 ? "" : "s"} for your role:{" "}
+                        <span className="font-semibold">{getRoleConfig(ascRoleSlug)?.title || ascRoleSlug}</span>
+                      </p>
+                      <Button variant="outline" size="sm" data-testid="button-asc-change-role" onClick={() => setLocation("/role-select")}>
+                        Change role
+                      </Button>
+                    </div>
+                  ) : (
+                    <div className="flex flex-wrap items-center gap-3 px-4 py-3 rounded-xl bg-amber-50 border border-amber-200" data-testid="text-asc-role-prompt">
+                      <Briefcase size={16} className="text-amber-600 flex-shrink-0" />
+                      <p className="text-sm flex-1 min-w-[180px] text-foreground">
+                        <span className="font-semibold">Select your role</span> to see only the modules assigned to your position.
+                      </p>
+                      <Button variant="outline" size="sm" data-testid="button-asc-select-role" onClick={() => setLocation("/role-select")}>
+                        Select role
+                      </Button>
+                    </div>
+                  )}
                   {ascChapterGroups.map(({ category, chapters }) => (
                     <div key={category} className="flex flex-col gap-3" data-testid={`group-dashboard-${category.toLowerCase().replace(/\s+/g, "-")}`}>
                       <div className="flex items-baseline justify-between px-1">

@@ -168,6 +168,7 @@ export default function RoleSelectPage() {
     const all = rolesForFacility(facilityType);
     const rv = facilityFlags?.roleVisibility;
     return all.filter((r) => {
+      if (r.id.endsWith("_track")) return false; // chapter-track roles not shown in picker
       if (r.id === "facilities_maint") return rv?.facilities_maintenance === true;
       if (r.id === "preadmission_nurse") return rv?.preadmission_testing_nurse === true;
       return true;
@@ -175,7 +176,11 @@ export default function RoleSelectPage() {
   }, [facilityType, facilityFlags]);
   const visibleIds = useMemo(() => new Set(visibleRoles.map((r) => r.id)), [visibleRoles]);
 
-  const [step, setStep] = useState<1 | 2>(() => user?.roleId ? 2 : 1);
+  const [step, setStep] = useState<1 | 2>(() => {
+    if (user?.roleId) return 2;
+    if ((user?.organizationType as FacilityType) === "asc") return 2;
+    return 1;
+  });
 
   // Determine initial facility selection:
   // - Returning users (have a roleId): pre-select their current facility.
