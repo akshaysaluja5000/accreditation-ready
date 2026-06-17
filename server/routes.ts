@@ -119,6 +119,14 @@ function getOrganizationTypeFilter(user: User | undefined | null): (other: { org
   return (other) => (other.organizationType ?? "hospital") === orgType;
 }
 
+// Combined filter: facility AND org type. Use this everywhere a user list is
+// returned to admins so hospital users never bleed into ASC views (same facilityId).
+function getUserScopeFilter(user: User | undefined | null): (other: { facilityId: number | null; organizationType: string | null }) => boolean {
+  const byFacility = getFacilityFilter(user);
+  const byOrgType = getOrganizationTypeFilter(user);
+  return (other) => byFacility(other) && byOrgType(other);
+}
+
 function getAnthropicClient() {
   const apiKey = process.env.AI_INTEGRATIONS_ANTHROPIC_API_KEY || process.env.ANTHROPIC_API_KEY || "replit-ai-integration";
   const baseURL = process.env.AI_INTEGRATIONS_ANTHROPIC_BASE_URL;
@@ -927,7 +935,8 @@ export async function registerRoutes(
   app.get("/api/admin/export/users-csv", requireLeadershipRole("ceo"), requireMfa, async (req, res) => {
     try {
       await serverAuditLog(req, "users_csv_export_server");
-      const allUsers = await storage.getAllUsers();
+      const allUsersRaw = await storage.getAllUsers();
+      const allUsers = allUsersRaw.filter(getUserScopeFilter(req.user as User));
       const allStreaks = await storage.getAllStreaks();
       const streakMap = new Map(allStreaks.map((s) => [s.userId, s]));
       const rows = allUsers.map((u) => {
@@ -1638,9 +1647,8 @@ export async function registerRoutes(
   app.get("/api/admin/stats", requireLeadershipRole("director"), requireMfa, async (req, res) => {
     try {
       const adminUser = req.user as User;
-      const facilityFilter = getFacilityFilter(adminUser);
       const allUsersRaw = await storage.getAllUsers();
-      const allUsers = allUsersRaw.filter(facilityFilter);
+      const allUsers = allUsersRaw.filter(getUserScopeFilter(adminUser));
       const statsUserIds = allUsers.map(u => u.id);
       const [allStreaks, allActivities, allSessions, allProgressFlat] = await Promise.all([
         storage.getStreaksForUsers(statsUserIds),
@@ -2317,7 +2325,7 @@ Give ONE actionable takeaway in 2 sentences about what great ${orgLabel}s do dif
     try {
       const adminUser = req.user as User;
       const allUsersRaw = await storage.getAllUsers();
-      const allUsers = allUsersRaw.filter(getFacilityFilter(adminUser));
+      const allUsers = allUsersRaw.filter(getUserScopeFilter(adminUser));
       const aiInsightsUserIds = allUsers.map(u => u.id);
       const aiProgressFlat = await storage.getProgressForUsers(aiInsightsUserIds);
       const aiProgressByUser = groupById(aiProgressFlat);
@@ -2683,7 +2691,7 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
   app.get("/api/admin/weak-learners", requireLeadershipRole("director"), async (req: Request, res: Response) => {
     try {
       const adminUser = req.user as User;
-      const facilityFilter = getFacilityFilter(adminUser);
+      const facilityFilter = getUserScopeFilter(adminUser);
 
       const LEVEL_TO_CATEGORY: Record<string, { category: string; facilityType: "Hospital" | "ASC" }> = {
         transport:            { category: "Transport of Instruments",       facilityType: "Hospital" },
@@ -3930,7 +3938,7 @@ Return ONLY valid JSON (no markdown, no explanation):
       const callerRank = LEADERSHIP_RANK[getEffectiveLeadershipRole(caller)] ?? 0;
 
       const allUsersRaw = await storage.getAllUsers();
-      const facilityFilter = getFacilityFilter(caller);
+      const facilityFilter = getUserScopeFilter(caller);
       let team = allUsersRaw.filter(facilityFilter);
 
       // Educators (rank 1) see only their own department; directors+ see all
