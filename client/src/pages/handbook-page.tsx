@@ -123,7 +123,8 @@ function SectionCard({ section, levelColor, index }: { section: HandbookSection;
 
 function ChapterView({ chapter, onBack }: { chapter: HandbookChapter; onBack: () => void }) {
   const [, setLocation] = useLocation();
-  const level = findLevelById(chapter.levelId);
+  const quizLevelId = chapter.levelId.replace("_hb_", "_");
+  const level = findLevelById(quizLevelId);
   const color = level?.color || "hsl(152, 82%, 39%)";
   const [showQuickRef, setShowQuickRef] = useState(false);
 
@@ -145,7 +146,7 @@ function ChapterView({ chapter, onBack }: { chapter: HandbookChapter; onBack: ()
           <Button
             variant="default"
             size="sm"
-            onClick={() => setLocation(`/play/${chapter.levelId}`)}
+            onClick={() => setLocation(`/play/${quizLevelId}`)}
             data-testid="button-chapter-quiz"
           >
             <Play size={14} className="mr-1" />
