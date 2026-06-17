@@ -632,16 +632,13 @@ export async function ensureTablesExist() {
     // Each user's org_type is set at registration via the auto-infer query and
     // must not be overwritten on subsequent boots.
     //
-    // Recovery: restore org_type = 'asc' for any user whose assigned role has
-    // department = 'AAAHC Standards'. This undoes any damage from the old normalization
-    // without touching hospital or DNV users.
+    // One-time fix: a previous recovery migration incorrectly set Sheila Gansemer's
+    // organization_type to 'asc'. She is a hospital/JCAHO user and must stay 'hospital'.
     await client.query(`
-      UPDATE users u
-      SET organization_type = 'asc'
-      FROM roles r
-      WHERE u.role_id = r.id
-        AND r.department = 'AAAHC Standards'
-        AND (u.organization_type IS NULL OR u.organization_type != 'asc')
+      UPDATE users
+      SET organization_type = 'hospital'
+      WHERE first_name = 'Sheila' AND last_name = 'Gansemer'
+        AND organization_type = 'asc'
     `);
     // Sync total_xp from points_ledger — the single source of truth for all earned points.
     // points_ledger is written server-side for every quiz answer, flashcard review, etc.
