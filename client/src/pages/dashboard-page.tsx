@@ -1309,7 +1309,7 @@ export default function DashboardPage() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
-                    <h3 className="font-bold text-sm">Wall Chart Tracker</h3>
+                    <h3 className="font-bold text-sm">Certification Checklist</h3>
                     <span className="px-1.5 py-0.5 rounded text-[10px] font-black bg-primary/10 text-primary uppercase tracking-wider border border-primary/20">Required Postings</span>
                   </div>
                   <p className="text-xs text-muted-foreground mt-0.5">AAAHC required postings · verify status and due dates</p>

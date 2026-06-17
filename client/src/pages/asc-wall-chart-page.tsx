@@ -139,7 +139,7 @@ export default function AscWallChartPage() {
           <div className="flex items-center gap-2">
             <Pin className="w-5 h-5 text-primary" />
             <div>
-              <h1 className="text-xl font-bold leading-tight">Wall Chart Tracker</h1>
+              <h1 className="text-xl font-bold leading-tight">Certification Checklist</h1>
               <p className="text-xs text-muted-foreground">AAAHC required postings for ASC accreditation</p>
             </div>
           </div>
