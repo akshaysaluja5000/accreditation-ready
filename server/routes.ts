@@ -2470,6 +2470,7 @@ Write a 4-5 sentence plain-text debrief for the manager. Include: what went well
 
     try {
       const { query } = parsed.data;
+      const userId = req.user!.id;
 
       const userRecord = await storage.getUser(userId);
       const userModule = (userRecord?.organizationType as string) || "hospital";
