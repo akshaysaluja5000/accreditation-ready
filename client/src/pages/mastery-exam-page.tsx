@@ -157,18 +157,22 @@ export default function MasteryExamPage() {
   });
 
   const startFresh = async () => {
-    const qs = await fetchQuestions();
-    setQuestions(qs);
-    setCurrentQ(0);
-    setAnswers(new Array(qs.length).fill(null));
-    setSelected(null);
-    setPhase("quiz");
-    saveMutation.mutate({
-      questionOrder: qs.map(q => q.id),
-      answers: [],
-      currentQuestion: 0,
-      shuffleMaps: buildShuffleMaps(qs),
-    });
+    try {
+      const qs = await fetchQuestions();
+      setQuestions(qs);
+      setCurrentQ(0);
+      setAnswers(new Array(qs.length).fill(null));
+      setSelected(null);
+      setPhase("quiz");
+      saveMutation.mutate({
+        questionOrder: qs.map(q => q.id),
+        answers: [],
+        currentQuestion: 0,
+        shuffleMaps: buildShuffleMaps(qs),
+      });
+    } catch {
+      // Stay on intro screen — eligibility or network error; user can navigate away
+    }
   };
 
   const resumeSession = () => {
@@ -264,8 +268,15 @@ export default function MasteryExamPage() {
 
   if (phase === "loading" || eligLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <Loader2 size={32} className="animate-spin text-primary" />
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+        <div className="max-w-2xl mx-auto px-4 py-8 w-full">
+          <Button variant="ghost" size="sm" onClick={() => setLocation("/")} className="mb-6" data-testid="button-mastery-back-loading">
+            <ArrowLeft size={16} className="mr-1" /> Back to Dashboard
+          </Button>
+        </div>
+        <div className="flex-1 flex items-center justify-center">
+          <Loader2 size={32} className="animate-spin text-primary" />
+        </div>
       </div>
     );
   }
