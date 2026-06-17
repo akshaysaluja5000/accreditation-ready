@@ -687,7 +687,34 @@ export const ASC_ROLE_MODULE_MAP: Record<string, string[]> = {
                    "asc_cpv", "asc_crd", "asc_emg", "asc_fac",
                    "asc_gov", "asc_ipc", "asc_lrd", "asc_med",
                    "asc_ocs", "asc_prr", "asc_qua", "asc_saf",
-                   "asc_val"]
+                   "asc_val"],
+
+  // Single-chapter track roles — each user sees only their assigned chapter
+  "asc_adm_track":                  ["asc_adm"],
+  "asc_asg_track":                  ["asc_asg"],
+  "asc_beh_track":                  ["asc_beh"],
+  "asc_cmc_track":                  ["asc_cmc"],
+  "asc_cpv_track":                  ["asc_cpv"],
+  "asc_crd_track":                  ["asc_crd"],
+  "asc_emg_track":                  ["asc_emg"],
+  "asc_fac_track":                  ["asc_fac"],
+  "asc_gov_track":                  ["asc_gov"],
+  "asc_ipc_track":                  ["asc_ipc"],
+  "asc_lrd_track":                  ["asc_lrd"],
+  "asc_med_track":                  ["asc_med"],
+  "asc_ocs_track":                  ["asc_ocs"],
+  "asc_prr_track":                  ["asc_prr"],
+  "asc_qua_track":                  ["asc_qua"],
+  "asc_saf_track":                  ["asc_saf"],
+  "asc_val_track":                  ["asc_val"],
+
+  // Legacy track slugs — mapped to their current-era level equivalents
+  "asc_clinical_records_track":     ["asc_crd"],
+  "asc_credentialing_track":        ["asc_cpv"],
+  "asc_governance_track":           ["asc_gov"],
+  "asc_infection_prevention_track": ["asc_ipc"],
+  "asc_patient_rights_track":       ["asc_prr"],
+  "asc_quality_management_track":   ["asc_qua"],
 };
 
 export const DEPARTMENT_ORDER_BY_FACILITY: Record<FacilityType, string[]> = {
