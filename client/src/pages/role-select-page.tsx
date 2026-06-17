@@ -103,6 +103,13 @@ const ROLE_ICONS: Record<string, LucideIcon> = {
   // ASC - Environmental & Facilities
   asc_evs: Sparkles,
   asc_facilities: Wrench,
+  // ASC job-based roles (new scoped module roles)
+  front_desk: DoorOpen,
+  surgical_tech: Scissors,
+  spd: Sparkles,
+  anesthesia: Stethoscope,
+  nursing_pacu: HeartPulse,
+  leadership: Building2,
   // DNV NIAHO
   dnv_qm_track: ClipboardCheck,
   dnv_gov_track: Building2,
@@ -130,6 +137,7 @@ const DEPT_ICONS: Record<string, LucideIcon> = {
   "Front Office & Patient Access": DoorOpen,
   "Business Office & Credentialing": Briefcase,
   "DNV NIAHO Standards": ShieldCheck,
+  "AAAHC Standards": HeartPulse,
 };
 
 const SCOPE_BADGE_CLASSES: Record<RoleConfig["scope"], string> = {
@@ -372,14 +380,6 @@ export default function RoleSelectPage() {
         return;
       }
     }
-    // ASC users skip role selection - chapters are universal by accreditor, not by role.
-    if (pendingFacility === "asc") {
-      try { sessionStorage.removeItem("mosh_force_role_select"); } catch {}
-      try { sessionStorage.removeItem(SELECTION_KEY); } catch {}
-      try { sessionStorage.removeItem("mosh_intended_facility"); } catch {}
-      window.location.assign("/");
-      return;
-    }
     setStep(2);
   };
 
@@ -391,13 +391,6 @@ export default function RoleSelectPage() {
       } catch {
         return;
       }
-    }
-    if (m === "asc") {
-      try { sessionStorage.removeItem("mosh_force_role_select"); } catch {}
-      try { sessionStorage.removeItem(SELECTION_KEY); } catch {}
-      try { sessionStorage.removeItem("mosh_intended_facility"); } catch {}
-      window.location.assign("/");
-      return;
     }
     setStep(2);
   };
@@ -490,10 +483,8 @@ export default function RoleSelectPage() {
             </h1>
             <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
               {step === 1
-                ? (pendingFacility === "asc"
-                    ? "AAAHC accreditation applies the same Universal Standards to every ASC, so there are no separate roles to choose. You can change this anytime."
-                    : "Pick the facility you work in so we can show you the right accreditation standards. You can change this anytime.")
-                : `Select your department so we can focus your training on the ${FACILITY_ACCREDITOR[facilityType]} standards that matter most to your work.`}
+                ? "Pick the facility you work in so we can show you the right accreditation standards. You can change this anytime."
+                : `Select your role so we can focus your training on the ${FACILITY_ACCREDITOR[facilityType]} standards that matter most to your work.`}
             </p>
             {step === 2 && (
               <p className="text-sm text-muted-foreground/80 max-w-xl mx-auto mt-2">
@@ -905,14 +896,6 @@ export default function RoleSelectPage() {
                             {" "}· {FACILITY_ACCREDITOR[pendingFacility]}
                           </span>
                         </p>
-                        {pendingFacility === "asc" && (
-                          <p
-                            className="text-xs text-muted-foreground mt-0.5"
-                            data-testid="text-asc-no-roles-note"
-                          >
-                            ASC training applies to every team member. No role selection needed.
-                          </p>
-                        )}
                       </>
                     ) : (
                       <p className="text-sm text-muted-foreground">
@@ -961,7 +944,7 @@ export default function RoleSelectPage() {
                     </>
                   ) : (
                     <>
-                      {pendingFacility === "asc" ? "Continue to dashboard" : "Continue to roles"} <ArrowRight size={16} />
+                      Continue to roles <ArrowRight size={16} />
                     </>
                   )}
                 </Button>
