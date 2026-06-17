@@ -583,6 +583,9 @@ export default function DiagnosticQuizPage() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-50 dark:from-teal-950/30 dark:via-cyan-950/30 dark:to-sky-950/30">
         <div className="max-w-2xl mx-auto px-4 py-8">
+          <Button variant="ghost" size="sm" onClick={() => setLocation("/")} className="mb-6" data-testid="button-results-back-home">
+            <ArrowLeft size={16} className="mr-1" /> Back to Dashboard
+          </Button>
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center mb-8">
             <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-teal-500 to-cyan-600 flex items-center justify-center mb-4 shadow-lg">
               <ClipboardCheck size={44} className="text-white" />
