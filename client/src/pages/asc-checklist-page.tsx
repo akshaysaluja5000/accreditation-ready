@@ -4,7 +4,7 @@ import { useQuery, useMutation } from "@tanstack/react-query";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowLeft, ChevronDown, ChevronRight, FileText, Search, X,
-  CheckCircle2, Clock, AlertTriangle, HelpCircle, RefreshCw,
+  CheckCircle2, Clock, AlertTriangle, HelpCircle, RefreshCw, Printer,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -313,6 +313,95 @@ function VolumeAccordion({ volume, query, completionMap, pendingId, onLog }: Acc
   );
 }
 
+// ── Print / PDF export ────────────────────────────────────────────────────────
+function generatePrintHtml(completionMap: Map<number, CompletionLog>, loggedCount: number, totalItems: number): string {
+  const now = new Date();
+  const dateStr = now.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+  const pct = totalItems > 0 ? Math.round((loggedCount / totalItems) * 100) : 0;
+
+  const statusLabel: Record<ItemStatus, string> = {
+    current: "✓ Current",
+    due_soon: "⚠ Due Soon",
+    overdue: "✗ Overdue",
+    missing: "— Never Logged",
+  };
+  const statusColor: Record<ItemStatus, string> = {
+    current: "#16a34a",
+    due_soon: "#d97706",
+    overdue: "#dc2626",
+    missing: "#9ca3af",
+  };
+
+  let rows = "";
+  for (const vol of ASC_CHECKLIST) {
+    rows += `<tr class="vol-header"><td colspan="6">Vol. ${vol.number} — ${vol.title}</td></tr>`;
+    for (let si = 0; si < vol.sections.length; si++) {
+      const sec = vol.sections[si];
+      rows += `<tr class="sec-header"><td colspan="6">${sec.title}</td></tr>`;
+      for (let ii = 0; ii < sec.items.length; ii++) {
+        const item = sec.items[ii];
+        const itemId = ITEM_ID_MAP.get(`${vol.number}-${si}-${ii}`) ?? 0;
+        const log = completionMap.get(itemId);
+        const status = getItemStatus(log, item.frequency);
+        const lastLogged = log?.completedAt ? fmtDate(log.completedAt) : "Never";
+        const loggedBy = log?.completedBy ?? "—";
+        rows += `
+          <tr>
+            <td style="color:${statusColor[status]};white-space:nowrap;font-weight:600">${statusLabel[status]}</td>
+            <td>${item.name}</td>
+            <td style="white-space:nowrap;font-family:monospace;font-size:10px">${item.code}</td>
+            <td style="white-space:nowrap">${item.frequency}</td>
+            <td style="white-space:nowrap">${lastLogged}</td>
+            <td style="white-space:nowrap">${loggedBy}</td>
+          </tr>`;
+      }
+    }
+  }
+
+  return `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>ASC Compliance Checklist — ${dateStr}</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; font-size: 11px; color: #111; padding: 20px; }
+    h1 { font-size: 16px; font-weight: 700; margin-bottom: 2px; }
+    .meta { font-size: 10px; color: #555; margin-bottom: 14px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 4px; }
+    th { background: #1e3a5f; color: #fff; padding: 5px 7px; text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em; }
+    td { padding: 4px 7px; border-bottom: 1px solid #e5e7eb; vertical-align: top; font-size: 10px; }
+    tr:nth-child(even) td { background: #f9fafb; }
+    tr.vol-header td { background: #1e3a5f; color: #fff; font-weight: 700; font-size: 11px; padding: 6px 7px; border: none; }
+    tr.sec-header td { background: #e8edf4; color: #1e3a5f; font-weight: 700; font-size: 9px; text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 7px; border: none; }
+    .summary { display: flex; gap: 20px; margin-bottom: 12px; }
+    .stat { background: #f3f4f6; border-radius: 6px; padding: 6px 12px; }
+    .stat-num { font-size: 18px; font-weight: 700; line-height: 1; }
+    .stat-label { font-size: 9px; color: #6b7280; margin-top: 1px; }
+    @media print { body { padding: 10px; } button { display: none; } }
+  </style>
+</head>
+<body>
+  <h1>2026 ASC Compliance Checklist</h1>
+  <p class="meta">Generated: ${dateStr} · AAAHC Standards · ${totalItems} total items</p>
+  <div class="summary">
+    <div class="stat"><div class="stat-num">${loggedCount}</div><div class="stat-label">Logged</div></div>
+    <div class="stat"><div class="stat-num">${totalItems - loggedCount}</div><div class="stat-label">Pending</div></div>
+    <div class="stat"><div class="stat-num">${pct}%</div><div class="stat-label">Complete</div></div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Status</th><th>Item Name</th><th>Code</th><th>Frequency</th><th>Last Logged</th><th>Logged By</th>
+      </tr>
+    </thead>
+    <tbody>${rows}</tbody>
+  </table>
+  <script>window.onload = () => window.print();</script>
+</body>
+</html>`;
+}
+
 // ── Page ──────────────────────────────────────────────────────────────────────
 export default function AscChecklistPage() {
   const [, setLocation] = useLocation();
@@ -336,6 +425,14 @@ export default function AscChecklistPage() {
   }, [logsData]);
 
   const loggedCount = completionMap.size;
+
+  const handlePrint = () => {
+    const html = generatePrintHtml(completionMap, loggedCount, totalItems);
+    const w = window.open("", "_blank");
+    if (!w) return;
+    w.document.write(html);
+    w.document.close();
+  };
 
   const logMutation = useMutation({
     mutationFn: (payload: { itemId: number; itemCode: string; itemName: string; volume: number; frequency: string }) => {
@@ -370,15 +467,25 @@ export default function AscChecklistPage() {
             <ArrowLeft className="w-4 h-4" />Back
           </Button>
           <div className="w-px h-5 bg-border" />
-          <div className="flex items-center gap-2">
-            <FileText className="w-5 h-5 text-primary" />
-            <div>
+          <div className="flex items-center gap-2 flex-1 min-w-0">
+            <FileText className="w-5 h-5 text-primary shrink-0" />
+            <div className="flex-1 min-w-0">
               <h1 className="text-xl font-bold leading-tight">2026 ASC Compliance Checklist</h1>
               <p className="text-xs text-muted-foreground">
                 {totalItems} items · {loggedCount} logged · 6 volumes · AAAHC standards
               </p>
             </div>
           </div>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handlePrint}
+            className="gap-1.5 shrink-0"
+            data-testid="btn-print-checklist"
+          >
+            <Printer className="w-4 h-4" />
+            <span className="hidden sm:inline">Print / PDF</span>
+          </Button>
         </div>
 
         {/* Progress bar */}
