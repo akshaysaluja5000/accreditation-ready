@@ -8,7 +8,7 @@ import {
   dnvPretestResults, dnvPosttestResults,
   roles, roleChapterMappings, flashcardReviews, auditLogs, riskAssessments, feedback, leadershipRoleCodes,
   complianceItems, complianceLogs, complianceDocuments, complianceTrainingModules,
-  complianceTasks, complianceCompletionLog, staffTrainingAlerts, regulatoryWatchFindings, executiveBriefs,
+  complianceTasks, complianceCompletionLog, checklistAttachments, staffTrainingAlerts, regulatoryWatchFindings, executiveBriefs,
   teams, teamMembers, rateLimitEvents,
   contentLevels, contentQuestions, contentDeepDiveLevels, contentDeepDiveQuestions,
   contentHandbookChapters, contentAssessmentQuestions,
@@ -19,7 +19,7 @@ import {
   type AscPretestResult, type AscPosttestResult, type FlashcardReview, type AuditLog, type RiskAssessment, type Feedback,
   type DnvPretestResult, type DnvPosttestResult,
   type ComplianceItem, type ComplianceLog, type ComplianceDocument, type ComplianceTrainingModule,
-  type ComplianceTask, type ComplianceCompletionLog, type StaffTrainingAlert, type RegulatoryWatchFinding, type ExecutiveBrief,
+  type ComplianceTask, type ComplianceCompletionLog, type ChecklistAttachment, type StaffTrainingAlert, type RegulatoryWatchFinding, type ExecutiveBrief,
   type ContentChangelog, type InsertContentChangelog,
   type Team,
   type Level, type Question, type DeepDiveLevel, type HandbookChapter, type ModuleId,
@@ -795,6 +795,20 @@ async function seedComplianceItems(client: pg.PoolClient) {
       frequency     VARCHAR(30)
     )
   `);
+  await client.query(`
+    CREATE TABLE IF NOT EXISTS checklist_attachments (
+      id            SERIAL PRIMARY KEY,
+      item_id       INTEGER NOT NULL,
+      facility_id   VARCHAR(50) NOT NULL,
+      file_name     TEXT NOT NULL,
+      file_type     TEXT NOT NULL,
+      file_size     INTEGER NOT NULL,
+      file_data     TEXT NOT NULL,
+      uploaded_at   TIMESTAMPTZ DEFAULT NOW(),
+      uploaded_by   TEXT
+    )
+  `);
+  await client.query(`CREATE INDEX IF NOT EXISTS idx_checklist_attachments_item_facility ON checklist_attachments(item_id, facility_id)`);
   await client.query(`ALTER TABLE compliance_items ADD COLUMN IF NOT EXISTS status VARCHAR(20) DEFAULT 'missing'`);
   await client.query(`ALTER TABLE compliance_items ADD COLUMN IF NOT EXISTS posted_date TIMESTAMPTZ DEFAULT NULL`);
   await client.query(`ALTER TABLE compliance_items ADD COLUMN IF NOT EXISTS next_due_date TIMESTAMPTZ DEFAULT NULL`);
@@ -1070,6 +1084,10 @@ export interface IStorage {
   logChecklistCompletion(data: { itemId: number; itemCode: string; itemName: string; completedBy: string; notes?: string; facilityId: string; volume: number; frequency: string }): Promise<ComplianceCompletionLog>;
   getChecklistLogs(facilityId: string): Promise<ComplianceCompletionLog[]>;
   getChecklistHistory(itemId: number, facilityId: string): Promise<ComplianceCompletionLog[]>;
+  addChecklistAttachment(data: { itemId: number; facilityId: string; fileName: string; fileType: string; fileSize: number; fileData: string; uploadedBy?: string }): Promise<ChecklistAttachment>;
+  getChecklistAttachments(itemId: number, facilityId: string): Promise<Omit<ChecklistAttachment, "fileData">[]>;
+  getChecklistAttachmentById(id: number): Promise<ChecklistAttachment | undefined>;
+  deleteChecklistAttachment(id: number, facilityId: string): Promise<void>;
   getComplianceLogs(facilityId: number): Promise<ComplianceLog[]>;
   createComplianceLog(data: { facilityId: number; itemId: number; completedBy: string; notes?: string; nextDue?: string }): Promise<ComplianceLog>;
   getComplianceDocuments(facilityId: number): Promise<ComplianceDocument[]>;
@@ -1910,6 +1928,49 @@ export class DatabaseStorage implements IStorage {
       ))
       .orderBy(desc(complianceCompletionLog.completedAt))
       .limit(20);
+  }
+
+  async addChecklistAttachment(data: { itemId: number; facilityId: string; fileName: string; fileType: string; fileSize: number; fileData: string; uploadedBy?: string }): Promise<ChecklistAttachment> {
+    const [row] = await db.insert(checklistAttachments).values({
+      itemId: data.itemId,
+      facilityId: data.facilityId,
+      fileName: data.fileName,
+      fileType: data.fileType,
+      fileSize: data.fileSize,
+      fileData: data.fileData,
+      uploadedBy: data.uploadedBy ?? null,
+    }).returning();
+    return row;
+  }
+
+  async getChecklistAttachments(itemId: number, facilityId: string): Promise<Omit<ChecklistAttachment, "fileData">[]> {
+    return db.select({
+      id: checklistAttachments.id,
+      itemId: checklistAttachments.itemId,
+      facilityId: checklistAttachments.facilityId,
+      fileName: checklistAttachments.fileName,
+      fileType: checklistAttachments.fileType,
+      fileSize: checklistAttachments.fileSize,
+      uploadedAt: checklistAttachments.uploadedAt,
+      uploadedBy: checklistAttachments.uploadedBy,
+    }).from(checklistAttachments)
+      .where(and(
+        eq(checklistAttachments.itemId, itemId),
+        eq(checklistAttachments.facilityId, facilityId),
+      ))
+      .orderBy(desc(checklistAttachments.uploadedAt));
+  }
+
+  async getChecklistAttachmentById(id: number): Promise<ChecklistAttachment | undefined> {
+    const [row] = await db.select().from(checklistAttachments).where(eq(checklistAttachments.id, id));
+    return row ?? undefined;
+  }
+
+  async deleteChecklistAttachment(id: number, facilityId: string): Promise<void> {
+    await db.delete(checklistAttachments).where(and(
+      eq(checklistAttachments.id, id),
+      eq(checklistAttachments.facilityId, facilityId),
+    ));
   }
 
   async markWallChartItemPosted(itemId: number, postedBy: string, nextDueDate: string): Promise<ComplianceItem> {

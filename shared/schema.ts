@@ -877,6 +877,19 @@ export const complianceCompletionLog = pgTable("compliance_completion_log", {
 
 export type ComplianceCompletionLog = typeof complianceCompletionLog.$inferSelect;
 
+export const checklistAttachments = pgTable("checklist_attachments", {
+  id: serial("id").primaryKey(),
+  itemId: integer("item_id").notNull(),
+  facilityId: varchar("facility_id", { length: 50 }).notNull(),
+  fileName: text("file_name").notNull(),
+  fileType: text("file_type").notNull(),
+  fileSize: integer("file_size").notNull(),
+  fileData: text("file_data").notNull(),
+  uploadedAt: timestamp("uploaded_at", { withTimezone: true }).defaultNow(),
+  uploadedBy: text("uploaded_by"),
+});
+export type ChecklistAttachment = typeof checklistAttachments.$inferSelect;
+
 // ── Points Ledger ─────────────────────────────────────────────────────────────
 
 export const POINT_EVENT_TYPES = [

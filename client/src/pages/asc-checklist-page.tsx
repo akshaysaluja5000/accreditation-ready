@@ -1,10 +1,11 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useRef } from "react";
 import { useLocation } from "wouter";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowLeft, ChevronDown, ChevronRight, FileText, Search, X,
   CheckCircle2, Clock, AlertTriangle, HelpCircle, RefreshCw, Printer,
+  Paperclip, Upload, Trash2, Download,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -126,6 +127,154 @@ const STATUS_DOT: Record<ItemStatus, string> = {
   missing:  "bg-slate-300",
 };
 
+// ── Attachment types ──────────────────────────────────────────────────────────
+type AttachmentMeta = {
+  id: number;
+  itemId: number;
+  fileName: string;
+  fileType: string;
+  fileSize: number;
+  uploadedAt: string | null;
+  uploadedBy: string | null;
+};
+
+// ── Attachment panel ──────────────────────────────────────────────────────────
+function AttachmentPanel({ itemId, onClose }: { itemId: number; onClose: () => void }) {
+  const { toast } = useToast();
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [uploading, setUploading] = useState(false);
+
+  const { data: attachments = [], isLoading } = useQuery<AttachmentMeta[]>({
+    queryKey: ["/api/compliance-checklist", itemId, "attachments"],
+    queryFn: () => fetch(`/api/compliance-checklist/${itemId}/attachments`, { credentials: "include" }).then(r => r.json()),
+  });
+
+  const deleteMut = useMutation({
+    mutationFn: (id: number) => apiRequest("DELETE", `/api/compliance-checklist/attachments/${id}`),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["/api/compliance-checklist", itemId, "attachments"] }),
+    onError: () => toast({ title: "Failed to delete", variant: "destructive" }),
+  });
+
+  const downloadAttachment = async (id: number, fileName: string, fileType: string) => {
+    const resp = await fetch(`/api/compliance-checklist/attachments/${id}`, { credentials: "include" });
+    if (!resp.ok) { toast({ title: "Download failed", variant: "destructive" }); return; }
+    const data = await resp.json() as { fileData: string };
+    const byteChars = atob(data.fileData);
+    const byteArr = new Uint8Array(byteChars.length);
+    for (let i = 0; i < byteChars.length; i++) byteArr[i] = byteChars.charCodeAt(i);
+    const blob = new Blob([byteArr], { type: fileType });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = fileName; a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    if (file.size > 10 * 1024 * 1024) {
+      toast({ title: "File too large", description: "Maximum file size is 10 MB.", variant: "destructive" });
+      return;
+    }
+    setUploading(true);
+    const reader = new FileReader();
+    reader.onload = async (ev) => {
+      const raw = ev.target?.result as string;
+      const base64 = raw.includes(",") ? raw.split(",")[1] : raw;
+      try {
+        await apiRequest("POST", `/api/compliance-checklist/${itemId}/attachments`, {
+          fileName: file.name,
+          fileType: file.type || "application/octet-stream",
+          fileSize: file.size,
+          fileData: base64,
+        });
+        queryClient.invalidateQueries({ queryKey: ["/api/compliance-checklist", itemId, "attachments"] });
+        toast({ title: "Attached", description: file.name });
+      } catch {
+        toast({ title: "Upload failed", variant: "destructive" });
+      } finally {
+        setUploading(false);
+        if (fileInputRef.current) fileInputRef.current.value = "";
+      }
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const fmtSize = (bytes: number) =>
+    bytes < 1024 * 1024 ? `${(bytes / 1024).toFixed(0)} KB` : `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+
+  return (
+    <div className="mt-2 rounded-xl border border-dashed border-primary/40 bg-primary/5 p-3 space-y-2">
+      <div className="flex items-center justify-between">
+        <span className="text-[10px] font-black uppercase tracking-wider text-primary flex items-center gap-1">
+          <Paperclip size={10} />Evidence Attachments
+        </span>
+        <button onClick={onClose} className="text-muted-foreground hover:text-foreground p-0.5">
+          <X size={12} />
+        </button>
+      </div>
+
+      {isLoading ? (
+        <p className="text-[10px] text-muted-foreground">Loading…</p>
+      ) : attachments.length === 0 ? (
+        <p className="text-[10px] text-muted-foreground italic">No attachments yet — upload evidence below</p>
+      ) : (
+        <div className="space-y-1">
+          {attachments.map(a => (
+            <div key={a.id} className="flex items-center gap-2 text-[10px] bg-background rounded-lg border px-2 py-1.5" data-testid={`attachment-row-${a.id}`}>
+              <FileText size={10} className="text-primary shrink-0" />
+              <span className="flex-1 min-w-0 truncate font-medium" title={a.fileName}>{a.fileName}</span>
+              <span className="text-muted-foreground shrink-0">{fmtSize(a.fileSize)}</span>
+              {a.uploadedBy && <span className="text-muted-foreground shrink-0 hidden sm:inline">· {a.uploadedBy}</span>}
+              <button
+                onClick={() => downloadAttachment(a.id, a.fileName, a.fileType)}
+                className="text-primary hover:text-primary/80 p-0.5"
+                title="Download"
+                data-testid={`btn-download-attachment-${a.id}`}
+              >
+                <Download size={11} />
+              </button>
+              <button
+                onClick={() => deleteMut.mutate(a.id)}
+                disabled={deleteMut.isPending}
+                className="text-red-400 hover:text-red-600 p-0.5"
+                title="Delete"
+                data-testid={`btn-delete-attachment-${a.id}`}
+              >
+                <Trash2 size={11} />
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div className="flex items-center gap-2 flex-wrap">
+        <input
+          ref={fileInputRef}
+          type="file"
+          className="hidden"
+          accept=".jpg,.jpeg,.png,.heic,.heif,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv"
+          onChange={handleFileChange}
+          data-testid={`file-input-${itemId}`}
+        />
+        <Button
+          size="sm"
+          variant="outline"
+          className="h-6 text-[10px] px-2 gap-1 border-primary/40 text-primary hover:bg-primary/10"
+          disabled={uploading}
+          onClick={() => fileInputRef.current?.click()}
+          data-testid={`btn-attach-${itemId}`}
+        >
+          {uploading
+            ? <><RefreshCw size={10} className="animate-spin" />Uploading…</>
+            : <><Upload size={10} />Attach file</>}
+        </Button>
+        <span className="text-[9px] text-muted-foreground">PDF · JPEG · HEIC · DOC · DOCX · XLS · PPT · max 10 MB</span>
+      </div>
+    </div>
+  );
+}
+
 // ── Log Completion button ─────────────────────────────────────────────────────
 interface LogBtnProps {
   item: ChecklistItem;
@@ -194,6 +343,7 @@ interface AccordionProps {
 
 function VolumeAccordion({ volume, query, completionMap, pendingId, onLog }: AccordionProps) {
   const [open, setOpen] = useState(false);
+  const [attachOpenId, setAttachOpenId] = useState<number | null>(null);
   const q = query.toLowerCase();
 
   const matchingSections = volume.sections.map((sec, si) => ({
@@ -276,6 +426,7 @@ function VolumeAccordion({ volume, query, completionMap, pendingId, onLog }: Acc
                     const log = completionMap.get(itemId);
                     const status = getItemStatus(log, item.frequency);
                     const freqCls = FREQ_COLOR[item.frequency] ?? "bg-slate-100 text-slate-600 border-slate-200";
+                    const attachOpen = attachOpenId === itemId;
                     return (
                       <div
                         key={`${si}-${ii}`}
@@ -284,7 +435,17 @@ function VolumeAccordion({ volume, query, completionMap, pendingId, onLog }: Acc
                       >
                         <div className={`w-2 h-2 rounded-full mt-1.5 shrink-0 ${STATUS_DOT[status]}`} />
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm text-foreground leading-snug">{item.name}</p>
+                          <div className="flex items-start justify-between gap-2">
+                            <p className="text-sm text-foreground leading-snug flex-1 min-w-0">{item.name}</p>
+                            <button
+                              onClick={() => setAttachOpenId(attachOpen ? null : itemId)}
+                              className={`shrink-0 mt-0.5 p-1 rounded-lg transition-colors ${attachOpen ? "text-primary bg-primary/10" : "text-muted-foreground hover:text-primary hover:bg-primary/10"}`}
+                              title="Evidence attachments"
+                              data-testid={`btn-attach-toggle-${itemId}`}
+                            >
+                              <Paperclip size={12} />
+                            </button>
+                          </div>
                           <div className="flex items-center gap-2 mt-1.5 flex-wrap">
                             <span className="text-[10px] font-mono text-muted-foreground bg-muted px-1.5 py-0.5 rounded border border-border">{item.code}</span>
                             <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full border ${freqCls}`}>{item.frequency}</span>
@@ -299,6 +460,12 @@ function VolumeAccordion({ volume, query, completionMap, pendingId, onLog }: Acc
                             pendingId={pendingId}
                             onLog={onLog}
                           />
+                          {attachOpen && (
+                            <AttachmentPanel
+                              itemId={itemId}
+                              onClose={() => setAttachOpenId(null)}
+                            />
+                          )}
                         </div>
                       </div>
                     );

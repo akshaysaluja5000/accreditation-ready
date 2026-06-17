@@ -4944,6 +4944,74 @@ Rules:
     }
   });
 
+  // ── Checklist Attachments ─────────────────────────────────────────────────
+  app.get("/api/compliance-checklist/attachments/:id", requireAuth, async (req: Request, res: Response) => {
+    try {
+      const id = parseInt(req.params.id);
+      if (isNaN(id)) return res.status(400).json({ error: "Invalid id." });
+      const attachment = await storage.getChecklistAttachmentById(id);
+      if (!attachment) return res.status(404).json({ error: "Not found." });
+      const user = req.user as any;
+      const facilityId = String(user.facilityId ?? 0);
+      if (attachment.facilityId !== facilityId) return res.status(403).json({ error: "Forbidden." });
+      res.json(attachment);
+    } catch (err) {
+      res.status(500).json({ error: "Failed to fetch attachment." });
+    }
+  });
+
+  app.get("/api/compliance-checklist/:itemId/attachments", requireAuth, async (req: Request, res: Response) => {
+    try {
+      const user = req.user as any;
+      const itemId = parseInt(req.params.itemId);
+      if (isNaN(itemId)) return res.status(400).json({ error: "Invalid item id." });
+      const facilityId = String(user.facilityId ?? 0);
+      const attachments = await storage.getChecklistAttachments(itemId, facilityId);
+      res.json(attachments);
+    } catch (err) {
+      res.status(500).json({ error: "Failed to fetch attachments." });
+    }
+  });
+
+  app.post("/api/compliance-checklist/:itemId/attachments", requireAuth, async (req: Request, res: Response) => {
+    try {
+      const user = req.user as any;
+      const itemId = parseInt(req.params.itemId);
+      if (isNaN(itemId)) return res.status(400).json({ error: "Invalid item id." });
+      const { fileName, fileType, fileSize, fileData } = req.body as {
+        fileName: string; fileType: string; fileSize: number; fileData: string;
+      };
+      if (!fileName || !fileType || !fileSize || !fileData) {
+        return res.status(400).json({ error: "Missing required fields." });
+      }
+      const MAX_SIZE = 10 * 1024 * 1024;
+      if (fileSize > MAX_SIZE) return res.status(400).json({ error: "File exceeds 10 MB limit." });
+      const facilityId = String(user.facilityId ?? 0);
+      const attachment = await storage.addChecklistAttachment({
+        itemId, facilityId, fileName, fileType, fileSize, fileData,
+        uploadedBy: user.username ?? "Compliance Officer",
+      });
+      const { fileData: _fd, ...meta } = attachment;
+      res.status(201).json(meta);
+    } catch (err) {
+      console.error("attachment upload error:", err);
+      res.status(500).json({ error: "Failed to save attachment." });
+    }
+  });
+
+  app.delete("/api/compliance-checklist/attachments/:id", requireAuth, async (req: Request, res: Response) => {
+    try {
+      const user = req.user as any;
+      const id = parseInt(req.params.id);
+      if (isNaN(id)) return res.status(400).json({ error: "Invalid id." });
+      const facilityId = String(user.facilityId ?? 0);
+      await storage.deleteChecklistAttachment(id, facilityId);
+      res.json({ ok: true });
+    } catch (err) {
+      res.status(500).json({ error: "Failed to delete attachment." });
+    }
+  });
+
   // ── Wall Chart (item-level status, no task join) ──────────────────────────
   app.get("/api/wall-chart/items", requireWallChartAccess, async (_req: Request, res: Response) => {
     try {
