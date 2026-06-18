@@ -801,6 +801,8 @@ export default function DashboardPage() {
             {!isAsc && !isDnv && user?.roleId && (() => {
               const dbRole = rolesList?.find((r) => r.id === user.roleId);
               const cfg = dbRole ? getRoleConfig(dbRole.slug) : undefined;
+              // Never show an ASC or DNV role on the hospital dashboard
+              if (cfg && cfg.facilityType !== "hospital") return null;
               const title = cfg?.title || dbRole?.name || assignedData?.role?.name || "Your role";
               const department = cfg?.department || assignedData?.role?.department || "";
               return (
