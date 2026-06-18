@@ -640,25 +640,6 @@ export async function ensureTablesExist() {
       WHERE first_name = 'Sheila' AND last_name = 'Gansemer'
         AND organization_type = 'asc'
     `);
-    // Data integrity: clear role_id for users whose stored role belongs to a different
-    // facility module. E.g. a hospital user who somehow has an ASC role stored.
-    // This prevents cross-module role cards from appearing on the wrong dashboard.
-    await client.query(`
-      UPDATE users u
-      SET role_id = NULL
-      FROM roles r
-      WHERE u.role_id = r.id
-        AND u.organization_type = 'hospital'
-        AND (r.slug LIKE 'asc_%' OR r.slug IN ('evs','front_desk','surgical_tech','spd','anesthesia','nursing_pacu','leadership') AND r.department ILIKE '%AAAHC%')
-    `);
-    await client.query(`
-      UPDATE users u
-      SET role_id = NULL
-      FROM roles r
-      WHERE u.role_id = r.id
-        AND u.organization_type = 'asc'
-        AND r.slug LIKE 'dnv_%'
-    `);
     // Sync total_xp from points_ledger — the single source of truth for all earned points.
     // points_ledger is written server-side for every quiz answer, flashcard review, etc.
     // This matches the Leadership Console (Staff Engagement) so both surfaces always agree.
