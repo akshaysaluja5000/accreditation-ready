@@ -430,23 +430,21 @@ export default function RoleSelectPage() {
   return (
     <TooltipProvider delayDuration={200}>
       <div className="min-h-screen pb-36">
-        {user?.roleId && (
-          <div className="max-w-4xl mx-auto px-4 pt-4">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => {
-                try { sessionStorage.removeItem("mosh_force_role_select"); } catch {}
-                navigate("/");
-              }}
-              data-testid="button-role-select-back"
-              className="-ml-2"
-            >
-              <ChevronLeft size={16} />
-              Back
-            </Button>
-          </div>
-        )}
+        <div className="max-w-4xl mx-auto px-4 pt-4">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => {
+              try { sessionStorage.removeItem("mosh_force_role_select"); } catch {}
+              navigate("/");
+            }}
+            data-testid="button-role-select-back"
+            className="-ml-2"
+          >
+            <ChevronLeft size={16} />
+            Back
+          </Button>
+        </div>
         <div className="max-w-4xl mx-auto px-4 pt-10 md:pt-14">
           <div className="text-center mb-2">
             <Badge
@@ -882,7 +880,10 @@ export default function RoleSelectPage() {
                   size="lg"
                   className="shrink-0 gap-2"
                   data-testid="button-back-to-facility"
-                  onClick={() => setStep(1)}
+                  onClick={() => {
+                    if (pendingFacility === "asc") { navigate("/"); return; }
+                    setStep(1);
+                  }}
                 >
                   <ArrowLeft size={16} /> Back
                 </Button>

@@ -798,11 +798,31 @@ export default function DashboardPage() {
             </div>
 
             {/* Role card */}
-            {!isAsc && !isDnv && user?.roleId && (() => {
-              const dbRole = rolesList?.find((r) => r.id === user.roleId);
+            {!isAsc && !isDnv && (() => {
+              const dbRole = user?.roleId ? rolesList?.find((r) => r.id === user.roleId) : undefined;
               const cfg = dbRole ? getRoleConfig(dbRole.slug) : undefined;
-              // Never show an ASC or DNV role on the hospital dashboard
-              if (cfg && cfg.facilityType !== "hospital") return null;
+              const hasValidHospitalRole = !!(cfg && cfg.facilityType === "hospital");
+              if (!hasValidHospitalRole) {
+                if (user?.isAdmin) return null;
+                return (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="rounded-2xl bg-amber-50 border border-amber-200 p-4 flex items-center gap-3"
+                    data-testid="card-select-hospital-role"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center flex-shrink-0">
+                      <Briefcase size={18} className="text-amber-600" />
+                    </div>
+                    <p className="text-sm flex-1 text-foreground">
+                      <span className="font-semibold">Select your role</span> to focus your training on the modules for your position.
+                    </p>
+                    <Button variant="outline" size="sm" onClick={() => setLocation("/role-select")} data-testid="button-select-hospital-role">
+                      Select role
+                    </Button>
+                  </motion.div>
+                );
+              }
               const title = cfg?.title || dbRole?.name || assignedData?.role?.name || "Your role";
               const department = cfg?.department || assignedData?.role?.department || "";
               return (
@@ -1061,29 +1081,6 @@ export default function DashboardPage() {
 
               {isAsc ? (
                 <div className="flex flex-col gap-6">
-                  {/* ASC role banner */}
-                  {ascRoleSlug ? (
-                    <div className="flex flex-wrap items-center gap-3 mb-0 px-4 py-3 rounded-xl bg-muted border border-border" data-testid="text-asc-role-banner">
-                      <Briefcase size={16} className="text-muted-foreground flex-shrink-0" />
-                      <p className="text-sm flex-1 min-w-[180px] text-foreground">
-                        Showing <span className="font-semibold">{assignedFilteredLevels.length}</span> level{assignedFilteredLevels.length === 1 ? "" : "s"} for your role:{" "}
-                        <span className="font-semibold">{getRoleConfig(ascRoleSlug)?.title || ascRoleSlug}</span>
-                      </p>
-                      <Button variant="outline" size="sm" data-testid="button-asc-change-role" onClick={() => setLocation("/role-select")}>
-                        Change role
-                      </Button>
-                    </div>
-                  ) : (
-                    <div className="flex flex-wrap items-center gap-3 px-4 py-3 rounded-xl bg-amber-50 border border-amber-200" data-testid="text-asc-role-prompt">
-                      <Briefcase size={16} className="text-amber-600 flex-shrink-0" />
-                      <p className="text-sm flex-1 min-w-[180px] text-foreground">
-                        <span className="font-semibold">Select your role</span> to see only the modules assigned to your position.
-                      </p>
-                      <Button variant="outline" size="sm" data-testid="button-asc-select-role" onClick={() => setLocation("/role-select")}>
-                        Select role
-                      </Button>
-                    </div>
-                  )}
                   {ascChapterGroups.map(({ category, chapters }) => (
                     <div key={category} className="flex flex-col gap-3" data-testid={`group-dashboard-${category.toLowerCase().replace(/\s+/g, "-")}`}>
                       <div className="flex items-baseline justify-between px-1">
