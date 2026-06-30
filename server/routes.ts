@@ -3369,7 +3369,7 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
       answers: [],
       currentQuestion: 0,
       shuffleMaps: shuffleMaps as any,
-      questionData: JSON.stringify(masteryPool.map(q => ({ id: q.id, correctIndex: q.correctIndex, explanation: "" }))),
+      questionData: JSON.stringify(masteryPool),
     });
     res.json(clientQuestions);
   });
@@ -3478,6 +3478,7 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
   });
 
   app.post("/api/mastery/submit", requireAuth, async (req, res) => {
+    try {
     const { answers, shuffleMaps: clientShuffleMaps } = req.body;
     if (!answers || !Array.isArray(answers)) {
       return res.status(400).json({ message: "Answers required" });
@@ -3516,10 +3517,10 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
       const q = storedQuestions.find(sq => sq.id === ans.questionId);
       if (q) {
         const sm = trustedMaps[q.id] as number[] | undefined;
-        let displayOptions = q.options;
+        let displayOptions = q.options ?? [];
         let displayCorrectIndex = q.correctIndex;
         const displaySelectedIndex = ans.selectedIndex;
-        if (sm && sm.length === q.options.length) {
+        if (sm && q.options && sm.length === q.options.length) {
           displayOptions = sm.map((i: number) => q.options[i]);
           displayCorrectIndex = sm.indexOf(q.correctIndex);
         }
@@ -3528,7 +3529,7 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
           : ans.selectedIndex === q.correctIndex;
         if (correct) score++;
         detailedResults.push({
-          questionId: q.id, sectionId: q.sectionId, question: q.question,
+          questionId: q.id, sectionId: q.sectionId ?? "", question: q.question ?? "",
           options: displayOptions, selectedIndex: displaySelectedIndex,
           correctIndex: displayCorrectIndex, correct, explanation: q.explanation ?? "",
         });
@@ -3553,7 +3554,6 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
     await storage.deleteMasterySession(req.user!.id);
 
     // Points: fire-and-forget (non-blocking)
-    // One row per correct answer + completion bonus + optional first-attempt pass bonus
     const _mFacilityId = (req.user! as any).facilityId as number | null ?? null;
     const _mUserId = req.user!.id;
     const _mPct = totalAnswered > 0 ? (score / totalAnswered) * 100 : 0;
@@ -3574,6 +3574,10 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
     })();
 
     res.json({ score, totalQuestions: totalAnswered, resultId: result.id, detailedResults, sectionScores });
+    } catch (err: any) {
+      console.error("[Mastery] submit error:", err);
+      res.status(500).json({ message: "Failed to submit. Please try again." });
+    }
   });
 
   // ── Flashcard Review (Spaced Repetition) Routes ──────────────────────────────
