@@ -30,7 +30,7 @@ import FlashcardReviewPage from "@/pages/flashcard-review-page";
 import LeadershipHubPage from "@/pages/leadership-hub-page";
 import { HospitalsPage, AscPage } from "@/pages/solutions-page";
 import { Button } from "@/components/ui/button";
-import { AlertCircle } from "lucide-react";
+import { AlertCircle, Lock } from "lucide-react";
 import TermsPage from "@/pages/terms-page";
 import NotFound from "@/pages/not-found";
 import MfaSetupPage from "@/pages/mfa-setup-page";
@@ -222,6 +222,41 @@ function ComplianceModeRoute({ component: Component, minRole = "director" }: { c
   return <AppShell><Component /></AppShell>;
 }
 
+function QuizDisabledRoute() {
+  const { user, isLoading } = useAuth();
+  const [, navigate] = useLocation();
+
+  if (isLoading) {
+    return (
+      <AppShell>
+        <div className="flex flex-col items-center justify-center py-32 gap-4">
+          <Loader2 size={32} className="animate-spin text-primary" />
+          <p className="text-muted-foreground font-medium">Loading...</p>
+        </div>
+      </AppShell>
+    );
+  }
+
+  if (!user) return <Redirect to="/auth" />;
+
+  return (
+    <AppShell>
+      <div className="min-h-screen flex items-center justify-center p-6">
+        <div className="max-w-sm text-center flex flex-col items-center gap-4">
+          <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center">
+            <Lock size={28} className="text-muted-foreground" />
+          </div>
+          <h2 className="text-xl font-bold">Temporarily Unavailable</h2>
+          <p className="text-sm text-muted-foreground">
+            Practice quizzes, the diagnostic quiz, flashcards, chapter overviews, and the handbook are temporarily disabled.
+          </p>
+          <Button data-testid="button-quiz-disabled-back" onClick={() => navigate("/")}>Back to Dashboard</Button>
+        </div>
+      </div>
+    </AppShell>
+  );
+}
+
 function AuthRoute() {
   const { user, isLoading } = useAuth();
 
@@ -335,37 +370,37 @@ function Router() {
         {() => <ProtectedRoute component={DashboardPage} />}
       </Route>
       <Route path="/play/:levelId">
-        {() => <ProtectedRoute component={PlayPage} />}
+        {() => <QuizDisabledRoute />}
       </Route>
       <Route path="/study/:levelId">
-        {() => <ProtectedRoute component={StudyPage} />}
+        {() => <QuizDisabledRoute />}
       </Route>
       <Route path="/handbook/:levelId">
-        {() => <ProtectedRoute component={HandbookPage} />}
+        {() => <QuizDisabledRoute />}
       </Route>
       <Route path="/handbook">
-        {() => <ProtectedRoute component={HandbookPage} />}
+        {() => <QuizDisabledRoute />}
       </Route>
       <Route path="/deep-dive">
-        {() => <ProtectedRoute component={DeepDiveSelectPage} />}
+        {() => <QuizDisabledRoute />}
       </Route>
       <Route path="/deep-dive/:levelId">
-        {() => <ProtectedRoute component={DeepDivePage} />}
+        {() => <QuizDisabledRoute />}
       </Route>
       <Route path="/diagnostic">
-        {() => <ProtectedRoute component={DiagnosticQuizPage} />}
+        {() => <QuizDisabledRoute />}
       </Route>
       <Route path="/mastery">
         {() => <ProtectedRoute component={MasteryExamPage} />}
       </Route>
       <Route path="/asc-pretest">
-        {() => <ProtectedRoute component={AscPretestPage} />}
+        {() => <QuizDisabledRoute />}
       </Route>
       <Route path="/asc-posttest">
         {() => <ProtectedRoute component={AscPosttestPage} />}
       </Route>
       <Route path="/dnv-pretest">
-        {() => <ProtectedRoute component={DnvPretestPage} />}
+        {() => <QuizDisabledRoute />}
       </Route>
       <Route path="/dnv-posttest">
         {() => <ProtectedRoute component={DnvPosttestPage} />}
@@ -395,7 +430,7 @@ function Router() {
         {() => <LeadershipRoute component={ExecutiveReportPage} minRole="director" />}
       </Route>
       <Route path="/flashcard-review">
-        {() => <ProtectedRoute component={FlashcardReviewPage} />}
+        {() => <QuizDisabledRoute />}
       </Route>
       <Route path="/asc-wall-chart">
         {() => <ProtectedRoute component={AscWallChartPage} />}

@@ -106,18 +106,20 @@ function AscChapterCard({
             {/* Study tools */}
             <div className="flex gap-2 flex-wrap">
               <button
+                disabled
                 onClick={onRead}
                 data-testid={`button-asc-read-${chapter.levelId}`}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white/15 hover:bg-white/25 text-white border border-white/20 transition-all active:scale-95"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white/10 text-white/50 border border-white/10 cursor-not-allowed select-none"
               >
                 <FileText size={15} />
                 Read in Handbook
               </button>
               {quizId && quizLevel?.chapterSummary && (
                 <button
+                  disabled
                   onClick={() => setLocation(`/study/${quizId}?view=summary`)}
                   data-testid={`button-asc-overview-${chapter.levelId}`}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white/15 hover:bg-white/25 text-white border border-white/20 transition-all active:scale-95"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white/10 text-white/50 border border-white/10 cursor-not-allowed select-none"
                 >
                   <BookOpen size={15} />
                   Chapter Overview
@@ -125,9 +127,10 @@ function AscChapterCard({
               )}
               {hasFlashcards && quizId && (
                 <button
+                  disabled
                   onClick={() => onStudy(quizId)}
                   data-testid={`button-asc-study-${chapter.levelId}`}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white/15 hover:bg-white/25 text-white border border-white/20 transition-all active:scale-95"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white/10 text-white/50 border border-white/10 cursor-not-allowed select-none"
                 >
                   <Layers size={15} />
                   Flashcards
@@ -140,18 +143,20 @@ function AscChapterCard({
               <span className="text-xs font-bold text-white/90">Practice:</span>
               {hasPublishedQuiz && quizId && (
                 <button
+                  disabled
                   onClick={() => onPlay(quizId)}
                   data-testid={`button-asc-practice-${chapter.levelId}`}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white text-primary hover:bg-white/90 transition-all active:scale-95 shadow-sm"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white/10 text-white/50 border border-white/10 cursor-not-allowed select-none"
                 >
                   <Play size={15} />
                   {hasPlayed || session ? "Quiz Again" : "Practice Quiz"}
                 </button>
               )}
               <button
+                disabled
                 onClick={() => setLocation(`/deep-dive/${chapter.levelId}?from=/`)}
                 data-testid={`button-asc-deep-dive-${chapter.levelId}`}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white/15 hover:bg-white/25 text-white border border-white/20 transition-all active:scale-95"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white/10 text-white/50 border border-white/10 cursor-not-allowed select-none"
               >
                 <Microscope size={15} />
                 Deep Dive Tracer
@@ -899,9 +904,10 @@ export default function DashboardPage() {
                   </div>
                 </div>
                 <button
+                  disabled
                   onClick={() => setLocation("/diagnostic")}
                   data-testid="button-up-next-hero-cta"
-                  className="mt-4 w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white shadow-md transition-all active:scale-95"
+                  className="mt-4 w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-sm bg-muted text-muted-foreground cursor-not-allowed select-none"
                 >
                   Begin Diagnostic Quiz <ChevronRight size={16} />
                 </button>
@@ -928,9 +934,10 @@ export default function DashboardPage() {
                     <p className="text-sm text-muted-foreground mt-0.5">25 questions across all 11 NIAHO chapters - establish your baseline</p>
                   </div>
                   <button
+                    disabled
                     onClick={() => setLocation("/dnv-pretest")}
                     data-testid="button-dnv-pretest-main"
-                    className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-xl font-bold text-sm bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white shadow-md transition-all active:scale-95"
+                    className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-xl font-bold text-sm bg-muted text-muted-foreground cursor-not-allowed select-none"
                   >
                     Start <ChevronRight size={15} />
                   </button>
@@ -958,9 +965,10 @@ export default function DashboardPage() {
                     <p className="text-sm text-muted-foreground mt-0.5">25 questions across 6 AAAHC chapters - establish your baseline</p>
                   </div>
                   <button
+                    disabled
                     onClick={() => setLocation("/asc-pretest")}
                     data-testid="button-asc-pretest-main"
-                    className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-xl font-bold text-sm bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white shadow-md transition-all active:scale-95"
+                    className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-xl font-bold text-sm bg-muted text-muted-foreground cursor-not-allowed select-none"
                   >
                     Start <ChevronRight size={15} />
                   </button>
@@ -1001,16 +1009,18 @@ export default function DashboardPage() {
                     </div>
                     <div className="mt-4 flex items-center justify-between gap-3">
                       <button
+                        disabled
                         onClick={() => setLocation(`/play/${priorityLevel.id}`)}
                         data-testid="button-up-next-hero-play"
-                        className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white shadow-md transition-all active:scale-95"
+                        className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-sm bg-muted text-muted-foreground cursor-not-allowed select-none"
                       >
                         Start Practice Quiz <ChevronRight size={16} />
                       </button>
                       <button
+                        disabled
                         onClick={() => setLocation("/diagnostic")}
                         data-testid="button-retake-diagnostic-small"
-                        className="text-xs font-semibold text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2 flex-shrink-0"
+                        className="text-xs font-semibold text-muted-foreground/50 cursor-not-allowed select-none underline underline-offset-2 flex-shrink-0"
                       >
                         Retake diagnostic
                       </button>
@@ -1028,9 +1038,10 @@ export default function DashboardPage() {
                       </p>
                     </div>
                     <button
+                      disabled
                       onClick={() => setLocation("/diagnostic")}
                       data-testid="button-diagnostic-retake"
-                      className="flex-shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold text-xs bg-teal-500/15 text-teal-700 dark:text-teal-300 hover:bg-teal-500/25 transition-all"
+                      className="flex-shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold text-xs bg-muted text-muted-foreground cursor-not-allowed select-none"
                     >
                       Retake
                     </button>
@@ -1342,11 +1353,11 @@ export default function DashboardPage() {
 
             {/* Handbook — styled as a reference tool, not a training module */}
             <motion.button
-              className="rounded-2xl border-2 border-dashed p-4 flex items-center gap-3 transition-colors text-left bg-muted/30 border-border hover:bg-muted/50 hover:border-border/80"
+              disabled
+              className="rounded-2xl border-2 border-dashed p-4 flex items-center gap-3 text-left bg-muted/30 border-border cursor-not-allowed select-none"
               onClick={() => setLocation("/handbook")}
               initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileTap={{ scale: 0.98 }}
+              animate={{ opacity: 0.6, y: 0 }}
               data-testid="button-handbook"
             >
               <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 bg-muted border border-border">
@@ -1510,8 +1521,9 @@ export default function DashboardPage() {
                             </div>
                           </div>
                           <button
+                            disabled
                             onClick={() => setLocation(`/play/${level.id}`)}
-                            className="flex-shrink-0 text-[10px] font-bold px-2 py-1 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+                            className="flex-shrink-0 text-[10px] font-bold px-2 py-1 rounded-lg bg-muted text-muted-foreground cursor-not-allowed select-none"
                             data-testid={`button-gap-retry-${level.id}`}
                           >
                             Retry

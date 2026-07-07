@@ -96,17 +96,19 @@ export function LevelCard({ level, progress, savedSession, index, onPlay, onStud
             {/* Study tools */}
             <div className="flex gap-2 flex-wrap">
               <button
+                disabled
                 onClick={() => setLocation(`/study/${level.id}?view=summary`)}
                 data-testid={`button-overview-${level.id}`}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white/15 hover:bg-white/25 text-white border border-white/20 transition-all active:scale-95"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white/10 text-white/50 border border-white/10 cursor-not-allowed select-none"
               >
                 <BookOpen size={15} />
                 Chapter Overview
               </button>
               <button
+                disabled
                 onClick={onStudy}
                 data-testid={`button-study-${level.id}`}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white/15 hover:bg-white/25 text-white border border-white/20 transition-all active:scale-95"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white/10 text-white/50 border border-white/10 cursor-not-allowed select-none"
               >
                 <Layers size={15} />
                 Flashcards
@@ -119,17 +121,19 @@ export function LevelCard({ level, progress, savedSession, index, onPlay, onStud
               {hasInProgress ? (
                 <>
                   <button
+                    disabled
                     onClick={onPlay}
                     data-testid={`button-continue-${level.id}`}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white text-primary hover:bg-white/90 transition-all active:scale-95 shadow-sm"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white/10 text-white/50 border border-white/10 cursor-not-allowed select-none"
                   >
                     <PlayCircle size={15} />
                     Continue Quiz
                   </button>
                   <button
+                    disabled
                     onClick={handleStartOver}
                     data-testid={`button-restart-${level.id}`}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white/15 hover:bg-white/25 text-white border border-white/20 transition-all active:scale-95"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white/10 text-white/50 border border-white/10 cursor-not-allowed select-none"
                   >
                     <RotateCcw size={15} />
                     Restart Quiz
@@ -137,18 +141,20 @@ export function LevelCard({ level, progress, savedSession, index, onPlay, onStud
                 </>
               ) : (
                 <button
+                  disabled
                   onClick={onPlay}
                   data-testid={`button-level-${level.id}`}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white text-primary hover:bg-white/90 transition-all active:scale-95 shadow-sm"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white/10 text-white/50 border border-white/10 cursor-not-allowed select-none"
                 >
                   <Play size={15} />
                   {hasPlayed ? "Quiz Again" : "Practice Quiz"}
                 </button>
               )}
               <button
+                disabled
                 onClick={() => setLocation(`/deep-dive/${level.id}?from=/`)}
                 data-testid={`button-deep-dive-${level.id}`}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white/15 hover:bg-white/25 text-white border border-white/20 transition-all active:scale-95"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold bg-white/10 text-white/50 border border-white/10 cursor-not-allowed select-none"
               >
                 <Microscope size={15} />
                 Deep Dive Tracer
