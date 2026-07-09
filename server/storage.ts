@@ -39,6 +39,14 @@ export const pool = new pg.Pool({
 
 export const db = drizzle(pool);
 
+// asc_test_sessions.shuffle_maps is stored as TEXT (a migration to jsonb never
+// took effect), so raw reads return a JSON string, not a parsed object.
+function parseShuffleMaps(raw: unknown): Record<string, number[]> {
+  if (raw && typeof raw === "object") return raw as Record<string, number[]>;
+  if (typeof raw !== "string") return {};
+  try { return JSON.parse(raw); } catch { return {}; }
+}
+
 export async function ensureTablesExist() {
   const client = await pool.connect();
   try {
@@ -1434,7 +1442,7 @@ export class DatabaseStorage implements IStorage {
         [userId, testType],
       );
       if (r.rows.length === 0) return null;
-      return { shuffleMaps: r.rows[0].shuffle_maps };
+      return { shuffleMaps: parseShuffleMaps(r.rows[0].shuffle_maps) };
     } finally {
       client.release();
     }
@@ -1475,7 +1483,7 @@ export class DatabaseStorage implements IStorage {
         [userId, testType],
       );
       if (r.rows.length === 0) return null;
-      return { shuffleMaps: r.rows[0].shuffle_maps };
+      return { shuffleMaps: parseShuffleMaps(r.rows[0].shuffle_maps) };
     } finally {
       client.release();
     }

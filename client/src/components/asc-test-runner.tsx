@@ -64,6 +64,7 @@ export function AscTestRunner({
   const [selected, setSelected] = useState<number | null>(null);
   const [result, setResult] = useState<SubmitResponse | null>(null);
   const [expandedTutors, setExpandedTutors] = useState<Set<number>>(new Set());
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const { data: pastResults } = useQuery<{ id: number; score: number; totalQuestions: number; completedAt: string }[]>({
     queryKey: [`${apiBase}/results`],
@@ -94,6 +95,10 @@ export function AscTestRunner({
     onSuccess: (data) => {
       setResult(data);
       setPhase("results");
+      setSubmitError(null);
+    },
+    onError: (err: Error) => {
+      setSubmitError(err.message || "Failed to submit. Please try again.");
     },
   });
 
@@ -277,6 +282,19 @@ export function AscTestRunner({
               )}
             </Button>
           </div>
+
+          {submitError && (
+            <div className="mt-4 p-3 rounded-xl bg-red-50 dark:bg-red-950/50 border border-red-200 dark:border-red-800 text-sm text-red-600 flex items-center justify-between gap-2">
+              <span>{submitError}</span>
+              <button
+                onClick={() => setLocation("/")}
+                className="font-semibold underline underline-offset-2 flex-shrink-0"
+                data-testid={`button-${testIdPrefix}-submit-error-home`}
+              >
+                Back to Dashboard
+              </button>
+            </div>
+          )}
         </div>
       </div>
     );
