@@ -3023,9 +3023,14 @@ Keep the total entries to at most ${Math.min(totalPeriods, cadence === "daily" ?
     res.json({ score, totalQuestions: totalAnswered, resultId: result.id, detailedResults, sectionScores });
   });
 
-  function buildAscTestPayload(pool: AscPretestQuestion[]) {
+  const NUM_ASC_TEST_QUESTIONS = 25;
+
+  function buildAscTestPayload(pool: AscPretestQuestion[], sampleSize = NUM_ASC_TEST_QUESTIONS) {
+    const sampledPool = pool.length > sampleSize
+      ? [...pool].sort(() => Math.random() - 0.5).slice(0, sampleSize)
+      : pool;
     const shuffleMaps: Record<string, number[]> = {};
-    const items = pool.map(q => {
+    const items = sampledPool.map(q => {
       const { options, shuffleMap } = shuffleQuestionOptions(q);
       shuffleMaps[q.id] = shuffleMap;
       return {
