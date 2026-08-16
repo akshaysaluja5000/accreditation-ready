@@ -197,15 +197,15 @@ title = "DNV NIAHO Requirements & Interpretive Guidelines (DNV module source)"
 id = "82LqHUHcs_PvQhDi3rqZ2"
 uri = "file://attached_assets/250818_HBK_DOC_v44_MDS_FINAL_1778635910587.pdf"
 type = "pdf"
-title = "AAAHC v44 MDS Handbook"
-description = "AAAHC Accreditation Handbook v44 - MDS edition"
+title = "AAAHC v44 MDS"
+description = "AAAHC v44 MDS Handbook"
 
 [[outputs]]
 id = "ONrBKWDFfSMIb1mjjQs7z"
 uri = "file://attached_assets/250818_HBK_DOC__AMB_v44_FINAL_1778635914245.pdf"
 type = "pdf"
-title = "AAAHC v44 Ambulatory Handbook"
-description = "AAAHC Accreditation Handbook v44 - Ambulatory edition"
+title = "AAAHC v44 Ambulatory"
+description = "AAAHC v44 Ambulatory Handbook"
 
 [[outputs]]
 id = "_CGaphFhMquLX3loOa2MF"
