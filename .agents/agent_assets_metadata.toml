@@ -192,3 +192,31 @@ id = "l6VlfR0vZtcm99mqDQLIO"
 uri = "file://attached_assets/DNV_NIAHO_requirements_and_interpretive_guidelines_25-1_update_1778875991964.pdf"
 type = "pdf"
 title = "DNV NIAHO Requirements & Interpretive Guidelines (DNV module source)"
+
+[[outputs]]
+id = "82LqHUHcs_PvQhDi3rqZ2"
+uri = "file://attached_assets/250818_HBK_DOC_v44_MDS_FINAL_1778635910587.pdf"
+type = "pdf"
+title = "AAAHC v44 MDS Handbook"
+description = "AAAHC Accreditation Handbook v44 - MDS edition"
+
+[[outputs]]
+id = "ONrBKWDFfSMIb1mjjQs7z"
+uri = "file://attached_assets/250818_HBK_DOC__AMB_v44_FINAL_1778635914245.pdf"
+type = "pdf"
+title = "AAAHC v44 Ambulatory Handbook"
+description = "AAAHC Accreditation Handbook v44 - Ambulatory edition"
+
+[[outputs]]
+id = "_CGaphFhMquLX3loOa2MF"
+uri = "file://attached_assets/250818_HBK_DOC_v44_MDS_FINAL_1778643708206.pdf"
+type = "pdf"
+title = "AAAHC v44 MDS Handbook (copy 2)"
+description = "AAAHC Accreditation Handbook v44 - MDS edition (second upload)"
+
+[[outputs]]
+id = "fJ69ZDnyjilAx5B4uWqYb"
+uri = "file://attached_assets/250818_HBK_DOC__AMB_v44_FINAL_1778643714252.pdf"
+type = "pdf"
+title = "AAAHC v44 AMB Handbook (copy 2)"
+description = "AAAHC Accreditation Handbook v44 - Ambulatory edition (second upload)"
