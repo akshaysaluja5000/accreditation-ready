@@ -30,9 +30,9 @@ import FlashcardReviewPage from "@/pages/flashcard-review-page";
 import LeadershipHubPage from "@/pages/leadership-hub-page";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Lock } from "lucide-react";
-import TermsPage from "@/pages/terms-page";
 import InquiryPage from "@/pages/inquiry-page";
 import NotFound from "@/pages/not-found";
+import TermsPage from "@/pages/terms-page";
 import MfaSetupPage from "@/pages/mfa-setup-page";
 import MfaVerifyPage from "@/pages/mfa-verify-page";
 import EducatorHubPage from "@/pages/educator-hub-page";
@@ -360,8 +360,8 @@ function Router() {
     <ScrollToTop />
     <Switch>
       <Route path="/auth" component={AuthRoute} />
-      <Route path="/terms" component={TermsPage} />
       <Route path="/inquiry" component={InquiryPage} />
+      <Route path="/terms" component={TermsPage} />
       <Route path="/role-select" component={RoleSelectRoute} />
       <Route path="/role-error" component={RoleErrorRoute} />
       <Route path="/" component={HomeRoute} />

@@ -279,7 +279,7 @@ export default function LandingPage() {
       <footer className="relative z-10 border-t border-border py-6 px-4 bg-muted/30">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-sm text-muted-foreground leading-relaxed" data-testid="text-disclaimer">
-            Accreditation <em>Ready</em> is not affiliated with, endorsed by, or sponsored by CMS. All content is for training and educational purposes only.
+            All content is for training and educational purposes only.
           </p>
           <p className="text-sm text-muted-foreground mt-2 flex items-center justify-center gap-3 flex-wrap">
             <a href="/terms" className="underline hover:text-foreground" data-testid="link-terms-landing">Terms & Privacy</a>

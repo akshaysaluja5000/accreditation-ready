@@ -27,10 +27,7 @@ export default function TermsPage() {
       </div>
 
       <div className="max-w-3xl mx-auto px-4 pt-6 flex flex-col gap-6">
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
           <Card className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -41,7 +38,7 @@ export default function TermsPage() {
             <div className="flex flex-col gap-4 text-sm text-muted-foreground leading-relaxed">
               <div>
                 <h3 className="font-bold text-foreground mb-1" data-testid="text-terms-educational">Educational Purpose</h3>
-                <p>Accreditation <em>Ready</em> is designed exclusively for educational and training purposes. Content covers two pathways: hospital compliance aligned with The Joint Commission standards, and ambulatory surgery center (ASC) accreditation aligned with AAAHC, The Joint Commission ASC pathway, and CMS Conditions for Coverage. All content is intended to help healthcare professionals prepare for survey readiness and is not a substitute for official training, certification, or accreditation programs.</p>
+                <p>Accreditation <em>Ready</em> is designed exclusively for educational and training purposes. All content is intended to help healthcare professionals prepare for survey readiness and is not a substitute for official training, certification, or accreditation programs.</p>
               </div>
               <div>
                 <h3 className="font-bold text-foreground mb-1" data-testid="text-terms-license">Per-Facility License</h3>
@@ -63,10 +60,7 @@ export default function TermsPage() {
           </Card>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
           <Card className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-xl bg-chart-2/10 flex items-center justify-center flex-shrink-0">
@@ -80,19 +74,6 @@ export default function TermsPage() {
                 <p>We collect limited information necessary for the platform to function:</p>
                 <ul className="list-disc list-inside mt-1 flex flex-col gap-1">
                   <li>Username and display name</li>
-                  <li>Quiz performance and scores</li>
-                  <li>Activity data (streaks, XP, daily progress)</li>
-                  <li>Facility association</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-bold text-foreground mb-1" data-testid="text-privacy-usage">How It's Used</h3>
-                <p>Your data is used for:</p>
-                <ul className="list-disc list-inside mt-1 flex flex-col gap-1">
-                  <li>Tracking your individual compliance training progress</li>
-                  <li>Generating facility-level compliance readiness reports</li>
-                  <li>Quality improvement and content effectiveness analysis</li>
-                  <li>Gamification features (leaderboards, streaks, levels)</li>
                 </ul>
               </div>
               <div>
@@ -109,10 +90,7 @@ export default function TermsPage() {
           </Card>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
           <Card className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-xl bg-chart-4/10 flex items-center justify-center flex-shrink-0">
@@ -121,15 +99,7 @@ export default function TermsPage() {
               <h2 className="text-xl font-black" data-testid="text-disclaimer-heading">Disclaimer</h2>
             </div>
             <div className="flex flex-col gap-3 text-sm text-muted-foreground leading-relaxed">
-              <p>
-                Accreditation <em>Ready</em> is <span className="font-bold text-foreground">not affiliated with, endorsed by, or sponsored by The Joint Commission, DNV, AAAHC, or CMS</span>. "The Joint Commission" is a registered trademark of The Joint Commission. "AAAHC" refers to the Accreditation Association for Ambulatory Health Care. CMS refers to the Centers for Medicare &amp; Medicaid Services.
-              </p>
-              <p>
-                All content provided through Accreditation <em>Ready</em> is for educational and training purposes only. It is designed to supplement official accreditation standards, guidelines, and processes published by The Joint Commission, DNV, AAAHC, and CMS.
-              </p>
-              <p>
-                Facility administrators and healthcare professionals should always refer to official publications from the relevant accrediting or regulatory body for authoritative guidance on compliance requirements. Hospital pathway content references The Joint Commission standards. ASC pathway content references AAAHC Accreditation Handbook standards and CMS Conditions for Coverage.
-              </p>
+              <p>All content provided through Accreditation <em>Ready</em> is for educational and training purposes only.</p>
             </div>
           </Card>
         </motion.div>
