@@ -134,13 +134,6 @@ export default function InquiryPage() {
                 Open email to request a demo
                 <Send size={16} />
               </Button>
-              <p className="text-sm text-muted-foreground text-center">
-                Your email app will open a message addressed to{" "}
-                <a className="underline hover:text-foreground" href={`mailto:${INQUIRY_EMAIL}`}>
-                  {INQUIRY_EMAIL}
-                </a>
-                .
-              </p>
             </div>
           </form>
         </div>
