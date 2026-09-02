@@ -9,7 +9,7 @@ const features = [
   {
     icon: Stethoscope,
     title: "Measure Readiness from Day One",
-    description: "A 25-question diagnostic gives every staff member a personalized baseline. You will know exactly where your gaps are before a surveyor ever asks.",
+    description: "A diagnostic exam gives staff members a personalized baseline. You will know exactly where your gaps are before a surveyor ever asks.",
   },
   {
     icon: CalendarCheck,
