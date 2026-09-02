@@ -32,6 +32,7 @@ import { HospitalsPage, AscPage } from "@/pages/solutions-page";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Lock } from "lucide-react";
 import TermsPage from "@/pages/terms-page";
+import InquiryPage from "@/pages/inquiry-page";
 import NotFound from "@/pages/not-found";
 import MfaSetupPage from "@/pages/mfa-setup-page";
 import MfaVerifyPage from "@/pages/mfa-verify-page";
@@ -361,6 +362,7 @@ function Router() {
     <Switch>
       <Route path="/auth" component={AuthRoute} />
       <Route path="/terms" component={TermsPage} />
+      <Route path="/inquiry" component={InquiryPage} />
       <Route path="/hospitals" component={HospitalsPage} />
       <Route path="/asc" component={AscPage} />
       <Route path="/role-select" component={RoleSelectRoute} />

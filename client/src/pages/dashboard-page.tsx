@@ -614,19 +614,6 @@ export default function DashboardPage() {
             <Button variant="outline" size="sm" onClick={() => setLocation("/leaderboard")} data-testid="button-leaderboard" className="hidden sm:flex gap-1.5">
               <Trophy size={16} /><span>Leaderboard</span>
             </Button>
-            <a
-              href={
-                "/tutorial-employee.html"
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-              data-testid="link-tutorial-help"
-              className="hidden sm:block"
-            >
-              <Button variant="outline" size="sm" className="gap-1.5">
-                <BookOpen size={16} /><span>Tutorial</span>
-              </Button>
-            </a>
             <Button variant="outline" size="sm" onClick={() => setLocation("/profile")} data-testid="button-profile" className="hidden sm:flex gap-1.5">
               <Settings size={16} /><span>Settings</span>
             </Button>
@@ -647,19 +634,6 @@ export default function DashboardPage() {
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => { setFeedbackOpen(true); setFeedbackSent(false); setFeedbackMessage(""); setFeedbackCategory(null); setFeedbackFiles([]); setFeedbackFileError(null); }} data-testid="menu-item-feedback">
                   <MessageSquare size={14} className="mr-2 text-muted-foreground" /> Send Feedback
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a
-                    href={
-                      "/tutorial-employee.html"
-                    }
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-testid="menu-item-tutorial"
-                    className="flex items-center"
-                  >
-                    <BookOpen size={14} className="mr-2 text-muted-foreground" /> How-to Guide
-                  </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setLocation("/profile")} data-testid="menu-item-profile">
                   <Settings size={14} className="mr-2 text-muted-foreground" /> Settings

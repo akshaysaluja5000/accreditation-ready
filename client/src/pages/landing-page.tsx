@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { CalendarCheck, BarChart3, ArrowRight, BrainCircuit, TrendingUp, Search, Stethoscope, AlertTriangle, ShieldCheck, Moon, Sun, CheckCircle2, Target } from "lucide-react";
+import { CalendarCheck, BarChart3, ArrowRight, TrendingUp, Stethoscope, AlertTriangle, ShieldCheck, Moon, Sun } from "lucide-react";
 import { AppLogoMark } from "@/components/app-logo-mark";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
@@ -21,16 +21,6 @@ const features = [
     title: "See Risk Before Surveyors Do",
     description: "Track completion, accuracy, and knowledge gaps by unit. Flag at-risk departments weeks before your survey window.",
   },
-  {
-    icon: Search,
-    title: "Simulate Real Survey Scenarios",
-    description: "Deep Dive Tracer Mode mirrors how surveyors actually probe, so staff are prepared for the questions that come up on survey day.",
-  },
-  {
-    icon: BrainCircuit,
-    title: "Build Real Understanding",
-    description: "Clear explanations break down missed questions in plain language, with real clinical context your team can actually apply.",
-  },
 ];
 
 const howItWorksSteps = [
@@ -38,12 +28,6 @@ const howItWorksSteps = [
   "Deploy targeted training by department",
   "Monitor readiness on your dashboard weekly",
   "Walk into survey week with documented proof of preparation",
-];
-
-const proofPoints = [
-  "Baseline vs. final scores show exactly how far you have come",
-  "Department-level dashboards show where risk still lives",
-  "Staff walk in knowing what surveyors will ask and how to answer",
 ];
 
 export default function LandingPage() {
@@ -57,10 +41,6 @@ export default function LandingPage() {
     document.documentElement.classList.toggle("dark", next);
   }
 
-  const scrollToFeatures = () => {
-    document.getElementById("features-section")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <div className="min-h-screen flex flex-col bg-background">
       {/* ── Header ── */}
@@ -73,15 +53,6 @@ export default function LandingPage() {
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <a
-              href="/tutorial-employee.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center text-sm font-medium text-foreground hover:text-foreground transition-colors px-2 py-1"
-              data-testid="link-nav-tutorials"
-            >
-              Tutorials
-            </a>
             <Button
               variant="ghost"
               size="icon"
@@ -129,11 +100,11 @@ export default function LandingPage() {
             <div className="flex items-center gap-3 mt-2 flex-wrap justify-center">
               <Button
                 size="lg"
-                variant="outline"
-                onClick={scrollToFeatures}
-                data-testid="button-hero-how-it-works"
+                onClick={() => setLocation("/inquiry")}
+                data-testid="button-hero-request-demo"
               >
-                See How It Works
+                Request Demo
+                <ArrowRight size={18} className="ml-2" />
               </Button>
             </div>
             <p className="text-sm text-muted-foreground mt-1" data-testid="text-hero-supporting">
@@ -268,66 +239,6 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* ── Proof Section ── */}
-        <section className="py-16 md:py-20">
-          <div className="max-w-4xl mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-400/20 flex items-center justify-center flex-shrink-0">
-                  <Target size={20} className="text-emerald-600" />
-                </div>
-                <h2 className="text-2xl md:text-3xl font-black tracking-tight text-foreground" data-testid="text-proof-heading">
-                  Measure readiness before surveyors do.
-                </h2>
-              </div>
-              <p className="text-base text-muted-foreground leading-relaxed mb-6 max-w-3xl" data-testid="text-proof-body">
-                With Accreditation <em>Ready</em>, leaders have documented evidence of preparation:
-              </p>
-              <ul className="space-y-3">
-                {proofPoints.map((point, i) => (
-                  <li key={i} className="flex items-start gap-3" data-testid={`text-proof-point-${i}`}>
-                    <CheckCircle2 size={20} className="text-emerald-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-base text-muted-foreground leading-relaxed">{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* ── Diagnostic CTA ── */}
-        <section className="py-16 md:py-20 border-y border-border bg-primary/5">
-          <div className="max-w-4xl mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="flex-shrink-0">
-                  <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-600 flex items-center justify-center shadow-lg shadow-teal-500/20">
-                    <Stethoscope size={48} className="text-white" />
-                  </div>
-                </div>
-                <div className="flex-1 text-center md:text-left">
-                  <h2 className="text-2xl md:text-3xl font-black tracking-tight text-foreground mb-2" data-testid="text-diagnostic-promo-heading">
-                    How ready is your team right now?
-                  </h2>
-                  <p className="text-base text-muted-foreground leading-relaxed mb-4 max-w-xl" data-testid="text-diagnostic-promo-body">
-                    Take a free 25-question diagnostic across every compliance domain. Answer honestly and get a clear picture of where your gaps are.
-                  </p>
-                  <div className="flex items-center gap-3 flex-wrap justify-center md:justify-start">
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
         {/* ── Final CTA ── */}
         <section className="max-w-5xl mx-auto px-4 py-16 md:py-24 text-center">
           <motion.div
@@ -372,10 +283,6 @@ export default function LandingPage() {
           </p>
           <p className="text-sm text-muted-foreground mt-2 flex items-center justify-center gap-3 flex-wrap">
             <a href="/terms" className="underline hover:text-foreground" data-testid="link-terms-landing">Terms & Privacy</a>
-            <span className="opacity-30">·</span>
-            <a href="/tutorial-employee.html" target="_blank" className="underline hover:text-foreground" data-testid="link-tutorial-employee">Staff Training Guide</a>
-            <span className="opacity-30">·</span>
-            <a href="/tutorial-leadership.html" target="_blank" className="underline hover:text-foreground" data-testid="link-tutorial-leadership">Leadership Guide</a>
           </p>
           <p className="text-sm font-medium text-muted-foreground mt-3" data-testid="text-company-landing">Division of Innovans LLC</p>
         </div>
