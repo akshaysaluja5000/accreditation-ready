@@ -4,7 +4,6 @@ import { CalendarCheck, BarChart3, ArrowRight, BrainCircuit, TrendingUp, Search,
 import { AppLogoMark } from "@/components/app-logo-mark";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
-import { PathwayMenu } from "@/components/pathway-menu";
 
 const features = [
   {
@@ -30,7 +29,7 @@ const features = [
   {
     icon: BrainCircuit,
     title: "Build Real Understanding",
-    description: "AI-powered explanations break down missed questions in plain language, with real clinical context your team can actually apply.",
+    description: "Clear explanations break down missed questions in plain language, with real clinical context your team can actually apply.",
   },
 ];
 
@@ -74,7 +73,6 @@ export default function LandingPage() {
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <PathwayMenu />
             <a
               href="/tutorial-employee.html"
               target="_blank"
@@ -126,17 +124,9 @@ export default function LandingPage() {
               Know your gaps. Close them before the surveyor does.
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed font-normal" data-testid="text-hero-subtitle">
-              Accreditation <em>Ready</em> turns Joint Commission, DNV, AAAHC, and CMS standards into focused daily training your staff can actually keep up with.
+              Accreditation <em>Ready</em> turns CMS standards into focused daily training your staff can actually keep up with.
             </p>
             <div className="flex items-center gap-3 mt-2 flex-wrap justify-center">
-              <Button
-                size="lg"
-                onClick={() => setLocation("/auth")}
-                data-testid="button-hero-diagnostic"
-              >
-                Start Free Diagnostic
-                <ArrowRight size={18} className="ml-2" />
-              </Button>
               <Button
                 size="lg"
                 variant="outline"
@@ -147,7 +137,7 @@ export default function LandingPage() {
               </Button>
             </div>
             <p className="text-sm text-muted-foreground mt-1" data-testid="text-hero-supporting">
-              Built on real JC, DNV, AAAHC, and CMS standards · No in-service time required
+              Built on real CMS standards · No in-service time required
             </p>
           </motion.div>
         </section>
@@ -331,15 +321,6 @@ export default function LandingPage() {
                     Take a free 25-question diagnostic across every compliance domain. Answer honestly and get a clear picture of where your gaps are.
                   </p>
                   <div className="flex items-center gap-3 flex-wrap justify-center md:justify-start">
-                    <Button
-                      size="lg"
-                      className="bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-400 hover:to-cyan-500 text-white shadow-md shadow-teal-500/20 font-bold"
-                      onClick={() => setLocation("/auth")}
-                      data-testid="button-diagnostic-promo-signup"
-                    >
-                      Start Free Diagnostic
-                      <ArrowRight size={18} className="ml-2" />
-                    </Button>
                   </div>
                 </div>
               </div>
@@ -387,7 +368,7 @@ export default function LandingPage() {
       <footer className="relative z-10 border-t border-border py-6 px-4 bg-muted/30">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-sm text-muted-foreground leading-relaxed" data-testid="text-disclaimer">
-            Accreditation <em>Ready</em> is not affiliated with, endorsed by, or sponsored by The Joint Commission, DNV, AAAHC, or CMS. All content is for training and educational purposes only.
+            Accreditation <em>Ready</em> is not affiliated with, endorsed by, or sponsored by CMS. All content is for training and educational purposes only.
           </p>
           <p className="text-sm text-muted-foreground mt-2 flex items-center justify-center gap-3 flex-wrap">
             <a href="/terms" className="underline hover:text-foreground" data-testid="link-terms-landing">Terms & Privacy</a>
