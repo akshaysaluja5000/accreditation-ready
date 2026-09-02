@@ -11,7 +11,6 @@ import { StreakFlame } from "@/components/streak-flame";
 import { XpBar } from "@/components/xp-bar";
 import { LevelCard } from "@/components/level-card";
 import { DailyCalendar } from "@/components/daily-calendar";
-import { PathwayMenu } from "@/components/pathway-menu";
 import { useAuth } from "@/lib/auth";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import { useMutation } from "@tanstack/react-query";
@@ -580,8 +579,6 @@ export default function DashboardPage() {
 
           {/* Right: actions */}
           <div className="flex items-center gap-1.5 flex-shrink-0">
-            <PathwayMenu triggerVariant="outline" triggerSize="sm" />
-
             {/* Educator console - always visible, text collapses on mobile */}
             {user?.leadershipRole === "educator" && !user?.isAdmin && (
               <Button

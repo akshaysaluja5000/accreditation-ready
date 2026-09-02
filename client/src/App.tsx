@@ -28,7 +28,6 @@ import CorrectiveActionPage from "@/pages/corrective-action-page";
 import ExecutiveReportPage from "@/pages/executive-report-page";
 import FlashcardReviewPage from "@/pages/flashcard-review-page";
 import LeadershipHubPage from "@/pages/leadership-hub-page";
-import { HospitalsPage, AscPage } from "@/pages/solutions-page";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Lock } from "lucide-react";
 import TermsPage from "@/pages/terms-page";
@@ -363,8 +362,6 @@ function Router() {
       <Route path="/auth" component={AuthRoute} />
       <Route path="/terms" component={TermsPage} />
       <Route path="/inquiry" component={InquiryPage} />
-      <Route path="/hospitals" component={HospitalsPage} />
-      <Route path="/asc" component={AscPage} />
       <Route path="/role-select" component={RoleSelectRoute} />
       <Route path="/role-error" component={RoleErrorRoute} />
       <Route path="/" component={HomeRoute} />
